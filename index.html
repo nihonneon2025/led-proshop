@@ -7536,17 +7536,24 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
             fetch(MAIL_API_BASE + '/create-checkout.php', {
               method: 'POST',
               body: stripeData
-            }).then(function(res) { return res.json(); })
-            .then(function(data) {
-              if (data.success && data.url) {
-                // Stripe決済ページへリダイレクト
-                window.location.href = data.url;
-              } else {
-                throw new Error(data.message || 'Stripeエラー');
+            }).then(function(res) {
+              return res.text();
+            }).then(function(text) {
+              try {
+                var data = JSON.parse(text);
+                if (data.success && data.url) {
+                  window.location.href = data.url;
+                } else {
+                  if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
+                  alert('エラー: ' + (data.message || text));
+                }
+              } catch(e) {
+                if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
+                alert('レスポンスエラー: ' + text.substring(0, 300));
               }
             }).catch(function(err) {
               if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
-              alert('決済エラー詳細: ' + (err && err.message ? err.message : String(err)));
+              alert('通信エラー: ' + (err && err.message ? err.message : String(err)));
             });
 
           // ==============================
