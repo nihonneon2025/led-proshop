@@ -7339,8 +7339,8 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       var orderLines = cart.map(function(i) {
         return i.name + '（' + i.code + '）× ' + i.qty + ' ' + i.unit + ' = ¥' + (i.price * i.qty).toLocaleString();
       });
-      document.getElementById('orderDataField').value = orderLines.join('\n');
-      document.getElementById('orderTotalField').value = '¥' + getCartTotal().toLocaleString() + '（税別）';
+      document.getElementById('cartDetailField').value = orderLines.join('\n');
+      document.getElementById('totalAmountField').value = '¥' + getCartTotal().toLocaleString() + '（税別）';
 
       overlay.classList.add('active');
       document.body.style.overflow = 'hidden';
