@@ -7433,6 +7433,30 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     document.addEventListener('DOMContentLoaded', function() {
       loadCart();
 
+      // Stripe決済完了・キャンセル後の表示
+      var urlParams = new URLSearchParams(window.location.search);
+      var orderStatus = urlParams.get('order');
+      if (orderStatus === 'success') {
+        var orderId = urlParams.get('id') || '';
+        var msg = document.createElement('div');
+        msg.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:999;display:flex;align-items:center;justify-content:center;padding:20px';
+        msg.innerHTML = '<div style="background:#fff;border-radius:8px;padding:40px;max-width:460px;width:100%;text-align:center">'
+          + '<div style="font-size:48px;margin-bottom:16px">✅</div>'
+          + '<h2 style="font-size:18px;font-weight:700;margin-bottom:12px;color:#003c82">ご注文・お支払いありがとうございます</h2>'
+          + (orderId ? '<p style="font-size:12px;color:#666;margin-bottom:12px">注文番号: ' + orderId + '</p>' : '')
+          + '<p style="font-size:13px;color:#444;margin-bottom:24px">確認メールをお送りしました。<br>担当者より1営業日以内にご連絡いたします。</p>'
+          + '<button onclick="this.closest(\'div\').parentNode.remove();history.replaceState(null,\'\',location.pathname);" style="padding:10px 30px;background:#003c82;color:#fff;border:none;border-radius:4px;font-size:13px;font-weight:700;cursor:pointer">閉じる</button>'
+          + '</div>';
+        document.body.appendChild(msg);
+        cart = []; saveCart(); updateCartUI();
+      } else if (orderStatus === 'cancel') {
+        var msg2 = document.createElement('div');
+        msg2.style.cssText = 'position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#e74c3c;color:#fff;padding:14px 28px;border-radius:6px;font-size:13px;font-weight:700;z-index:999;box-shadow:0 4px 16px rgba(0,0,0,.2)';
+        msg2.textContent = '決済がキャンセルされました。もう一度お試しください。';
+        document.body.appendChild(msg2);
+        setTimeout(function() { if(msg2.parentNode) msg2.parentNode.removeChild(msg2); history.replaceState(null,'',location.pathname); }, 5000);
+      }
+
       var MAIL_API_BASE = 'https://nihon-neon.jp/led-mail';
 
       // --- お問い合わせフォーム送信 ---
@@ -7488,33 +7512,74 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           var formData = new FormData(form);
           var buyerEmail = formData.get('email');
           var buyerName = formData.get('name');
+          var paymentMethod = formData.get('payment');
 
-          fetch(MAIL_API_BASE + '/send-order.php', {
-            method: 'POST',
-            body: formData
-          }).then(function(res) { return res.json(); })
-          .then(function(data) {
-            if (data.success) {
-              document.getElementById('checkoutBody').innerHTML =
-                '<div class="order-complete">'
-                + '<svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>'
-                + '<h3>ご注文ありがとうございます</h3>'
-                + '<div class="order-id">注文番号: ' + orderId + '</div>'
-                + '<p>' + buyerEmail + ' 宛に確認メールをお送りしました。<br>'
-                + '<span style="color:#e74c3c;font-size:11px">※ 確認メールが届かない場合は、迷惑メールフォルダもご確認ください。</span><br>'
-                + '担当者より1営業日以内にご連絡いたします。</p>'
-                + '<button onclick="closeCheckout();location.reload();" style="margin-top:20px;padding:10px 30px;background:var(--blue);color:#fff;border:none;border-radius:4px;font-size:12px;font-weight:700;cursor:pointer">閉じる</button>'
-                + '</div>';
-              cart = [];
-              saveCart();
-              updateCartUI();
-            } else {
-              throw new Error(data.message || 'エラー');
-            }
-          }).catch(function() {
-            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
-            alert('送信に失敗しました。お手数ですが ' + ADMIN_EMAIL + ' まで直接ご連絡ください。');
-          });
+          // ==============================
+          // クレジット・Apple Pay → Stripe決済
+          // ==============================
+          if (paymentMethod === 'credit' || paymentMethod === 'applepay') {
+            // Stripe用のデータを組み立て
+            var stripeData = new FormData();
+            stripeData.append('order_id', orderId);
+            stripeData.append('name', buyerName);
+            stripeData.append('email', buyerEmail);
+            stripeData.append('company', formData.get('company') || '');
+            stripeData.append('phone', formData.get('phone') || '');
+            stripeData.append('address', formData.get('address') || '');
+            stripeData.append('notes', formData.get('notes') || '');
+            stripeData.append('payment', paymentMethod);
+            stripeData.append('total', getCartTotal());
+            stripeData.append('cart', JSON.stringify(cart.map(function(item) {
+              return { name: item.name, price: item.price, qty: item.qty, code: item.code };
+            })));
+
+            fetch(MAIL_API_BASE + '/create-checkout.php', {
+              method: 'POST',
+              body: stripeData
+            }).then(function(res) { return res.json(); })
+            .then(function(data) {
+              if (data.success && data.url) {
+                // Stripe決済ページへリダイレクト
+                window.location.href = data.url;
+              } else {
+                throw new Error(data.message || 'Stripeエラー');
+              }
+            }).catch(function(err) {
+              if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
+              alert('決済ページの作成に失敗しました。お手数ですが ' + ADMIN_EMAIL + ' まで直接ご連絡ください。');
+            });
+
+          // ==============================
+          // 銀行振込・請求書 → メール受注
+          // ==============================
+          } else {
+            fetch(MAIL_API_BASE + '/send-order.php', {
+              method: 'POST',
+              body: formData
+            }).then(function(res) { return res.json(); })
+            .then(function(data) {
+              if (data.success) {
+                document.getElementById('checkoutBody').innerHTML =
+                  '<div class="order-complete">'
+                  + '<svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>'
+                  + '<h3>ご注文ありがとうございます</h3>'
+                  + '<div class="order-id">注文番号: ' + orderId + '</div>'
+                  + '<p>' + buyerEmail + ' 宛に確認メールをお送りしました。<br>'
+                  + '<span style="color:#e74c3c;font-size:11px">※ 確認メールが届かない場合は、迷惑メールフォルダもご確認ください。</span><br>'
+                  + '担当者より1営業日以内にご連絡いたします。</p>'
+                  + '<button onclick="closeCheckout();location.reload();" style="margin-top:20px;padding:10px 30px;background:var(--blue);color:#fff;border:none;border-radius:4px;font-size:12px;font-weight:700;cursor:pointer">閉じる</button>'
+                  + '</div>';
+                cart = [];
+                saveCart();
+                updateCartUI();
+              } else {
+                throw new Error(data.message || 'エラー');
+              }
+            }).catch(function() {
+              if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
+              alert('送信に失敗しました。お手数ですが ' + ADMIN_EMAIL + ' まで直接ご連絡ください。');
+            });
+          }
         });
       }
     });
