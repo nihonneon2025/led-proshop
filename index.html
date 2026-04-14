@@ -7546,7 +7546,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               }
             }).catch(function(err) {
               if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
-              alert('決済ページの作成に失敗しました。お手数ですが ' + ADMIN_EMAIL + ' まで直接ご連絡ください。');
+              alert('決済エラー詳細: ' + (err && err.message ? err.message : String(err)));
             });
 
           // ==============================
