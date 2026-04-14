@@ -1,0 +1,9 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# フォーム送信通知の設定
+# ※ メール通知先は Netlify 管理画面で設定:
+# Site settings > Forms > Form notifications > Email notification
+# Email: led.chumon@gmail.com
+# Form: order

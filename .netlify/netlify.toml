@@ -1,0 +1,10 @@
+functionsDirectory = "C:\\Users\\user\\Desktop\\ネオン物販\\05_EC運用\\netlify\\functions"
+functionsDirectoryOrigin = "config-v1"
+plugins = []
+headers = []
+redirects = []
+
+[build]
+publish = "C:\\Users\\user\\Desktop\\ネオン物販\\05_EC運用"
+publishOrigin = "config"
+functions = "C:\\Users\\user\\Desktop\\ネオン物
