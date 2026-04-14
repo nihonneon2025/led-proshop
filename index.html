@@ -7518,6 +7518,12 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           // クレジット・Apple Pay → Stripe決済
           // ==============================
           if (paymentMethod === 'credit' || paymentMethod === 'applepay') {
+            // 最低注文金額チェック（Stripe最低¥50、当店は¥300から）
+            if (getCartTotal() < 300) {
+              if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
+              alert('クレジットカード・Apple Payでのお支払いは\n合計¥300以上からご利用いただけます。\n\n現在の合計：¥' + getCartTotal().toLocaleString() + '\n\n数量を増やすか、銀行振込・請求書払いをご選択ください。');
+              return;
+            }
             // Stripe用のデータを組み立て
             var stripeData = new FormData();
             stripeData.append('order_id', orderId);
@@ -7545,15 +7551,15 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
                   window.location.href = data.url;
                 } else {
                   if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
-                  alert('エラー: ' + (data.message || text));
+                  alert('決済ページの作成に失敗しました。お手数ですが ' + ADMIN_EMAIL + ' まで直接ご連絡ください。');
                 }
               } catch(e) {
                 if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
-                alert('レスポンスエラー: ' + text.substring(0, 300));
+                alert('決済ページの作成に失敗しました。お手数ですが ' + ADMIN_EMAIL + ' まで直接ご連絡ください。');
               }
             }).catch(function(err) {
               if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
-              alert('通信エラー: ' + (err && err.message ? err.message : String(err)));
+              alert('決済ページの作成に失敗しました。お手数ですが ' + ADMIN_EMAIL + ' まで直接ご連絡ください。');
             });
 
           // ==============================
