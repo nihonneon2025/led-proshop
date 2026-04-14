@@ -7433,6 +7433,8 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     document.addEventListener('DOMContentLoaded', function() {
       loadCart();
 
+      var MAIL_API_BASE = 'https://nihon-neon.jp/led-mail';
+
       // Stripe決済完了・キャンセル後の表示
       var urlParams = new URLSearchParams(window.location.search);
       var orderStatus = urlParams.get('order');
@@ -7444,10 +7446,29 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           + '<div style="font-size:48px;margin-bottom:16px">✅</div>'
           + '<h2 style="font-size:18px;font-weight:700;margin-bottom:12px;color:#003c82">ご注文・お支払いありがとうございます</h2>'
           + (orderId ? '<p style="font-size:12px;color:#666;margin-bottom:12px">注文番号: ' + orderId + '</p>' : '')
-          + '<p style="font-size:13px;color:#444;margin-bottom:24px">ご注文を確認次第、商品を発送いたします。<br>発送完了時にメールにてご連絡いたします。</p>'
+          + '<p style="font-size:13px;color:#444;margin-bottom:24px">ご注文が完了しました。<br>発送されましたらメールにてお知らせいたします。</p>'
           + '<button onclick="this.closest(\'div\').parentNode.remove();history.replaceState(null,\'\',location.pathname);" style="padding:10px 30px;background:#003c82;color:#fff;border:none;border-radius:4px;font-size:13px;font-weight:700;cursor:pointer">閉じる</button>'
           + '</div>';
         document.body.appendChild(msg);
+        // Stripe決済完了メール送信
+        var pendingStr = sessionStorage.getItem('neon_pending_order');
+        if (pendingStr) {
+          try {
+            var pending = JSON.parse(pendingStr);
+            var fd = new FormData();
+            fd.append('order_id', pending.order_id || orderId);
+            fd.append('name',    pending.name    || '');
+            fd.append('email',   pending.email   || '');
+            fd.append('company', pending.company || '');
+            fd.append('phone',   pending.phone   || '');
+            fd.append('address', pending.address || '');
+            fd.append('notes',   pending.notes   || '');
+            fd.append('total',   pending.total   || 0);
+            fd.append('cart',    JSON.stringify(pending.cart || []));
+            fetch(MAIL_API_BASE + '/send-stripe-complete.php', { method: 'POST', body: fd });
+            sessionStorage.removeItem('neon_pending_order');
+          } catch(e) {}
+        }
         cart = []; saveCart(); updateCartUI();
       } else if (orderStatus === 'cancel') {
         var msg2 = document.createElement('div');
@@ -7456,8 +7477,6 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         document.body.appendChild(msg2);
         setTimeout(function() { if(msg2.parentNode) msg2.parentNode.removeChild(msg2); history.replaceState(null,'',location.pathname); }, 5000);
       }
-
-      var MAIL_API_BASE = 'https://nihon-neon.jp/led-mail';
 
       // --- お問い合わせフォーム送信 ---
       var contactForm = document.getElementById('contactForm');
@@ -7548,6 +7567,21 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               try {
                 var data = JSON.parse(text);
                 if (data.success && data.url) {
+                  // Stripe決済完了後にメール送信するため、注文データをsessionStorageに保存
+                  try {
+                    sessionStorage.setItem('neon_pending_order', JSON.stringify({
+                      order_id: orderId,
+                      name: buyerName,
+                      email: buyerEmail,
+                      company: formData.get('company') || '',
+                      phone: formData.get('phone') || '',
+                      address: formData.get('address') || '',
+                      notes: formData.get('notes') || '',
+                      payment: paymentMethod,
+                      cart: cart.map(function(item) { return { name: item.name, price: item.price, qty: item.qty, code: item.code }; }),
+                      total: getCartTotal()
+                    }));
+                  } catch(e) {}
                   window.location.href = data.url;
                 } else {
                   if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
