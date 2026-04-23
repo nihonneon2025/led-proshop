@@ -7041,14 +7041,69 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         pattern: /^RGB\d+-/,
         images: []
       },
-      'sc': {
-        pattern: /^SC-/,
-        images: []
+      // シリコンカバー（タイプ別画像）
+      'sc-f': {
+        pattern: /^SC-F-/,
+        images: ['images/シリコンカバー/sc-f-front.png']
       },
-      'ec': {
-        pattern: /^EC-/,
-        images: []
+      'sc-3s': {
+        pattern: /^SC-3S-/,
+        images: ['images/シリコンカバー/sc-3s-3side.png']
       },
+      'sc-sd': {
+        pattern: /^SC-SD-/,
+        images: ['images/シリコンカバー/sc-sd-side.png']
+      },
+      'sc-nb': {
+        pattern: /^SC-NB-/,
+        images: ['images/シリコンカバー/sc-nb-no-bottom.png']
+      },
+      'sc-wb': {
+        pattern: /^SC-WB-/,
+        images: ['images/シリコンカバー/sc-wb-with-bottom.png']
+      },
+      'sc-r': {
+        pattern: /^SC-R-/,
+        images: ['images/シリコンカバー/sc-r-round.png']
+      },
+      'sc-sp': {
+        pattern: /^SC-SP-/,
+        images: ['images/シリコンカバー/sc-sp-special.png']
+      },
+      // エンドキャップ（角丸×穴×色 8パターン。より特異なパターンを先に書く）
+      'ec-round-hole-white': {
+        pattern: /^EC-R\d+-H-WH$/,
+        images: ['images/エンドキャップ/round-hole-white.png']
+      },
+      'ec-round-hole-black': {
+        pattern: /^EC-R\d+-H-BK$/,
+        images: ['images/エンドキャップ/round-hole-black.png']
+      },
+      'ec-round-solid-white': {
+        pattern: /^EC-R\d+-S-WH$/,
+        images: ['images/エンドキャップ/round-solid-white.png']
+      },
+      'ec-round-solid-black': {
+        pattern: /^EC-R\d+-S-BK$/,
+        images: ['images/エンドキャップ/round-solid-black.png']
+      },
+      'ec-square-hole-white': {
+        pattern: /^EC-\d+-H-WH$/,
+        images: ['images/エンドキャップ/square-hole-white.png']
+      },
+      'ec-square-hole-black': {
+        pattern: /^EC-\d+-H-BK$/,
+        images: ['images/エンドキャップ/square-hole-black.png']
+      },
+      'ec-square-solid-white': {
+        pattern: /^EC-\d+-S-WH$/,
+        images: ['images/エンドキャップ/square-solid-white.png']
+      },
+      'ec-square-solid-black': {
+        pattern: /^EC-\d+-S-BK$/,
+        images: ['images/エンドキャップ/square-solid-black.png']
+      },
+      // 電源（SKU別。WP系と非WP系を区別・$アンカーで厳密マッチ）
       'psu-24v-300w': {
         pattern: /^PSU-24V-300W$/,
         images: [
@@ -7069,6 +7124,18 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           'images/電源装置/12v300w/main.png',
           'images/電源装置/12v300w/scene.jpg'
         ]
+      },
+      'psu-12v-400w': {
+        pattern: /^PSU-12V-400W$/,
+        images: ['images/電源装置/12v400w/main.png']
+      },
+      'psu-200w-wp': {
+        pattern: /^PSU-(24V|12V)-200W-WP$/,
+        images: ['images/電源装置/200w-wp/main.png']
+      },
+      'psu-200w': {
+        pattern: /^PSU-(24V|12V)-200W$/,
+        images: ['images/電源装置/200w/main.png']
       },
       'psu-other': {
         pattern: /^PSU-/,
