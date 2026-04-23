@@ -274,6 +274,10 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 .modal-close:hover{color:var(--text)}
 .modal-body{padding:20px 24px}
 .modal-tags{display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap}
+.modal-variant-row{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;padding:10px 12px;background:#fff3cd;border-left:3px solid #f59e0b;border-radius:3px}
+.modal-variant-label{font-size:11px;font-weight:700;color:#92400e;letter-spacing:.5px}
+.modal-variant-select{font-size:13px;font-weight:600;padding:8px 10px;border:1px solid var(--border);border-radius:3px;background:#fff;color:var(--text);cursor:pointer;width:100%}
+.modal-variant-select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 2px rgba(0,60,130,.15)}
 .modal-tag{display:inline-block;font-size:9px;font-weight:700;padding:2px 8px;border-radius:2px;letter-spacing:.3px}
 .mt-pop{background:#fff3cd;color:#856404}.mt-new{background:#d4edda;color:#155724}.mt-pro{background:var(--blue-pale);color:var(--blue)}.mt-out{background:#e2e3e5;color:#383d41}.mt-hot{background:#f8d7da;color:#721c24}
 .modal-price-row{display:flex;gap:16px;align-items:baseline;margin-bottom:16px;padding:12px 16px;background:var(--bg-gray);border-radius:4px}
@@ -2612,6 +2616,10 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 </div>
 <div class="modal-body">
 <div id="modalTags" class="modal-tags"></div>
+<div id="modalVariantRow" class="modal-variant-row" style="display:none">
+  <label for="modalVariantSelect" class="modal-variant-label">サイズ・規格を選択</label>
+  <select id="modalVariantSelect" class="modal-variant-select" onchange="onVariantChange()"></select>
+</div>
 <div class="modal-price-row">
 <span id="modalPrice" class="modal-our-price"></span>
 <span id="modalMarket" class="modal-market-price"></span>
@@ -7129,13 +7137,21 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         pattern: /^PSU-12V-400W$/,
         images: ['images/電源装置/12v400w/main.png']
       },
-      'psu-200w-wp': {
-        pattern: /^PSU-(24V|12V)-200W-WP$/,
-        images: ['images/電源装置/200w-wp/main.png']
+      'psu-24v-200w-wp': {
+        pattern: /^PSU-24V-200W-WP$/,
+        images: ['images/電源装置/24v200w-wp/main.png']
       },
-      'psu-200w': {
-        pattern: /^PSU-(24V|12V)-200W$/,
-        images: ['images/電源装置/200w/main.png']
+      'psu-12v-200w-wp': {
+        pattern: /^PSU-12V-200W-WP$/,
+        images: ['images/電源装置/12v200w-wp/main.png']
+      },
+      'psu-24v-200w': {
+        pattern: /^PSU-24V-200W$/,
+        images: ['images/電源装置/24v200w/main.png']
+      },
+      'psu-12v-200w': {
+        pattern: /^PSU-12V-200W$/,
+        images: ['images/電源装置/12v200w/main.png']
       },
       'psu-other': {
         pattern: /^PSU-/,
@@ -7182,6 +7198,29 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 
       const modal = document.getElementById('productModal');
       if (!modal) return;
+
+      // バリアント（グループ）選択ドロップダウン
+      const variantRow = document.getElementById('modalVariantRow');
+      const variantSelect = document.getElementById('modalVariantSelect');
+      if (variantRow && variantSelect && typeof window.getGroupVariants === 'function') {
+        const variants = window.getGroupVariants(product);
+        if (variants.length > 1) {
+          variantRow.style.display = '';
+          variantSelect.innerHTML = variants.map(function(v) {
+            const isEC = v.code.startsWith('EC-');
+            const dispPrice = isEC ? v.price * 10 : v.price;
+            const unit = isEC ? ' / 10個セット' : (v.code.startsWith('SC-') ? ' / 10m巻' : '');
+            const label = window.variantSizeLabel(v);
+            const selected = v.id === product.id ? 'selected' : '';
+            return '<option value="' + v.id + '" ' + selected + '>' +
+              label + ' — ¥' + dispPrice.toLocaleString('ja-JP') + unit + ' （' + v.code + '）' +
+              '</option>';
+          }).join('');
+        } else {
+          variantRow.style.display = 'none';
+          variantSelect.innerHTML = '';
+        }
+      }
 
       document.getElementById('modalTitle').textContent = product.name;
       document.getElementById('modalCode').textContent = '型番: ' + product.code;
@@ -7274,6 +7313,13 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       const modal = document.getElementById('productModal');
       if (modal) modal.classList.remove('active');
       document.body.style.overflow = '';
+    }
+
+    function onVariantChange() {
+      const sel = document.getElementById('modalVariantSelect');
+      if (!sel) return;
+      const newId = parseInt(sel.value, 10);
+      if (!isNaN(newId)) openModal(newId);
     }
 
     function modalQtyChange(delta) {
@@ -7915,7 +7961,74 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         return product.price;
       }
 
-      function createCard(product) {
+      // グループキー（シリコン/エンドキャップを集約するため）
+      window.getProductGroup = function(product) {
+        if (!product || !product.code) return null;
+        const c = product.code;
+        if (c.startsWith('SC-F-'))  return 'SC-F';
+        if (c.startsWith('SC-3S-')) return 'SC-3S';
+        if (c.startsWith('SC-SD-')) return 'SC-SD';
+        if (c.startsWith('SC-NB-')) return 'SC-NB';
+        if (c.startsWith('SC-WB-')) return 'SC-WB';
+        if (c.startsWith('SC-R-'))  return 'SC-R';
+        if (c.startsWith('SC-SP-')) return 'SC-SP';
+        const ec = c.match(/^EC-(R?)\d+-([HS])-(WH|BK)$/);
+        if (ec) {
+          const shape = ec[1] ? 'round' : 'square';
+          const hole = ec[2] === 'H' ? 'hole' : 'solid';
+          const color = ec[3] === 'WH' ? 'white' : 'black';
+          return 'EC-' + shape + '-' + hole + '-' + color;
+        }
+        return null;
+      };
+
+      // グループ内の全バリエーション取得
+      window.getGroupVariants = function(product) {
+        const group = window.getProductGroup(product);
+        if (!group) return [product];
+        return PRODUCTS.filter(p => window.getProductGroup(p) === group);
+      };
+
+      // バリエーション用のサイズラベル
+      window.variantSizeLabel = function(product) {
+        const c = product.code;
+        const scSize = c.match(/^SC-(?:F|3S|SD|NB|WB|SP)-D?(\d{2})(\d{2})$/);
+        if (scSize) return scSize[1] + 'mm × ' + scSize[2] + 'mm';
+        const scSp = c.match(/^SC-SP-D(\d{2})(\d{2})$/);
+        if (scSp) return 'φ' + scSp[1] + '×' + scSp[2] + 'mm（特殊）';
+        const scR = c.match(/^SC-R-φ(\d+)$/);
+        if (scR) return 'φ' + scR[1] + 'mm（丸型）';
+        const ec = c.match(/^EC-(R?)(\d+)-[HS]-(WH|BK)$/);
+        if (ec) {
+          if (ec[1]) return 'φ' + ec[2] + 'mm';
+          return ec[2] + 'mm角';
+        }
+        return c;
+      };
+
+      // グループ表示名
+      window.groupDisplayName = function(groupKey, sampleProduct) {
+        const MAP = {
+          'SC-F':  '正面発光タイプ シリコンカバー',
+          'SC-3S': '三面発光タイプ シリコンカバー',
+          'SC-SD': '側面発光タイプ シリコンカバー',
+          'SC-NB': '底なしタイプ シリコンカバー',
+          'SC-WB': '底付きタイプ シリコンカバー',
+          'SC-R':  '丸型チューブ シリコンカバー',
+          'SC-SP': '特殊形状タイプ シリコンカバー',
+          'EC-square-hole-white':  '角型 穴あり（白）エンドキャップ',
+          'EC-square-hole-black':  '角型 穴あり（黒）エンドキャップ',
+          'EC-square-solid-white': '角型 穴なし（白）エンドキャップ',
+          'EC-square-solid-black': '角型 穴なし（黒）エンドキャップ',
+          'EC-round-hole-white':   '丸型 穴あり（白）エンドキャップ',
+          'EC-round-hole-black':   '丸型 穴あり（黒）エンドキャップ',
+          'EC-round-solid-white':  '丸型 穴なし（白）エンドキャップ',
+          'EC-round-solid-black':  '丸型 穴なし（黒）エンドキャップ',
+        };
+        return MAP[groupKey] || (sampleProduct && sampleProduct.name) || groupKey;
+      };
+
+      function createCard(product, groupKey) {
         const PLACEHOLDER = 'images/placeholder.svg';
         const images = (typeof getProductImages === 'function') ? getProductImages(product.code) : null;
         const mainImg = (images && images[0]) || PLACEHOLDER;
@@ -7923,6 +8036,13 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         const marketLower = parseMarketLower(product.marketPrice);
         const hasDiscount = marketLower > product.price;
         const pct = hasDiscount ? Math.round((1 - product.price / marketLower) * 100) : 0;
+
+        // グループ化ありの場合: 価格レンジ表示
+        const variants = groupKey ? window.getGroupVariants(product) : [product];
+        const isGrouped = variants.length > 1;
+        const prices = variants.map(v => effectivePrice(v));
+        const minPrice = Math.min.apply(null, prices);
+        const maxPrice = Math.max.apply(null, prices);
         const displayPrice = effectivePrice(product);
         const incl = Math.round(displayPrice * (1 + TAX_RATE));
 
@@ -7981,19 +8101,23 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 
         const codeEl = document.createElement('div');
         codeEl.className = 'card-code';
-        codeEl.textContent = product.code;
+        codeEl.textContent = isGrouped ? (groupKey + ' シリーズ') : product.code;
         body.appendChild(codeEl);
 
         const nameEl = document.createElement('div');
         nameEl.className = 'card-name';
-        nameEl.textContent = product.name;
+        nameEl.textContent = isGrouped ? window.groupDisplayName(groupKey, product) : product.name;
         body.appendChild(nameEl);
 
         const priceRow = document.createElement('div');
         priceRow.className = 'card-price-row';
         const priceEl = document.createElement('span');
         priceEl.className = 'card-price';
-        priceEl.textContent = '¥' + displayPrice.toLocaleString('ja-JP');
+        if (isGrouped && minPrice !== maxPrice) {
+          priceEl.textContent = '¥' + minPrice.toLocaleString('ja-JP') + '〜';
+        } else {
+          priceEl.textContent = '¥' + displayPrice.toLocaleString('ja-JP');
+        }
         priceRow.appendChild(priceEl);
         const taxEl = document.createElement('span');
         taxEl.className = 'card-price-tax';
@@ -8010,11 +8134,17 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 
         const inclEl = document.createElement('div');
         inclEl.className = 'card-price-incl';
-        inclEl.textContent = '税込 ¥' + incl.toLocaleString('ja-JP');
+        if (isGrouped) {
+          inclEl.textContent = '全' + variants.length + 'サイズ展開';
+          inclEl.style.color = '#92400e';
+          inclEl.style.fontWeight = '700';
+        } else {
+          inclEl.textContent = '税込 ¥' + incl.toLocaleString('ja-JP');
+        }
         body.appendChild(inclEl);
 
-        // エンドキャップは1個単価を補足表示
-        if (product.code.startsWith('EC-')) {
+        // エンドキャップ（単品カードの場合のみ）1個単価補足
+        if (!isGrouped && product.code.startsWith('EC-')) {
           const perPiece = document.createElement('div');
           perPiece.className = 'card-price-incl';
           perPiece.style.color = 'var(--text-muted)';
@@ -8022,7 +8152,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           body.appendChild(perPiece);
         }
 
-        if (hasDiscount) {
+        if (!isGrouped && hasDiscount) {
           const mk = document.createElement('div');
           mk.className = 'card-market';
           mk.textContent = '他店 ' + product.marketPrice;
@@ -8032,9 +8162,14 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         // カートに入れるボタン
         const btn = document.createElement('button');
         btn.className = 'card-btn cart-btn';
-        btn.textContent = 'カートに入れる';
+        btn.textContent = isGrouped ? 'サイズを選択' : 'カートに入れる';
         btn.addEventListener('click', function(e) {
           e.stopPropagation();
+          if (isGrouped) {
+            // グループカードはモーダル開いて選択させる
+            if (typeof openModal === 'function') openModal(product.id);
+            return;
+          }
           const isEC = product.code.startsWith('EC-');
           const qty = isEC ? 10 : 1;
           if (typeof addToCart === 'function') addToCart(product.id, qty);
@@ -8058,7 +8193,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         return card;
       }
 
-      // 各 .product-table を .product-grid に置換
+      // 各 .product-table を .product-grid に置換（シリコン/エンドキャップは自動グループ化）
       document.querySelectorAll('table.product-table').forEach(function(table) {
         const codes = [];
         table.querySelectorAll('tbody tr td.model-code').forEach(function(cell) {
@@ -8069,9 +8204,18 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         const grid = document.createElement('div');
         grid.className = 'product-grid';
 
+        const seenGroups = new Set();
         codes.forEach(function(code) {
           const product = PRODUCTS.find(function(p) { return p.code === code; });
-          if (product) grid.appendChild(createCard(product));
+          if (!product) return;
+          const group = window.getProductGroup(product);
+          if (group) {
+            if (seenGroups.has(group)) return; // 同グループは1枚のみ
+            seenGroups.add(group);
+            grid.appendChild(createCard(product, group));
+          } else {
+            grid.appendChild(createCard(product));
+          }
         });
 
         // テーブルをグリッドに差し替え
