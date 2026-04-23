@@ -283,6 +283,9 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 .modal-add-btn{display:block;width:100%;padding:12px;background:var(--red);color:#fff;border:none;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:1px;transition:background .2s}
 .modal-add-btn:hover{background:#a33025}
 .modal-add-btn.added{background:#27ae60}
+.modal-qty-quick{display:flex;gap:6px;flex-wrap:wrap}
+.modal-qty-quick .qty-preset{padding:6px 12px;border:1px solid var(--blue);background:#fff;color:var(--blue);font-size:12px;font-weight:700;cursor:pointer;border-radius:3px;transition:all .15s}
+.modal-qty-quick .qty-preset:hover{background:var(--blue);color:#fff}
 
 /* CHECKOUT MODAL */
 .checkout-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300;display:none;justify-content:center;align-items:flex-start;padding:40px 16px;overflow-y:auto;-webkit-overflow-scrolling:touch}
@@ -339,6 +342,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         <a href="#cat2" class="nav-link" data-category="cat2">シリコンカバー</a>
         <a href="#cat3" class="nav-link" data-category="cat3">電源</a>
         <a href="#cat4" class="nav-link" data-category="cat4">制御機器</a>
+        <a href="#cat6" class="nav-link" data-category="cat6">アルミフレーム</a>
       </div>
       <div class="cart-icon-wrap" onclick="openCart()">
         <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
@@ -1223,7 +1227,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <th>型番</th>
               <th>製品名</th>
               <th>対応テープ幅</th>
-              <th>当社価格/m</th>
+              <th>当社価格/10m巻</th>
               <th>他店相場</th>
             </tr>
           </thead>
@@ -1233,96 +1237,96 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <td class="product-name">
                 シリコンカバー 1010 正面発光（5-6mm対応） 
                 <button class="product-link" onclick="openModal(157)">詳細</button>
-              </td><td>5-6mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>5-6mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-F-1212</td>
               <td class="product-name">
                 シリコンカバー 1212 正面発光（8-10mm対応） 
                 <button class="product-link" onclick="openModal(158)">詳細</button>
-              </td><td>8-10mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>8-10mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-F-1515</td>
               <td class="product-name">
                 シリコンカバー 1515 正面発光（8-10mm対応） 
                 <button class="product-link" onclick="openModal(159)">詳細</button>
-              </td><td>8-10mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>8-10mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-F-1615</td>
               <td class="product-name">
                 シリコンカバー 1615 正面発光（8-10mm対応） 
                 <button class="product-link" onclick="openModal(160)">詳細</button>
-              </td><td>8-10mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>8-10mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-F-1616</td>
               <td class="product-name">
                 シリコンカバー 1616 正面発光（10-12mm対応） 
                 <button class="product-link" onclick="openModal(161)">詳細</button>
-              </td><td>10-12mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>10-12mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-F-2010</td>
               <td class="product-name">
                 シリコンカバー 2010 正面発光（10-12mm対応） 
                 <button class="product-link" onclick="openModal(162)">詳細</button>
-              </td><td>10-12mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>10-12mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-F-2020</td>
               <td class="product-name">
                 シリコンカバー 2020 正面発光（10-12mm対応） 
                 <button class="product-link" onclick="openModal(204)">詳細</button>
-              </td><td>10-12mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>10-12mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-F-2025</td>
               <td class="product-name">
                 シリコンカバー 2025 正面発光（15-18mm対応） 
                 <button class="product-link" onclick="openModal(205)">詳細</button>
-              </td><td>15-18mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>15-18mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-F-2520</td>
               <td class="product-name">
                 シリコンカバー 2520 正面発光（12-15mm対応） 
                 <button class="product-link" onclick="openModal(206)">詳細</button>
-              </td><td>12-15mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>12-15mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-F-3010</td>
               <td class="product-name">
                 シリコンカバー 3010 正面発光（10-12mm対応） 
                 <button class="product-link" onclick="openModal(207)">詳細</button>
-              </td><td>10-12mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>10-12mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-F-3620</td>
               <td class="product-name">
                 シリコンカバー 3620 正面発光（15-18mm対応） 
                 <button class="product-link" onclick="openModal(208)">詳細</button>
-              </td><td>15-18mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>15-18mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-F-4020</td>
               <td class="product-name">
                 シリコンカバー 4020 正面発光（15-18mm対応） 
                 <button class="product-link" onclick="openModal(209)">詳細</button>
-              </td><td>15-18mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>15-18mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
           </tbody>
         </table>
@@ -1335,7 +1339,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <th>型番</th>
               <th>製品名</th>
               <th>対応テープ幅</th>
-              <th>当社価格/m</th>
+              <th>当社価格/10m巻</th>
               <th>他店相場</th>
             </tr>
           </thead>
@@ -1345,24 +1349,24 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <td class="product-name">
                 シリコンカバー 1010 三面発光（5-6mm対応） 
                 <button class="product-link" onclick="openModal(210)">詳細</button>
-              </td><td>5-6mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>5-6mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-3S-1616</td>
               <td class="product-name">
                 シリコンカバー 1616 三面発光（10-12mm対応） 
                 <button class="product-link" onclick="openModal(170)">詳細</button>
-              </td><td>10-12mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>10-12mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-3S-2014</td>
               <td class="product-name">
                 シリコンカバー 2014 三面発光（10-12mm対応） 
                 <button class="product-link" onclick="openModal(171)">詳細</button>
-              </td><td>10-12mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>10-12mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
           </tbody>
         </table>
@@ -1375,7 +1379,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <th>型番</th>
               <th>製品名</th>
               <th>対応テープ幅</th>
-              <th>当社価格/m</th>
+              <th>当社価格/10m巻</th>
               <th>他店相場</th>
             </tr>
           </thead>
@@ -1385,24 +1389,24 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <td class="product-name">
                 シリコンカバー 2020 側面発光（10-12mm対応） 
                 <button class="product-link" onclick="openModal(172)">詳細</button>
-              </td><td>10-12mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>10-12mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-SD-2025</td>
               <td class="product-name">
                 シリコンカバー 2025 側面発光（8-10mm対応） 
                 <button class="product-link" onclick="openModal(173)">詳細</button>
-              </td><td>8-10mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>8-10mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-SD-B817</td>
               <td class="product-name">
                 シリコンカバー B817 側面発光（5-6mm対応） 
                 <button class="product-link" onclick="openModal(174)">詳細</button>
-              </td><td>5-6mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>5-6mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
           </tbody>
         </table>
@@ -1415,7 +1419,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <th>型番</th>
               <th>製品名</th>
               <th>対応テープ幅</th>
-              <th>当社価格/m</th>
+              <th>当社価格/10m巻</th>
               <th>他店相場</th>
             </tr>
           </thead>
@@ -1425,96 +1429,96 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <td class="product-name">
                 シリコンカバー 1010 無底帯辺 正面発光（5-6mm対応） 
                 <button class="product-link" onclick="openModal(175)">詳細</button>
-              </td><td>5-6mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>5-6mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-NB-1210</td>
               <td class="product-name">
                 シリコンカバー 1210 無底帯辺 正面発光（8-10mm対応） 
                 <button class="product-link" onclick="openModal(176)">詳細</button>
-              </td><td>8-10mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>8-10mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-NB-1212</td>
               <td class="product-name">
                 シリコンカバー 1212 無底帯辺 正面発光（8-10mm対応） 
                 <button class="product-link" onclick="openModal(177)">詳細</button>
-              </td><td>8-10mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>8-10mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-NB-1414</td>
               <td class="product-name">
                 シリコンカバー 1414 無底帯辺 正面発光（8-10mm対応） 
                 <button class="product-link" onclick="openModal(178)">詳細</button>
-              </td><td>8-10mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>8-10mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-NB-1510</td>
               <td class="product-name">
                 シリコンカバー 1510 無底帯辺 正面発光（8-10mm対応） 
                 <button class="product-link" onclick="openModal(179)">詳細</button>
-              </td><td>8-10mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>8-10mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-NB-1616</td>
               <td class="product-name">
                 シリコンカバー 1616 無底帯辺 正面発光（10-12mm対応） 
                 <button class="product-link" onclick="openModal(180)">詳細</button>
-              </td><td>10-12mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>10-12mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-NB-2010</td>
               <td class="product-name">
                 シリコンカバー 2010 無底帯辺 正面発光（10-12mm対応） 
                 <button class="product-link" onclick="openModal(181)">詳細</button>
-              </td><td>10-12mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>10-12mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-NB-2014</td>
               <td class="product-name">
                 シリコンカバー 2014 無底帯辺 正面発光（10-12mm対応） 
                 <button class="product-link" onclick="openModal(182)">詳細</button>
-              </td><td>10-12mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>10-12mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-NB-2020</td>
               <td class="product-name">
                 シリコンカバー 2020 無底帯辺 正面発光（10-12mm対応） 
                 <button class="product-link" onclick="openModal(183)">詳細</button>
-              </td><td>10-12mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>10-12mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-NB-2520</td>
               <td class="product-name">
                 シリコンカバー 2520 無底帯辺 正面発光（15-18mm対応） 
                 <button class="product-link" onclick="openModal(184)">詳細</button>
-              </td><td>15-18mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>15-18mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-NB-3020</td>
               <td class="product-name">
                 シリコンカバー 3020 無底帯辺 正面発光（15-18mm対応） 
                 <button class="product-link" onclick="openModal(185)">詳細</button>
-              </td><td>15-18mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>15-18mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-NB-4025</td>
               <td class="product-name">
                 シリコンカバー 4025 無底帯辺 正面発光（15-18mm対応） 
                 <button class="product-link" onclick="openModal(186)">詳細</button>
-              </td><td>15-18mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>15-18mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
           </tbody>
         </table>
@@ -1527,7 +1531,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <th>型番</th>
               <th>製品名</th>
               <th>対応テープ幅</th>
-              <th>当社価格/m</th>
+              <th>当社価格/10m巻</th>
               <th>他店相場</th>
             </tr>
           </thead>
@@ -1537,32 +1541,32 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <td class="product-name">
                 シリコンカバー 1616 有底帯辺 正面発光（10-12mm対応） 
                 <button class="product-link" onclick="openModal(187)">詳細</button>
-              </td><td>10-12mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>10-12mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-WB-2014</td>
               <td class="product-name">
                 シリコンカバー 2014 有底帯辺 正面発光（10-12mm対応） 
                 <button class="product-link" onclick="openModal(188)">詳細</button>
-              </td><td>10-12mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>10-12mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-WB-2020</td>
               <td class="product-name">
                 シリコンカバー 2020 有底帯辺 正面発光（10-12mm対応） 
                 <button class="product-link" onclick="openModal(189)">詳細</button>
-              </td><td>10-12mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>10-12mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-WB-3020</td>
               <td class="product-name">
                 シリコンカバー 3020 有底帯辺 正面発光（15-18mm対応） 
                 <button class="product-link" onclick="openModal(190)">詳細</button>
-              </td><td>15-18mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>15-18mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
           </tbody>
         </table>
@@ -1575,7 +1579,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <th>型番</th>
               <th>製品名</th>
               <th>対応テープ幅</th>
-              <th>当社価格/m</th>
+              <th>当社価格/10m巻</th>
               <th>他店相場</th>
             </tr>
           </thead>
@@ -1585,56 +1589,56 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <td class="product-name">
                 シリコンカバー φ13 360°発光（5-6mm対応） 
                 <button class="product-link" onclick="openModal(191)">詳細</button>
-              </td><td>5-6mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>5-6mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-R-φ16</td>
               <td class="product-name">
                 シリコンカバー φ16 360°発光（5-6mm対応） 
                 <button class="product-link" onclick="openModal(192)">詳細</button>
-              </td><td>5-6mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>5-6mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-R-φ20</td>
               <td class="product-name">
                 シリコンカバー φ20 360°発光（6-8mm対応） 
                 <button class="product-link" onclick="openModal(193)">詳細</button>
-              </td><td>6-8mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>6-8mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-R-φ22</td>
               <td class="product-name">
                 シリコンカバー φ22 360°発光（6-8mm対応） 
                 <button class="product-link" onclick="openModal(194)">詳細</button>
-              </td><td>6-8mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>6-8mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-R-φ26</td>
               <td class="product-name">
                 シリコンカバー φ26 360°発光（8-10mm対応） 
                 <button class="product-link" onclick="openModal(195)">詳細</button>
-              </td><td>8-10mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>8-10mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-R-φ33</td>
               <td class="product-name">
                 シリコンカバー φ33 360°発光（8-10mm対応） 
                 <button class="product-link" onclick="openModal(196)">詳細</button>
-              </td><td>8-10mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>8-10mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-R-φ40</td>
               <td class="product-name">
                 シリコンカバー φ40 360°発光（10-12mm対応） 
                 <button class="product-link" onclick="openModal(197)">詳細</button>
-              </td><td>10-12mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>10-12mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
           </tbody>
         </table>
@@ -1647,7 +1651,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <th>型番</th>
               <th>製品名</th>
               <th>対応テープ幅</th>
-              <th>当社価格/m</th>
+              <th>当社価格/10m巻</th>
               <th>他店相場</th>
             </tr>
           </thead>
@@ -1657,38 +1661,39 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <td class="product-name">
                 シリコンカバー D1313 270°発光（8mm対応） 
                 <button class="product-link" onclick="openModal(198)">詳細</button>
-              </td><td>8mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>8mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-SP-2014</td>
               <td class="product-name">
                 シリコンカバー 2014 異形正面発光（5-6mm対応） 
                 <button class="product-link" onclick="openModal(199)">詳細</button>
-              </td><td>5-6mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>5-6mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-SP-2010</td>
               <td class="product-name">
                 シリコンカバー 2010 D形正面発光（5mm対応） 
                 <button class="product-link" onclick="openModal(200)">詳細</button>
-              </td><td>5mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>5mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
 <tr>
               <td class="model-code">SC-SP-3020</td>
               <td class="product-name">
                 シリコンカバー 3020 扇形正面発光（10-12mm対応） 
                 <button class="product-link" onclick="openModal(201)">詳細</button>
-              </td><td>10-12mm</td><td class="price">¥1,200</td>
-              <td>¥1,480〜</td>
+              </td><td>10-12mm</td><td class="price">¥6,000</td>
+              <td>¥14,800〜</td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="subcategory">
         <h3>エンドキャップ（角型）</h3>
+        <p style="font-size:11px;color:var(--text-muted);margin:4px 0 8px">※ 10個単位〜承ります（施工効率化のため、1個単位の販売は廃止しました）。価格は1個あたりの金額で、割引はございません。</p>
         <table class="product-table">
           <thead>
             <tr>
@@ -1697,7 +1702,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <th>対応カバー</th>
               <th>タイプ</th>
               <th>カラー</th>
-              <th>当社価格/個</th>
+              <th>当社価格/個<br><small style="font-weight:400;color:var(--text-muted)">※10個〜</small></th>
               <th>他店相場</th>
             </tr>
           </thead>
@@ -1963,6 +1968,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       </div>
       <div class="subcategory">
         <h3>エンドキャップ（丸型）</h3>
+        <p style="font-size:11px;color:var(--text-muted);margin:4px 0 8px">※ 10個単位〜承ります（施工効率化のため、1個単位の販売は廃止しました）。価格は1個あたりの金額で、割引はございません。</p>
         <table class="product-table">
           <thead>
             <tr>
@@ -1971,7 +1977,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <th>対応カバー</th>
               <th>タイプ</th>
               <th>カラー</th>
-              <th>当社価格/個</th>
+              <th>当社価格/個<br><small style="font-weight:400;color:var(--text-muted)">※10個〜</small></th>
               <th>他店相場</th>
             </tr>
           </thead>
@@ -2168,7 +2174,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 <tr>
               <td class="model-code">PSU-24V-200W</td>
               <td class="product-name">
-                DC24V スタンダード電源 <span class="product-tag">販売元推奨</span>
+                DC24V スタンダード電源 200W <span class="product-tag">販売元推奨</span>
                 <button class="product-link" onclick="openModal(301)">詳細</button>
               </td><td>DC24V</td>
               <td>200W</td>
@@ -2176,9 +2182,29 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <td>¥6,000〜10,000</td>
             </tr>
 <tr>
+              <td class="model-code">PSU-24V-300W</td>
+              <td class="product-name">
+                DC24V スタンダード電源 300W
+                <button class="product-link" onclick="openModal(324)">詳細</button>
+              </td><td>DC24V</td>
+              <td>300W</td>
+              <td>非防水</td><td class="price">¥3,000</td>
+              <td>¥8,000〜13,000</td>
+            </tr>
+<tr>
+              <td class="model-code">PSU-24V-400W</td>
+              <td class="product-name">
+                DC24V スタンダード電源 400W
+                <button class="product-link" onclick="openModal(325)">詳細</button>
+              </td><td>DC24V</td>
+              <td>400W</td>
+              <td>非防水</td><td class="price">¥3,200</td>
+              <td>¥10,000〜15,000</td>
+            </tr>
+<tr>
               <td class="model-code">PSU-12V-200W</td>
               <td class="product-name">
-                DC12V スタンダード電源 <span class="product-tag">販売元推奨</span>
+                DC12V スタンダード電源 200W <span class="product-tag">販売元推奨</span>
                 <button class="product-link" onclick="openModal(302)">詳細</button>
               </td><td>DC12V</td>
               <td>200W</td>
@@ -2186,24 +2212,24 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <td>¥6,000〜10,000</td>
             </tr>
 <tr>
-              <td class="model-code">PSU-24V-200W-WP</td>
+              <td class="model-code">PSU-12V-300W</td>
               <td class="product-name">
-                【防水】DC24V スタンダード電源 <span class="product-tag">防水</span>
-                <button class="product-link" onclick="openModal(303)">詳細</button>
-              </td><td>DC24V</td>
-              <td>200W</td>
-              <td>IP67</td><td class="price">¥5,600</td>
-              <td>¥12,000〜18,000</td>
+                DC12V スタンダード電源 300W
+                <button class="product-link" onclick="openModal(326)">詳細</button>
+              </td><td>DC12V</td>
+              <td>300W</td>
+              <td>非防水</td><td class="price">¥3,000</td>
+              <td>¥8,000〜13,000</td>
             </tr>
 <tr>
-              <td class="model-code">PSU-12V-200W-WP</td>
+              <td class="model-code">PSU-12V-400W</td>
               <td class="product-name">
-                【防水】DC12V スタンダード電源 <span class="product-tag">防水</span>
-                <button class="product-link" onclick="openModal(304)">詳細</button>
+                DC12V スタンダード電源 400W
+                <button class="product-link" onclick="openModal(327)">詳細</button>
               </td><td>DC12V</td>
-              <td>200W</td>
-              <td>IP67</td><td class="price">¥5,600</td>
-              <td>¥12,000〜18,000</td>
+              <td>400W</td>
+              <td>非防水</td><td class="price">¥3,200</td>
+              <td>¥10,000〜15,000</td>
             </tr>
           </tbody>
         </table>
@@ -2241,8 +2267,8 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
                 <button class="product-link" onclick="openModal(305)">詳細</button>
               </td><td>単色調光</td>
               <td>RFリモコン</td>
-              <td>DC12V/24V</td><td class="price">¥2,400</td>
-              <td>¥5,000〜8,000</td>
+              <td>DC12V/24V</td><td class="price">¥1,200</td>
+              <td>¥3,000〜5,000</td>
             </tr>
 <tr>
               <td class="model-code">CTRL-RGB-RF</td>
@@ -2263,6 +2289,75 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               <td>Wi-Fi + リモコン</td>
               <td>DC12V/24V</td><td class="price">¥2,400</td>
               <td>¥5,000〜8,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAT6: アルミフレーム -->
+  <section id="cat6" class="category">
+    <div class="category-header">
+      <h2 class="category-title">アルミフレーム</h2>
+      <p class="category-description">LEDテープの放熱と保護を両立。通常型・埋め込み型 × シルバー／ブラックの4SKUを1m単位で販売。</p>
+    </div>
+
+    <div class="subcategories">
+      <div class="subcategory">
+        <h3>アルミフレーム — LEDテープの放熱と保護</h3>
+        <table class="product-table">
+          <thead>
+            <tr>
+              <th>型番</th>
+              <th>製品名</th>
+              <th>タイプ</th>
+              <th>カラー</th>
+              <th>長さ</th>
+              <th>価格</th>
+              <th>市場相場</th>
+            </tr>
+          </thead>
+          <tbody>
+<tr>
+              <td class="model-code">ALM-NORMAL-SV</td>
+              <td class="product-name">
+                アルミフレーム 通常型 シルバー
+                <button class="product-link" onclick="openModal(328)">詳細</button>
+              </td><td>通常型（U字）</td>
+              <td>シルバー</td>
+              <td>1m</td><td class="price">¥1,200</td>
+              <td>¥3,000〜5,000</td>
+            </tr>
+<tr>
+              <td class="model-code">ALM-NORMAL-BK</td>
+              <td class="product-name">
+                アルミフレーム 通常型 ブラック
+                <button class="product-link" onclick="openModal(329)">詳細</button>
+              </td><td>通常型（U字）</td>
+              <td>マットブラック</td>
+              <td>1m</td><td class="price">¥1,200</td>
+              <td>¥3,000〜5,000</td>
+            </tr>
+<tr>
+              <td class="model-code">ALM-RECESSED-SV</td>
+              <td class="product-name">
+                アルミフレーム 埋め込み型 シルバー <span class="product-tag">埋め込み</span>
+                <button class="product-link" onclick="openModal(330)">詳細</button>
+              </td><td>埋め込み型（T字）</td>
+              <td>シルバー</td>
+              <td>1m</td><td class="price">¥1,200</td>
+              <td>¥3,500〜6,000</td>
+            </tr>
+<tr>
+              <td class="model-code">ALM-RECESSED-BK</td>
+              <td class="product-name">
+                アルミフレーム 埋め込み型 ブラック <span class="product-tag">埋め込み</span>
+                <button class="product-link" onclick="openModal(331)">詳細</button>
+              </td><td>埋め込み型（T字）</td>
+              <td>マットブラック</td>
+              <td>1m</td><td class="price">¥1,200</td>
+              <td>¥3,500〜6,000</td>
             </tr>
           </tbody>
         </table>
@@ -2452,6 +2547,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           <span id="modalQtyUnit" class="modal-qty-unit">m</span>
           <span id="modalSubtotal" class="modal-subtotal">小計: <strong>¥1,200</strong></span>
         </div>
+        <div id="modalQtyQuickSelect" class="modal-qty-quick" style="display:none;gap:6px;flex-wrap:wrap;margin:8px 0"></div>
         <button class="modal-add-btn" id="modalAddBtn" onclick="modalAddToCart()">カートに入れる</button>
       </div>
 </div>
@@ -3996,7 +4092,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 1010 正面発光（5-6mm対応）",
     "category": "CAT2",
     "subcategory": "正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4005,7 +4101,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4018,7 +4114,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 1212 正面発光（8-10mm対応）",
     "category": "CAT2",
     "subcategory": "正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4027,7 +4123,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4040,7 +4136,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 1515 正面発光（8-10mm対応）",
     "category": "CAT2",
     "subcategory": "正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4049,7 +4145,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4062,7 +4158,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 1615 正面発光（8-10mm対応）",
     "category": "CAT2",
     "subcategory": "正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4071,7 +4167,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4084,7 +4180,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 1616 正面発光（10-12mm対応）",
     "category": "CAT2",
     "subcategory": "正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4093,7 +4189,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4106,7 +4202,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 2010 正面発光（10-12mm対応）",
     "category": "CAT2",
     "subcategory": "正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4115,7 +4211,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4128,7 +4224,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 2020 正面発光（10-12mm対応）",
     "category": "CAT2",
     "subcategory": "正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4137,7 +4233,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4150,7 +4246,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 2025 正面発光（15-18mm対応）",
     "category": "CAT2",
     "subcategory": "正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4159,7 +4255,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4172,7 +4268,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 2520 正面発光（12-15mm対応）",
     "category": "CAT2",
     "subcategory": "正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4181,7 +4277,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4194,7 +4290,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 3010 正面発光（10-12mm対応）",
     "category": "CAT2",
     "subcategory": "正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4203,7 +4299,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4216,7 +4312,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 3620 正面発光（15-18mm対応）",
     "category": "CAT2",
     "subcategory": "正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4225,7 +4321,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4238,7 +4334,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 4020 正面発光（15-18mm対応）",
     "category": "CAT2",
     "subcategory": "正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4247,7 +4343,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4260,7 +4356,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 1010 三面発光（5-6mm対応）",
     "category": "CAT2",
     "subcategory": "三面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4269,7 +4365,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "三面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4282,7 +4378,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 1616 三面発光（10-12mm対応）",
     "category": "CAT2",
     "subcategory": "三面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4291,7 +4387,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "三面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4304,7 +4400,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 2014 三面発光（10-12mm対応）",
     "category": "CAT2",
     "subcategory": "三面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4313,7 +4409,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "三面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4326,7 +4422,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 2020 側面発光（10-12mm対応）",
     "category": "CAT2",
     "subcategory": "側面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4335,7 +4431,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "側面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4348,7 +4444,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 2025 側面発光（8-10mm対応）",
     "category": "CAT2",
     "subcategory": "側面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4357,7 +4453,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "側面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4370,7 +4466,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー B817 側面発光（5-6mm対応）",
     "category": "CAT2",
     "subcategory": "側面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4379,7 +4475,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "側面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4392,7 +4488,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 1010 無底帯辺 正面発光（5-6mm対応）",
     "category": "CAT2",
     "subcategory": "無底帯辺 正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4401,7 +4497,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "無底帯辺 正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4414,7 +4510,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 1210 無底帯辺 正面発光（8-10mm対応）",
     "category": "CAT2",
     "subcategory": "無底帯辺 正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4423,7 +4519,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "無底帯辺 正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4436,7 +4532,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 1212 無底帯辺 正面発光（8-10mm対応）",
     "category": "CAT2",
     "subcategory": "無底帯辺 正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4445,7 +4541,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "無底帯辺 正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4458,7 +4554,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 1414 無底帯辺 正面発光（8-10mm対応）",
     "category": "CAT2",
     "subcategory": "無底帯辺 正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4467,7 +4563,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "無底帯辺 正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4480,7 +4576,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 1510 無底帯辺 正面発光（8-10mm対応）",
     "category": "CAT2",
     "subcategory": "無底帯辺 正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4489,7 +4585,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "無底帯辺 正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4502,7 +4598,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 1616 無底帯辺 正面発光（10-12mm対応）",
     "category": "CAT2",
     "subcategory": "無底帯辺 正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4511,7 +4607,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "無底帯辺 正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4524,7 +4620,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 2010 無底帯辺 正面発光（10-12mm対応）",
     "category": "CAT2",
     "subcategory": "無底帯辺 正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4533,7 +4629,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "無底帯辺 正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4546,7 +4642,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 2014 無底帯辺 正面発光（10-12mm対応）",
     "category": "CAT2",
     "subcategory": "無底帯辺 正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4555,7 +4651,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "無底帯辺 正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4568,7 +4664,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 2020 無底帯辺 正面発光（10-12mm対応）",
     "category": "CAT2",
     "subcategory": "無底帯辺 正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4577,7 +4673,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "無底帯辺 正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4590,7 +4686,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 2520 無底帯辺 正面発光（15-18mm対応）",
     "category": "CAT2",
     "subcategory": "無底帯辺 正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4599,7 +4695,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "無底帯辺 正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4612,7 +4708,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 3020 無底帯辺 正面発光（15-18mm対応）",
     "category": "CAT2",
     "subcategory": "無底帯辺 正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4621,7 +4717,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "無底帯辺 正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4634,7 +4730,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 4025 無底帯辺 正面発光（15-18mm対応）",
     "category": "CAT2",
     "subcategory": "無底帯辺 正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4643,7 +4739,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "無底帯辺 正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4656,7 +4752,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 1616 有底帯辺 正面発光（10-12mm対応）",
     "category": "CAT2",
     "subcategory": "有底帯辺 正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4665,7 +4761,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "有底帯辺 正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4678,7 +4774,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 2014 有底帯辺 正面発光（10-12mm対応）",
     "category": "CAT2",
     "subcategory": "有底帯辺 正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4687,7 +4783,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "有底帯辺 正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4700,7 +4796,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 2020 有底帯辺 正面発光（10-12mm対応）",
     "category": "CAT2",
     "subcategory": "有底帯辺 正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4709,7 +4805,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "有底帯辺 正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4722,7 +4818,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 3020 有底帯辺 正面発光（15-18mm対応）",
     "category": "CAT2",
     "subcategory": "有底帯辺 正面発光タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4731,7 +4827,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "有底帯辺 正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4744,7 +4840,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー φ13 360°発光（5-6mm対応）",
     "category": "CAT2",
     "subcategory": "360°発光タイプ（丸型）",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4753,7 +4849,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "360°発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4766,7 +4862,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー φ16 360°発光（5-6mm対応）",
     "category": "CAT2",
     "subcategory": "360°発光タイプ（丸型）",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4775,7 +4871,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "360°発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4788,7 +4884,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー φ20 360°発光（6-8mm対応）",
     "category": "CAT2",
     "subcategory": "360°発光タイプ（丸型）",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4797,7 +4893,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "360°発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4810,7 +4906,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー φ22 360°発光（6-8mm対応）",
     "category": "CAT2",
     "subcategory": "360°発光タイプ（丸型）",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4819,7 +4915,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "360°発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4832,7 +4928,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー φ26 360°発光（8-10mm対応）",
     "category": "CAT2",
     "subcategory": "360°発光タイプ（丸型）",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4841,7 +4937,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "360°発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4854,7 +4950,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー φ33 360°発光（8-10mm対応）",
     "category": "CAT2",
     "subcategory": "360°発光タイプ（丸型）",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4863,7 +4959,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "360°発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4876,7 +4972,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー φ40 360°発光（10-12mm対応）",
     "category": "CAT2",
     "subcategory": "360°発光タイプ（丸型）",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4885,7 +4981,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "360°発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4898,7 +4994,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー D1313 270°発光（8mm対応）",
     "category": "CAT2",
     "subcategory": "特殊形状タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4907,7 +5003,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "270°発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4920,7 +5016,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 2014 異形正面発光（5-6mm対応）",
     "category": "CAT2",
     "subcategory": "特殊形状タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4929,7 +5025,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "異形正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4942,7 +5038,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 2010 D形正面発光（5mm対応）",
     "category": "CAT2",
     "subcategory": "特殊形状タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4951,7 +5047,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "D形正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -4964,7 +5060,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "シリコンカバー 3020 扇形正面発光（10-12mm対応）",
     "category": "CAT2",
     "subcategory": "特殊形状タイプ",
-    "price": 1200,
+    "price": 6000,
     "marketPrice": "¥1,480〜",
     "tags": [],
     "specs": {
@@ -4973,7 +5069,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "発光タイプ": "扇形正面発光",
       "素材": "高透光シリコン",
       "カラー": "白 / 黒",
-      "販売単位": "1m",
+      "販売単位": "10m巻",
       "耐用温度": "-20℃ ~ +60℃",
       "曲げ半径": "約30mm以上",
       "難燃性": "UL94 V-0相当"
@@ -6118,8 +6214,8 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "name": "単色調光器 RFリモコン付",
     "category": "CAT4",
     "subcategory": "LED用コントローラー・調光器",
-    "price": 2400,
-    "marketPrice": "¥5,000〜8,000",
+    "price": 1200,
+    "marketPrice": "¥3,000〜5,000",
     "tags": [],
     "specs": {
       "IP規格": "単色調光",
@@ -6581,6 +6677,188 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "接着方式": "3M製両面テープ"
     },
     "description": "爽やかなレモンイエロー発光のCOB LEDテープライト（DC12V）。明るく親しみやすい黄色で、ディスプレイ・サイン・装飾照明に最適。12V動作のため車載・小型設備にも対応。COB方式により、ドット感のない滑らかで均一な発光ラインを実現。 5m、動作電圧DC12V。耐熱シリコン被覆仕様。サウナ・温浴施設・厨房など高温環境（最大80℃）での使用を想定した特殊モデルです。 テープ裏面の3M製両面テープで簡単に貼り付け可能。シリコンカバーに挿入してネオン風の演出にもお使いいただけます。"
+  },
+  {
+    "id": 324,
+    "code": "PSU-24V-300W",
+    "name": "DC24V スタンダード電源 300W",
+    "category": "CAT3",
+    "subcategory": "電源装置",
+    "price": 3000,
+    "marketPrice": "¥8,000〜12,000",
+    "tags": [
+      "販売元推奨"
+    ],
+    "specs": {
+      "動作電圧": "DC24V",
+      "capacity": "300W",
+      "防護等級": "非防水",
+      "入力電圧": "AC100-240V 50/60Hz",
+      "効率": "≥88%",
+      "保護機能": "過電流/過電圧/短絡保護",
+      "認証": "PSE適合",
+      "寿命": "50,000時間以上"
+    },
+    "description": "DC24V対応のスタンダードLED電源装置（300W）。中〜大規模のLED配線に対応する容量。堅牢なアルミ筐体で放熱性に優れ、長時間の連続使用にも対応。過電流・過電圧・短絡保護回路を内蔵し、LEDテープの安定駆動を支えます。PSE適合品。入力電圧AC100-240V対応。端子台接続方式で施工現場での配線も容易です。LEDテープの総ワット数に応じて余裕をもった容量選定をおすすめします（推奨：実使用量の80%以下）。"
+  },
+  {
+    "id": 325,
+    "code": "PSU-24V-400W",
+    "name": "DC24V スタンダード電源 400W",
+    "category": "CAT3",
+    "subcategory": "電源装置",
+    "price": 3200,
+    "marketPrice": "¥10,000〜15,000",
+    "tags": [
+      "大容量"
+    ],
+    "specs": {
+      "動作電圧": "DC24V",
+      "capacity": "400W",
+      "防護等級": "非防水",
+      "入力電圧": "AC100-240V 50/60Hz",
+      "効率": "≥88%",
+      "保護機能": "過電流/過電圧/短絡保護",
+      "認証": "PSE適合",
+      "寿命": "50,000時間以上"
+    },
+    "description": "DC24V対応の大容量LED電源装置（400W）。大規模店舗・看板・商業施設など多数のLEDテープを一元駆動する用途に最適。堅牢なアルミ筐体で放熱性に優れ、長時間の連続使用にも対応。過電流・過電圧・短絡保護回路を内蔵し、LEDテープの安定駆動を支えます。PSE適合品。入力電圧AC100-240V対応。端子台接続方式で施工現場での配線も容易です。LEDテープの総ワット数に応じて余裕をもった容量選定をおすすめします（推奨：実使用量の80%以下）。"
+  },
+  {
+    "id": 326,
+    "code": "PSU-12V-300W",
+    "name": "DC12V スタンダード電源 300W",
+    "category": "CAT3",
+    "subcategory": "電源装置",
+    "price": 3000,
+    "marketPrice": "¥8,000〜12,000",
+    "tags": [],
+    "specs": {
+      "動作電圧": "DC12V",
+      "capacity": "300W",
+      "防護等級": "非防水",
+      "入力電圧": "AC100-240V 50/60Hz",
+      "効率": "≥88%",
+      "保護機能": "過電流/過電圧/短絡保護",
+      "認証": "PSE適合",
+      "寿命": "50,000時間以上"
+    },
+    "description": "DC12V対応のスタンダードLED電源装置（300W）。中〜大規模のLED配線に対応する容量。堅牢なアルミ筐体で放熱性に優れ、長時間の連続使用にも対応。過電流・過電圧・短絡保護回路を内蔵し、LEDテープの安定駆動を支えます。PSE適合品。入力電圧AC100-240V対応。端子台接続方式で施工現場での配線も容易です。LEDテープの総ワット数に応じて余裕をもった容量選定をおすすめします（推奨：実使用量の80%以下）。"
+  },
+  {
+    "id": 327,
+    "code": "PSU-12V-400W",
+    "name": "DC12V スタンダード電源 400W",
+    "category": "CAT3",
+    "subcategory": "電源装置",
+    "price": 3200,
+    "marketPrice": "¥10,000〜15,000",
+    "tags": [
+      "大容量"
+    ],
+    "specs": {
+      "動作電圧": "DC12V",
+      "capacity": "400W",
+      "防護等級": "非防水",
+      "入力電圧": "AC100-240V 50/60Hz",
+      "効率": "≥88%",
+      "保護機能": "過電流/過電圧/短絡保護",
+      "認証": "PSE適合",
+      "寿命": "50,000時間以上"
+    },
+    "description": "DC12V対応の大容量LED電源装置（400W）。大規模店舗・看板・商業施設など多数のLEDテープを一元駆動する用途に最適。堅牢なアルミ筐体で放熱性に優れ、長時間の連続使用にも対応。過電流・過電圧・短絡保護回路を内蔵し、LEDテープの安定駆動を支えます。PSE適合品。入力電圧AC100-240V対応。端子台接続方式で施工現場での配線も容易です。LEDテープの総ワット数に応じて余裕をもった容量選定をおすすめします（推奨：実使用量の80%以下）。"
+  },
+  {
+    "id": 328,
+    "code": "ALM-NORMAL-SV",
+    "name": "アルミフレーム 通常型 シルバー",
+    "category": "CAT6",
+    "subcategory": "アルミフレーム — LEDテープの放熱と保護",
+    "price": 1200,
+    "marketPrice": "¥3,000〜5,000",
+    "tags": [],
+    "specs": {
+      "形状": "U字型（通常型）",
+      "仕上げ": "シルバーアルマイト",
+      "長さ": "1m/本",
+      "材質": "6063アルミ合金",
+      "幅": "17mm",
+      "高さ": "8mm",
+      "対応LEDテープ幅": "〜10mm",
+      "取付方式": "ネジ止め（フランジ付き）",
+      "付属品": "乳白色ディフューザーカバー・エンドキャップ・取付金具"
+    },
+    "description": "LEDテープライトの放熱と保護を両立するアルミフレーム（通常型・シルバー仕上げ）。壁面・天井面への露出取付に最適なU字型断面で、フランジ部分をネジ止めすれば施工完了。シルバーアルマイト仕上げで一般住宅・オフィス・店舗のインテリアに自然に馴染みます。付属の乳白色ディフューザーカバーによりLEDの粒感を和らげ、滑らかな発光ラインを実現。6063アルミ合金製で放熱性に優れ、LEDテープの寿命を延ばします。1m/本、複数本の連結も可能。"
+  },
+  {
+    "id": 329,
+    "code": "ALM-NORMAL-BK",
+    "name": "アルミフレーム 通常型 ブラック",
+    "category": "CAT6",
+    "subcategory": "アルミフレーム — LEDテープの放熱と保護",
+    "price": 1200,
+    "marketPrice": "¥3,000〜5,000",
+    "tags": [],
+    "specs": {
+      "形状": "U字型（通常型）",
+      "仕上げ": "マットブラックアルマイト",
+      "長さ": "1m/本",
+      "材質": "6063アルミ合金",
+      "幅": "17mm",
+      "高さ": "8mm",
+      "対応LEDテープ幅": "〜10mm",
+      "取付方式": "ネジ止め（フランジ付き）",
+      "付属品": "乳白色ディフューザーカバー・エンドキャップ・取付金具"
+    },
+    "description": "LEDテープライトの放熱と保護を両立するアルミフレーム（通常型・マットブラック仕上げ）。壁面・天井面への露出取付に最適なU字型断面で、フランジ部分をネジ止めすれば施工完了。マットブラック仕上げはダークトーン空間・間接照明・店舗ディスプレイに最適で、目立たないフレームとして発光のみを際立たせます。付属の乳白色ディフューザーカバーによりLEDの粒感を和らげ、滑らかな発光ラインを実現。6063アルミ合金製で放熱性に優れ、LEDテープの寿命を延ばします。1m/本、複数本の連結も可能。"
+  },
+  {
+    "id": 330,
+    "code": "ALM-RECESSED-SV",
+    "name": "アルミフレーム 埋め込み型 シルバー",
+    "category": "CAT6",
+    "subcategory": "アルミフレーム — LEDテープの放熱と保護",
+    "price": 1200,
+    "marketPrice": "¥3,500〜6,000",
+    "tags": [
+      "埋め込み"
+    ],
+    "specs": {
+      "形状": "T字型（埋め込み型）",
+      "仕上げ": "シルバーアルマイト",
+      "長さ": "1m/本",
+      "材質": "6063アルミ合金",
+      "幅": "24mm（フランジ含む）",
+      "高さ": "8mm",
+      "対応LEDテープ幅": "〜10mm",
+      "取付方式": "壁・床への溝加工埋め込み",
+      "付属品": "乳白色ディフューザーカバー・エンドキャップ"
+    },
+    "description": "LEDテープライトをフラットに埋め込み設置できるアルミフレーム（埋め込み型・シルバー仕上げ）。壁面・床面・家具に溝加工を行い、T字型フランジで固定。発光面のみが表に露出し、フレーム自体は視界から消えるため、建築化照明・高級感のある間接照明に最適です。シルバーアルマイト仕上げは一般住宅・オフィス・店舗に幅広く調和。付属の乳白色ディフューザーカバーで滑らかな発光ラインを実現。6063アルミ合金製で放熱性に優れ、LEDテープの寿命を延ばします。1m/本、複数本の連結も可能。"
+  },
+  {
+    "id": 331,
+    "code": "ALM-RECESSED-BK",
+    "name": "アルミフレーム 埋め込み型 ブラック",
+    "category": "CAT6",
+    "subcategory": "アルミフレーム — LEDテープの放熱と保護",
+    "price": 1200,
+    "marketPrice": "¥3,500〜6,000",
+    "tags": [
+      "埋め込み"
+    ],
+    "specs": {
+      "形状": "T字型（埋め込み型）",
+      "仕上げ": "マットブラックアルマイト",
+      "長さ": "1m/本",
+      "材質": "6063アルミ合金",
+      "幅": "24mm（フランジ含む）",
+      "高さ": "8mm",
+      "対応LEDテープ幅": "〜10mm",
+      "取付方式": "壁・床への溝加工埋め込み",
+      "付属品": "乳白色ディフューザーカバー・エンドキャップ"
+    },
+    "description": "LEDテープライトをフラットに埋め込み設置できるアルミフレーム（埋め込み型・マットブラック仕上げ）。壁面・床面・家具に溝加工を行い、T字型フランジで固定。発光面のみが表に露出し、フレーム自体は視界から消えるため、建築化照明・高級感のある間接照明に最適です。マットブラック仕上げはダークトーン空間・店舗ディスプレイに最適で、漆黒の空間に発光ラインが浮かび上がる演出を実現。付属の乳白色ディフューザーカバーで滑らかな発光ラインを実現。6063アルミ合金製で放熱性に優れ、LEDテープの寿命を延ばします。1m/本、複数本の連結も可能。"
   }
 ];
 
@@ -6688,6 +6966,30 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         images: [
           'images/コントローラー/71Tfz7uEfsL.jpg'
         ]
+      },
+      'alm-normal-sv': {
+        pattern: /^ALM-NORMAL-SV$/,
+        images: [
+          'images/アルミフレーム/normal-silver.png'
+        ]
+      },
+      'alm-normal-bk': {
+        pattern: /^ALM-NORMAL-BK$/,
+        images: [
+          'images/アルミフレーム/normal-black.png'
+        ]
+      },
+      'alm-recessed-sv': {
+        pattern: /^ALM-RECESSED-SV$/,
+        images: [
+          'images/アルミフレーム/recessed-silver.png'
+        ]
+      },
+      'alm-recessed-bk': {
+        pattern: /^ALM-RECESSED-BK$/,
+        images: [
+          'images/アルミフレーム/recessed-black.png'
+        ]
       }
     };
 
@@ -6745,13 +7047,33 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 
       // Cart section
       var qtyInput = document.getElementById('modalQty');
-      if (qtyInput) qtyInput.value = 1;
+      var isEC = product.code.startsWith('EC-');
+      if (qtyInput) {
+        qtyInput.value = isEC ? 10 : 1;
+        qtyInput.min = isEC ? 10 : 1;
+        qtyInput.step = isEC ? 10 : 1;
+      }
       var unitEl = document.getElementById('modalQtyUnit');
       if (unitEl) {
-        if (product.code.startsWith('EC-')) unitEl.textContent = '個';
+        if (isEC) unitEl.textContent = '個（10個単位）';
+        else if (product.code.startsWith('SC-')) unitEl.textContent = '巻 (10m)';
+        else if (product.code.startsWith('ALM-')) unitEl.textContent = '本 (1m)';
         else if (product.category === 'CAT1') unitEl.textContent = '巻 (5m)';
         else if (product.category === 'CAT2') unitEl.textContent = 'm';
         else unitEl.textContent = '台';
+      }
+      // Quick select buttons for EC-* (10/20/30/40/50)
+      var qSel = document.getElementById('modalQtyQuickSelect');
+      if (qSel) {
+        if (isEC) {
+          qSel.style.display = 'flex';
+          qSel.innerHTML = [10,20,30,40,50].map(function(n){
+            return '<button type="button" class="qty-preset" onclick="setModalQty(' + n + ')">' + n + '個</button>';
+          }).join('');
+        } else {
+          qSel.style.display = 'none';
+          qSel.innerHTML = '';
+        }
       }
       updateModalSubtotal();
 
@@ -6774,10 +7096,22 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 
     function modalQtyChange(delta) {
       var input = document.getElementById('modalQty');
-      var val = parseInt(input.value) || 1;
-      val = Math.max(1, val + delta);
+      var product = PRODUCTS.find(p => p.id === currentModalProductId);
+      var isEC = product && product.code && product.code.startsWith('EC-');
+      var step = isEC ? 10 : 1;
+      var min = isEC ? 10 : 1;
+      var val = parseInt(input.value) || min;
+      val = Math.max(min, val + delta * step);
       input.value = val;
       updateModalSubtotal();
+    }
+
+    function setModalQty(n) {
+      var input = document.getElementById('modalQty');
+      if (input) {
+        input.value = n;
+        updateModalSubtotal();
+      }
     }
 
     function updateModalSubtotal() {
@@ -6934,6 +7268,10 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       qty = parseInt(qty) || 1;
       const product = PRODUCTS.find(p => p.id === productId);
       if (!product) return;
+      // エンドキャップは10個単位（10個未満は10に切り上げ、10の倍数でない場合は次の10の倍数に）
+      if (product.code && product.code.startsWith('EC-')) {
+        qty = Math.max(10, Math.ceil(qty / 10) * 10);
+      }
 
       const existing = cart.find(item => item.id === productId);
       if (existing) {
@@ -6944,7 +7282,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           code: product.code,
           name: product.name,
           price: product.price,
-          unit: product.code.startsWith('EC-') ? '個' : (product.category === 'CAT1' ? '巻(5m)' : product.category === 'CAT2' ? 'm' : '台'),
+          unit: product.code.startsWith('EC-') ? '個' : product.code.startsWith('SC-') ? '巻(10m)' : product.code.startsWith('ALM-') ? '本(1m)' : (product.category === 'CAT1' ? '巻(5m)' : product.category === 'CAT2' ? 'm' : '台'),
           qty: qty
         });
       }
@@ -6964,7 +7302,9 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     }
 
     function addToCartQuick(productId) {
-      addToCart(productId, 1);
+      var p = PRODUCTS.find(x => x.id === productId);
+      var defaultQty = (p && p.code && p.code.startsWith('EC-')) ? 10 : 1;
+      addToCart(productId, defaultQty);
       // Show brief notification
       const badge = document.getElementById('cartBadge');
       if (badge) {
@@ -7362,6 +7702,69 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           }
         });
       }
+    });
+
+    // === Phase 1: 商品一覧に画像サムネイル追加（2026-04-23） ===
+    document.addEventListener('DOMContentLoaded', function() {
+      // CSS 動的追加
+      const style = document.createElement('style');
+      style.textContent = `
+        td.product-thumb { width:70px; padding:4px; vertical-align:middle; text-align:center; }
+        td.product-thumb img { width:60px; height:60px; object-fit:cover; border-radius:3px; cursor:pointer; border:1px solid var(--border); transition:transform 0.15s, border-color 0.15s; }
+        td.product-thumb img:hover { border-color:var(--blue); transform:scale(1.1); box-shadow:0 2px 8px rgba(0,60,130,0.2); }
+        td.product-thumb .no-image { color:var(--text-muted); font-size:10px; }
+        th.product-thumb-col { width:70px; text-align:center; }
+      `;
+      document.head.appendChild(style);
+
+      // 各 .product-table に画像列を追加
+      document.querySelectorAll('table.product-table').forEach(function(table) {
+        const headTr = table.querySelector('thead tr');
+        if (headTr && !headTr.querySelector('th.product-thumb-col')) {
+          const th = document.createElement('th');
+          th.textContent = '画像';
+          th.className = 'product-thumb-col';
+          headTr.insertBefore(th, headTr.firstElementChild);
+        }
+        table.querySelectorAll('tbody tr').forEach(function(tr) {
+          if (tr.querySelector('td.product-thumb')) return; // 二重挿入防止
+          const codeCell = tr.querySelector('td.model-code');
+          if (!codeCell) return;
+          const code = codeCell.textContent.trim();
+          const images = (typeof getProductImages === 'function') ? getProductImages(code) : null;
+          const td = document.createElement('td');
+          td.className = 'product-thumb';
+          if (images && images.length > 0) {
+            const img = document.createElement('img');
+            img.src = images[0];
+            img.loading = 'lazy';
+            img.alt = code;
+            img.addEventListener('click', function() {
+              const detailBtn = tr.querySelector('button.product-link');
+              if (detailBtn) detailBtn.click();
+            });
+            td.appendChild(img);
+          } else {
+            td.innerHTML = '<span class="no-image">-</span>';
+          }
+          tr.insertBefore(td, tr.firstElementChild);
+        });
+      });
+    });
+
+    // === 税抜・税込併記（案B、2026-04-23 追加） ===
+    document.addEventListener('DOMContentLoaded', function() {
+      const TAX_RATE = 0.10;
+      document.querySelectorAll('td.price').forEach(function(td) {
+        if (td.dataset.taxApplied === '1') return;
+        const m = td.textContent.match(/¥([\d,]+)/);
+        if (!m) return;
+        const excl = parseInt(m[1].replace(/,/g, ''), 10);
+        if (isNaN(excl)) return;
+        const incl = Math.round(excl * (1 + TAX_RATE));
+        td.innerHTML = '¥' + excl.toLocaleString('ja-JP') + ' <span style="font-size:10px;color:var(--text-muted)">+税</span><br><span style="font-size:10px;color:var(--text-sub)">税込 ¥' + incl.toLocaleString('ja-JP') + '</span>';
+        td.dataset.taxApplied = '1';
+      });
     });
 
   </script>
