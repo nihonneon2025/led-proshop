@@ -6888,7 +6888,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "高さ": "8mm",
       "対応LEDテープ幅": "〜10mm",
       "取付方式": "ネジ止め（フランジ付き）",
-      "付属品": "乳白色ディフューザーカバー・エンドキャップ・取付金具"
+      "付属品": "乳白色ディフューザーカバー"
     },
     "description": "LEDテープライトの放熱と保護を両立するアルミフレーム（通常型・シルバー仕上げ）。壁面・天井面への露出取付に最適なU字型断面で、フランジ部分をネジ止めすれば施工完了。シルバーアルマイト仕上げで一般住宅・オフィス・店舗のインテリアに自然に馴染みます。付属の乳白色ディフューザーカバーによりLEDの粒感を和らげ、滑らかな発光ラインを実現。6063アルミ合金製で放熱性に優れ、LEDテープの寿命を延ばします。1m/本、複数本の連結も可能。"
   },
@@ -6910,7 +6910,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "高さ": "8mm",
       "対応LEDテープ幅": "〜10mm",
       "取付方式": "ネジ止め（フランジ付き）",
-      "付属品": "乳白色ディフューザーカバー・エンドキャップ・取付金具"
+      "付属品": "乳白色ディフューザーカバー"
     },
     "description": "LEDテープライトの放熱と保護を両立するアルミフレーム（通常型・マットブラック仕上げ）。壁面・天井面への露出取付に最適なU字型断面で、フランジ部分をネジ止めすれば施工完了。マットブラック仕上げはダークトーン空間・間接照明・店舗ディスプレイに最適で、目立たないフレームとして発光のみを際立たせます。付属の乳白色ディフューザーカバーによりLEDの粒感を和らげ、滑らかな発光ラインを実現。6063アルミ合金製で放熱性に優れ、LEDテープの寿命を延ばします。1m/本、複数本の連結も可能。"
   },
@@ -6934,7 +6934,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "高さ": "8mm",
       "対応LEDテープ幅": "〜10mm",
       "取付方式": "壁・床への溝加工埋め込み",
-      "付属品": "乳白色ディフューザーカバー・エンドキャップ"
+      "付属品": "乳白色ディフューザーカバー"
     },
     "description": "LEDテープライトをフラットに埋め込み設置できるアルミフレーム（埋め込み型・シルバー仕上げ）。壁面・床面・家具に溝加工を行い、T字型フランジで固定。発光面のみが表に露出し、フレーム自体は視界から消えるため、建築化照明・高級感のある間接照明に最適です。シルバーアルマイト仕上げは一般住宅・オフィス・店舗に幅広く調和。付属の乳白色ディフューザーカバーで滑らかな発光ラインを実現。6063アルミ合金製で放熱性に優れ、LEDテープの寿命を延ばします。1m/本、複数本の連結も可能。"
   },
@@ -6958,7 +6958,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "高さ": "8mm",
       "対応LEDテープ幅": "〜10mm",
       "取付方式": "壁・床への溝加工埋め込み",
-      "付属品": "乳白色ディフューザーカバー・エンドキャップ"
+      "付属品": "乳白色ディフューザーカバー"
     },
     "description": "LEDテープライトをフラットに埋め込み設置できるアルミフレーム（埋め込み型・マットブラック仕上げ）。壁面・床面・家具に溝加工を行い、T字型フランジで固定。発光面のみが表に露出し、フレーム自体は視界から消えるため、建築化照明・高級感のある間接照明に最適です。マットブラック仕上げはダークトーン空間・店舗ディスプレイに最適で、漆黒の空間に発光ラインが浮かび上がる演出を実現。付属の乳白色ディフューザーカバーで滑らかな発光ラインを実現。6063アルミ合金製で放熱性に優れ、LEDテープの寿命を延ばします。1m/本、複数本の連結も可能。"
   }
@@ -7961,7 +7961,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         return product.price;
       }
 
-      // グループキー（シリコン/エンドキャップを集約するため）
+      // グループキー（シリコン/エンドキャップ/アルミを集約するため）
       window.getProductGroup = function(product) {
         if (!product || !product.code) return null;
         const c = product.code;
@@ -7979,6 +7979,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           const color = ec[3] === 'WH' ? 'white' : 'black';
           return 'EC-' + shape + '-' + hole + '-' + color;
         }
+        // アルミフレームはカラー別に個別カード維持（社長指示 2026-04-23）
         return null;
       };
 
@@ -7989,7 +7990,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         return PRODUCTS.filter(p => window.getProductGroup(p) === group);
       };
 
-      // バリエーション用のサイズラベル
+      // バリエーション用のサイズ/カラーラベル
       window.variantSizeLabel = function(product) {
         const c = product.code;
         const scSize = c.match(/^SC-(?:F|3S|SD|NB|WB|SP)-D?(\d{2})(\d{2})$/);
