@@ -202,8 +202,8 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 .product-card .card-img-wrap{position:relative;width:100%;padding-top:100%;background:#fafbfc;overflow:hidden}
 .product-card .card-img-wrap img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;transition:transform .25s}
 .product-card .card-img-wrap img.alt{opacity:0;transition:opacity .2s}
-.product-card:hover .card-img-wrap img.main{opacity:0}
-.product-card:hover .card-img-wrap img.alt{opacity:1}
+.product-card:hover .card-img-wrap.has-alt img.main{opacity:0}
+.product-card:hover .card-img-wrap.has-alt img.alt{opacity:1}
 .product-card .card-img-wrap .no-image{display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--text-muted);font-size:11px;background:#f0f2f5}
 .product-card .card-badges{position:absolute;top:6px;left:6px;right:6px;display:flex;justify-content:space-between;gap:4px;pointer-events:none;z-index:2}
 .product-card .card-off-badge{background:#c0392b;color:#fff;font-size:11px;font-weight:800;padding:3px 7px;border-radius:3px;box-shadow:0 2px 4px rgba(0,0,0,.15)}
@@ -232,13 +232,22 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
   .product-card .card-body{padding:8px 10px 10px}
 }
 
-/* SET EXAMPLES */
-.sets-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-.set-example{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:16px}
-.set-example h3{font-size:13px;font-weight:700;color:var(--blue);margin-bottom:10px}
-.set-example ul{list-style:none;padding:0}
-.set-example li{font-size:11px;padding:4px 0;border-bottom:1px solid var(--border);color:var(--text-sub)}
-.set-example li:last-child{border-bottom:none}
+/* WHY US */
+.why-us-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:8px}
+.why-us-card{background:#fff;border:1px solid var(--border);border-radius:6px;padding:24px 20px;transition:transform .15s, box-shadow .15s;display:flex;flex-direction:column;gap:10px}
+.why-us-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.06);border-color:var(--blue)}
+.why-us-card.highlight-card{background:linear-gradient(135deg,#f0f6ff 0%,#ffffff 100%);border:1px solid var(--blue);border-left:4px solid var(--blue)}
+.why-us-icon{width:44px;height:44px;border-radius:50%;background:var(--blue-pale);color:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.why-us-icon svg{width:24px;height:24px}
+.why-us-card.highlight-card .why-us-icon{background:var(--blue);color:#fff}
+.why-us-card h3{font-size:14px;font-weight:700;color:var(--blue);line-height:1.4;margin:0}
+.why-us-card.highlight-card h3{color:var(--blue)}
+.why-us-card p{font-size:12px;color:var(--text-sub);line-height:1.65;margin:0}
+.why-us-card p strong{color:var(--text);font-weight:700}
+@media(max-width:600px){
+  .why-us-grid{grid-template-columns:1fr}
+  .why-us-card{padding:18px 16px}
+}
 
 /* CONTACT */
 .contact-info{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
@@ -451,7 +460,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       <a href="#cat2">シリコンカバー</a>
       <a href="#cat3">電源装置</a>
       <a href="#cat4">コントローラー</a>
-      <a href="#sets">セット構成例</a>
+      <a href="#about">選ばれる理由</a>
       <a href="#contact">お問い合わせ</a>
     </div>
   </nav>
@@ -2510,23 +2519,60 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     </div>
   </section>
 
-  <!-- セット構成例 -->
-  <section id="sets" class="category">
+  <!-- 選ばれる理由 -->
+  <section id="about" class="category">
     <div class="category-header">
-      <h2 class="category-title">セット構成例</h2>
-      <p class="category-description">代表的な施工パターンの構成例です。</p>
+      <h2 class="category-title">選ばれる理由</h2>
+      <p class="category-description">全国のLED施工業者が LED PRO SHOP を選ぶ5つの理由。</p>
     </div>
-    
-    <div class="sets-container">
-      <div class="set-example">
-        <h3>基本セット（5m施工用）</h3>
-        <ul>
-          <li>LED COBテープライト24V 電球色 IP20 × 1本</li>
-          <li>シリコンカバー × 5m</li>
-          <li>エンドキャップ × 2個</li>
-          <li>DC24V 200W電源 × 1台</li>
-          <li>単色調光器 × 1台</li>
-        </ul>
+
+    <div class="why-us-grid">
+      <div class="why-us-card">
+        <div class="why-us-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>工場直送・中間マージンゼロ</h3>
+        <p>COB LEDテープ・シリコンカバー・電源・アルミフレームの全製品を中国の提携工場から直接仕入れ。商社経由・輸入代理店経由の中間マージンを排除し、他店の<strong>1/3〜1/5の価格</strong>を実現しました。</p>
+      </div>
+
+      <div class="why-us-card">
+        <div class="why-us-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>プロ仕様の品質基準</h3>
+        <p>全製品 PSE適合・Ra90以上の高演色・5万時間寿命。COB方式でドット感ゼロの均一発光。屋内・屋外・水回り・高温環境まで<strong>4段階の防護レベル</strong>を揃え、あらゆる施工現場に対応します。</p>
+      </div>
+
+      <div class="why-us-card">
+        <div class="why-us-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="12 6 12 12 16 14"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <h3>当日出荷・最短翌日着</h3>
+        <p>在庫品は<strong>平日15時までのご注文で当日出荷</strong>。翌営業日着のスピード対応で、現場の工期を止めません。施工業者様の緊急追加発注にも柔軟に対応いたします。</p>
+      </div>
+
+      <div class="why-us-card">
+        <div class="why-us-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>専門施工業者専用の相談対応</h3>
+        <p>LEDに精通した担当者が、施工案件ごとの最適な電源容量・テープ長・防水等級・アルミフレーム幅の選定をご提案。<strong>「選択にないサイズ」の特注対応</strong>もメーカー直連携でご相談承ります。</p>
+      </div>
+
+      <div class="why-us-card">
+        <div class="why-us-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3>日本ネオン株式会社の看板で安心</h3>
+        <p>運営は<strong>日本ネオン株式会社</strong>。法人・屋号取引対応、請求書払い・見積書発行・納品書添付、すべて標準対応。継続取引の施工業者様には<strong>優先在庫確保・まとめ買い割引</strong>もご用意しています。</p>
+      </div>
+
+      <div class="why-us-card highlight-card">
+        <div class="why-us-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3>全200型番以上の豊富なラインナップ</h3>
+        <p>LEDテープ10カラー×4防護×2電圧、シリコンカバー7タイプ、エンドキャップ8パターン、電源8種、アルミフレーム16種、RGBコントローラー。<strong>一現場すべてを LED PRO SHOP で完結</strong>できます。</p>
       </div>
     </div>
   </section>
@@ -8615,6 +8661,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           img1.alt = product.name;
           imgWrap.appendChild(img1);
           if (altImg && altImg !== mainImg) {
+            imgWrap.classList.add('has-alt');
             const img2 = document.createElement('img');
             img2.className = 'alt';
             img2.loading = 'lazy';
