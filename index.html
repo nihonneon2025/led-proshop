@@ -2616,7 +2616,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
   <div id="modalCustomSizeBlock" style="display:none;margin-top:10px">
     <label for="modalCustomSizeInput" class="modal-variant-label" style="color:#b45309">ご希望のサイズ・形状を記入してください</label>
     <input type="text" id="modalCustomSizeInput" class="modal-variant-select" placeholder="例: 18mm × 18mm / φ15mm / 通常型幅30mm 等" oninput="updateModalSubtotal()">
-    <small class="modal-custom-hint">※ ご注文受付後、中国工場へ製作可否を確認し、弊社より可否のご連絡を差し上げます。価格は近似サイズを暫定計上しています。</small>
+    <small class="modal-custom-hint">※ 在庫切れの場合は弊社よりご連絡をさせていただきます。</small>
   </div>
 </div>
 <div class="modal-price-row">
@@ -7045,8 +7045,12 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         ]
       },
       'rgb': {
-        pattern: /^RGB\d+-/,
-        images: []
+        pattern: /^RGB/,
+        images: [
+          'images/テープライト/RGB/main.png',
+          'images/テープライト/RGB/lit1.png',
+          'images/テープライト/RGB/lit2.png'
+        ]
       },
       // シリコンカバー（タイプ別画像）
       'sc-f': {
@@ -8044,6 +8048,8 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         // LEDテープ: 色でグループ化（電圧×防護はモーダル選択）
         const cob = c.match(/^COB(?:24|12)-([A-Z0-9]+?)(?:-(?:BT|BS|BN))?$/);
         if (cob) return 'COB-' + cob[1];
+        // RGB LEDテープ: 防護レベルはモーダル選択
+        if (c.match(/^RGB24(-BT|-BS|-BN)?$/)) return 'RGB';
         // アルミフレームはカラー別に個別カード維持（社長指示 2026-04-23）
         return null;
       };
@@ -8079,6 +8085,15 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           if (suffix === '-BN') return v + ' 防熱 (耐熱80℃)';
           return v + ' 標準 (IP20)';
         }
+        // RGB LEDテープ: 防護ラベル
+        const rgb = c.match(/^RGB24(-BT|-BS|-BN)?$/);
+        if (rgb) {
+          const suffix = rgb[1] || '';
+          if (suffix === '-BT') return '24V 防滴 (IP65)';
+          if (suffix === '-BS') return '24V 防水 (IP67)';
+          if (suffix === '-BN') return '24V 防熱 (耐熱80℃)';
+          return '24V 標準 (IP20)';
+        }
         return c;
       };
 
@@ -8109,6 +8124,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           'COB-GD':  'LED COBテープ ゴールド',
           'COB-W3K': 'LED COBテープ ホワイト3000K（電球色）',
           'COB-YL':  'LED COBテープ レモンイエロー',
+          'RGB':     'LED COBテープ RGB（フルカラー1,600万色）',
         };
         return MAP[groupKey] || (sampleProduct && sampleProduct.name) || groupKey;
       };
@@ -8278,48 +8294,66 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         return card;
       }
 
-      // 特別処理: cat1 (LEDテープ) の全サブカテゴリテーブルを1つの統合グリッドに
+      // ヘルパー: 指定カテゴリの全テーブルを統合グリッドに置換
+      function unifyCategory(catId, codeFilter, heading) {
+        const cat = document.getElementById(catId);
+        if (!cat) return;
+        const tables = cat.querySelectorAll('table.product-table');
+        if (tables.length === 0) return;
+        const codes = [];
+        tables.forEach(function(t) {
+          t.querySelectorAll('tbody tr td.model-code').forEach(function(cell) {
+            const c = cell.textContent.trim();
+            if (codeFilter(c)) codes.push(c);
+          });
+        });
+        if (codes.length === 0) return null;
+
+        const grid = document.createElement('div');
+        grid.className = 'product-grid';
+        const seen = new Set();
+        codes.forEach(function(code) {
+          const product = PRODUCTS.find(function(p) { return p.code === code; });
+          if (!product) return;
+          const group = window.getProductGroup(product);
+          if (group) {
+            if (seen.has(group)) return;
+            seen.add(group);
+            grid.appendChild(createCard(product, group));
+          } else {
+            grid.appendChild(createCard(product));
+          }
+        });
+
+        const sub = document.createElement('div');
+        sub.className = 'subcategory';
+        const h3 = document.createElement('h3');
+        h3.textContent = heading;
+        sub.appendChild(h3);
+        sub.appendChild(grid);
+        return sub;
+      }
+
+      // cat1 (LEDテープ): COB/RGB全部を1つの統合グリッドへ
       const cat1 = document.getElementById('cat1');
       if (cat1) {
-        const ledTables = cat1.querySelectorAll('table.product-table');
-        if (ledTables.length > 0) {
-          const ledCodes = [];
-          ledTables.forEach(function(t) {
-            t.querySelectorAll('tbody tr td.model-code').forEach(function(cell) {
-              const c = cell.textContent.trim();
-              if (c.startsWith('COB') || c.startsWith('RGB')) ledCodes.push(c);
-            });
-          });
-
-          // LEDテープ統合グリッド作成
-          const unifiedGrid = document.createElement('div');
-          unifiedGrid.className = 'product-grid';
-          const ledSeen = new Set();
-          ledCodes.forEach(function(code) {
-            const product = PRODUCTS.find(function(p) { return p.code === code; });
-            if (!product) return;
-            const group = window.getProductGroup(product);
-            if (group) {
-              if (ledSeen.has(group)) return;
-              ledSeen.add(group);
-              unifiedGrid.appendChild(createCard(product, group));
-            } else {
-              unifiedGrid.appendChild(createCard(product));
-            }
-          });
-
-          // サブカテゴリ領域を置換
+        const ledSub = unifyCategory('cat1', function(c) { return c.startsWith('COB') || c.startsWith('RGB'); }, 'LED COBテープライト — 全カラー／24V・12V／標準・防滴・防水・防熱 から選択');
+        if (ledSub) {
           const subsDiv = cat1.querySelector('.subcategories');
-          if (subsDiv) {
-            subsDiv.innerHTML = '';
-            const unifiedSub = document.createElement('div');
-            unifiedSub.className = 'subcategory';
-            const h3 = document.createElement('h3');
-            h3.textContent = 'LED COBテープライト — 全カラー／24V・12V／標準・防滴・防水・防熱 から選択';
-            unifiedSub.appendChild(h3);
-            unifiedSub.appendChild(unifiedGrid);
-            subsDiv.appendChild(unifiedSub);
-          }
+          if (subsDiv) { subsDiv.innerHTML = ''; subsDiv.appendChild(ledSub); }
+        }
+      }
+
+      // cat2 (シリコンカバー/エンドキャップ): それぞれ独立した統合グリッドへ
+      const cat2 = document.getElementById('cat2');
+      if (cat2) {
+        const scSub = unifyCategory('cat2', function(c) { return c.startsWith('SC-'); }, 'シリコンカバー — 7タイプから選択');
+        const ecSub = unifyCategory('cat2', function(c) { return c.startsWith('EC-'); }, 'エンドキャップ — 角丸×穴×色の8パターンから選択');
+        const subsDiv = cat2.querySelector('.subcategories');
+        if (subsDiv) {
+          subsDiv.innerHTML = '';
+          if (scSub) subsDiv.appendChild(scSub);
+          if (ecSub) subsDiv.appendChild(ecSub);
         }
       }
 
