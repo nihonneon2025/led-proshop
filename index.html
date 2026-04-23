@@ -110,7 +110,13 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 @media(max-width:768px){
   .navbar .logo-main{font-size:13px}
   .navbar .logo-main small{display:none}
-  .navbar .logo-tag{display:none}
+  .navbar .logo-tag{margin-top:2px;gap:6px;flex-wrap:wrap}
+  .navbar .logo-badge{font-size:7px;padding:1px 5px;letter-spacing:1.2px}
+  .navbar .logo-catch{font-size:9px;line-height:1.25}
+}
+@media(max-width:480px){
+  .navbar .logo-main{font-size:12px;letter-spacing:.3px}
+  .navbar .logo-catch{font-size:8px}
 }
 .navbar .nav-links{display:flex;gap:16px;list-style:none}
 .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
@@ -7046,19 +7052,22 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       'psu-24v-300w': {
         pattern: /^PSU-24V-300W$/,
         images: [
-          'images/電源装置/24v300w/main.png'
+          'images/電源装置/24v300w/main.png',
+          'images/電源装置/24v300w/scene.jpg'
         ]
       },
       'psu-24v-400w': {
         pattern: /^PSU-24V-400W$/,
         images: [
-          'images/電源装置/24v400w/main.png'
+          'images/電源装置/24v400w/main.png',
+          'images/電源装置/24v400w/scene.jpg'
         ]
       },
       'psu-12v-300w': {
         pattern: /^PSU-12V-300W$/,
         images: [
-          'images/電源装置/12v300w/main.png'
+          'images/電源装置/12v300w/main.png',
+          'images/電源装置/12v300w/scene.jpg'
         ]
       },
       'psu-other': {
@@ -7823,12 +7832,20 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 
       function unitLabel(product) {
         if (!product || !product.code) return '';
-        if (product.code.startsWith('EC-')) return '/ 10個〜';
-        if (product.code.startsWith('SC-')) return '/ 10m巻';
-        if (product.code.startsWith('ALM-')) return '/ 1m';
-        if (product.category === 'CAT1') return '/ 5m巻';
-        if (product.category === 'CAT3' || product.category === 'CAT4') return '/ 台';
+        if (product.code.startsWith('EC-')) return '／ 10個セット';
+        if (product.code.startsWith('SC-')) return '／ 10m巻';
+        if (product.code.startsWith('ALM-')) return '／ 1m';
+        if (product.category === 'CAT1') return '／ 5m巻';
+        if (product.category === 'CAT3' || product.category === 'CAT4') return '／ 台';
         return '';
+      }
+
+      // エンドキャップはまとめ売り（10個セット）で表示
+      function effectivePrice(product) {
+        if (product && product.code && product.code.startsWith('EC-')) {
+          return product.price * 10;
+        }
+        return product.price;
       }
 
       function createCard(product) {
@@ -7839,7 +7856,8 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         const marketLower = parseMarketLower(product.marketPrice);
         const hasDiscount = marketLower > product.price;
         const pct = hasDiscount ? Math.round((1 - product.price / marketLower) * 100) : 0;
-        const incl = Math.round(product.price * (1 + TAX_RATE));
+        const displayPrice = effectivePrice(product);
+        const incl = Math.round(displayPrice * (1 + TAX_RATE));
 
         const card = document.createElement('div');
         card.className = 'product-card';
@@ -7908,7 +7926,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         priceRow.className = 'card-price-row';
         const priceEl = document.createElement('span');
         priceEl.className = 'card-price';
-        priceEl.textContent = '¥' + product.price.toLocaleString('ja-JP');
+        priceEl.textContent = '¥' + displayPrice.toLocaleString('ja-JP');
         priceRow.appendChild(priceEl);
         const taxEl = document.createElement('span');
         taxEl.className = 'card-price-tax';
@@ -7927,6 +7945,15 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         inclEl.className = 'card-price-incl';
         inclEl.textContent = '税込 ¥' + incl.toLocaleString('ja-JP');
         body.appendChild(inclEl);
+
+        // エンドキャップは1個単価を補足表示
+        if (product.code.startsWith('EC-')) {
+          const perPiece = document.createElement('div');
+          perPiece.className = 'card-price-incl';
+          perPiece.style.color = 'var(--text-muted)';
+          perPiece.textContent = '（1個あたり ¥' + product.price.toLocaleString('ja-JP') + '）';
+          body.appendChild(perPiece);
+        }
 
         if (hasDiscount) {
           const mk = document.createElement('div');
