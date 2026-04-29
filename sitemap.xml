@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- トップページ -->
+  <url>
+    <loc>https://led-proshop.com/</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- カテゴリページ（アンカーリンク）-->
+  <!-- 注: 現状は単一HTML構成のため、カテゴリはアンカー(#)でアクセス。
+       将来的に独立URLのカテゴリページを設置した場合は以下を実URLに差し替える -->
+
+  <url>
+    <loc>https://led-proshop.com/#cat1</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://led-proshop.com/#cat6</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://led-proshop.com/#cat2</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://led-proshop.com/#cat3</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://led-proshop.com/#cat4</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
+
+<!--
+=====================================================================
+sitemap.xml 運用メモ（実装担当向け）
+=====================================================================
+
+## 現状の構成と制約
+
+現在 led-proshop.com は **単一HTML構成**（index.html のみ）であり、
+商品ページは独立URLを持たない（モーダルで表示するインラインコンテンツ）。
+
+このため、サイトマップには以下のURLのみを記載している:
+- トップ（priority 1.0）
+- 5カテゴリ（アンカーリンク形式・priority 0.8〜0.9）
+
+## 将来の拡張方針
+
+### Day 2-3 対応（商品ページURL化）
+
+226+品目を独立URLにした場合は以下パターンでURLを生成・追加する:
+
+```
+https://led-proshop.com/products/[型番スラッグ]/
+```
+
+例（COBテープ系）:
+```xml
+<url>
+  <loc>https://led-proshop.com/products/cob24-pk/</loc>
+  <lastmod>2026-04-29</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+```
+
+型番一覧（index.html の product-table から抽出済み）:
+
+### カテゴリ: LEDテープライト（cat1）— COB 24V サブカテゴリ
+COB24-PK / COB24-SB / COB24-RD / COB24-GR / COB24-PP / COB24-OR / COB24-GD / COB24-YL / COB24-W3K
+COB24-PK-BT / COB24-SB-BT / COB24-RD-BT（防滴）
+（上記の防水版: -BT, -WP サフィックス系列）
+
+### カテゴリ: アルミフレーム（cat6）
+ALM-NORMAL-SILVER / ALM-NORMAL-BLACK / ALM-RECESSED-SILVER / ALM-RECESSED-BLACK 等
+
+### カテゴリ: シリコンカバー（cat2）
+シリコンカバー各種
+
+### カテゴリ: 電源装置（cat3）
+PSU-各種
+
+### カテゴリ: コントローラー（cat4）
+コントローラー各種
+
+## コラム・FAQ ページ（Day 4以降・proshop-marketing 文案確定後）
+
+seo_content_strategy_20260429.md §1 のカテゴリ構造に基づき追加:
+
+```
+https://led-proshop.com/column/
+https://led-proshop.com/column/case-study/
+https://led-proshop.com/column/led-selection/
+https://led-proshop.com/column/power-controller/
+https://led-proshop.com/column/specifications/
+https://led-proshop.com/faq/
+```
+
+## Google Search Console 登録手順
+
+1. Google Search Console にログイン
+2. プロパティ「https://led-proshop.com」を選択
+3. 左メニュー「インデックス作成」→「サイトマップ」
+4. 「新しいサイトマップを追加」に「sitemap.xml」を入力して送信
+5. 48〜72時間後にインデックス状況を確認
+
+## 更新タイミング
+
+- 商品追加・削除時
+- カテゴリページ追加時
+- コラム・FAQ 公開時
+- 毎月1回の定期更新（lastmod 更新・priorityの見直し）
+
+=====================================================================
+-->

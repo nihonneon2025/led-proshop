@@ -1,0 +1,30 @@
+# バックアップ・退避コピー系（恒久除外）
+*.bak
+*.bak_*
+*.backup
+*backup*
+*_backup*
+*.disabled_*
+
+# SEO作業ドキュメント（非公開）
+seo/
+
+# 退避フォルダ系
+*_本番退避_*/
+*_除外バックアップ_*/
+
+# 開発・一時ファイル
+*.tmp
+*.test
+*.swp
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+node_modules/
+.env
+secrets/
+
+# Netlify 設定（GitHub Pages 環境には不要・ファイル自体は既存追跡済みのため git rm は実施しない）
+# netlify.toml
+# netlify/
