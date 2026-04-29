@@ -2691,6 +2691,27 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         </select>
         <label>備考・ご要望</label>
         <textarea name="notes" placeholder="数量変更・納期相談・その他ご要望があればご記入ください"></textarea>
+        <!-- 個人情報同意チェックボックス（個人情報保護法第28条 外国第三者提供 同意取得） -->
+        <input type="hidden" name="consent-timestamp" id="consentTimestampField">
+        <div id="consentBlock" style="margin-top:18px;padding:14px 16px;background:#f5f6f8;border:1px solid #d0d5dd;border-radius:4px">
+          <div style="display:flex;align-items:flex-start;gap:10px">
+            <input
+              type="checkbox"
+              id="consentCheckbox"
+              name="consent"
+              value="agreed"
+              required
+              aria-required="true"
+              style="margin-top:3px;flex-shrink:0;width:16px;height:16px;cursor:pointer;accent-color:#003C82"
+            >
+            <label for="consentCheckbox" style="font-size:12px;color:#555;line-height:1.7;cursor:pointer;display:block">
+              <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:#003C82;text-decoration:underline">個人情報の取扱い（プライバシーポリシー）</a>に同意し、外国（中国）にある第三者への個人データの提供について同意します。<br>
+              一部商品は海外（中国）の製造・配送事業者から直接発送される場合があり、その際にお客様の氏名・住所・電話番号が当該事業者に提供されることに同意します。<br>
+              <span style="font-size:11px;color:#888">（個人情報保護法第28条に基づく外国第三者提供への同意）</span>
+            </label>
+          </div>
+          <div id="consentError" role="alert" style="display:none;margin-top:8px;color:#c0392b;font-size:11px;font-weight:700;padding:6px 10px;background:#fdf2f2;border-radius:3px">個人情報の取扱いへの同意が必要です。チェックボックスにチェックを入れてください。</div>
+        </div>
         <button type="submit" class="checkout-submit">この内容で注文する</button>
         <p class="checkout-note">※ ご注文確定後、担当者よりメールにて確認のご連絡を差し上げます。</p>
       </form>
@@ -2699,6 +2720,10 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 </div>
 
 <footer class="footer">
+    <div style="margin-bottom:10px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap">
+      <a href="tokushoho.html" style="color:#bbb;text-decoration:none;font-size:11px">特定商取引法に基づく表記</a>
+      <a href="privacy-policy.html" style="color:#bbb;text-decoration:none;font-size:11px">プライバシーポリシー</a>
+    </div>
     <div style="margin-bottom:8px;font-size:12px;font-weight:700;color:#ccc">LED専門プロショップ（日本ネオン株式会社）</div>
     <div style="margin-bottom:4px">Email: led.proshop.support@gmail.com</div>
     <div>&copy; 2025 LED専門プロショップ（日本ネオン株式会社） All Rights Reserved.</div>
@@ -8374,6 +8399,22 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       if (form) {
         form.addEventListener('submit', function(e) {
           e.preventDefault();
+
+          // 同意チェックボックス必須バリデーション
+          var consentBox = document.getElementById('consentCheckbox');
+          var consentError = document.getElementById('consentError');
+          if (consentBox && !consentBox.checked) {
+            if (consentError) consentError.style.display = 'block';
+            if (consentBox) consentBox.focus();
+            return;
+          }
+          if (consentError) consentError.style.display = 'none';
+
+          // 同意取得タイムスタンプをhiddenフィールドに記録（ログ保全）
+          var consentAt = new Date().toISOString();
+          var tsField = document.getElementById('consentTimestampField');
+          if (tsField) tsField.value = consentAt;
+
           var submitBtn = form.querySelector('.checkout-submit');
           if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = '送信中...'; }
 
@@ -8417,6 +8458,8 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
             stripeData.append('address', formData.get('address') || '');
             stripeData.append('notes', formData.get('notes') || '');
             stripeData.append('payment', paymentMethod);
+            stripeData.append('consent', formData.get('consent') || '');
+            stripeData.append('consent-timestamp', formData.get('consent-timestamp') || consentAt);
             stripeData.append('total', getCartTotal());
             stripeData.append('cart', JSON.stringify(cart.map(function(item) {
               return { name: item.name, price: item.price, qty: item.qty, code: item.code, customNote: item.customNote || '' };
@@ -8442,6 +8485,8 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
                       address: formData.get('address') || '',
                       notes: formData.get('notes') || '',
                       payment: paymentMethod,
+                      consent: formData.get('consent') || '',
+                      consent_timestamp: formData.get('consent-timestamp') || consentAt,
                       cart: cart.map(function(item) { return { name: item.name, price: item.price, qty: item.qty, code: item.code, customNote: item.customNote || '' }; }),
                       total: getCartTotal()
                     }));

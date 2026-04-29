@@ -48,6 +48,21 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- 法定ページ（特商法・プライバシーポリシー）-->
+  <url>
+    <loc>https://led-proshop.com/tokushoho.html</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://led-proshop.com/privacy-policy.html</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>
 
 <!--
