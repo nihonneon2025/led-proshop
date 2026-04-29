@@ -451,6 +451,42 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 .seo-h1-wrap{background:var(--blue);padding:10px 16px;border-bottom:1px solid #002a5c}
 .seo-h1{max-width:1200px;margin:0 auto;font-size:13px;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.5px;text-align:center}
 @media(max-width:768px){.seo-h1{font-size:11px;padding:8px 12px}}</style>
+<!-- JSON-LD 構造化データ（Organization / WebSite / BreadcrumbList） D2-1 2026-04-29 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "alternateName": "日本ネオン株式会社",
+      "url": "https://www.led-proshop.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.led-proshop.com/images/og-image.jpg"
+      },
+      "description": "業務用LEDテープライト・アルミフレーム・電源装置・シリコンカバーを172型番以上取り揃えたB2B専門カタログサイト。看板業者・電気工事業者・内装施工会社のプロ向けに即納対応。"
+    },
+    {
+      "@type": "WebSite",
+      "name": "LED PRO SHOP",
+      "url": "https://www.led-proshop.com/",
+      "description": "業務用LED照明部材 B2B専門カタログ。172型番以上。即納対応。"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "LED PRO SHOP",
+          "item": "https://www.led-proshop.com/"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <nav class="navbar">
@@ -2691,7 +2727,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         </select>
         <label>備考・ご要望</label>
         <textarea name="notes" placeholder="数量変更・納期相談・その他ご要望があればご記入ください"></textarea>
-        <!-- 個人情報同意チェックボックス（個人情報保護法第28条 外国第三者提供 同意取得） -->
+        <!-- 個人情報同意チェックボックス（個人情報保護法に基づく同意取得） -->
         <input type="hidden" name="consent-timestamp" id="consentTimestampField">
         <div id="consentBlock" style="margin-top:18px;padding:14px 16px;background:#f5f6f8;border:1px solid #d0d5dd;border-radius:4px">
           <div style="display:flex;align-items:flex-start;gap:10px">
@@ -2705,9 +2741,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
               style="margin-top:3px;flex-shrink:0;width:16px;height:16px;cursor:pointer;accent-color:#003C82"
             >
             <label for="consentCheckbox" style="font-size:12px;color:#555;line-height:1.7;cursor:pointer;display:block">
-              <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:#003C82;text-decoration:underline">個人情報の取扱い（プライバシーポリシー）</a>に同意し、外国（中国）にある第三者への個人データの提供について同意します。<br>
-              一部商品は海外（中国）の製造・配送事業者から直接発送される場合があり、その際にお客様の氏名・住所・電話番号が当該事業者に提供されることに同意します。<br>
-              <span style="font-size:11px;color:#888">（個人情報保護法第28条に基づく外国第三者提供への同意）</span>
+              <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:#003C82;text-decoration:underline">個人情報の取扱い（プライバシーポリシー）</a>に同意のうえ、注文を確定します。
             </label>
           </div>
           <div id="consentError" role="alert" style="display:none;margin-top:8px;color:#c0392b;font-size:11px;font-weight:700;padding:6px 10px;background:#fdf2f2;border-radius:3px">個人情報の取扱いへの同意が必要です。チェックボックスにチェックを入れてください。</div>
@@ -7839,7 +7873,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       if (addBtn) { addBtn.textContent = 'カートに入れる'; addBtn.classList.remove('added'); }
 
       const images = getProductImages(product.code);
-      renderCarousel(images || []);
+      renderCarousel(images || [], product);
 
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -7938,7 +7972,16 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     var carouselCurrentIndex = 0;
     var carouselTotalSlides = 0;
 
-    function renderCarousel(images) {
+    // D2-3: SEO用 alt テキスト生成（指示書 §3-2 準拠）
+    function buildAltText(product, imageIndex) {
+      var base = (product && product.name) ? product.name : '業務用LEDテープライト';
+      if (imageIndex === 0) {
+        return base + ' - LED PRO SHOP';
+      }
+      return base + ' 詳細画像' + (imageIndex + 1) + ' - LED PRO SHOP';
+    }
+
+    function renderCarousel(images, product) {
       const track = document.getElementById('carouselTrack');
       const dots = document.getElementById('carouselDots');
       const counter = document.getElementById('carouselCounter');
@@ -7960,8 +8003,9 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 
       carouselTotalSlides = images.length;
 
-      track.innerHTML = images.map((img) => {
-        return '<div class="carousel-slide"><img src="' + img + '" alt="商品画像" /></div>';
+      track.innerHTML = images.map(function(img, idx) {
+        var altText = buildAltText(product, idx);
+        return '<div class="carousel-slide"><img src="' + img + '" alt="' + altText + '" /></div>';
       }).join('');
 
       // ドット
@@ -8712,7 +8756,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           img1.className = 'main';
           img1.loading = 'lazy';
           img1.src = mainImg;
-          img1.alt = product.name;
+          img1.alt = buildAltText(product, 0);
           imgWrap.appendChild(img1);
           if (altImg && altImg !== mainImg) {
             imgWrap.classList.add('has-alt');
@@ -8720,7 +8764,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
             img2.className = 'alt';
             img2.loading = 'lazy';
             img2.src = altImg;
-            img2.alt = product.name;
+            img2.alt = buildAltText(product, 1);
             imgWrap.appendChild(img2);
           }
         } else {
