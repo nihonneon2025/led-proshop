@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEDテープ用電源（PSU）容量計算 早見表｜業務用施工の選定基準 | LED PRO SHOP コラム</title>
+  <meta name="description" content="LEDテープの電源（PSU）容量を W/m × 配線長 × 安全率で算出する早見表。6W/m〜24W/m × 1〜20m を一覧化し、12V/24V の電流値差・電圧降下・力率の落とし穴まで実務目線で解説します。電気工事業者・看板施工会社向け。">
+  <meta name="keywords" content="PSU,電源,容量計算,LEDテープ,業務用,18W/m,24V,12V,定電圧,電源容量,電気工事,看板施工">
+  <link rel="canonical" href="https://www.led-proshop.com/articles/led-psu-capacity-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.led-proshop.com/articles/led-psu-capacity-guide.html">
+  <meta property="og:title" content="LEDテープ用電源（PSU）容量計算 早見表｜業務用施工の選定基準 | LED PRO SHOP コラム">
+  <meta property="og:description" content="LEDテープの電源（PSU）容量を W/m × 配線長 × 安全率で算出する早見表。6W/m〜24W/m × 1〜20m を一覧化し、12V/24V の電流値差・電圧降下・力率の落とし穴まで実務目線で解説します。電気工事業者・看板施工会社向け。">
+  <meta property="og:image" content="https://www.led-proshop.com/articles/images/led-psu-capacity-guide-hero.jpg">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ用電源（PSU）容量計算 早見表｜業務用施工の選定基準 | LED PRO SHOP コラム">
+  <meta name="twitter:description" content="LEDテープの電源（PSU）容量を W/m × 配線長 × 安全率で算出する早見表。6W/m〜24W/m × 1〜20m を一覧化し、12V/24V の電流値差・電圧降下・力率の落とし穴まで実務目線で解説します。電気工事業者・看板施工会社向け。">
+  <meta name="twitter:image" content="https://www.led-proshop.com/articles/images/led-psu-capacity-guide-hero.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org/","@type":"Article","headline":"LEDテープ用電源（PSU）容量計算 早見表｜業務用施工の選定基準","description":"LEDテープの電源（PSU）容量を W/m × 配線長 × 安全率で算出する早見表。6W/m〜24W/m × 1〜20m を一覧化し、12V/24V の電流値差・電圧降下・力率の落とし穴まで実務目線で解説します。電気工事業者・看板施工会社向け。","image":"https://www.led-proshop.com/articles/images/led-psu-capacity-guide-hero.jpg","author":{"@type":"Organization","name":"LED PRO SHOP 編集部"},"publisher":{"@type":"Organization","name":"LED PRO SHOP","logo":{"@type":"ImageObject","url":"https://www.led-proshop.com/images/logo.png"}},"datePublished":"2026-04-30","dateModified":"2026-04-30","mainEntityOfPage":"https://www.led-proshop.com/articles/led-psu-capacity-guide.html"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"LED PRO SHOP","item":"https://www.led-proshop.com/"},{"@type":"ListItem","position":2,"name":"コラム","item":"https://www.led-proshop.com/articles/"},{"@type":"ListItem","position":3,"name":"LEDテープ用電源（PSU）容量計算 早見表｜業務用施工の選定基準","item":"https://www.led-proshop.com/articles/led-psu-capacity-guide.html"}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#003C82;--blue-pale:#e8f0fe;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#001a40 0%,#003C82 50%,#00254f 100%);padding:40px 16px 32px;border-bottom:3px solid #002a5c}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--blue);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--blue);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--blue);padding:6px 10px;background:var(--blue-pale);border-left:3px solid var(--blue);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--blue);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body img{max-width:100%;height:auto;border-radius:4px;margin:8px 0 16px;display:block}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--blue);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--blue-pale)}
+    .article-body pre{background:#1a1a1a;color:#e0e0e0;padding:16px;border-radius:4px;overflow-x:auto;font-size:12px;line-height:1.6;margin:16px 0}
+    .article-body code{background:#f0f2f5;color:#c0392b;padding:1px 5px;border-radius:2px;font-size:12px;font-family:monospace}
+    .article-body pre code{background:transparent;color:inherit;padding:0}
+    .article-callout{border-left:4px solid var(--blue);background:var(--blue-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--blue)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--blue)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--blue)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--blue);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--blue);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--blue);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#e8f0fe}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--blue)}
+    .sidebar-cta{background:var(--blue);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--blue);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#e8f0fe}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo" style="text-decoration:none">
+        <div class="logo-main">LED専門プロショップ<small>日本ネオン株式会社</small></div>
+        <div class="logo-tag">
+          <span class="logo-badge">PROFESSIONAL SUPPLY</span>
+          <span class="logo-catch">全国のLED施工業者が選ぶ / 工場直送 × 業界最安値</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#cat1" class="nav-link">LEDテープ</a></li>
+        <li><a href="/#cat6" class="nav-link">アルミフレーム</a></li>
+        <li><a href="/#cat3" class="nav-link">電源</a></li>
+        <li><a href="/#cat4" class="nav-link">制御機器</a></li>
+        <li><a href="/articles/" class="nav-link active">コラム</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <nav class="article-breadcrumb" aria-label="パンくず">
+    <div class="container">
+      <a href="/">LED PRO SHOP</a>
+      <span class="sep">›</span>
+      <a href="/articles/">コラム</a>
+      <span class="sep">›</span>
+      <span>LEDテープ用電源（PSU）容量計算 早見表｜業務用施工の選定基準</span>
+    </div>
+  </nav>
+
+  <header class="article-hero">
+    <div class="container">
+      <span class="article-category-badge">電源・コントローラー解説</span>
+      <h1>LEDテープ用電源（PSU）容量計算 早見表｜業務用施工の選定基準</h1>
+      <div class="article-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-04-30</span>
+        <span>更新日: 2026-04-30</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-layout">
+
+    <main class="article-main">
+
+      <img src="/articles/images/led-psu-capacity-guide-hero.jpg" alt="LEDテープ用電源（PSU）容量計算 早見表｜業務用施工の選定基準" class="article-hero-img" width="840" height="400" loading="lazy">
+
+      <nav class="article-toc" aria-label="目次" id="article-toc">
+        <h2>目次</h2>
+        <ol id="toc-list"></ol>
+      </nav>
+
+      <article class="article-body" id="article-body">
+
+        <p>LEDテープ施工で「電源（PSU）が思ったより早く落ちた」「2年で電解コンデンサが膨らんだ」というトラブルの大半は、容量計算の段階で安全率を取り切れていないことに起因します。本記事では、業務用LEDテープの <strong>W/m × 配線長 × 安全率</strong> を軸に、6W/m〜24W/m × 1〜20m の容量早見表をまとめました。12V系・24V系で電流値が倍違う点、並列分岐での電圧降下、定電圧電源の力率まで、現場で迷わない判断基準をご提供します。</p>
+
+        <h2 id="formula">PSU 容量計算の基本式</h2>
+
+        <p>LEDテープ用電源容量の計算式はシンプルです。</p>
+
+        <pre><code>必要PSU容量（W） = テープのW/m × 使用長（m） × 安全率（1.2〜1.3）</code></pre>
+
+        <p>ここに3つの要素があり、業務施工での失敗はほぼこの3要素のどこかで起こります。順に整理します。</p>
+
+        <h3 id="safety-factor">W/m × 配線長 × 安全率（推奨1.2〜1.3）</h3>
+
+        <p><strong>安全率 1.2〜1.3</strong> はメーカー推奨と電気工事の現場実務の双方から導かれる係数です。理由は3つです。</p>
+
+        <ul>
+          <li><strong>電源側の効率損</strong>：定電圧PSUは出力定格の80〜85%付近で運用するのが熱設計上望ましく、定格ギリギリで使うと寿命が短くなります（電解コンデンサの寿命は温度10度上昇で半減：アレニウス則）。</li>
+          <li><strong>個体差・経年劣化</strong>：LEDテープのW/m表記はロット差で±5%程度ぶれる場合があり、3〜5年運用すると発光効率も微減します。</li>
+          <li><strong>環境温度</strong>：屋外看板・天井裏・什器内部は周囲温度が高く、ディレーティング（温度低減）が必要です。</li>
+        </ul>
+
+        <p>実務では <strong>常時点灯・屋外・調光なし → 1.3</strong>、<strong>屋内・調光あり → 1.2</strong> を目安にすると過不足が出にくくなります。</p>
+
+        <h3 id="current-diff">12V系と 24V系の電流値の違い</h3>
+
+        <p>同じ消費電力でも電圧が違えば電流値は倍違います。</p>
+
+        <pre><code>電流（A） = 電力（W） ÷ 電圧（V）</code></pre>
+
+        <p>PSU 100W の場合の電流値:</p>
+
+        <ul>
+          <li>12V系 PSU：100W ÷ 12V ≒ <strong>8.3A</strong></li>
+          <li>24V系 PSU：100W ÷ 24V ≒ <strong>4.2A</strong></li>
+        </ul>
+
+        <p>電流値が倍違うということは、配線抵抗による発熱と電圧降下が4倍違うということ（P = I²R のため）です。長尺施工で 24V系が選ばれる主な理由はここにあります。詳細は別記事「<a href="/articles/12v-vs-24v-led-tape.html">LEDテープ 12V vs 24V 選び方</a>」で解説しています。</p>
+
+        <h2 id="table">容量別早見表（一般W/m別 × 配線長別）</h2>
+
+        <p>実際の選定で最も使うのが下の早見表です。<strong>安全率1.25</strong> で計算した PSU 容量（W）を示します。</p>
+
+        <h4>早見表：必要PSU容量（W）— 安全率1.25適用後</h4>
+
+        <table>
+          <thead>
+            <tr><th>W/m \ 配線長</th><th>1m</th><th>5m</th><th>10m</th><th>15m</th><th>20m</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>6W/m</strong></td><td>8W</td><td>38W</td><td>75W</td><td>113W</td><td>150W</td></tr>
+            <tr><td><strong>12W/m</strong></td><td>15W</td><td>75W</td><td>150W</td><td>225W</td><td>300W</td></tr>
+            <tr><td><strong>18W/m</strong></td><td>23W</td><td>113W</td><td>225W</td><td>338W</td><td>450W</td></tr>
+            <tr><td><strong>24W/m</strong></td><td>30W</td><td>150W</td><td>300W</td><td>450W</td><td>600W</td></tr>
+          </tbody>
+        </table>
+
+        <h4>推奨 PSU 容量（市販規格への切り上げ）</h4>
+
+        <p>市販の定電圧PSUは 60W / 100W / 150W / 250W / 350W / 500W が主要ラインナップのため、上記の計算値を<strong>直近上位の規格に切り上げ</strong>します。</p>
+
+        <table>
+          <thead>
+            <tr><th>W/m \ 配線長</th><th>1m</th><th>5m</th><th>10m</th><th>15m</th><th>20m</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>6W/m</strong></td><td>60W</td><td>60W</td><td>100W</td><td>150W</td><td>150W</td></tr>
+            <tr><td><strong>12W/m</strong></td><td>60W</td><td>100W</td><td>150W</td><td>250W</td><td>350W</td></tr>
+            <tr><td><strong>18W/m</strong></td><td>60W</td><td>150W</td><td>250W</td><td>350W</td><td>500W</td></tr>
+            <tr><td><strong>24W/m</strong></td><td>60W</td><td>150W</td><td>350W</td><td>500W</td><td>350W×2</td></tr>
+          </tbody>
+        </table>
+
+        <div class="article-callout">
+          <p><strong>600W が必要になる施工では</strong>、PSU 1台で組まず <strong>350W ×2台に分割給電</strong>する方が放熱・故障時の冗長性・電圧降下の観点で有利です。</p>
+        </div>
+
+        <div class="article-callout tip">
+          <p><strong>LED PRO SHOP の取扱容量帯</strong>：本早見表は業界一般論として 60W〜500W の市販規格を扱っていますが、LED PRO SHOP の取扱は <strong>200W / 300W / 400W の3容量帯</strong>（DC12V・DC24V 各系統）です。早見表の計算結果が 250W になる現場は 300W へ、500W になる現場は 400W ×2台分割給電をご検討ください。</p>
+        </div>
+
+        <h2 id="mistakes">ありがちな誤算ケース3つ</h2>
+
+        <p>実際の施工現場で発生しやすい誤算パターンを3つ取り上げます。いずれも早見表だけでは見抜けない落とし穴です。</p>
+
+        <h3 id="case1">ケース1 — 安全率を取らなかった結果、半年でPSUが落ちた</h3>
+
+        <p>20m の 18W/m テープに対し「18 × 20 = 360W だから 350W のPSUで足りる」と考えて施工したケースです。定格ギリギリで運用したため、PSU 内部の電解コンデンサが想定温度を超え、半年で出力が不安定化しました。</p>
+
+        <p><strong>対策</strong>: 安全率1.25適用で 450W → 直近上位の <strong>500W PSU</strong> を選定するか、350W × 2台に分けて給電します。電源コストは数千円増えますが、再施工コスト（足場・人件費・営業補償）と比べれば桁違いに安全です。</p>
+
+        <h3 id="case2">ケース2 — 並列分岐で末端の電圧降下を見落とした</h3>
+
+        <p>24V系で 10m テープを2本並列に分岐した結果、給電点から末端で <strong>0.8V 程度の電圧降下</strong> が発生し、末端の発光が暗くなったケースです。</p>
+
+        <p>電圧降下の概算式:</p>
+
+        <pre><code>電圧降下（V） ≒ 電流（A） × 配線抵抗（Ω/m） × 配線長（m）</code></pre>
+
+        <p>24V × 18W/m × 10m = 7.5A 流れる箇所で、AWG18（0.0066Ω/m）配線10m を使うと:</p>
+
+        <pre><code>7.5A × 0.0066Ω/m × 10m × 2（往復）= 0.99V</code></pre>
+
+        <p>24V のうち約1V（4%）が配線で消費される計算です。<strong>5%を超えると目視で輝度差が分かる</strong>ため、長尺施工では給電点を分けるか、AWG14以上の太い配線を使う、または24V化で電流を半減させる選択が必要です。</p>
+
+        <h3 id="case3">ケース3 — 力率を見落として電源側ブレーカーが落ちた</h3>
+
+        <p>業務施工で複数のPSUを1系統に集約した際、PSU の <strong>力率（PF）</strong> を見落として電源側のブレーカーが想定より早く落ちたケースです。</p>
+
+        <p>定電圧PSUは内部にスイッチング回路を持つため、力率は通常 <strong>0.5〜0.95</strong> の幅があります（PFC回路搭載モデルで0.95以上、廉価モデルで0.5前後）。</p>
+
+        <pre><code>皮相電力（VA） = 有効電力（W） ÷ 力率（PF）</code></pre>
+
+        <p>例: 350W のPSUを8台 = 2,800W を 100V系統に集約した場合、力率0.6 のPSU だと:</p>
+
+        <pre><code>2,800W ÷ 0.6 ≒ 4,667VA → 4,667VA ÷ 100V ≒ 46.7A</code></pre>
+
+        <p>20A ブレーカーでは2回路に分割しても落ちます。<strong>業務施工では PFC（力率改善回路）搭載PSU</strong> を選定するのが安全です。</p>
+
+        <h2 id="redundancy">PSU の冗長性と耐久性</h2>
+
+        <p>業務用施工では、容量計算に加えて「壊れた時にどう影響を抑えるか」の設計も必要です。</p>
+
+        <h3 id="split-feed">分割給電のメリット</h3>
+
+        <p>20m を 350W × 1台ではなく <strong>150W × 3台 + 100W × 1台</strong> で分割給電する設計には次のメリットがあります。</p>
+
+        <ul>
+          <li><strong>故障時の影響範囲が局所化</strong>：1台壊れても全体は点く</li>
+          <li><strong>熱集中の回避</strong>：電源収納BOX内の温度が下がる</li>
+          <li><strong>電圧降下の緩和</strong>：給電点が増えれば末端までの距離が短くなる</li>
+        </ul>
+
+        <p>ただし配線とPSU設置スペースが増えるため、施工性とのバランスで判断します。</p>
+
+        <h3 id="ip-rating">IP等級と設置場所の整合</h3>
+
+        <ul>
+          <li><strong>屋内</strong>：IP20 で十分（ホコリと指の侵入を防ぐ程度）</li>
+          <li><strong>屋外・庇下</strong>：IP65 以上（防水）</li>
+          <li><strong>屋外・直射雨</strong>：IP67（一時的水没にも耐える）</li>
+        </ul>
+
+        <p>IP等級が上がると放熱効率が下がる傾向があるため、<strong>屋外用は1ランク上の容量</strong> を選ぶのが実務上のセオリーです。</p>
+
+        <h3 id="capacitor">電解コンデンサの寿命</h3>
+
+        <p>定電圧PSUの寿命は事実上 <strong>電解コンデンサの寿命</strong> で決まります。85度品で2,000時間、105度品で5,000〜10,000時間が一般的なカタログ値です。</p>
+
+        <p>常時点灯（24時間 × 365日 = 8,760時間/年）では、85度品なら理論上3〜4ヶ月で寿命が来ます。<strong>業務施工で常時点灯前提なら 105度品 + 安全率1.3</strong> が最低ラインです。</p>
+
+        <h2 id="faq">よくある質問（FAQ）</h2>
+
+        <h3 id="faq1">Q1. テープの公称W/m と実測値が違うことはありますか？</h3>
+
+        <p>あります。LEDテープのW/m表記はロット差で±5%程度ぶれることがあり、安価な汎用品では±10%のばらつきも見られます。容量計算で安全率1.2〜1.3を取る理由のひとつです。重要な施工では事前に1mサンプルで実測し、計算根拠を残しておくと後のトラブル対応がスムーズです。</p>
+
+        <h3 id="faq2">Q2. PSU の容量は大きすぎても問題ないですか？</h3>
+
+        <p>定電圧PSUは負荷が小さくても電圧自体は安定して出力されるため、容量過剰自体に直接の動作問題はありません。ただし <strong>PSU は定格の30〜80%付近で最も効率が良い</strong>ため、定格に対して負荷が10%以下のような極端な余剰は変換効率の低下とコスト面で不利です。実務では <strong>定格の60〜80%を狙って選定</strong>するのが目安です。</p>
+
+        <h3 id="faq3">Q3. 12V と 24V のPSU を混在させて1施工にしても良いですか？</h3>
+
+        <p>技術的には可能ですが、保守性が大きく下がるため業務施工では推奨しません。テープを 12V/24V で混在させると予備品在庫が倍になり、現場の誤配線リスクも上がります。1施工内では <strong>電圧系統を統一</strong>することを強く推奨します。</p>
+
+        <h3 id="faq4">Q4. 調光（PWM）を入れる場合、容量計算はどう変わりますか？</h3>
+
+        <p>PWM調光は最大輝度時の電流を基準に容量計算します。調光で平均電力は下がりますが、瞬間的にはフル点灯と同じ電流が流れるため、容量を減らすことはできません。PWM対応の調光器・コントローラーを噛ませる場合は <strong>コントローラー自体の電圧降下（通常0.3〜0.5V）も加味</strong>してください。</p>
+
+        <h3 id="faq5">Q5. 安全率1.25 を1.5 まで上げる必要がある場面は？</h3>
+
+        <p>以下のいずれかに該当する場合、1.5 以上を検討します:</p>
+
+        <ul>
+          <li>屋外・西日が直接当たる場所</li>
+          <li>設置場所の周囲温度が常時35度以上</li>
+          <li>24時間連続点灯（飲食店看板・コンビニ等）</li>
+          <li>1台のPSUで5m以上を遠隔給電（電圧降下と熱を同時に抱える条件）</li>
+        </ul>
+
+        <p>これらが重なる場合は <strong>PSU の冗長化（並列分割給電）</strong>とセットで検討するのがプロ施工の標準です。</p>
+
+        <h2 id="summary">まとめ・次のアクション</h2>
+
+        <p>LEDテープ用PSUの容量計算は <strong>W/m × 配線長 × 安全率1.2〜1.3</strong> が基本式で、市販PSU の規格刻みに切り上げて選定します。安全率・電圧降下・力率の3点を押さえれば、業務施工で大きく外すことはありません。</p>
+
+        <p>LED PRO SHOP では、業務施工向けの定電圧PSU（屋内・屋外IP67・PFC搭載大容量）をプロ施工業者向けに提供しています。容量選定でお悩みの場合は、施工条件（W/m・配線長・設置環境）を添えてお問い合わせください。</p>
+
+      </article>
+
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-04-30</span>
+        <span>更新日: 2026-04-30</span>
+      </div>
+
+      <section class="related-articles" aria-label="関連記事">
+        <h2>関連コラム記事</h2>
+        <div class="related-articles-list">
+          <article class="related-article-card">
+            <a href="/articles/12v-vs-24v-led-tape.html">
+              <img src="/articles/images/12v-vs-24v-led-tape-hero.jpg" alt="LEDテープ 12V vs 24V 選び方" class="rac-img" loading="lazy">
+              <div class="rac-body">
+                <span class="rac-tag">LED選び方ガイド</span>
+                <span class="rac-title">LEDテープ 12V vs 24V 選び方｜業務用施工の判断基準</span>
+                <span class="rac-date">2026-04-30</span>
+              </div>
+            </a>
+          </article>
+          <article class="related-article-card">
+            <a href="/articles/led-color-temperature-guide.html">
+              <img src="/articles/images/led-color-temperature-guide-hero.jpg" alt="LEDテープ 色温度 比較" class="rac-img" loading="lazy">
+              <div class="rac-body">
+                <span class="rac-tag">LED選び方ガイド</span>
+                <span class="rac-title">LEDテープ 色温度 比較｜B2B内装デザイナー向け選定ガイド</span>
+                <span class="rac-date">2026-04-30</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <aside class="article-cta" aria-label="お問い合わせ">
+        <h2>業務用LED資材のご相談・一括見積はこちら</h2>
+        <p>施工規模・仕様に合わせてプロが最適仕様をご提案。法人・業者様向けの即日対応。</p>
+        <a href="/#contact" class="article-cta-btn">無料でお問い合わせ</a>
+      </aside>
+
+    </main>
+
+    <aside class="article-sidebar" aria-label="サイドバー">
+
+      <div class="sidebar-cta">
+        <p>業務用LED資材のご相談・一括見積はプロにお任せください。</p>
+        <a href="/#contact">お問い合わせ</a>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3>カテゴリ</h3>
+        <ul>
+          <li><a href="/articles/?cat=installation">施工事例</a></li>
+          <li><a href="/articles/?cat=guide">LED選び方ガイド</a></li>
+          <li><a href="/articles/?cat=power">電源・コントローラー解説</a></li>
+          <li><a href="/articles/?cat=spec">規格別比較</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3>新着記事</h3>
+        <ul>
+          <li><a href="/articles/12v-vs-24v-led-tape.html">LEDテープ 12V vs 24V 選び方</a></li>
+          <li><a href="/articles/led-psu-capacity-guide.html">PSU容量計算 早見表</a></li>
+          <li><a href="/articles/led-color-temperature-guide.html">色温度比較｜B2B内装向け</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3>商品カタログ</h3>
+        <ul>
+          <li><a href="/#cat1">LEDテープライト</a></li>
+          <li><a href="/#cat6">アルミフレーム</a></li>
+          <li><a href="/#cat3">電源装置</a></li>
+          <li><a href="/#cat4">コントローラー</a></li>
+        </ul>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <footer class="footer">
+    <div style="margin-bottom:8px;font-size:12px;font-weight:700;color:#ccc">LED専門プロショップ（日本ネオン株式会社）</div>
+    <div style="margin-bottom:4px">
+      <a href="/privacy-policy.html" style="color:#aaa;text-decoration:none">プライバシーポリシー</a>
+      &nbsp;|&nbsp;
+      <a href="/tokushoho.html" style="color:#aaa;text-decoration:none">特定商取引法に基づく表記</a>
+    </div>
+    <div>&copy; 2025 LED専門プロショップ（日本ネオン株式会社） All Rights Reserved.</div>
+  </footer>
+
+  <script>
+  (function() {
+    var body = document.getElementById('article-body');
+    var tocList = document.getElementById('toc-list');
+    if (!body || !tocList) return;
+    var headings = body.querySelectorAll('h2, h3');
+    if (headings.length === 0) {
+      var toc = document.getElementById('article-toc');
+      if (toc) toc.style.display = 'none';
+      return;
+    }
+    var counter = 0;
+    var fragment = document.createDocumentFragment();
+    headings.forEach(function(h) {
+      if (!h.id) { h.id = 'section-' + (counter++); }
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent;
+      li.appendChild(a);
+      if (h.tagName === 'H3') {
+        li.style.paddingLeft = '1em';
+        li.style.fontSize = '11px';
+        li.style.color = 'var(--text-muted)';
+      }
+      fragment.appendChild(li);
+    });
+    tocList.appendChild(fragment);
+  })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LED PRO SHOP コラム｜業務用LED施工のプロ向け技術情報</title>
+  <meta name="description" content="業務用LEDテープライト施工のプロ向けコラム。12V/24V選び方・PSU容量計算・色温度比較など、LED施工業者が現場で使える技術情報を順次公開中。">
+  <meta name="keywords" content="LEDテープ,業務用,施工,選び方,電源容量,色温度,プロ施工,B2B">
+  <link rel="canonical" href="https://www.led-proshop.com/articles/">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.led-proshop.com/articles/">
+  <meta property="og:title" content="LED PRO SHOP コラム｜業務用LED施工のプロ向け技術情報">
+  <meta property="og:description" content="業務用LEDテープライト施工のプロ向けコラム。12V/24V選び方・PSU容量計算・色温度比較など技術情報を公開中。">
+  <meta property="og:image" content="https://www.led-proshop.com/images/ogp_top.jpg">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LED PRO SHOP コラム｜業務用LED施工のプロ向け技術情報">
+  <meta name="twitter:description" content="業務用LEDテープライト施工のプロ向けコラム。12V/24V選び方・PSU容量計算・色温度比較など技術情報を公開中。">
+  <meta name="twitter:image" content="https://www.led-proshop.com/images/ogp_top.jpg">
+
+  <!-- ===== JSON-LD: CollectionPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "CollectionPage",
+    "name": "LED PRO SHOP コラム",
+    "description": "業務用LED施工のプロ向け技術情報コラム",
+    "url": "https://www.led-proshop.com/articles/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.led-proshop.com/images/logo.png"
+      }
+    }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "LED PRO SHOP",
+        "item": "https://www.led-proshop.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "コラム",
+        "item": "https://www.led-proshop.com/articles/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== RESET & CSS Variables（index.html と共通） ===== */
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --blue:#003C82;--blue-pale:#e8f0fe;--bg:#fff;--bg-gray:#f5f6f8;
+      --text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+
+    /* ===== NAVBAR（index.html と同一） ===== */
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+
+    /* ===== FOOTER（index.html と同一） ===== */
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+
+    /* ===== BREADCRUMB ===== */
+    .articles-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .articles-breadcrumb .container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:6px}
+    .articles-breadcrumb a{color:var(--blue);text-decoration:none}
+    .articles-breadcrumb a:hover{text-decoration:underline}
+    .articles-breadcrumb .sep{color:var(--border)}
+
+    /* ===== PAGE HERO ===== */
+    .articles-hero{background:linear-gradient(135deg,#001a40 0%,#003C82 50%,#00254f 100%);padding:36px 16px 28px;border-bottom:3px solid #002a5c;text-align:center}
+    .articles-hero h1{font-size:22px;font-weight:900;color:#fff;margin-bottom:8px}
+    .articles-hero p{font-size:12px;color:rgba(255,255,255,.75);max-width:600px;margin:0 auto}
+
+    /* ===== LAYOUT ===== */
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .articles-main{padding:32px 0 56px}
+
+    /* ===== CATEGORY FILTER ===== */
+    .cat-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+    .cat-btn{display:inline-block;padding:5px 14px;border:1px solid var(--border);border-radius:20px;font-size:11px;font-weight:500;color:var(--text-sub);text-decoration:none;transition:all .15s;cursor:pointer;background:#fff}
+    .cat-btn:hover,.cat-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+    /* ===== ARTICLE GRID ===== */
+    .article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+
+    /* ===== ARTICLE CARD ===== */
+    .article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s;display:flex;flex-direction:column}
+    .article-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.1);transform:translateY(-2px);border-color:var(--blue)}
+    .article-card a{display:flex;flex-direction:column;height:100%;text-decoration:none}
+    .article-card .ac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#f0f2f5;display:block}
+    .article-card .ac-body{padding:14px 16px 18px;flex:1;display:flex;flex-direction:column;gap:6px}
+    .article-card .ac-tags{display:flex;gap:6px;flex-wrap:wrap}
+    .article-card .ac-cat{display:inline-block;font-size:9px;font-weight:700;color:var(--blue);background:var(--blue-pale);padding:2px 8px;border-radius:2px;letter-spacing:.5px}
+    .article-card .ac-title{font-size:14px;font-weight:700;color:var(--text);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .article-card .ac-excerpt{font-size:11px;color:var(--text-sub);line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .article-card .ac-meta{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:10px;border-top:1px solid var(--border)}
+    .article-card .ac-date{font-size:10px;color:var(--text-muted)}
+    .article-card .ac-more{font-size:10px;color:var(--blue);font-weight:700;letter-spacing:.3px}
+
+    /* ===== EMPTY STATE ===== */
+    .articles-empty{text-align:center;padding:48px 16px;color:var(--text-muted)}
+    .articles-empty p{font-size:14px;margin-bottom:6px;font-weight:500}
+    .articles-empty small{font-size:12px}
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:768px){
+      .navbar .nav-links{display:none}
+      .articles-hero h1{font-size:18px}
+      .article-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+    }
+    @media(max-width:480px){
+      .article-grid{grid-template-columns:1fr;gap:12px}
+      .cat-filter{gap:6px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .article-card{transition:none}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo" style="text-decoration:none">
+        <div class="logo-main">LED専門プロショップ<small>日本ネオン株式会社</small></div>
+        <div class="logo-tag">
+          <span class="logo-badge">PROFESSIONAL SUPPLY</span>
+          <span class="logo-catch">全国のLED施工業者が選ぶ / 工場直送 × 業界最安値</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#cat1" class="nav-link">LEDテープ</a></li>
+        <li><a href="/#cat6" class="nav-link">アルミフレーム</a></li>
+        <li><a href="/#cat3" class="nav-link">電源</a></li>
+        <li><a href="/#cat4" class="nav-link">制御機器</a></li>
+        <li><a href="/articles/" class="nav-link active">コラム</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== BREADCRUMB ===== -->
+  <nav class="articles-breadcrumb" aria-label="パンくず">
+    <div class="container">
+      <a href="/">LED PRO SHOP</a>
+      <span class="sep">›</span>
+      <span>コラム</span>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <header class="articles-hero">
+    <h1>LED PRO SHOP コラム</h1>
+    <p>業務用LED施工のプロ向け技術情報。現場で使える選び方・計算・比較を順次公開中。</p>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main class="articles-main">
+    <div class="container">
+
+      <!-- カテゴリフィルター -->
+      <nav class="cat-filter" aria-label="カテゴリ絞り込み">
+        <a href="/articles/" class="cat-btn active">すべて</a>
+        <a href="/articles/?cat=installation" class="cat-btn">施工事例</a>
+        <a href="/articles/?cat=guide" class="cat-btn">LED選び方ガイド</a>
+        <a href="/articles/?cat=power" class="cat-btn">電源・コントローラー解説</a>
+        <a href="/articles/?cat=spec" class="cat-btn">規格別比較</a>
+      </nav>
+
+      <!-- 記事グリッド -->
+      <div class="article-grid" id="article-grid">
+
+        <!-- B-1 -->
+        <article class="article-card" data-cat="guide">
+          <a href="/articles/led-tape-ip-waterproof-guide.html">
+            <img src="/articles/images/led-tape-ip-waterproof-guide-hero.jpg" alt="LEDテープの防水規格 IP65・IP67・IP68 の違いと選び方" class="ac-img" loading="lazy" width="400" height="225">
+            <div class="ac-body">
+              <div class="ac-tags"><span class="ac-cat">LED選び方ガイド</span></div>
+              <h2 class="ac-title">LEDテープの防水規格 IP65・IP67・IP68 の違いと選び方｜屋外施工・水回りの等級判断基準</h2>
+              <p class="ac-excerpt">IP65（噴流水）・IP67（短時間水没）・IP68（継続水没）の試験条件と実用用途を解説。屋外サイン・浴室・プールサイドなど防水等級の正しい選び方を整理します。</p>
+              <div class="ac-meta">
+                <span class="ac-date">2026-04-30</span>
+                <span class="ac-more">続きを読む →</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- B-2 -->
+        <article class="article-card" data-cat="guide">
+          <a href="/articles/cob-vs-smd-led-tape.html">
+            <img src="/articles/images/cob-vs-smd-led-tape-hero.jpg" alt="COBテープとSMDテープの違い" class="ac-img" loading="lazy" width="400" height="225">
+            <div class="ac-body">
+              <div class="ac-tags"><span class="ac-cat">LED選び方ガイド</span></div>
+              <h2 class="ac-title">COBテープとSMDテープの違い｜均一発光・演色性・コストで選ぶ業務用LEDテープ比較</h2>
+              <p class="ac-excerpt">COBテープとSMDテープの構造・発光方式・演色性・コストの違いを業務施工の観点で比較。間接照明・チャンネル文字・店舗照明など用途別の選択基準を整理します。</p>
+              <div class="ac-meta">
+                <span class="ac-date">2026-04-30</span>
+                <span class="ac-more">続きを読む →</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- B-3 -->
+        <article class="article-card" data-cat="guide">
+          <a href="/articles/aluminum-frame-normal-vs-recessed.html">
+            <img src="/articles/images/aluminum-frame-normal-vs-recessed-hero.jpg" alt="LEDテープ用アルミフレーム 通常取付 vs 埋め込みの違い" class="ac-img" loading="lazy" width="400" height="225">
+            <div class="ac-body">
+              <div class="ac-tags"><span class="ac-cat">LED選び方ガイド</span></div>
+              <h2 class="ac-title">LEDテープ用アルミフレーム 通常取付 vs 埋め込み｜Uチャンネルと Tチャンネルの選び方</h2>
+              <p class="ac-excerpt">Uチャンネル（通常取付）とTチャンネル（埋め込み型）の構造・施工コスト・仕上がりの違いを整理。天井・壁・棚下など設置場所別の選択基準を解説します。</p>
+              <div class="ac-meta">
+                <span class="ac-date">2026-04-30</span>
+                <span class="ac-more">続きを読む →</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- B-4 -->
+        <article class="article-card" data-cat="guide">
+          <a href="/articles/restaurant-indirect-lighting-led-guide.html">
+            <img src="/articles/images/restaurant-indirect-lighting-led-guide-hero.jpg" alt="店舗・飲食店の間接照明にLEDテープを使うときの選定ポイント5つ" class="ac-img" loading="lazy" width="400" height="225">
+            <div class="ac-body">
+              <div class="ac-tags"><span class="ac-cat">LED選び方ガイド</span></div>
+              <h2 class="ac-title">店舗・飲食店の間接照明にLEDテープを使うときの選定ポイント5つ</h2>
+              <p class="ac-excerpt">飲食店・カフェ・アパレル・ホテルの間接照明でLEDテープを選ぶ5つのポイント。色温度・演色性・均一発光・防汚・調光対応を業種別の推奨仕様とともに解説します。</p>
+              <div class="ac-meta">
+                <span class="ac-date">2026-04-30</span>
+                <span class="ac-more">続きを読む →</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- B-5 -->
+        <article class="article-card" data-cat="guide">
+          <a href="/articles/led-tape-cri-ra-value-guide.html">
+            <img src="/articles/images/led-tape-cri-ra-value-guide-hero.jpg" alt="LEDテープの演色性（Ra値）とは？Ra80・Ra90・Ra95の違いと用途別推奨" class="ac-img" loading="lazy" width="400" height="225">
+            <div class="ac-body">
+              <div class="ac-tags"><span class="ac-cat">LED選び方ガイド</span></div>
+              <h2 class="ac-title">LEDテープの演色性（Ra値）とは？Ra80・Ra90・Ra95の違いと用途別推奨</h2>
+              <p class="ac-excerpt">演色性（CRI・Ra値）の仕組みをプロ施工向けに解説。Ra80・Ra90・Ra95の実際の違い、飲食店・美容院・アパレル・宝飾品など業種別の推奨Ra値と低演色性が引き起こすビジネスリスクを整理します。</p>
+              <div class="ac-meta">
+                <span class="ac-date">2026-04-30</span>
+                <span class="ac-more">続きを読む →</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- B-6 -->
+        <article class="article-card" data-cat="guide">
+          <a href="/articles/channel-letter-backlit-sign-led.html">
+            <img src="/articles/images/channel-letter-backlit-sign-led-hero.jpg" alt="チャンネル文字・内照看板のLED選定ガイド｜均一発光と耐熱が決め手" class="ac-img" loading="lazy" width="400" height="225">
+            <div class="ac-body">
+              <div class="ac-tags"><span class="ac-cat">看板・サイン施工ガイド</span></div>
+              <h2 class="ac-title">チャンネル文字・内照看板のLED選定ガイド｜均一発光と耐熱が決め手</h2>
+              <p class="ac-excerpt">チャンネル文字・内照看板・バックライトパネルのLED選定で押さえる4つの決め手（均一発光・耐熱・防水・電圧降下）を解説。COBテープとSMDテープの使い分けと電源設計の判断フローを整理します。</p>
+              <div class="ac-meta">
+                <span class="ac-date">2026-04-30</span>
+                <span class="ac-more">続きを読む →</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+      </div><!-- /article-grid -->
+
+      <!-- 記事0件時のフォールバック（JS で制御） -->
+      <div class="articles-empty" id="articles-empty">
+        <p>コラム記事を順次公開中</p>
+        <small>LED施工のプロ向け技術情報を準備しています。しばらくお待ちください。</small>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div style="margin-bottom:8px;font-size:12px;font-weight:700;color:#ccc">LED専門プロショップ（日本ネオン株式会社）</div>
+    <div style="margin-bottom:4px">
+      <a href="/privacy-policy.html" style="color:#aaa;text-decoration:none">プライバシーポリシー</a>
+      &nbsp;|&nbsp;
+      <a href="/tokushoho.html" style="color:#aaa;text-decoration:none">特定商取引法に基づく表記</a>
+    </div>
+    <div>&copy; 2025 LED専門プロショップ（日本ネオン株式会社） All Rights Reserved.</div>
+  </footer>
+
+  <!-- 記事0件フォールバック制御 -->
+  <script>
+  (function() {
+    var grid = document.getElementById('article-grid');
+    var empty = document.getElementById('articles-empty');
+    if (!grid || !empty) return;
+    // article 要素が1件以上あれば empty を非表示
+    if (grid.querySelectorAll('article.article-card').length > 0) {
+      empty.style.display = 'none';
+    }
+  })();
+  </script>
+
+</body>
+</html>
