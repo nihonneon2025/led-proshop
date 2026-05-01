@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>COB LEDテープのチップ密度・輝度の選び方｜W/mと密度で光量と均一性を決める完全ガイド | LED専門プロショップ</title>
+  <meta name="description" content="COBテープライトの消費電力（W/m）・チップ密度・光束（lm/m）の選び方を解説。6W〜20W/mの輝度レンジ別用途と、均一な面発光を実現するチップ密度の見方、業種別推奨W数を網羅した完全ガイド。">
+  <link rel="canonical" href="https://led-proshop.com/articles/cob-led-tape-density-guide.html">
+
+  <!-- OGP -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="COB LEDテープのチップ密度・輝度の選び方｜W/mと密度で光量と均一性を決める完全ガイド">
+  <meta property="og:description" content="COBテープライトの消費電力（W/m）・チップ密度・光束（lm/m）の選び方を解説。6W〜20W/mの輝度レンジ別用途と均一な面発光を実現するチップ密度の見方、業種別推奨W数を網羅した完全ガイド。">
+  <meta property="og:url" content="https://led-proshop.com/articles/cob-led-tape-density-guide.html">
+  <meta property="og:site_name" content="LED専門プロショップ">
+  <meta property="og:image" content="https://led-proshop.com/images/hero-scenes/bar_lounge.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="COB LEDテープのチップ密度・輝度の選び方｜W/mと密度で光量と均一性を決める完全ガイド">
+  <meta name="twitter:description" content="COBテープライトの消費電力（W/m）・チップ密度・光束（lm/m）の選び方を解説。6W〜20W/mの輝度レンジ別用途と均一な面発光を実現するチップ密度の見方、業種別推奨W数を網羅した完全ガイド。">
+  <meta name="twitter:image" content="https://led-proshop.com/images/hero-scenes/bar_lounge.png">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "COB LEDテープのチップ密度・輝度の選び方｜W/mと密度で光量と均一性を決める完全ガイド",
+    "description": "COBテープライトの消費電力（W/m）・チップ密度・光束（lm/m）の選び方を解説。6W〜20W/mの輝度レンジ別用途と均一な面発光を実現するチップ密度の見方、業種別推奨W数を網羅した完全ガイド。",
+    "author": {"@type": "Organization", "name": "LED専門プロショップ"},
+    "publisher": {"@type": "Organization", "name": "LED専門プロショップ"},
+    "datePublished": "2026-05-01",
+    "dateModified": "2026-05-01",
+    "url": "https://led-proshop.com/articles/cob-led-tape-density-guide.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://led-proshop.com/"},
+      {"@type": "ListItem", "position": 2, "name": "コラム一覧", "item": "https://led-proshop.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "COB LEDテープのチップ密度・輝度の選び方", "item": "https://led-proshop.com/articles/cob-led-tape-density-guide.html"}
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.75; font-size: 16px; }
+
+    /* ===== HEADER ===== */
+    .site-header { background: #0f172a; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+    .site-header .logo { color: #fff; font-size: 18px; font-weight: 700; text-decoration: none; }
+    .site-header .logo span { color: #8b5cf6; }
+    .header-nav a { color: #cbd5e1; font-size: 13px; text-decoration: none; margin-left: 18px; }
+    .header-nav a:hover { color: #fff; }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4338ca 100%);
+      color: #fff; padding: 56px 20px 48px; text-align: center;
+    }
+    .hero-tag { display: inline-block; background: rgba(139,92,246,0.2); border: 1px solid rgba(139,92,246,0.4); color: #c4b5fd; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 18px; letter-spacing: 0.08em; }
+    .hero h1 { font-size: clamp(22px,4vw,34px); font-weight: 900; line-height: 1.35; margin-bottom: 16px; }
+    .hero h1 em { color: #a5b4fc; font-style: normal; }
+    .hero-sub { font-size: 15px; color: rgba(255,255,255,0.85); max-width: 640px; margin: 0 auto 28px; }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .hero-badge { background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.35); color: #c4b5fd; font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 20px; }
+
+    /* ===== BREADCRUMB ===== */
+    .breadcrumb { background: #f1f5f9; padding: 10px 20px; font-size: 12px; color: #64748b; }
+    .breadcrumb a { color: #7c3aed; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* ===== LAYOUT ===== */
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 20px 60px; }
+
+    /* ===== LEAD ===== */
+    .lead-box { background: #f5f3ff; border-left: 4px solid #7c3aed; border-radius: 0 8px 8px 0; padding: 20px 24px; margin-bottom: 36px; }
+    .lead-box p { font-size: 15px; color: #3730a3; line-height: 1.8; }
+
+    /* ===== SECTION ===== */
+    h2.sec-title { font-size: 22px; font-weight: 800; color: #1e1b4b; border-bottom: 3px solid #7c3aed; padding-bottom: 8px; margin: 48px 0 20px; }
+    h3.subsec { font-size: 17px; font-weight: 700; color: #4338ca; margin: 28px 0 12px; padding-left: 12px; border-left: 3px solid #a5b4fc; }
+
+    /* ===== DENSITY VISUAL ===== */
+    .density-visual { display: flex; gap: 8px; align-items: flex-end; margin: 24px 0; flex-wrap: wrap; }
+    .den-bar { border-radius: 6px 6px 0 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 8px; min-width: 60px; flex: 1; }
+    .den-bar .den-w { font-size: 13px; font-weight: 800; color: #fff; }
+    .den-bar .den-label { font-size: 11px; color: rgba(255,255,255,0.8); margin-top: 4px; text-align: center; }
+    .den-bar-6  { height: 60px;  background: #6d28d9; }
+    .den-bar-8  { height: 80px;  background: #7c3aed; }
+    .den-bar-10 { height: 100px; background: #8b5cf6; }
+    .den-bar-12 { height: 120px; background: #a78bfa; }
+    .den-bar-15 { height: 150px; background: #c4b5fd; }
+    .den-bar-20 { height: 190px; background: #ddd6fe; }
+    .den-bar-20 .den-w, .den-bar-20 .den-label { color: #1e1b4b; }
+    .den-bar-15 .den-w, .den-bar-15 .den-label { color: #1e1b4b; }
+    .den-axis { display: flex; justify-content: space-between; margin-top: 4px; }
+    .den-axis span { font-size: 11px; color: #64748b; flex: 1; text-align: center; }
+
+    /* ===== GRADE CARDS ===== */
+    .grade-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; margin: 24px 0 32px; }
+    .grade-card { border-radius: 10px; padding: 20px; border: 1px solid transparent; }
+    .grade-card.lite { background: #f5f3ff; border-color: #ddd6fe; }
+    .grade-card.standard { background: #ede9fe; border-color: #c4b5fd; }
+    .grade-card.high { background: #4338ca; color: #fff; }
+    .grade-card.pro { background: #1e1b4b; color: #fff; }
+    .grade-card .gc-range { font-size: 22px; font-weight: 900; margin-bottom: 4px; }
+    .grade-card.lite .gc-range { color: #4338ca; }
+    .grade-card.standard .gc-range { color: #3730a3; }
+    .grade-card.high .gc-range { color: #a5b4fc; }
+    .grade-card.pro .gc-range { color: #c4b5fd; }
+    .grade-card .gc-name { font-size: 13px; font-weight: 700; margin-bottom: 10px; opacity: 0.85; }
+    .grade-card .gc-lm { font-size: 12px; margin-bottom: 10px; opacity: 0.8; }
+    .grade-card .gc-use { font-size: 13px; line-height: 1.7; }
+    .grade-card.lite .gc-use, .grade-card.standard .gc-use { color: #374151; }
+    .grade-card.high .gc-use, .grade-card.pro .gc-use { color: rgba(255,255,255,0.85); }
+
+    /* ===== COMPARE TABLE ===== */
+    .compare-table-wrap { overflow-x: auto; margin-bottom: 32px; }
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .compare-table th { background: #1e1b4b; color: #c4b5fd; padding: 10px 12px; text-align: left; font-weight: 700; white-space: nowrap; }
+    .compare-table td { padding: 9px 12px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+    .compare-table tr:nth-child(even) td { background: #f5f3ff; }
+    .compare-table .best { color: #7c3aed; font-weight: 700; }
+
+    /* ===== HL BOX ===== */
+    .hl-box { background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 10px; padding: 20px 24px; margin: 24px 0; }
+    .hl-box h4 { font-size: 15px; font-weight: 700; color: #3730a3; margin-bottom: 10px; }
+    .hl-box ul { padding-left: 20px; }
+    .hl-box ul li { font-size: 14px; color: #374151; margin-bottom: 6px; line-height: 1.7; }
+
+    /* ===== WARN BOX ===== */
+    .warn-box { background: #fff7ed; border: 2px solid #fb923c; border-radius: 10px; padding: 20px 24px; margin: 24px 0; }
+    .warn-box h4 { font-size: 15px; font-weight: 700; color: #c2410c; margin-bottom: 10px; }
+    .warn-box ul { padding-left: 20px; }
+    .warn-box ul li { font-size: 14px; color: #374151; margin-bottom: 6px; }
+
+    /* ===== INDUSTRY TABLE ===== */
+    .industry-table-wrap { overflow-x: auto; margin-bottom: 32px; }
+    .industry-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .industry-table th { background: #4338ca; color: #fff; padding: 10px 12px; text-align: left; font-weight: 700; }
+    .industry-table td { padding: 9px 12px; border-bottom: 1px solid #e2e8f0; }
+    .industry-table tr:nth-child(even) td { background: #f5f3ff; }
+    .rec-badge { display: inline-block; background: #7c3aed; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+
+    /* ===== CALC BOX ===== */
+    .calc-box { background: #1e1b4b; color: #fff; border-radius: 12px; padding: 28px; margin: 24px 0; }
+    .calc-box h4 { font-size: 16px; font-weight: 700; color: #a5b4fc; margin-bottom: 16px; }
+    .calc-step { display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start; }
+    .calc-step .cs-num { flex-shrink: 0; width: 24px; height: 24px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+    .calc-step .cs-body { font-size: 14px; color: rgba(255,255,255,0.9); line-height: 1.7; }
+    .calc-step .cs-body code { background: rgba(139,92,246,0.3); padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+    .calc-result { background: rgba(139,92,246,0.2); border: 1px solid rgba(139,92,246,0.4); border-radius: 8px; padding: 14px; margin-top: 14px; font-size: 14px; color: #c4b5fd; }
+
+    /* ===== DECISION ===== */
+    .decision-flow { list-style: none; padding: 0; margin: 20px 0 32px; }
+    .decision-flow > li { border-left: 2px solid #7c3aed; padding: 0 0 20px 20px; position: relative; }
+    .decision-flow > li::before { content: '?'; position: absolute; left: -10px; top: 0; width: 20px; height: 20px; background: #7c3aed; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; }
+    .decision-flow > li:last-child { border-left: 2px solid transparent; }
+    .decision-q { font-size: 15px; font-weight: 700; color: #1e1b4b; margin-bottom: 8px; }
+    .decision-a { font-size: 13px; color: #4b5563; }
+    .decision-a span { display: inline-block; margin: 2px 4px; background: #ede9fe; color: #4338ca; padding: 2px 10px; border-radius: 12px; font-weight: 600; }
+
+    /* ===== CTA ===== */
+    .cta-box { background: linear-gradient(135deg, #1e1b4b, #4338ca); color: #fff; border-radius: 14px; padding: 36px 28px; text-align: center; margin-top: 48px; }
+    .cta-box h3 { font-size: 20px; font-weight: 800; margin-bottom: 10px; }
+    .cta-box p { font-size: 14px; color: rgba(255,255,255,0.85); margin-bottom: 24px; }
+    .cta-btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .cta-btn { display: inline-block; padding: 13px 28px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; transition: opacity .2s; }
+    .cta-btn.primary { background: #fff; color: #4338ca; }
+    .cta-btn.secondary { background: rgba(255,255,255,0.12); color: #fff; border: 2px solid rgba(255,255,255,0.35); }
+    .cta-btn:hover { opacity: 0.85; }
+
+    /* ===== FOOTER ===== */
+    .footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 28px 20px; font-size: 13px; }
+    .footer a { color: #94a3b8; text-decoration: none; }
+    .footer a:hover { color: #fff; }
+
+    @media(max-width:600px) {
+      .grade-cards { grid-template-columns: 1fr; }
+      .density-visual { gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">LED<span>PRO</span>SHOP</a>
+  <nav class="header-nav">
+    <a href="/">商品一覧</a>
+    <a href="/articles/">コラム</a>
+    <a href="/faq/">FAQ</a>
+  </nav>
+</header>
+
+<nav class="breadcrumb">
+  <a href="/">トップ</a> &rsaquo;
+  <a href="/articles/">コラム一覧</a> &rsaquo;
+  COB LEDテープのチップ密度・輝度の選び方
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">選び方ガイド — COBテープ</div>
+  <h1>COB LEDテープの<em>チップ密度・輝度</em>の選び方<br>W/mと密度で光量と均一性を決める<br>完全ガイド</h1>
+  <p class="hero-sub">「何W/mを選べばいいか分からない」——COBテープ選びで最も多い疑問に答えます。6W〜20W/mの輝度レンジ別の用途と業種別推奨W数を徹底解説します。</p>
+  <div class="hero-badges">
+    <span class="hero-badge">6〜20W/m 輝度レンジ別解説</span>
+    <span class="hero-badge">業種別推奨W数一覧</span>
+    <span class="hero-badge">lm/m の読み方</span>
+    <span class="hero-badge">PSU選定計算式</span>
+    <span class="hero-badge">均一性とチップ密度</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="lead-box">
+    <p>COB LEDテープは従来のSMD（個別チップ）型と異なり、<strong>チップを連続したフィラメント状に並べた構造</strong>で均一な面発光が得られるのが最大の特徴です。しかし「COBテープ」と一口に言っても、消費電力は<strong>6W/mから20W/m以上</strong>まで幅広く存在します。本ガイドでは「どの用途に何W/mを選ぶべきか」を数値根拠とともに解説します。</p>
+  </div>
+
+  <!-- ===== COBの基本構造 ===== -->
+  <h2 class="sec-title">COBテープの基本構造と「密度」の意味</h2>
+
+  <h3 class="subsec">COB（Chip On Board）とSMDの違い</h3>
+  <p style="font-size:14px;color:#374151;margin-bottom:16px;line-height:1.8">
+    従来のSMD型テープは1チップずつが樹脂パッケージに封入されています。COB型は<strong>裸のチップ（ダイ）を基板に直接並べ、全体を蛍光体入り樹脂でコーティング</strong>した構造です。チップ間に隙間がないため「光の点滅」が人の目に認識されず、アルミフレームに入れても境界線が出ない均一な線光源になります。
+  </p>
+
+  <div class="hl-box">
+    <h4>COB vs SMD — 実用比較</h4>
+    <ul>
+      <li><strong>均一性</strong>：COBは肉眼で点が見えない面発光 / SMDは1個ずつの点が見える</li>
+      <li><strong>最小カット長</strong>：COBは基板パターンにより5cm〜10cm / SMDは個別チップ配置により2.5cm〜5cmが一般的</li>
+      <li><strong>演色性ポテンシャル</strong>：COBは蛍光体コーティングの制御が容易でRa90〜Ra95品が多い / SMDでも可能だが品質のばらつきが出やすい</li>
+      <li><strong>放熱</strong>：COBは密度が高いため単位面積あたりの発熱が大きい。アルミフレームへの密着が重要</li>
+      <li><strong>価格</strong>：COBは高演色品が多く、同W数のSMDより高単価になる場合が多い</li>
+    </ul>
+  </div>
+
+  <!-- ===== 輝度レンジ ===== -->
+  <h2 class="sec-title">W/m輝度レンジの視覚化</h2>
+
+  <div class="density-visual">
+    <div class="den-bar den-bar-6">
+      <div class="den-w">6W</div>
+      <div class="den-label">/m</div>
+    </div>
+    <div class="den-bar den-bar-8">
+      <div class="den-w">8W</div>
+      <div class="den-label">/m</div>
+    </div>
+    <div class="den-bar den-bar-10">
+      <div class="den-w">10W</div>
+      <div class="den-label">/m</div>
+    </div>
+    <div class="den-bar den-bar-12">
+      <div class="den-w">12W</div>
+      <div class="den-label">/m</div>
+    </div>
+    <div class="den-bar den-bar-15">
+      <div class="den-w">15W</div>
+      <div class="den-label">/m</div>
+    </div>
+    <div class="den-bar den-bar-20">
+      <div class="den-w">20W</div>
+      <div class="den-label">/m</div>
+    </div>
+  </div>
+  <p style="font-size:12px;color:#64748b;margin-bottom:32px;text-align:center">消費電力（W/m）ごとの相対的な明るさイメージ。同じCOBテープでも電圧・品質により lm/W 効率が変わります。</p>
+
+  <!-- ===== グレード別 ===== -->
+  <h2 class="sec-title">4グレードの用途と特徴</h2>
+
+  <div class="grade-cards">
+    <div class="grade-card lite">
+      <div class="gc-range">6〜8W/m</div>
+      <div class="gc-name">ライトグレード</div>
+      <div class="gc-lm">目安：600〜850lm/m（効率110lm/W時）</div>
+      <div class="gc-use">間接照明・アクセント光・家具フレームのアンダーライト・棚下照明。主照明を補助する「演出目的」の光量。直接照明としては暗すぎるが、間接の「陰影づくり」には最適。</div>
+    </div>
+    <div class="grade-card standard">
+      <div class="gc-range">10〜12W/m</div>
+      <div class="gc-name">スタンダードグレード</div>
+      <div class="gc-lm">目安：1,000〜1,200lm/m（効率100lm/W時）</div>
+      <div class="gc-use">飲食店・美容室・アパレル・オフィスの補助照明。天井コーニスでの間接照明や、カウンター・棚照明として。住宅のリビング・ダイニングの主照明にも使用可。</div>
+    </div>
+    <div class="grade-card high">
+      <div class="gc-range">15W/m</div>
+      <div class="gc-name">ハイグレード</div>
+      <div class="gc-lm">目安：1,500〜1,650lm/m</div>
+      <div class="gc-use">ショールーム・ギャラリー・高級ホテルロビー・工場ラインの補助照明。単独での天井照明に十分な光量。アルミフレームへの密着放熱が必須。</div>
+    </div>
+    <div class="grade-card pro">
+      <div class="gc-range">18〜20W/m</div>
+      <div class="gc-name">プログレード</div>
+      <div class="gc-lm">目安：1,800〜2,200lm/m</div>
+      <div class="gc-use">検査ライン・工場メイン照明・屋外サイン強照射。大光量が必要な業務用途。PSUの容量計算と放熱管理が特に重要。電圧降下対策（24V両端給電）必須。</div>
+    </div>
+  </div>
+
+  <!-- ===== 業種別推奨 ===== -->
+  <h2 class="sec-title">業種別推奨W/mと色温度</h2>
+
+  <div class="industry-table-wrap">
+    <table class="industry-table">
+      <thead>
+        <tr>
+          <th>業種・用途</th>
+          <th>推奨W/m</th>
+          <th>推奨色温度</th>
+          <th>演色性</th>
+          <th>補足</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>レストラン・居酒屋（間接照明）</td>
+          <td><span class="rec-badge">8〜10W</span></td>
+          <td>2700〜3000K</td>
+          <td>Ra90</td>
+          <td>食材の見栄えにはRa90必須</td>
+        </tr>
+        <tr>
+          <td>カフェ・バー（アンビエント）</td>
+          <td><span class="rec-badge">6〜8W</span></td>
+          <td>2700K</td>
+          <td>Ra90</td>
+          <td>暗めの演出が目的</td>
+        </tr>
+        <tr>
+          <td>アパレルショップ（商品棚）</td>
+          <td><span class="rec-badge">10〜12W</span></td>
+          <td>3500〜4000K</td>
+          <td>Ra90〜95</td>
+          <td>布地の色再現にRa90以上</td>
+        </tr>
+        <tr>
+          <td>ジュエリー・宝飾店</td>
+          <td><span class="rec-badge">12〜15W</span></td>
+          <td>4000〜5000K</td>
+          <td><strong>Ra95</strong></td>
+          <td>石の輝きにRa95必須</td>
+        </tr>
+        <tr>
+          <td>美容室・サロン（施術面）</td>
+          <td><span class="rec-badge">10〜12W</span></td>
+          <td>4000K</td>
+          <td><strong>Ra95</strong></td>
+          <td>肌色・髪色の正確な判定</td>
+        </tr>
+        <tr>
+          <td>ホテルロビー・客室</td>
+          <td><span class="rec-badge">8〜10W</span></td>
+          <td>2700〜3000K</td>
+          <td>Ra90</td>
+          <td>調光（PWM/0-10V）対応推奨</td>
+        </tr>
+        <tr>
+          <td>自動車ショールーム</td>
+          <td><span class="rec-badge">12〜15W</span></td>
+          <td>5000K</td>
+          <td><strong>Ra95</strong></td>
+          <td>車体色の正確な再現が最優先</td>
+        </tr>
+        <tr>
+          <td>オフィス（主照明補助）</td>
+          <td><span class="rec-badge">12〜15W</span></td>
+          <td>4000K</td>
+          <td>Ra80〜90</td>
+          <td>JIS Z 9110 500lx推奨を達成</td>
+        </tr>
+        <tr>
+          <td>食品工場・検査ライン</td>
+          <td><span class="rec-badge">15〜20W</span></td>
+          <td>5000〜6500K</td>
+          <td>Ra90</td>
+          <td>IP67必須・高照度で異物検出</td>
+        </tr>
+        <tr>
+          <td>屋外サイン・看板（バックライト）</td>
+          <td><span class="rec-badge">10〜15W</span></td>
+          <td>6500K（昼光色）</td>
+          <td>Ra80以上</td>
+          <td>IP67・UV耐性シリコンカバー必須</td>
+        </tr>
+        <tr>
+          <td>住宅リビング（主照明）</td>
+          <td><span class="rec-badge">10〜12W</span></td>
+          <td>3000〜4000K</td>
+          <td>Ra90</td>
+          <td>調光で場面に合わせた演出可</td>
+        </tr>
+        <tr>
+          <td>住宅キッチン（作業照明）</td>
+          <td><span class="rec-badge">12W</span></td>
+          <td>4000K</td>
+          <td>Ra90</td>
+          <td>手元の均一な照度確保が目的</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== 光束（lm/m）の読み方 ===== -->
+  <h2 class="sec-title">光束（lm/m）の読み方と計算</h2>
+
+  <div class="calc-box">
+    <h4>PSU必要容量の計算手順（教室3教室・Zone B を例に）</h4>
+    <div class="calc-step">
+      <div class="cs-num">1</div>
+      <div class="cs-body">必要テープ長を決める：<code>3教室 × 各12m = 36m</code></div>
+    </div>
+    <div class="calc-step">
+      <div class="cs-num">2</div>
+      <div class="cs-body">選定W/mを決める：<code>8W/m（スタンダード）</code></div>
+    </div>
+    <div class="calc-step">
+      <div class="cs-num">3</div>
+      <div class="cs-body">計算消費電力：<code>36m × 8W/m = 288W</code></div>
+    </div>
+    <div class="calc-step">
+      <div class="cs-num">4</div>
+      <div class="cs-body">安全係数（20%マージン）を乗じる：<code>288W × 1.2 = 345.6W → 350W以上のPSUを選択</code></div>
+    </div>
+    <div class="calc-step">
+      <div class="cs-num">5</div>
+      <div class="cs-body">電圧降下を考慮：36mのテープ1本を1端給電すると末端で電圧が下がる場合がある。<code>10m以上は両端給電または200W PSU×2台で分割給電</code>を検討</div>
+    </div>
+    <div class="calc-result">
+      結論：36m × 8W/m のケースは <strong>350W以上の定電圧スイッチング電源（24V）</strong>を1台使用し、テープは12mずつ3分割で給電するのが最も安全。
+    </div>
+  </div>
+
+  <h3 class="subsec">lm/W効率（発光効率）の見方</h3>
+  <p style="font-size:14px;color:#374151;margin-bottom:16px;line-height:1.8">
+    製品スペックの「lm/m（1mあたりの光束）」を「W/m（1mあたりの消費電力）」で割ると<strong>発光効率（lm/W）</strong>が求められます。同じ8W/mでも<strong>品質の高いCOBテープは効率110〜120lm/W</strong>を達成し、880〜960lm/mを出力します。安価な品では70〜80lm/Wにとどまり、同じ電力で20〜30%暗い結果になります。
+  </p>
+
+  <div class="compare-table-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>W/m</th>
+          <th>効率（高品質）</th>
+          <th>lm/m（高品質）</th>
+          <th>効率（低品質）</th>
+          <th>lm/m（低品質）</th>
+          <th>差</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>6W/m</td>
+          <td>120lm/W</td>
+          <td class="best">720lm/m</td>
+          <td>75lm/W</td>
+          <td>450lm/m</td>
+          <td>37%差</td>
+        </tr>
+        <tr>
+          <td>8W/m</td>
+          <td>115lm/W</td>
+          <td class="best">920lm/m</td>
+          <td>75lm/W</td>
+          <td>600lm/m</td>
+          <td>35%差</td>
+        </tr>
+        <tr>
+          <td>10W/m</td>
+          <td>110lm/W</td>
+          <td class="best">1,100lm/m</td>
+          <td>70lm/W</td>
+          <td>700lm/m</td>
+          <td>36%差</td>
+        </tr>
+        <tr>
+          <td>12W/m</td>
+          <td>105lm/W</td>
+          <td class="best">1,260lm/m</td>
+          <td>70lm/W</td>
+          <td>840lm/m</td>
+          <td>33%差</td>
+        </tr>
+        <tr>
+          <td>15W/m</td>
+          <td>100lm/W</td>
+          <td class="best">1,500lm/m</td>
+          <td>65lm/W</td>
+          <td>975lm/m</td>
+          <td>35%差</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== 均一性と放熱 ===== -->
+  <h2 class="sec-title">均一性と放熱——COBテープを正しく使うためのポイント</h2>
+
+  <h3 class="subsec">なぜアルミフレームが必要か</h3>
+  <p style="font-size:14px;color:#374151;margin-bottom:16px;line-height:1.8">
+    COBテープは密度が高いため、<strong>発熱量が同W数のSMDより多い</strong>傾向があります。熱がこもるとチップの接合部温度（Tj）が上昇し、光束維持率（L70到達年数）が大幅に下がります。アルミフレーム（Uチャンネル・Tチャンネル）はテープの熱を放散するヒートシンクとして機能し、<strong>適切なフレームを使うと寿命が2〜3倍に延びる</strong>ことが知られています。
+  </p>
+
+  <div class="hl-box">
+    <h4>放熱の実用チェックリスト</h4>
+    <ul>
+      <li><strong>10W/m以下</strong>：薄型Uチャンネル（1〜2mm肉厚）で十分。密閉チャンバー内は避ける</li>
+      <li><strong>12〜15W/m</strong>：2〜3mm肉厚のヘビーデューティUチャンネルまたはTチャンネル推奨。接触面積を最大化する</li>
+      <li><strong>18〜20W/m</strong>：大型押し出しアルミフレーム＋サーマルテープ（熱伝導テープ）の二重放熱対策が必要</li>
+      <li><strong>点灯後30分経過時のフレーム表面温度を確認</strong>：触れて「熱い」と感じる60℃以上の場合は放熱不足のサイン（50℃以下が理想）</li>
+    </ul>
+  </div>
+
+  <div class="warn-box">
+    <h4>⚠️ よくある選び間違い5パターン</h4>
+    <ul>
+      <li><strong>「明るければいいのでW数を最大に」</strong>：20W/mを間接照明に使うと眩しすぎ、かつ放熱が追いつかず寿命が大幅に短縮する</li>
+      <li><strong>「同じW数なら安い方がいい」</strong>：発光効率が30〜40%低い製品を選ぶと、同じ電力でもはるかに暗くなる</li>
+      <li><strong>「アルミフレームなしで天井に直貼り」</strong>：石膏ボード・木材は熱を逃がさないため、チップ寿命が定格の1/3以下になることがある</li>
+      <li><strong>「PSUの容量をギリギリで計算」</strong>：安全係数1.2を無視すると電源の過負荷で寿命低下・最悪の場合は発熱による損傷</li>
+      <li><strong>「12V vs 24Vを気にしない」</strong>：10m超のラインで12Vを使うと末端の電圧降下が顕著になり、端に向かって暗くなるグラデーション問題が発生</li>
+    </ul>
+  </div>
+
+  <!-- ===== 選定フロー ===== -->
+  <h2 class="sec-title">COBテープ選定フロー（5問）</h2>
+
+  <ol class="decision-flow">
+    <li>
+      <div class="decision-q">Q1. 照明の目的は「演出（間接）」か「作業（直接）」か？</div>
+      <div class="decision-a">
+        <span>演出目的 → 6〜10W/m</span>
+        <span>作業照明補助 → 10〜12W/m</span>
+        <span>メイン照明 → 12〜20W/m</span>
+      </div>
+    </li>
+    <li>
+      <div class="decision-q">Q2. 設置場所はアルミフレーム（Uチャンネル）が使えるか？</div>
+      <div class="decision-a">
+        <span>使える → どのW数でも可</span>
+        <span>使えない（直貼りのみ） → 10W/m以下を強く推奨</span>
+      </div>
+    </li>
+    <li>
+      <div class="decision-q">Q3. テープ1本の長さは何mか？</div>
+      <div class="decision-a">
+        <span>〜5m → 12V・24V どちらでも可</span>
+        <span>5〜10m → 24V推奨</span>
+        <span>10m超 → 24V必須＋両端給電検討</span>
+      </div>
+    </li>
+    <li>
+      <div class="decision-q">Q4. 演色性（Ra）の要件は？</div>
+      <div class="decision-a">
+        <span>飲食・住宅 → Ra90</span>
+        <span>美容・アパレル・ジュエリー・自動車 → Ra95</span>
+        <span>工場・倉庫・廊下 → Ra80〜</span>
+      </div>
+    </li>
+    <li>
+      <div class="decision-q">Q5. 調光は必要か？</div>
+      <div class="decision-a">
+        <span>不要（固定点灯） → 定電圧電源直結でシンプル</span>
+        <span>PWM調光 → 対応コントローラーと組み合わせ</span>
+        <span>0-10V / DALI → 対応電源が必要（別途選定）</span>
+      </div>
+    </li>
+  </ol>
+
+  <!-- ===== CTA ===== -->
+  <div class="cta-box">
+    <h3>COBテープのW/m選定はLED PRO SHOPへ</h3>
+    <p>6W〜20W/m・Ra90〜Ra95・COB 24Vテープラインナップ。アルミフレームUチャンネル・定電圧スイッチング電源も合わせてご提供します。選定に迷ったらカテゴリページからスペックを比較してください。</p>
+    <div class="cta-btns">
+      <a href="/category/cob-tape/" class="cta-btn primary">COBテープライト一覧を見る</a>
+      <a href="/category/alumi-frame/" class="cta-btn secondary">アルミフレーム一覧を見る</a>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<footer class="footer">
+  <div style="margin-bottom:8px;font-size:12px;font-weight:700;color:#ccc">LED専門プロショップ（日本ネオン株式会社）</div>
+  <div style="margin-bottom:4px">
+    <a href="/privacy-policy.html">プライバシーポリシー</a>
+    &nbsp;|&nbsp;
+    <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+  </div>
+  <div>&copy; 2025 LED専門プロショップ（日本ネオン株式会社） All Rights Reserved.</div>
+</footer>
+
+</body>
+</html>
