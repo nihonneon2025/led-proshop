@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小売店舗のLED照明選び方ガイド｜業種別・陳列別の光設計ポイント | LED PRO SHOP</title>
+  <meta name="description" content="スーパー・コンビニ・ドラッグストア・専門店など小売業態別のLED照明選び方を解説。演色性・色温度・照度の業種別基準、商品訴求を高める照明配置、省エネ計算まで実務向けガイド。">
+  <link rel="canonical" href="https://led-proshop.com/articles/retail-store-led-guide.html">
+
+  <!-- OGP -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="小売店舗のLED照明選び方ガイド｜業種別・陳列別の光設計ポイント">
+  <meta property="og:description" content="スーパー・コンビニ・ドラッグストア・専門店など小売業態別のLED照明選び方を解説。演色性・色温度・照度の業種別基準、商品訴求を高める照明配置、省エネ計算まで実務向けガイド。">
+  <meta property="og:url" content="https://led-proshop.com/articles/retail-store-led-guide.html">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:image" content="https://led-proshop.com/images/ogp-default.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="小売店舗のLED照明選び方ガイド｜業種別・陳列別の光設計ポイント">
+  <meta name="twitter:description" content="スーパー・コンビニ・ドラッグストア・専門店など小売業態別のLED照明選び方を解説。演色性・色温度・照度の業種別基準、商品訴求を高める照明配置まで。">
+
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "小売店舗のLED照明選び方ガイド｜業種別・陳列別の光設計ポイント",
+    "description": "スーパー・コンビニ・ドラッグストア・専門店など小売業態別のLED照明選び方を解説。演色性・色温度・照度の業種別基準、商品訴求を高める照明配置、省エネ計算まで実務向けガイド。",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+    "publisher": { "@type": "Organization", "name": "LED PRO SHOP", "url": "https://led-proshop.com" },
+    "datePublished": "2026-05-01",
+    "dateModified": "2026-05-01",
+    "url": "https://led-proshop.com/articles/retail-store-led-guide.html",
+    "mainEntityOfPage": "https://led-proshop.com/articles/retail-store-led-guide.html"
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "TOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "LEDコラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "小売店舗のLED照明選び方ガイド", "item": "https://led-proshop.com/articles/retail-store-led-guide.html" }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Hiragino Sans', 'Meiryo', sans-serif; background: #080c10; color: #e8e8e8; line-height: 1.8; }
+
+    .site-header { background: #0c1117; border-bottom: 1px solid #1c2433; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .site-header .logo { font-size: 1.1rem; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: .05em; }
+    .site-header .logo span { color: #00d4ff; }
+    .header-nav a { color: #aaa; text-decoration: none; font-size: .85rem; margin-left: 20px; }
+    .header-nav a:hover { color: #fff; }
+
+    .breadcrumb { background: #0c1117; padding: 10px 24px; font-size: .78rem; color: #666; }
+    .breadcrumb a { color: #888; text-decoration: none; }
+    .breadcrumb a:hover { color: #00d4ff; }
+    .breadcrumb span { margin: 0 6px; }
+
+    .article-hero { background: linear-gradient(135deg, #0c1a10 0%, #1a2c10 50%, #0c1a10 100%); padding: 60px 24px 48px; text-align: center; border-bottom: 1px solid #1c2433; }
+    .article-hero .category-badge { display: inline-block; background: #22c55e; color: #fff; font-size: .72rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; letter-spacing: .08em; }
+    .article-hero h1 { font-size: clamp(1.3rem, 3vw, 2rem); font-weight: 700; line-height: 1.4; color: #fff; max-width: 800px; margin: 0 auto 20px; }
+    .article-hero .meta { font-size: .8rem; color: #888; }
+
+    .article-body { max-width: 860px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    .lead { font-size: 1.05rem; color: #ccc; background: #0c1117; border-left: 4px solid #22c55e; padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 48px; line-height: 1.9; }
+
+    h2 { font-size: 1.4rem; font-weight: 700; color: #fff; border-bottom: 2px solid #22c55e; padding-bottom: 10px; margin: 56px 0 24px; }
+    h3 { font-size: 1.1rem; font-weight: 700; color: #e0e0e0; margin: 32px 0 14px; padding-left: 12px; border-left: 3px solid #22c55e; }
+
+    p { margin-bottom: 18px; color: #ccc; }
+    strong { color: #fff; }
+
+    .table-wrap { overflow-x: auto; margin: 24px 0 32px; }
+    table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    th { background: #0c1f14; color: #e0e0e0; font-weight: 700; padding: 12px 14px; text-align: left; border-bottom: 2px solid #22c55e; white-space: nowrap; }
+    td { padding: 11px 14px; border-bottom: 1px solid #1a2233; color: #ccc; vertical-align: top; }
+    tr:nth-child(even) td { background: #0c1117; }
+    tr:hover td { background: #111820; }
+
+    .cell-good { color: #22c55e; font-weight: 600; }
+    .cell-ok { color: #f59e0b; font-weight: 600; }
+    .cell-bad { color: #ef4444; font-weight: 600; }
+
+    .info-box { background: #0c1117; border: 1px solid #1c2433; border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+    .info-box.green { border-left: 4px solid #22c55e; }
+    .info-box.blue { border-left: 4px solid #3b82f6; }
+    .info-box.orange { border-left: 4px solid #f59e0b; }
+    .info-box.red { border-left: 4px solid #ef4444; }
+    .info-box .box-title { font-weight: 700; color: #fff; margin-bottom: 10px; font-size: .95rem; }
+    .info-box ul { padding-left: 18px; }
+    .info-box li { color: #ccc; margin-bottom: 6px; font-size: .92rem; }
+
+    .industry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 24px 0 32px; }
+    .industry-card { background: #0c1117; border: 1px solid #1c2433; border-radius: 10px; padding: 20px; border-top: 3px solid #22c55e; }
+    .industry-card h4 { font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .industry-card .spec-line { display: flex; justify-content: space-between; font-size: .85rem; border-bottom: 1px solid #1a2233; padding: 6px 0; }
+    .industry-card .spec-line:last-child { border-bottom: none; }
+    .industry-card .spec-key { color: #888; }
+    .industry-card .spec-val { color: #e0e0e0; font-weight: 600; }
+
+    .usecase-list { margin: 24px 0 32px; }
+    .usecase-item { background: #0c1117; border: 1px solid #1c2433; border-radius: 8px; padding: 18px 20px; margin-bottom: 14px; display: flex; gap: 16px; align-items: flex-start; }
+    .uc-num { background: #22c55e; color: #fff; font-weight: 700; font-size: .85rem; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .uc-content h4 { font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .uc-content p { font-size: .88rem; color: #aaa; margin: 0; }
+
+    .checklist { background: #0c1117; border: 1px solid #1c2433; border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+    .checklist h4 { font-weight: 700; color: #fff; margin-bottom: 14px; font-size: .95rem; }
+    .checklist label { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; cursor: pointer; color: #ccc; font-size: .9rem; }
+    .checklist input[type="checkbox"] { width: 16px; height: 16px; margin-top: 3px; accent-color: #22c55e; flex-shrink: 0; }
+
+    .cta-section { background: linear-gradient(135deg, #0c1f14, #0c1117); border: 1px solid #22c55e; border-radius: 12px; padding: 36px 32px; text-align: center; margin-top: 56px; }
+    .cta-section h2 { border: none; margin: 0 0 12px; font-size: 1.3rem; }
+    .cta-section p { color: #aaa; margin-bottom: 24px; }
+    .cta-buttons { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+    .btn-primary { background: #22c55e; color: #fff; padding: 13px 28px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: .92rem; transition: background .2s; }
+    .btn-primary:hover { background: #16a34a; }
+    .btn-secondary { background: transparent; color: #22c55e; border: 2px solid #22c55e; padding: 11px 28px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: .92rem; transition: all .2s; }
+    .btn-secondary:hover { background: #22c55e; color: #fff; }
+
+    .related-section { margin-top: 64px; padding-top: 32px; border-top: 1px solid #1c2433; }
+    .related-section h3 { border: none; padding: 0; margin-bottom: 16px; color: #888; font-size: .9rem; text-transform: uppercase; letter-spacing: .1em; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .related-link { background: #0c1117; border: 1px solid #1c2433; border-radius: 8px; padding: 14px 16px; text-decoration: none; color: #ccc; font-size: .88rem; transition: border-color .2s; display: block; }
+    .related-link:hover { border-color: #22c55e; color: #fff; }
+
+    .site-footer { background: #0c1117; border-top: 1px solid #1a2233; text-align: center; padding: 24px; color: #444; font-size: .8rem; }
+    .site-footer a { color: #555; text-decoration: none; }
+    .site-footer a:hover { color: #888; }
+
+    @media (max-width: 640px) {
+      .article-hero { padding: 40px 16px 36px; }
+      .article-body { padding: 32px 16px 60px; }
+      .industry-grid { grid-template-columns: 1fr; }
+      .cta-section { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="https://led-proshop.com/" class="logo">LED <span>PRO</span> SHOP</a>
+  <nav class="header-nav">
+    <a href="https://led-proshop.com/">商品一覧</a>
+    <a href="https://led-proshop.com/articles/">コラム</a>
+    <a href="https://led-proshop.com/faq/">FAQ</a>
+  </nav>
+</header>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <a href="https://led-proshop.com/">TOP</a>
+  <span>›</span>
+  <a href="https://led-proshop.com/articles/">LEDコラム</a>
+  <span>›</span>
+  小売店舗のLED照明選び方ガイド
+</nav>
+
+<section class="article-hero">
+  <span class="category-badge">選び方ガイド</span>
+  <h1>小売店舗のLED照明選び方ガイド<br>業種別・陳列別の光設計ポイント</h1>
+  <div class="meta">2026年5月1日公開 ｜ LED PRO SHOP 技術コラム</div>
+</section>
+
+<main class="article-body">
+
+  <p class="lead">
+    小売店舗の照明は「売場の明るさ確保」だけでなく、<strong>商品の色を正確に見せる演色性・購買意欲を高める照度設計・業種ごとに異なる色温度の使い分け</strong>が売上に直結します。スーパーの生鮮コーナーとアパレルショップでは、求められる照明仕様がまったく異なります。本ガイドでは業態別の選び方基準、LEDテープが有効な陳列箇所、省エネ計算のポイントを整理します。
+  </p>
+
+  <!-- ============================================================ -->
+  <h2>1. 業種別LED照明の基本仕様一覧</h2>
+
+  <p>JIS Z 9110（照明基準総則）の小売業種向け推奨値と、商品訴求・購買行動研究から導かれた実務値を組み合わせた業種別ガイドラインです。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>業種</th>
+          <th>推奨照度</th>
+          <th>色温度</th>
+          <th>演色性</th>
+          <th>重視ポイント</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>スーパー（一般食品）</strong></td>
+          <td>750〜1,500 lx</td>
+          <td>5000〜6500K</td>
+          <td>Ra80以上</td>
+          <td>高照度・清潔感・商品判別</td>
+        </tr>
+        <tr>
+          <td><strong>スーパー（生鮮食品）</strong></td>
+          <td>750〜1,500 lx</td>
+          <td>3000K（肉）/ 4000K（魚・野菜）</td>
+          <td><span class="cell-good">Ra90以上</span></td>
+          <td>肉の赤み・魚の鮮度感・野菜の鮮やかさ</td>
+        </tr>
+        <tr>
+          <td><strong>コンビニ</strong></td>
+          <td>750〜1,000 lx</td>
+          <td>5000〜6500K</td>
+          <td>Ra80以上</td>
+          <td>全天候・24時間・高照度の清潔感</td>
+        </tr>
+        <tr>
+          <td><strong>ドラッグストア</strong></td>
+          <td>500〜1,000 lx</td>
+          <td>5000K</td>
+          <td>Ra85以上</td>
+          <td>商品パッケージの色正確性・清潔感</td>
+        </tr>
+        <tr>
+          <td><strong>アパレル（一般）</strong></td>
+          <td>500〜1,000 lx</td>
+          <td>3500〜4000K</td>
+          <td><span class="cell-good">Ra90以上</span></td>
+          <td>衣類の色・素材感・試着室の肌色</td>
+        </tr>
+        <tr>
+          <td><strong>アパレル（高級・セレクト）</strong></td>
+          <td>300〜500 lx</td>
+          <td>2700〜3000K</td>
+          <td><span class="cell-good">Ra95以上</span></td>
+          <td>高級感・ブランドイメージ・素材の質感</td>
+        </tr>
+        <tr>
+          <td><strong>靴・バッグ</strong></td>
+          <td>500〜750 lx</td>
+          <td>3000〜3500K</td>
+          <td>Ra90以上</td>
+          <td>革の質感・色の正確性</td>
+        </tr>
+        <tr>
+          <td><strong>書籍・文具</strong></td>
+          <td>500〜750 lx</td>
+          <td>4000〜5000K</td>
+          <td>Ra80以上</td>
+          <td>文字判読・表紙色の正確性</td>
+        </tr>
+        <tr>
+          <td><strong>電器・家電</strong></td>
+          <td>500〜1,000 lx</td>
+          <td>5000K</td>
+          <td>Ra80以上</td>
+          <td>ディスプレイ視認性・清潔感</td>
+        </tr>
+        <tr>
+          <td><strong>コスメ・化粧品</strong></td>
+          <td>500〜1,000 lx</td>
+          <td>4000〜5000K</td>
+          <td><span class="cell-good">Ra90以上</span></td>
+          <td>色見本の正確性・肌色の見え方</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>2. 業態別詳細：ケース別の設計ポイント</h2>
+
+  <div class="industry-grid">
+    <div class="industry-card">
+      <h4>生鮮食品（肉・魚・野菜）</h4>
+      <div class="spec-line"><span class="spec-key">肉コーナー</span><span class="spec-val">3000K / Ra90</span></div>
+      <div class="spec-line"><span class="spec-key">魚コーナー</span><span class="spec-val">4000K / Ra90</span></div>
+      <div class="spec-line"><span class="spec-key">野菜・果物</span><span class="spec-val">4000〜5000K / Ra90</span></div>
+      <div class="spec-line"><span class="spec-key">棚下テープ</span><span class="spec-val">COB 24V 8W/m</span></div>
+      <div class="spec-line"><span class="spec-key">IP等級</span><span class="spec-val">IP44以上（水気対策）</span></div>
+    </div>
+    <div class="industry-card">
+      <h4>アパレル（高級ブランド）</h4>
+      <div class="spec-line"><span class="spec-key">売場全体</span><span class="spec-val">2700〜3000K / Ra95</span></div>
+      <div class="spec-line"><span class="spec-key">棚・什器照明</span><span class="spec-val">COB 24V 8W/m</span></div>
+      <div class="spec-line"><span class="spec-key">試着室</span><span class="spec-val">3000K / Ra95（肌色重視）</span></div>
+      <div class="spec-line"><span class="spec-key">エントランス</span><span class="spec-val">2700K / アクセント照明</span></div>
+      <div class="spec-line"><span class="spec-key">フレーム</span><span class="spec-val">Tチャンネル（スリム埋込）</span></div>
+    </div>
+    <div class="industry-card">
+      <h4>コスメ・化粧品</h4>
+      <div class="spec-line"><span class="spec-key">メイン売場</span><span class="spec-val">4000〜5000K / Ra90</span></div>
+      <div class="spec-line"><span class="spec-key">カウンター下</span><span class="spec-val">COB 24V 6W/m</span></div>
+      <div class="spec-line"><span class="spec-key">試し塗りエリア</span><span class="spec-val">Ra95（口紅・アイシャドウの色確認）</span></div>
+      <div class="spec-line"><span class="spec-key">バックパネル</span><span class="spec-val">ブランドカラーに合わせた色温度</span></div>
+      <div class="spec-line"><span class="spec-key">フレーム</span><span class="spec-val">Uチャンネル（ミラー横サイド）</span></div>
+    </div>
+    <div class="industry-card">
+      <h4>靴・バッグ専門店</h4>
+      <div class="spec-line"><span class="spec-key">メイン売場</span><span class="spec-val">3000〜3500K / Ra90</span></div>
+      <div class="spec-line"><span class="spec-key">棚下テープ</span><span class="spec-val">COB 24V 8W/m</span></div>
+      <div class="spec-line"><span class="spec-key">ショーケース内</span><span class="spec-val">COB 24V 6W/m / Ra95</span></div>
+      <div class="spec-line"><span class="spec-key">フォーカスライト</span><span class="spec-val">スポット併用で立体感を演出</span></div>
+      <div class="spec-line"><span class="spec-key">フレーム</span><span class="spec-val">Uチャンネル（棚前端）</span></div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>3. LEDテープが特に有効な小売陳列パターン</h2>
+
+  <div class="usecase-list">
+    <div class="usecase-item">
+      <div class="uc-num">1</div>
+      <div class="uc-content">
+        <h4>棚板下面照明（シェルフライティング）</h4>
+        <p>什器の棚板下面にCOBテープを取り付け、棚上の商品を上から照らす。正面スポットでは届かない棚の奥・下段商品に光を届け、陰影をなくして全面均一に見せる効果がある。棚1段あたり棚奥行き方向に1本（COB 24V 6〜8W/m）を設置。</p>
+      </div>
+    </div>
+    <div class="usecase-item">
+      <div class="uc-num">2</div>
+      <div class="uc-content">
+        <h4>エンド什器バックライト（背面照明）</h4>
+        <p>棚エンドや壁面什器の背面パネルをLEDテープでバックライト。商品のシルエットを引き立て、遠目からの視認性を高める。白または乳白のアクリルパネル越しに照らすことでグロー効果が得られる。COB 24V 8W/m、フレーム: Uチャンネル。</p>
+      </div>
+    </div>
+    <div class="usecase-item">
+      <div class="uc-num">3</div>
+      <div class="uc-content">
+        <h4>試着室・フィッティングルームのミラーサイド照明</h4>
+        <p>試着室の鏡両サイドに縦方向でLEDテープを設置。顔・体への均一な正面光を実現し、影を消す。色温度は3000〜3500K（暖色寄り）が好まれる肌色に見せやすい。Ra95以上のCOBテープを推奨。</p>
+      </div>
+    </div>
+    <div class="usecase-item">
+      <div class="uc-num">4</div>
+      <div class="uc-content">
+        <h4>冷蔵ショーケース内照明</h4>
+        <p>スーパー・コンビニの冷蔵ショーケース内にLEDテープを取り付け、食品の色・鮮度感を強調する。低温環境（0〜5℃）でも動作するCOB 24Vテープ（-20℃動作保証品が理想）を選択。IP44以上の防水・防結露対応が必須。</p>
+      </div>
+    </div>
+    <div class="usecase-item">
+      <div class="uc-num">5</div>
+      <div class="uc-content">
+        <h4>POPサイン・ウィンドウディスプレイのエッジライト</h4>
+        <p>アクリルパネルのエッジ（端面）にLEDテープを当て、パネル全体を均一に発光させるエッジライト技術。ウィンドウのセール告知・新商品PRに効果的。薄型COBテープ（Uチャンネル）で端面全体をカバーする。</p>
+      </div>
+    </div>
+    <div class="usecase-item">
+      <div class="uc-num">6</div>
+      <div class="uc-content">
+        <h4>カウンター下・天面の間接照明</h4>
+        <p>レジカウンター・接客カウンターの天面アッパーライトまたは足元ダウンライト。スタッフエリアの清潔感演出と、カウンターを境界として「お店らしさ」を視覚的に強調する。COB 24V 6〜8W/m、Tチャンネルで埋め込み施工。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>4. 色温度が売上に与える影響</h2>
+
+  <p>照明の色温度は購買行動に影響することが、国内外の複数の実験で確認されています。業種に合った色温度選択は売場設計の重要な要素です。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>色温度</th>
+          <th>心理的効果</th>
+          <th>最適な業種</th>
+          <th>注意業種</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>2700K（電球色）</strong></td>
+          <td>温かみ・高級感・ゆったり</td>
+          <td>高級アパレル・ジュエリー・ワインショップ</td>
+          <td>スーパー・コンビニ（清潔感が低下）</td>
+        </tr>
+        <tr>
+          <td><strong>3000K（温白色）</strong></td>
+          <td>上品・落ち着き・親しみやすさ</td>
+          <td>肉売場・レストラン・化粧品カウンター</td>
+          <td>大型量販店（暗く見えすぎる）</td>
+        </tr>
+        <tr>
+          <td><strong>3500K（白色）</strong></td>
+          <td>ニュートラル・誠実・清潔</td>
+          <td>アパレル（一般）・書籍・靴・バッグ</td>
+          <td>特になし（汎用性が高い）</td>
+        </tr>
+        <tr>
+          <td><strong>4000K（中間白色）</strong></td>
+          <td>明るく活気・清潔感</td>
+          <td>生鮮食品・ドラッグストア・カフェ・コスメ</td>
+          <td>高級業態（クール過ぎる）</td>
+        </tr>
+        <tr>
+          <td><strong>5000〜6500K（昼白色・昼光色）</strong></td>
+          <td>明快・清潔・活動的</td>
+          <td>スーパー・コンビニ・電器量販・文具</td>
+          <td>食事・高級・リラックス業態</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box blue">
+    <div class="box-title">生鮮食品の色温度：業態内でゾーン分けする</div>
+    <p style="margin:0; font-size:.9rem; color:#aaa;">スーパーの生鮮部門では同一フロアでも「肉は3000K（赤みを強調）」「魚は4000K（鮮度・透明感）」「野菜・果物は4000〜5000K（緑・黄の鮮やかさ）」と色温度をゾーンごとに変えることで、各商品の魅力を最大化できます。LEDテープで棚下・ショーケース内照明を区間ごとに設計する際にこの原則を適用します。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>5. 省エネ計算と投資回収試算</h2>
+
+  <h3>5-1. 蛍光灯→LEDテープへの切替効果</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>従来蛍光灯</th>
+          <th>COBテープ（24V）</th>
+          <th>削減率</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>消費電力（棚1本 1.2m相当）</td>
+          <td>20W（FL20型）</td>
+          <td>8〜10W（8W/m × 1.2m）</td>
+          <td><span class="cell-good">50〜60%削減</span></td>
+        </tr>
+        <tr>
+          <td>寿命</td>
+          <td>6,000〜10,000時間</td>
+          <td>35,000〜50,000時間（L70基準）</td>
+          <td>交換頻度 1/5 以下</td>
+        </tr>
+        <tr>
+          <td>発熱</td>
+          <td>高い（熱線を含む）</td>
+          <td>低い（アルミフレーム放熱）</td>
+          <td>冷蔵ケース内での効率向上</td>
+        </tr>
+        <tr>
+          <td>ちらつき（フリッカー）</td>
+          <td>あり（商用周波数）</td>
+          <td>なし（PWM 1000Hz以上）</td>
+          <td>視疲労軽減・写真映り改善</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>5-2. 中規模小売店（200㎡）の投資回収試算</h3>
+
+  <div class="info-box green">
+    <div class="box-title">試算条件</div>
+    <ul>
+      <li>売場面積: 200㎡ / 棚照明: 80本（蛍光灯 FL20型 20W）</li>
+      <li>営業時間: 14時間/日 × 365日 = 5,110時間/年</li>
+      <li>電気料金: ¥25/kWh</li>
+      <li>LED切替後消費電力: 10W/本（50%削減）</li>
+    </ul>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>蛍光灯</th>
+          <th>COBテープ LED</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>消費電力合計（80本）</td>
+          <td>1,600W</td>
+          <td>800W</td>
+        </tr>
+        <tr>
+          <td>年間電力消費</td>
+          <td>8,176 kWh</td>
+          <td>4,088 kWh</td>
+        </tr>
+        <tr>
+          <td>年間電気料金</td>
+          <td>204,400円</td>
+          <td>102,200円</td>
+        </tr>
+        <tr>
+          <td><strong>年間削減額</strong></td>
+          <td colspan="2"><span class="cell-good">約102,000円/年</span></td>
+        </tr>
+        <tr>
+          <td>初期導入コスト（目安）</td>
+          <td>—</td>
+          <td>約200,000〜300,000円（テープ・フレーム・電源・工事）</td>
+        </tr>
+        <tr>
+          <td><strong>投資回収期間</strong></td>
+          <td colspan="2"><span class="cell-good">約2〜3年</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>6. IP等級の選定（陳列環境別）</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>設置場所</th>
+          <th>推奨IP等級</th>
+          <th>理由</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>一般什器・棚下（乾燥室内）</td>
+          <td>IP20</td>
+          <td>水気なし・ホコリ管理が通常レベル</td>
+        </tr>
+        <tr>
+          <td>冷蔵ショーケース内</td>
+          <td>IP44〜IP54</td>
+          <td>結露・水滴が付着する環境</td>
+        </tr>
+        <tr>
+          <td>生鮮コーナー（洗浄あり）</td>
+          <td>IP65以上</td>
+          <td>水拭き・高圧洗浄が必要な場合</td>
+        </tr>
+        <tr>
+          <td>店頭・エントランス（雨ざらし）</td>
+          <td>IP65〜IP67</td>
+          <td>降雨・直射日光・温度変化に対応</td>
+        </tr>
+        <tr>
+          <td>水産・青果加工場（隣接エリア）</td>
+          <td>IP65〜IP67</td>
+          <td>飛散水・洗浄水がかかる可能性がある</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>7. 導入前チェックリスト</h2>
+
+  <div class="checklist">
+    <h4>小売店舗LEDテープ導入チェックリスト</h4>
+    <label><input type="checkbox"> 業種・業態ごとの推奨色温度・照度・演色性を把握した</label>
+    <label><input type="checkbox"> 棚下・ショーケース・カウンターなど設置場所のIP等級要件を確認した</label>
+    <label><input type="checkbox"> 生鮮コーナーは肉・魚・野菜で色温度をゾーン別に設計した</label>
+    <label><input type="checkbox"> 試着室・コスメカウンターはRa90〜Ra95を採用した</label>
+    <label><input type="checkbox"> 電源容量を総消費電力の120%以上で計算した</label>
+    <label><input type="checkbox"> 蛍光灯との交換時は省エネ投資回収期間を試算した</label>
+    <label><input type="checkbox"> 冷蔵ケース内設置の場合、低温動作保証仕様を確認した</label>
+    <label><input type="checkbox"> 10m以上の施工では電圧降下対策（両端給電・区間分割）を計画した</label>
+    <label><input type="checkbox"> アルミフレームはUチャンネル（露出）とTチャンネル（埋め込み）を用途別に選んだ</label>
+    <label><input type="checkbox"> 施工は第二種電気工事士（電源配線部分）が担当する体制を確認した</label>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>まとめ</h2>
+
+  <p>小売店舗のLED照明選びは業態ごとに最適解がまったく異なります。スーパーの生鮮コーナーでは<strong>高照度・高演色・色温度のゾーン分け</strong>、高級アパレルでは<strong>低照度・暖色・Ra95</strong>、コンビニでは<strong>高照度・昼白色・24時間耐久性</strong>が求められます。</p>
+
+  <p>LEDテープは棚下照明・ショーケース内・試着室・カウンター間接照明として特に効果的です。従来の蛍光灯から切り替えることで電力50〜60%削減、投資回収2〜3年が一般的な目安となります。</p>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>業種別LEDテープの選定はLED PRO SHOPへ</h2>
+    <p>Ra90〜Ra95・IP20〜IP67対応の業務用COBテープを取り揃えています。</p>
+    <div class="cta-buttons">
+      <a href="https://led-proshop.com/category/cob-tape/" class="btn-primary">COBテープを見る</a>
+      <a href="https://led-proshop.com/category/alumi-frame/" class="btn-secondary">アルミフレームを見る</a>
+    </div>
+  </div>
+
+  <!-- Related -->
+  <div class="related-section">
+    <h3>関連コラム</h3>
+    <div class="related-grid">
+      <a href="https://led-proshop.com/articles/led-tape-cri-ra-value-guide.html" class="related-link">LEDテープの演色性（Ra値）ガイド</a>
+      <a href="https://led-proshop.com/articles/led-color-temperature-guide.html" class="related-link">色温度の選び方ガイド</a>
+      <a href="https://led-proshop.com/articles/apparel-shelf-led-case.html" class="related-link">アパレルショップのLED棚照明施工事例</a>
+      <a href="https://led-proshop.com/articles/led-tape-ip-waterproof-guide.html" class="related-link">IP等級・防水ガイド</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p>
+    <a href="https://led-proshop.com/">LED PRO SHOP</a> ｜
+    <a href="https://led-proshop.com/tokushoho.html">特定商取引法に基づく表記</a> ｜
+    <a href="https://led-proshop.com/privacy-policy.html">プライバシーポリシー</a>
+  </p>
+  <p style="margin-top:8px;">© 2026 LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
