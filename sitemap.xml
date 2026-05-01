@@ -9,45 +9,6 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- カテゴリページ（アンカーリンク）-->
-  <!-- 注: 現状は単一HTML構成のため、カテゴリはアンカー(#)でアクセス。
-       将来的に独立URLのカテゴリページを設置した場合は以下を実URLに差し替える -->
-
-  <url>
-    <loc>https://led-proshop.com/#cat1</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://led-proshop.com/#cat6</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://led-proshop.com/#cat2</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://led-proshop.com/#cat3</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://led-proshop.com/#cat4</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <!-- カテゴリページ（Wave 4 新設・2026-05-01） -->
   <url>
     <loc>https://led-proshop.com/category/cob-tape/</loc>
