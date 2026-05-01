@@ -198,11 +198,11 @@
 
       <!-- カテゴリフィルター -->
       <nav class="cat-filter" aria-label="カテゴリ絞り込み">
-        <a href="/articles/" class="cat-btn active">すべて</a>
-        <a href="/articles/?cat=installation" class="cat-btn">施工事例</a>
-        <a href="/articles/?cat=guide" class="cat-btn">LED選び方ガイド</a>
-        <a href="/articles/?cat=power" class="cat-btn">電源・コントローラー解説</a>
-        <a href="/articles/?cat=spec" class="cat-btn">規格別比較</a>
+        <a href="#" class="cat-btn active" data-cat="all">すべて</a>
+        <a href="#" class="cat-btn" data-cat="installation">施工事例</a>
+        <a href="#" class="cat-btn" data-cat="guide">LED選び方ガイド</a>
+        <a href="#" class="cat-btn" data-cat="power">電源・コントローラー解説</a>
+        <a href="#" class="cat-btn" data-cat="spec">規格別比較</a>
       </nav>
 
       <!-- 記事グリッド -->
@@ -326,16 +326,39 @@
     <div>&copy; 2025 LED専門プロショップ（日本ネオン株式会社） All Rights Reserved.</div>
   </footer>
 
-  <!-- 記事0件フォールバック制御 -->
   <script>
   (function() {
     var grid = document.getElementById('article-grid');
     var empty = document.getElementById('articles-empty');
+    var btns = document.querySelectorAll('.cat-btn');
     if (!grid || !empty) return;
-    // article 要素が1件以上あれば empty を非表示
-    if (grid.querySelectorAll('article.article-card').length > 0) {
-      empty.style.display = 'none';
+
+    function filterArticles(cat) {
+      var cards = grid.querySelectorAll('article.article-card');
+      var visible = 0;
+      cards.forEach(function(card) {
+        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      empty.style.display = visible > 0 ? 'none' : '';
     }
+
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        btns.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var cat = btn.getAttribute('data-cat') || 'all';
+        filterArticles(cat);
+      });
+    });
+
+    // 初期表示
+    filterArticles('all');
   })();
   </script>
 
