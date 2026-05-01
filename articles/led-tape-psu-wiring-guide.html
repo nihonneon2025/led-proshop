@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープ電源容量計算・配線距離の実務ガイド｜PSUサイジング・電圧降下・分岐配線まで完全解説</title>
+  <meta name="description" content="LEDテープライトの電源（PSU）容量計算・電圧降下対策・配線距離の限界・分岐配線設計を現場の実務データとともに解説。容量不足・電圧降下による明るさムラ・電源焼けを防ぐための完全マニュアル。">
+  <meta name="keywords" content="LEDテープ 電源容量,PSU計算,電圧降下,配線距離,分岐配線,業務用LED,施工">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-psu-wiring-guide.html">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-psu-wiring-guide.html">
+  <meta property="og:title" content="LEDテープ電源容量計算・配線距離の実務ガイド｜PSUサイジング完全解説">
+  <meta property="og:description" content="PSU容量計算・電圧降下対策・配線距離・分岐配線を実務データとともに完全解説。電源焼け・明るさムラを防ぐ施工マニュアル。">
+  <meta property="og:image" content="https://led-proshop.com/images/ogp_top.jpg">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ電源容量計算・配線距離の実務ガイド｜PSUサイジング完全解説">
+  <meta name="twitter:description" content="PSU容量計算・電圧降下対策・分岐配線を実務データで解説。電源焼け・輝度ムラを防ぐ。">
+  <meta name="twitter:image" content="https://led-proshop.com/images/ogp_top.jpg">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDテープ電源容量計算・配線距離の実務ガイド｜PSUサイジング・電圧降下・分岐配線まで完全解説",
+    "description": "LEDテープライトの電源容量計算・電圧降下対策・配線距離の限界・分岐配線設計を現場の実務データとともに解説。",
+    "image": "https://led-proshop.com/images/ogp_top.jpg",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
+    },
+    "datePublished": "2026-05-01",
+    "dateModified": "2026-05-01",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-psu-wiring-guide.html"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://led-proshop.com/"},
+      {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "LEDテープ電源容量計算・配線距離の実務ガイド"}
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#081210;
+      --surface:#0f1f1a;
+      --card:#162820;
+      --accent:#059669;
+      --accent2:#34d399;
+      --accent3:#6ee7b7;
+      --text:#ecfdf5;
+      --muted:#9bcfb8;
+      --border:#1d3d30;
+      --radius:8px;
+    }
+    body{background:var(--bg);color:var(--text);font-family:'Helvetica Neue',Arial,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;font-size:15px;line-height:1.75}
+    a{color:var(--accent2);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* NAV */
+    .navbar{background:#050e0c;border-bottom:1px solid var(--border);padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+    .nav-brand{font-weight:700;font-size:16px;color:var(--accent2);letter-spacing:.05em}
+    .nav-links{display:flex;gap:20px;list-style:none}
+    .nav-links a{color:var(--muted);font-size:13px;transition:color .15s}
+    .nav-links a:hover{color:var(--text);text-decoration:none}
+
+    /* BREADCRUMB */
+    .breadcrumb{padding:14px 20px;font-size:12px;color:var(--muted);max-width:860px;margin:0 auto}
+    .breadcrumb a{color:var(--muted)}
+    .breadcrumb span{margin:0 6px}
+
+    /* HERO */
+    .hero{background:linear-gradient(135deg,#041a12 0%,#064e37 50%,#041a12 100%);border-bottom:1px solid var(--border);padding:52px 20px 44px;text-align:center}
+    .hero-eyebrow{display:inline-block;background:rgba(5,150,105,.18);border:1px solid var(--accent);color:var(--accent2);font-size:11px;font-weight:700;letter-spacing:.12em;padding:4px 14px;border-radius:20px;margin-bottom:18px;text-transform:uppercase}
+    .hero h1{font-size:clamp(20px,4vw,32px);font-weight:800;line-height:1.3;margin-bottom:18px;max-width:720px;margin-left:auto;margin-right:auto}
+    .hero h1 em{font-style:normal;color:var(--accent2)}
+    .hero-meta{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+
+    /* ARTICLE */
+    .article-wrap{max-width:860px;margin:0 auto;padding:40px 20px 80px}
+
+    /* LEAD */
+    .lead{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius);padding:24px 28px;margin-bottom:40px;font-size:15px;color:var(--muted);line-height:1.9}
+    .lead strong{color:var(--text)}
+
+    /* SECTION */
+    .section{margin-bottom:52px}
+    .section-title{font-size:20px;font-weight:800;color:var(--accent2);border-bottom:2px solid var(--accent);padding-bottom:8px;margin-bottom:24px;letter-spacing:.03em}
+    .section-body{color:var(--muted);line-height:1.9}
+    .section-body p{margin-bottom:16px}
+    .section-body strong{color:var(--text)}
+
+    /* FORMULA BOX */
+    .formula-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 28px;margin-bottom:24px;text-align:center}
+    .formula{font-size:20px;font-weight:800;color:var(--accent2);font-family:'Courier New',monospace;letter-spacing:.05em;margin-bottom:10px}
+    .formula-note{font-size:12px;color:var(--muted);line-height:1.8}
+
+    /* CALC TABLE */
+    .calc-table{width:100%;border-collapse:collapse;margin-bottom:28px;font-size:13px}
+    .calc-table th{background:var(--surface);color:var(--accent2);font-weight:700;padding:10px 14px;text-align:left;border:1px solid var(--border)}
+    .calc-table td{padding:10px 14px;border:1px solid var(--border);color:var(--muted);vertical-align:top}
+    .calc-table tr:hover td{background:rgba(5,150,105,.05)}
+    .highlight{color:var(--accent2);font-weight:700}
+
+    /* DISTANCE TABLE */
+    .dist-table{width:100%;border-collapse:collapse;margin-bottom:28px;font-size:13px}
+    .dist-table th{background:var(--surface);color:var(--accent2);font-weight:700;padding:10px 14px;text-align:center;border:1px solid var(--border)}
+    .dist-table td{padding:10px 14px;border:1px solid var(--border);color:var(--muted);text-align:center}
+    .dist-table td:first-child{text-align:left}
+    .dist-table tr:hover td{background:rgba(5,150,105,.05)}
+    .ok{color:#34d399;font-weight:700}
+    .caution{color:#fbbf24;font-weight:700}
+    .ng{color:#f87171;font-weight:700}
+
+    /* WIRE TABLE */
+    .wire-table{width:100%;border-collapse:collapse;margin-bottom:28px;font-size:13px}
+    .wire-table th{background:var(--surface);color:var(--accent2);font-weight:700;padding:10px 14px;text-align:center;border:1px solid var(--border)}
+    .wire-table td{padding:10px 14px;border:1px solid var(--border);color:var(--muted);text-align:center}
+    .wire-table td:first-child{text-align:left}
+    .wire-table tr:hover td{background:rgba(5,150,105,.05)}
+
+    /* WIRING DIAGRAM */
+    .wiring-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:28px}
+    .wiring-label{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+    .wiring-diagram{display:flex;align-items:center;gap:4px;margin-bottom:8px;flex-wrap:wrap}
+    .wd-psu{background:var(--accent);color:#fff;font-weight:700;font-size:11px;padding:6px 10px;border-radius:4px;flex-shrink:0}
+    .wd-wire{height:4px;background:var(--accent);flex:1;min-width:20px}
+    .wd-tape{background:rgba(52,211,153,.2);border:1px solid var(--accent2);color:var(--accent2);font-size:11px;font-weight:700;padding:6px 10px;border-radius:4px;flex:2;text-align:center}
+    .wd-arrow{color:var(--accent2);font-size:16px;flex-shrink:0}
+    .wiring-note{font-size:12px;color:var(--muted);line-height:1.7}
+
+    /* TROUBLESHOOT */
+    .trouble-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:28px}
+    .trouble-card{background:var(--card);border:1px solid var(--border);border-left:3px solid #f87171;border-radius:var(--radius);padding:16px 18px}
+    .trouble-title{font-size:13px;font-weight:700;color:#fca5a5;margin-bottom:6px}
+    .trouble-cause{font-size:12px;color:#f87171;margin-bottom:6px;font-weight:600}
+    .trouble-fix{font-size:12px;color:var(--muted);line-height:1.7}
+
+    /* STEP FLOW */
+    .step-flow{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:28px}
+    .step-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+    .step-num{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .step-content{flex:1}
+    .step-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px}
+    .step-body{font-size:13px;color:var(--muted);line-height:1.7}
+
+    /* INLINE NOTE */
+    .inline-note{background:rgba(5,150,105,.08);border:1px solid rgba(5,150,105,.3);border-radius:6px;padding:14px 18px;font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:20px}
+    .inline-note strong{color:var(--accent2)}
+
+    /* CTA */
+    .cta-box{background:linear-gradient(135deg,#021a10 0%,#064e37 100%);border:1px solid var(--accent);border-radius:var(--radius);padding:32px;text-align:center;margin-top:52px}
+    .cta-box h3{font-size:18px;font-weight:800;color:var(--text);margin-bottom:12px}
+    .cta-box p{font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.8}
+    .cta-btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:14px;padding:14px 36px;border-radius:6px;transition:background .15s}
+    .cta-btn:hover{background:#047857;text-decoration:none}
+
+    /* FOOTER */
+    .article-footer{background:#050e0c;border-top:1px solid var(--border);padding:32px 20px;text-align:center;font-size:12px;color:var(--muted);margin-top:60px}
+    .footer-nav{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:16px}
+    .footer-nav a{color:var(--muted)}
+
+    @media(max-width:640px){
+      .navbar .nav-links{display:none}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+    <span class="nav-brand">LED PRO SHOP</span>
+    <ul class="nav-links">
+      <li><a href="/">ホーム</a></li>
+      <li><a href="/articles/">コラム</a></li>
+      <li><a href="/category/cob-tape/">COBテープ</a></li>
+      <li><a href="/catalog/">カタログ</a></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/">ホーム</a><span>›</span>
+    <a href="/articles/">コラム</a><span>›</span>
+    <span>LEDテープ電源容量計算・配線距離の実務ガイド</span>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">実務ガイド</div>
+    <h1>LEDテープ<em>電源容量計算・配線距離</em>の実務ガイド<br>PSUサイジング・電圧降下・分岐配線まで完全解説</h1>
+    <div class="hero-meta">
+      <span>📅 2026年5月1日</span>
+      <span>⏱ 読了約10分</span>
+      <span>🏷 実務ガイド</span>
+    </div>
+  </header>
+
+  <!-- ARTICLE BODY -->
+  <main class="article-wrap">
+
+    <!-- LEAD -->
+    <div class="lead">
+      LEDテープの施工でよくあるトラブルのうち、<strong>電源焼け・輝度ムラ・末端が暗い</strong>という3大症状の9割以上は「電源容量の不足」か「電圧降下の無視」が原因です。
+      正しいPSUサイジングと配線設計を知っていれば、これらは全て事前に防げます。
+      本稿では現場の実務データをもとに、<strong>計算式・距離制限・配線パターン・トラブルシューティング</strong>を体系的にまとめました。
+    </div>
+
+    <!-- 1. PSU容量計算の基本 -->
+    <section class="section">
+      <h2 class="section-title">1. PSU容量計算の基本公式</h2>
+
+      <div class="formula-box">
+        <div class="formula">必要PSU容量（W）= テープ消費電力（W/m）× 使用長さ（m）× 1.2</div>
+        <div class="formula-note">× 1.2 は安全率（熱による出力低下・突入電流・経年劣化を考慮）。PSU定格出力の80%以下で運用するのが基本。</div>
+      </div>
+
+      <div class="section-body">
+        <p><strong>なぜ80%運用か：</strong>PSUは定格出力100%で運用すると内部温度が上昇し、寿命が大幅に短縮します。工業用PSUの仕様書には多くの場合「推奨運用範囲 〜80%」と明記されています。定格100%運用は「緊急時の上限」であって、日常運用ではありません。</p>
+      </div>
+
+      <table class="calc-table" aria-label="PSU容量計算例">
+        <thead>
+          <tr>
+            <th>施工パターン</th>
+            <th>W/m</th>
+            <th>長さ</th>
+            <th>理論電力</th>
+            <th>×1.2後</th>
+            <th>推奨PSU</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>什器内COB（小規模）</td>
+            <td>8W/m</td>
+            <td>5m</td>
+            <td>40W</td>
+            <td>48W</td>
+            <td class="highlight">60W電源 × 1台</td>
+          </tr>
+          <tr>
+            <td>ショーケース照明</td>
+            <td>12W/m</td>
+            <td>10m</td>
+            <td>120W</td>
+            <td>144W</td>
+            <td class="highlight">150W電源 × 1台</td>
+          </tr>
+          <tr>
+            <td>テーブル席間接照明</td>
+            <td>8W/m</td>
+            <td>30m</td>
+            <td>240W</td>
+            <td>288W</td>
+            <td class="highlight">150W電源 × 2台<br>（2区間分割）</td>
+          </tr>
+          <tr>
+            <td>コーブ照明（大規模）</td>
+            <td>10W/m</td>
+            <td>60m</td>
+            <td>600W</td>
+            <td>720W</td>
+            <td class="highlight">300W電源 × 3台<br>（3区間分割・各20m）</td>
+          </tr>
+          <tr>
+            <td>工場ライン照明</td>
+            <td>15W/m</td>
+            <td>80m</td>
+            <td>1,200W</td>
+            <td>1,440W</td>
+            <td class="highlight">300W電源 × 6台<br>（6区間分割・各≈13m）</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="inline-note">
+        <strong>「1台の大容量PSU vs 複数の分割PSU」どちらが良い？</strong><br>
+        分割PSUが推奨です。理由：①電圧降下を区間ごとにリセットできる ②1台故障でも全滅しない ③放熱分散でPSU寿命が延びる。大容量PSU1台は初期費用が安いように見えますが、長期運用コストは分割型が有利です。
+      </div>
+    </section>
+
+    <!-- 2. 電圧降下の計算 -->
+    <section class="section">
+      <h2 class="section-title">2. 電圧降下の計算と距離制限</h2>
+
+      <div class="section-body">
+        <p>電圧降下は配線ケーブルの抵抗によって引き起こされます。末端の電圧が低下するほど輝度が下がり、長い区間では「給電端は明るい・末端は暗い」という輝度ムラが生じます。</p>
+      </div>
+
+      <div class="formula-box">
+        <div class="formula">電圧降下（V）= 電流（A）× ケーブル抵抗（Ω）× 2</div>
+        <div class="formula-note">×2 は往復（+極と−極の2本分）。許容電圧降下は供給電圧の5%以内を目安とする。<br>12V系：許容降下 ≦ 0.6V / 24V系：許容降下 ≦ 1.2V</div>
+      </div>
+
+      <table class="dist-table" aria-label="電圧・ケーブル径・片端給電の最大距離">
+        <thead>
+          <tr>
+            <th>電圧</th>
+            <th>消費電力</th>
+            <th>電流</th>
+            <th>ケーブル径</th>
+            <th>片端給電<br>最大距離</th>
+            <th>両端給電<br>最大距離</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>12V</td>
+            <td>5W/m</td>
+            <td>0.42A/m</td>
+            <td>0.5mm²</td>
+            <td class="ok">〜4m</td>
+            <td class="ok">〜8m</td>
+          </tr>
+          <tr>
+            <td>12V</td>
+            <td>8W/m</td>
+            <td>0.67A/m</td>
+            <td>0.75mm²</td>
+            <td class="caution">〜3m</td>
+            <td class="ok">〜6m</td>
+          </tr>
+          <tr>
+            <td>12V</td>
+            <td>12W/m</td>
+            <td>1.0A/m</td>
+            <td>1.0mm²</td>
+            <td class="ng">〜2m</td>
+            <td class="caution">〜4m</td>
+          </tr>
+          <tr>
+            <td>24V</td>
+            <td>5W/m</td>
+            <td>0.21A/m</td>
+            <td>0.5mm²</td>
+            <td class="ok">〜15m</td>
+            <td class="ok">〜30m</td>
+          </tr>
+          <tr>
+            <td>24V</td>
+            <td>8W/m</td>
+            <td>0.33A/m</td>
+            <td>0.75mm²</td>
+            <td class="ok">〜10m</td>
+            <td class="ok">〜20m</td>
+          </tr>
+          <tr>
+            <td>24V</td>
+            <td>10W/m</td>
+            <td>0.42A/m</td>
+            <td>1.0mm²</td>
+            <td class="ok">〜8m</td>
+            <td class="ok">〜16m</td>
+          </tr>
+          <tr>
+            <td>24V</td>
+            <td>12W/m</td>
+            <td>0.5A/m</td>
+            <td>1.0mm²</td>
+            <td class="ok">〜7m</td>
+            <td class="caution">〜14m</td>
+          </tr>
+          <tr>
+            <td>24V</td>
+            <td>15W/m</td>
+            <td>0.63A/m</td>
+            <td>1.5mm²</td>
+            <td class="caution">〜5m</td>
+            <td class="ok">〜10m</td>
+          </tr>
+          <tr>
+            <td>24V</td>
+            <td>20W/m</td>
+            <td>0.83A/m</td>
+            <td>2.0mm²</td>
+            <td class="caution">〜4m</td>
+            <td class="ok">〜8m</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="inline-note">
+        <strong>表の見方：</strong><span class="ok">緑=安全圏</span> / <span class="caution">黄=注意（テスタで実測を推奨）</span> / <span class="ng">赤=輝度ムラが視認されるレベル（分割給電必須）</span>。値は目安であり、ケーブルの実際の抵抗値・接続部の接触抵抗によって変動します。
+      </div>
+    </section>
+
+    <!-- 3. 配線パターン -->
+    <section class="section">
+      <h2 class="section-title">3. 配線パターンと選択基準</h2>
+
+      <div class="wiring-box">
+        <div class="wiring-label">パターン1：片端給電（シンプル・短距離向け）</div>
+        <div class="wiring-diagram">
+          <div class="wd-psu">PSU</div>
+          <div class="wd-wire"></div>
+          <div class="wd-tape">LEDテープ（〜8m推奨）</div>
+          <div class="wd-arrow">→暗</div>
+        </div>
+        <div class="wiring-note">最も施工が簡単。24V・8W/m品なら〜10m以内で許容範囲。短い区間や什器内の局所照明に適合。</div>
+      </div>
+
+      <div class="wiring-box">
+        <div class="wiring-label">パターン2：両端給電（輝度均一・中距離向け）</div>
+        <div class="wiring-diagram">
+          <div class="wd-psu">PSU</div>
+          <div class="wd-wire"></div>
+          <div class="wd-tape">LEDテープ（〜20m均一）</div>
+          <div class="wd-wire"></div>
+          <div class="wd-psu">PSU</div>
+        </div>
+        <div class="wiring-note">両端から同一PSUまたは2台のPSUで給電。片端給電の約2倍の距離をカバー。輝度ムラが最小。コーブ照明・什器ロングラン向け。</div>
+      </div>
+
+      <div class="wiring-box">
+        <div class="wiring-label">パターン3：中間給電（長距離均一・連続区間向け）</div>
+        <div class="wiring-diagram">
+          <div class="wd-tape">前半テープ</div>
+          <div class="wd-wire"></div>
+          <div class="wd-psu">PSU<br>（中間）</div>
+          <div class="wd-wire"></div>
+          <div class="wd-tape">後半テープ</div>
+        </div>
+        <div class="wiring-note">PSUを中間点に設置し両方向に給電。最大で片端給電の4倍の区間をカバー。PSUへのアクセスが中間点でも可能な施工環境に適合。</div>
+      </div>
+
+      <div class="wiring-box">
+        <div class="wiring-label">パターン4：区間分割（大規模施工の基本）</div>
+        <div class="wiring-diagram">
+          <div class="wd-psu">PSU①</div>
+          <div class="wd-wire"></div>
+          <div class="wd-tape">区間①（〜10m）</div>
+          <div class="wd-psu" style="margin-left:8px">PSU②</div>
+          <div class="wd-wire"></div>
+          <div class="wd-tape">区間②（〜10m）</div>
+        </div>
+        <div class="wiring-note">テープを電気的に独立した区間に分割し、各区間にPSUを充てる。30m以上の大規模施工は基本的にこのパターン。PSU故障の影響範囲を限定できる利点もある。</div>
+      </div>
+    </section>
+
+    <!-- 4. ケーブル径の選定 -->
+    <section class="section">
+      <h2 class="section-title">4. 電源ケーブル径の選定基準</h2>
+      <table class="wire-table" aria-label="電流とケーブル径の選定表">
+        <thead>
+          <tr>
+            <th>流れる電流（A）</th>
+            <th>推奨ケーブル径</th>
+            <th>典型的な用途例</th>
+            <th>許容電圧降下（24V・10m往復）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>〜3A</td>
+            <td>0.5mm²（AWG20）</td>
+            <td>24V・5W/m・10m以下</td>
+            <td>約0.72V（許容内）</td>
+          </tr>
+          <tr>
+            <td>3〜5A</td>
+            <td>0.75mm²（AWG18）</td>
+            <td>24V・8W/m・15m以下</td>
+            <td>約0.57V（許容内）</td>
+          </tr>
+          <tr>
+            <td>5〜8A</td>
+            <td>1.0mm²（AWG17）</td>
+            <td>24V・12W/m・15m以下</td>
+            <td>約0.6V（許容内）</td>
+          </tr>
+          <tr>
+            <td>8〜12A</td>
+            <td>1.5mm²（AWG15）</td>
+            <td>24V・15W/m・20m以下</td>
+            <td>約0.58V（許容内）</td>
+          </tr>
+          <tr>
+            <td>12〜16A</td>
+            <td>2.0mm²（AWG14）</td>
+            <td>24V・20W/m・20m以下</td>
+            <td>約0.54V（許容内）</td>
+          </tr>
+          <tr>
+            <td>16A超</td>
+            <td>2.5mm²以上（AWG13以上）</td>
+            <td>大規模幹線・分岐前のメイン</td>
+            <td>要計算</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="inline-note">
+        <strong>PSUからテープまでの電源ケーブル長が長い場合：</strong>テープ自体の電圧降下と別に、PSU→テープ間のケーブル降下も加算されます。PSUはできるだけテープに近い位置（3m以内）に設置するのが理想。長い配線が必要な場合はケーブルを1段太くすることで対処できます。
+      </div>
+    </section>
+
+    <!-- 5. 施工手順 -->
+    <section class="section">
+      <h2 class="section-title">5. 現場施工の正しい手順</h2>
+      <div class="step-flow">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">テープの総消費電力を計算する</div>
+            <div class="step-body">W/m × 使用長さ（m）= 総電力（W）。複数ゾーンがある場合はゾーン別に計算し、給電回路を分割するか合計するかを設計段階で決める。</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">PSU容量を決める（×1.2の安全率を忘れずに）</div>
+            <div class="step-body">総電力 × 1.2 ÷ 0.8（定格80%運用） = 推奨PSU定格容量。計算結果に最も近い上位の市販品を選ぶ。</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">電圧降下を計算し、配線パターンを決める</div>
+            <div class="step-body">区間ごとの最大電流 × ケーブル抵抗 × 2 ≦ 供給電圧の5%。超える場合は区間分割・両端給電・ケーブル径アップのいずれかで対処する。</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">施工前にケーブル径を決定する</div>
+            <div class="step-body">各区間の最大電流からケーブル径を選定（§4参照）。細いケーブルは後から交換できないため、必ずこの段階で確定する。</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <div class="step-title">施工後に実電圧をテスタで測定する</div>
+            <div class="step-body">テープ末端のDC電圧を実測。設計電圧から5%超の降下がある場合は配線の見直しが必要。この確認を省略すると輝度ムラが後から判明するリスクがある。</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">6</div>
+          <div class="step-content">
+            <div class="step-title">PSU温度を30分点灯後に確認する</div>
+            <div class="step-body">非接触温度計でPSU外表面温度を計測。70℃以上の場合は過負荷または換気不足の疑いがある。密閉場所への設置は避け、換気孔から離す。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. トラブルシューティング -->
+    <section class="section">
+      <h2 class="section-title">6. よくあるトラブルと原因・対処法</h2>
+      <div class="trouble-grid">
+        <div class="trouble-card">
+          <div class="trouble-title">末端が暗い・輝度ムラがある</div>
+          <div class="trouble-cause">原因：電圧降下</div>
+          <div class="trouble-fix">対処：①区間分割 ②両端給電 ③ケーブル径を太くする。まずテスタで末端電圧を実測して降下量を確認する。</div>
+        </div>
+        <div class="trouble-card">
+          <div class="trouble-title">PSUが熱くなる・ファンが回り続ける</div>
+          <div class="trouble-cause">原因：過負荷 or 換気不足</div>
+          <div class="trouble-fix">対処：①テープの実消費電力を再計算 ②PSUを上位容量に変更 ③設置場所に換気スペース確保（PSU周囲5cm以上）。</div>
+        </div>
+        <div class="trouble-card">
+          <div class="trouble-title">点灯直後は明るいが数分後に暗くなる</div>
+          <div class="trouble-cause">原因：PSU熱保護（サーマルスロットリング）</div>
+          <div class="trouble-fix">対処：容量不足のため熱保護が発動している。PSUを1ランク大きいものに変更し、換気を改善する。</div>
+        </div>
+        <div class="trouble-card">
+          <div class="trouble-title">チカチカ点滅する</div>
+          <div class="trouble-cause">原因：接触不良 or PSU出力不安定</div>
+          <div class="trouble-fix">対処：①接続部の締め直し ②PSUの出力端子電圧を実測 ③安価なPSU品の場合はリプル電圧が高い可能性あり、品質グレード品に交換。</div>
+        </div>
+        <div class="trouble-card">
+          <div class="trouble-title">ある区間だけ消えている</div>
+          <div class="trouble-cause">原因：カット位置ミス or ハンダ不良</div>
+          <div class="trouble-fix">対処：当該区間の給電端子電圧を確認。電圧があってテープが点かない場合はテープの断線。電圧がなければ配線の断線・接触不良。</div>
+        </div>
+        <div class="trouble-card">
+          <div class="trouble-title">調光時に色が変わる</div>
+          <div class="trouble-cause">原因：PSUとコントローラーの相性</div>
+          <div class="trouble-fix">対処：PWM調光は定電圧PSUと組み合わせること。定電流PSUはPWM非対応が多い。PSUの調光対応可否を仕様書で確認する。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. まとめ チェックリスト -->
+    <section class="section">
+      <h2 class="section-title">7. 施工前チェックリスト</h2>
+      <div class="section-body">
+        <p>以下の項目を施工前に全てチェックし、問題がないことを確認してから施工を開始してください。</p>
+      </div>
+      <div class="step-flow">
+        <div class="step-item">
+          <div class="step-num" style="background:#34d399">✓</div>
+          <div class="step-content">
+            <div class="step-title">テープ総電力 × 1.2 ≦ PSU定格容量 × 0.8</div>
+            <div class="step-body">安全率1.2と80%運用の双方を満たしているか確認。</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="background:#34d399">✓</div>
+          <div class="step-content">
+            <div class="step-title">各区間の電圧降下が供給電圧の5%以内</div>
+            <div class="step-body">12V系は0.6V以内、24V系は1.2V以内。超える場合は配線パターン見直し。</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="background:#34d399">✓</div>
+          <div class="step-content">
+            <div class="step-title">ケーブル径が流れる電流に対して適切</div>
+            <div class="step-body">§4の選定表を参照し、電流値に対して細すぎないことを確認。</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="background:#34d399">✓</div>
+          <div class="step-content">
+            <div class="step-title">PSU設置場所に換気スペースあり</div>
+            <div class="step-body">PSU周囲5cm以上の空間・密閉ボックスに入れない・発熱機器の直近を避ける。</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="background:#34d399">✓</div>
+          <div class="step-content">
+            <div class="step-title">調光コントローラーとPSUの互換性確認</div>
+            <div class="step-body">PWM調光には定電圧PSU・DALI調光にはDALI対応PSUが必要。仕様書で互換性を確認。</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num" style="background:#34d399">✓</div>
+          <div class="step-content">
+            <div class="step-title">施工後に実電圧測定・PSU温度確認を実施する予定</div>
+            <div class="step-body">テスタと非接触温度計を現場に持参し、30分点灯後に実測確認。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <h3>業務用 COB 24V テープライト・電源のご注文</h3>
+      <p>COB 24V テープライトと対応PSU・アルミチャンネルを取り揃えています。<br>電源容量計算・配線設計のご相談もお気軽にどうぞ。</p>
+      <a href="/catalog/" class="cta-btn">製品カタログを見る</a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="article-footer">
+    <nav class="footer-nav" aria-label="フッターナビ">
+      <a href="/">ホーム</a>
+      <a href="/articles/">コラム一覧</a>
+      <a href="/catalog/">製品カタログ</a>
+      <a href="/faq/">よくある質問</a>
+      <a href="/contact/">お問い合わせ</a>
+    </nav>
+    <p>© 2026 LED PRO SHOP. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
