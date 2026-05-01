@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RGB・RGBWテープライトの選び方ガイド｜単色COBとの違い・用途別活用法 | LED PRO SHOP</title>
+  <meta name="description" content="RGB・RGBWテープライトと単色COBテープの違いを徹底比較。演出照明・店舗サイン・インタラクティブ空間での活用法、PWM調光との組み合わせ、コントローラー選定まで実務視点で解説。">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-rgb-rgbw-guide.html">
+
+  <!-- OGP -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="RGB・RGBWテープライトの選び方ガイド｜単色COBとの違い・用途別活用法">
+  <meta property="og:description" content="RGB・RGBWテープライトと単色COBテープの違いを徹底比較。演出照明・店舗サイン・インタラクティブ空間での活用法、PWM調光との組み合わせ、コントローラー選定まで実務視点で解説。">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-rgb-rgbw-guide.html">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:image" content="https://led-proshop.com/images/ogp-default.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RGB・RGBWテープライトの選び方ガイド｜単色COBとの違い・用途別活用法">
+  <meta name="twitter:description" content="RGB・RGBWテープライトと単色COBテープの違いを徹底比較。演出照明・店舗サイン・インタラクティブ空間での活用法、PWM調光との組み合わせ、コントローラー選定まで実務視点で解説。">
+
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "RGB・RGBWテープライトの選び方ガイド｜単色COBとの違い・用途別活用法",
+    "description": "RGB・RGBWテープライトと単色COBテープの違いを徹底比較。演出照明・店舗サイン・インタラクティブ空間での活用法、PWM調光との組み合わせ、コントローラー選定まで実務視点で解説。",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+    "publisher": { "@type": "Organization", "name": "LED PRO SHOP", "url": "https://led-proshop.com" },
+    "datePublished": "2026-05-01",
+    "dateModified": "2026-05-01",
+    "url": "https://led-proshop.com/articles/led-tape-rgb-rgbw-guide.html",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-rgb-rgbw-guide.html"
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "TOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "LEDコラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "RGB・RGBWテープライトの選び方ガイド", "item": "https://led-proshop.com/articles/led-tape-rgb-rgbw-guide.html" }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Hiragino Sans', 'Meiryo', sans-serif; background: #0a0a0a; color: #e8e8e8; line-height: 1.8; }
+
+    /* Header */
+    .site-header { background: #111; border-bottom: 1px solid #222; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .site-header .logo { font-size: 1.1rem; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: .05em; }
+    .site-header .logo span { color: #00d4ff; }
+    .header-nav a { color: #aaa; text-decoration: none; font-size: .85rem; margin-left: 20px; }
+    .header-nav a:hover { color: #fff; }
+
+    /* Breadcrumb */
+    .breadcrumb { background: #111; padding: 10px 24px; font-size: .78rem; color: #666; }
+    .breadcrumb a { color: #888; text-decoration: none; }
+    .breadcrumb a:hover { color: #00d4ff; }
+    .breadcrumb span { margin: 0 6px; }
+
+    /* Hero */
+    .article-hero { background: linear-gradient(135deg, #0d1a2e 0%, #1a0d2e 50%, #0d1a2e 100%); padding: 60px 24px 48px; text-align: center; border-bottom: 1px solid #222; }
+    .article-hero .category-badge { display: inline-block; background: #9b59b6; color: #fff; font-size: .72rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; letter-spacing: .08em; }
+    .article-hero h1 { font-size: clamp(1.3rem, 3vw, 2rem); font-weight: 700; line-height: 1.4; color: #fff; max-width: 800px; margin: 0 auto 20px; }
+    .article-hero .meta { font-size: .8rem; color: #888; }
+
+    /* Layout */
+    .article-body { max-width: 860px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* Lead */
+    .lead { font-size: 1.05rem; color: #ccc; background: #111; border-left: 4px solid #9b59b6; padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 48px; line-height: 1.9; }
+
+    /* Section headings */
+    h2 { font-size: 1.4rem; font-weight: 700; color: #fff; border-bottom: 2px solid #9b59b6; padding-bottom: 10px; margin: 56px 0 24px; }
+    h3 { font-size: 1.1rem; font-weight: 700; color: #e0e0e0; margin: 32px 0 14px; padding-left: 12px; border-left: 3px solid #9b59b6; }
+
+    /* Paragraphs */
+    p { margin-bottom: 18px; color: #ccc; }
+    strong { color: #fff; }
+
+    /* Tables */
+    .table-wrap { overflow-x: auto; margin: 24px 0 32px; }
+    table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    th { background: #1a0d2e; color: #e0e0e0; font-weight: 700; padding: 12px 14px; text-align: left; border-bottom: 2px solid #9b59b6; white-space: nowrap; }
+    td { padding: 11px 14px; border-bottom: 1px solid #1e1e1e; color: #ccc; vertical-align: top; }
+    tr:nth-child(even) td { background: #111; }
+    tr:hover td { background: #141414; }
+
+    /* Highlight cells */
+    .cell-good { color: #2ecc71; font-weight: 600; }
+    .cell-ok { color: #f39c12; font-weight: 600; }
+    .cell-bad { color: #e74c3c; font-weight: 600; }
+
+    /* Info boxes */
+    .info-box { background: #111; border: 1px solid #222; border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+    .info-box.purple { border-left: 4px solid #9b59b6; }
+    .info-box.blue { border-left: 4px solid #3498db; }
+    .info-box.green { border-left: 4px solid #2ecc71; }
+    .info-box.orange { border-left: 4px solid #e67e22; }
+    .info-box .box-title { font-weight: 700; color: #fff; margin-bottom: 10px; font-size: .95rem; }
+    .info-box ul { padding-left: 18px; }
+    .info-box li { color: #ccc; margin-bottom: 6px; font-size: .92rem; }
+
+    /* Comparison cards */
+    .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0 32px; }
+    .compare-card { background: #111; border: 1px solid #222; border-radius: 10px; padding: 20px; }
+    .compare-card .card-label { font-size: .75rem; font-weight: 700; letter-spacing: .08em; color: #888; text-transform: uppercase; margin-bottom: 8px; }
+    .compare-card h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .compare-card .merit { color: #2ecc71; font-size: .88rem; margin-bottom: 4px; }
+    .compare-card .merit::before { content: "✓ "; }
+    .compare-card .demerit { color: #e74c3c; font-size: .88rem; margin-bottom: 4px; }
+    .compare-card .demerit::before { content: "✗ "; }
+    .compare-card.cob { border-top: 3px solid #00d4ff; }
+    .compare-card.rgb { border-top: 3px solid #e74c3c; }
+    .compare-card.rgbw { border-top: 3px solid #9b59b6; }
+
+    /* Use case list */
+    .usecase-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 24px 0 32px; }
+    .usecase-item { background: #111; border: 1px solid #1e1e1e; border-radius: 8px; padding: 18px 20px; }
+    .usecase-item .uc-icon { font-size: 1.5rem; margin-bottom: 8px; }
+    .usecase-item h4 { font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .usecase-item p { font-size: .85rem; color: #aaa; margin: 0; }
+
+    /* Step flow */
+    .step-flow { margin: 24px 0 32px; }
+    .step-item { display: flex; gap: 16px; margin-bottom: 20px; }
+    .step-num { width: 36px; height: 36px; border-radius: 50%; background: #9b59b6; color: #fff; font-weight: 700; font-size: .9rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-content h4 { font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .step-content p { font-size: .88rem; color: #aaa; margin: 0; }
+
+    /* Checklist */
+    .checklist { background: #111; border: 1px solid #222; border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+    .checklist h4 { font-weight: 700; color: #fff; margin-bottom: 14px; font-size: .95rem; }
+    .checklist label { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; cursor: pointer; color: #ccc; font-size: .9rem; }
+    .checklist input[type="checkbox"] { width: 16px; height: 16px; margin-top: 3px; accent-color: #9b59b6; flex-shrink: 0; }
+
+    /* CTA */
+    .cta-section { background: linear-gradient(135deg, #1a0d2e, #111); border: 1px solid #9b59b6; border-radius: 12px; padding: 36px 32px; text-align: center; margin-top: 56px; }
+    .cta-section h2 { border: none; margin: 0 0 12px; font-size: 1.3rem; }
+    .cta-section p { color: #aaa; margin-bottom: 24px; }
+    .cta-buttons { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+    .btn-primary { background: #9b59b6; color: #fff; padding: 13px 28px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: .92rem; transition: background .2s; }
+    .btn-primary:hover { background: #8e44ad; }
+    .btn-secondary { background: transparent; color: #9b59b6; border: 2px solid #9b59b6; padding: 11px 28px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: .92rem; transition: all .2s; }
+    .btn-secondary:hover { background: #9b59b6; color: #fff; }
+
+    /* Related articles */
+    .related-section { margin-top: 64px; padding-top: 32px; border-top: 1px solid #222; }
+    .related-section h3 { border: none; padding: 0; margin-bottom: 16px; color: #888; font-size: .9rem; text-transform: uppercase; letter-spacing: .1em; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .related-link { background: #111; border: 1px solid #1e1e1e; border-radius: 8px; padding: 14px 16px; text-decoration: none; color: #ccc; font-size: .88rem; transition: border-color .2s; display: block; }
+    .related-link:hover { border-color: #9b59b6; color: #fff; }
+
+    /* Footer */
+    .site-footer { background: #111; border-top: 1px solid #1e1e1e; text-align: center; padding: 24px; color: #444; font-size: .8rem; margin-top: 0; }
+    .site-footer a { color: #555; text-decoration: none; }
+    .site-footer a:hover { color: #888; }
+
+    @media (max-width: 640px) {
+      .article-hero { padding: 40px 16px 36px; }
+      .article-body { padding: 32px 16px 60px; }
+      .compare-grid, .usecase-list { grid-template-columns: 1fr; }
+      .cta-section { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <a href="https://led-proshop.com/" class="logo">LED <span>PRO</span> SHOP</a>
+  <nav class="header-nav">
+    <a href="https://led-proshop.com/">商品一覧</a>
+    <a href="https://led-proshop.com/articles/">コラム</a>
+    <a href="https://led-proshop.com/faq/">FAQ</a>
+  </nav>
+</header>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <a href="https://led-proshop.com/">TOP</a>
+  <span>›</span>
+  <a href="https://led-proshop.com/articles/">LEDコラム</a>
+  <span>›</span>
+  RGB・RGBWテープライトの選び方ガイド
+</nav>
+
+<!-- Hero -->
+<section class="article-hero">
+  <span class="category-badge">選び方ガイド</span>
+  <h1>RGB・RGBWテープライトの選び方ガイド<br>単色COBとの違い・用途別活用法を徹底解説</h1>
+  <div class="meta">2026年5月1日公開 ｜ LED PRO SHOP 技術コラム</div>
+</section>
+
+<!-- Body -->
+<main class="article-body">
+
+  <p class="lead">
+    「演出照明にはRGBが良いと聞いたが、COBとどう違うのか」「RGBとRGBW、どちらを選べば良いか判断できない」——そんな声を現場から多くいただきます。単色COBテープは白色光の均一な間接照明・建築照明向け、RGB/RGBWテープはフルカラー演出・サイン照明・インタラクティブ空間向けと、そもそも目的が異なります。本ガイドでは各タイプの仕組み・特性・コントローラーとの組み合わせを実務視点で整理します。
+  </p>
+
+  <!-- ============================================================ -->
+  <h2>1. LEDテープの種類と基本構造</h2>
+
+  <p>市場に流通するカラーLEDテープは大きく3タイプに分類されます。それぞれLEDチップの構成が異なり、得意な用途もまったく異なります。</p>
+
+  <div class="compare-grid">
+    <div class="compare-card cob">
+      <div class="card-label">白色専用</div>
+      <h4>単色COBテープ</h4>
+      <div class="merit">均一・点滅なしの高品質白色光</div>
+      <div class="merit">高演色Ra90〜95対応</div>
+      <div class="merit">アルミフレーム放熱で長寿命</div>
+      <div class="merit">建築照明・間接照明に最適</div>
+      <div class="demerit">色変更不可（色温度固定）</div>
+      <div class="demerit">演出照明には不向き</div>
+    </div>
+    <div class="compare-card rgb">
+      <div class="card-label">フルカラー3チャンネル</div>
+      <h4>RGBテープ</h4>
+      <div class="merit">1,670万色のフルカラー表現</div>
+      <div class="merit">動的カラーチェンジ対応</div>
+      <div class="merit">サイン・演出・イベント向け</div>
+      <div class="demerit">白色が暖色寄りで演色性が低い</div>
+      <div class="demerit">建築照明用途には向かない</div>
+      <div class="demerit">チップ間に色むらが出やすい</div>
+    </div>
+    <div class="compare-card rgbw">
+      <div class="card-label">フルカラー4チャンネル</div>
+      <h4>RGBWテープ</h4>
+      <div class="merit">RGB + 白色チップで白色品質向上</div>
+      <div class="merit">カラー演出と白色照明を両立</div>
+      <div class="merit">ホテルや高級店舗に適合</div>
+      <div class="demerit">コントローラーが4ch必須</div>
+      <div class="demerit">価格・配線コストが高い</div>
+      <div class="demerit">COB単色の均一性には及ばない</div>
+    </div>
+  </div>
+
+  <div class="info-box purple">
+    <div class="box-title">なぜRGBの白色は品質が低いのか</div>
+    <p style="margin:0; font-size:.9rem; color:#aaa;">RGBテープはR（赤）・G（緑）・B（青）の3色を混合して白を作りますが、これは「加法混色」によるもので、電球や太陽光の連続スペクトルとは根本的に異なります。その結果、演色性は Ra60〜75程度にとどまり、照らした物の色が正確に見えません。一方、RGBWテープは独立した白色チップ（2700K〜6500K）を持つため、照明として使う際の演色性はRa80以上に改善されますが、単色COBテープのRa90〜95には到達しません。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>2. 用途別：最適なテープタイプの選び方</h2>
+
+  <p>「演出と照明の両方に使いたい」という要望は理解できますが、用途が明確なほど最適解はシンプルです。以下の表で確認してください。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>用途・目的</th>
+          <th>推奨タイプ</th>
+          <th>理由</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>建築照明・間接照明（常設）</td>
+          <td><span class="cell-good">単色COBテープ</span></td>
+          <td>均一性・演色性・寿命で優位。色変更不要な用途では最適解</td>
+        </tr>
+        <tr>
+          <td>店舗サイン・ロゴバックライト</td>
+          <td><span class="cell-good">RGBまたはRGBW</span></td>
+          <td>ブランドカラーへの合わせ込みや季節ごとの色変更が必要な場合</td>
+        </tr>
+        <tr>
+          <td>イベント・ステージ演出</td>
+          <td><span class="cell-good">RGB（SMDタイプ）</span></td>
+          <td>動的なカラーチェンジ・フラッシュ効果が主目的。演色性は重要でない</td>
+        </tr>
+        <tr>
+          <td>ホテル客室（調光＋気分転換）</td>
+          <td><span class="cell-ok">RGBW</span></td>
+          <td>白色照明ベースでカラーアクセントを加えたい場合。COBと2系統も有効</td>
+        </tr>
+        <tr>
+          <td>ジュエリー・ギャラリー</td>
+          <td><span class="cell-good">単色COBテープ Ra95</span></td>
+          <td>正確な色再現が必須。RGBでは商品価値を損なうリスクがある</td>
+        </tr>
+        <tr>
+          <td>バー・ラウンジ（雰囲気照明）</td>
+          <td><span class="cell-ok">単色COB（2700K）またはRGBW</span></td>
+          <td>単色COBの調光のみで十分なケースが多い。演出重視ならRGBW</td>
+        </tr>
+        <tr>
+          <td>エクステリア・建物外壁演出</td>
+          <td><span class="cell-good">RGB（IP65〜IP67対応）</span></td>
+          <td>防水・フルカラーが必須。IP等級を屋外仕様で選ぶこと</td>
+        </tr>
+        <tr>
+          <td>ゲーミング・エンタメ施設</td>
+          <td><span class="cell-good">RGB（アドレサブル対応）</span></td>
+          <td>個別チップ制御でウェーブ・追従効果が可能</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>3. RGBとRGBWの技術的な違い</h2>
+
+  <h3>3-1. チャンネル数と配線の違い</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>RGB（3ch）</th>
+          <th>RGBW（4ch）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>チャンネル数</td>
+          <td>R / G / B（3本）</td>
+          <td>R / G / B / W（4本）</td>
+        </tr>
+        <tr>
+          <td>必要コントローラー</td>
+          <td>3ch対応（RGB専用）</td>
+          <td>4ch対応（RGBW専用）</td>
+        </tr>
+        <tr>
+          <td>白色表現の品質</td>
+          <td><span class="cell-bad">Ra60〜75程度（混色白）</span></td>
+          <td><span class="cell-ok">Ra80〜88程度（専用Wチップ）</span></td>
+        </tr>
+        <tr>
+          <td>明るさ（白色時）</td>
+          <td>3色加算（最大輝度に限界あり）</td>
+          <td>Wチップ単体で高効率発光</td>
+        </tr>
+        <tr>
+          <td>コントローラーコスト</td>
+          <td>安価（3ch製品が多い）</td>
+          <td>やや高価（4ch製品が必要）</td>
+        </tr>
+        <tr>
+          <td>配線端子数</td>
+          <td>4本（R/G/B/+）</td>
+          <td>5本（R/G/B/W/+）</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box blue">
+    <div class="box-title">コントローラーの互換性に注意</div>
+    <ul>
+      <li>RGBテープにRGBWコントローラーを接続すると、Wチャンネルが空きになり正常動作しないことがある</li>
+      <li>RGBWテープにRGBコントローラーを接続すると、白色チップが制御できず色の混合精度が低下する</li>
+      <li>テープ購入時に「RGB対応」か「RGBW対応」かを必ず確認し、コントローラーと合わせて揃える</li>
+    </ul>
+  </div>
+
+  <h3>3-2. アドレサブル（個別制御）タイプとは</h3>
+
+  <p>通常のRGB/RGBWテープは全区間が同じ色に光ります。これに対し、<strong>アドレサブル（WS2812B、SK6812等）</strong>タイプはICチップを内蔵した個々のLEDが独立して制御でき、流れる光・レインボー・追従効果が実現できます。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>通常RGB/RGBW</th>
+          <th>アドレサブルRGB</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>全体色制御</td>
+          <td><span class="cell-good">○（全区間同色）</span></td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td>個別LEDチップ制御</td>
+          <td><span class="cell-bad">✗</span></td>
+          <td><span class="cell-good">○（1チップ単位）</span></td>
+        </tr>
+        <tr>
+          <td>アニメーション効果</td>
+          <td><span class="cell-bad">✗</span></td>
+          <td><span class="cell-good">○（ウェーブ・追従・グラデ）</span></td>
+        </tr>
+        <tr>
+          <td>必要コントローラー</td>
+          <td>汎用RGBコントローラー</td>
+          <td>専用MCU（Arduino・Raspberry Pi・SP108E等）</td>
+        </tr>
+        <tr>
+          <td>設定の複雑さ</td>
+          <td>簡単（リモコン・アプリ対応多数）</td>
+          <td>やや複雑（プログラムまたは専用アプリが必要）</td>
+        </tr>
+        <tr>
+          <td>主な用途</td>
+          <td>店舗・ホテル・間接照明</td>
+          <td>ゲーミング・エンタメ・ステージ</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>4. コントローラーの選定ポイント</h2>
+
+  <p>RGBテープは単独では点灯せず、必ず専用コントローラーが必要です。用途と規模に合わせて選定しましょう。</p>
+
+  <div class="usecase-list">
+    <div class="usecase-item">
+      <div class="uc-icon">📱</div>
+      <h4>スマホアプリ制御タイプ</h4>
+      <p>Wi-Fi / Bluetooth 経由でスマートフォンから操作。店舗・ホテル・住宅に適合。シーン記憶・スケジュール機能を持つ製品が多い。</p>
+    </div>
+    <div class="usecase-item">
+      <div class="uc-icon">🎛️</div>
+      <h4>壁付けコントローラー（タッチパネル）</h4>
+      <p>スイッチとしてパネルを壁に設置。操作が直感的で店舗スタッフ向けに最適。シーン切替ボタンを固定できる。</p>
+    </div>
+    <div class="usecase-item">
+      <div class="uc-icon">🎵</div>
+      <h4>音楽連動タイプ（マイク内蔵）</h4>
+      <p>マイクで環境音を拾い、リズムに合わせて色・明るさが自動変化。バー・クラブ・ライブ会場での演出向け。</p>
+    </div>
+    <div class="usecase-item">
+      <div class="uc-icon">⏱️</div>
+      <h4>タイマー・スケジュール制御</h4>
+      <p>営業開始・終了に合わせた自動ON/OFFや、時間帯別の色切替をスケジュール設定。店舗の省エネ運用に有効。</p>
+    </div>
+    <div class="usecase-item">
+      <div class="uc-icon">🔌</div>
+      <h4>DMX512対応（業務用）</h4>
+      <p>舞台・ステージ・イベント施設向けの業務用プロトコル。照明卓から数百灯を集中制御可能。信頼性・拡張性が高い。</p>
+    </div>
+    <div class="usecase-item">
+      <div class="uc-icon">💻</div>
+      <h4>SPI / I2C（アドレサブル専用）</h4>
+      <p>WS2812B / SK6812等のアドレサブルテープ向け。ArduinoやRaspberry Pi等のマイコンで細かくプログラム制御が可能。</p>
+    </div>
+  </div>
+
+  <div class="info-box green">
+    <div class="box-title">コントローラー選定チェックポイント</div>
+    <ul>
+      <li><strong>対応電圧</strong>：テープが12Vか24Vかで対応コントローラーが異なる。24V用テープに12V用コントローラーは使用不可</li>
+      <li><strong>対応電流（最大出力）</strong>：接続するテープの全消費電力をコントローラーの定格電流が超えないように計算する</li>
+      <li><strong>チャンネル数</strong>：RGBは3ch、RGBWは4chのコントローラーが必要</li>
+      <li><strong>操作方法</strong>：店舗スタッフが直感的に操作できるUIか確認する</li>
+    </ul>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>5. 電力計算と電源設計</h2>
+
+  <h3>5-1. 基本計算式</h3>
+
+  <div class="info-box purple">
+    <div class="box-title">RGBテープの消費電力計算</div>
+    <ul>
+      <li><strong>全色点灯（白）時</strong>：R + G + B の3チャンネル合計。例：各チャンネル5W/m × 3ch = 15W/m（最大値）</li>
+      <li><strong>単色点灯時</strong>：例えば赤のみ点灯なら5W/mのみ消費</li>
+      <li><strong>RGBWの場合</strong>：白色（W）チップ単体で点灯した方が電力効率が高い場合がある</li>
+      <li><strong>電源容量</strong>：計算した総消費電力の120〜130%を確保する（余裕率）</li>
+    </ul>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>テープ種別</th>
+          <th>電圧</th>
+          <th>最大消費電力（W/m）</th>
+          <th>10m時の最大消費電力</th>
+          <th>必要電源容量（×1.2）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>RGB（5050 SMD）</td>
+          <td>12V / 24V</td>
+          <td>14.4〜18W</td>
+          <td>144〜180W</td>
+          <td>173〜216W以上</td>
+        </tr>
+        <tr>
+          <td>RGBW（5050 SMD）</td>
+          <td>12V / 24V</td>
+          <td>18〜24W</td>
+          <td>180〜240W</td>
+          <td>216〜288W以上</td>
+        </tr>
+        <tr>
+          <td>単色COB（比較用）</td>
+          <td>24V</td>
+          <td>5〜10W</td>
+          <td>50〜100W</td>
+          <td>60〜120W以上</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>5-2. 電圧降下対策</h3>
+
+  <p>RGBテープは電流が多く、長距離配線では電圧降下による色むら（奥側が暗い・色が変わる）が発生しやすいです。</p>
+
+  <div class="info-box orange">
+    <div class="box-title">RGBテープの電圧降下対策</div>
+    <ul>
+      <li><strong>5m以内</strong>：片側給電で問題なし</li>
+      <li><strong>5〜10m</strong>：24V仕様を選択（12Vより電圧降下が相対的に小さい）</li>
+      <li><strong>10m超</strong>：両端給電（テープの両端から電源を接続）またはテープを分割して独立給電</li>
+      <li><strong>カラーバランス維持</strong>：各色チャンネルの電圧降下が不均等になると色ズレが起きるため、テープ区間ごとに給電することが重要</li>
+    </ul>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>6. RGBテープの施工ポイントと注意事項</h2>
+
+  <h3>6-1. 色むら防止の貼り方</h3>
+
+  <p>RGBテープは各色チップが物理的に並んでいるため、近距離で見ると赤・緑・青のドットが見えてしまいます。この<strong>「ドット見え」</strong>を防ぐには、テープを直接露出させず、<strong>乳白色（ミルキー）のシリコンカバーやディフューザーカバー</strong>を使用します。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>施工方法</th>
+          <th>ドット見え</th>
+          <th>光の均一性</th>
+          <th>備考</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>テープ直接露出</td>
+          <td><span class="cell-bad">目立つ</span></td>
+          <td><span class="cell-bad">低い</span></td>
+          <td>近くから見ると色分離が見える</td>
+        </tr>
+        <tr>
+          <td>クリアシリコンカバー</td>
+          <td><span class="cell-bad">やや目立つ</span></td>
+          <td><span class="cell-ok">中程度</span></td>
+          <td>防水・防塵目的。光の拡散効果は小さい</td>
+        </tr>
+        <tr>
+          <td>乳白シリコンカバー</td>
+          <td><span class="cell-ok">軽減</span></td>
+          <td><span class="cell-ok">中〜良</span></td>
+          <td>光量を10〜20%損するが均一性が向上</td>
+        </tr>
+        <tr>
+          <td>アルミフレーム＋乳白カバー</td>
+          <td><span class="cell-good">目立たない</span></td>
+          <td><span class="cell-good">高い</span></td>
+          <td>最良の均一性。放熱効果も得られる</td>
+        </tr>
+        <tr>
+          <td>間接照明ボックス内設置</td>
+          <td><span class="cell-good">見えない</span></td>
+          <td><span class="cell-good">高い</span></td>
+          <td>テープを直接見せない設計。演出照明に最適</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>6-2. よくある失敗と対策</h3>
+
+  <div class="info-box blue">
+    <div class="box-title">失敗例1：白色のブルーがかり</div>
+    <p style="margin:0 0 8px; font-size:.9rem; color:#aaa;"><strong>原因</strong>：RGBテープで「白」に設定したつもりが、R/G/Bのバランスがコントローラーのデフォルト設定で青寄りになっていた。</p>
+    <p style="margin:0; font-size:.9rem; color:#aaa;"><strong>対策</strong>：コントローラーのRGB比を手動調整（例：R:255 G:200 B:180程度に下げる）して肌色に近い暖白色に補正。または最初からRGBWまたは単色COBテープを選択する。</p>
+  </div>
+
+  <div class="info-box blue">
+    <div class="box-title">失敗例2：長尺施工で奥側の色が変化する</div>
+    <p style="margin:0 0 8px; font-size:.9rem; color:#aaa;"><strong>原因</strong>：電圧降下により各色チャンネルの電流値が変化し、色のバランスが崩れた。</p>
+    <p style="margin:0; font-size:.9rem; color:#aaa;"><strong>対策</strong>：5m以上のRGBテープには両端給電または区間ごとの独立給電を実施する。</p>
+  </div>
+
+  <div class="info-box blue">
+    <div class="box-title">失敗例3：コントローラーの出力不足でチラつき</div>
+    <p style="margin:0 0 8px; font-size:.9rem; color:#aaa;"><strong>原因</strong>：コントローラーの定格電流を超えるテープ長を接続した。</p>
+    <p style="margin:0; font-size:.9rem; color:#aaa;"><strong>対策</strong>：テープ総消費電力をコントローラー定格の80%以内に抑える。超える場合はテープを分割してコントローラーを複数使用する。</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>7. 単色COBとRGB/RGBWの組み合わせ活用</h2>
+
+  <p>「演出したいゾーン」と「照明として機能させたいゾーン」が同一空間に混在する場合、<strong>単色COBと RGBを2系統に分けて設置する</strong>方法が最もコストパフォーマンスが高く、品質も両立できます。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>施設・エリア</th>
+          <th>COBテープ（照明用）</th>
+          <th>RGBテープ（演出用）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ホテルロビー</td>
+          <td>天井コーブ照明（3000K Ra90）</td>
+          <td>ウォールウォッシュ装飾壁・エントランス柱</td>
+        </tr>
+        <tr>
+          <td>バー・ラウンジ</td>
+          <td>カウンター下間接（2700K Ra90）</td>
+          <td>バックバー装飾・ステージ下地</td>
+        </tr>
+        <tr>
+          <td>アパレルショップ</td>
+          <td>商品棚スポット（3500K Ra95）</td>
+          <td>ウィンドウディスプレイ・ブランドカラー演出</td>
+        </tr>
+        <tr>
+          <td>エンタメ施設</td>
+          <td>非常口・安全灯（白色COB）</td>
+          <td>全エリア演出照明（アドレサブルRGB）</td>
+        </tr>
+        <tr>
+          <td>展示施設</td>
+          <td>展示物照明（Ra95 COB）</td>
+          <td>建物外壁・ファサード装飾</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>8. 導入前の確認チェックリスト</h2>
+
+  <div class="checklist">
+    <h4>RGBテープ導入チェックリスト</h4>
+    <label><input type="checkbox"> 用途が「演出・カラーチェンジ」か「照明機能」かを明確にしている</label>
+    <label><input type="checkbox"> 照明機能が主目的であれば、単色COBテープの採用を先に検討した</label>
+    <label><input type="checkbox"> RGBかRGBWか、チャンネル数を用途に合わせて決定した</label>
+    <label><input type="checkbox"> コントローラーの対応チャンネル数・電圧・最大電流が合致している</label>
+    <label><input type="checkbox"> 施工長さから電圧降下を計算し、給電方式（両端給電/区間分割）を決定した</label>
+    <label><input type="checkbox"> 電源容量が消費電力の120%以上を確保している</label>
+    <label><input type="checkbox"> ドット見えを防ぐためのシリコンカバー・ディフューザーを用意している</label>
+    <label><input type="checkbox"> 店舗スタッフが操作できるコントローラーUI（アプリ・リモコン）を確認した</label>
+    <label><input type="checkbox"> アドレサブルタイプが必要かどうかを検討した（全区間同色で良いか）</label>
+    <label><input type="checkbox"> 屋外・防水が必要な場合はIP65以上の防水仕様を選択した</label>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2>まとめ</h2>
+
+  <p>RGB/RGBWテープライトは、演出照明・サイン照明・動的なカラー空間作りに特化したツールです。一方で、「白色で長時間使用する建築照明・間接照明」には単色COBテープの方が演色性・均一性・寿命の面で優位です。</p>
+
+  <p>ポイントをまとめます：</p>
+
+  <div class="info-box green">
+    <div class="box-title">選び方まとめ</div>
+    <ul>
+      <li><strong>照明機能が主目的</strong> → 単色COBテープ（Ra90〜95、色温度は用途別に選択）</li>
+      <li><strong>カラー演出・サイン</strong> → RGBテープ（コントローラーと電源を合わせて選定）</li>
+      <li><strong>白色照明＋演出を両立</strong> → RGBWテープまたはCOB＋RGB 2系統設計</li>
+      <li><strong>個別チップアニメーション</strong> → アドレサブルRGBテープ（WS2812B等）</li>
+    </ul>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>RGBテープ・コントローラーの選定はLED PRO SHOPへ</h2>
+    <p>用途に合ったテープタイプ・コントローラー・電源の組み合わせをご提案します。</p>
+    <div class="cta-buttons">
+      <a href="https://led-proshop.com/category/special-led/" class="btn-primary">特殊LED・カラーテープを見る</a>
+      <a href="https://led-proshop.com/category/controller/" class="btn-secondary">コントローラーを見る</a>
+    </div>
+  </div>
+
+  <!-- Related -->
+  <div class="related-section">
+    <h3>関連コラム</h3>
+    <div class="related-grid">
+      <a href="https://led-proshop.com/articles/led-tape-controller-dimmer-guide.html" class="related-link">コントローラー・調光器の選び方ガイド</a>
+      <a href="https://led-proshop.com/articles/12v-vs-24v-led-tape.html" class="related-link">12V vs 24V：どちらを選ぶか</a>
+      <a href="https://led-proshop.com/articles/led-psu-capacity-guide.html" class="related-link">電源容量の計算ガイド</a>
+      <a href="https://led-proshop.com/articles/bar-lounge-led-case.html" class="related-link">バー・ラウンジのLED施工事例</a>
+      <a href="https://led-proshop.com/articles/museum-gallery-led-case.html" class="related-link">ミュージアム・ギャラリーのLED施工事例</a>
+    </div>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <p>
+    <a href="https://led-proshop.com/">LED PRO SHOP</a> ｜
+    <a href="https://led-proshop.com/tokushoho.html">特定商取引法に基づく表記</a> ｜
+    <a href="https://led-proshop.com/privacy-policy.html">プライバシーポリシー</a>
+  </p>
+  <p style="margin-top:8px;">© 2026 LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

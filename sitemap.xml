@@ -175,6 +175,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://led-proshop.com/articles/museum-gallery-led-case.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://led-proshop.com/articles/led-tape-rgb-rgbw-guide.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- FAQ ページ（Wave 5 新設・2026-05-01） -->
   <url>
