@@ -50,6 +50,13 @@
   }
   </script>
 
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"シネコンの客席調光でフリッカーフリーを実現するには？","acceptedAnswer":{"@type":"Answer","text":"PWM制御対応の高周波ドライバーと、DMX512インターフェースに対応したCOBテープLEDを組み合わせることで実現できます。特に1〜5%の極低輝度調光時にフリッカーが出やすいため、製品スペックの「調光最低値」と「フリッカー対応周波数」を必ず確認してください。"}},
+  {"@type":"Question","name":"映画館のLED化で省エネはどの程度期待できますか？","acceptedAnswer":{"@type":"Answer","text":"既存HID・蛍光灯混在構成からCOBテープLEDへの全面移行で、消費電力を40〜55%削減できるケースが多いです。14時間営業のシネコンでは年間電気代削減額が100万円を超えることもあり、投資回収期間は2〜4年が目安となります。"}},
+  {"@type":"Question","name":"2027年問題は映画館にどう影響しますか？","acceptedAnswer":{"@type":"Answer","text":"映画館のロビー・廊下・フードコートには直管蛍光灯が多数使われており、2027年以降の調達困難化は上映中断リスクに直結します。上映スケジュールを守るためにも、今のうちに段階的なLED移行計画を立てておくことが重要です。"}}
+]}
+</script>
   <style>
     :root{
       --accent2:#818cf8;
@@ -175,6 +182,16 @@
 
 <div class="container">
 
+  <div class="story-block">
+    <p>6スクリーンを擁するシネコンで、上映中に客席の照明が突然点滅するトラブルが相次いでいた。原因は経年劣化した蛍光灯の安定器不良で、上映を中断して謝罪対応が続く事態となっていた。観客クレームと返金対応のコストが積み重なるなか、施設管理者はLED全面移行の決断を下した。</p>
+    <p>映画館特有の難題がある。客席内は漆黒に近い暗さから一瞬で明転する「シーン調光」が求められ、フリッカー（ちらつき）は映像体験を台無しにする。さらにフードコートや廊下は14時間連続点灯という過酷な運用環境に耐えなければならない。映画の世界に没入できる照明と、施設運営を支える堅牢な省エネ設備の両立が求められた。</p>
+  </div>
+
+  <blockquote class="owner-voice">
+    <p>「上映中のトラブルがゼロになったのが一番大きい。電力コストも年間130万円以上削減できて、投資した甲斐がありました。DMX制御でシーンが切り替わるたびに客席の雰囲気が変わるのが、お客様にも好評です」</p>
+    <cite>— 都市型シネコン 施設管理責任者</cite>
+  </blockquote>
+
   <!-- 施設概要 -->
   <section class="section">
     <h2 class="section-title">施設概要</h2>
@@ -187,6 +204,11 @@
       <div class="ov-card"><div class="ov-label">制御方式</div><div class="ov-val">DMX512＋タイムラインプログラム</div></div>
     </div>
   </section>
+
+  <div class="failure-box">
+    <h3>よくある失敗例</h3>
+    <p>映画館のLED化で多い失敗が「フリッカー対策を後回しにする」ことです。一般的な家庭用LEDや安価な業務用品は、調光時にフリッカーが発生しやすく、映像コンテンツの視聴中にちらつきが目立ちます。特に暗転シーンでのごく低照度調光（1〜5%）に対応できない製品を使うと、スクリーン周辺に光が漏れ込んで没入感を著しく損ないます。PWM制御対応・フリッカーフリー仕様を必ず確認してください。</p>
+  </div>
 
   <!-- ゾーン構成 -->
   <section class="section">
@@ -368,6 +390,15 @@
     </div>
   </section>
 
+  <div class="problem2027">
+    <h3>2027年問題：蛍光灯フェーズアウトへの対応</h3>
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-year">〜2026年</span><span class="tl-text">既存蛍光灯の在庫流通・補修部品入手可</span></div>
+      <div class="tl-item tl-now"><span class="tl-year">2027年〜</span><span class="tl-text">一般蛍光灯の製造・輸入が事実上終了</span></div>
+      <div class="tl-item"><span class="tl-year">2028年〜</span><span class="tl-text">補修部品枯渇・修理不能化・照明コスト急増リスク</span></div>
+    </div>
+  </div>
+
   <!-- 投資回収 -->
   <section class="section">
     <h2 class="section-title">投資回収シミュレーション</h2>
@@ -406,6 +437,22 @@
       <li>タイムライン制御で開館〜閉館を全自動プログラム管理</li>
       <li>フードコート電球色3000K・Ra90で食欲促進・売上向上</li>
     </ul>
+  </section>
+
+  <section class="faq-section">
+    <h2>よくある質問</h2>
+    <div class="faq-item">
+      <h3 class="faq-q">Q. シネコンの客席調光でフリッカーフリーを実現するには？</h3>
+      <p class="faq-a">A. PWM制御対応の高周波ドライバーと、DMX512インターフェースに対応したCOBテープLEDを組み合わせることで実現できます。特に1〜5%の極低輝度調光時にフリッカーが出やすいため、製品スペックの「調光最低値」と「フリッカー対応周波数」を必ず確認してください。</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Q. 映画館のLED化で省エネはどの程度期待できますか？</h3>
+      <p class="faq-a">A. 既存HID・蛍光灯混在構成からCOBテープLEDへの全面移行で、消費電力を40〜55%削減できるケースが多いです。14時間営業のシネコンでは年間電気代削減額が100万円を超えることもあり、投資回収期間は2〜4年が目安となります。</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Q. 2027年問題は映画館にどう影響しますか？</h3>
+      <p class="faq-a">A. 映画館のロビー・廊下・フードコートには直管蛍光灯が多数使われており、2027年以降の調達困難化は上映中断リスクに直結します。上映スケジュールを守るためにも、今のうちに段階的なLED移行計画を立てておくことが重要です。</p>
+    </div>
   </section>
 
   <div class="cta-box">
