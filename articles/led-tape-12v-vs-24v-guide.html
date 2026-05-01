@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEDテープ12Vと24Vの違いを徹底比較｜電圧降下・対応距離・COBはどちらを選ぶべきか | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープの12Vと24Vを電圧降下・最大設置距離・対応PSU・調光器互換・COBとの相性で徹底比較。プロ施工者が24Vを標準として選ぶ理由と12Vが適した用途を具体的に解説。">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-12v-vs-24v-guide.html">
+
+  <!-- OGP -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="LEDテープ12Vと24Vの違いを徹底比較｜電圧降下・対応距離・COBはどちらを選ぶべきか">
+  <meta property="og:description" content="LEDテープの12Vと24Vを電圧降下・最大設置距離・対応PSU・調光器互換・COBとの相性で徹底比較。24Vが業務標準となる理由と12Vが適した用途を具体的に解説。">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-12v-vs-24v-guide.html">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:image" content="https://led-proshop.com/images/hero-scenes/bar_lounge.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ12Vと24Vの違いを徹底比較｜電圧降下・対応距離・COBはどちらを選ぶべきか">
+  <meta name="twitter:description" content="12Vと24Vの電圧降下・最大距離・PSU・COBとの相性を徹底比較。24Vが業務標準となる理由を解説。">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDテープ12Vと24Vの違いを徹底比較｜電圧降下・対応距離・COBはどちらを選ぶべきか",
+    "description": "LEDテープの12Vと24Vを電圧降下・最大設置距離・対応PSU・調光器互換・COBとの相性で徹底比較。プロ施工者が24Vを標準として選ぶ理由と12Vが適した用途を具体的に解説。",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP"},
+    "publisher": {"@type": "Organization", "name": "LED PRO SHOP", "url": "https://led-proshop.com"},
+    "url": "https://led-proshop.com/articles/led-tape-12v-vs-24v-guide.html",
+    "datePublished": "2026-05-01",
+    "dateModified": "2026-05-01"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://led-proshop.com/"},
+      {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "LEDテープ12Vと24Vの違い", "item": "https://led-proshop.com/articles/led-tape-12v-vs-24v-guide.html"}
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Noto Sans JP', 'Hiragino Sans', sans-serif; background: #0a0a0a; color: #e5e7eb; line-height: 1.7; }
+    a { color: #818cf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header */
+    .site-header { background: #111; border-bottom: 1px solid #222; padding: 0 1.5rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .logo { font-size: 1.1rem; font-weight: 700; color: #fff; letter-spacing: .05em; }
+    .logo span { color: #818cf8; }
+    .nav-link { font-size: .85rem; color: #9ca3af; }
+
+    /* Hero */
+    .article-hero { background: linear-gradient(135deg, #1e1b4b 0%, #2d2a6e 50%, #1e1b4b 100%); border-bottom: 1px solid #3730a3; padding: 3rem 1.5rem 2.5rem; text-align: center; }
+    .hero-badge { display: inline-block; background: #3730a3; color: #c7d2fe; font-size: .75rem; font-weight: 700; letter-spacing: .1em; padding: .25rem .75rem; border-radius: 2px; margin-bottom: 1rem; }
+    .article-hero h1 { font-size: clamp(1.4rem, 3.5vw, 2.1rem); font-weight: 800; color: #e0e7ff; line-height: 1.4; max-width: 860px; margin: 0 auto 1rem; }
+    .hero-meta { font-size: .85rem; color: #6366f1; }
+    .hero-summary { max-width: 680px; margin: 1.2rem auto 0; font-size: .95rem; color: #c7d2fe; }
+
+    /* Layout */
+    .article-wrap { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+    /* Sections */
+    h2 { font-size: 1.4rem; font-weight: 700; color: #e0e7ff; margin: 2.5rem 0 1rem; padding-left: .75rem; border-left: 4px solid #6366f1; }
+    h3 { font-size: 1.1rem; font-weight: 700; color: #a5b4fc; margin: 1.5rem 0 .6rem; }
+    p { margin-bottom: 1rem; color: #c7d2fe; }
+
+    /* Comparison table */
+    .comp-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: .9rem; }
+    .comp-table th { padding: .65rem .9rem; text-align: left; border: 1px solid #3730a3; font-size: .8rem; }
+    .comp-table th:first-child { background: #1e1b4b; color: #a5b4fc; }
+    .comp-table th.col-12v { background: #1e1b4b; color: #67e8f9; }
+    .comp-table th.col-24v { background: #2d2a6e; color: #86efac; }
+    .comp-table td { padding: .65rem .9rem; border: 1px solid #2d2a6e; color: #c7d2fe; vertical-align: top; }
+    .comp-table tr:nth-child(odd) td { background: #1e1b4b; }
+    .comp-table tr:nth-child(even) td { background: #16144a; }
+    .comp-table .win { color: #86efac; font-weight: 700; }
+    .comp-table .lose { color: #fca5a5; }
+    .comp-table .tie { color: #fde68a; }
+    .comp-table td:first-child { color: #a5b4fc; font-weight: 600; }
+
+    /* Voltage drop visualizer */
+    .vd-visual { margin: 1.5rem 0; background: #1e1b4b; border: 1px solid #3730a3; border-radius: 8px; padding: 1.5rem; }
+    .vd-title { font-size: .85rem; font-weight: 700; color: #a5b4fc; margin-bottom: 1rem; }
+    .vd-row { margin-bottom: 1.25rem; }
+    .vd-row-label { display: flex; justify-content: space-between; font-size: .8rem; margin-bottom: .3rem; }
+    .vd-row-label .voltage { font-weight: 700; color: #e0e7ff; }
+    .vd-row-label .drop { color: #fca5a5; font-size: .75rem; }
+    .vd-bar-bg { height: 10px; background: #2d2a6e; border-radius: 5px; overflow: hidden; }
+    .vd-bar { height: 100%; border-radius: 5px; }
+    .vd-bar.v12 { background: linear-gradient(to right, #22d3ee, #dc2626); }
+    .vd-bar.v24 { background: linear-gradient(to right, #22d3ee, #fbbf24); }
+    .vd-marks { display: flex; justify-content: space-between; margin-top: .25rem; }
+    .vd-marks span { font-size: .7rem; color: #6366f1; }
+
+    /* Highlight box */
+    .highlight-box { background: #1e1b4b; border: 1px solid #3730a3; border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+    .highlight-box .hb-title { font-size: .8rem; font-weight: 700; color: #818cf8; letter-spacing: .08em; margin-bottom: .5rem; }
+    .highlight-box p { margin: 0; color: #c7d2fe; }
+
+    /* Cards */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .card { background: #1e1b4b; border: 1px solid #3730a3; border-radius: 8px; padding: 1.25rem; }
+    .card.v12 { border-top: 3px solid #22d3ee; }
+    .card.v24 { border-top: 3px solid #86efac; }
+    .card h4 { font-size: 1rem; color: #e0e7ff; margin-bottom: .6rem; }
+    .card ul { list-style: none; }
+    .card ul li { font-size: .85rem; color: #a5b4fc; padding: .25rem 0; border-bottom: 1px solid #2d2a6e; }
+    .card ul li::before { content: '→ '; color: #6366f1; }
+    .card ul li:last-child { border-bottom: none; }
+
+    /* Decision flow */
+    .decision-flow { margin: 1.5rem 0; }
+    .df-step { display: flex; gap: 1rem; margin-bottom: .75rem; align-items: flex-start; }
+    .df-num { background: #3730a3; color: #e0e7ff; font-weight: 800; font-size: .9rem; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: .1rem; }
+    .df-q { font-size: .9rem; color: #c7d2fe; }
+    .df-q strong { color: #e0e7ff; }
+    .df-ans { margin-top: .25rem; display: flex; gap: .5rem; flex-wrap: wrap; }
+    .df-ans-item { font-size: .8rem; padding: .2rem .6rem; border-radius: 3px; }
+    .df-ans-item.yes { background: #1e3a2f; color: #86efac; }
+    .df-ans-item.no { background: #2d1a1a; color: #fca5a5; }
+
+    /* Formula box */
+    .formula-box { background: #16144a; border: 1px solid #3730a3; border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; font-family: monospace; }
+    .formula-box .fl { font-size: .9rem; color: #a5b4fc; margin: .3rem 0; }
+    .formula-box .fl span { color: #fde68a; }
+
+    /* Mistake cards */
+    .mistake-grid { display: grid; gap: .75rem; margin: 1.5rem 0; }
+    .mistake-card { background: #1e1b4b; border-left: 3px solid #ef4444; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; }
+    .mistake-card .mc-label { font-size: .75rem; font-weight: 700; color: #ef4444; margin-bottom: .25rem; }
+    .mistake-card p { margin: 0; font-size: .88rem; color: #c7d2fe; }
+
+    /* Checklist */
+    .checklist { list-style: none; margin: 1rem 0; }
+    .checklist li { display: flex; gap: .6rem; align-items: flex-start; padding: .4rem 0; border-bottom: 1px solid #2d2a6e; font-size: .9rem; color: #c7d2fe; }
+    .checklist li::before { content: '✓'; color: #6366f1; font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+
+    /* CTA */
+    .cta-section { background: linear-gradient(135deg, #1e1b4b, #2d2a6e); border: 1px solid #3730a3; border-radius: 12px; padding: 2rem; text-align: center; margin: 3rem 0 1rem; }
+    .cta-section h2 { border: none; padding: 0; margin: 0 0 .5rem; font-size: 1.2rem; color: #e0e7ff; }
+    .cta-section p { color: #818cf8; margin-bottom: 1.25rem; font-size: .9rem; }
+    .cta-btn { display: inline-block; background: #4f46e5; color: #fff; font-weight: 700; padding: .75rem 2rem; border-radius: 6px; font-size: .95rem; margin: .3rem; }
+    .cta-btn:hover { background: #3730a3; text-decoration: none; }
+    .cta-btn.secondary { background: transparent; border: 1px solid #4f46e5; color: #818cf8; }
+    .cta-btn.secondary:hover { background: #1e1b4b; }
+
+    /* Breadcrumb */
+    .breadcrumb { font-size: .8rem; color: #4338ca; margin-bottom: 2rem; }
+    .breadcrumb a { color: #4338ca; }
+    .breadcrumb span { margin: 0 .4rem; }
+
+    /* Summary chip */
+    .summary-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.5rem 0; }
+    .chip { background: #2d2a6e; color: #c7d2fe; font-size: .8rem; padding: .3rem .75rem; border-radius: 20px; border: 1px solid #3730a3; }
+    .chip.green { background: #1e3a2f; border-color: #166534; color: #86efac; }
+    .chip.cyan { background: #0c2a3a; border-color: #0e7490; color: #67e8f9; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">LED <span>PRO</span> SHOP</div>
+  <a href="/articles/" class="nav-link">← コラム一覧</a>
+</header>
+
+<div class="article-hero">
+  <div class="hero-badge">選び方ガイド</div>
+  <h1>LEDテープ 12Vと24Vの違いを徹底比較<br>電圧降下・対応距離・COBとの相性で選ぶべき電圧はどちらか</h1>
+  <div class="hero-meta">2026年5月01日 | LED PRO SHOP 技術ガイド</div>
+  <p class="hero-summary">「12Vと24Vどちらを選べばいいか」は初めてLEDテープを扱う施工者が最初に直面する選択です。電圧降下の物理・最大設置距離・PSU選定・調光器互換・COBとの相性を数値で比較し、用途別の正解を明確にします。</p>
+</div>
+
+<div class="article-wrap">
+  <nav class="breadcrumb">
+    <a href="/">ホーム</a><span>›</span>
+    <a href="/articles/">コラム</a><span>›</span>
+    LEDテープ 12Vと24Vの違いを徹底比較
+  </nav>
+
+  <h2>最初に結論：業務・商業用途は24V一択</h2>
+  <p>電圧降下・長距離対応・COB互換・PSU効率の4点すべてで24Vが有利です。12Vが選択肢になるのは、①ローボルト規格が必須の特定用途、②5m以下の短い装飾ライン、③コスト最優先の小規模DIY——この3ケースに限られます。</p>
+
+  <div class="summary-chips">
+    <div class="chip green">24V = 業務・商業用途の標準</div>
+    <div class="chip cyan">12V = 5m以下の装飾・DIY</div>
+    <div class="chip">COB LEDテープ = ほぼ全製品が24V</div>
+    <div class="chip">PSU効率 = 24V側が高い</div>
+  </div>
+
+  <h2>電圧降下の物理：なぜ24Vが有利なのか</h2>
+  <p>LEDテープに流れる電流はオームの法則に従い、銅箔の抵抗で電圧が降下します。12Vと24Vで同じ電力（例: 10W/m × 5m = 50W）を供給する場合、電流値が異なります。</p>
+
+  <div class="formula-box">
+    <div class="fl">12V系: 電流 = 50W ÷ 12V = <span>4.17A</span></div>
+    <div class="fl">24V系: 電流 = 50W ÷ 24V = <span>2.08A</span>（12Vの半分）</div>
+    <div class="fl">電圧降下 = 電流 × 配線抵抗 → 電流が半分 = 電圧降下も半分</div>
+  </div>
+
+  <p>電流が半分になれば、銅箔で発生する電圧降下も半分になります。LEDテープの銅箔抵抗は細く長くなるほど増えるため、24Vの恩恵は長尺施工で特に顕著です。</p>
+
+  <div class="vd-visual">
+    <div class="vd-title">電圧降下イメージ（10W/m × 配線長 = 給電点からの降下幅）</div>
+    <div class="vd-row">
+      <div class="vd-row-label"><span class="voltage">12V系・5m（許容ギリギリ）</span><span class="drop">約0.9〜1.2V降下（〜10%）</span></div>
+      <div class="vd-bar-bg"><div class="vd-bar v12" style="width:100%"></div></div>
+      <div class="vd-marks"><span>給電点</span><span>5m末端</span></div>
+    </div>
+    <div class="vd-row">
+      <div class="vd-row-label"><span class="voltage">24V系・10m（実用上限）</span><span class="drop">約0.9〜1.2V降下（〜5%）</span></div>
+      <div class="vd-bar-bg"><div class="vd-bar v24" style="width:100%"></div></div>
+      <div class="vd-marks"><span>給電点</span><span>10m末端</span></div>
+    </div>
+  </div>
+
+  <h2>最大設置距離の比較</h2>
+
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th class="col-12v">12V システム</th>
+        <th class="col-24v">24V システム</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>片端給電 最大距離</td>
+        <td class="lose">〜5m（輝度ムラなし）</td>
+        <td class="win">〜10m（輝度ムラなし）</td>
+      </tr>
+      <tr>
+        <td>両端給電 最大距離</td>
+        <td class="lose">〜10m</td>
+        <td class="win">〜20m</td>
+      </tr>
+      <tr>
+        <td>中点給電での最大距離</td>
+        <td class="lose">〜15m（3配線必要）</td>
+        <td class="win">〜30m（3配線必要）</td>
+      </tr>
+      <tr>
+        <td>PSU間距離 延長余地</td>
+        <td class="lose">小（電圧降下が早い）</td>
+        <td class="win">大（電圧余裕が2倍）</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-box">
+    <div class="hb-title">実用上の目安</div>
+    <p>12Vは5m以内で片端給電が完結する用途向け。10m超が必要なら24Vを選ぶか、12Vの場合は中間に給電ポイントを追加する必要があります。天井コーニス・棚下・ショーケース照明では10m超が普通なので、24Vが実質必須です。</p>
+  </div>
+
+  <h2>12V vs 24V 全項目比較表</h2>
+
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th>比較項目</th>
+        <th class="col-12v">12V</th>
+        <th class="col-24v">24V</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>電圧降下</td>
+        <td class="lose">大（同距離で2倍）</td>
+        <td class="win">小（電流が半分）</td>
+      </tr>
+      <tr>
+        <td>最大片端給電距離</td>
+        <td class="lose">〜5m</td>
+        <td class="win">〜10m</td>
+      </tr>
+      <tr>
+        <td>PSU変換効率</td>
+        <td class="lose">やや低い（低電圧側で損失大）</td>
+        <td class="win">高い（85〜92%標準）</td>
+      </tr>
+      <tr>
+        <td>PSUのコスト</td>
+        <td class="win">やや安い（小容量が豊富）</td>
+        <td class="tie">ほぼ同等</td>
+      </tr>
+      <tr>
+        <td>COBテープとの互換</td>
+        <td class="lose">限定的（一部製品のみ）</td>
+        <td class="win">ほぼ全製品が24V対応</td>
+      </tr>
+      <tr>
+        <td>調光器（PWM）互換</td>
+        <td class="tie">標準品が豊富</td>
+        <td class="win">業務用が豊富・DALI対応</td>
+      </tr>
+      <tr>
+        <td>コネクタ・アクセサリ</td>
+        <td class="tie">DIY向けが多い</td>
+        <td class="win">業務向けが充実</td>
+      </tr>
+      <tr>
+        <td>感電リスク</td>
+        <td class="win">低い（超低電圧）</td>
+        <td class="win">低い（超低電圧・安全圏）</td>
+      </tr>
+      <tr>
+        <td>テープの種類・ラインナップ</td>
+        <td class="lose">減少傾向</td>
+        <td class="win">業界標準・選択肢豊富</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>COBテープは24V専用設計</h2>
+  <p>COB（Chip on Board）型LEDテープが市場シェアを拡大した最大の理由は「点光源のない均一発光」ですが、COB構造はチップ列を高密度で直列接続するため、電源電圧に12Vは対応しにくい設計になっています。</p>
+
+  <div class="card-grid">
+    <div class="card v12">
+      <h4>12V COBテープの実情</h4>
+      <ul>
+        <li>製品数が少ない（限定ラインナップ）</li>
+        <li>W/mの上限が低い（6〜10W/m程度）</li>
+        <li>5m以上の連続設置で輝度ムラが目立つ</li>
+        <li>高演色Ra90/Ra95対応品がほぼない</li>
+        <li>業務施工での採用実績が少ない</li>
+      </ul>
+    </div>
+    <div class="card v24">
+      <h4>24V COBテープの強み</h4>
+      <ul>
+        <li>6〜20W/mの幅広いラインナップ</li>
+        <li>Ra80/Ra90/Ra95の選択肢あり</li>
+        <li>10m両端給電で20mの連続設置可</li>
+        <li>DALI調光対応PSUと組み合わせ可</li>
+        <li>工場・医療・商業施設に採用実績多数</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>電圧別：適した用途と選ぶべきシーン</h2>
+
+  <h3>12Vを選ぶべき用途</h3>
+  <ul class="checklist">
+    <li>車内・キャンピングカー・ボート内の装飾照明（バッテリー電圧が12V系）</li>
+    <li>棚下・飾り棚の短い装飾ライン（3〜5m以内）</li>
+    <li>DIY・自作PCのアンビエント照明（小容量PSUで完結）</li>
+    <li>既存の12V電源インフラを流用するリフォーム案件</li>
+    <li>超低コスト優先の一時的な展示用装飾</li>
+  </ul>
+
+  <h3>24Vを選ぶべき用途</h3>
+  <ul class="checklist">
+    <li>天井コーニス・間接照明（10m超の連続ライン）</li>
+    <li>ショーケース・什器内照明（商業施設・小売店）</li>
+    <li>工場・倉庫の作業ライン照明（長距離・高輝度）</li>
+    <li>クリニック・病院・精密検査エリア（Ra90/Ra95・フリッカーフリー必須）</li>
+    <li>ウェディングホール・ホテル・飲食店（調光・シーン設定）</li>
+    <li>屋外軒下・外構照明（IP65以上・長距離配線）</li>
+    <li>COB LEDテープを使う全ての施工</li>
+  </ul>
+
+  <h2>5問でわかる：12V vs 24V 選択フロー</h2>
+
+  <div class="decision-flow">
+    <div class="df-step">
+      <div class="df-num">1</div>
+      <div>
+        <div class="df-q"><strong>COBテープを使いますか？</strong></div>
+        <div class="df-ans">
+          <div class="df-ans-item yes">YES → 24V 一択（COBは24V専用設計）</div>
+          <div class="df-ans-item no">NO → 次の質問へ</div>
+        </div>
+      </div>
+    </div>
+    <div class="df-step">
+      <div class="df-num">2</div>
+      <div>
+        <div class="df-q"><strong>設置距離は5mを超えますか？</strong></div>
+        <div class="df-ans">
+          <div class="df-ans-item yes">YES → 24V（12Vでは輝度ムラが出る）</div>
+          <div class="df-ans-item no">NO → 次の質問へ</div>
+        </div>
+      </div>
+    </div>
+    <div class="df-step">
+      <div class="df-num">3</div>
+      <div>
+        <div class="df-q"><strong>調光（DALI・PWM）は必要ですか？</strong></div>
+        <div class="df-ans">
+          <div class="df-ans-item yes">YES → 24V（業務用調光器の選択肢が豊富）</div>
+          <div class="df-ans-item no">NO → 次の質問へ</div>
+        </div>
+      </div>
+    </div>
+    <div class="df-step">
+      <div class="df-num">4</div>
+      <div>
+        <div class="df-q"><strong>車内・バッテリー電源での使用ですか？</strong></div>
+        <div class="df-ans">
+          <div class="df-ans-item yes">YES → 12V（車載バッテリーは12V系）</div>
+          <div class="df-ans-item no">NO → 次の質問へ</div>
+        </div>
+      </div>
+    </div>
+    <div class="df-step">
+      <div class="df-num">5</div>
+      <div>
+        <div class="df-q"><strong>5m以下の短い装飾ラインですか？</strong></div>
+        <div class="df-ans">
+          <div class="df-ans-item yes">YES → 12Vでも可（PSUコストが安い）</div>
+          <div class="df-ans-item no">NO → 24V（拡張性・将来性で優位）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>よくある失敗パターン 5選</h2>
+
+  <div class="mistake-grid">
+    <div class="mistake-card">
+      <div class="mc-label">失敗 1：12V PSUで24Vテープに給電</div>
+      <p>最も多い事故。12V PSUを24Vテープに繋ぐと輝度が激減し、色温度も狂う。電圧を「多めに入れれば明るくなる」と勘違いして逆に24V PSUを12Vテープに繋ぐと即焼損。電圧ラベルを必ず確認すること。</p>
+    </div>
+    <div class="mistake-card">
+      <div class="mc-label">失敗 2：12Vで10m片端給電</div>
+      <p>給電点近くは明るく、末端は明らかに暗くなる輝度ムラが発生。「10m巻きのテープを1本繋げばいい」という発想で施工すると、必ず後悔する。12Vは5m以内が実用限界。</p>
+    </div>
+    <div class="mistake-card">
+      <div class="mc-label">失敗 3：12V・24V混在工事での配線誤接続</div>
+      <p>既存12Vシステムに24Vを増設する際、配線色だけで電圧を判断して誤接続。同一現場で電圧が混在する場合は、ラベリングと配線色を電圧別に厳格に分ける。</p>
+    </div>
+    <div class="mistake-card">
+      <div class="mc-label">失敗 4：12V COBテープで業務施工</div>
+      <p>「COBなら均一」と思い12V製品を選んだら、5m超で末端が暗く、追加の給電ポイント工事が必要になった。COBは24Vを前提として設計されており、12Vは例外的な製品。</p>
+    </div>
+    <div class="mistake-card">
+      <div class="mc-label">失敗 5：24V調光器に12V PSUを繋ぐ</div>
+      <p>「PWM調光器はどの電圧でも使える」は誤り。24V対応と表記された調光器でも入力電圧が24Vを前提とした回路設計になっており、12V PSUを繋ぐと制御が不安定になる。</p>
+    </div>
+  </div>
+
+  <h2>PSU選定の基本（電圧ごとの注意点）</h2>
+
+  <div class="highlight-box">
+    <div class="hb-title">PSU容量の計算式（12V / 24V 共通）</div>
+    <p>必要PSU容量（W）＝ W/m × 使用距離（m）× <strong>1.2（安全率）</strong><br>
+    例：15W/m × 10m = 150W × 1.2 = <strong>180W以上のPSUが必要</strong><br>
+    320Wの規格品なら1台で余裕あり。150W規格品は容量不足で過熱リスク。</p>
+  </div>
+
+  <ul class="checklist">
+    <li>12VシステムのPSUは5A〜20A品が標準（電流が大きいため電線も太くなる）</li>
+    <li>24VシステムのPSUは電流が半分になるため、同容量でも細い電線で対応可能</li>
+    <li>防水環境（IP44以上のテープ）にはIPX4以上の防水対応PSUを使用する</li>
+    <li>調光機能が必要な場合は、テープの電圧に合ったPWMまたはDALI対応PSUを選ぶ</li>
+    <li>複数台のPSUを並列運転する場合は、電流シェアリング対応品か独立回路構成にする</li>
+  </ul>
+
+  <div class="cta-section">
+    <h2>24V COB LEDテープとPSUを選ぶ</h2>
+    <p>業務・商業施工に対応したCOB 24Vテープ全ラインナップと<br>対応スイッチング電源をご用意しています。</p>
+    <a href="/category/cob-tape/" class="cta-btn">COB LEDテープ一覧（24V）</a>
+    <a href="/category/psu/" class="cta-btn secondary">スイッチング電源一覧</a>
+  </div>
+
+</div><!-- /article-wrap -->
+
+</body>
+</html>
