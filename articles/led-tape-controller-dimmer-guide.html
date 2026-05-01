@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープ用コントローラー・調光器の種類と選び方｜PWM・0-10V・DALI徹底解説 | LED PRO SHOP コラム</title>
+  <meta name="description" content="LEDテープライト用コントローラー・調光器の種類（PWM調光・0-10V調光・DALI・DMX）と用途別の選び方を解説。電圧の一致・最大負荷容量の確認方法・調光時のチラつき対策まで実務レベルで網羅。">
+  <meta name="keywords" content="LEDコントローラー, 調光器, PWM調光, 0-10V調光, DALI, DMX, LEDテープ, 調光器 選び方, チラつき, 12V 24V コントローラー">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-controller-dimmer-guide.html">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-controller-dimmer-guide.html">
+  <meta property="og:title" content="LEDテープ用コントローラー・調光器の種類と選び方｜PWM・0-10V・DALI徹底解説 | LED PRO SHOP コラム">
+  <meta property="og:description" content="LEDテープ用コントローラー・調光器の種類と選び方を実務レベルで解説。PWM調光・0-10V・DALI・DMXの違いと用途別選択基準。">
+  <meta property="og:image" content="https://led-proshop.com/images/hero-scenes/gold_shop.png">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ用コントローラー・調光器の種類と選び方 | LED PRO SHOP コラム">
+  <meta name="twitter:description" content="PWM調光・0-10V・DALI・DMXの違いと選び方を実務目線で解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/images/hero-scenes/gold_shop.png">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープ用コントローラー・調光器の種類と選び方｜PWM・0-10V・DALI徹底解説",
+    "description": "LEDテープライト用コントローラー・調光器の種類と用途別の選び方を解説。",
+    "image": "https://led-proshop.com/images/hero-scenes/gold_shop.png",
+    "author": {"@type": "Organization","name": "LED PRO SHOP 編集部"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject","url": "https://led-proshop.com/images/logo.png"}
+    },
+    "datePublished": "2026-05-01",
+    "dateModified": "2026-05-01",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-controller-dimmer-guide.html"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem","position": 1,"name": "LED PRO SHOP","item": "https://led-proshop.com/"},
+      {"@type": "ListItem","position": 2,"name": "コラム","item": "https://led-proshop.com/articles/"},
+      {"@type": "ListItem","position": 3,"name": "LEDテープ用コントローラー・調光器の種類と選び方","item": "https://led-proshop.com/articles/led-tape-controller-dimmer-guide.html"}
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#003C82;--blue-pale:#e8f0fe;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-hero{background:linear-gradient(135deg,#001a40 0%,#003C82 50%,#00254f 100%);padding:40px 16px 32px;border-bottom:3px solid #002a5c}
+    .article-hero .container{max-width:840px;margin:0 auto}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-hero h1 em{font-style:normal;color:#5bc4ff}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--blue);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--blue);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--blue);padding:6px 10px;background:var(--blue-pale);border-left:3px solid var(--blue);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--blue);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--blue);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--blue-pale)}
+    .article-callout{border-left:4px solid var(--blue);background:var(--blue-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--blue)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .article-cta{background:var(--blue);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--blue);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#e8f0fe}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--blue)}
+    .sidebar-cta{background:var(--blue);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--blue);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#e8f0fe}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--blue)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--blue)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--blue);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo" style="text-decoration:none">
+        <div class="logo-main">LED専門プロショップ<small>日本ネオン株式会社</small></div>
+        <div class="logo-tag">
+          <span class="logo-badge">PROFESSIONAL SUPPLY</span>
+          <span class="logo-catch">全国のLED施工業者が選ぶ / 工場直送 × 業界最安値</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+        <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+        <li><a href="/category/psu/" class="nav-link">電源</a></li>
+        <li><a href="/category/controller/" class="nav-link">制御機器</a></li>
+        <li><a href="/articles/" class="nav-link active">コラム</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <nav class="article-breadcrumb" aria-label="パンくず">
+    <div class="container">
+      <a href="/">LED PRO SHOP</a>
+      <span>›</span>
+      <a href="/articles/">コラム</a>
+      <span>›</span>
+      <span>LEDコントローラー・調光器の選び方</span>
+    </div>
+  </nav>
+
+  <header class="article-hero">
+    <div class="container">
+      <span class="article-category-badge">電源・コントローラー解説</span>
+      <h1>LEDテープ用<em>コントローラー・調光器</em>の種類と選び方<br>PWM・0-10V・DALI・DMX 徹底解説</h1>
+      <div class="article-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-05-01</span>
+        <span>更新日: 2026-05-01</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-layout">
+    <main class="article-main">
+      <img src="/images/hero-scenes/gold_shop.png" alt="LEDテープ用コントローラー・調光器" class="article-hero-img" width="840" height="472">
+
+      <nav class="article-toc" aria-label="目次">
+        <h2>目次</h2>
+        <ol>
+          <li><a href="#overview">コントローラーが必要な理由</a></li>
+          <li><a href="#types">調光方式の種類と比較</a></li>
+          <li><a href="#pwm">PWM調光の仕組みと注意点</a></li>
+          <li><a href="#voltage">電圧・負荷容量の確認方法</a></li>
+          <li><a href="#rgb">RGBWテープ専用コントローラー</a></li>
+          <li><a href="#flicker">チラつき対策</a></li>
+          <li><a href="#selection">用途別おすすめ選択フロー</a></li>
+          <li><a href="#summary">まとめ</a></li>
+        </ol>
+      </nav>
+
+      <div class="article-body">
+
+        <h2 id="overview">コントローラー・調光器が必要な理由</h2>
+        <p>LEDテープは直流低電圧で動作するため、家庭用の壁スイッチや蛍光灯用の調光器とは電気的に互換性がありません。LED専用の<strong>コントローラー（電流・電圧を制御する機器）</strong>が必要です。</p>
+        <p>コントローラーの主な役割は以下の3つです。</p>
+        <ul>
+          <li><strong>調光（明るさ調整）:</strong> 0〜100%の無段階調光や段階調光</li>
+          <li><strong>色変換（RGBテープ向け）:</strong> R・G・B各チャンネルの出力比率を変えて発色を制御</li>
+          <li><strong>スケジュール・タイマー制御（高機能機種）:</strong> 時刻連動・シーン記憶</li>
+        </ul>
+
+        <div class="article-callout tip">
+          <p><strong>施工業者向けの実務ポイント:</strong> コントローラーはLEDテープとセットで選定しないと「電圧が合わない」「最大負荷オーバー」「チラつき」のトラブルが発生します。本記事で確認事項を整理します。</p>
+        </div>
+
+        <h2 id="types">調光方式の種類と比較</h2>
+        <p>LEDテープに使われる主要な調光方式は4種類です。</p>
+
+        <table>
+          <thead>
+            <tr><th>調光方式</th><th>原理</th><th>特徴</th><th>用途</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>PWM調光</strong></td>
+              <td>点滅の割合（デューティ比）で明るさを制御</td>
+              <td>色が変化しない・コスト安</td>
+              <td>店舗・住宅・業務全般</td>
+            </tr>
+            <tr>
+              <td><strong>0-10V調光</strong></td>
+              <td>制御信号0〜10Vで出力を比例制御</td>
+              <td>ノイズに強い・長距離信号伝送に有利</td>
+              <td>大規模施設・オフィスビル</td>
+            </tr>
+            <tr>
+              <td><strong>DALI</strong></td>
+              <td>デジタル制御バス（IEC 62386）</td>
+              <td>個別アドレス管理・64台まで一括制御</td>
+              <td>ホテル・スマートビル・舞台照明</td>
+            </tr>
+            <tr>
+              <td><strong>DMX512</strong></td>
+              <td>舞台照明用デジタルプロトコル</td>
+              <td>512チャンネル精密制御・演出向け</td>
+              <td>ステージ・イベント・エンタメ施設</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>一般的な店舗・商業施設の間接照明には<strong>PWM調光</strong>が最もコスト効率が高く、当店のCOBテープ・アルミフレームとの組み合わせに適しています。</p>
+
+        <h2 id="pwm">PWM調光の仕組みと注意点</h2>
+
+        <h3>仕組み</h3>
+        <p>PWM（Pulse Width Modulation = パルス幅変調）は、LEDを高速でON/OFFすることで人間の目には「暗く見える」状態を作る技術です。</p>
+        <ul>
+          <li>デューティ比 100% → 最大輝度（常時ON）</li>
+          <li>デューティ比 50% → 半分の明るさに見える（高速でON/OFFを繰り返す）</li>
+          <li>デューティ比 10% → 10%の明るさ（ほぼ暗い）</li>
+        </ul>
+        <p>PWMの周波数が低い（例: 100Hz以下）と、人の目やカメラがチラつきを感知します。<strong>1kHz以上のPWM周波数</strong>のコントローラーを選ぶことでフリッカーを防げます。</p>
+
+        <h3>COBテープとPWM調光の相性</h3>
+        <p>当店のCOBテープはPWM調光に対応しています。ただし以下に注意してください。</p>
+        <ul>
+          <li>トライアック調光器（AC100V側での調光）はDC駆動のLEDテープとは原則非対応</li>
+          <li>「LED対応」と記載のある調光器でも、PWM非対応の場合はチラつきや誤動作が起きる場合がある</li>
+          <li>PWM対応の専用コントローラーを必ず使用する</li>
+        </ul>
+
+        <div class="article-callout warn">
+          <p><strong>注意:</strong> 蛍光灯用のスライダック・インバーター型調光器はLEDテープには使用できません。必ずLED専用のコントローラーを使用してください。</p>
+        </div>
+
+        <h2 id="voltage">電圧・負荷容量の確認方法</h2>
+        <p>コントローラー選定で最も多いミスが「電圧の不一致」と「最大負荷容量オーバー」です。</p>
+
+        <h3>確認手順</h3>
+        <ol>
+          <li><strong>LEDテープの電圧を確認:</strong> 12V または 24V（当店のCOBテープは主に24V）</li>
+          <li><strong>コントローラーの対応電圧を確認:</strong> 「12-24V対応」など記載を確認。電圧不一致は破損・発火リスクがあります</li>
+          <li><strong>LEDテープの総消費電力を計算:</strong> 消費電力(W/m) × 使用メートル数 = 総消費電力</li>
+          <li><strong>コントローラーの最大負荷容量が総消費電力を上回ることを確認:</strong> 余裕を持って1.2〜1.5倍以上が理想</li>
+        </ol>
+
+        <table>
+          <thead><tr><th>LEDテープ</th><th>長さ</th><th>総消費電力</th><th>必要なコントローラー容量</th></tr></thead>
+          <tbody>
+            <tr><td>8W/m COB 24V</td><td>5m</td><td>40W</td><td>60W以上（余裕率1.5倍）</td></tr>
+            <tr><td>8W/m COB 24V</td><td>10m</td><td>80W</td><td>120W以上</td></tr>
+            <tr><td>10W/m COB 24V</td><td>15m</td><td>150W</td><td>200W以上（複数台に分割推奨）</td></tr>
+          </tbody>
+        </table>
+
+        <div class="article-callout">
+          <p><strong>ポイント:</strong> 消費電力の大きい長尺施工では、コントローラーを複数台に分割する「ゾーン制御」が効果的です。各ゾーン10m以内に収めると安定動作します。</p>
+        </div>
+
+        <h2 id="rgb">RGBWテープ専用コントローラー</h2>
+        <p>R（赤）・G（緑）・B（青）・W（白）の4チャンネルを持つRGBWテープには、<strong>RGBW専用コントローラー</strong>が必要です。単色用（1チャンネル）のコントローラーでは色変換ができません。</p>
+
+        <table>
+          <thead><tr><th>LEDテープの種類</th><th>必要なコントローラーチャンネル数</th></tr></thead>
+          <tbody>
+            <tr><td>単色COB / SMD（白色・電球色など）</td><td>1チャンネル（シングル）</td></tr>
+            <tr><td>RGB（3色）</td><td>3チャンネル RGB対応</td></tr>
+            <tr><td>RGBW（4色）</td><td>4チャンネル RGBW対応</td></tr>
+            <tr><td>RGBCCT（色温度+RGB）</td><td>5チャンネル対応</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="flicker">チラつき対策</h2>
+        <p>施工後に「LEDがチラつく」「カメラで撮影するとストライプが見える」という問題は、以下の原因が多いです。</p>
+
+        <h3>原因と対策</h3>
+        <ul>
+          <li><strong>PWM周波数が低すぎる:</strong> 1kHz未満のコントローラーは目やカメラがフリッカーを感知。1kHz以上のものを選ぶ</li>
+          <li><strong>電源の品質が低い:</strong> リプル（交流成分）が多い粗悪電源が調光干渉を起こす。定評ある電源を使用する</li>
+          <li><strong>コントローラーと電源の相性:</strong> 同一メーカーの電源・コントローラーセットを使うと相性問題が少ない</li>
+          <li><strong>長いケーブルによるノイズ:</strong> コントローラーからLEDテープまでのケーブルが長い場合、フェライトコアの追加やツイストペアケーブルの使用が有効</li>
+        </ul>
+
+        <h2 id="selection">用途別おすすめ選択フロー</h2>
+
+        <h3>フロー図</h3>
+        <p><strong>STEP 1.</strong> LEDテープは単色か？ → 単色 → <strong>STEP 2へ</strong> / RGB/RGBW → RGBW対応コントローラーを選ぶ</p>
+        <p><strong>STEP 2.</strong> 電圧は12Vか24Vか？ → それに対応するコントローラーを選ぶ</p>
+        <p><strong>STEP 3.</strong> 調光方式は？</p>
+        <ul>
+          <li>一般店舗・住宅の調光 → <strong>PWM対応コントローラー</strong>（最もシンプル・コスト安）</li>
+          <li>大規模ビル・スマート照明 → <strong>0-10VまたはDALI</strong></li>
+          <li>ステージ・イベント演出 → <strong>DMX512</strong></li>
+        </ul>
+        <p><strong>STEP 4.</strong> 最大負荷容量がLEDテープの消費電力の1.2〜1.5倍以上あるか確認 → OK → 選定完了</p>
+
+        <h2 id="summary">まとめ</h2>
+        <p>LEDテープ用コントローラー・調光器の選定は、以下の3点を必ず確認してください。</p>
+        <ul>
+          <li><strong>① 電圧の一致:</strong> 12Vテープには12Vコントローラー、24Vには24V対応を</li>
+          <li><strong>② 最大負荷容量の余裕:</strong> LEDテープ総消費電力の1.2〜1.5倍以上を選ぶ</li>
+          <li><strong>③ 調光方式の確認:</strong> 一般用途はPWM・大規模施設は0-10VまたはDALI</li>
+        </ul>
+        <p>当店のCOBテープはPWM調光対応品を主力に取り扱っています。ご不明な点はお問い合わせください。</p>
+
+        <!-- CTA -->
+        <div class="article-cta">
+          <h2>コントローラー・調光器を見る</h2>
+          <p>当店のLED専用コントローラー・PWM調光器。COBテープ・電源とセットで選べます。</p>
+          <a href="/category/controller/" class="article-cta-btn">コントローラーを見る</a>
+        </div>
+
+        <!-- 関連記事 -->
+        <section class="related-articles">
+          <h2>関連コラム</h2>
+          <div class="related-articles-list">
+            <div class="related-article-card">
+              <a href="/articles/led-psu-capacity-guide.html">
+                <div class="rac-body">
+                  <span class="rac-tag">電源・コントローラー解説</span>
+                  <span class="rac-title">LED電源容量の計算方法と早見表</span>
+                </div>
+              </a>
+            </div>
+            <div class="related-article-card">
+              <a href="/articles/12v-vs-24v-led-tape.html">
+                <div class="rac-body">
+                  <span class="rac-tag">規格別比較</span>
+                  <span class="rac-title">12V vs 24V LEDテープの選び方</span>
+                </div>
+              </a>
+            </div>
+            <div class="related-article-card">
+              <a href="/articles/cob-vs-smd-led-tape.html">
+                <div class="rac-body">
+                  <span class="rac-tag">LED選び方ガイド</span>
+                  <span class="rac-title">COB vs SMD テープ徹底比較</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <aside class="article-sidebar">
+      <div class="sidebar-cta">
+        <p>COBテープ・アルミフレーム・電源・コントローラーを工場直送価格で</p>
+        <a href="/category/controller/">コントローラーを見る</a>
+      </div>
+      <div class="sidebar-widget">
+        <h3>関連カテゴリ</h3>
+        <ul>
+          <li><a href="/category/controller/">LEDコントローラー</a></li>
+          <li><a href="/category/psu/">LED専用電源</a></li>
+          <li><a href="/category/cob-tape/">COBテープ</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-widget">
+        <h3>電源・コントローラー解説</h3>
+        <ul>
+          <li><a href="/articles/led-psu-capacity-guide.html">電源容量計算ガイド</a></li>
+          <li><a href="/articles/12v-vs-24v-led-tape.html">12V vs 24V 選び方</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <p style="margin-bottom:6px">
+      <a href="/tokushoho.html" style="color:#888">特定商取引法に基づく表記</a> &nbsp;|&nbsp;
+      <a href="/privacy-policy.html" style="color:#888">プライバシーポリシー</a> &nbsp;|&nbsp;
+      <a href="/articles/" style="color:#888">コラム</a> &nbsp;|&nbsp;
+      <a href="/faq/" style="color:#888">FAQ</a>
+    </p>
+    <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
