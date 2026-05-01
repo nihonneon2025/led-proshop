@@ -48,6 +48,44 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- カテゴリページ（Wave 4 新設・2026-05-01） -->
+  <url>
+    <loc>https://led-proshop.com/category/cob-tape/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://led-proshop.com/category/smd-tape/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://led-proshop.com/category/alumi-frame/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://led-proshop.com/category/psu/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://led-proshop.com/category/controller/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://led-proshop.com/category/special-led/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- 法定ページ（特商法・プライバシーポリシー）-->
   <url>
     <loc>https://led-proshop.com/tokushoho.html</loc>
