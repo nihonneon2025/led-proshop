@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEDテープ調光方式の比較ガイド｜PWM・0-10V・DALI・位相制御の違いと選び方｜LED PRO SHOP</title>
+  <meta name="description" content="LEDテープ照明の調光方式（PWM・0-10V・DALI・位相制御・スマート調光）を徹底比較。チラつき・対応機器・コスト・設置難易度を業種別に解説。正しい調光方式の選び方と注意点。">
+  <meta name="keywords" content="LEDテープ 調光方式, PWM調光, 0-10V調光, DALI照明, 位相制御 LED, ちらつき 調光, LED ディマー 選び方">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-dimming-methods-guide.html">
+
+  <!-- OGP -->
+  <meta property="og:title" content="LEDテープ調光方式の比較ガイド｜PWM・0-10V・DALI・位相制御の違いと選び方">
+  <meta property="og:description" content="LEDテープの調光方式を徹底比較。PWM・0-10V・DALI・位相制御の違い、チラつきリスク、適用業種、選定基準を詳解。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-dimming-methods-guide.html">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ調光方式比較ガイド｜PWM・0-10V・DALI・位相制御">
+  <meta name="twitter:description" content="LEDテープ調光方式を徹底比較。PWM・0-10V・DALI・位相制御の違いと正しい選び方。">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDテープ調光方式の比較ガイド｜PWM・0-10V・DALI・位相制御の違いと選び方",
+    "description": "LEDテープ照明の調光方式（PWM・0-10V・DALI・位相制御・スマート調光）を徹底比較。正しい調光方式の選び方と注意点を詳解。",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP"},
+    "publisher": {"@type": "Organization", "name": "LED PRO SHOP", "url": "https://led-proshop.com"},
+    "datePublished": "2026-05-01",
+    "dateModified": "2026-05-01",
+    "url": "https://led-proshop.com/articles/led-tape-dimming-methods-guide.html",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-dimming-methods-guide.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://led-proshop.com/"},
+      {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "LEDテープ調光方式の比較ガイド", "item": "https://led-proshop.com/articles/led-tape-dimming-methods-guide.html"}
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent: #7c3aed;
+      --accent-light: #f5f3ff;
+      --accent-dark: #5b21b6;
+      --text: #1e293b;
+      --text-secondary: #475569;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+      --white: #ffffff;
+      --success: #22c55e;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+    }
+    body { font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif; font-size: 16px; line-height: 1.75; color: var(--text); background: var(--bg); }
+    a { color: var(--accent-dark); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header */
+    .site-header { background: #0f172a; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .site-header .logo { color: #fff; font-size: 18px; font-weight: 700; letter-spacing: .04em; }
+    .site-header .logo span { color: var(--accent); }
+    .site-header nav a { color: #94a3b8; font-size: 13px; margin-left: 20px; }
+    .site-header nav a:hover { color: #fff; text-decoration: none; }
+
+    /* Breadcrumb */
+    .breadcrumb { max-width: 860px; margin: 0 auto; padding: 12px 24px; font-size: 13px; color: var(--text-secondary); }
+    .breadcrumb a { color: var(--text-secondary); }
+    .breadcrumb span { margin: 0 6px; }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 50%, #7c3aed 100%); color: #fff; padding: 56px 24px 48px; text-align: center; }
+    .hero .badge { display: inline-block; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3); border-radius: 20px; font-size: 12px; padding: 4px 14px; margin-bottom: 16px; letter-spacing: .06em; }
+    .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; line-height: 1.35; margin-bottom: 16px; }
+    .hero p { font-size: 15px; opacity: .88; max-width: 640px; margin: 0 auto 24px; }
+    .hero .meta { font-size: 13px; opacity: .65; }
+
+    /* Specs bar */
+    .specs-bar { background: #1e1b4b; color: #e0e7ff; padding: 14px 24px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .specs-bar .spec-item { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+    .specs-bar .spec-icon { font-size: 20px; }
+
+    /* Main layout */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    article { padding: 40px 0 60px; }
+
+    h2 { font-size: 22px; font-weight: 700; color: var(--accent-dark); margin: 48px 0 16px; padding-left: 12px; border-left: 4px solid var(--accent); line-height: 1.4; }
+    h3 { font-size: 18px; font-weight: 700; color: var(--text); margin: 32px 0 12px; }
+    h4 { font-size: 15px; font-weight: 700; color: var(--text); margin: 20px 0 8px; }
+    p { margin-bottom: 16px; }
+
+    /* Info boxes */
+    .info-box { background: var(--accent-light); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 24px 0; }
+    .info-box strong { color: var(--accent-dark); }
+    .warning-box { background: #fffbeb; border-left: 4px solid var(--warning); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 24px 0; }
+    .warning-box strong { color: #92400e; }
+
+    /* Method cards */
+    .method-grid { display: grid; gap: 24px; margin: 24px 0; }
+    .method-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .method-header { padding: 16px 20px; display: flex; align-items: center; gap: 14px; }
+    .method-number { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; flex-shrink: 0; }
+    .m1 { background: #dbeafe; color: #1e40af; }
+    .m2 { background: #dcfce7; color: #166534; }
+    .m3 { background: #fef3c7; color: #92400e; }
+    .m4 { background: #fce7f3; color: #9d174d; }
+    .m5 { background: var(--accent-light); color: var(--accent-dark); }
+    .method-title { font-size: 18px; font-weight: 700; }
+    .method-subtitle { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+    .method-body { padding: 0 20px 20px; }
+    .method-specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 12px 0 16px; }
+    .ms-item { text-align: center; background: var(--bg); border-radius: 8px; padding: 10px 6px; }
+    .ms-item .ms-label { font-size: 11px; color: var(--text-secondary); margin-bottom: 4px; }
+    .ms-item .ms-value { font-size: 14px; font-weight: 700; }
+    .tag-good { color: #166534; }
+    .tag-ok { color: #92400e; }
+    .tag-bad { color: #991b1b; }
+    .tag-high { color: #1e40af; }
+    .method-pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+    .pros, .cons { background: var(--bg); border-radius: 8px; padding: 12px; }
+    .pros-title { font-size: 12px; font-weight: 700; color: #166534; margin-bottom: 6px; }
+    .cons-title { font-size: 12px; font-weight: 700; color: #991b1b; margin-bottom: 6px; }
+    .pros ul, .cons ul { list-style: none; font-size: 13px; color: var(--text-secondary); }
+    .pros ul li::before { content: "✓ "; color: #22c55e; font-weight: 700; }
+    .cons ul li::before { content: "✗ "; color: #ef4444; font-weight: 700; }
+    .pros ul li, .cons ul li { margin-bottom: 3px; }
+
+    /* Comparison table */
+    .compare-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+    .compare-table th { background: var(--accent); color: #fff; padding: 10px 12px; text-align: left; white-space: nowrap; }
+    .compare-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    .compare-table tr:nth-child(even) td { background: var(--accent-light); }
+    .star { color: #f59e0b; }
+
+    /* Industry selector */
+    .industry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 24px 0; }
+    .industry-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+    .industry-card .ic-name { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+    .industry-card .ic-method { font-size: 13px; color: var(--accent-dark); font-weight: 600; margin-bottom: 6px; }
+    .industry-card .ic-reason { font-size: 12px; color: var(--text-secondary); }
+
+    /* PWM freq diagram */
+    .pwm-visual { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+    .pwm-row { margin-bottom: 20px; }
+    .pwm-label { font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+    .pwm-bar-track { height: 16px; background: var(--bg); border-radius: 4px; overflow: hidden; display: flex; }
+    .pwm-on { background: var(--accent); border-radius: 2px; }
+    .pwm-off { background: transparent; }
+    .pwm-caption { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+
+    /* Checklist */
+    .checklist { list-style: none; margin: 16px 0; }
+    .checklist li { padding: 6px 0 6px 28px; position: relative; font-size: 14px; border-bottom: 1px solid var(--border); }
+    .checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+    /* Decision tree */
+    .decision-tree { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+    .decision-step { margin-bottom: 16px; padding: 12px 16px; border-radius: 8px; border-left: 4px solid var(--accent); background: var(--accent-light); font-size: 14px; }
+    .decision-step .q { font-weight: 700; color: var(--accent-dark); margin-bottom: 4px; }
+    .decision-step .a { color: var(--text-secondary); }
+
+    /* CTA */
+    .cta-block { background: linear-gradient(135deg, #1e1b4b, #4c1d95); color: #fff; border-radius: 16px; padding: 36px 32px; margin: 48px 0 32px; text-align: center; }
+    .cta-block h2 { color: #fff; border: none; padding: 0; margin: 0 0 12px; font-size: 20px; }
+    .cta-block p { opacity: .9; margin-bottom: 24px; font-size: 15px; }
+    .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { display: inline-block; background: #fff; color: var(--accent-dark); font-weight: 700; padding: 13px 28px; border-radius: 8px; font-size: 15px; transition: transform .15s; }
+    .btn-primary:hover { transform: translateY(-2px); text-decoration: none; }
+    .btn-secondary { display: inline-block; background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.6); font-weight: 700; padding: 11px 28px; border-radius: 8px; font-size: 15px; transition: all .15s; }
+    .btn-secondary:hover { background: rgba(255,255,255,.15); text-decoration: none; }
+
+    /* Related */
+    .related { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-top: 40px; }
+    .related h3 { font-size: 16px; margin: 0 0 16px; }
+    .related-list { list-style: none; display: grid; gap: 8px; }
+    .related-list li a { display: block; padding: 10px 14px; background: var(--bg); border-radius: 6px; font-size: 14px; }
+    .related-list li a:hover { background: var(--accent-light); text-decoration: none; }
+
+    /* Footer */
+    .site-footer { background: #0f172a; color: #64748b; padding: 32px 24px; text-align: center; font-size: 13px; margin-top: 60px; }
+    .site-footer a { color: #94a3b8; margin: 0 8px; }
+    .site-footer p { margin-top: 8px; }
+
+    @media (max-width: 600px) {
+      .method-specs { grid-template-columns: repeat(3, 1fr); }
+      .method-pros-cons { grid-template-columns: 1fr; }
+      .industry-grid { grid-template-columns: 1fr 1fr; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">LED PRO <span>SHOP</span></div>
+  <nav>
+    <a href="/">商品一覧</a>
+    <a href="/articles/">コラム</a>
+    <a href="/faq/">FAQ</a>
+  </nav>
+</header>
+
+<div class="breadcrumb">
+  <a href="/">ホーム</a><span>›</span>
+  <a href="/articles/">コラム</a><span>›</span>
+  LEDテープ調光方式の比較ガイド
+</div>
+
+<div class="hero">
+  <div class="badge">選び方ガイド / 調光・電源</div>
+  <h1>LEDテープ調光方式の<br>比較ガイド</h1>
+  <p>PWM・0-10V・DALI・位相制御・スマート調光の5方式を徹底比較。<br>チラつき・コスト・対応機器・業種別の最適解を解説。</p>
+  <div class="meta">2026-05-01 公開 ｜ LED PRO SHOP 技術チーム</div>
+</div>
+
+<div class="specs-bar">
+  <div class="spec-item"><span class="spec-icon">💡</span><span>5方式比較</span></div>
+  <div class="spec-item"><span class="spec-icon">📊</span><span>チラつきリスク解説</span></div>
+  <div class="spec-item"><span class="spec-icon">🏭</span><span>業種別推奨</span></div>
+  <div class="spec-item"><span class="spec-icon">🔌</span><span>電源装置との適合</span></div>
+  <div class="spec-item"><span class="spec-icon">✅</span><span>選定チャート付き</span></div>
+</div>
+
+<div class="container">
+<article>
+
+<!-- ================== 調光とは ================== -->
+<h2>LEDテープ照明の「調光」とは何か</h2>
+
+<p>調光（ディミング）とは、照明の明るさを変化させる機能です。単純にスイッチでオン・オフするのではなく、0〜100%の間で連続的に輝度を変化させることで、空間の雰囲気を演出したり、昼夜・時間帯に合わせた光環境を作ったりすることができます。</p>
+
+<p>LEDテープ照明の調光は、必ず<strong>「調光対応の電源装置（ドライバ）」</strong>と<strong>「調光コントローラー（ディマー）」</strong>の組み合わせで行います。LEDテープ本体自体には調光機能はなく、電源装置が調光信号を受けてLEDへの供給電流・電圧を変化させることで輝度を制御します。</p>
+
+<div class="warning-box">
+<strong>⚠ 調光非対応の電源装置に調光器を接続しないでください：</strong>LEDのちらつき・電源装置の破損・LED本体の劣化加速などのトラブルが発生します。電源装置の仕様書で「調光対応」「Dimmable」の記載を必ず確認してください。
+</div>
+
+<!-- ================== 5方式解説 ================== -->
+<h2>5つの調光方式を徹底解説</h2>
+
+<div class="method-grid">
+
+  <!-- Method 1: PWM -->
+  <div class="method-card">
+    <div class="method-header">
+      <div class="method-number m1">1</div>
+      <div>
+        <div class="method-title">PWM調光（パルス幅変調）</div>
+        <div class="method-subtitle">最も一般的・コスパ最良のLED調光方式</div>
+      </div>
+    </div>
+    <div class="method-body">
+      <p>PWM（Pulse Width Modulation）は、LEDを高速でオン・オフを繰り返し、オン時間の比率（デューティ比）を変えることで明るさを制御します。人間の目はこの高速点滅を認識できないため、オン比率が高いほど明るく見えます。</p>
+
+      <div class="pwm-visual">
+        <div class="pwm-row">
+          <div class="pwm-label">100%（デューティ比100%）</div>
+          <div class="pwm-bar-track">
+            <div class="pwm-on" style="width:100%"></div>
+          </div>
+          <div class="pwm-caption">常時オン = フル輝度</div>
+        </div>
+        <div class="pwm-row">
+          <div class="pwm-label">50%（デューティ比50%）</div>
+          <div class="pwm-bar-track">
+            <div class="pwm-on" style="width:50%"></div>
+            <div class="pwm-off" style="width:50%"></div>
+          </div>
+          <div class="pwm-caption">オン50% / オフ50% = 半輝度</div>
+        </div>
+        <div class="pwm-row">
+          <div class="pwm-label">20%（デューティ比20%）</div>
+          <div class="pwm-bar-track">
+            <div class="pwm-on" style="width:20%"></div>
+            <div class="pwm-off" style="width:80%"></div>
+          </div>
+          <div class="pwm-caption">オン20% / オフ80% = 低輝度</div>
+        </div>
+      </div>
+
+      <div class="method-specs">
+        <div class="ms-item"><div class="ms-label">コスト</div><div class="ms-value tag-good">低</div></div>
+        <div class="ms-item"><div class="ms-label">ちらつきリスク</div><div class="ms-value tag-ok">周波数次第</div></div>
+        <div class="ms-item"><div class="ms-label">調光範囲</div><div class="ms-value tag-good">1〜100%</div></div>
+      </div>
+      <div class="method-pros-cons">
+        <div class="pros">
+          <div class="pros-title">メリット</div>
+          <ul>
+            <li>安価な機器で実現可能</li>
+            <li>調光範囲が広い</li>
+            <li>LED色温度が変わらない</li>
+            <li>応答速度が速い</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <div class="cons-title">デメリット</div>
+          <ul>
+            <li>低周波（100Hz以下）はちらつく</li>
+            <li>ノイズが出る場合がある</li>
+            <li>ケーブル長に制限あり</li>
+          </ul>
+        </div>
+      </div>
+      <div class="info-box" style="margin-top:12px">
+      <strong>チラつき防止の鍵は「PWM周波数」：</strong>一般的なPWM調光器は100Hz〜1kHz。食品ラインや映像撮影環境では10kHz以上の高周波PWMを選定することでストロボ効果を防げます。
+      </div>
+    </div>
+  </div>
+
+  <!-- Method 2: 0-10V -->
+  <div class="method-card">
+    <div class="method-header">
+      <div class="method-number m2">2</div>
+      <div>
+        <div class="method-title">0-10V調光（アナログ電圧制御）</div>
+        <div class="method-subtitle">ビルや施設の照明制御に広く使われる業界標準</div>
+      </div>
+    </div>
+    <div class="method-body">
+      <p>0Vで最低輝度（または消灯）、10Vで最大輝度という直流電圧信号で電源装置を制御する方式です。ビル管理システムや商業施設の照明制御ネットワークに広く使われています。調光信号が電圧のため、ノイズに強く長距離配線に適しています。</p>
+
+      <div class="method-specs">
+        <div class="ms-item"><div class="ms-label">コスト</div><div class="ms-value tag-ok">中</div></div>
+        <div class="ms-item"><div class="ms-label">ちらつきリスク</div><div class="ms-value tag-good">低</div></div>
+        <div class="ms-item"><div class="ms-label">調光範囲</div><div class="ms-value tag-ok">1〜100%</div></div>
+      </div>
+      <div class="method-pros-cons">
+        <div class="pros">
+          <div class="pros-title">メリット</div>
+          <ul>
+            <li>ノイズに強い</li>
+            <li>長距離配線対応</li>
+            <li>滑らかな調光</li>
+            <li>既存BAS連携しやすい</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <div class="cons-title">デメリット</div>
+          <ul>
+            <li>ゼロ消灯できない場合あり</li>
+            <li>制御線が別途必要</li>
+            <li>機器コストがやや高め</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Method 3: DALI -->
+  <div class="method-card">
+    <div class="method-header">
+      <div class="method-number m3">3</div>
+      <div>
+        <div class="method-title">DALI（デジタルアドレサブル照明制御）</div>
+        <div class="method-subtitle">大型施設・スマートビル向けの高機能デジタル制御</div>
+      </div>
+    </div>
+    <div class="method-body">
+      <p>DALI（Digital Addressable Lighting Interface）は、各照明器具にアドレス（番号）を割り振り、デジタル信号で個別制御できる国際規格（IEC 62386）です。1本の制御バスで最大64台の器具を個別に調光・ON/OFFできます。</p>
+
+      <div class="method-specs">
+        <div class="ms-item"><div class="ms-label">コスト</div><div class="ms-value tag-bad">高</div></div>
+        <div class="ms-item"><div class="ms-label">ちらつきリスク</div><div class="ms-value tag-good">非常に低</div></div>
+        <div class="ms-item"><div class="ms-label">調光範囲</div><div class="ms-value tag-good">0.1〜100%</div></div>
+      </div>
+      <div class="method-pros-cons">
+        <div class="pros">
+          <div class="pros-title">メリット</div>
+          <ul>
+            <li>個別アドレス制御</li>
+            <li>グループ・シーン設定</li>
+            <li>フィードバック機能</li>
+            <li>複数ブランド間互換</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <div class="cons-title">デメリット</div>
+          <ul>
+            <li>導入コスト高</li>
+            <li>設計・設定が複雑</li>
+            <li>小規模には過剰スペック</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Method 4: 位相制御 -->
+  <div class="method-card">
+    <div class="method-header">
+      <div class="method-number m4">4</div>
+      <div>
+        <div class="method-title">位相制御（トライアック調光）</div>
+        <div class="method-subtitle">白熱灯用の旧来方式・LEDには原則非推奨</div>
+      </div>
+    </div>
+    <div class="method-body">
+      <p>交流電源の位相（波形の一部）をカットして電力を制御する方式で、従来の白熱灯用ディマーに使われてきました。「前段カット（逆位相）」と「後段カット（正位相）」の2種類があります。</p>
+
+      <div class="method-specs">
+        <div class="ms-item"><div class="ms-label">コスト</div><div class="ms-value tag-good">低</div></div>
+        <div class="ms-item"><div class="ms-label">ちらつきリスク</div><div class="ms-value tag-bad">高</div></div>
+        <div class="ms-item"><div class="ms-label">LED適合性</div><div class="ms-value tag-bad">低</div></div>
+      </div>
+      <div class="method-pros-cons">
+        <div class="pros">
+          <div class="pros-title">メリット</div>
+          <ul>
+            <li>機器が安価</li>
+            <li>既存配線を流用できる</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <div class="cons-title">デメリット</div>
+          <ul>
+            <li>ちらつきが出やすい</li>
+            <li>LED対応品が限られる</li>
+            <li>ノイズ・異音が出ることがある</li>
+            <li>低輝度域で不安定</li>
+          </ul>
+        </div>
+      </div>
+      <div class="warning-box" style="margin-top:12px">
+      <strong>⚠ 注意：</strong>白熱灯用の位相制御ディマーを調光非対応のLED電源に使用すると、電源装置が破損したり、LEDがちらついて使用できない場合があります。「位相制御対応」と明記されたLED電源でのみ使用してください。
+      </div>
+    </div>
+  </div>
+
+  <!-- Method 5: スマート調光 -->
+  <div class="method-card">
+    <div class="method-header">
+      <div class="method-number m5">5</div>
+      <div>
+        <div class="method-title">スマート調光（Wi-Fi / Bluetooth / Zigbee）</div>
+        <div class="method-subtitle">スマートホーム・小規模商業向けの無線制御</div>
+      </div>
+    </div>
+    <div class="method-body">
+      <p>スマートフォンアプリ・音声アシスタント（Google Home / Amazon Alexa等）・スマートホームシステムと連携して調光するデジタル無線方式です。個人住宅やカフェ・美容室などの小〜中規模空間に急速に普及しています。</p>
+
+      <div class="method-specs">
+        <div class="ms-item"><div class="ms-label">コスト</div><div class="ms-value tag-ok">中〜高</div></div>
+        <div class="ms-item"><div class="ms-label">ちらつきリスク</div><div class="ms-value tag-good">低</div></div>
+        <div class="ms-item"><div class="ms-label">操作性</div><div class="ms-value tag-good">最高</div></div>
+      </div>
+      <div class="method-pros-cons">
+        <div class="pros">
+          <div class="pros-title">メリット</div>
+          <ul>
+            <li>スマホ遠隔操作</li>
+            <li>シーン・スケジュール設定</li>
+            <li>音声操作対応</li>
+            <li>配線工事が少ない</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <div class="cons-title">デメリット</div>
+          <ul>
+            <li>Wi-Fi環境に依存</li>
+            <li>電波干渉リスク</li>
+            <li>クラウド依存（サービス終了リスク）</li>
+            <li>大規模施設には不向き</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ================== 比較表 ================== -->
+<h2>5方式 一覧比較表</h2>
+
+<table class="compare-table">
+  <thead>
+    <tr>
+      <th>調光方式</th>
+      <th>コスト</th>
+      <th>ちらつき</th>
+      <th>調光範囲</th>
+      <th>配線</th>
+      <th>おすすめ用途</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>PWM調光</strong></td>
+      <td>★☆☆ 低</td>
+      <td>周波数次第</td>
+      <td>1〜100%</td>
+      <td>DC 信号線</td>
+      <td>住宅・店舗・一般商業</td>
+    </tr>
+    <tr>
+      <td><strong>0-10V調光</strong></td>
+      <td>★★☆ 中</td>
+      <td>低（◎）</td>
+      <td>1〜100%</td>
+      <td>DC 制御線別途</td>
+      <td>ビル・ホテル・施設</td>
+    </tr>
+    <tr>
+      <td><strong>DALI</strong></td>
+      <td>★★★ 高</td>
+      <td>非常に低（◎）</td>
+      <td>0.1〜100%</td>
+      <td>DALI バス線</td>
+      <td>大型施設・スマートビル</td>
+    </tr>
+    <tr>
+      <td><strong>位相制御</strong></td>
+      <td>★☆☆ 低</td>
+      <td>高（△〜✗）</td>
+      <td>20〜100%</td>
+      <td>既存 AC 配線</td>
+      <td>白熱灯リプレース（非推奨）</td>
+    </tr>
+    <tr>
+      <td><strong>スマート調光</strong></td>
+      <td>★★☆ 中〜高</td>
+      <td>低（◎）</td>
+      <td>1〜100%</td>
+      <td>無線（Wi-Fi / BT）</td>
+      <td>住宅・カフェ・美容室</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ================== 業種別推奨 ================== -->
+<h2>業種・用途別の推奨調光方式</h2>
+
+<div class="industry-grid">
+  <div class="industry-card">
+    <div class="ic-name">ホテル・旅館</div>
+    <div class="ic-method">0-10V / DALI</div>
+    <div class="ic-reason">フロント・客室・宴会場で個別制御が必要。既存BAS連携しやすい0-10V、高機能はDALI。</div>
+  </div>
+  <div class="industry-card">
+    <div class="ic-name">飲食店・カフェ</div>
+    <div class="ic-method">PWM / スマート調光</div>
+    <div class="ic-reason">ランチ・ディナーで雰囲気を変えたい。スマホアプリでシーン切り替えが便利。</div>
+  </div>
+  <div class="industry-card">
+    <div class="ic-name">美容室・サロン</div>
+    <div class="ic-method">PWM高周波 / スマート調光</div>
+    <div class="ic-reason">施術中のちらつきがNG。10kHz以上の高周波PWMか、スマート調光で対応。</div>
+  </div>
+  <div class="industry-card">
+    <div class="ic-name">食品工場・厨房</div>
+    <div class="ic-method">PWM高周波（10kHz+）</div>
+    <div class="ic-reason">コンベアのストロボ効果防止が最優先。高周波PWMで視覚的ちらつきゼロを確保。</div>
+  </div>
+  <div class="industry-card">
+    <div class="ic-name">博物館・ギャラリー</div>
+    <div class="ic-method">DALI / 0-10V</div>
+    <div class="ic-reason">展示物ごとに照度・シーン管理が必要。DALIのアドレス個別制御が最適。</div>
+  </div>
+  <div class="industry-card">
+    <div class="ic-name">オフィス・会議室</div>
+    <div class="ic-method">0-10V / DALI</div>
+    <div class="ic-reason">プレゼン・休憩・集中作業でシーン切り替え。BAS連携で在室センサー連動。</div>
+  </div>
+  <div class="industry-card">
+    <div class="ic-name">住宅・個人</div>
+    <div class="ic-method">PWM / スマート調光</div>
+    <div class="ic-reason">コストを抑えつつ快適な調光を実現。Alexa / Google Home との連携が人気。</div>
+  </div>
+  <div class="industry-card">
+    <div class="ic-name">小売店舗</div>
+    <div class="ic-method">PWM / 0-10V</div>
+    <div class="ic-reason">開店・閉店・セール時間の照度変化に対応。タイマー連動で自動化。</div>
+  </div>
+</div>
+
+<!-- ================== 選定チェックリスト ================== -->
+<h2>調光方式の選定チェックリスト</h2>
+
+<div class="decision-tree">
+  <div class="decision-step">
+    <div class="q">Q1. 複数の照明器具を個別にアドレス管理したいですか？</div>
+    <div class="a">YES → DALI（大型施設・スマートビル向け）｜NO → 次の設問へ</div>
+  </div>
+  <div class="decision-step">
+    <div class="q">Q2. 既存のビル管理システム（BAS）に連携させますか？</div>
+    <div class="a">YES → 0-10V（BAS対応）または DALI（高機能）｜NO → 次の設問へ</div>
+  </div>
+  <div class="decision-step">
+    <div class="q">Q3. 食品ラインや映像撮影など、ちらつきゼロが最優先ですか？</div>
+    <div class="a">YES → 高周波PWM（10kHz以上）または0-10V｜NO → 次の設問へ</div>
+  </div>
+  <div class="decision-step">
+    <div class="q">Q4. スマートフォンで手軽に操作したいですか？</div>
+    <div class="a">YES → スマート調光（Wi-Fi / Bluetooth）｜NO → 次の設問へ</div>
+  </div>
+  <div class="decision-step">
+    <div class="q">Q5. コストを最小限に抑えたいですか？</div>
+    <div class="a">YES → PWM調光（シンプルな壁付きディマー）がもっとも安価</div>
+  </div>
+</div>
+
+<!-- ================== よくある失敗 ================== -->
+<h2>調光に関するよくある失敗と対策</h2>
+
+<ul class="checklist">
+  <li><strong>位相制御ディマーを非対応LED電源に接続した：</strong>電源装置の破損・LEDのちらつきが発生。LED対応の電源装置に交換するか、PWM調光器に切り替える</li>
+  <li><strong>PWM周波数が低くて撮影時にちらつく：</strong>動画撮影・精密検査環境では10kHz以上の高周波PWM電源装置を選定する</li>
+  <li><strong>調光範囲の最低輝度でちらつきが出る：</strong>電源装置の最小調光比（Min dim ratio）を確認。5%以下の超低輝度調光が必要な場合はDALI対応電源を選ぶ</li>
+  <li><strong>スマート調光が時々落ちる：</strong>Wi-Fi の2.4GHz帯が混雑する環境ではBluetooth（Zigbee）のスマート調光器に切り替える</li>
+  <li><strong>調光するとLEDの色温度が変わって見える：</strong>位相制御の場合に発生しやすい（電流波形の歪みによる）。PWMまたは0-10Vに切り替えると改善することが多い</li>
+</ul>
+
+<!-- ================== CTA ================== -->
+<div class="cta-block">
+  <h2>調光対応LEDテープ・電源装置を見る</h2>
+  <p>PWM・0-10V調光対応のCOB 24Vテープ・電源装置・コントローラーを<br>用途に合わせてお選びいただけます。</p>
+  <div class="cta-buttons">
+    <a href="/category/controller/" class="btn-primary">コントローラー・調光器一覧</a>
+    <a href="/category/psu/" class="btn-secondary">調光対応電源装置一覧</a>
+  </div>
+</div>
+
+<!-- ================== 関連記事 ================== -->
+<div class="related">
+  <h3>関連コラム</h3>
+  <ul class="related-list">
+    <li><a href="/articles/led-tape-controller-dimmer-guide.html">LEDテープ用コントローラー・調光器の選び方</a></li>
+    <li><a href="/articles/led-psu-capacity-guide.html">LED電源装置の容量計算と選び方</a></li>
+    <li><a href="/articles/12v-vs-24v-led-tape.html">12V vs 24V LEDテープ｜電圧の違いと選び方</a></li>
+    <li><a href="/articles/hotel-lobby-led-case.html">ホテルロビーのLED照明施工事例</a></li>
+    <li><a href="/articles/restaurant-indirect-lighting-led-guide.html">レストランの間接照明LEDガイド</a></li>
+  </ul>
+</div>
+
+</article>
+</div>
+
+<footer class="site-footer">
+  <div>
+    <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+    <a href="/privacy-policy.html">プライバシーポリシー</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/articles/">コラム</a>
+  </div>
+  <p>© 2026 LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
