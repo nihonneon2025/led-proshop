@@ -4,7 +4,7 @@
   <!-- トップページ -->
   <url>
     <loc>https://led-proshop.com/</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -46,6 +46,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://led-proshop.com/category/silicon-cover/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- 法定ページ（特商法・プライバシーポリシー）-->
   <url>
@@ -69,18 +75,22 @@
 sitemap.xml 運用メモ（実装担当向け）
 =====================================================================
 
-## 現状の構成と制約
+## 現状の構成（Wave 4 完了・2026-05-01 時点）
 
-現在 led-proshop.com は **単一HTML構成**（index.html のみ）であり、
-商品ページは独立URLを持たない（モーダルで表示するインラインコンテンツ）。
+led-proshop.com は Wave 4（2026-05-01）でカテゴリページを独立URL化した。
+index.html のトップページに加え、7カテゴリの独立URL（/category/*/）と
+法定ページ2本を記載している。
 
-このため、サイトマップには以下のURLのみを記載している:
+現在のサイトマップ構成（計10 URL）:
 - トップ（priority 1.0）
-- 5カテゴリ（アンカーリンク形式・priority 0.8〜0.9）
+- カテゴリ7本（/category/cob-tape/ / smd-tape/ / alumi-frame/ / psu/ / controller/ / special-led/ / silicon-cover/・priority 0.7〜0.8）
+- 法定ページ2本（tokushoho.html / privacy-policy.html・priority 0.3）
+
+商品ページの独立URLは未実装。商品はトップページのモーダルで表示するインラインコンテンツとして提供中。
 
 ## 将来の拡張方針
 
-### Day 2-3 対応（商品ページURL化）
+### 商品ページURL化（実施時期未定）
 
 226+品目を独立URLにした場合は以下パターンでURLを生成・追加する:
 
@@ -92,7 +102,7 @@ https://led-proshop.com/products/[型番スラッグ]/
 ```xml
 <url>
   <loc>https://led-proshop.com/products/cob24-pk/</loc>
-  <lastmod>2026-04-29</lastmod>
+  <lastmod>2026-05-01</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
 </url>
@@ -100,7 +110,7 @@ https://led-proshop.com/products/[型番スラッグ]/
 
 型番一覧（index.html の product-table から抽出済み）:
 
-### カテゴリ: LEDテープライト（cat1）— COB 24V サブカテゴリ
+### カテゴリ: COBテープライト（cat1）— COB 24V サブカテゴリ
 COB24-PK / COB24-SB / COB24-RD / COB24-GR / COB24-PP / COB24-OR / COB24-GD / COB24-YL / COB24-W3K
 COB24-PK-BT / COB24-SB-BT / COB24-RD-BT（防滴）
 （上記の防水版: -BT, -WP サフィックス系列）

@@ -28,3 +28,9 @@ secrets/
 # Netlify 設定（GitHub Pages 環境には不要・ファイル自体は既存追跡済みのため git rm は実施しない）
 # netlify.toml
 # netlify/
+
+# バックアップフォルダ（本番不要）
+products_bak_*/
+
+# 開発用テンプレート（プレースホルダー残存）
+articles/_template.html
