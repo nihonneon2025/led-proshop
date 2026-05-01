@@ -571,6 +571,20 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://led-proshop.com/articles/bookstore-led-case.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://led-proshop.com/articles/pet-shop-led-case.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
 
 <!--
