@@ -53,6 +53,88 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- コラム（記事）ページ（Wave 5 新設・2026-05-01） -->
+  <url>
+    <loc>https://led-proshop.com/articles/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://led-proshop.com/articles/cob-vs-smd-led-tape.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://led-proshop.com/articles/aluminum-frame-normal-vs-recessed.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://led-proshop.com/articles/restaurant-indirect-lighting-led-guide.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://led-proshop.com/articles/led-tape-ip-waterproof-guide.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://led-proshop.com/articles/led-tape-cri-ra-value-guide.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://led-proshop.com/articles/channel-letter-backlit-sign-led.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://led-proshop.com/articles/led-psu-capacity-guide.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://led-proshop.com/articles/12v-vs-24v-led-tape.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://led-proshop.com/articles/led-color-temperature-guide.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://led-proshop.com/articles/cafe-counter-indirect-lighting-case.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://led-proshop.com/articles/apparel-shelf-led-case.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- FAQ ページ（Wave 5 新設・2026-05-01） -->
+  <url>
+    <loc>https://led-proshop.com/faq/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- 法定ページ（特商法・プライバシーポリシー）-->
   <url>
     <loc>https://led-proshop.com/tokushoho.html</loc>
