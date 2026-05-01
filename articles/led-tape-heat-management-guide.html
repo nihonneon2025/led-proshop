@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープの熱管理・放熱設計完全ガイド｜寿命を2倍にする温度管理の実践手順</title>
+  <meta name="description" content="LEDテープの熱管理と放熱設計の完全ガイド。ジャンクション温度・熱抵抗の基礎から、アルミチャンネル選定・W/m別発熱量計算・設置環境別対策まで、現場施工者向けに徹底解説。">
+  <meta name="keywords" content="LEDテープ 熱管理,LEDテープ 放熱,アルミチャンネル 放熱,ジャンクション温度,COBテープ 熱設計,LEDテープ 寿命">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-heat-management-guide.html">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-heat-management-guide.html">
+  <meta property="og:title" content="LEDテープの熱管理・放熱設計完全ガイド｜寿命を2倍にする温度管理の実践手順">
+  <meta property="og:description" content="LEDテープの熱管理と放熱設計の完全ガイド。ジャンクション温度・熱抵抗の基礎から放熱アルミチャンネル選定・発熱量計算まで。">
+  <meta property="og:image" content="https://led-proshop.com/images/ogp_top.jpg">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープの熱管理・放熱設計完全ガイド｜寿命を2倍にする温度管理の実践手順">
+  <meta name="twitter:description" content="ジャンクション温度・熱抵抗の基礎から放熱アルミチャンネル選定・発熱量計算まで。現場施工者向け完全ガイド。">
+  <meta name="twitter:image" content="https://led-proshop.com/images/ogp_top.jpg">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープの熱管理・放熱設計完全ガイド｜寿命を2倍にする温度管理の実践手順",
+    "description": "LEDテープの熱管理と放熱設計の完全ガイド。ジャンクション温度・熱抵抗の基礎から放熱アルミチャンネル選定・発熱量計算まで。",
+    "datePublished": "2026-05-01",
+    "dateModified": "2026-05-01",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
+    },
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-heat-management-guide.html"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://led-proshop.com/"},
+      {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "LEDテープの熱管理・放熱設計完全ガイド", "item": "https://led-proshop.com/articles/led-tape-heat-management-guide.html"}
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; background: #fafafa; color: #1a1a1a; line-height: 1.75; font-size: 16px; }
+    a { color: #ea580c; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(135deg, #7c2d12 0%, #c2410c 50%, #ea580c 100%);
+      color: #fff;
+      padding: 60px 20px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('/images/hero-scenes/bar_lounge.png') center/cover no-repeat;
+      opacity: 0.12;
+    }
+    .hero-inner { position: relative; max-width: 860px; margin: 0 auto; }
+    .hero-badge { display: inline-block; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; padding: 4px 14px; border-radius: 20px; margin-bottom: 18px; }
+    .hero h1 { font-size: clamp(22px, 4vw, 38px); font-weight: 900; line-height: 1.3; margin-bottom: 16px; }
+    .hero-lead { font-size: 15px; opacity: 0.92; max-width: 680px; margin: 0 auto; }
+
+    /* breadcrumb */
+    .breadcrumb { background: #fff3ed; border-bottom: 1px solid #fed7aa; padding: 10px 20px; font-size: 13px; color: #78350f; }
+    .breadcrumb a { color: #ea580c; }
+    .breadcrumb span { margin: 0 6px; }
+
+    /* container */
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 20px 60px; }
+
+    /* lead box */
+    .lead-box { background: linear-gradient(135deg, #fff7ed, #fed7aa22); border-left: 4px solid #ea580c; border-radius: 6px; padding: 20px 24px; margin-bottom: 36px; font-size: 15px; line-height: 1.8; }
+    .lead-box strong { color: #c2410c; }
+
+    /* section titles */
+    .sec-title { font-size: clamp(18px, 3vw, 24px); font-weight: 800; color: #7c2d12; border-bottom: 3px solid #ea580c; padding-bottom: 8px; margin: 44px 0 20px; }
+    .subsec { font-size: 17px; font-weight: 700; color: #9a3412; margin: 28px 0 12px; }
+
+    /* warning / info boxes */
+    .warn-box { background: #fef2f2; border: 2px solid #f87171; border-radius: 8px; padding: 18px 22px; margin: 24px 0; }
+    .warn-box .warn-title { font-weight: 800; color: #dc2626; margin-bottom: 8px; font-size: 15px; }
+    .warn-box ul { padding-left: 20px; }
+    .warn-box li { margin-bottom: 6px; font-size: 14px; }
+
+    .info-box { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 18px 22px; margin: 24px 0; }
+    .info-box .info-title { font-weight: 800; color: #ea580c; margin-bottom: 8px; font-size: 15px; }
+
+    /* heat concept cards */
+    .concept-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin: 24px 0; }
+    .concept-card { background: #fff; border: 1px solid #fed7aa; border-radius: 10px; padding: 18px 16px; text-align: center; }
+    .concept-icon { font-size: 32px; margin-bottom: 8px; }
+    .concept-label { font-size: 13px; font-weight: 700; color: #7c2d12; margin-bottom: 6px; }
+    .concept-val { font-size: 22px; font-weight: 900; color: #ea580c; }
+    .concept-desc { font-size: 12px; color: #78350f; margin-top: 4px; }
+
+    /* heat chart (visual bar) */
+    .heat-chart { background: #fff; border: 1px solid #fed7aa; border-radius: 10px; padding: 24px; margin: 24px 0; overflow-x: auto; }
+    .heat-chart-title { font-weight: 800; color: #7c2d12; margin-bottom: 16px; font-size: 15px; text-align: center; }
+    .heat-bar-wrap { display: flex; align-items: flex-end; gap: 14px; justify-content: center; min-height: 180px; }
+    .heat-bar-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .heat-bar { width: 52px; border-radius: 6px 6px 0 0; background: linear-gradient(to top, #7c2d12, #ea580c); position: relative; }
+    .heat-bar span { position: absolute; top: -22px; left: 50%; transform: translateX(-50%); font-size: 11px; font-weight: 700; white-space: nowrap; color: #7c2d12; }
+    .heat-bar-label { font-size: 12px; font-weight: 700; color: #78350f; text-align: center; }
+    .heat-bar-sub { font-size: 11px; color: #9a3412; text-align: center; }
+
+    /* table */
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 20px 0; }
+    th { background: #7c2d12; color: #fff; padding: 10px 12px; text-align: left; font-weight: 700; }
+    td { padding: 10px 12px; border-bottom: 1px solid #fed7aa; vertical-align: top; }
+    tr:nth-child(even) td { background: #fff7ed; }
+    .rec-badge { display: inline-block; background: #ea580c; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 4px; }
+
+    /* channel comparison */
+    .channel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+    .channel-card { background: #fff; border: 2px solid #fed7aa; border-radius: 10px; overflow: hidden; }
+    .channel-head { background: #7c2d12; color: #fff; padding: 12px 16px; font-weight: 800; font-size: 14px; }
+    .channel-body { padding: 16px; }
+    .channel-body li { font-size: 13px; margin-bottom: 6px; list-style: none; padding-left: 18px; position: relative; }
+    .channel-body li::before { content: '✓'; position: absolute; left: 0; color: #ea580c; font-weight: 700; }
+    .channel-best { background: #fff7ed; border-color: #ea580c; }
+    .channel-best .channel-head { background: #ea580c; }
+
+    /* hl-box */
+    .hl-box { background: #fff7ed; border: 1px solid #fdba74; border-radius: 8px; padding: 16px 20px; margin: 18px 0; font-size: 14px; }
+    .hl-box strong { color: #c2410c; }
+
+    /* step list */
+    .step-list { counter-reset: steps; padding: 0; margin: 20px 0; }
+    .step-list li { counter-increment: steps; list-style: none; display: flex; gap: 14px; margin-bottom: 20px; }
+    .step-list li::before { content: counter(steps); display: flex; align-items: center; justify-content: center; min-width: 32px; height: 32px; background: #ea580c; color: #fff; border-radius: 50%; font-weight: 900; font-size: 14px; flex-shrink: 0; margin-top: 2px; }
+    .step-content { flex: 1; }
+    .step-title { font-weight: 700; color: #7c2d12; margin-bottom: 4px; }
+    .step-body { font-size: 14px; color: #3a3a3a; }
+
+    /* formula box */
+    .formula-box { background: #1c1917; color: #fef3c7; border-radius: 10px; padding: 20px 24px; margin: 20px 0; font-family: monospace; font-size: 15px; line-height: 2; }
+    .formula-comment { color: #d97706; font-size: 13px; }
+
+    /* merit list */
+    .merit-list { list-style: none; padding: 0; margin: 20px 0; }
+    .merit-list li { padding: 10px 14px 10px 40px; position: relative; border-bottom: 1px solid #fed7aa; font-size: 15px; }
+    .merit-list li::before { content: '🔥'; position: absolute; left: 10px; top: 10px; font-size: 16px; }
+    .merit-list li:last-child { border-bottom: none; }
+
+    /* cta */
+    .cta-box { background: linear-gradient(135deg, #7c2d12, #c2410c); color: #fff; border-radius: 12px; padding: 32px 28px; text-align: center; margin: 48px 0 0; }
+    .cta-box h3 { font-size: 20px; font-weight: 800; margin-bottom: 12px; }
+    .cta-box p { font-size: 14px; opacity: 0.9; margin-bottom: 22px; }
+    .cta-btn { display: inline-block; background: #fff; color: #c2410c; font-weight: 800; font-size: 15px; padding: 13px 32px; border-radius: 8px; margin: 6px; text-decoration: none; }
+    .cta-btn:hover { opacity: 0.9; text-decoration: none; }
+    .cta-btn.secondary { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.7); }
+
+    /* footer */
+    footer { background: #1c1917; color: #a8a29e; text-align: center; padding: 28px 20px; font-size: 13px; margin-top: 0; }
+    footer a { color: #d6d3d1; }
+
+    @media (max-width: 600px) {
+      .concept-grid { grid-template-columns: repeat(2, 1fr); }
+      .channel-grid { grid-template-columns: 1fr; }
+      .heat-bar { width: 38px; }
+      th, td { padding: 8px; font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">選び方ガイド</div>
+    <h1>LEDテープの熱管理・放熱設計完全ガイド<br>寿命を2倍にする温度管理の実践手順</h1>
+    <p class="hero-lead">ジャンクション温度の基礎からアルミチャンネル選定・W/m別発熱量計算・設置環境別対策まで。現場施工者が押さえるべき放熱設計の全てを解説します。</p>
+  </div>
+</section>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <a href="/">ホーム</a><span>›</span>
+  <a href="/articles/">コラム</a><span>›</span>
+  LEDテープの熱管理・放熱設計完全ガイド
+</nav>
+
+<!-- MAIN -->
+<main class="container">
+
+  <div class="lead-box">
+    LEDテープの寿命を左右する最大の要因は<strong>熱</strong>です。「同じ製品なのに現場Aでは3年持ったが現場Bでは6ヶ月で暗くなった」という事例の多くは、放熱設計の差から生じます。LEDチップのジャンクション温度が<strong>10℃上昇するごとに寿命は約半分</strong>になるとされています。本記事では熱管理の基礎から現場で使える計算手順・アルミチャンネル選定まで体系的に解説します。
+  </div>
+
+  <!-- 1. 熱管理の基礎 -->
+  <h2 class="sec-title">1. LED発熱のメカニズムと寿命への影響</h2>
+
+  <p>LEDは電気エネルギーの<strong>約70〜80%を熱として放出</strong>します（残り20〜30%が光）。この熱をいかに素早くチップから逃がすかが放熱設計の本質です。</p>
+
+  <h3 class="subsec">ジャンクション温度（Tj）とは</h3>
+  <p>LEDチップの発光接合部の温度を「ジャンクション温度（Tj）」と呼びます。LEDメーカーが公称する定格電流・光束・寿命のデータは、すべてこのTjが特定の温度（通常85℃または105℃）での値です。実使用時にTjが上昇すると：</p>
+
+  <div class="concept-grid">
+    <div class="concept-card">
+      <div class="concept-icon">💡</div>
+      <div class="concept-label">光束維持率</div>
+      <div class="concept-val">−30%</div>
+      <div class="concept-desc">Tj+30℃で光量30%低下</div>
+    </div>
+    <div class="concept-card">
+      <div class="concept-icon">⏱</div>
+      <div class="concept-label">寿命への影響</div>
+      <div class="concept-val">1/2</div>
+      <div class="concept-desc">Tj+10℃で寿命が半減</div>
+    </div>
+    <div class="concept-card">
+      <div class="concept-icon">🌈</div>
+      <div class="concept-label">色温度シフト</div>
+      <div class="concept-val">+300K</div>
+      <div class="concept-desc">高温で青みが強まる傾向</div>
+    </div>
+    <div class="concept-card">
+      <div class="concept-icon">⚡</div>
+      <div class="concept-label">効率低下</div>
+      <div class="concept-val">−15%</div>
+      <div class="concept-desc">高温でlm/W効率が下落</div>
+    </div>
+  </div>
+
+  <h3 class="subsec">W/m別・実際の発熱量</h3>
+  <p>LEDテープ1mあたりの発熱量は消費電力とほぼ比例します。以下のチャートで各グレードの発熱量を把握してください。</p>
+
+  <div class="heat-chart">
+    <div class="heat-chart-title">W/m別 発熱量の目安（1m・連続点灯時）</div>
+    <div class="heat-bar-wrap">
+      <div class="heat-bar-item">
+        <div class="heat-bar" style="height:55px;"><span>4.5W</span></div>
+        <div class="heat-bar-label">6W/m</div>
+        <div class="heat-bar-sub">Lite</div>
+      </div>
+      <div class="heat-bar-item">
+        <div class="heat-bar" style="height:70px;"><span>6W</span></div>
+        <div class="heat-bar-label">8W/m</div>
+        <div class="heat-bar-sub">Lite+</div>
+      </div>
+      <div class="heat-bar-item">
+        <div class="heat-bar" style="height:90px;"><span>7.5W</span></div>
+        <div class="heat-bar-label">10W/m</div>
+        <div class="heat-bar-sub">Standard</div>
+      </div>
+      <div class="heat-bar-item">
+        <div class="heat-bar" style="height:110px;"><span>9W</span></div>
+        <div class="heat-bar-label">12W/m</div>
+        <div class="heat-bar-sub">Standard+</div>
+      </div>
+      <div class="heat-bar-item">
+        <div class="heat-bar" style="height:145px;"><span>11.25W</span></div>
+        <div class="heat-bar-label">15W/m</div>
+        <div class="heat-bar-sub">High</div>
+      </div>
+      <div class="heat-bar-item">
+        <div class="heat-bar" style="height:170px;"><span>13.5W</span></div>
+        <div class="heat-bar-label">18W/m</div>
+        <div class="heat-bar-sub">Pro</div>
+      </div>
+      <div class="heat-bar-item">
+        <div class="heat-bar" style="height:190px;"><span>15W</span></div>
+        <div class="heat-bar-label">20W/m</div>
+        <div class="heat-bar-sub">Pro+</div>
+      </div>
+    </div>
+    <p style="font-size:12px;color:#78350f;text-align:center;margin-top:12px;">※発熱量 = W/m × 約0.75（光に変換されない分）で計算</p>
+  </div>
+
+  <div class="warn-box">
+    <div class="warn-title">⚠️ 特に注意が必要なケース</div>
+    <ul>
+      <li>12W/m以上のテープを<strong>密閉されたアルミ溝に収納</strong>するケース（温度が40〜50℃以上になりやすい）</li>
+      <li>木材・石膏ボード・プラスチックなど<strong>熱伝導性の低い下地</strong>に直貼り</li>
+      <li>夏季の屋外設置や<strong>西日が当たる南面</strong>（環境温度が40℃を超える可能性）</li>
+      <li>天井裏・電気室など<strong>換気が悪い閉鎖空間</strong>への施工</li>
+    </ul>
+  </div>
+
+  <!-- 2. 熱経路と熱抵抗 -->
+  <h2 class="sec-title">2. 熱の流れ（熱抵抗モデル）を理解する</h2>
+
+  <p>熱はLEDチップ→基板（PCB）→両面テープ→下地材料 の順に伝わります。この経路の「熱抵抗」が低いほど、熱が効率よく逃げてジャンクション温度が下がります。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>熱経路の箇所</th>
+        <th>熱伝導率の目安</th>
+        <th>ポイント</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>LEDチップ → 基板（銅パターン）</td>
+        <td>高（銅: 385 W/m·K）</td>
+        <td>COBテープは基板が広く有利</td>
+      </tr>
+      <tr>
+        <td>基板 → 両面テープ</td>
+        <td>低（一般粘着: 0.1〜0.5 W/m·K）<br>高（熱伝導テープ: 1〜6 W/m·K）</td>
+        <td>ここが最大のボトルネック。熱伝導両面テープで大幅改善</td>
+      </tr>
+      <tr>
+        <td>両面テープ → 下地材料</td>
+        <td>アルミ: 160 W/m·K<br>スチール: 50 W/m·K<br>木材: 0.15 W/m·K</td>
+        <td>アルミが断然有利。木材は放熱路として機能しない</td>
+      </tr>
+      <tr>
+        <td>下地材料 → 空気</td>
+        <td>空気: 0.024 W/m·K</td>
+        <td>表面積が大きいほど放熱効率UP</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="hl-box">
+    <strong>実践ポイント：</strong>一般的な両面テープ（熱伝導率0.2 W/m·K程度）を熱伝導両面テープ（1.5〜3 W/m·K）に変えるだけで、ジャンクション温度を<strong>8〜15℃低下</strong>させた実測例があります。高W/m品を施工する際は熱伝導テープを必ず指定してください。
+  </div>
+
+  <!-- 3. アルミチャンネル -->
+  <h2 class="sec-title">3. アルミチャンネル（放熱フレーム）の選び方</h2>
+
+  <p>アルミチャンネルはLEDテープを保護するだけでなく、<strong>放熱フィン</strong>として機能します。チャンネルの形状・素材・サイズでジャンクション温度は大きく変わります。</p>
+
+  <div class="channel-grid">
+    <div class="channel-card">
+      <div class="channel-head">Uチャンネル（表面露出型）</div>
+      <div class="channel-body">
+        <ul>
+          <li>最も一般的なコの字断面</li>
+          <li>表面への放熱面積が大きい</li>
+          <li>拡散カバー付きで光を柔らかく</li>
+          <li>幅12mm〜17mm品が主流</li>
+          <li>6〜12W/mに最適</li>
+        </ul>
+      </div>
+    </div>
+    <div class="channel-card channel-best">
+      <div class="channel-head">Tチャンネル（埋め込み型）<span class="rec-badge">高W/m推奨</span></div>
+      <div class="channel-body">
+        <ul>
+          <li>天井・壁への埋込仕上げが可能</li>
+          <li>フランジ部が放熱フィンとして機能</li>
+          <li>下地に密着して放熱効率が高い</li>
+          <li>幅20mm〜30mmが主流</li>
+          <li>12〜20W/mの高発熱品に対応</li>
+        </ul>
+      </div>
+    </div>
+    <div class="channel-card">
+      <div class="channel-head">コーナー用チャンネル</div>
+      <div class="channel-body">
+        <ul>
+          <li>45°・90°の出隅・入隅対応</li>
+          <li>放熱面積は標準Uチャンネルより小</li>
+          <li>高W/mには非推奨（8W/m以下に留める）</li>
+          <li>施工箇所が限られるため補助的に使用</li>
+          <li>接続部に熱溜まりが起きやすい</li>
+        </ul>
+      </div>
+    </div>
+    <div class="channel-card">
+      <div class="channel-head">フラットベースチャンネル</div>
+      <div class="channel-body">
+        <ul>
+          <li>極薄タイプで段差を最小化</li>
+          <li>下地への放熱は良好（密着面積大）</li>
+          <li>上面への放熱は少ない</li>
+          <li>10W/m以下で下地がアルミ・スチールの場合のみ推奨</li>
+          <li>木下地への施工には不向き</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="subsec">W/m別アルミチャンネルのサイズ推奨</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>W/m（電力密度）</th>
+        <th>推奨チャンネル幅</th>
+        <th>必要放熱面積目安（1mあたり）</th>
+        <th>備考</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>6〜8 W/m</td>
+        <td>12mm Uチャンネル以上</td>
+        <td>〜25 cm²/m</td>
+        <td>標準環境では問題なし</td>
+      </tr>
+      <tr>
+        <td>10〜12 W/m</td>
+        <td>17mm Uチャンネル以上</td>
+        <td>30〜40 cm²/m</td>
+        <td>密閉環境では1サイズ上を選択</td>
+      </tr>
+      <tr>
+        <td>15 W/m</td>
+        <td>20mm Tチャンネル推奨 <span class="rec-badge">必須</span></td>
+        <td>50〜60 cm²/m</td>
+        <td>熱伝導テープ必須</td>
+      </tr>
+      <tr>
+        <td>18〜20 W/m</td>
+        <td>25mm Tチャンネル推奨 <span class="rec-badge">必須</span></td>
+        <td>65〜80 cm²/m</td>
+        <td>環境温度25℃以下での施工推奨</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 4. 発熱量計算 -->
+  <h2 class="sec-title">4. 施工前に必ず行う発熱量計算</h2>
+
+  <p>施工前に発熱量を計算し、放熱設計が十分かどうか確認します。以下の手順に従ってください。</p>
+
+  <ol class="step-list">
+    <li>
+      <div class="step-content">
+        <div class="step-title">総消費電力を計算する</div>
+        <div class="step-body">W/m × テープ全長(m) = 総消費電力(W)。PSU容量計算と同じです。例：10W/m × 30m = 300W</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-content">
+        <div class="step-title">発熱量（熱として放出される量）を計算する</div>
+        <div class="step-body">LEDは電力の約75%を熱として放出します。総消費電力 × 0.75 = 発熱量(W)。例：300W × 0.75 = 225W（=225J/s）</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-content">
+        <div class="step-title">チャンネル1mあたりの発熱量を計算する</div>
+        <div class="step-body">発熱量(W) ÷ テープ全長(m) = W/m発熱量。例：225W ÷ 30m = 7.5W/m。この値で前節の推奨チャンネルサイズを照合</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-content">
+        <div class="step-title">環境温度補正を行う</div>
+        <div class="step-body">施工場所の最大環境温度が30℃を超える場合、チャンネルサイズを1ランク上げるか、施工間隔を空けて放熱面積を確保する</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-content">
+        <div class="step-title">施工後に温度確認（サーモカメラ推奨）</div>
+        <div class="step-body">通電後30分で熱が安定します。サーモカメラでチャンネル表面温度を測定。表面温度60℃以下（環境温度+35℃以下）が目安。超えている場合は放熱対策を追加</div>
+      </div>
+    </li>
+  </ol>
+
+  <div class="formula-box">
+    <span class="formula-comment"># 発熱量計算の例（診察室 12W/m × 30m）</span><br>
+    総消費電力 = 12 W/m × 30m = 360 W<br>
+    発熱量     = 360 × 0.75 = <strong style="color:#fbbf24">270 W</strong><br>
+    1mあたり発熱 = 270 ÷ 30 = <strong style="color:#fbbf24">9 W/m</strong><br>
+    → 20mm Tチャンネル推奨（熱伝導テープ必須）<br>
+    <br>
+    <span class="formula-comment"># 施工後確認基準</span><br>
+    チャンネル表面温度 ≤ 環境温度 + 35℃（≤ 60℃ @ 25℃環境）
+  </div>
+
+  <!-- 5. 設置環境別の対策 -->
+  <h2 class="sec-title">5. 設置環境別の放熱対策</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>設置環境</th>
+        <th>温度リスク</th>
+        <th>推奨対策</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>開放天井（空調あり）</strong></td>
+        <td>低</td>
+        <td>標準アルミUチャンネル。12W/m以下は特別な対策不要</td>
+      </tr>
+      <tr>
+        <td><strong>密閉天井裏（換気なし）</strong></td>
+        <td>高</td>
+        <td>大型Tチャンネル必須。W/mを1ランク下げる（12→10W/m等）か電源の調光機能で70〜80%駆動</td>
+      </tr>
+      <tr>
+        <td><strong>屋外（直射日光）</strong></td>
+        <td>非常に高</td>
+        <td>IP65以上のシリコンコーティング品。環境温度が40℃以上になるため12W/m以下に抑制。日射遮蔽カバー設置推奨</td>
+      </tr>
+      <tr>
+        <td><strong>什器・棚の中（密閉什器）</strong></td>
+        <td>高</td>
+        <td>6〜8W/m以下に制限。熱伝導テープでアルミ什器に熱を逃がす。30分以上の連続点灯には強制空冷（小型ファン）検討</td>
+      </tr>
+      <tr>
+        <td><strong>冷蔵ショーケース周辺</strong></td>
+        <td>低（環境温度が低い）</td>
+        <td>低温でLED効率が上がりジャンクション温度は下がりやすい。ただし結露対策（IP65以上）が必要</td>
+      </tr>
+      <tr>
+        <td><strong>調理場・厨房</strong></td>
+        <td>非常に高</td>
+        <td>環境温度が40〜50℃になりやすい。8W/m以下に制限。IP65必須。電源は厨房外に設置</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 6. COBテープの熱特性 -->
+  <h2 class="sec-title">6. COBテープの熱特性と有利な理由</h2>
+
+  <p>従来のSMD（個別パッケージ）テープに比べ、<strong>COB（Chip on Board）テープは熱管理面で大きな優位性</strong>があります。</p>
+
+  <div class="hl-box">
+    <strong>COBが熱に強い3つの理由：</strong><br>
+    ① <strong>基板面積が広い：</strong>チップが基板上に直接実装されるため、発熱が基板全体に分散されます。SMDのように局所的な高温点（ホットスポット）が発生しにくい。<br><br>
+    ② <strong>封止材（蛍光体シート）が放熱材を兼ねる：</strong>COBの均一な蛍光体コーティングは熱分散にも貢献します。<br><br>
+    ③ <strong>低電流駆動：</strong>COBは多数のチップを並列駆動するため1チップあたりの電流が小さく、Tjの上昇が緩やかです。
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>比較項目</th>
+        <th>COBテープ</th>
+        <th>SMD 2835テープ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>発熱の分散性</td>
+        <td>基板全面に均一分散 ◎</td>
+        <td>チップ個別に集中 △</td>
+      </tr>
+      <tr>
+        <td>ジャンクション温度の上昇速度</td>
+        <td>緩やか ◎</td>
+        <td>速い（局所過熱）△</td>
+      </tr>
+      <tr>
+        <td>チャンネルへの密着性</td>
+        <td>高（平坦な基板）◎</td>
+        <td>チップが凸で密着度が低い △</td>
+      </tr>
+      <tr>
+        <td>同W/mでのジャンクション温度</td>
+        <td>低い（約5〜10℃差）◎</td>
+        <td>高め △</td>
+      </tr>
+      <tr>
+        <td>光束維持率（L70）</td>
+        <td>50,000h以上が多い ◎</td>
+        <td>30,000〜50,000h △</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 7. よくある失敗と対策 -->
+  <h2 class="sec-title">7. 現場でよくある熱管理の失敗5パターン</h2>
+
+  <ul class="merit-list">
+    <li><strong>失敗①：木下地に直貼りして半年で暗くなった</strong><br>木材の熱伝導率は0.15 W/m·K程度でほぼ断熱材。10W/m以上のテープを木下地に直貼りするとジャンクション温度が急上昇します。対策：必ずアルミチャンネルを介して木下地に固定。</li>
+    <li><strong>失敗②：テープを重ねて貼り二倍の熱が発生した</strong><br>光量不足の対策でテープを2層重ねする施工が散見されますが、熱が逃げる先がなく最悪の放熱設計です。対策：W/mを上げた単層に変更するか、テープ間に放熱シートを挟む。</li>
+    <li><strong>失敗③：屋外設置で夏季に点灯しなくなった</strong><br>サーマルシャットダウン機能付き電源（PSU）は過熱で出力をカットします。テープ自体の熱損傷より先にPSUが落ちるケースも多い。対策：屋外用PSUを使用し日射を避けた設置場所を確保。</li>
+    <li><strong>失敗④：調光なしで1年中100%点灯して劣化が早まった</strong><br>業務施設で「明るさを節約して70%程度に抑えたい」という要望に調光を使わず我慢することがあります。調光器（PWMまたは0-10V）を使って70〜80%駆動するだけでジャンクション温度を10〜15℃低下させ、寿命を大幅に延ばせます。</li>
+    <li><strong>失敗⑤：チャンネルのカバーを密閉型にして放熱を妨げた</strong><br>意匠性を優先してカバーを密閉すると内部温度が急上昇します。対策：ミルキー拡散カバーでも両端に通気スリットがあるタイプを選ぶ、またはオープンカバー型にする。</li>
+  </ul>
+
+  <!-- 8. まとめ -->
+  <h2 class="sec-title">まとめ：放熱設計チェックリスト</h2>
+
+  <div class="info-box">
+    <div class="info-title">施工前・施工後の確認事項</div>
+    <ol style="padding-left: 20px; font-size: 14px; line-height: 2;">
+      <li>W/m × 全長 で総消費電力を計算し、発熱量（×0.75）を把握しているか</li>
+      <li>W/mに対して十分なサイズのアルミチャンネルを選定しているか</li>
+      <li>12W/m以上の施工に熱伝導両面テープを使用しているか</li>
+      <li>木下地・プラスチック下地への直貼りを避けているか</li>
+      <li>密閉空間での高W/m施工を避けているか（またはW/mを下げているか）</li>
+      <li>調光器を活用して70〜80%駆動による温度管理を検討しているか</li>
+      <li>施工後30分後にチャンネル表面温度を確認（60℃以下が目安）しているか</li>
+    </ol>
+  </div>
+
+  <p>LEDテープの放熱設計は「明るさが足りない」「すぐ暗くなった」という施工品質問題の根本原因になります。正しい熱管理で<strong>5年・10年の長期安定稼働</strong>を実現してください。</p>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h3>放熱設計に最適な業務用COB 24V LEDテープ</h3>
+    <p>熱伝導基板採用・光束維持率L70 50,000h以上の業務用COBテープと、専用アルミチャンネルをLED PRO SHOPでご覧ください。</p>
+    <a href="/category/cob-tape/" class="cta-btn">COB 24V LEDテープを見る</a>
+    <a href="/category/alumi-frame/" class="cta-btn secondary">アルミチャンネルを見る</a>
+  </div>
+
+</main>
+
+<footer>
+  <p><a href="/">LED PRO SHOP</a> | <a href="/articles/">コラム一覧</a> | <a href="/category/cob-tape/">COB LEDテープ</a></p>
+  <p style="margin-top:8px;">&copy; 2026 LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
