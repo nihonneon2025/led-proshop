@@ -1,0 +1,9 @@
+{
+  "name": "LED PRO SHOP",
+  "short_name": "LED PRO SHOP",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#003C82",
+  "theme_color": "#003C82",
+  "icons": []
+}
