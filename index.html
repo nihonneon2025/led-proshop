@@ -2730,6 +2730,25 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         ※ ご注文内容（点数・重量）によって実際の送料は変動する場合があります。正確な送料はご注文確認メールにてご案内いたします。<br>
         ※ 大量注文・法人様は個別にお見積もりいたします。お気軽にお問い合わせください。
       </p>
+      <div style="margin-top:24px;padding:16px 20px;background:#f0f4ff;border-left:4px solid var(--blue);border-radius:0 4px 4px 0">
+        <div style="font-size:12px;font-weight:700;color:var(--blue);margin-bottom:10px">お支払い方法</div>
+        <div style="display:flex;gap:20px;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:8px;font-size:12px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" style="width:18px;height:18px;flex-shrink:0"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            <div>
+              <div style="font-weight:600">クレジットカード</div>
+              <div style="color:var(--text-sub);font-size:10px">VISA / Mastercard / JCB / AMEX 対応<br>ご注文後に決済リンクをメールでお送りします</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:12px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" style="width:18px;height:18px;flex-shrink:0"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <div>
+              <div style="font-weight:600">銀行振込（前払い）</div>
+              <div style="color:var(--text-sub);font-size:10px">ご注文確認メールにて振込先をご案内します<br>ご入金確認後に発送いたします</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -2832,9 +2851,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         <select name="payment" required>
           <option value="">選択してください</option>
           <option value="credit">クレジットカード</option>
-          <option value="applepay">Apple Pay</option>
           <option value="bank">銀行振込（前払い）</option>
-          <option value="invoice">請求書払い（法人のみ・審査あり）</option>
         </select>
         <label>備考・ご要望</label>
         <textarea name="notes" placeholder="数量変更・納期相談・その他ご要望があればご記入ください"></textarea>
@@ -8406,7 +8423,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 
     // Build order summary text for emails
     function buildOrderSummary(orderId) {
-      var paymentLabels = {credit:'クレジットカード',applepay:'Apple Pay',bank:'銀行振込（前払い）',invoice:'請求書払い（法人・審査あり）'};
+      var paymentLabels = {credit:'クレジットカード',bank:'銀行振込（前払い）'};
       var form = document.getElementById('checkoutForm');
       var fd = new FormData(form);
       var lines = [];
@@ -8450,7 +8467,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         + summary + '\n'
         + '━━━━━━━━━━━━━━━━━━━━\n\n'
         + '※ 担当者より1営業日以内にご連絡いたします。\n'
-        + '※ クレジットカード・Apple Payをご選択の場合、決済リンクをメールでお送りします。\n'
+        + '※ クレジットカードをご選択の場合、決済リンクをメールでお送りします。\n'
         + '※ 銀行振込の場合、振込先情報をメールでお知らせします。\n\n'
         + '---\n'
         + SHOP_NAME + '（日本ネオン株式会社）\n'
@@ -8598,13 +8615,13 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           var paymentMethod = formData.get('payment');
 
           // ==============================
-          // クレジット・Apple Pay → Stripe決済
+          // クレジットカード → Stripe決済
           // ==============================
-          if (paymentMethod === 'credit' || paymentMethod === 'applepay') {
+          if (paymentMethod === 'credit') {
             // 最低注文金額チェック（Stripe最低¥50、当店は¥300から）
             if (getCartTotal() < 300) {
               if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
-              alert('クレジットカード・Apple Payでのお支払いは\n合計¥300以上からご利用いただけます。\n\n現在の合計：¥' + getCartTotal().toLocaleString() + '\n\n数量を増やすか、銀行振込・請求書払いをご選択ください。');
+              alert('クレジットカードでのお支払いは\n合計¥300以上からご利用いただけます。\n\n現在の合計：¥' + getCartTotal().toLocaleString() + '\n\n数量を増やすか、銀行振込をご選択ください。');
               return;
             }
             // Stripe用のデータを組み立て
