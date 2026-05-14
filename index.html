@@ -2727,7 +2727,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       </table>
       <p style="font-size:11px;color:var(--text-sub);margin-top:10px;line-height:1.7">
         ※ 上記はヤマト運輸 宅急便・80サイズ（5㎏まで）の目安料金です（2025年10月改定・税込）。<br>
-        ※ ご注文内容（点数・重量）によって実際の送料は変動する場合があります。正確な送料はご注文確認メールにてご案内いたします。<br>
+        ※ 上記は80サイズ（5㎏まで）の目安です。実際の送料は荷物のサイズ・重量によって変動します。ご注文後、担当者より正確な送料をご案内いたします。<br>
         ※ 大量注文・法人様は個別にお見積もりいたします。お気軽にお問い合わせください。
       </p>
       <div style="margin-top:24px;padding:16px 20px;background:#f0f4ff;border-left:4px solid var(--blue);border-radius:0 4px 4px 0">
@@ -2806,13 +2806,19 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     <div id="cartItems"></div>
   </div>
   <div id="cartFooter" class="cart-footer" style="display:none">
-    <div class="cart-total-row">
-      <span class="cart-total-label">合計（税別）</span>
-      <div>
-        <span id="cartTotal" class="cart-total-price">¥0</span>
-        <div class="cart-total-tax">※ 別途消費税がかかります</div>
-      </div>
+    <div class="cart-total-row" style="font-size:12px;color:var(--text-sub)">
+      <span>小計（税別）</span>
+      <span id="cartTotal">¥0</span>
     </div>
+    <div class="cart-total-row" style="font-size:12px;color:var(--text-sub)">
+      <span>消費税（10%）</span>
+      <span id="cartTax">¥0</span>
+    </div>
+    <div class="cart-total-row">
+      <span class="cart-total-label">合計（税込）</span>
+      <span id="cartGrandTotal" class="cart-total-price">¥0</span>
+    </div>
+    <div style="font-size:10px;color:var(--text-sub);text-align:right;margin-bottom:4px">※ 送料は注文後にご案内</div>
     <button class="cart-checkout-btn" onclick="openCheckout()">注文手続きへ進む</button>
     <span class="cart-continue" onclick="closeCart()">買い物を続ける</span>
   </div>
@@ -2828,8 +2834,19 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     <div id="checkoutBody" class="checkout-body">
       <div id="checkoutItems" class="checkout-items-summary"></div>
       <div id="checkoutTotal" class="checkout-total-bar">
-        <span class="label">ご注文合計（税別）</span>
-        <span class="price" id="checkoutTotalPrice">¥0</span>
+        <div style="display:flex;justify-content:space-between;margin-bottom:2px;font-size:12px;color:#666">
+          <span>小計（税別）</span>
+          <span id="checkoutSubtotalPrice">¥0</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:12px;color:#666">
+          <span>消費税（10%）</span>
+          <span id="checkoutTaxPrice">¥0</span>
+        </div>
+        <div style="display:flex;justify-content:space-between">
+          <span class="label">合計（税込）</span>
+          <span class="price" id="checkoutTotalPrice">¥0</span>
+        </div>
+        <div style="font-size:10px;color:#999;text-align:right;margin-top:4px">※ 送料は注文後にご案内</div>
       </div>
       <form id="checkoutForm" class="checkout-form" name="order" method="POST">
         <input type="hidden" name="order-id" id="orderIdField">
@@ -8358,7 +8375,14 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         `;}).join('');
       }
 
-      if (totalEl) totalEl.textContent = '¥' + getCartTotal().toLocaleString();
+      const subtotal = getCartTotal();
+      const tax = Math.floor(subtotal * 0.1);
+      const grandTotal = subtotal + tax;
+      if (totalEl) totalEl.textContent = '¥' + subtotal.toLocaleString();
+      const taxEl = document.getElementById('cartTax');
+      const grandTotalEl = document.getElementById('cartGrandTotal');
+      if (taxEl) taxEl.textContent = '¥' + tax.toLocaleString();
+      if (grandTotalEl) grandTotalEl.textContent = '¥' + grandTotal.toLocaleString();
     }
 
     function openCart() {
@@ -8394,7 +8418,14 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         `;}).join('');
       }
 
-      if (totalEl) totalEl.textContent = '¥' + getCartTotal().toLocaleString();
+      const subtotalCO = getCartTotal();
+      const taxCO = Math.floor(subtotalCO * 0.1);
+      const grandTotalCO = subtotalCO + taxCO;
+      if (totalEl) totalEl.textContent = '¥' + grandTotalCO.toLocaleString();
+      const subtotalPriceEl = document.getElementById('checkoutSubtotalPrice');
+      const taxPriceEl = document.getElementById('checkoutTaxPrice');
+      if (subtotalPriceEl) subtotalPriceEl.textContent = '¥' + subtotalCO.toLocaleString();
+      if (taxPriceEl) taxPriceEl.textContent = '¥' + taxCO.toLocaleString();
 
       // Set hidden fields (見やすいテキスト形式)
       var orderLines = cart.map(function(i) {
@@ -8405,7 +8436,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         return base;
       });
       document.getElementById('cartDetailField').value = orderLines.join('\n');
-      document.getElementById('totalAmountField').value = '¥' + getCartTotal().toLocaleString() + '（税別）';
+      document.getElementById('totalAmountField').value = '¥' + grandTotalCO.toLocaleString() + '（税込・送料別）';
 
       overlay.classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -8445,7 +8476,12 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         lines.push('  ' + item.name + ' (' + item.code + ') × ' + item.qty + ' ' + item.unit + ' = ¥' + (item.price * item.qty).toLocaleString());
       });
       lines.push('');
-      lines.push('【合計金額（税別）】¥' + getCartTotal().toLocaleString());
+      const subtotalBS = getCartTotal();
+      const taxBS = Math.floor(subtotalBS * 0.1);
+      const grandTotalBS = subtotalBS + taxBS;
+      lines.push('小計（税別）: ¥' + subtotalBS.toLocaleString());
+      lines.push('消費税（10%）: ¥' + taxBS.toLocaleString());
+      lines.push('【合計金額（税込・送料別）】¥' + grandTotalBS.toLocaleString());
       return lines.join('\n');
     }
 
