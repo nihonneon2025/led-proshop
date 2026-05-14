@@ -420,9 +420,10 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 .checkout-item-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .checkout-item-qty{width:60px;text-align:center;color:var(--text-muted)}
 .checkout-item-price{width:80px;text-align:right;font-weight:700;color:var(--text)}
-.checkout-total-bar{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:var(--blue);color:#fff;border-radius:4px;margin-bottom:20px}
+.checkout-total-bar{display:block;padding:12px 16px;background:var(--blue);color:#fff;border-radius:4px;margin-bottom:20px}
 .checkout-total-bar .label{font-size:12px}
 .checkout-total-bar .price{font-size:20px;font-weight:900}
+.checkout-total-bar .total-row{display:flex;justify-content:space-between;align-items:baseline}
 .checkout-form label{display:block;font-size:11px;font-weight:600;color:var(--text);margin-bottom:4px;margin-top:12px}
 .checkout-form label .req{color:var(--red);font-size:10px;margin-left:4px}
 .checkout-form input,.checkout-form textarea,.checkout-form select{width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:3px;font-size:12px;font-family:inherit}
@@ -2834,19 +2835,19 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     <div id="checkoutBody" class="checkout-body">
       <div id="checkoutItems" class="checkout-items-summary"></div>
       <div id="checkoutTotal" class="checkout-total-bar">
-        <div style="display:flex;justify-content:space-between;margin-bottom:2px;font-size:12px;color:#666">
+        <div class="total-row" style="font-size:12px;opacity:.8;margin-bottom:2px">
           <span>小計（税別）</span>
           <span id="checkoutSubtotalPrice">¥0</span>
         </div>
-        <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:12px;color:#666">
+        <div class="total-row" style="font-size:12px;opacity:.8;margin-bottom:6px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.3)">
           <span>消費税（10%）</span>
           <span id="checkoutTaxPrice">¥0</span>
         </div>
-        <div style="display:flex;justify-content:space-between">
+        <div class="total-row">
           <span class="label">合計（税込）</span>
           <span class="price" id="checkoutTotalPrice">¥0</span>
         </div>
-        <div style="font-size:10px;color:#999;text-align:right;margin-top:4px">※ 送料は注文後にご案内</div>
+        <div style="font-size:10px;opacity:.7;text-align:right;margin-top:4px">※ 送料は注文後にご案内</div>
       </div>
       <form id="checkoutForm" class="checkout-form" name="order" method="POST">
         <input type="hidden" name="order-id" id="orderIdField">
