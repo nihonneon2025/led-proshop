@@ -16,18 +16,44 @@
 //    ただし、外部メール送信にはSendGrid/Mailgun等のAPIキーが必要
 //    無料プランの場合は管理者が手動で確認メールを送る運用も可
 
-async function sendLineNotify(orderId, name, total, orderData) {
-  const token = process.env.LINE_CHANNEL_ACCESS_TOKEN;
-  if (!token) return;
-  const items = Array.isArray(orderData)
-    ? orderData.map(i => `・${i.name || i.product || '商品'} x${i.qty || i.quantity || 1}`).join('\n')
-    : '';
-  const text = `【新規注文】カタログ\n注文番号: ${orderId}\nお名前: ${name} 様\n合計: ¥${Number(total).toLocaleString()}\n${items}`.trim();
-  await fetch('https://api.line.me/v2/bot/message/broadcast', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
-    body: JSON.stringify({ messages: [{ type: 'text', text }] })
-  }).catch(() => {});
+const https = require('https');
+
+function sendLineNotify(orderId, name, total, orderData) {
+  return new Promise((resolve) => {
+    const token = process.env.LINE_CHANNEL_ACCESS_TOKEN;
+    if (!token) {
+      console.log('LINE_CHANNEL_ACCESS_TOKEN not set');
+      return resolve();
+    }
+    const items = Array.isArray(orderData)
+      ? orderData.map(i => `・${i.name || i.product || '商品'} x${i.qty || i.quantity || 1}`).join('\n')
+      : '';
+    const text = `【新規注文】カタログ\n注文番号: ${orderId}\nお名前: ${name} 様\n合計: ¥${Number(total).toLocaleString()}\n${items}`.trim();
+    const payload = JSON.stringify({ messages: [{ type: 'text', text }] });
+    const req = https.request({
+      hostname: 'api.line.me',
+      path: '/v2/bot/message/broadcast',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token,
+        'Content-Length': Buffer.byteLength(payload),
+      },
+    }, (res) => {
+      let body = '';
+      res.on('data', (d) => { body += d; });
+      res.on('end', () => {
+        console.log('LINE broadcast status:', res.statusCode, body);
+        resolve();
+      });
+    });
+    req.on('error', (e) => {
+      console.log('LINE broadcast error:', e.message);
+      resolve();
+    });
+    req.write(payload);
+    req.end();
+  });
 }
 
 exports.handler = async function(event, context) {
