@@ -2,10 +2,8 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <link rel="manifest" href="/manifest.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://led-proshop.com/" />
-  <link rel="preload" as="image" href="images/hero-scenes/white3000k_livingroom.webp" type="image/webp" fetchpriority="high">
   <meta name="description" content="業務用LEDテープライト・COB・アルミフレームのプロ施工業者向け通販。LEDテープ12V/24V・電源・調光対応の規格品を即納。看板・電気工事・店舗内装・空間演出のプロが選ぶLED PRO SHOP（日本ネオン株式会社運営）。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -163,7 +161,6 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 .hero-scroll-only{position:relative;overflow:hidden;height:600px;background:#000}
 .hero-bg-scroll{position:absolute;inset:0;z-index:0;pointer-events:none}
 .hero-bg-track{display:flex;gap:0;height:100%;width:max-content;animation:heroScroll 80s linear infinite;will-change:transform}
-.hero-bg-track picture{flex-shrink:0;display:block}
 .hero-bg-track img{width:720px;height:100%;object-fit:cover;flex-shrink:0;display:block}
 .hero-overlay{display:none}
 @media(max-width:1200px){
@@ -420,10 +417,9 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 .checkout-item-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .checkout-item-qty{width:60px;text-align:center;color:var(--text-muted)}
 .checkout-item-price{width:80px;text-align:right;font-weight:700;color:var(--text)}
-.checkout-total-bar{display:block;padding:12px 16px;background:var(--blue);color:#fff;border-radius:4px;margin-bottom:20px}
+.checkout-total-bar{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:var(--blue);color:#fff;border-radius:4px;margin-bottom:20px}
 .checkout-total-bar .label{font-size:12px}
 .checkout-total-bar .price{font-size:20px;font-weight:900}
-.checkout-total-bar .total-row{display:flex;justify-content:space-between;align-items:baseline}
 .checkout-form label{display:block;font-size:11px;font-weight:600;color:var(--text);margin-bottom:4px;margin-top:12px}
 .checkout-form label .req{color:var(--red);font-size:10px;margin-left:4px}
 .checkout-form input,.checkout-form textarea,.checkout-form select{width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:3px;font-size:12px;font-family:inherit}
@@ -464,17 +460,17 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "@type": "Organization",
       "name": "LED PRO SHOP",
       "alternateName": "日本ネオン株式会社",
-      "url": "https://led-proshop.com/",
+      "url": "https://www.led-proshop.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://led-proshop.com/images/logo.png"
+        "url": "https://www.led-proshop.com/images/logo.png"
       },
       "description": "業務用LEDテープライト・アルミフレーム・電源装置・シリコンカバーを172型番以上取り揃えたB2B専門カタログサイト。看板業者・電気工事業者・内装施工会社のプロ向けに即納対応。"
     },
     {
       "@type": "WebSite",
       "name": "LED PRO SHOP",
-      "url": "https://led-proshop.com/",
+      "url": "https://www.led-proshop.com/",
       "description": "業務用LED照明部材 B2B専門カタログ。172型番以上。即納対応。"
     }
   ]
@@ -489,14 +485,11 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         <div class="logo-tag"><span class="logo-badge">PROFESSIONAL SUPPLY</span><span class="logo-catch">全国のLED施工業者が選ぶ / 工場直送 × 業界最安値</span></div>
       </div>
       <div class="nav-links">
-        <a href="/category/cob-tape/" class="nav-link" data-category="cat1">COBテープ</a>
-        <a href="/category/smd-tape/" class="nav-link">SMDテープ</a>
-        <a href="/category/silicon-cover/" class="nav-link" data-category="cat2">シリコンカバー</a>
-        <a href="/category/alumi-frame/" class="nav-link" data-category="cat6">アルミフレーム</a>
-        <a href="/category/psu/" class="nav-link" data-category="cat3">電源</a>
-        <a href="/category/controller/" class="nav-link" data-category="cat4">制御機器</a>
-        <a href="/category/special-led/" class="nav-link">特殊LED</a>
-        <a href="/articles/" class="nav-link">コラム</a>
+        <a href="#cat1" class="nav-link" data-category="cat1">LEDテープ</a>
+        <a href="#cat6" class="nav-link" data-category="cat6">アルミフレーム</a>
+        <a href="#cat2" class="nav-link" data-category="cat2">シリコンカバー</a>
+        <a href="#cat3" class="nav-link" data-category="cat3">電源</a>
+        <a href="#cat4" class="nav-link" data-category="cat4">制御機器</a>
       </div>
       <div class="cart-icon-wrap" onclick="openCart()">
         <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
@@ -508,16 +501,11 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
   <!-- ナビゲーション（セカンダリ） -->
   <nav class="catnav">
     <div class="nav-container">
-      <a href="/category/cob-tape/">COBテープ</a>
-      <a href="/category/smd-tape/">SMDテープ</a>
-      <a href="/category/silicon-cover/">シリコンカバー</a>
-      <a href="/category/alumi-frame/">アルミフレーム</a>
-      <a href="/category/psu/">電源装置</a>
-      <a href="/category/controller/">コントローラー</a>
-      <a href="/category/special-led/">特殊LED</a>
-      <a href="/articles/">コラム</a>
+      <a href="#cat1">LEDテープ</a>
+      <a href="#cat2">シリコンカバー</a>
+      <a href="#cat3">電源装置</a>
+      <a href="#cat4">コントローラー</a>
       <a href="#about">選ばれる理由</a>
-      <a href="#shipping">送料案内</a>
       <a href="#contact">お問い合わせ</a>
     </div>
   </nav>
@@ -526,87 +514,27 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
   <section class="hero hero-scroll-only">
     <div class="hero-bg-scroll" aria-hidden="true">
       <div class="hero-bg-track">
-        <picture>
-          <source srcset="images/hero-scenes/white3000k_livingroom.webp" type="image/webp">
-          <img loading="eager" src="images/hero-scenes/white3000k_livingroom.png" alt="LED COBテープライト ホワイト3000K リビング間接照明 施工事例">
-        </picture>
-        <picture>
-          <source srcset="images/hero-scenes/pink_shop.webp" type="image/webp">
-          <img loading="eager" src="images/hero-scenes/pink_shop.png" alt="LED COBテープライト ピンク 店舗ネオン風装飾 施工事例">
-        </picture>
-        <picture>
-          <source srcset="images/hero-scenes/lightblue_desk.webp" type="image/webp">
-          <img loading="eager" src="images/hero-scenes/lightblue_desk.png" alt="LED COBテープライト ライトブルー デスク間接照明 施工事例">
-        </picture>
-        <picture>
-          <source srcset="images/hero-scenes/blue_kitchen.webp" type="image/webp">
-          <img loading="eager" src="images/hero-scenes/blue_kitchen.png" alt="LED COBテープライト ブルー キッチン間接照明 施工事例">
-        </picture>
-        <picture>
-          <source srcset="images/hero-scenes/red_shop.webp" type="image/webp">
-          <img loading="eager" src="images/hero-scenes/red_shop.png" alt="LED COBテープライト レッド 店舗ディスプレイ照明 施工事例">
-        </picture>
-        <picture>
-          <source srcset="images/hero-scenes/green_stairs.webp" type="image/webp">
-          <img loading="eager" src="images/hero-scenes/green_stairs.png" alt="LED COBテープライト グリーン 階段フットライト 施工事例">
-        </picture>
-        <picture>
-          <source srcset="images/hero-scenes/orange_livingroom.webp" type="image/webp">
-          <img loading="eager" src="images/hero-scenes/orange_livingroom.png" alt="LED COBテープライト オレンジ リビング装飾照明 施工事例">
-        </picture>
-        <picture>
-          <source srcset="images/hero-scenes/purple_shop.webp" type="image/webp">
-          <img loading="eager" src="images/hero-scenes/purple_shop.png" alt="LED COBテープライト パープル 店舗アクセント照明 施工事例">
-        </picture>
-        <picture>
-          <source srcset="images/hero-scenes/gold_shop.webp" type="image/webp">
-          <img loading="eager" src="images/hero-scenes/gold_shop.png" alt="LED COBテープライト ゴールド 店舗高級感演出 施工事例">
-        </picture>
-        <picture>
-          <source srcset="images/hero-scenes/lemonyellow_livingroom.webp" type="image/webp">
-          <img loading="eager" src="images/hero-scenes/lemonyellow_livingroom.png" alt="LED COBテープライト レモンイエロー リビングアクセント照明 施工事例">
-        </picture>
+        <img loading="lazy" src="images/hero-scenes/white3000k_livingroom.png" alt="">
+        <img loading="lazy" src="images/hero-scenes/pink_shop.png" alt="">
+        <img loading="lazy" src="images/hero-scenes/lightblue_desk.png" alt="">
+        <img loading="lazy" src="images/hero-scenes/blue_kitchen.png" alt="">
+        <img loading="lazy" src="images/hero-scenes/red_shop.png" alt="">
+        <img loading="lazy" src="images/hero-scenes/green_stairs.png" alt="">
+        <img loading="lazy" src="images/hero-scenes/orange_livingroom.png" alt="">
+        <img loading="lazy" src="images/hero-scenes/purple_shop.png" alt="">
+        <img loading="lazy" src="images/hero-scenes/gold_shop.png" alt="">
+        <img loading="lazy" src="images/hero-scenes/lemonyellow_livingroom.png" alt="">
         <!-- ループ用の重複コピー -->
-        <picture>
-          <source srcset="images/hero-scenes/white3000k_livingroom.webp" type="image/webp">
-          <img loading="lazy" src="images/hero-scenes/white3000k_livingroom.png" alt="">
-        </picture>
-        <picture>
-          <source srcset="images/hero-scenes/pink_shop.webp" type="image/webp">
-          <img loading="lazy" src="images/hero-scenes/pink_shop.png" alt="">
-        </picture>
-        <picture>
-          <source srcset="images/hero-scenes/lightblue_desk.webp" type="image/webp">
-          <img loading="lazy" src="images/hero-scenes/lightblue_desk.png" alt="">
-        </picture>
-        <picture>
-          <source srcset="images/hero-scenes/blue_kitchen.webp" type="image/webp">
-          <img loading="lazy" src="images/hero-scenes/blue_kitchen.png" alt="">
-        </picture>
-        <picture>
-          <source srcset="images/hero-scenes/red_shop.webp" type="image/webp">
-          <img loading="lazy" src="images/hero-scenes/red_shop.png" alt="">
-        </picture>
-        <picture>
-          <source srcset="images/hero-scenes/green_stairs.webp" type="image/webp">
-          <img loading="lazy" src="images/hero-scenes/green_stairs.png" alt="">
-        </picture>
-        <picture>
-          <source srcset="images/hero-scenes/orange_livingroom.webp" type="image/webp">
-          <img loading="lazy" src="images/hero-scenes/orange_livingroom.png" alt="">
-        </picture>
-        <picture>
-          <source srcset="images/hero-scenes/purple_shop.webp" type="image/webp">
-          <img loading="lazy" src="images/hero-scenes/purple_shop.png" alt="">
-        </picture>
-        <picture>
-          <source srcset="images/hero-scenes/gold_shop.webp" type="image/webp">
-          <img loading="lazy" src="images/hero-scenes/gold_shop.png" alt="">
-        </picture>
-        <picture>
-          <source srcset="images/hero-scenes/lemonyellow_livingroom.webp" type="image/webp">
-          <img loading="lazy" src="images/hero-scenes/lemonyellow_livingroom.png" alt="">
-        </picture>
+        <img loading="lazy" src="images/hero-scenes/white3000k_livingroom.png" alt="">
+        <img loading="lazy" src="images/hero-scenes/pink_shop.png" alt="">
+        <img loading="lazy" src="images/hero-scenes/lightblue_desk.png" alt="">
+        <img loading="lazy" src="images/hero-scenes/blue_kitchen.png" alt="">
+        <img loading="lazy" src="images/hero-scenes/red_shop.png" alt="">
+        <img loading="lazy" src="images/hero-scenes/green_stairs.png" alt="">
+        <img loading="lazy" src="images/hero-scenes/orange_livingroom.png" alt="">
+        <img loading="lazy" src="images/hero-scenes/purple_shop.png" alt="">
+        <img loading="lazy" src="images/hero-scenes/gold_shop.png" alt="">
+        <img loading="lazy" src="images/hero-scenes/lemonyellow_livingroom.png" alt="">
       </div>
     </div>
   </section>
@@ -2683,76 +2611,6 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     </div>
   </section>
 
-  <!-- 送料案内 -->
-  <section id="shipping" class="category section-border">
-    <div class="category-header">
-      <h2 class="category-title">送料案内</h2>
-      <p class="category-description">数量・重量によって送料が変わります。下記は目安料金です。正確な金額はご注文後に担当者よりご案内いたします。</p>
-    </div>
-    <div style="max-width:720px;margin:0 auto">
-      <table style="width:100%;border-collapse:collapse;font-size:12px">
-        <thead>
-          <tr style="background:var(--blue);color:#fff">
-            <th style="padding:9px 14px;text-align:left;font-weight:600">お届け先エリア</th>
-            <th style="padding:9px 14px;text-align:left;font-size:10px;font-weight:400;color:rgba(255,255,255,.75)">都道府県</th>
-            <th style="padding:9px 14px;text-align:right;font-weight:600">送料目安（税込）</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom:1px solid var(--border)">
-            <td style="padding:9px 14px;font-weight:600">南東北・関東・信越・北陸・中部</td>
-            <td style="padding:9px 14px;color:var(--text-sub);font-size:11px">宮城・山形・福島・東京・埼玉・千葉・神奈川・茨城・栃木・群馬・山梨・長野・新潟・富山・石川・福井・静岡・愛知・岐阜・三重</td>
-            <td style="padding:9px 14px;text-align:right;font-weight:700;color:var(--blue)">¥1,230〜¥3,020</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);background:#f9f9f9">
-            <td style="padding:9px 14px;font-weight:600">北東北・関西</td>
-            <td style="padding:9px 14px;color:var(--text-sub);font-size:11px">青森・秋田・岩手・大阪・京都・兵庫・奈良・滋賀・和歌山</td>
-            <td style="padding:9px 14px;text-align:right;font-weight:700;color:var(--blue)">¥1,350〜¥3,630</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border)">
-            <td style="padding:9px 14px;font-weight:600">中国・四国</td>
-            <td style="padding:9px 14px;color:var(--text-sub);font-size:11px">岡山・広島・山口・鳥取・島根・香川・徳島・高知・愛媛</td>
-            <td style="padding:9px 14px;text-align:right;font-weight:700;color:var(--blue)">¥1,480〜¥3,020</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);background:#f9f9f9">
-            <td style="padding:9px 14px;font-weight:600">北海道・九州</td>
-            <td style="padding:9px 14px;color:var(--text-sub);font-size:11px">北海道・福岡・佐賀・長崎・熊本・大分・宮崎・鹿児島</td>
-            <td style="padding:9px 14px;text-align:right;font-weight:700;color:var(--blue)">¥1,740〜¥3,630</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border)">
-            <td style="padding:9px 14px;font-weight:600">沖縄</td>
-            <td style="padding:9px 14px;color:var(--text-sub);font-size:11px">沖縄県</td>
-            <td style="padding:9px 14px;text-align:right;font-weight:700;color:var(--blue)">¥2,070〜¥4,680</td>
-          </tr>
-        </tbody>
-      </table>
-      <p style="font-size:11px;color:var(--text-sub);margin-top:10px;line-height:1.7">
-        ※ 最小は最軽量・最小サイズ、最大は160サイズ（最大重量）の目安料金です（税込）。<br>
-        ※ 実際の送料は数量・重量・梱包サイズによって変わります。ご注文後、担当者より正確な金額をご案内いたします。<br>
-        ※ 大量注文・法人様は個別にお見積もりいたします。お気軽にお問い合わせください。
-      </p>
-      <div style="margin-top:24px;padding:16px 20px;background:#f0f4ff;border-left:4px solid var(--blue);border-radius:0 4px 4px 0">
-        <div style="font-size:12px;font-weight:700;color:var(--blue);margin-bottom:10px">お支払い方法</div>
-        <div style="display:flex;gap:20px;flex-wrap:wrap">
-          <div style="display:flex;align-items:center;gap:8px;font-size:12px">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" style="width:18px;height:18px;flex-shrink:0"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-            <div>
-              <div style="font-weight:600">クレジットカード</div>
-              <div style="color:var(--text-sub);font-size:10px">VISA / Mastercard / JCB / AMEX 対応<br>ご注文後に決済リンクをメールでお送りします</div>
-            </div>
-          </div>
-          <div style="display:flex;align-items:center;gap:8px;font-size:12px">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" style="width:18px;height:18px;flex-shrink:0"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            <div>
-              <div style="font-weight:600">銀行振込（前払い）</div>
-              <div style="color:var(--text-sub);font-size:10px">ご注文確認メールにて振込先をご案内します<br>ご入金確認後に発送いたします</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- お問い合わせ -->
   <section id="contact" class="category">
     <div class="category-header">
@@ -2807,19 +2665,13 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     <div id="cartItems"></div>
   </div>
   <div id="cartFooter" class="cart-footer" style="display:none">
-    <div class="cart-total-row" style="font-size:12px;color:var(--text-sub)">
-      <span>小計（税別）</span>
-      <span id="cartTotal">¥0</span>
-    </div>
-    <div class="cart-total-row" style="font-size:12px;color:var(--text-sub)">
-      <span>消費税（10%）</span>
-      <span id="cartTax">¥0</span>
-    </div>
     <div class="cart-total-row">
-      <span class="cart-total-label">合計（税込）</span>
-      <span id="cartGrandTotal" class="cart-total-price">¥0</span>
+      <span class="cart-total-label">合計（税別）</span>
+      <div>
+        <span id="cartTotal" class="cart-total-price">¥0</span>
+        <div class="cart-total-tax">※ 別途消費税がかかります</div>
+      </div>
     </div>
-    <div style="font-size:11px;color:#b45309;background:#fff7ed;border:1px solid #fed7aa;border-radius:3px;padding:6px 10px;margin-bottom:8px">⚠ 送料は数量・重量により変わります。ご注文後に担当者よりご案内します。</div>
     <button class="cart-checkout-btn" onclick="openCheckout()">注文手続きへ進む</button>
     <span class="cart-continue" onclick="closeCart()">買い物を続ける</span>
   </div>
@@ -2835,19 +2687,8 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     <div id="checkoutBody" class="checkout-body">
       <div id="checkoutItems" class="checkout-items-summary"></div>
       <div id="checkoutTotal" class="checkout-total-bar">
-        <div class="total-row" style="font-size:12px;opacity:.8;margin-bottom:2px">
-          <span>小計（税別）</span>
-          <span id="checkoutSubtotalPrice">¥0</span>
-        </div>
-        <div class="total-row" style="font-size:12px;opacity:.8;margin-bottom:6px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.3)">
-          <span>消費税（10%）</span>
-          <span id="checkoutTaxPrice">¥0</span>
-        </div>
-        <div class="total-row">
-          <span class="label">合計（税込）</span>
-          <span class="price" id="checkoutTotalPrice">¥0</span>
-        </div>
-        <div style="font-size:10px;opacity:.7;text-align:right;margin-top:4px">※ 送料は注文後にご案内</div>
+        <span class="label">ご注文合計（税別）</span>
+        <span class="price" id="checkoutTotalPrice">¥0</span>
       </div>
       <form id="checkoutForm" class="checkout-form" name="order" method="POST">
         <input type="hidden" name="order-id" id="orderIdField">
@@ -2869,7 +2710,9 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         <select name="payment" required>
           <option value="">選択してください</option>
           <option value="credit">クレジットカード</option>
+          <option value="applepay">Apple Pay</option>
           <option value="bank">銀行振込（前払い）</option>
+          <option value="invoice">請求書払い（法人のみ・審査あり）</option>
         </select>
         <label>備考・ご要望</label>
         <textarea name="notes" placeholder="数量変更・納期相談・その他ご要望があればご記入ください"></textarea>
@@ -8376,14 +8219,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         `;}).join('');
       }
 
-      const subtotal = getCartTotal();
-      const tax = Math.floor(subtotal * 0.1);
-      const grandTotal = subtotal + tax;
-      if (totalEl) totalEl.textContent = '¥' + subtotal.toLocaleString();
-      const taxEl = document.getElementById('cartTax');
-      const grandTotalEl = document.getElementById('cartGrandTotal');
-      if (taxEl) taxEl.textContent = '¥' + tax.toLocaleString();
-      if (grandTotalEl) grandTotalEl.textContent = '¥' + grandTotal.toLocaleString();
+      if (totalEl) totalEl.textContent = '¥' + getCartTotal().toLocaleString();
     }
 
     function openCart() {
@@ -8419,14 +8255,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         `;}).join('');
       }
 
-      const subtotalCO = getCartTotal();
-      const taxCO = Math.floor(subtotalCO * 0.1);
-      const grandTotalCO = subtotalCO + taxCO;
-      if (totalEl) totalEl.textContent = '¥' + grandTotalCO.toLocaleString();
-      const subtotalPriceEl = document.getElementById('checkoutSubtotalPrice');
-      const taxPriceEl = document.getElementById('checkoutTaxPrice');
-      if (subtotalPriceEl) subtotalPriceEl.textContent = '¥' + subtotalCO.toLocaleString();
-      if (taxPriceEl) taxPriceEl.textContent = '¥' + taxCO.toLocaleString();
+      if (totalEl) totalEl.textContent = '¥' + getCartTotal().toLocaleString();
 
       // Set hidden fields (見やすいテキスト形式)
       var orderLines = cart.map(function(i) {
@@ -8437,7 +8266,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         return base;
       });
       document.getElementById('cartDetailField').value = orderLines.join('\n');
-      document.getElementById('totalAmountField').value = '¥' + grandTotalCO.toLocaleString() + '（税込・送料別）';
+      document.getElementById('totalAmountField').value = '¥' + getCartTotal().toLocaleString() + '（税別）';
 
       overlay.classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -8455,7 +8284,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 
     // Build order summary text for emails
     function buildOrderSummary(orderId) {
-      var paymentLabels = {credit:'クレジットカード',bank:'銀行振込（前払い）'};
+      var paymentLabels = {credit:'クレジットカード',applepay:'Apple Pay',bank:'銀行振込（前払い）',invoice:'請求書払い（法人・審査あり）'};
       var form = document.getElementById('checkoutForm');
       var fd = new FormData(form);
       var lines = [];
@@ -8477,12 +8306,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         lines.push('  ' + item.name + ' (' + item.code + ') × ' + item.qty + ' ' + item.unit + ' = ¥' + (item.price * item.qty).toLocaleString());
       });
       lines.push('');
-      const subtotalBS = getCartTotal();
-      const taxBS = Math.floor(subtotalBS * 0.1);
-      const grandTotalBS = subtotalBS + taxBS;
-      lines.push('小計（税別）: ¥' + subtotalBS.toLocaleString());
-      lines.push('消費税（10%）: ¥' + taxBS.toLocaleString());
-      lines.push('【合計金額（税込・送料別）】¥' + grandTotalBS.toLocaleString());
+      lines.push('【合計金額（税別）】¥' + getCartTotal().toLocaleString());
       return lines.join('\n');
     }
 
@@ -8504,7 +8328,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         + summary + '\n'
         + '━━━━━━━━━━━━━━━━━━━━\n\n'
         + '※ 担当者より1営業日以内にご連絡いたします。\n'
-        + '※ クレジットカードをご選択の場合、送料確定後にクレジット決済リンクをメールでお送りします。\n'
+        + '※ クレジットカード・Apple Payをご選択の場合、決済リンクをメールでお送りします。\n'
         + '※ 銀行振込の場合、振込先情報をメールでお知らせします。\n\n'
         + '---\n'
         + SHOP_NAME + '（日本ネオン株式会社）\n'
@@ -8651,121 +8475,33 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           var buyerName = formData.get('name');
           var paymentMethod = formData.get('payment');
 
-          // ==============================
-          // B案（2026-05-14 社長決裁）：クレジット・銀行振込どちらも
-          // send-order.php に合流させ、送料確定後に手動で
-          // Stripe Payment Link をメール送付する2段階フローに変更。
-          // クレジット即時決済（create-checkout.php）は フェーズ2 で
-          // Payment Link 手動発行運用が固まるまで停止。
-          // ==============================
-          /* === 旧フロー：クレジット即時決済（フェーズ2で再利用するためコメント保存） ===
-          if (paymentMethod === 'credit') {
-            // 最低注文金額チェック（Stripe最低¥50、当店は¥300から）
-            if (getCartTotal() < 300) {
-              if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
-              alert('クレジットカードでのお支払いは\n合計¥300以上からご利用いただけます。\n\n現在の合計：¥' + getCartTotal().toLocaleString() + '\n\n数量を増やすか、銀行振込をご選択ください。');
-              return;
-            }
-            // Stripe用のデータを組み立て
-            var stripeData = new FormData();
-            stripeData.append('order_id', orderId);
-            stripeData.append('name', buyerName);
-            stripeData.append('email', buyerEmail);
-            stripeData.append('company', formData.get('company') || '');
-            stripeData.append('phone', formData.get('phone') || '');
-            stripeData.append('address', formData.get('address') || '');
-            stripeData.append('notes', formData.get('notes') || '');
-            stripeData.append('payment', paymentMethod);
-            stripeData.append('consent', formData.get('consent') || '');
-            stripeData.append('consent-timestamp', formData.get('consent-timestamp') || consentAt);
-            stripeData.append('total', getCartTotal());
-            stripeData.append('cart', JSON.stringify(cart.map(function(item) {
-              return { name: item.name, price: item.price, qty: item.qty, code: item.code, customNote: item.customNote || '' };
-            })));
-
-            fetch(MAIL_API_BASE + '/create-checkout.php', {
-              method: 'POST',
-              body: stripeData
-            }).then(function(res) {
-              return res.text();
-            }).then(function(text) {
-              try {
-                var data = JSON.parse(text);
-                if (data.success && data.url) {
-                  // Stripe決済完了後にメール送信するため、注文データをsessionStorageに保存
-                  try {
-                    sessionStorage.setItem('neon_pending_order', JSON.stringify({
-                      order_id: orderId,
-                      name: buyerName,
-                      email: buyerEmail,
-                      company: formData.get('company') || '',
-                      phone: formData.get('phone') || '',
-                      address: formData.get('address') || '',
-                      notes: formData.get('notes') || '',
-                      payment: paymentMethod,
-                      consent: formData.get('consent') || '',
-                      consent_timestamp: formData.get('consent-timestamp') || consentAt,
-                      cart: cart.map(function(item) { return { name: item.name, price: item.price, qty: item.qty, code: item.code, customNote: item.customNote || '' }; }),
-                      total: getCartTotal()
-                    }));
-                  } catch(e) {}
-                  window.location.href = data.url;
-                } else {
-                  if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
-                  alert('決済ページの作成に失敗しました。お手数ですが ' + ADMIN_EMAIL + ' まで直接ご連絡ください。');
-                }
-              } catch(e) {
-                if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
-                alert('決済ページの作成に失敗しました。お手数ですが ' + ADMIN_EMAIL + ' まで直接ご連絡ください。');
-              }
-            }).catch(function(err) {
-              if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
-              alert('決済ページの作成に失敗しました。お手数ですが ' + ADMIN_EMAIL + ' まで直接ご連絡ください。');
-            });
-
-          } else {
-            // 銀行振込・請求書 → メール受注（旧フローの else 側）
-          }
-          === 旧フローここまで === */
-
-          // ==============================
-          // 新フロー：クレジット・銀行振込ともに受注メールに合流
-          // （送料確定後の決済リンク手動発行は別運用）
-          // ==============================
+          // 全支払い方法 → send-order.php（クレジットは送料確定後にStripeリンクを別送）
           fetch(MAIL_API_BASE + '/send-order.php', {
-            method: 'POST',
-            body: formData
-          }).then(function(res) { return res.json(); })
-          .then(function(data) {
-            if (data.success) {
-              var isCredit = (paymentMethod === 'credit');
-              var paymentNote = isCredit
-                ? '<br><span style="color:#666;font-size:11px">※ クレジットカード決済の場合は、送料確定後にクレジット決済リンクをメールでお送りします。リンクからお支払いいただいた後、商品を発送いたします。</span>'
-                : '<br><span style="color:#666;font-size:11px">※ 銀行振込の場合は、入金確認後の発送となります。</span>';
-              var headlineMsg = isCredit
-                ? 'ご注文を受け付けました。<br>送料確定後にクレジット決済リンクをメールでお送りします。'
-                : 'ご注文を受け付けました。<br>商品が発送されたらメールにてご連絡いたします。';
-              document.getElementById('checkoutBody').innerHTML =
-                '<div class="order-complete">'
-                + '<svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>'
-                + '<h3>ご注文ありがとうございます</h3>'
-                + '<div class="order-id">注文番号: ' + orderId + '</div>'
-                + '<p>' + buyerEmail + ' 宛に確認メールをお送りしました。<br>'
-                + '<span style="color:#e74c3c;font-size:11px">※ 確認メールが届かない場合は、迷惑メールフォルダもご確認ください。</span><br>'
-                + headlineMsg
-                + paymentNote + '</p>'
-                + '<button onclick="closeCheckout();location.reload();" style="margin-top:20px;padding:10px 30px;background:var(--blue);color:#fff;border:none;border-radius:4px;font-size:12px;font-weight:700;cursor:pointer">閉じる</button>'
-                + '</div>';
-              cart = [];
-              saveCart();
-              updateCartUI();
-            } else {
-              throw new Error(data.message || 'エラー');
-            }
-          }).catch(function() {
-            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
-            alert('送信に失敗しました。お手数ですが ' + ADMIN_EMAIL + ' まで直接ご連絡ください。');
-          });
+              method: 'POST',
+              body: formData
+            }).then(function(res) { return res.json(); })
+            .then(function(data) {
+              if (data.success) {
+                document.getElementById('checkoutBody').innerHTML =
+                  '<div class="order-complete">'
+                  + '<svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>'
+                  + '<h3>ご注文ありがとうございます</h3>'
+                  + '<div class="order-id">注文番号: ' + orderId + '</div>'
+                  + '<p>' + buyerEmail + ' 宛に確認メールをお送りしました。<br>'
+                  + '<span style="color:#e74c3c;font-size:11px">※ 確認メールが届かない場合は、迷惑メールフォルダもご確認ください。</span><br>'
+                  + '担当者より送料を含めた最終金額をご連絡いたします。</p>'
+                  + '<button onclick="closeCheckout();location.reload();" style="margin-top:20px;padding:10px 30px;background:var(--blue);color:#fff;border:none;border-radius:4px;font-size:12px;font-weight:700;cursor:pointer">閉じる</button>'
+                  + '</div>';
+                cart = [];
+                saveCart();
+                updateCartUI();
+              } else {
+                throw new Error(data.message || 'エラー');
+              }
+            }).catch(function() {
+              if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'この内容で注文する'; }
+              alert('送信に失敗しました。お手数ですが ' + ADMIN_EMAIL + ' まで直接ご連絡ください。');
+            });
         });
       }
     });
