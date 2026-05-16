@@ -39,8 +39,8 @@ exports.handler = async function(event, context) {
     const data = JSON.parse(event.body);
     const { to, name, subject, body, orderId, orderData, total } = data;
 
-    // LINE通知（非同期・失敗しても続行）
-    sendLineNotify(orderId, name, total, orderData);
+    // LINE通知
+    await sendLineNotify(orderId, name, total, orderData);
 
     // ============================================================
     // オプション1: SendGrid を使う場合（推奨）
