@@ -1,0 +1,22 @@
+# 退避コピー・バックアップ系（恒久除外）
+*.bak
+*.bak_*
+*.backup
+*backup*
+*_backup*
+
+# 開発・テスト・一時ファイル
+*.tmp
+*.test
+*.swp
+.DS_Store
+Thumbs.db
+
+# 退避フォルダ系
+*_本番退避_*/
+*_除外バックアップ_*/
+
+# OS / エディタ系
+.vscode/
+.idea/
+node_modules/

@@ -7,4 +7,22 @@ redirects = []
 [build]
 publish = "C:\\Users\\user\\Desktop\\ネオン物販\\05_EC運用"
 publishOrigin = "config"
-functions = "C:\\Users\\user\\Desktop\\ネオン物
+functions = "C:\\Users\\user\\Desktop\\ネオン物販\\05_EC運用\\netlify\\functions"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[functions]
+
+[functions."*"]

@@ -1,0 +1,610 @@
+/**
+ * led-proshop.com 個別商品ページ一括生成スクリプト
+ *
+ * 目的: Amazon ウェブURL方式での商品情報自動抽出を有効化するため、
+ *       各 SKU の個別 HTML ページを products/{SKU}.html として生成する。
+ *
+ * 対象: 全 SKU のうち既出品 COB24 8色（PK/SB/RD/GR/PP/OR/GD/YL）を除いた商品
+ *
+ * 担当: proshop-engineer
+ * 作成日: 2026-04-26
+ */
+
+'use strict';
+
+const fs   = require('fs');
+const path = require('path');
+
+// =============================
+// 出力先
+// =============================
+const OUT_DIR = path.join(__dirname, 'products');
+
+// =============================
+// 除外対象 SKU（既出品 COB24 8色＋そのバリエーション）
+// =============================
+const EXCLUDED_BASES = [
+  'COB24-PK', 'COB24-SB', 'COB24-RD', 'COB24-GR',
+  'COB24-PP', 'COB24-OR', 'COB24-GD', 'COB24-YL',
+];
+const EXCLUDED_SKUS = new Set(
+  EXCLUDED_BASES.flatMap(b => [b, `${b}-BT`, `${b}-BS`, `${b}-BN`])
+);
+
+function isExcluded(sku) {
+  return EXCLUDED_SKUS.has(sku);
+}
+
+// =============================
+// カテゴリ番号マッピング（back-link用）
+// =============================
+const CAT_MAP = {
+  'CAT1': 'cat1',
+  'CAT2': 'cat2',
+  'CAT3': 'cat3',
+  'CAT4': 'cat4',
+  'CAT6': 'cat6',
+};
+
+// カテゴリラベル（BreadcrumbList用）
+const CAT_LABEL = {
+  'CAT1': 'LEDテープライト',
+  'CAT2': 'シリコンカバー',
+  'CAT3': '電源装置',
+  'CAT4': 'LED用コントローラー・調光器',
+  'CAT6': 'アルミフレーム',
+};
+
+// =============================
+// 画像URL解決
+// =============================
+function resolveImageUrl(sku, imageHint) {
+  const BASE = 'https://www.led-proshop.com';
+
+  // テープライト系
+  const tapeColorMap = {
+    'W3K':  'テープライト/ホワイト3000K',
+    'PK':   'テープライト/ピンク',
+    'SB':   'テープライト/ライトブルー',
+    'RD':   'テープライト/レッド',
+    'GR':   'テープライト/グリーン',
+    'PP':   'テープライト/パープル',
+    'OR':   'テープライト/オレンジ',
+    'GD':   'テープライト/ゴールド',
+    'YL':   'テープライト/レモンイエロー',
+  };
+
+  if (sku.startsWith('COB24-') || sku.startsWith('COB12-')) {
+    const base = sku.replace(/^COB(?:24|12)-/, '').replace(/-B[TSN]$/, '');
+    if (tapeColorMap[base]) {
+      return `${BASE}/images/${tapeColorMap[base]}/main.png`;
+    }
+  }
+  if (sku.startsWith('RGB24') || sku.startsWith('RGB12')) {
+    return `${BASE}/images/テープライト/RGB/main.png`;
+  }
+  if (sku.startsWith('SC-F-'))  return `${BASE}/images/シリコンカバー/sc-f-front.png`;
+  if (sku.startsWith('SC-3S-')) return `${BASE}/images/シリコンカバー/sc-3s-3side.png`;
+  if (sku.startsWith('SC-SD-')) return `${BASE}/images/シリコンカバー/sc-sd-side.png`;
+  if (sku.startsWith('SC-NB-')) return `${BASE}/images/シリコンカバー/sc-nb-no-bottom.png`;
+  if (sku.startsWith('SC-WB-')) return `${BASE}/images/シリコンカバー/sc-wb-with-bottom.png`;
+  if (sku.startsWith('SC-R-'))  return `${BASE}/images/シリコンカバー/sc-r-round.png`;
+  if (sku.startsWith('SC-SP-')) return `${BASE}/images/シリコンカバー/sc-sp-special.png`;
+  if (sku.startsWith('EC-') && sku.includes('WH') && sku.includes('-H-')) {
+    return sku.includes('EC-R') ? `${BASE}/images/エンドキャップ/round-hole-white.png`
+                                 : `${BASE}/images/エンドキャップ/square-hole-white.png`;
+  }
+  if (sku.startsWith('EC-') && sku.includes('BK') && sku.includes('-H-')) {
+    return sku.includes('EC-R') ? `${BASE}/images/エンドキャップ/round-hole-black.png`
+                                 : `${BASE}/images/エンドキャップ/square-hole-black.png`;
+  }
+  if (sku.startsWith('EC-') && sku.includes('WH') && sku.includes('-S-')) {
+    return sku.includes('EC-R') ? `${BASE}/images/エンドキャップ/round-solid-white.png`
+                                 : `${BASE}/images/エンドキャップ/square-solid-white.png`;
+  }
+  if (sku.startsWith('EC-') && sku.includes('BK') && sku.includes('-S-')) {
+    return sku.includes('EC-R') ? `${BASE}/images/エンドキャップ/round-solid-black.png`
+                                 : `${BASE}/images/エンドキャップ/square-solid-black.png`;
+  }
+  if (sku.startsWith('PSU-24V-400W')) return `${BASE}/images/電源装置/24v400w/main.png`;
+  if (sku.startsWith('PSU-24V-300W')) return `${BASE}/images/電源装置/24v300w/main.png`;
+  if (sku.startsWith('PSU-24V-200W')) return `${BASE}/images/電源装置/24v200w/main.png`;
+  if (sku.startsWith('PSU-12V-400W')) return `${BASE}/images/電源装置/12v400w/main.png`;
+  if (sku.startsWith('PSU-12V-300W')) return `${BASE}/images/電源装置/12v300w/main.png`;
+  if (sku.startsWith('PSU-12V-200W')) return `${BASE}/images/電源装置/12v200w/main.png`;
+  if (sku.startsWith('CTRL-')) return `${BASE}/images/コントローラー/ctrl-main.png`;
+  if (sku.startsWith('ALM-NORMAL-SV')) return `${BASE}/images/アルミフレーム/alm-normal-sv.png`;
+  if (sku.startsWith('ALM-NORMAL-BK')) return `${BASE}/images/アルミフレーム/alm-normal-bk.png`;
+  if (sku.startsWith('ALM-RECESSED-SV')) return `${BASE}/images/アルミフレーム/alm-recessed-sv.png`;
+  if (sku.startsWith('ALM-RECESSED-BK')) return `${BASE}/images/アルミフレーム/alm-recessed-bk.png`;
+
+  return `${BASE}/images/no-image.png`;
+}
+
+// =============================
+// スペックテーブル HTML 生成
+// =============================
+function buildSpecRows(specs, product) {
+  const rows = [];
+
+  // 共通: 型番
+  rows.push(`<tr><th>型番</th><td>${escHtml(product.code)}</td></tr>`);
+
+  // specsオブジェクトの各項目
+  if (specs) {
+    for (const [key, val] of Object.entries(specs)) {
+      if (key === 'capacity') {
+        rows.push(`<tr><th>容量</th><td>${escHtml(String(val))}</td></tr>`);
+      } else if (key === 'control') {
+        rows.push(`<tr><th>操作方式</th><td>${escHtml(String(val))}</td></tr>`);
+      } else {
+        rows.push(`<tr><th>${escHtml(key)}</th><td>${escHtml(String(val))}</td></tr>`);
+      }
+    }
+  }
+
+  // 共通: ブランド・製造国
+  rows.push(`<tr><th>ブランド</th><td>LED PRO SHOP</td></tr>`);
+  rows.push(`<tr><th>製造国</th><td>中国</td></tr>`);
+  rows.push(`<tr><th>価格</th><td>¥${product.price.toLocaleString()}（税込）</td></tr>`);
+
+  return rows.join('\n        ');
+}
+
+// =============================
+// 特徴リスト生成
+// =============================
+function buildFeatures(product) {
+  const features = [];
+  const sku = product.code;
+
+  if (sku.startsWith('COB')) {
+    features.push('COBチップ採用・ドットレス設計による均一発光');
+    features.push('業務用品質・施工現場で多数採用実績');
+    features.push('PSE適合・演色性Ra90以上・寿命50,000時間以上');
+    features.push('5m/巻・50mmピッチでカット可能');
+    features.push('3M製両面テープ付きで簡単施工');
+  } else if (sku.startsWith('RGB')) {
+    features.push('1600万色フルカラーRGB発光');
+    features.push('COBチップ採用・ドットレス設計');
+    features.push('PSE適合・寿命50,000時間以上');
+    features.push('RFコントローラー・Wi-Fiコントローラーと組み合わせ可能');
+    features.push('5m/巻・50mmピッチでカット可能');
+  } else if (sku.startsWith('SC-')) {
+    features.push('高透光性シリコン素材・光透過率が高く発光ムラを抑制');
+    features.push('柔軟性に優れ曲面への施工も対応');
+    features.push('UL94 V-0相当の難燃性');
+    features.push('エンドキャップで簡単に閉口施工が可能');
+    features.push('10m巻での販売（カット加工対応）');
+  } else if (sku.startsWith('EC-')) {
+    features.push('シリコンカバーの端部処理に最適');
+    features.push('各サイズのシリコンカバーに対応');
+    features.push('防塵・防水効果を発揮');
+    features.push('10個単位での販売');
+  } else if (sku.startsWith('PSU-')) {
+    features.push('PSE適合・過電流/過電圧/短絡保護回路内蔵');
+    features.push('堅牢なアルミ筐体で放熱性と長寿命を実現');
+    features.push('AC100-240V対応・入力電圧フリー');
+    features.push('端子台接続方式で施工現場での配線も容易');
+    features.push('LEDテープの総ワット数の80%以下を目安に容量選定');
+  } else if (sku.startsWith('CTRL-')) {
+    features.push('RFリモコン付属（壁越し操作対応）');
+    features.push('DC12V/24V両対応');
+    features.push('PWM調光方式でちらつきのない滑らかな制御');
+    features.push('アンプ追加で無制限に延長対応');
+    features.push('1台で最大10mのLEDテープを駆動');
+  } else if (sku.startsWith('ALM-')) {
+    features.push('6063アルミ合金製・放熱性に優れLEDテープの寿命を延長');
+    features.push('乳白色ディフューザーカバー付属でLEDの粒感を和らげる');
+    features.push('1m/本・複数本の連結も可能');
+    features.push('ネジ止め（フランジ付き）で確実固定');
+    features.push('シルバー/ブラックのカラーバリエーション');
+  }
+
+  if (features.length === 0) {
+    features.push('業務用品質・プロ施工現場で多数採用');
+    features.push('LED PRO SHOP 直販品');
+  }
+
+  return features.map(f => `<li>${escHtml(f)}</li>`).join('\n          ');
+}
+
+// =============================
+// HTML エスケープ
+// =============================
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// =============================
+// schema.org/Product JSON-LD 生成
+// =============================
+function buildSchema(product, imageUrl) {
+  // wwwあり版 imageUrl に正規化（resolveImageUrl が www.led-proshop.com を返すが念のため保証）
+  const normalizedImageUrl = imageUrl.replace('https://led-proshop.com', 'https://www.led-proshop.com');
+  const schema = {
+    '@context': 'https://schema.org/',
+    '@type': 'Product',
+    'name': product.name,
+    'image': normalizedImageUrl,
+    'description': product.description || '',
+    'sku': product.code,
+    'brand': { '@type': 'Brand', 'name': 'LED PRO SHOP' },
+    'manufacturer': { '@type': 'Organization', 'name': '日本ネオン株式会社', 'url': 'https://www.led-proshop.com/' },
+    'countryOfOrigin': '中国',
+    'offers': {
+      '@type': 'Offer',
+      'url': `https://www.led-proshop.com/products/${encodeURIComponent(product.code)}.html`,
+      'priceCurrency': 'JPY',
+      'price': String(product.price),
+      'availability': 'https://schema.org/InStock',
+      'seller': { '@type': 'Organization', 'name': 'LED PRO SHOP' },
+    },
+  };
+
+  // 色情報があれば追加
+  if (product.specs && product.specs['発光色']) {
+    schema['color'] = product.specs['発光色'];
+  } else if (product.specs && product.specs['仕上げ']) {
+    schema['color'] = product.specs['仕上げ'];
+  }
+
+  // 追加プロパティ
+  const additionalProps = [];
+
+  // CAT1/CAT2 向け
+  if (product.specs) {
+    for (const [k, v] of Object.entries(product.specs)) {
+      if (['IP規格', '防護等級', '動作電圧', 'テープ長', '寿命', '容量', '素材'].includes(k)) {
+        additionalProps.push({
+          '@type': 'PropertyValue',
+          'name': k,
+          'value': String(v),
+        });
+      }
+    }
+  }
+  if (additionalProps.length > 0) {
+    schema['additionalProperty'] = additionalProps;
+  }
+
+  return JSON.stringify(schema, null, 2);
+}
+
+// =============================
+// BreadcrumbList JSON-LD 生成（D2-1 2026-04-29追加）
+// =============================
+function buildBreadcrumbJsonLd(product) {
+  const sku = product.code;
+  const catAnchor = CAT_MAP[product.category] || 'cat1';
+  const catLabel  = CAT_LABEL[product.category] || product.category || 'カタログ';
+  const breadcrumb = {
+    '@context': 'https://schema.org/',
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      {
+        '@type': 'ListItem',
+        'position': 1,
+        'name': 'LED PRO SHOP',
+        'item': 'https://www.led-proshop.com/',
+      },
+      {
+        '@type': 'ListItem',
+        'position': 2,
+        'name': catLabel,
+        'item': `https://www.led-proshop.com/#${catAnchor}`,
+      },
+      {
+        '@type': 'ListItem',
+        'position': 3,
+        'name': product.name,
+        'item': `https://www.led-proshop.com/products/${encodeURIComponent(sku)}.html`,
+      },
+    ],
+  };
+  return JSON.stringify(breadcrumb, null, 2);
+}
+
+// =============================
+// 商品ページ HTML テンプレート
+// =============================
+function buildPage(product) {
+  const sku      = product.code;
+  const catAnchor = CAT_MAP[product.category] || 'cat1';
+  const imageUrl  = resolveImageUrl(sku, product);
+  const schema    = buildSchema(product, imageUrl);
+  const breadcrumbSchema = buildBreadcrumbJsonLd(product);
+  const specRows  = buildSpecRows(product.specs, product);
+  const features  = buildFeatures(product);
+
+  const pageTitle = `${escHtml(product.name)} | LED PRO SHOP`;
+  const metaDesc  = product.description
+    ? escHtml(product.description.slice(0, 150) + '…')
+    : escHtml(`${product.name}。LED PRO SHOP直販・業務用品質・工場直送価格。`);
+
+  return `<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${pageTitle}</title>
+  <meta name="description" content="${metaDesc}">
+  <meta property="og:title" content="${pageTitle}">
+  <meta property="og:description" content="${metaDesc}">
+  <meta property="og:image" content="${escHtml(imageUrl)}">
+  <meta property="og:url" content="https://www.led-proshop.com/products/${encodeURIComponent(sku)}.html">
+  <meta property="og:type" content="product">
+  <!-- schema.org/Product 構造化データ（D2-1 2026-04-29 wwwあり版・BreadcrumbList追加） -->
+  <script type="application/ld+json">
+${schema}
+  </script>
+  <script type="application/ld+json">
+${breadcrumbSchema}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--blue:#003C82;--blue-pale:#e8f0fe;--bg:#fff;--bg-gray:#f5f6f8;
+--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+/* NAVBAR */
+.navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+.nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+.logo{color:#fff;display:flex;flex-direction:column;gap:2px;text-decoration:none}
+.logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+.logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px}
+.logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+.logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+.logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400}
+.nav-links{display:flex;gap:16px;list-style:none}
+.nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px}
+.nav-link:hover{color:#fff;background:rgba(255,255,255,.15)}
+/* CATNAV */
+.catnav{background:#fff;border-bottom:1px solid var(--border);overflow-x:auto;white-space:nowrap}
+.catnav .nav-container{height:auto;padding:0 16px}
+.catnav a{display:inline-block;padding:8px 14px;color:var(--text-sub);text-decoration:none;font-size:11px;font-weight:500;border-bottom:2px solid transparent}
+.catnav a:hover{color:var(--blue);border-bottom-color:var(--blue)}
+/* BREADCRUMB */
+.breadcrumb{max-width:1200px;margin:0 auto;padding:10px 16px;font-size:11px;color:var(--text-muted)}
+.breadcrumb a{color:var(--blue);text-decoration:none}.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb span{margin:0 6px}
+/* PRODUCT DETAIL */
+.product-detail{max-width:1200px;margin:0 auto;padding:24px 16px 48px;display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.product-image img{width:100%;max-width:480px;border:1px solid var(--border);border-radius:4px;object-fit:contain;background:#fafbfc;padding:12px}
+.product-info h1{font-size:20px;font-weight:700;line-height:1.45;margin-bottom:8px}
+.product-code{font-family:monospace;font-size:11px;color:var(--text-muted);margin-bottom:12px}
+.product-price-block{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:14px 18px;margin-bottom:18px}
+.price-label{font-size:11px;color:var(--text-muted);margin-bottom:2px}
+.price-value{font-size:28px;font-weight:900;color:var(--red);line-height:1.2}
+.price-tax{font-size:11px;color:var(--text-muted);margin-left:4px}
+.price-compare{font-size:11px;color:var(--text-muted);text-decoration:line-through;margin-top:2px}
+.spec-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:20px}
+.spec-table th{background:var(--blue-pale);color:var(--blue);padding:6px 10px;font-weight:600;text-align:left;border:1px solid var(--border);width:40%;white-space:nowrap}
+.spec-table td{padding:6px 10px;border:1px solid var(--border)}
+.spec-table tr:nth-child(even) td{background:#fafbfc}
+.description{font-size:12px;color:var(--text-sub);line-height:1.8;margin-bottom:18px}
+.features{list-style:none;padding:0;margin-bottom:18px}
+.features li{font-size:12px;padding:4px 0 4px 18px;position:relative;color:var(--text-sub)}
+.features li::before{content:'✓';position:absolute;left:0;color:var(--blue);font-weight:700}
+.back-link{display:inline-block;margin-top:12px;padding:8px 20px;background:var(--blue);color:#fff;text-decoration:none;border-radius:3px;font-size:12px;font-weight:600;letter-spacing:.5px}
+.back-link:hover{background:#002a5c}
+/* FOOTER */
+.footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+@media(max-width:768px){
+.product-detail{grid-template-columns:1fr}
+.nav-links{display:none}
+}
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-main">LED専門プロショップ<small>日本ネオン株式会社</small></div>
+        <div class="logo-tag">
+          <span class="logo-badge">PROFESSIONAL SUPPLY</span>
+          <span class="logo-catch">全国のLED施工業者が選ぶ / 工場直送 × 業界最安値</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#cat1" class="nav-link">LEDテープ</a></li>
+        <li><a href="../index.html#cat6" class="nav-link">アルミフレーム</a></li>
+        <li><a href="../index.html#cat2" class="nav-link">シリコンカバー</a></li>
+        <li><a href="../index.html#cat3" class="nav-link">電源</a></li>
+        <li><a href="../index.html#cat4" class="nav-link">制御機器</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- セカンダリナビ -->
+  <nav class="catnav">
+    <div class="nav-container">
+      <a href="../index.html#cat1">LEDテープ</a>
+      <a href="../index.html#cat2">シリコンカバー</a>
+      <a href="../index.html#cat3">電源装置</a>
+      <a href="../index.html#cat4">コントローラー</a>
+      <a href="../index.html#about">選ばれる理由</a>
+      <a href="../index.html#contact">お問い合わせ</a>
+    </div>
+  </nav>
+
+  <!-- パンくずリスト -->
+  <div class="breadcrumb">
+    <a href="../index.html">トップ</a>
+    <span>&rsaquo;</span>
+    <a href="../index.html#${catAnchor}">${escHtml(product.subcategory || product.category)}</a>
+    <span>&rsaquo;</span>
+    ${escHtml(product.name)}
+  </div>
+
+  <!-- 商品詳細メイン -->
+  <main>
+    <div class="product-detail">
+      <!-- 商品画像 -->
+      <div class="product-image">
+        <img src="${escHtml(imageUrl)}" alt="${escHtml(product.name)}" loading="eager">
+      </div>
+
+      <!-- 商品情報 -->
+      <div class="product-info">
+        <h1>${escHtml(product.name)}</h1>
+        <p class="product-code">型番: ${escHtml(sku)}</p>
+
+        <!-- 価格ブロック -->
+        <div class="product-price-block">
+          <div class="price-label">販売価格（税込）</div>
+          <div>
+            <span class="price-value">¥${product.price.toLocaleString()}</span>
+            <span class="price-tax">（税込）</span>
+          </div>
+          ${product.marketPrice ? `<div class="price-compare">市場価格: ${escHtml(product.marketPrice)}</div>` : ''}
+        </div>
+
+        <!-- スペックテーブル -->
+        <table class="spec-table">
+          <tbody>
+        ${specRows}
+          </tbody>
+        </table>
+
+        <!-- 商品説明 -->
+        ${product.description ? `<p class="description">${escHtml(product.description)}</p>` : ''}
+
+        <!-- 特徴リスト -->
+        <ul class="features">
+          ${features}
+        </ul>
+
+        <!-- 一覧に戻るリンク -->
+        <a href="../index.html#${catAnchor}" class="back-link">商品一覧に戻る</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div style="margin-bottom:8px;font-size:12px;font-weight:700;color:#ccc">LED専門プロショップ（日本ネオン株式会社）</div>
+    <div style="margin-bottom:4px">Email: led.proshop.support@gmail.com</div>
+    <div>&copy; 2025 LED専門プロショップ（日本ネオン株式会社） All Rights Reserved.</div>
+  </footer>
+
+</body>
+</html>`;
+}
+
+// =============================
+// PRODUCTS データ（index.html から移植）
+// =============================
+// index.html の PRODUCTS 配列を直接 require できないため、
+// 同ファイルをパースして抽出する。
+function extractProducts() {
+  const htmlPath = path.join(__dirname, 'index.html');
+  const html = fs.readFileSync(htmlPath, 'utf8');
+
+  // PRODUCTS = [ ... ]; の部分を正規表現で抽出
+  const match = html.match(/const PRODUCTS\s*=\s*(\[[\s\S]*?\]);\s*\n\s*(?:\/\/|const |function |window)/);
+  if (!match) {
+    // より広いマッチを試みる
+    const startIdx = html.indexOf('const PRODUCTS = [');
+    if (startIdx === -1) throw new Error('PRODUCTS 配列が見つかりません');
+
+    // 配列の終わりを括弧カウントで探す
+    let depth = 0;
+    let i = startIdx + 'const PRODUCTS = '.length;
+    let arrStart = i;
+    for (; i < html.length; i++) {
+      if (html[i] === '[') depth++;
+      else if (html[i] === ']') {
+        depth--;
+        if (depth === 0) { i++; break; }
+      }
+    }
+    const arrJson = html.slice(arrStart, i).trim();
+    return JSON.parse(arrJson);
+  }
+  return JSON.parse(match[1]);
+}
+
+// =============================
+// メイン実行
+// =============================
+function main() {
+  console.log('=== led-proshop.com 個別商品ページ生成 ===');
+  console.log(`出力先: ${OUT_DIR}`);
+  console.log('');
+
+  if (!fs.existsSync(OUT_DIR)) {
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  }
+
+  // PRODUCTS 抽出
+  let products;
+  try {
+    products = extractProducts();
+    console.log(`[INFO] PRODUCTS 読み込み: ${products.length} 件`);
+  } catch (e) {
+    console.error(`[ERROR] PRODUCTS 抽出失敗: ${e.message}`);
+    process.exit(1);
+  }
+
+  let generated = 0;
+  let skipped   = 0;
+  const generatedFiles = [];
+
+  for (const product of products) {
+    const sku = product.code;
+
+    // 除外チェック
+    if (isExcluded(sku)) {
+      skipped++;
+      continue;
+    }
+
+    const html     = buildPage(product);
+    const fileName = `${sku}.html`;
+    const filePath = path.join(OUT_DIR, fileName);
+
+    fs.writeFileSync(filePath, html, 'utf8');
+    generatedFiles.push(fileName);
+    generated++;
+
+    if (generated % 20 === 0) {
+      console.log(`  [${generated}件生成済み] 最新: ${fileName}`);
+    }
+  }
+
+  console.log('');
+  console.log('=== 生成完了 ===');
+  console.log(`生成ページ数: ${generated}`);
+  console.log(`除外（既出品COB24 8色）: ${skipped}`);
+  console.log('');
+  console.log('生成ファイル一覧:');
+  generatedFiles.forEach(f => console.log(`  products/${f}`));
+
+  // 総ファイルサイズ
+  let totalBytes = 0;
+  for (const f of generatedFiles) {
+    const stat = fs.statSync(path.join(OUT_DIR, f));
+    totalBytes += stat.size;
+  }
+  console.log('');
+  console.log(`合計サイズ: ${(totalBytes / 1024).toFixed(1)} KB（${generated}ファイル）`);
+  console.log('');
+  console.log('=== デプロイ手順 ===');
+  console.log('1. products/ フォルダ全体を Xサーバー /public_html/products/ へアップロード');
+  console.log('2. ブラウザで https://led-proshop.com/products/COB24-W3K.html を確認');
+  console.log('3. schema.org 動作確認: https://search.google.com/test/rich-results');
+  console.log('4. Amazon 出品時のウェブURL欄に https://led-proshop.com/products/{SKU}.html を入力');
+}
+
+main();
