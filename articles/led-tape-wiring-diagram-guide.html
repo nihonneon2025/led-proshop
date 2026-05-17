@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LEDテープ 配線図・分岐方法ガイド｜並列・分岐コネクタ・はんだ付けの接続実例 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープの配線図・分岐方法を実例で徹底解説。並列・直列の回路図・T字分岐コネクタの選び方・はんだ付けの基本手順・電源から複数系統への分岐設計。led配線方法・つなぎ方・分岐方法で迷ったらこの1ページで解決できる実務向けガイド。">
+  <meta name="keywords" content="ledテープ 配線図,led配線方法,ledテープライト 分岐方法,led配線 繋ぎ方,ledテープ はんだ付け,分岐コネクタ,LEDテープ 接続">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-wiring-diagram-guide">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-wiring-diagram-guide">
+  <meta property="og:title" content="LEDテープ 配線図・分岐方法ガイド｜並列・分岐コネクタ・はんだ付けの接続実例 | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープの配線図・分岐方法を実例で徹底解説。T字分岐コネクタ・はんだ付け・電源から複数系統への分岐設計をプロが解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-wiring-diagram-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ 配線図・分岐方法ガイド｜並列・分岐コネクタ・はんだ付けの接続実例 | LED PRO SHOP">
+  <meta name="twitter:description" content="LEDテープの配線図・分岐方法を実例で徹底解説。T字分岐コネクタ・はんだ付け・電源から複数系統への分岐設計をプロが解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-wiring-diagram-guide-hero.webp">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープ 配線図・分岐方法ガイド｜並列・分岐コネクタ・はんだ付けの接続実例",
+    "description": "LEDテープの配線図・分岐方法を実例で徹底解説。並列・直列の回路図・T字分岐コネクタの選び方・はんだ付けの基本手順・電源から複数系統への分岐設計。",
+    "image": "https://led-proshop.com/articles/images/led-tape-wiring-diagram-guide-hero.webp",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP 編集部"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
+    },
+    "datePublished": "2026-05-17",
+    "dateModified": "2026-05-17",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-wiring-diagram-guide"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/"},
+      {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "LEDテープ 配線図・分岐方法ガイド", "item": "https://led-proshop.com/articles/led-tape-wiring-diagram-guide"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープを分岐させると暗くなりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "並列分岐では電圧は同じままなので明るさは変わりません。ただし電源（PSU）の合計電流容量が不足すると全体が暗くなります。分岐する系統数 × 各系統の電流値を合計し、その1.2〜1.3倍の容量の電源を選んでください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "分岐コネクタとはんだ付けはどちらが良いですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "工具不要・施工時間短縮ならクリップ型分岐コネクタ、長期信頼性・防水性ならはんだ付け＋熱収縮チューブが推奨です。可動部がある場所・屋外露出部・大電流系統（18W/m以上）ははんだ付けが安心です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "電源1台から何系統まで分岐できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "電源の定格W数÷各系統の消費Wが最大系統数の目安ですが、安全率1.2〜1.3を確保してください。例：100W電源でW/m=6Wのテープを5m系統に接続する場合、30W×1.25＝37.5Wなので2系統（計75W）までが安全です。3系統以上は別電源の使用を推奨します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "LEDテープのはんだ付けで注意することは？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "コテ先温度は300〜320℃が適切です。高温すぎるとパッドが剥がれ、低温すぎると冷えはんだになります。はんだを当てる時間は2〜3秒以内。はんだ後はテープのカット面から熱収縮チューブで覆い防湿処理をしてください。極性（＋と−）の誤接続に注意し、必ずテスターで導通確認をしてから通電してください。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Noto Sans JP',sans-serif;background:#0d1117;color:#e6edf3;line-height:1.7;font-size:15px}
+    a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+    .wrap{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+    .bc{font-size:12px;color:#8b949e;margin-bottom:24px}
+    .bc a{color:#8b949e}
+    .hero{background:linear-gradient(135deg,#1a2332 0%,#0d1117 100%);border:1px solid #30363d;border-radius:12px;padding:32px 28px 28px;margin-bottom:32px}
+    .hero-tag{display:inline-block;background:#1f6feb;color:#fff;font-size:11px;font-weight:700;padding:2px 10px;border-radius:4px;margin-bottom:12px;letter-spacing:.05em}
+    .hero h1{font-size:clamp(18px,4vw,26px);font-weight:900;line-height:1.35;margin-bottom:16px;color:#f0f6fc}
+    .hero-meta{font-size:12px;color:#8b949e;margin-bottom:20px}
+    .hero-summary{background:#21262d;border-radius:8px;padding:16px 20px}
+    .hero-summary p{font-size:13px;color:#cdd9e5;line-height:1.7}
+    h2{font-size:18px;font-weight:700;color:#79c0ff;border-left:3px solid #1f6feb;padding-left:12px;margin:36px 0 16px}
+    h3{font-size:15px;font-weight:700;color:#e6edf3;margin:24px 0 10px}
+    p{margin-bottom:14px;color:#cdd9e5;font-size:14px}
+    .tbl-wrap{overflow-x:auto;margin:16px 0 24px}
+    table{width:100%;border-collapse:collapse;font-size:13px;background:#161b22;border-radius:8px;overflow:hidden}
+    th{background:#21262d;color:#8b949e;padding:9px 12px;text-align:left;font-weight:600;white-space:nowrap}
+    td{padding:8px 12px;border-bottom:1px solid #21262d;color:#cdd9e5}
+    tr:last-child td{border-bottom:none}
+    .green{color:#3fb950;font-weight:700}
+    .yellow{color:#d29922;font-weight:700}
+    .red{color:#f85149;font-weight:700}
+    .diagram-box{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:20px 24px;margin:16px 0 24px;font-family:monospace;font-size:13px;line-height:2;color:#cdd9e5;overflow-x:auto}
+    .diagram-box .label{color:#58a6ff;font-weight:700}
+    .step-list{list-style:none;margin:16px 0 24px}
+    .step-list li{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+    .step-num{flex-shrink:0;width:28px;height:28px;background:#1f6feb;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff}
+    .step-body{flex:1}
+    .step-body strong{display:block;font-size:14px;color:#e6edf3;margin-bottom:4px}
+    .step-body p{font-size:13px;color:#8b949e;margin:0}
+    .tip-box{background:#162032;border:1px solid #1f6feb;border-radius:8px;padding:14px 18px;margin:16px 0}
+    .tip-box .tip-head{color:#58a6ff;font-weight:700;font-size:13px;margin-bottom:6px}
+    .tip-box p{font-size:13px;margin:0}
+    .warn-box{background:#2d1a1a;border:1px solid #f85149;border-radius:8px;padding:14px 18px;margin:16px 0}
+    .warn-box .warn-head{color:#f85149;font-weight:700;font-size:13px;margin-bottom:6px}
+    .warn-box p{font-size:13px;margin:0}
+    .faq-item{border:1px solid #30363d;border-radius:8px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:#21262d;padding:14px 16px;font-size:14px;font-weight:700;color:#e6edf3}
+    .faq-q::before{content:"Q. ";color:#58a6ff}
+    .faq-a{padding:14px 16px;font-size:13px;color:#cdd9e5;line-height:1.7}
+    .faq-a::before{content:"A. ";color:#3fb950;font-weight:700}
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin:16px 0}
+    .related-card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 16px;transition:border-color .2s}
+    .related-card:hover{border-color:#58a6ff}
+    .related-card .rc-tag{font-size:10px;color:#8b949e;margin-bottom:6px}
+    .related-card .rc-title{font-size:13px;font-weight:700;color:#e6edf3;line-height:1.4}
+    .cta-block{background:linear-gradient(135deg,#162032,#1a2a1a);border:1px solid #238636;border-radius:12px;padding:24px 20px;text-align:center;margin:32px 0}
+    .cta-block p{color:#cdd9e5;font-size:14px;margin-bottom:16px}
+    .cta-btn{display:inline-block;background:#238636;color:#fff;font-weight:700;font-size:15px;padding:12px 32px;border-radius:8px;text-decoration:none}
+    .cta-btn:hover{background:#2ea043;text-decoration:none}
+    .hl-box{background:#161b22;border-left:3px solid #3fb950;border-radius:0 8px 8px 0;padding:14px 18px;margin:16px 0}
+    .hl-box p{margin:0;font-size:13px}
+    @media(max-width:600px){.hero{padding:20px 16px}.hero h1{font-size:17px}.diagram-box{font-size:11px;padding:14px 12px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- breadcrumb -->
+  <nav class="bc" aria-label="パンくず">
+    <a href="/">LED PRO SHOP</a> &rsaquo;
+    <a href="/articles/">コラム</a> &rsaquo;
+    LEDテープ 配線図・分岐方法ガイド
+  </nav>
+
+  <!-- hero -->
+  <div class="hero">
+    <span class="hero-tag">配線・接続 実務ガイド</span>
+    <h1>LEDテープ 配線図・分岐方法ガイド<br>並列・分岐コネクタ・はんだ付けの接続実例</h1>
+    <p class="hero-meta">更新日: 2026年5月17日｜LED PRO SHOP 編集部</p>
+    <div class="hero-summary">
+      <p>LEDテープの配線図・分岐方法・はんだ付け手順を実例形式で解説します。「電源1台から複数系統に分岐したい」「T字配線の正しいつなぎ方がわからない」「分岐したら暗くなった」——こうした現場の疑問を配線図と具体的な手順で解決します。</p>
+    </div>
+  </div>
+
+  <!-- 配線の基本概念 -->
+  <h2>1. LEDテープ配線の基本：並列と直列の違い</h2>
+  <p>LEDテープの配線方法は大きく<strong>並列配線</strong>と<strong>直列配線</strong>の2種類です。業務施工ではほぼすべての場合で<strong>並列配線</strong>を採用します。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>配線方式</th><th>電圧</th><th>明るさ</th><th>電圧降下</th><th>用途</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>並列配線</strong></td><td class="green">各系統で同じ（12V/24V）</td><td class="green">均一</td><td class="yellow">系統ごとに独立</td><td>ほぼすべての施工</td></tr>
+        <tr><td>直列配線</td><td class="red">系統が長いほど降下</td><td class="red">末端が暗くなる</td><td class="red">累積する</td><td>特定の演出照明のみ</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="hl-box">
+    <p><strong>業務施工の原則：</strong> LEDテープは必ず並列配線。直列は電圧降下が累積するため、末端が必ず暗くなります。</p>
+  </div>
+
+  <!-- 配線図：基本パターン -->
+  <h2>2. 配線図：基本から分岐まで4パターン</h2>
+
+  <h3>パターン①：電源1台 → テープ1系統（最も基本的な配線）</h3>
+  <div class="diagram-box">
+<span class="label">【配線図①：1系統基本配線】</span>
+
+AC100V ──────── [電源（PSU）DC24V] ──────── LEDテープ（+）
+                                          └───────── LEDテープ（−）
+
+接続点: PSU の + 端子 → テープの + (赤線)
+        PSU の − 端子 → テープの − (黒線)
+  </div>
+  <p>最もシンプルな構成。テープの消費電力（W/m × 長さ）の1.2〜1.3倍の容量のPSUを選んでください。</p>
+
+  <h3>パターン②：電源1台 → 2系統並列分岐（T字配線）</h3>
+  <div class="diagram-box">
+<span class="label">【配線図②：2系統並列分岐（T字）】</span>
+
+                        ┌─── LEDテープA（＋）
+AC100V ── [PSU DC24V] ──┤
+                        └─── LEDテープB（＋）
+
+PSU の + 端子 → 分岐点（T字コネクタ or 端子台）→ テープA(+)
+                                               └──────────── テープB(+)
+PSU の − 端子 → 分岐点                        → テープA(−)
+                                               └──────────── テープB(−)
+
+必要PSU容量: (テープA消費W + テープB消費W) × 1.25
+  </div>
+
+  <h3>パターン③：電源2台 → 長距離・複数ゾーン配線</h3>
+  <div class="diagram-box">
+<span class="label">【配線図③：電源2台・ゾーン別配線】</span>
+
+AC100V ── [PSU-1 DC24V] ──── ゾーンA: カウンター (5m)
+                              ゾーンB: 棚下     (3m)
+
+AC100V ── [PSU-2 DC24V] ──── ゾーンC: コーブ   (8m)
+                              ゾーンD: 看板内照 (4m)
+
+※ 1電源あたりの配線長が長くなる場合（12V: 5m超、24V: 10m超）は
+  電圧降下を防ぐため電源を分散させる。
+  </div>
+
+  <h3>パターン④：調光器を含む配線（PWM調光）</h3>
+  <div class="diagram-box">
+<span class="label">【配線図④：調光器（PWMコントローラー）挿入】</span>
+
+AC100V ── [PSU DC24V] ── [調光コントローラー] ──── LEDテープ(+)
+                                              └───── LEDテープ(−)
+
+※ PSU → コントローラー → テープ の順で接続。
+  コントローラーとPSUは同電圧・同系統で接続すること。
+  複数テープを1コントローラーで調光する場合は
+  コントローラーの最大電流値（A）を超えないように分岐する。
+  </div>
+
+  <!-- 分岐の方法 -->
+  <h2>3. 分岐方法：3つの手段と選び方</h2>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>分岐方法</th><th>工具</th><th>信頼性</th><th>防水</th><th>推奨場面</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>T字クリップコネクタ</strong></td>
+          <td class="green">不要</td>
+          <td class="yellow">普通</td>
+          <td class="red">なし</td>
+          <td>室内・試作・短期設置</td>
+        </tr>
+        <tr>
+          <td><strong>端子台（ターミナルブロック）</strong></td>
+          <td class="yellow">ドライバーのみ</td>
+          <td class="green">高い</td>
+          <td class="red">なし（ボックス内設置で対応）</td>
+          <td>多系統分岐・固定配置</td>
+        </tr>
+        <tr>
+          <td><strong>はんだ付け＋熱収縮チューブ</strong></td>
+          <td class="red">はんだごて要</td>
+          <td class="green">最高</td>
+          <td class="green">防水処理可</td>
+          <td>屋外・大電流・長期設置</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>T字クリップコネクタの使い方</h3>
+  <p>市販の「T字分岐コネクタ」はLEDテープを切断せずに中間から電線を取り出せる製品です。テープ幅（8mm/10mm/12mm）と電線太さ（AWG24〜22）が合致しているか必ず確認してください。接触不良が起きやすいため、定期点検の難しい場所には不向きです。</p>
+
+  <h3>端子台を使った分岐（業務施工推奨）</h3>
+  <p>端子台（ターミナルブロック）を電源ボックス内に設置し、+ 側・− 側それぞれの端子に各系統のリード線をまとめる方法です。配線図の見やすさ・将来の系統追加・メンテナンス性がクリップコネクタより大幅に向上します。</p>
+
+  <div class="diagram-box">
+<span class="label">【端子台を使った分岐配線図（例：3系統）】</span>
+
+PSU(+) ── [端子台 TB-1 (+)] ── 系統1(+) → テープA
+                             ├─ 系統2(+) → テープB
+                             └─ 系統3(+) → テープC
+
+PSU(−) ── [端子台 TB-2 (−)] ── 系統1(−) → テープA
+                             ├─ 系統2(−) → テープB
+                             └─ 系統3(−) → テープC
+  </div>
+
+  <!-- はんだ付け手順 -->
+  <h2>4. はんだ付けの基本手順</h2>
+  <p>はんだ付けはLEDテープ配線の中で最も接触抵抗が低く、長期信頼性が高い接続方法です。</p>
+
+  <ul class="step-list">
+    <li>
+      <span class="step-num">1</span>
+      <div class="step-body">
+        <strong>テープをカット線で切断する</strong>
+        <p>テープは3〜5cm間隔のカット線のみ切断可能。カット線以外を切ると回路が壊れます。</p>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">2</span>
+      <div class="step-body">
+        <strong>端子パッドにフラックスを塗布</strong>
+        <p>はんだの濡れ性が向上し、接合不良を防ぎます。フラックスは水洗い不要のノークリーンタイプを推奨。</p>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">3</span>
+      <div class="step-body">
+        <strong>コテ先温度：300〜320℃ に設定</strong>
+        <p>温度が高すぎると銅パッドが剥離します。コテは事前に十分加熱して安定させてから使用。</p>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">4</span>
+      <div class="step-body">
+        <strong>はんだを当てる時間は2〜3秒以内</strong>
+        <p>長時間コテを当てると周辺のLEDチップが熱ダメージを受けます。素早く行うのがコツ。</p>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">5</span>
+      <div class="step-body">
+        <strong>熱収縮チューブで防湿処理</strong>
+        <p>はんだ部分を熱収縮チューブで覆い、ホットガンで収縮させます。湿気による腐食・短絡を防止。</p>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">6</span>
+      <div class="step-body">
+        <strong>テスターで導通確認（通電前必須）</strong>
+        <p>+ と − の導通・ショートがないか確認。極性逆接続はLEDを即破壊するため必ず確認してください。</p>
+      </div>
+    </li>
+  </ul>
+
+  <div class="warn-box">
+    <div class="warn-head">⚠ はんだ付けの注意事項</div>
+    <p>極性（＋と−）を誤接続すると通電直後にLEDが破壊されます。赤線が＋（プラス）、黒線が−（マイナス）が一般的ですが、テープの印刷を必ず確認してください。COBテープは発光面が均一なため極性マーク（＋側の切り欠き等）を見落としやすいため注意が必要です。</p>
+  </div>
+
+  <!-- 電源容量の計算 -->
+  <h2>5. 分岐設計：電源容量の計算方法</h2>
+  <p>複数系統に分岐する場合、電源（PSU）の容量計算が最重要です。</p>
+
+  <div class="hl-box">
+    <p><strong>必要PSU容量（W）</strong> = 各系統の（W/m × 長さ）の合計 × 安全率1.2〜1.3</p>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>構成例</th><th>系統1</th><th>系統2</th><th>系統3</th><th>合計消費W</th><th>推奨PSU容量</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>カフェ間接照明</td>
+          <td>6W/m × 3m = 18W</td>
+          <td>6W/m × 3m = 18W</td>
+          <td>—</td>
+          <td>36W</td>
+          <td class="green">60W以上</td>
+        </tr>
+        <tr>
+          <td>カウンター＋棚下</td>
+          <td>12W/m × 3m = 36W</td>
+          <td>6W/m × 4m = 24W</td>
+          <td>—</td>
+          <td>60W</td>
+          <td class="green">100W以上</td>
+        </tr>
+        <tr>
+          <td>店舗3ゾーン</td>
+          <td>12W/m × 5m = 60W</td>
+          <td>12W/m × 5m = 60W</td>
+          <td>12W/m × 5m = 60W</td>
+          <td>180W</td>
+          <td class="green">240W以上（電源2台推奨）</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip-box">
+    <div class="tip-head">💡 DC24V推奨の理由</div>
+    <p>同じW数の場合、DC24Vは12Vより電流値が半分になります。電流が小さいほど配線の発熱が少なく、長距離配線での電圧降下も抑制されます。配線長が5m以上になる場合はDC24V電源・DC24V対応テープの使用を強く推奨します。</p>
+  </div>
+
+  <!-- 電圧降下対策 -->
+  <h2>6. 電圧降下を防ぐつなぎ方</h2>
+  <p>電圧降下はLEDテープの末端が暗くなる最大の原因です。以下の対策で防止してください。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>対策</th><th>効果</th><th>コスト</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>DC24Vに切り替える</strong></td>
+          <td class="green">根本的な解決。電流値半減で配線抵抗による降下を大幅削減</td>
+          <td class="yellow">PSU・テープの変更が必要</td>
+        </tr>
+        <tr>
+          <td><strong>配線を太くする（AWG18以上）</strong></td>
+          <td class="green">配線抵抗を下げ降下を抑制</td>
+          <td class="green">低コスト</td>
+        </tr>
+        <tr>
+          <td><strong>両端から給電する</strong></td>
+          <td class="green">テープの両端から配線することで降下を半分に</td>
+          <td class="green">配線長が2倍になるのみ</td>
+        </tr>
+        <tr>
+          <td><strong>テープを短く分割し個別給電</strong></td>
+          <td class="green">最も確実。電圧降下が系統ごとに独立</td>
+          <td class="yellow">PSU分散・配線増</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FAQ -->
+  <h2>よくある質問</h2>
+  <div class="faq-item">
+    <div class="faq-q">LEDテープを分岐させると暗くなりますか？</div>
+    <div class="faq-a">並列分岐では電圧は同じままなので明るさは変わりません。ただし電源（PSU）の合計電流容量が不足すると全体が暗くなります。分岐する系統数 × 各系統の電流値を合計し、その1.2〜1.3倍の容量の電源を選んでください。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">分岐コネクタとはんだ付けはどちらが良いですか？</div>
+    <div class="faq-a">工具不要・施工時間短縮ならクリップ型分岐コネクタ、長期信頼性・防水性ならはんだ付け＋熱収縮チューブが推奨です。可動部がある場所・屋外露出部・大電流系統（18W/m以上）ははんだ付けが安心です。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">電源1台から何系統まで分岐できますか？</div>
+    <div class="faq-a">電源の定格W数÷各系統の消費Wが最大系統数の目安ですが、安全率1.2〜1.3を確保してください。例：100W電源でW/m=6Wのテープを5m系統に接続する場合、30W×1.25＝37.5Wなので2系統（計75W）までが安全です。3系統以上は別電源の使用を推奨します。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">LEDテープのはんだ付けで注意することは？</div>
+    <div class="faq-a">コテ先温度は300〜320℃が適切です。高温すぎるとパッドが剥がれ、低温すぎると冷えはんだになります。はんだを当てる時間は2〜3秒以内。はんだ後はテープのカット面から熱収縮チューブで覆い防湿処理をしてください。極性（＋と−）の誤接続に注意し、必ずテスターで導通確認をしてから通電してください。</div>
+  </div>
+
+  <!-- 関連記事 -->
+  <h2>関連ガイド</h2>
+  <div class="related-grid">
+    <a href="/articles/led-tape-wiring-basics" class="related-card">
+      <div class="rc-tag">配線基礎</div>
+      <div class="rc-title">LEDテープ 並列配線・つなぎ方の基本｜ハンダ付け・コネクタ・端子台の選び方</div>
+    </a>
+    <a href="/articles/led-psu-capacity-guide" class="related-card">
+      <div class="rc-tag">電源選定</div>
+      <div class="rc-title">LEDテープ DC24V/12V 電源（PSU）容量計算 早見表</div>
+    </a>
+    <a href="/articles/led-tape-dimming-methods-guide" class="related-card">
+      <div class="rc-tag">調光</div>
+      <div class="rc-title">LEDテープの調光方式ガイド｜PWM・0〜10V・DALI・スマート調光の選び方</div>
+    </a>
+    <a href="/articles/led-tape-controller-dimmer-guide" class="related-card">
+      <div class="rc-tag">コントローラー</div>
+      <div class="rc-title">LEDテープ用コントローラー・調光器の選び方</div>
+    </a>
+    <a href="/articles/led-tape-heat-management-guide" class="related-card">
+      <div class="rc-tag">放熱</div>
+      <div class="rc-title">LEDテープの放熱・発熱対策｜アルミフレーム活用と設計上の注意点</div>
+    </a>
+    <a href="/articles/12v-vs-24v-led-tape" class="related-card">
+      <div class="rc-tag">電圧選定</div>
+      <div class="rc-title">12V vs 24V LEDテープ 違いと選び方｜配線長・安全性・用途別比較</div>
+    </a>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <p>業務用LEDテープ・DC24V電源・分岐コネクタ・端子台をプロ価格でご提供しています。</p>
+    <a href="/" class="cta-btn">LED PRO SHOP で製品を見る</a>
+  </div>
+
+</div>
+</body>
+</html>
