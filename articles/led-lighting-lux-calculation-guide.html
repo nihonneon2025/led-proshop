@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LED照明 照度計算ガイド｜店舗・オフィス・工場のJIS Z 9110必要照度基準と計算方法 | LED PRO SHOP</title>
+  <meta name="description" content="LED照明の照度計算方法をJIS Z 9110基準に沿って解説。店舗・オフィス・工場・廊下・駐車場など用途別の必要照度一覧と、光束法による照度計算式・器具台数の算出手順を実務者向けに整理。照明設計の基礎から器具選定まで。">
+  <meta name="keywords" content="照度計算, JIS Z 9110, 必要照度, 照明設計, 店舗 照明 基準, オフィス 照明 基準, 工場 照明 基準, 照度 計算式, LED照明 設計, 光束法">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-lighting-lux-calculation-guide">
+
+  <!-- OGP -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-lighting-lux-calculation-guide">
+  <meta property="og:title" content="LED照明 照度計算ガイド｜店舗・オフィス・工場のJIS Z 9110必要照度基準と計算方法 | LED PRO SHOP">
+  <meta property="og:description" content="JIS Z 9110の必要照度基準と光束法による照度計算式を解説。店舗・オフィス・工場・廊下・駐車場の用途別必要照度一覧と器具台数の算出手順を実務者向けに整理。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-lighting-lux-calculation-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LED照明 照度計算ガイド｜店舗・オフィス・工場のJIS Z 9110必要照度基準と計算方法 | LED PRO SHOP">
+  <meta name="twitter:description" content="JIS Z 9110の必要照度基準と照度計算式を解説。店舗・オフィス・工場の用途別必要照度一覧と器具台数の算出手順。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-lighting-lux-calculation-guide-hero.webp">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LED照明 照度計算ガイド｜店舗・オフィス・工場のJIS Z 9110必要照度基準と計算方法",
+    "description": "JIS Z 9110の必要照度基準と光束法による照度計算式を解説。店舗・オフィス・工場・廊下・駐車場の用途別必要照度一覧と器具台数の算出手順を実務者向けに整理。",
+    "url": "https://led-proshop.com/articles/led-lighting-lux-calculation-guide",
+    "image": "https://led-proshop.com/articles/images/led-lighting-lux-calculation-guide-hero.webp",
+    "datePublished": "2026-05-18",
+    "dateModified": "2026-05-18",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP"},
+    "publisher": {"@type": "Organization", "name": "LED PRO SHOP", "url": "https://led-proshop.com"}
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/article.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">LED PRO SHOP</a>
+    <nav class="header-nav">
+      <a href="/articles/">技術情報</a>
+      <a href="/">商品一覧</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-main">
+  <article>
+
+    <div class="article-hero">
+      <img src="images/led-lighting-lux-calculation-guide-hero.webp"
+           alt="LED照明 照度計算ガイド JIS Z 9110基準" loading="lazy">
+    </div>
+
+    <div class="article-header">
+      <div class="article-category">照明設計・技術基礎</div>
+      <h1>LED照明 照度計算ガイド<br>店舗・オフィス・工場のJIS Z 9110必要照度基準と計算方法</h1>
+      <p class="article-lead">
+        LED照明の設計・選定において「何lux必要か」「器具は何台必要か」という問いは避けて通れない。
+        本ガイドでは、JIS Z 9110（建築物の照明基準）に基づく用途別の必要照度一覧と、
+        光束法による器具台数の算出手順を実務向けに解説する。
+        照明更新の見積・設計書作成・施主への説明資料として活用できる内容に絞って整理した。
+      </p>
+    </div>
+
+    <div class="article-body">
+
+      <nav class="toc">
+        <p class="toc-title">目次</p>
+        <ol>
+          <li><a href="#what-is-lux">照度（lux）とは何か</a></li>
+          <li><a href="#jis-standard">JIS Z 9110 用途別必要照度一覧</a></li>
+          <li><a href="#calculation">光束法による照度計算の手順</a></li>
+          <li><a href="#practical">実務での照度計算例</a></li>
+          <li><a href="#color-temp">照度と色温度・演色性の組み合わせ</a></li>
+          <li><a href="#measurement">照度計による現地測定の基本</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ol>
+      </nav>
+
+      <!-- Section 1 -->
+      <section id="what-is-lux">
+        <h2>照度（lux）とは何か</h2>
+        <p>
+          照度（lux: ルクス）は「ある面に届く光の量」を示す単位で、
+          1㎡の面に1ルーメン（lm）の光が均一に当たる状態が1luxに相当する。
+          照明設計における照度は、作業面（床面・机面など）での平均照度を指すことが多い。
+        </p>
+
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>用語</th>
+                <th>単位</th>
+                <th>意味</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>照度（E）</td>
+                <td>lux（lx）</td>
+                <td>照らされる面の明るさ。光束 ÷ 面積で求まる</td>
+              </tr>
+              <tr>
+                <td>光束（F）</td>
+                <td>lm（ルーメン）</td>
+                <td>光源が放出する光の総量。LED器具のスペック表に記載</td>
+              </tr>
+              <tr>
+                <td>光度（I）</td>
+                <td>cd（カンデラ）</td>
+                <td>特定方向への光の強さ。スポットライト設計で使用</td>
+              </tr>
+              <tr>
+                <td>輝度（L）</td>
+                <td>cd/㎡</td>
+                <td>面の明るさ（まぶしさに関係）。グレア評価で使用</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          「明るさ」という言葉は日常的に使われるが、照明設計では照度（lux）を基準に計画する。
+          同じ器具でも天井高・器具の配置・部屋の反射率によって作業面の照度は変わるため、
+          単純に「器具のルーメン数」だけでは設計できない。
+        </p>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="jis-standard">
+        <h2>JIS Z 9110 用途別必要照度一覧</h2>
+        <p>
+          JIS Z 9110「建築物の照明基準」は、用途・作業内容に応じた「推奨照度」を定めている。
+          法的拘束力はないが、照明設計・更新計画・入札仕様書の根拠として広く用いられる。
+          以下は代表的な用途の推奨照度をまとめた早見表。
+        </p>
+
+        <h3>業務用施設の推奨照度（JIS Z 9110参考）</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>用途・エリア</th>
+                <th>推奨照度（lux）</th>
+                <th>備考</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>オフィス（事務室・一般作業）</strong></td>
+                <td>500〜750 lux</td>
+                <td>VDT作業では500lux・書類作業は750lux</td>
+              </tr>
+              <tr>
+                <td>オフィス（会議室）</td>
+                <td>500 lux</td>
+                <td>プレゼン用途は調光対応が望ましい</td>
+              </tr>
+              <tr>
+                <td>オフィス（廊下・通路）</td>
+                <td>100〜200 lux</td>
+                <td>非常口・避難路は常時確保必須</td>
+              </tr>
+              <tr>
+                <td><strong>工場（精密作業・組立）</strong></td>
+                <td>750〜1,500 lux</td>
+                <td>微細部品・検査工程は1,500lux以上</td>
+              </tr>
+              <tr>
+                <td>工場（重作業・機械室）</td>
+                <td>300〜500 lux</td>
+                <td>視認性・安全確保が目的</td>
+              </tr>
+              <tr>
+                <td>工場（倉庫・荷捌き）</td>
+                <td>100〜200 lux</td>
+                <td>ラベル確認は150lux以上推奨</td>
+              </tr>
+              <tr>
+                <td><strong>小売店・一般販売</strong></td>
+                <td>500〜1,000 lux</td>
+                <td>商品展示エリアは高照度で陳列映えを重視</td>
+              </tr>
+              <tr>
+                <td>ショーウィンドウ・陳列棚</td>
+                <td>1,000〜2,000 lux</td>
+                <td>商品の質感・色を見せるため高照度に</td>
+              </tr>
+              <tr>
+                <td>食品売場・スーパー</td>
+                <td>500〜750 lux</td>
+                <td>鮮魚・精肉はRa90以上で色の再現性も重要</td>
+              </tr>
+              <tr>
+                <td><strong>飲食店（一般）</strong></td>
+                <td>200〜500 lux</td>
+                <td>業態・雰囲気でゾーン差をつけるのが一般的</td>
+              </tr>
+              <tr>
+                <td>飲食店（カウンター・手元）</td>
+                <td>300〜500 lux</td>
+                <td>メニュー読みやすさと手元視認性を確保</td>
+              </tr>
+              <tr>
+                <td><strong>ドラッグストア・薬局</strong></td>
+                <td>500〜1,000 lux</td>
+                <td>医薬品棚は750〜1,000lux・調剤室はさらに高照度</td>
+              </tr>
+              <tr>
+                <td><strong>医療（診察室・処置室）</strong></td>
+                <td>500〜1,000 lux</td>
+                <td>手術室は10,000lux以上・無影灯を使用</td>
+              </tr>
+              <tr>
+                <td>病院（病室・廊下）</td>
+                <td>100〜200 lux（廊下）/ 100〜300 lux（病室）</td>
+                <td>夜間は10〜20lux程度に調光対応</td>
+              </tr>
+              <tr>
+                <td><strong>介護施設（居室・廊下）</strong></td>
+                <td>居室100 lux / 廊下20〜100 lux</td>
+                <td>JIS Z 9110・夜間2〜10luxの最低照度維持</td>
+              </tr>
+              <tr>
+                <td>介護施設（共用ホール）</td>
+                <td>200〜300 lux</td>
+                <td>高齢者の視力低下を考慮してやや高めに</td>
+              </tr>
+              <tr>
+                <td><strong>学校（教室）</strong></td>
+                <td>300〜750 lux</td>
+                <td>JIS Z 9110黒板面は750lux</td>
+              </tr>
+              <tr>
+                <td>学校（廊下・階段）</td>
+                <td>100〜200 lux</td>
+                <td>安全確保のための最低照度</td>
+              </tr>
+              <tr>
+                <td><strong>マンション共用部（廊下）</strong></td>
+                <td>30〜75 lux</td>
+                <td>防犯カメラ対応を考慮する場合は75lux以上推奨</td>
+              </tr>
+              <tr>
+                <td>マンション共用部（駐車場）</td>
+                <td>30〜75 lux（屋外）/ 75〜150 lux（屋内）</td>
+                <td>防犯・ナンバー視認性を考慮</td>
+              </tr>
+              <tr>
+                <td>マンション共用部（エントランス）</td>
+                <td>100〜300 lux</td>
+                <td>顔認識・防犯カメラ対応で150lux以上推奨</td>
+              </tr>
+              <tr>
+                <td><strong>倉庫・物流施設（通路）</strong></td>
+                <td>100〜200 lux</td>
+                <td>ラベル確認・フォークリフト走行路</td>
+              </tr>
+              <tr>
+                <td>倉庫・物流施設（棚間）</td>
+                <td>150〜300 lux</td>
+                <td>ピッキング作業エリアは200lux以上</td>
+              </tr>
+              <tr>
+                <td><strong>駐車場（屋内）</strong></td>
+                <td>75〜150 lux</td>
+                <td>入口付近は150lux・進入路は100lux以上</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="info-box">
+          <p class="info-box-title">作業面照度と周囲照度の考え方</p>
+          <p>
+            JIS Z 9110は「作業面（通常は床上80cm）」での照度を基準とする。
+            天井・壁への間接照明が主体の場合は、作業面照度が想定より低くなることがあるため、
+            照度計での現地確認が重要。
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="calculation">
+        <h2>光束法による照度計算の手順</h2>
+        <p>
+          照明器具の必要台数を算出する最も一般的な方法が「光束法（lumen method）」。
+          以下の計算式で求める。
+        </p>
+
+        <div class="info-box">
+          <p class="info-box-title">光束法の基本計算式</p>
+          <p><strong>必要台数 = (目標照度E × 室面積A) ÷ (器具光束F × 照明率U × 保守率M)</strong></p>
+          <p style="font-size:12px;margin-top:8px;">
+            E: 目標照度（lux） / A: 室面積（㎡） / F: 器具1台の光束（lm） / U: 照明率 / M: 保守率
+          </p>
+        </div>
+
+        <h3>各係数の求め方</h3>
+
+        <h4>① 照明率（U）</h4>
+        <p>
+          光源から出た光のうち、作業面に有効に届く割合。
+          室指数（RC）と部屋の反射率（天井・壁・床）から求める。
+        </p>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>室指数（RC）の計算</th>
+                <th>RC = (W × D) ÷ {H × (W + D)}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>W: 室の幅（m）</td>
+                <td>D: 室の奥行（m）</td>
+              </tr>
+              <tr>
+                <td>H: 光源から作業面までの高さ（m）</td>
+                <td>例: W=10m, D=8m, H=2.5m → RC=2.56</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          室指数が大きいほど（広くて低天井）、照明率は高くなる傾向がある。
+          器具メーカーの光束法計算表（照明率表）で RC と反射率から U を読み取る。
+          一般的な目安: U = 0.5〜0.75（白い壁・天井の一般的な室内）
+        </p>
+
+        <h4>② 保守率（M）</h4>
+        <p>
+          照明器具は経年で光量が低下する（LEDでも5〜10年で70%以下に低下するL70寿命が目安）。
+          この低下を見込んだ係数が保守率。
+        </p>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>環境</th>
+                <th>保守率（M）の目安</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>清潔な室内（事務所・医療施設）</td>
+                <td>0.75〜0.80</td>
+              </tr>
+              <tr>
+                <td>一般室内（店舗・学校・住宅）</td>
+                <td>0.70〜0.75</td>
+              </tr>
+              <tr>
+                <td>やや汚れる環境（工場・倉庫）</td>
+                <td>0.60〜0.70</td>
+              </tr>
+              <tr>
+                <td>粉塵・油煙が多い環境（厨房・鋳造工場）</td>
+                <td>0.50〜0.60</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="practical">
+        <h2>実務での照度計算例</h2>
+
+        <h3>例1: 事務所（W10m × D8m、天井高2.8m、目標照度500lux）</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>項目</th>
+                <th>値</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>目標照度（E）</td>
+                <td>500 lux</td>
+              </tr>
+              <tr>
+                <td>室面積（A）</td>
+                <td>80 ㎡（10m × 8m）</td>
+              </tr>
+              <tr>
+                <td>使用器具</td>
+                <td>LEDベースライト 4,800lm/台</td>
+              </tr>
+              <tr>
+                <td>照明率（U）</td>
+                <td>0.65（室指数RC≒2.5、白壁想定）</td>
+              </tr>
+              <tr>
+                <td>保守率（M）</td>
+                <td>0.75（清潔な事務所）</td>
+              </tr>
+              <tr>
+                <td><strong>必要台数</strong></td>
+                <td><strong>= (500 × 80) ÷ (4,800 × 0.65 × 0.75) = 40,000 ÷ 2,340 ≒ 17.1台 → 18台</strong></td>
+              </tr>
+              <tr>
+                <td>配置</td>
+                <td>9列 × 2灯 = 18台（5,400lux ÷ 約500lux達成）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>例2: 食品工場検査ライン（W6m × D20m、天井高4m、目標照度1,000lux）</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>項目</th>
+                <th>値</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>目標照度（E）</td>
+                <td>1,000 lux</td>
+              </tr>
+              <tr>
+                <td>室面積（A）</td>
+                <td>120 ㎡（6m × 20m）</td>
+              </tr>
+              <tr>
+                <td>使用器具</td>
+                <td>LED高天井照明 15,000lm/台</td>
+              </tr>
+              <tr>
+                <td>照明率（U）</td>
+                <td>0.60（高天井・工場）</td>
+              </tr>
+              <tr>
+                <td>保守率（M）</td>
+                <td>0.65（食品工場・清掃あり）</td>
+              </tr>
+              <tr>
+                <td><strong>必要台数</strong></td>
+                <td><strong>= (1,000 × 120) ÷ (15,000 × 0.60 × 0.65) = 120,000 ÷ 5,850 ≒ 20.5台 → 21台</strong></td>
+              </tr>
+              <tr>
+                <td>配置</td>
+                <td>3列 × 7灯 = 21台</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>例3: マンション廊下（W1.5m × D30m、天井高2.5m、目標照度50lux）</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>項目</th>
+                <th>値</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>目標照度（E）</td>
+                <td>50 lux</td>
+              </tr>
+              <tr>
+                <td>室面積（A）</td>
+                <td>45 ㎡（1.5m × 30m）</td>
+              </tr>
+              <tr>
+                <td>使用器具</td>
+                <td>LED直付け照明（人感センサー付き）1,200lm/台</td>
+              </tr>
+              <tr>
+                <td>照明率（U）</td>
+                <td>0.55（細長い廊下）</td>
+              </tr>
+              <tr>
+                <td>保守率（M）</td>
+                <td>0.70</td>
+              </tr>
+              <tr>
+                <td><strong>必要台数</strong></td>
+                <td><strong>= (50 × 45) ÷ (1,200 × 0.55 × 0.70) = 2,250 ÷ 462 ≒ 4.9台 → 5台</strong></td>
+              </tr>
+              <tr>
+                <td>配置</td>
+                <td>1列 × 5灯（6m間隔）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="info-box">
+          <p class="info-box-title">LEDテープ照明での照度計算の注意点</p>
+          <p>
+            LEDテープ照明（間接照明・コーブ照明）を使用する場合、
+            光源の光束は直接作業面に当たらず反射光で照らすため、
+            照明率が低くなる（U = 0.3〜0.5が目安）。
+            LEDテープ単体での必要照度を確保しようとすると多量のテープが必要になるため、
+            間接照明は「雰囲気・演出」と割り切り、
+            作業照度の確保はベースライト等の直接照明と組み合わせて設計するのが実務上の定石。
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 5 -->
+      <section id="color-temp">
+        <h2>照度と色温度・演色性の組み合わせ</h2>
+        <p>
+          適切な照度を確保しても、色温度・演色性が用途に合っていないと
+          「明るいが作業しにくい」「商品が映えない」という問題が起きる。
+          照度・色温度・演色性は3つセットで設計することが重要。
+        </p>
+
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>用途</th>
+                <th>推奨照度</th>
+                <th>推奨色温度</th>
+                <th>最低Ra</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>精密作業・検査（工場）</td>
+                <td>750〜1,500lux</td>
+                <td>5,000〜6,500K（昼光色）</td>
+                <td>Ra80以上（Ra90推奨）</td>
+              </tr>
+              <tr>
+                <td>事務作業・書類（オフィス）</td>
+                <td>500〜750lux</td>
+                <td>4,000〜5,000K（白色・昼白色）</td>
+                <td>Ra80以上</td>
+              </tr>
+              <tr>
+                <td>食品売場（スーパー・飲食）</td>
+                <td>500〜750lux</td>
+                <td>3,000〜4,000K（温白色〜白色）</td>
+                <td>Ra90以上</td>
+              </tr>
+              <tr>
+                <td>アパレル・ファッション</td>
+                <td>750〜1,000lux</td>
+                <td>3,500〜4,000K</td>
+                <td>Ra90以上</td>
+              </tr>
+              <tr>
+                <td>美容院・サロン</td>
+                <td>300〜500lux</td>
+                <td>3,500〜4,500K</td>
+                <td>Ra95以上</td>
+              </tr>
+              <tr>
+                <td>高級飲食・ホテル</td>
+                <td>100〜300lux</td>
+                <td>2,700〜3,000K（電球色）</td>
+                <td>Ra90以上</td>
+              </tr>
+              <tr>
+                <td>廊下・通路（共用部）</td>
+                <td>30〜100lux</td>
+                <td>4,000〜5,000K</td>
+                <td>Ra80以上</td>
+              </tr>
+              <tr>
+                <td>医療・調剤（薬局）</td>
+                <td>500〜1,000lux</td>
+                <td>4,000〜5,000K</td>
+                <td>Ra90以上</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 6 -->
+      <section id="measurement">
+        <h2>照度計による現地測定の基本</h2>
+        <p>
+          設計値と実測値は必ずしも一致しない。
+          施工完了後・既存設備の更新前には照度計で実測し、
+          必要照度を満たしているかを確認することが重要。
+        </p>
+
+        <h3>測定の手順</h3>
+        <ul>
+          <li><strong>測定点の選定</strong>: 室内を均等なグリッドに分割し、各交点で測定する（例: 10㎡に1点）</li>
+          <li><strong>測定高さ</strong>: 作業面（床上80cm）または床面（廊下・駐車場など）</li>
+          <li><strong>安定後に測定</strong>: LEDは点灯後数分で安定するため、点灯5分後以降に測定する</li>
+          <li><strong>外光の遮断</strong>: 自然光が入る場合は夜間または遮光した状態で測定する</li>
+          <li><strong>平均照度の算出</strong>: 全測定点の照度を合計し、測定点数で割る</li>
+        </ul>
+
+        <h3>均斉度（最低照度÷平均照度）の確認</h3>
+        <p>
+          作業エリア内で照度にムラが大きいと視認性・疲労に影響する。
+          JIS基準では均斉度（最低照度÷平均照度）の目安として
+          オフィスや工場では0.5〜0.7以上が推奨されている。
+          器具の配置・スペーシングを調整して均斉度を確保する。
+        </p>
+      </section>
+
+      <!-- Section 7 -->
+      <section id="faq">
+        <h2>よくある質問</h2>
+
+        <div class="faq-item">
+          <h3 class="faq-q">Q: JIS Z 9110は法律ですか？守らないと罰則はありますか？</h3>
+          <p class="faq-a">
+            JIS Z 9110は工業規格であり、法的強制力はありません。ただし、建築基準法や労働安全衛生規則では
+            作業場の照度基準（例: 精密作業は300lux以上）を定めており、これは法的義務になります。
+            工場・作業場では労働安全衛生規則第604条の照度基準も確認してください。
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">Q: 照明率の表がない場合はどう計算しますか？</h3>
+          <p class="faq-a">
+            器具メーカーのカタログに照明率表が掲載されています。
+            メーカー資料が入手できない場合は、
+            一般的な室内用器具では U = 0.60〜0.70 を目安として概算計算に使うことができます。
+            ただし精密設計では必ずメーカー提供の照明率表を参照してください。
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">Q: LEDに変えると照度は上がりますか？下がりますか？</h3>
+          <p class="faq-a">
+            一般的に、同じ消費電力なら蛍光灯よりLEDの方が光束（lm）は多く、照度は上がることが多いです。
+            一方で、既存器具と同じ「W数（消費電力）」のLEDを選んでも、
+            光の向きや拡散が異なることで作業面への照度が変わる場合があります。
+            更新時は消費電力ではなく光束（lm）と配光で器具を選定してください。
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">Q: 照度計算ソフトは必要ですか？</h3>
+          <p class="faq-a">
+            本格的な照明設計には、各メーカーが無償提供している照明シミュレーションソフト
+            （DIALUX等）を活用することで、3D配光・照度分布を可視化できます。
+            概算台数の見積もりなら本ガイドの光束法計算で十分対応できます。
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">Q: LEDテープ照明で500luxを確保できますか？</h3>
+          <p class="faq-a">
+            間接照明・コーブ照明用途のLEDテープ単体では、
+            作業面500luxを確保するのは現実的ではありません（照明率が低いため非常に多量のテープが必要）。
+            LEDテープは空間演出・間接光の役割とし、
+            作業照度はベースライトや直接照明器具で確保するのが標準的な設計です。
+          </p>
+        </div>
+      </section>
+
+      <div class="article-cta">
+        <h2>業務用LEDテープ・照明器具の選定はこちら</h2>
+        <p>Ra90高演色・IP65防水・12V/24V対応の業務仕様品を取り揃えています。</p>
+        <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+      </div>
+
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-logo">LED PRO SHOP</p>
+    <nav class="footer-nav">
+      <a href="/articles/">技術情報・施工ガイド</a>
+      <a href="/">商品一覧</a>
+    </nav>
+    <p class="footer-copy">&copy; 2026 LED PRO SHOP</p>
+  </div>
+</footer>
+
+</body>
+</html>
