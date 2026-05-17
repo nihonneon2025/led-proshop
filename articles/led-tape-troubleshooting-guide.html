@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEDテープ チラつき・点灯しない・端が暗い 原因と対策｜トラブルシューティング完全ガイド | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープの7大トラブル（チラつき・点灯しない・端が暗い電圧降下・熱い・剥がれる・色ムラ・光量不足）の原因と対策を診断チャート付きで解説。PWM調光のちらつき・電源容量不足・接触不良など、現場で実際に起きるトラブルを実務目線で整理した業務施工者向け完全ガイド。">
+  <meta name="keywords" content="LEDテープ チラつき, LEDテープ 点灯しない, LEDテープ 端が暗い, 電圧降下 LEDテープ, LEDテープ 熱い, LEDテープ 剥がれる, LED ちらつき 原因, LEDテープ トラブル">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-troubleshooting-guide">
+
+  <!-- OGP -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-troubleshooting-guide">
+  <meta property="og:title" content="LEDテープ チラつき・点灯しない・端が暗い 原因と対策｜トラブルシューティング完全ガイド | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープの7大トラブル（チラつき・点灯しない・電圧降下・熱い・剥がれる・色ムラ）の原因と対策を診断チャート付きで解説。現場で実際に起きるトラブルを実務目線で整理。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-troubleshooting-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ チラつき・点灯しない・端が暗い 原因と対策｜トラブルシューティング完全ガイド | LED PRO SHOP">
+  <meta name="twitter:description" content="LEDテープの7大トラブルの原因と対策。チラつき・点灯しない・電圧降下・熱い・剥がれるを診断チャート付きで解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-troubleshooting-guide-hero.webp">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDテープ チラつき・点灯しない・端が暗い 原因と対策｜トラブルシューティング完全ガイド",
+    "description": "LEDテープの7大トラブル（チラつき・点灯しない・電圧降下・熱い・剥がれる・色ムラ・光量不足）の原因と対策を診断チャート付きで解説。",
+    "url": "https://led-proshop.com/articles/led-tape-troubleshooting-guide",
+    "image": "https://led-proshop.com/articles/images/led-tape-troubleshooting-guide-hero.webp",
+    "datePublished": "2026-05-18",
+    "dateModified": "2026-05-18",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP"},
+    "publisher": {"@type": "Organization", "name": "LED PRO SHOP", "url": "https://led-proshop.com"}
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/article.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">LED PRO SHOP</a>
+    <nav class="header-nav">
+      <a href="/articles/">技術情報</a>
+      <a href="/">商品一覧</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-main">
+  <article>
+
+    <div class="article-hero">
+      <img src="images/led-tape-troubleshooting-guide-hero.webp"
+           alt="LEDテープトラブルシューティング" loading="lazy">
+    </div>
+
+    <div class="article-header">
+      <div class="article-category">施工ガイド</div>
+      <h1>LEDテープ チラつき・点灯しない・端が暗い<br>原因と対策 トラブルシューティング完全ガイド</h1>
+      <p class="article-lead">
+        LEDテープは仕様・接続・電源が揃っていれば長期安定稼働するが、
+        どれか1つでも外れると「つかない」「チラつく」「暗い」といったトラブルが起きる。
+        本ガイドでは現場でよく起きる7つの症状を、原因の特定から対策まで体系的に解説する。
+      </p>
+    </div>
+
+    <div class="article-body">
+
+      <nav class="toc">
+        <p class="toc-title">目次</p>
+        <ol>
+          <li><a href="#no-light">① 点灯しない・まったくつかない</a></li>
+          <li><a href="#flicker">② チラつき・ちらちらする</a></li>
+          <li><a href="#dim-end">③ 端が暗い・中間から暗くなる（電圧降下）</a></li>
+          <li><a href="#hot">④ テープが熱い・異常発熱</a></li>
+          <li><a href="#peel">⑤ テープが剥がれる・接着が弱い</a></li>
+          <li><a href="#color-uneven">⑥ 色がムラになる・部分的に色が違う</a></li>
+          <li><a href="#dim-overall">⑦ 全体的に暗い・光量不足</a></li>
+          <li><a href="#diagnosis">症状別 診断チャート</a></li>
+        </ol>
+      </nav>
+
+      <!-- 1 -->
+      <section id="no-light">
+        <h2>① 点灯しない・まったくつかない</h2>
+
+        <h3>主な原因と確認順序</h3>
+
+        <table>
+          <thead>
+            <tr><th>確認箇所</th><th>症状・チェック方法</th><th>対策</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>電源（アダプタ/PSU）</strong></td>
+              <td>電源のLEDインジケータが消灯・テスターで出力電圧をチェック</td>
+              <td>電源を交換。出力電圧がテープ定格（12V/24V）と一致しているか確認</td>
+            </tr>
+            <tr>
+              <td><strong>電源容量不足</strong></td>
+              <td>テープの総消費電力（W）が電源定格（W）を超えている</td>
+              <td>電源を大容量品に交換。テープ総W = W/m × 長さ(m) × 1.2（余裕係数）で計算</td>
+            </tr>
+            <tr>
+              <td><strong>コネクタの挿し間違い</strong></td>
+              <td>プラス（+）とマイナス（−）が逆接続</td>
+              <td>赤線を+端子・黒線を−端子に接続し直す。逆接でもテープは壊れないが点灯しない</td>
+            </tr>
+            <tr>
+              <td><strong>ハンダ付け不良・断線</strong></td>
+              <td>接続部を触ると一瞬点灯する・テープを曲げると点灯する</td>
+              <td>接続部を再ハンダ。クリップコネクタは銅パッドへの接触不良が多い</td>
+            </tr>
+            <tr>
+              <td><strong>切断位置のずれ</strong></td>
+              <td>カット部分が導線上ではなく銅パッドを外れている</td>
+              <td>正しいカット位置（銅パッドの中央ライン）で再カットして接続</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>よくある誤接続パターン</h3>
+        <p>
+          24Vのテープに12V電源を接続すると点灯するが暗く、逆（12Vテープに24V）は過電圧で破損する。
+          電源とテープの電圧が一致しているかを最初に確認する。
+        </p>
+      </section>
+
+      <!-- 2 -->
+      <section id="flicker">
+        <h2>② チラつき・ちらちらする</h2>
+
+        <p>
+          LEDテープのチラつき（フリッカー）は目に見える場合と見えないが
+          疲労・頭痛・映像撮影に影響する場合がある。原因は大きく3つ。
+        </p>
+
+        <h3>原因A: 調光器との相性（PWM調光）</h3>
+        <p>
+          安価な調光器はPWMのスイッチング周波数が低く（100〜300Hz）、
+          肉眼でチラつきが見える。対策は以下の順に試す:
+        </p>
+        <ol>
+          <li>調光器を高周波PWM品（1kHz以上）に交換する</li>
+          <li>調光器をテープと同メーカー・同仕様で揃える</li>
+          <li>フリッカーフリー仕様のLEDテープに変更する</li>
+        </ol>
+
+        <h3>原因B: 電源の品質・容量不足</h3>
+        <p>
+          電源の出力リップルが大きいとLEDがちらつく。特に廉価な電源で起きやすい。
+          テスターの交流モードで電源出力を測定し、リップル電圧が100mV以上ならば
+          電源品質が原因の可能性がある。低リップル品（1%以下）のPSUに交換する。
+        </p>
+        <p>
+          また電源の定格容量をテープの総消費電力が超えると出力電圧が不安定になりチラつく。
+          電源容量の80%以下で使用することが推奨。
+        </p>
+
+        <h3>原因C: 接触不良</h3>
+        <p>
+          コネクタがテープの銅パッドに対して半接触状態になると断続的にチラつく。
+          コネクタを外して再装着するか、ハンダ付けに変更する。
+          特にクリップコネクタは経年劣化でバネ力が落ちるため、
+          長期施工にはハンダ接続を推奨する。
+        </p>
+      </section>
+
+      <!-- 3 -->
+      <section id="dim-end">
+        <h2>③ 端が暗い・中間から暗くなる（電圧降下）</h2>
+
+        <p>
+          テープが長くなるほど電流が銅箔を流れる距離が増え、
+          電圧が末端に行くほど下がる「電圧降下」が起きる。
+          12V系は特に影響を受けやすく、電圧が0.5V下がるだけで明るさが
+          目に見えて変わる。
+        </p>
+
+        <h3>電圧降下の目安（12Vテープ 10W/m）</h3>
+
+        <table>
+          <thead>
+            <tr><th>テープ長</th><th>末端電圧（片側給電）</th><th>明るさへの影響</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3m 以下</td>
+              <td>11.5V 以上</td>
+              <td>ほぼ影響なし</td>
+            </tr>
+            <tr>
+              <td>5m</td>
+              <td>11.0V 前後</td>
+              <td>わずかに暗くなる</td>
+            </tr>
+            <tr>
+              <td>8m</td>
+              <td>10.0V 前後</td>
+              <td>明確に暗くなる・色温度がずれる</td>
+            </tr>
+            <tr>
+              <td>10m 以上</td>
+              <td>9V 以下</td>
+              <td>大きく暗化・場合によっては不点灯</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>対策</h3>
+        <ul>
+          <li><strong>両端給電</strong>: テープの両端から電源を供給することで片側の電圧降下量を半減</li>
+          <li><strong>24V系に切替</strong>: 24Vは同じ電力で電流が半分になるため電圧降下が小さい</li>
+          <li><strong>テープを短く分割</strong>: 1系統を5m以下に抑えて別電源で並列給電</li>
+          <li><strong>銅箔幅の広いテープを選ぶ</strong>: 同じ電流でも銅箔が太ければ抵抗が下がる</li>
+        </ul>
+
+        <p class="note">
+          12Vで10m以上の施工を計画しているなら、最初から24V系を選ぶか
+          中間給電ポイントを設計に組み込むことを強く推奨する。
+        </p>
+      </section>
+
+      <!-- 4 -->
+      <section id="hot">
+        <h2>④ テープが熱い・異常発熱</h2>
+
+        <h3>正常範囲と異常の目安</h3>
+        <p>
+          LEDテープは稼働中に熱を持つ。触れて「温かい」程度（40〜55℃）は正常だが、
+          「熱くて触れない」（60℃以上）は放熱不足または過電流の可能性がある。
+        </p>
+
+        <table>
+          <thead>
+            <tr><th>テープ温度</th><th>状態</th><th>対策</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>40℃以下</td>
+              <td>正常（冷たい〜ぬるい）</td>
+              <td>問題なし</td>
+            </tr>
+            <tr>
+              <td>40〜55℃</td>
+              <td>正常（温かい）</td>
+              <td>アルミプロファイル使用で寿命延長効果あり</td>
+            </tr>
+            <tr>
+              <td>55〜65℃</td>
+              <td>やや高温（注意）</td>
+              <td>アルミプロファイル必須・密閉空間への封入を避ける</td>
+            </tr>
+            <tr>
+              <td>65℃以上</td>
+              <td>異常発熱</td>
+              <td>電源電圧・W/m の確認・直ちに使用中止して原因を特定</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>発熱の主な原因</h3>
+        <ul>
+          <li><strong>W/m過多</strong>: 高W/mのテープを密閉空間・断熱材近くに施工している</li>
+          <li><strong>過電圧</strong>: 24Vテープに28〜30Vが供給されている（電源の設定誤り）</li>
+          <li><strong>放熱不足</strong>: テープ背面が木材・樹脂に直接貼られていてアルミへの熱逃げがない</li>
+          <li><strong>密閉空間</strong>: 天井裏・壁内など換気が一切ない空間での施工</li>
+        </ul>
+
+        <h3>対策</h3>
+        <p>
+          アルミプロファイル（アルミチャンネル）に収めることが最も効果的。
+          アルミはLEDから発生した熱を基板全体に分散させ、温度上昇を10〜20℃抑えられる。
+          密閉空間への施工はW/mを抑えた製品を選ぶか、
+          換気穴を設けて自然対流を確保する。
+        </p>
+      </section>
+
+      <!-- 5 -->
+      <section id="peel">
+        <h2>⑤ テープが剥がれる・接着が弱い</h2>
+
+        <h3>主な原因</h3>
+        <ul>
+          <li><strong>貼り付け面の油脂・ホコリ</strong>: アルコールで脱脂していない面には両面テープが接着しない</li>
+          <li><strong>凸凹面・多孔質面</strong>: 粗い木材・コンクリートは接触面積が小さく接着力が弱い</li>
+          <li><strong>高温による粘着剤軟化</strong>: テープ温度が55℃を超えると粘着剤が溶けて剥がれやすくなる</li>
+          <li><strong>水分・結露</strong>: 屋外や厨房で水分が浸入すると粘着剤が剥離する</li>
+          <li><strong>テープの自重・垂直面</strong>: 垂直面に長い区間を貼ると自重で剥がれる</li>
+        </ul>
+
+        <h3>対策</h3>
+        <ul>
+          <li>貼り付け前に IPA（イソプロピルアルコール）で表面を完全に脱脂・乾燥させる</li>
+          <li>粗い面にはアルミテープを先張りして平滑な下地を作る</li>
+          <li>垂直面・熱環境ではアルミプロファイルのネジ固定 or クリップ固定に切り替える</li>
+          <li>屋外・厨房は防水・耐熱両面テープ（3M VHB系）を使う</li>
+        </ul>
+      </section>
+
+      <!-- 6 -->
+      <section id="color-uneven">
+        <h2>⑥ 色がムラになる・部分的に色が違う</h2>
+
+        <h3>パターンと原因</h3>
+
+        <table>
+          <thead>
+            <tr><th>症状</th><th>主な原因</th><th>対策</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>接続部で色が変わる</td>
+              <td>別ロット（Bin）のテープを混用している</td>
+              <td>同一ロットで揃えるか、視覚的に離れた場所に配置して違いが目立たない設計にする</td>
+            </tr>
+            <tr>
+              <td>端に近い部分だけ色が違う</td>
+              <td>電圧降下による色温度のずれ（赤みが増す）</td>
+              <td>電圧降下対策（両端給電・24V化）を実施する</td>
+            </tr>
+            <tr>
+              <td>1箇所だけ黄色または青白くなる</td>
+              <td>チップ1個の故障または蛍光体の劣化</td>
+              <td>故障チップが含まれる区間を交換する（カット位置で切り出し）</td>
+            </tr>
+            <tr>
+              <td>全体にむらがある（しましま模様）</td>
+              <td>乳白カバーなしでSMDテープを使用している</td>
+              <td>乳白拡散カバー付きのアルミプロファイルに変更する</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 7 -->
+      <section id="dim-overall">
+        <h2>⑦ 全体的に暗い・光量不足</h2>
+
+        <h3>設計段階での確認ポイント</h3>
+        <p>
+          「明るさが足りない」と感じる場合、照明計画の段階で照度計算が行われていないことが多い。
+          目安として店舗照明は水平面照度 500〜1500lx、居室は 300〜500lx が必要。
+        </p>
+
+        <h3>明るさ不足の主な原因</h3>
+        <ul>
+          <li><strong>W/mが低い</strong>: 間接照明用の低W/mテープを主照明に使っている</li>
+          <li><strong>乳白カバーの光束損失</strong>: 乳白カバーで20〜35%の光束が失われている</li>
+          <li><strong>配光の問題</strong>: テープが壁向きに設置されており、作業面に光が届いていない</li>
+          <li><strong>Ra値と明るさの混同</strong>: Ra90（高演色）は明るさではなく色の見え方の指標。Ra90が暗いわけではない</li>
+          <li><strong>テープの劣化</strong>: 長期使用で光束が70%以下に低下している（交換時期の目安）</li>
+        </ul>
+
+        <h3>対策</h3>
+        <p>
+          主照明として使う場合は10W/m以上の製品を選ぶ。
+          間接照明（天井コーニス・棚下）は7〜10W/m が一般的な範囲。
+          乳白カバーの損失が気になる場合はW/mを1.3〜1.5倍に上げて補う。
+        </p>
+      </section>
+
+      <!-- 8 Diagnosis -->
+      <section id="diagnosis">
+        <h2>症状別 診断チャート</h2>
+
+        <table>
+          <thead>
+            <tr><th>症状</th><th>まず確認</th><th>次に確認</th><th>最終対策</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>全く点灯しない</td>
+              <td>電源の出力電圧（テスター）</td>
+              <td>コネクタの接触・極性</td>
+              <td>電源交換・接続やり直し</td>
+            </tr>
+            <tr>
+              <td>チラつく</td>
+              <td>調光器の有無・PWM周波数</td>
+              <td>電源の容量・リップル</td>
+              <td>高周波調光器・低リップル電源に交換</td>
+            </tr>
+            <tr>
+              <td>端が暗い</td>
+              <td>テープ総長・W/m</td>
+              <td>末端電圧（テスター）</td>
+              <td>両端給電・24V化・分割給電</td>
+            </tr>
+            <tr>
+              <td>熱い・触れない</td>
+              <td>電源電圧・W/m の確認</td>
+              <td>設置環境（密閉・断熱材）</td>
+              <td>アルミプロファイル・W/m 低減・換気確保</td>
+            </tr>
+            <tr>
+              <td>剥がれる</td>
+              <td>貼り付け面の脱脂状態</td>
+              <td>温度・湿度環境</td>
+              <td>脱脂→再接着 or クリップ/ネジ固定</td>
+            </tr>
+            <tr>
+              <td>色ムラ</td>
+              <td>ロット統一・拡散カバーの有無</td>
+              <td>電圧降下の有無</td>
+              <td>乳白カバー追加・電圧降下対策</td>
+            </tr>
+            <tr>
+              <td>全体的に暗い</td>
+              <td>W/m の確認・照度計算</td>
+              <td>カバーの光束損失</td>
+              <td>高W/m品に変更 or 本数・面積を増やす</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h3>トラブル解消に必要なLEDテープ・電源・アクセサリーは</h3>
+        <p>
+          LED PRO SHOPでは、高品質なLEDテープ（フリッカーフリー・低リップル電源・
+          アルミプロファイル・分岐コネクタ）を取り扱っています。
+          スペック表のW/m・電圧・Ra値を確認して正しい製品を選んでください。
+        </p>
+        <a href="/" class="cta-button">商品一覧を見る</a>
+      </div>
+
+    </div><!-- /.article-body -->
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>&copy; 2026 LED PRO SHOP</p>
+    <nav class="footer-nav">
+      <a href="/">商品一覧</a>
+      <a href="/articles/">技術情報</a>
+      <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
