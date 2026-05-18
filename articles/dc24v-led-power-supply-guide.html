@@ -189,6 +189,7 @@
       .hero h1{font-size:17px}
       .data-grid{grid-template-columns:repeat(2,1fr)}
     }
+      .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
   </style>
 </head>
 <body>
@@ -393,7 +394,19 @@
     </div>
 
     <!-- ===== CTA ===== -->
-    <div class="cta-section">
+    
+<!-- related-articles -->
+<div style="max-width:900px;margin:0 auto 40px;padding:0 20px">
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px">
+    <h3 style="font-size:1rem;font-weight:700;color:var(--text-muted);margin-bottom:16px">関連する電源・コントローラー解説</h3>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+      <li><a href="/articles/led-psu-capacity-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープ DC24V/12V 電源（PSU）容量計算 早見表｜ワット数・配線長から即計算</a></li>
+      <li><a href="/articles/led-tape-dimmer-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープ 調光器 選び方ガイド｜PWM・TRIAC・0-10V の違いとフリッカー対策</a></li>
+      <li><a href="/articles/capsule-hotel-led-case" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>カプセルホテル LED照明施工事例｜睡眠環境2700K調光・IP65浴室・44%省エネ・年間18万円削減</a></li>
+    </ul>
+  </div>
+</div>
+<div class="cta-section">
       <h2>DC24V LED電源・PSUを探す</h2>
       <p>IP20〜IP67対応・フリッカーフリー・PF0.95以上のDC24V電源を在庫から即納。<br>30W〜600Wまで各容量をプロ価格でご提供しています。</p>
       <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
