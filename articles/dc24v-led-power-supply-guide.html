@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>DC24V LED電源（PSU）選び方ガイド｜容量計算・IP規格・おすすめ仕様と失敗しない選定手順 | LED PRO SHOP</title>
+  <meta name="description" content="DC24V LEDテープ用電源（PSU）の選び方を解説。必要容量の計算式（W数×1.2の余裕率）、IP20/IP65/IP67の設置場所別選定、PF値・リップル・フリッカーフリーの見方、分散配置の配線設計まで実務向けに整理。dc24v 電源 選定で失敗しない購入前チェックリスト付き。">
+  <meta name="keywords" content="dc24v 電源,PSU 24v,LED電源 選び方,LEDドライバー,24V電源 容量計算,LED電源 IP65,フリッカーフリー電源,LEDテープ 電源">
+  <link rel="canonical" href="https://led-proshop.com/articles/dc24v-led-power-supply-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/dc24v-led-power-supply-guide">
+  <meta property="og:title" content="DC24V LED電源（PSU）選び方ガイド｜容量計算・IP規格・おすすめ仕様と失敗しない選定手順 | LED PRO SHOP">
+  <meta property="og:description" content="DC24V LEDテープ用電源（PSU）の選び方を解説。必要容量の計算式（W数×1.2の余裕率）、IP20/IP65/IP67の設置場所別選定、PF値・リップル・フリッカーフリーの見方、分散配置の配線設計まで実務向けに整理。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/dc24v-led-power-supply-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DC24V LED電源（PSU）選び方ガイド｜容量計算・IP規格・おすすめ仕様と失敗しない選定手順 | LED PRO SHOP">
+  <meta name="twitter:description" content="DC24V LEDテープ用電源（PSU）の選び方を解説。必要容量の計算式（W数×1.2の余裕率）、IP20/IP65/IP67の設置場所別選定、PF値・リップル・フリッカーフリーの見方、分散配置の配線設計まで実務向けに整理。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/dc24v-led-power-supply-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "DC24V LED電源（PSU）選び方ガイド｜容量計算・IP規格・おすすめ仕様と失敗しない選定手順",
+    "description": "DC24V LEDテープ用電源（PSU）の選び方を解説。必要容量の計算式、設置場所別IPレーティング、PF値・リップル・フリッカーフリーの見方、分散配置の配線設計まで実務向けに整理。",
+    "image": "https://led-proshop.com/articles/images/dc24v-led-power-supply-guide-hero.webp",
+    "datePublished": "2026-05-18",
+    "dateModified": "2026-05-18",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/dc24v-led-power-supply-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "DC24V LED電源 選び方ガイド", "item": "https://led-proshop.com/articles/dc24v-led-power-supply-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== FAQ JSON-LD ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "DC24V電源の必要容量はどう計算しますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "接続するLEDテープの総消費W数 × 1.2（余裕率20%）が必要な電源容量の目安です。例: 5m×20W/mのテープを2本 = 200W → 電源は240W以上を選択。余裕率を設けないと電源の発熱・寿命低下・電圧降下の原因になります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "DC24VとDC12V、どちらの電源を選ぶべきですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "長距離配線（5m以上）・高出力用途・電圧降下を避けたい場合は24V。短距離・低消費電力・既存12V機器との共用ならば12Vが適しています。24Vは同じ電流で2倍の電力を供給でき、電圧降下が半減するため業務施工では24Vが主流です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "屋外・防水環境に使えるDC24V電源のIPレーティングは？",
+        "acceptedAnswer": { "@type": "Answer", "text": "屋外設置の場合はIP65以上（防塵完全・あらゆる方向の噴流水に対応）が必要です。水没リスクがある場所はIP67以上を推奨します。屋内乾燥環境ではIP20（クラスII）が一般的で低コストです。" }
+      },
+      {
+        "@type": "Question",
+        "name": "フリッカーフリー電源とは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "フリッカーフリー電源はLEDのちらつき（フリッカー）を抑えた電源です。安価な電源はリプル（電圧の揺らぎ）が大きくLEDが微細に点滅します。人の目には見えにくいですが、ビデオ撮影時に縞が出たり、長時間作業で目の疲れを引き起こします。PF値0.9以上・リプル率1%以下の製品を選ぶと安全です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "1台の大容量電源 vs 複数台の小容量電源、どちらがよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "業務施工では複数台分散配置が推奨されます。理由: ①1台故障時の影響範囲を最小化できる ②長距離配線による電圧降下を各区間で抑えられる ③熱が集中しないので寿命が延びる。目安として1台あたり最大150〜200W以下に抑えると管理しやすくなります。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --blue:#003C82;--blue-pale:#e8f0fe;--orange:#e07b00;--orange-pale:#fff3e0;
+      --bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.75}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:860px;margin:0 auto;padding:0 20px}
+    header.site-header{background:var(--blue);padding:14px 20px;display:flex;align-items:center;gap:12px}
+    header.site-header a{color:#fff;font-size:18px;font-weight:700;letter-spacing:.03em}
+    header.site-header span{color:rgba(255,255,255,.6);font-size:12px}
+
+    .hero{background:linear-gradient(135deg,#0a2a52 0%,#3a1a00 100%);padding:48px 20px 40px;text-align:center;color:#fff}
+    .hero .cat-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:11px;letter-spacing:.08em;margin-bottom:16px}
+    .hero h1{font-size:clamp(18px,3.5vw,26px);font-weight:900;line-height:1.45;margin-bottom:14px}
+    .hero .hero-meta{font-size:12px;color:rgba(255,255,255,.7);display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+    .hero-img{width:100%;max-height:380px;object-fit:cover;display:block}
+
+    .breadcrumb{font-size:11px;color:var(--text-muted);padding:10px 0;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+    .breadcrumb a{color:var(--text-muted)}
+
+    .toc{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:28px 0}
+    .toc h2{font-size:13px;font-weight:700;color:var(--text-sub);margin-bottom:10px;letter-spacing:.06em}
+    .toc ol{padding-left:18px}
+    .toc li{font-size:13px;margin-bottom:6px}
+    .toc a{color:var(--blue)}
+
+    .article-body{padding:32px 0 48px}
+    .article-body h2{font-size:20px;font-weight:900;color:var(--blue);border-left:4px solid var(--blue);padding-left:12px;margin:40px 0 16px}
+    .article-body h3{font-size:16px;font-weight:700;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:6px;margin:28px 0 12px}
+    .article-body p{margin-bottom:14px}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:14px}
+    .article-body li{margin-bottom:6px}
+
+    .box-blue{background:var(--blue-pale);border-left:4px solid var(--blue);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-orange{background:var(--orange-pale);border-left:4px solid var(--orange);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-blue p,.box-orange p{margin-bottom:0}
+
+    .formula{background:#1a1a2e;color:#e0e0ff;font-family:monospace;font-size:15px;border-radius:8px;padding:16px 20px;margin:16px 0;line-height:1.6}
+    .formula .comment{color:#7ec8e3}
+
+    .data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .data-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .data-card .num{font-size:26px;font-weight:900;color:var(--blue);line-height:1}
+    .data-card .unit{font-size:12px;color:var(--text-sub);margin-top:2px}
+    .data-card .label{font-size:11px;color:var(--text-muted);margin-top:6px}
+
+    .tbl-wrap{overflow-x:auto;margin:16px 0}
+    table{width:100%;border-collapse:collapse;font-size:13px;min-width:480px}
+    th{background:var(--blue);color:#fff;padding:9px 10px;text-align:left;font-weight:700}
+    td{padding:8px 10px;border-bottom:1px solid #eaecf0;vertical-align:top}
+    tr:nth-child(even) td{background:#f8f9fb}
+    .good{color:#1a7a3c;font-weight:700}
+    .bad{color:#b91c1c;font-weight:700}
+    .mid{color:#92400e;font-weight:700}
+
+    .step-list{list-style:none;padding:0;margin:16px 0;counter-reset:step}
+    .step-list li{counter-increment:step;display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #eaecf0}
+    .step-list li:last-child{border-bottom:none}
+    .step-list li::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:28px;height:28px;min-width:28px;background:var(--blue);color:#fff;border-radius:50%;font-size:13px;font-weight:700}
+    .step-body{flex:1}
+    .step-body strong{display:block;margin-bottom:4px}
+
+    .checklist{list-style:none;padding:0;margin:16px 0}
+    .checklist li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #eaecf0;font-size:14px}
+    .checklist li:last-child{border-bottom:none}
+    .checklist li::before{content:"☐";font-size:18px;color:var(--blue);flex-shrink:0;line-height:1.3}
+
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--blue)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+
+    .cta-section{background:linear-gradient(135deg,#0a2a52,#3a1a00);border-radius:16px;padding:36px 24px;text-align:center;margin:40px 0;color:#fff}
+    .cta-section h2{font-size:18px;font-weight:900;margin-bottom:8px;color:#fff;border:none;padding:0}
+    .cta-section p{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:20px}
+    .cta-btn{display:inline-block;background:#f0a500;color:#1a1a1a;font-weight:900;font-size:15px;padding:14px 36px;border-radius:50px;transition:opacity .2s}
+    .cta-btn:hover{opacity:.88;text-decoration:none}
+
+    footer.site-footer{background:#1a1a1a;color:#888;font-size:12px;text-align:center;padding:20px}
+    footer.site-footer a{color:#aaa}
+
+    @media(max-width:600px){
+      .hero{padding:32px 16px 28px}
+      .hero h1{font-size:17px}
+      .data-grid{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/">LED PRO SHOP</a>
+  <span>プロ仕様LED専門店</span>
+</header>
+
+<div class="hero">
+  <div class="cat-badge">電源・コントローラー解説</div>
+  <h1>DC24V LED電源（PSU）<br>選び方ガイド<br>容量計算・IP規格・失敗しない選定手順</h1>
+  <div class="hero-meta">
+    <span>公開: 2026-05-18</span>
+    <span>対象: 電気工事業者・内装施工業者・LED照明設計担当者</span>
+  </div>
+</div>
+
+<img src="/articles/images/dc24v-led-power-supply-guide-hero.webp" alt="DC24V LED電源（PSU）選び方ガイド" class="hero-img" width="860" height="430" loading="eager">
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/">LED PRO SHOP</a><span>›</span>
+    <a href="/articles/">コラム</a><span>›</span>
+    <span>DC24V LED電源（PSU）選び方ガイド</span>
+  </nav>
+
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#capacity">必要容量の計算方法（W数・余裕率）</a></li>
+      <li><a href="#12v-vs-24v">12V vs 24V 電源の使い分け</a></li>
+      <li><a href="#ip-rating">設置場所別 IPレーティング選定</a></li>
+      <li><a href="#spec">電源スペックの見方（PF・リップル・フリッカー）</a></li>
+      <li><a href="#distributed">分散配置設計と配線計画</a></li>
+      <li><a href="#checklist">購入前チェックリスト</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ol>
+  </nav>
+
+  <div class="article-body">
+
+    <p>DC24V LEDテープ用の電源（PSU／定電圧電源）の選定で最も多い失敗は「容量不足」と「設置場所に合わないIPレーティング」の2つです。容量不足では電圧降下・発熱・電源寿命低下が発生し、IPレーティング不適では結露・浸水による早期故障につながります。このページでは業務施工で使える選定手順を順番に解説します。</p>
+
+    <!-- ===== 1. 容量計算 ===== -->
+    <h2 id="capacity">1. 必要容量の計算方法（W数・余裕率）</h2>
+
+    <h3>基本計算式</h3>
+
+    <div class="formula">
+      必要電源容量（W）= 接続LEDテープの総消費W数 × <span style="color:#ffd700">1.2</span><br>
+      <span class="comment">// 余裕率20%を設けて電源の発熱・劣化を防ぐ</span>
+    </div>
+
+    <h3>計算例</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>LEDテープ構成</th><th>総消費W数</th><th>必要電源容量</th><th>選択例</th></tr></thead>
+        <tbody>
+          <tr><td>20W/m × 5m × 1本</td><td>100W</td><td class="good">120W以上</td><td>150W電源</td></tr>
+          <tr><td>20W/m × 5m × 2本</td><td>200W</td><td class="good">240W以上</td><td>300W電源</td></tr>
+          <tr><td>14W/m × 10m × 3本</td><td>420W</td><td class="good">504W以上</td><td>600W電源×2台分散</td></tr>
+          <tr><td>8W/m × 5m × 4本</td><td>160W</td><td class="good">192W以上</td><td>200W電源</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-orange">
+      <p><strong>余裕率20%は必須:</strong> 定格容量の80%以下で運用することで電源の発熱を抑え、寿命が大幅に延びます。100W電源に100Wを接続すると常時フル稼働となり、数ヶ月で故障するケースがあります。</p>
+    </div>
+
+    <!-- ===== 2. 12V vs 24V ===== -->
+    <h2 id="12v-vs-24v">2. 12V vs 24V 電源の使い分け</h2>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>比較項目</th><th>DC12V</th><th>DC24V</th></tr></thead>
+        <tbody>
+          <tr><td>電圧降下</td><td class="bad">大きい（長距離に不向き）</td><td class="good">半減する</td></tr>
+          <tr><td>配線可能距離（電圧降下3%以内）</td><td class="bad">約3m（片道）</td><td class="good">約5〜8m（片道）</td></tr>
+          <tr><td>テープの選択肢</td><td>多い（汎用品）</td><td class="good">業務品が豊富</td></tr>
+          <tr><td>感電リスク</td><td>低い（超低電圧）</td><td>低い（超低電圧）</td></tr>
+          <tr><td>主な用途</td><td>短距離・低消費電力・DIY</td><td class="good">業務施工・長距離・高出力</td></tr>
+          <tr><td>既存機器との互換</td><td class="good">車載・12V機器と共用可</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>業務施工の基本は24V:</strong> 電圧降下が少なく、同じ電流で2倍の電力を供給できます。5m以上の配線・高消費電力のCOBテープ・複数ゾーン設計には24V電源を選択してください。</p>
+    </div>
+
+    <!-- ===== 3. IP ===== -->
+    <h2 id="ip-rating">3. 設置場所別 IPレーティング選定</h2>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>設置場所</th><th>推奨IPレーティング</th><th>理由</th></tr></thead>
+        <tbody>
+          <tr><td>屋内乾燥環境（電気室・機械室・天井内）</td><td class="good">IP20（クラスII）</td><td>防水不要・低コスト</td></tr>
+          <tr><td>屋内高湿度（厨房・植物工場・洗面所近傍）</td><td class="good">IP44以上</td><td>湿気・水蒸気対策</td></tr>
+          <tr><td>屋外（軒下・外壁・駐車場）</td><td class="good">IP65以上</td><td>雨水の噴流に対応</td></tr>
+          <tr><td>屋外（直接雨・水没リスク）</td><td class="good">IP67以上</td><td>30分間水没対応</td></tr>
+          <tr><td>屋外（常時水にさらされる）</td><td>IP68（特注）</td><td>長時間水中使用</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-orange">
+      <p><strong>よくある失敗:</strong> 屋外の軒下に IP20 電源を設置 → 結露・浸水で1シーズンで故障。屋外設置は必ずIP65以上の金属筐体電源を使用してください。IP65以上の電源はアルミダイキャスト筐体で放熱性能も高く、長寿命です。</p>
+    </div>
+
+    <!-- ===== 4. スペックの見方 ===== -->
+    <h2 id="spec">4. 電源スペックの見方（PF・リップル・フリッカー）</h2>
+
+    <h3>重要スペック一覧</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>スペック項目</th><th>推奨値</th><th>低品質品の問題点</th></tr></thead>
+        <tbody>
+          <tr><td>力率（PF値）</td><td class="good">0.90以上</td><td>低PF（0.5〜0.6）は電力ロスが大きく、電気代が増加</td></tr>
+          <tr><td>リップル（出力電圧の揺らぎ）</td><td class="good">1%以下（≤120mVp-p）</td><td>高リップルはLEDのちらつき・フリッカーの原因</td></tr>
+          <tr><td>変換効率</td><td class="good">88%以上</td><td>低効率は発熱が増え電源寿命が短縮</td></tr>
+          <tr><td>MTBF（平均故障間隔）</td><td class="good">50,000時間以上</td><td>低品質品は10,000〜20,000時間で故障が多発</td></tr>
+          <tr><td>保護機能</td><td class="good">過電流・過電圧・短絡保護 3点セット</td><td>保護なしは配線ミスで電源焼損→出火リスク</td></tr>
+          <tr><td>動作温度範囲</td><td class="good">−20〜+50℃以上</td><td>範囲外では出力が不安定・寿命低下</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>フリッカーフリー電源とは</h3>
+    <p>フリッカー（LED の微細なちらつき）は安価な電源でリップルが大きい場合に発生します。人の目では見えにくいですが、ビデオ・写真撮影時に縞模様が入ったり、長時間の作業環境で眼精疲労を引き起こします。</p>
+
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="num">PF<span style="font-size:16px"> 0.95</span></div>
+        <div class="unit">以上を選択</div>
+        <div class="label">力率（省エネ・電力品質）</div>
+      </div>
+      <div class="data-card">
+        <div class="num">1<span style="font-size:16px">%</span></div>
+        <div class="unit">以下のリップル</div>
+        <div class="label">フリッカーフリーの目安</div>
+      </div>
+      <div class="data-card">
+        <div class="num">88<span style="font-size:16px">%</span></div>
+        <div class="unit">以上の変換効率</div>
+        <div class="label">発熱少・長寿命</div>
+      </div>
+      <div class="data-card">
+        <div class="num">50<span style="font-size:12px">kh</span></div>
+        <div class="unit">MTBF目安</div>
+        <div class="label">約5.7年連続稼働相当</div>
+      </div>
+    </div>
+
+    <!-- ===== 5. 分散配置 ===== -->
+    <h2 id="distributed">5. 分散配置設計と配線計画</h2>
+
+    <h3>大容量1台 vs 小容量複数台</h3>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>方式</th><th>メリット</th><th>デメリット</th><th>推奨用途</th></tr></thead>
+        <tbody>
+          <tr><td>大容量1台（500W〜）</td><td>配線がシンプル・コスト低</td><td class="bad">故障時に全滅・発熱集中</td><td>小規模・予算重視</td></tr>
+          <tr><td>中容量複数台分散</td><td class="good">故障影響が局所化・電圧降下低減</td><td>配線本数増・コスト増</td><td class="good">業務施工・推奨</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>分散配置の設計ルール</h3>
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>1台あたりの上限を決める</strong>
+          業務施工では1台あたり150〜200Wを上限の目安とすると管理しやすい。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>電源をLEDテープの中点近くに設置する</strong>
+          両端から給電するより中点給電の方が電圧降下を半減できる。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>配線長に応じて電線太さを選ぶ</strong>
+          長距離（10m超）は AWG16（1.31mm²）以上を使用。電圧降下 = 電流(A) × 抵抗(Ω/m) × 距離(m) × 2で計算。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>ゾーンごとに電源を独立させる</strong>
+          受付・廊下・個室など用途別にゾーン分離すると、調光制御・故障対応が容易になる。
+        </div>
+      </li>
+    </ul>
+
+    <div class="box-blue">
+      <p><strong>電圧降下の簡易チェック:</strong> 24V電源の出力端で24Vあっても、10m先のLEDテープ端が22V以下になると輝度低下や色ムラが発生します。配線長が長い場合は必ず終端電圧を実測してください。</p>
+    </div>
+
+    <!-- ===== CTA ===== -->
+    <div class="cta-section">
+      <h2>DC24V LED電源・PSUを探す</h2>
+      <p>IP20〜IP67対応・フリッカーフリー・PF0.95以上のDC24V電源を在庫から即納。<br>30W〜600Wまで各容量をプロ価格でご提供しています。</p>
+      <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+    </div>
+
+    <!-- ===== 6. チェックリスト ===== -->
+    <h2 id="checklist">6. 購入前チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>接続するLEDテープの総消費W数を計算し、×1.2の余裕率で電源容量を決定したか</li>
+      <li>設置場所（屋内乾燥・高湿度・屋外）に応じたIPレーティングを選んでいるか</li>
+      <li>PF値0.90以上・リップル1%以下のフリッカーフリー電源か確認したか</li>
+      <li>過電流・過電圧・短絡保護の3点保護機能が搭載されているか確認したか</li>
+      <li>業務用途では1台あたり150〜200W以下に抑えた分散配置設計にしているか</li>
+      <li>配線長が10m以上の場合、電圧降下を計算し電線太さを選定したか（AWG16以上推奨）</li>
+      <li>電源の設置場所が通気確保されており、直射日光・高温・閉鎖空間でないか確認したか</li>
+      <li>調光対応テープを使用する場合、電源が PWM/TRIAC 調光対応品か確認したか</li>
+    </ul>
+
+    <!-- ===== 7. FAQ ===== -->
+    <h2 id="faq">7. よくある質問</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">DC24V電源の必要容量はどう計算しますか？</div>
+      <div class="faq-a">接続するLEDテープの総消費W数 × 1.2（余裕率20%）が必要な電源容量の目安です。例: 5m×20W/mのテープを2本 = 200W → 電源は240W以上を選択。余裕率を設けないと電源の発熱・寿命低下・電圧降下の原因になります。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">DC24VとDC12V、どちらの電源を選ぶべきですか？</div>
+      <div class="faq-a">長距離配線（5m以上）・高出力用途・電圧降下を避けたい場合は24V。短距離・低消費電力・既存12V機器との共用ならば12Vが適しています。24Vは同じ電流で2倍の電力を供給でき、電圧降下が半減するため業務施工では24Vが主流です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">屋外・防水環境に使えるDC24V電源のIPレーティングは？</div>
+      <div class="faq-a">屋外設置の場合はIP65以上（防塵完全・あらゆる方向の噴流水に対応）が必要です。水没リスクがある場所はIP67以上を推奨します。屋内乾燥環境ではIP20（クラスII）が一般的で低コストです。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">フリッカーフリー電源とは何ですか？</div>
+      <div class="faq-a">フリッカーフリー電源はLEDのちらつき（フリッカー）を抑えた電源です。安価な電源はリプル（電圧の揺らぎ）が大きくLEDが微細に点滅します。人の目には見えにくいですが、ビデオ撮影時に縞が出たり、長時間作業で目の疲れを引き起こします。PF値0.9以上・リプル率1%以下の製品を選ぶと安全です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">1台の大容量電源 vs 複数台の小容量電源、どちらがよいですか？</div>
+      <div class="faq-a">業務施工では複数台分散配置が推奨されます。理由: ①1台故障時の影響範囲を最小化できる ②長距離配線による電圧降下を各区間で抑えられる ③熱が集中しないので寿命が延びる。目安として1台あたり最大150〜200W以下に抑えると管理しやすくなります。</div>
+    </div>
+
+  </div><!-- /article-body -->
+</div><!-- /container -->
+
+<footer class="site-footer">
+  <p>© 2024 LED PRO SHOP ／ <a href="/tokushoho.html">特定商取引法に基づく表示</a></p>
+</footer>
+
+</body>
+</html>
