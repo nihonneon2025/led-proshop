@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープ 調光器 選び方ガイド｜PWM・TRIAC・0-10V の違いとフリッカー対策 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープの調光方式はPWM・TRIAC・0-10Vの3種類。PWM＝安価・汎用、TRIAC＝既存壁スイッチ流用、0-10V＝業務設備向け――この使い分けで8割は決まります。調光器とLEDテープの互換チェック・フリッカー対策・配線手順を実務向けに整理。">
+  <meta name="keywords" content="LEDテープ 調光,LED 調光器 選び方,PWM調光,TRIAC調光,0-10V調光,LEDテープ フリッカー,LED dimmer,調光 互換性">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-dimmer-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-dimmer-guide">
+  <meta property="og:title" content="LEDテープ 調光器 選び方ガイド｜PWM・TRIAC・0-10V の違いとフリッカー対策 | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープの調光方式はPWM・TRIAC・0-10Vの3種類。使い分けと互換チェック・フリッカー対策・配線手順を実務向けに整理。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-dimmer-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ 調光器 選び方ガイド｜PWM・TRIAC・0-10V の違いとフリッカー対策 | LED PRO SHOP">
+  <meta name="twitter:description" content="LEDテープの調光方式はPWM・TRIAC・0-10Vの3種類。使い分けと互換チェック・フリッカー対策・配線手順を実務向けに整理。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-dimmer-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープ 調光器 選び方ガイド｜PWM・TRIAC・0-10V の違いとフリッカー対策",
+    "description": "LEDテープの調光方式はPWM・TRIAC・0-10Vの3種類。使い分けと互換チェック・フリッカー対策・配線手順を実務向けに整理。",
+    "image": "https://led-proshop.com/articles/images/led-tape-dimmer-guide-hero.webp",
+    "datePublished": "2026-05-18",
+    "dateModified": "2026-05-18",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-dimmer-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープ 調光器 選び方ガイド", "item": "https://led-proshop.com/articles/led-tape-dimmer-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== FAQ JSON-LD ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープに一般的な壁の調光スイッチ（TRIAC）は使えますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "「調光器対応」と明記されたLEDテープであれば使用できます。調光器対応でないLEDテープにTRIAC調光器を接続すると、フリッカー（ちらつき）・異音・故障の原因になります。必ずLEDテープと調光器の両方が「TRIAC調光対応」と記載されている製品を組み合わせてください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "PWM調光とTRIAC調光の違いは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "PWM調光はDC電源の後段で動作し、LEDのオン・オフを高速で繰り返して明るさを制御します。TRIAC調光はAC電源段で動作し、電圧の波形を切り取ることで調光します。PWMは汎用性が高くフリッカーが少ない一方、TRIAC は既存の壁スイッチを流用できる利点があります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "調光するとLEDがちらつく（フリッカー）原因と対策は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "主な原因は①PWM周波数が低い（1kHz未満）、②LEDと調光器の互換性不一致、③電源のリップルが大きい、の3つです。対策は①PWM周波数1kHz以上の調光器に交換、②LEDテープと調光器のメーカー推奨組み合わせを確認、③リップル1%以下のフリッカーフリー電源を使用、の順で試してください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "0-10V調光はどんな用途に使いますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "0-10V調光はビルのBAS（ビルオートメーションシステム）やDALI制御盤との連携、工場・倉庫の照明制御システム、植物工場の照度管理など、業務・産業用途に使います。0Vで最小輝度（またはOFF）、10Vで最大輝度（100%）を制御する業界標準インターフェースです。一般店舗・住宅ではPWMまたはTRIACが多く使われます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "調光器の最大負荷はどう計算しますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "接続するLEDテープの総消費W数 × 1.2（余裕率20%）が必要な調光器の定格容量です。例: 10W/m × 5m × 2本 = 100W → 調光器は120W以上を選択。余裕率なしで使うと調光器の発熱・寿命低下・誤動作の原因になります。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --blue:#003C82;--blue-pale:#e8f0fe;--orange:#e07b00;--orange-pale:#fff3e0;
+      --green:#1a7a3c;--green-pale:#e6f4ec;
+      --bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.75}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:860px;margin:0 auto;padding:0 20px}
+    header.site-header{background:var(--blue);padding:14px 20px;display:flex;align-items:center;gap:12px}
+    header.site-header a{color:#fff;font-size:18px;font-weight:700;letter-spacing:.03em}
+    header.site-header span{color:rgba(255,255,255,.6);font-size:12px}
+
+    .hero{background:linear-gradient(135deg,#0a2a52 0%,#0d3d1a 100%);padding:48px 20px 40px;text-align:center;color:#fff}
+    .hero .cat-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:11px;letter-spacing:.08em;margin-bottom:16px}
+    .hero h1{font-size:clamp(18px,3.5vw,26px);font-weight:900;line-height:1.45;margin-bottom:14px}
+    .hero .hero-meta{font-size:12px;color:rgba(255,255,255,.7);display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+    .hero-img{width:100%;max-height:380px;object-fit:cover;display:block}
+
+    .breadcrumb{font-size:11px;color:var(--text-muted);padding:10px 0;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+    .breadcrumb a{color:var(--text-muted)}
+
+    .toc{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:28px 0}
+    .toc h2{font-size:13px;font-weight:700;color:var(--text-sub);margin-bottom:10px;letter-spacing:.06em}
+    .toc ol{padding-left:18px}
+    .toc li{font-size:13px;margin-bottom:6px}
+    .toc a{color:var(--blue)}
+
+    .article-body{padding:32px 0 48px}
+    .article-body h2{font-size:20px;font-weight:900;color:var(--blue);border-left:4px solid var(--blue);padding-left:12px;margin:40px 0 16px}
+    .article-body h3{font-size:16px;font-weight:700;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:6px;margin:28px 0 12px}
+    .article-body p{margin-bottom:14px}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:14px}
+    .article-body li{margin-bottom:6px}
+
+    .box-blue{background:var(--blue-pale);border-left:4px solid var(--blue);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-orange{background:var(--orange-pale);border-left:4px solid var(--orange);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-green{background:var(--green-pale);border-left:4px solid var(--green);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-blue p,.box-orange p,.box-green p{margin-bottom:0}
+
+    .method-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:20px 0}
+    .method-card{border:2px solid var(--border);border-radius:12px;padding:20px;position:relative;overflow:hidden}
+    .method-card.recommended{border-color:var(--blue)}
+    .method-card .badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-bottom:8px;letter-spacing:.06em}
+    .method-card .badge.standard{background:#e8f0fe;color:var(--blue)}
+    .method-card .badge.wall{background:#fff3e0;color:var(--orange)}
+    .method-card .badge.pro{background:#e6f4ec;color:var(--green)}
+    .method-card h4{font-size:16px;font-weight:900;margin-bottom:6px}
+    .method-card .sub{font-size:12px;color:var(--text-sub);margin-bottom:10px}
+    .method-card ul{padding-left:16px;font-size:13px}
+    .method-card li{margin-bottom:4px}
+
+    .data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .data-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .data-card .num{font-size:26px;font-weight:900;color:var(--blue);line-height:1}
+    .data-card .unit{font-size:12px;color:var(--text-sub);margin-top:2px}
+    .data-card .label{font-size:11px;color:var(--text-muted);margin-top:6px}
+
+    .tbl-wrap{overflow-x:auto;margin:16px 0}
+    table{width:100%;border-collapse:collapse;font-size:13px;min-width:480px}
+    th{background:var(--blue);color:#fff;padding:9px 10px;text-align:left;font-weight:700}
+    td{padding:8px 10px;border-bottom:1px solid #eaecf0;vertical-align:top}
+    tr:nth-child(even) td{background:#f8f9fb}
+    .good{color:#1a7a3c;font-weight:700}
+    .bad{color:#b91c1c;font-weight:700}
+    .mid{color:#92400e;font-weight:700}
+
+    .flow{list-style:none;padding:0;margin:16px 0;counter-reset:step}
+    .flow li{counter-increment:step;display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #eaecf0}
+    .flow li:last-child{border-bottom:none}
+    .flow li::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:28px;height:28px;min-width:28px;background:var(--blue);color:#fff;border-radius:50%;font-size:13px;font-weight:700;flex-shrink:0}
+    .flow-body{flex:1}
+    .flow-body strong{display:block;margin-bottom:4px}
+
+    .checklist{list-style:none;padding:0;margin:16px 0}
+    .checklist li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #eaecf0;font-size:14px}
+    .checklist li:last-child{border-bottom:none}
+    .checklist li::before{content:"☐";font-size:18px;color:var(--blue);flex-shrink:0;line-height:1.3}
+
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--blue)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+
+    .cta-section{background:linear-gradient(135deg,#0a2a52,#0d3d1a);border-radius:16px;padding:36px 24px;text-align:center;margin:40px 0;color:#fff}
+    .cta-section h2{font-size:18px;font-weight:900;margin-bottom:8px;color:#fff;border:none;padding:0}
+    .cta-section p{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:20px}
+    .cta-btn{display:inline-block;background:#f0a500;color:#1a1a1a;font-weight:900;font-size:15px;padding:14px 36px;border-radius:50px;transition:opacity .2s}
+    .cta-btn:hover{opacity:.88;text-decoration:none}
+
+    footer.site-footer{background:#1a1a1a;color:#888;font-size:12px;text-align:center;padding:20px}
+    footer.site-footer a{color:#aaa}
+
+    @media(max-width:600px){
+      .hero{padding:32px 16px 28px}
+      .hero h1{font-size:17px}
+      .method-cards{grid-template-columns:1fr}
+      .data-grid{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/">LED PRO SHOP</a>
+  <span>プロ仕様LED専門店</span>
+</header>
+
+<div class="hero">
+  <div class="cat-badge">電源・コントローラー解説</div>
+  <h1>LEDテープ 調光器 選び方ガイド<br>PWM・TRIAC・0-10V の違いと<br>フリッカー対策・互換確認手順</h1>
+  <div class="hero-meta">
+    <span>公開: 2026-05-18</span>
+    <span>対象: 電気工事業者・内装施工業者・照明設計担当者</span>
+  </div>
+</div>
+
+<img src="/articles/images/led-tape-dimmer-guide-hero.webp" alt="LEDテープ 調光器 選び方ガイド｜PWM・TRIAC・0-10V" class="hero-img" width="860" height="430" loading="eager">
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/">LED PRO SHOP</a><span>›</span>
+    <a href="/articles/">コラム</a><span>›</span>
+    <span>LEDテープ 調光器 選び方ガイド</span>
+  </nav>
+
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#method">調光方式3種の違い（PWM・TRIAC・0-10V）</a></li>
+      <li><a href="#comparison">用途別 選び方比較表</a></li>
+      <li><a href="#compatibility">互換性チェックの方法</a></li>
+      <li><a href="#flicker">フリッカー（ちらつき）の原因と対策</a></li>
+      <li><a href="#wiring">配線の基本と注意点</a></li>
+      <li><a href="#checklist">購入前チェックリスト</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ol>
+  </nav>
+
+  <div class="article-body">
+
+    <p>LEDテープに調光を組み合わせる場合、調光器の方式が合っていないと「ちらつく」「暗くならない」「最低輝度で消えてしまう」といったトラブルが発生します。方式は大きくPWM・TRIAC・0-10Vの3種類。このページでは各方式の仕組みと使い分けを業務施工の観点から整理します。</p>
+
+    <!-- ===== 1. 調光方式3種 ===== -->
+    <h2 id="method">1. 調光方式3種の違い（PWM・TRIAC・0-10V）</h2>
+
+    <div class="method-cards">
+      <div class="method-card recommended">
+        <span class="badge standard">汎用・標準</span>
+        <h4>PWM調光</h4>
+        <p class="sub">Pulse Width Modulation</p>
+        <ul>
+          <li>DC電源の後段で動作</li>
+          <li>LEDのオン/オフを高速繰り返し</li>
+          <li>周波数が高いほどフリッカーなし</li>
+          <li>コントローラー価格が低い</li>
+          <li>調光範囲: 1〜100%</li>
+        </ul>
+      </div>
+      <div class="method-card">
+        <span class="badge wall">壁スイッチ流用</span>
+        <h4>TRIAC調光</h4>
+        <p class="sub">位相制御調光</p>
+        <ul>
+          <li>AC電源段で波形を切り取り制御</li>
+          <li>既存の壁調光スイッチと互換</li>
+          <li>対応LEDテープ・電源が必要</li>
+          <li>低輝度でちらつきが出やすい</li>
+          <li>調光範囲: 10〜100%（製品による）</li>
+        </ul>
+      </div>
+      <div class="method-card">
+        <span class="badge pro">業務・産業向け</span>
+        <h4>0-10V調光</h4>
+        <p class="sub">アナログ電圧制御</p>
+        <ul>
+          <li>0Vで最小輝度、10Vで100%</li>
+          <li>BAS・DALI・PLC との連携が容易</li>
+          <li>工場・植物工場・商業施設向け</li>
+          <li>配線が増えるが制御精度が高い</li>
+          <li>調光範囲: 0〜100%</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>迷ったらPWM調光を選択:</strong> コスト・汎用性・フリッカー性能のバランスが最もよく、一般的な店舗内装・間接照明・看板照明の大多数はPWM調光で対応できます。</p>
+    </div>
+
+    <!-- ===== 2. 比較表 ===== -->
+    <h2 id="comparison">2. 用途別 選び方比較表</h2>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>PWM調光</th>
+            <th>TRIAC調光</th>
+            <th>0-10V調光</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>動作電源</td>
+            <td>DC（12V/24V）</td>
+            <td>AC（100V/200V）</td>
+            <td>DC（12V/24V）＋制御線</td>
+          </tr>
+          <tr>
+            <td>フリッカー</td>
+            <td class="good">少ない（高周波PWMで解消）</td>
+            <td class="bad">低輝度で出やすい</td>
+            <td class="good">ほぼなし</td>
+          </tr>
+          <tr>
+            <td>調光範囲</td>
+            <td class="good">1〜100%（広い）</td>
+            <td class="mid">10〜100%（狭め）</td>
+            <td class="good">0〜100%（最広）</td>
+          </tr>
+          <tr>
+            <td>既存壁スイッチ利用</td>
+            <td class="bad">不可</td>
+            <td class="good">可（TRIAC対応品）</td>
+            <td class="bad">不可</td>
+          </tr>
+          <tr>
+            <td>BAS/DALI連携</td>
+            <td class="bad">不可（変換器必要）</td>
+            <td class="bad">不可</td>
+            <td class="good">可</td>
+          </tr>
+          <tr>
+            <td>コスト（調光器単体）</td>
+            <td class="good">低（数千円〜）</td>
+            <td class="mid">中（対応品限定）</td>
+            <td class="bad">高（設備工事込み）</td>
+          </tr>
+          <tr>
+            <td>主な用途</td>
+            <td class="good">店舗照明・間接照明・看板・一般施工</td>
+            <td>改修工事・既存スイッチ流用</td>
+            <td>工場・植物工場・商業施設BAS</td>
+          </tr>
+          <tr>
+            <td>動画・写真撮影環境</td>
+            <td class="good">1kHz以上なら適合</td>
+            <td class="bad">縞が出やすく不向き</td>
+            <td class="good">適合</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== 3. 互換性チェック ===== -->
+    <h2 id="compatibility">3. 互換性チェックの方法</h2>
+
+    <h3>LEDテープと調光器の組み合わせ確認</h3>
+    <p>調光トラブルの大半は「調光器対応でないLEDテープにTRIAC調光器を接続」または「LED電源が調光非対応」が原因です。以下の手順で事前に確認してください。</p>
+
+    <ul class="flow">
+      <li>
+        <div class="flow-body">
+          <strong>LEDテープの仕様を確認する</strong>
+          製品ページまたはパッケージに「調光対応」「PWM調光対応」「TRIAC調光対応」の記載があるか確認。記載がない場合は非対応と判断。
+        </div>
+      </li>
+      <li>
+        <div class="flow-body">
+          <strong>電源（ドライバー）が調光対応かを確認する</strong>
+          TRIAC調光の場合は「調光器対応電源」または「位相制御対応」と記載された専用電源が必要。PWM調光はDC定電圧電源（調光機能内蔵またはPWM入力端子付き）を使用する。
+        </div>
+      </li>
+      <li>
+        <div class="flow-body">
+          <strong>調光器の最大負荷と接続W数を確認する</strong>
+          接続する全LEDテープの合計W数 × 1.2が調光器の定格W数以下であること。例: 60W使用 → 72W以上の定格調光器を選択。
+        </div>
+      </li>
+      <li>
+        <div class="flow-body">
+          <strong>テスト点灯で調光範囲を確認する</strong>
+          最小輝度（10〜20%）でちらつきがないか・点灯しきれないことがないかを確認。異常があれば調光器と電源の組み合わせを見直す。
+        </div>
+      </li>
+    </ul>
+
+    <div class="box-orange">
+      <p><strong>NG組み合わせの例:</strong> 「調光非対応のLEDテープ」＋「TRIAC壁スイッチ」→ ちらつき・異音・早期故障。「12V LEDテープ用調光器」を「24V電源回路」に接続 → 調光器が焼損する危険あり。必ず電圧・調光方式の両方を合わせてください。</p>
+    </div>
+
+    <!-- ===== 4. フリッカー ===== -->
+    <h2 id="flicker">4. フリッカー（ちらつき）の原因と対策</h2>
+
+    <h3>フリッカーが起きる3つの原因</h3>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>原因</th><th>症状</th><th>対策</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PWM周波数が低い（1kHz未満）</td>
+            <td>目でちらつきが見える・動画に縞が入る</td>
+            <td class="good">1kHz以上のPWM調光器に交換</td>
+          </tr>
+          <tr>
+            <td>TRIAC調光器との互換性不一致</td>
+            <td>低輝度でちらつく・輝度が飛ぶ</td>
+            <td class="good">メーカー推奨の組み合わせで再選定</td>
+          </tr>
+          <tr>
+            <td>電源のリップルが大きい</td>
+            <td>全輝度でちらつく・電源が熱を持つ</td>
+            <td class="good">リップル1%以下の電源に交換</td>
+          </tr>
+          <tr>
+            <td>電源容量に対して負荷が大きすぎる</td>
+            <td>明るさがばらつく・電圧降下でちらつく</td>
+            <td class="good">余裕率20%の電源容量に変更</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>撮影・映像環境での注意点</h3>
+    <p>スタジオ・ネイルサロン・アパレルショップでの撮影用照明には特に注意が必要です。人の目では見えないちらつきがカメラのシャッタースピードと干渉し、映像に縞（バンディング）が出ます。</p>
+
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="num">1<span style="font-size:14px">kHz</span></div>
+        <div class="unit">以上のPWM周波数</div>
+        <div class="label">フリッカー低減の最低ライン</div>
+      </div>
+      <div class="data-card">
+        <div class="num">4<span style="font-size:14px">kHz</span></div>
+        <div class="unit">以上のPWM周波数</div>
+        <div class="label">高速度カメラ・動画撮影対応</div>
+      </div>
+      <div class="data-card">
+        <div class="num">1<span style="font-size:14px">%</span></div>
+        <div class="unit">以下のリップル率</div>
+        <div class="label">フリッカーフリー電源の目安</div>
+      </div>
+      <div class="data-card">
+        <div class="num">Ra<span style="font-size:14px"> 90+</span></div>
+        <div class="unit">演色性も同時に確認</div>
+        <div class="label">撮影・美容環境では必須</div>
+      </div>
+    </div>
+
+    <div class="box-green">
+      <p><strong>撮影環境での推奨構成:</strong> PWM調光器（4kHz以上）＋リップル1%以下のフリッカーフリー電源＋Ra90以上のLEDテープ。この3点を揃えると撮影時の縞・色かぶりを最小化できます。</p>
+    </div>
+
+    <!-- ===== 5. 配線 ===== -->
+    <h2 id="wiring">5. 配線の基本と注意点</h2>
+
+    <h3>PWM調光の基本配線構成</h3>
+    <p>最も多く使われるPWM調光器の接続順序は以下のとおりです。</p>
+
+    <div class="box-blue">
+      <p>
+        <strong>AC100V</strong> → <strong>LED電源（定電圧DC12V/24V）</strong> → <strong>PWM調光器（コントローラー）</strong> → <strong>LEDテープ</strong><br>
+        ※ 調光器はLED電源の出力側（DC側）に接続します。AC100V側に接続するのはTRIAC調光器の場合のみ。
+      </p>
+    </div>
+
+    <h3>配線時の注意点</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>確認項目</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>極性（＋/−）</td><td>LEDテープと調光器の＋/−を必ず合わせる。逆接続は即故障</td></tr>
+          <tr><td>電圧の一致</td><td>12V用調光器には12V電源・24V用には24V電源。混用禁止</td></tr>
+          <tr><td>電線の太さ</td><td>5m超・高消費電力ではAWG16（1.31mm²）以上を使用</td></tr>
+          <tr><td>調光器の設置位置</td><td>調光器本体を電源から2m以内に設置すると電圧降下を抑えられる</td></tr>
+          <tr><td>複数ゾーン制御</td><td>ゾーンごとに調光器を独立させると故障時の影響範囲を最小化できる</td></tr>
+          <tr><td>放熱</td><td>調光器は発熱するため密閉空間への収納は避け、通気を確保する</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== CTA ===== -->
+    <div class="cta-section">
+      <h2>LEDテープ・調光器を探す</h2>
+      <p>PWM調光対応LEDテープ（12V/24V）・フリッカーフリー電源・各種コントローラーを在庫から即納。<br>プロ価格・数量割引対応。</p>
+      <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+    </div>
+
+    <!-- ===== 6. チェックリスト ===== -->
+    <h2 id="checklist">6. 購入前チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>LEDテープの仕様に「調光対応」「PWM/TRIAC/0-10V対応」の記載があるか</li>
+      <li>LED電源（ドライバー）も調光対応品かを確認した</li>
+      <li>調光器の電圧（12V/24V）とLED電源の出力電圧が一致している</li>
+      <li>接続LEDテープの合計W数 × 1.2 ≤ 調光器の定格W数</li>
+      <li>PWM調光の場合、PWM周波数が1kHz以上（撮影環境では4kHz以上）</li>
+      <li>電源のリップル率が1%以下のフリッカーフリー品か確認した</li>
+      <li>配線の極性（＋/−）と電圧が正しく接続されているか</li>
+      <li>テスト点灯で最小輝度〜最大輝度の全範囲を確認した</li>
+    </ul>
+
+    <!-- ===== 7. FAQ ===== -->
+    <h2 id="faq">7. よくある質問</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">LEDテープに一般的な壁の調光スイッチ（TRIAC）は使えますか？</div>
+      <div class="faq-a">「調光器対応」と明記されたLEDテープであれば使用できます。調光器対応でないLEDテープにTRIAC調光器を接続すると、フリッカー（ちらつき）・異音・故障の原因になります。必ずLEDテープと調光器の両方が「TRIAC調光対応」と記載されている製品を組み合わせてください。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">PWM調光とTRIAC調光の違いは何ですか？</div>
+      <div class="faq-a">PWM調光はDC電源の後段で動作し、LEDのオン・オフを高速で繰り返して明るさを制御します。TRIAC調光はAC電源段で動作し、電圧の波形を切り取ることで調光します。PWMは汎用性が高くフリッカーが少ない一方、TRIACは既存の壁スイッチを流用できる利点があります。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">調光するとLEDがちらつく（フリッカー）原因と対策は？</div>
+      <div class="faq-a">主な原因は①PWM周波数が低い（1kHz未満）、②LEDと調光器の互換性不一致、③電源のリップルが大きい、の3つです。対策は①PWM周波数1kHz以上の調光器に交換、②LEDテープと調光器のメーカー推奨組み合わせを確認、③リップル1%以下のフリッカーフリー電源を使用、の順で試してください。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">0-10V調光はどんな用途に使いますか？</div>
+      <div class="faq-a">0-10V調光はビルのBAS（ビルオートメーションシステム）やDALI制御盤との連携、工場・倉庫の照明制御システム、植物工場の照度管理など、業務・産業用途に使います。0Vで最小輝度（またはOFF）、10Vで最大輝度（100%）を制御する業界標準インターフェースです。一般店舗・住宅ではPWMまたはTRIACが多く使われます。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">調光器の最大負荷はどう計算しますか？</div>
+      <div class="faq-a">接続するLEDテープの総消費W数 × 1.2（余裕率20%）が必要な調光器の定格容量です。例: 10W/m × 5m × 2本 = 100W → 調光器は120W以上を選択。余裕率なしで使うと調光器の発熱・寿命低下・誤動作の原因になります。</div>
+    </div>
+
+  </div><!-- /.article-body -->
+</div><!-- /.container -->
+
+<footer class="site-footer">
+  <p><a href="/">LED PRO SHOP</a> — プロ仕様LED専門店 &copy; 2026</p>
+</footer>
+
+</body>
+</html>
