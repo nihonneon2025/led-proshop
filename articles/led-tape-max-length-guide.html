@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LEDテープ 最大長さ・最大配線距離 完全ガイド｜12V/24V別限界距離・電圧降下計算・電源追加方法 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープの最大配線長は12V製品で5m・24V製品で10mが目安で、超えると末端が暗くなる電圧降下が発生します。12V/24V×W/m別の限界距離早見表・電圧降下の計算方法・電源追加や並列配線で延長する解決策を施工業者向けに解説した実務ガイド。">
+  <meta name="keywords" content="LEDテープ 最大長さ,LEDテープライト 長さ 限界,led配線方法,led配線 繋ぎ 方,LEDテープ 電圧降下 距離,LEDテープ 延長方法,led 配線 長さ">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-max-length-guide">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-max-length-guide">
+  <meta property="og:title" content="LEDテープ 最大長さ・最大配線距離 完全ガイド｜12V/24V別限界距離・電圧降下計算・電源追加方法 | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープの最大配線長は12V製品で5m・24V製品で10mが目安で、超えると末端が暗くなる電圧降下が発生します。12V/24V×W/m別の限界距離早見表・電圧降下の計算方法・電源追加や並列配線で延長する解決策を施工業者向けに解説した実務ガイド。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-max-length-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ 最大長さ・最大配線距離 完全ガイド｜12V/24V別限界距離・電圧降下計算・電源追加方法 | LED PRO SHOP">
+  <meta name="twitter:description" content="LEDテープの最大配線長は12V製品で5m・24V製品で10mが目安で、超えると末端が暗くなる電圧降下が発生します。12V/24V×W/m別の限界距離早見表・電圧降下計算・電源追加や並列配線で延長する解決策を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-max-length-guide-hero.webp">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDテープ 最大長さ・最大配線距離 完全ガイド｜12V/24V別限界距離・電圧降下計算・電源追加方法",
+    "description": "LEDテープの最大配線長・電圧降下の計算方法・電源追加で延長する手順を施工業者向けに解説した実務ガイド。",
+    "image": "https://led-proshop.com/articles/images/led-tape-max-length-guide-hero.webp",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP 編集部"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
+    },
+    "datePublished": "2026-05-19",
+    "dateModified": "2026-05-19",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-max-length-guide"
+  }
+  </script>
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/articles/articles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">LED PRO SHOP</a>
+    <nav class="global-nav">
+      <a href="/articles/">記事一覧</a>
+      <a href="/">商品一覧</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-main">
+<article>
+
+<div class="article-hero">
+  <img src="/articles/images/led-tape-max-length-guide-hero.webp"
+       alt="LEDテープ 最大長さ・最大配線距離 完全ガイド"
+       width="1200" height="630" loading="eager">
+</div>
+
+<div class="article-container">
+
+<h1>LEDテープ 最大長さ・最大配線距離 完全ガイド｜12V/24V別限界距離・電圧降下計算・電源追加方法</h1>
+
+<p class="article-meta">
+  <span>2026-05-19</span>
+  <span class="article-cat">LED施工ガイド</span>
+</p>
+
+<div class="article-lead">
+  <p>LEDテープを長く配線したいとき、<strong>「どこまで伸ばせるのか」</strong>は施工の設計段階で必ず確認すべき情報です。LEDテープには製品ごとに<strong>最大接続長（最大配線長）</strong>が定められており、この距離を超えると末端のLEDが暗くなる「電圧降下」が発生します。本ガイドでは12V/24V別の限界距離・電圧降下の計算式・超えた場合の解決策を施工業者向けに解説します。</p>
+</div>
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#what-is-max-length">最大長さとは何か（電圧降下の仕組み）</a></li>
+    <li><a href="#max-length-table">12V/24V別 最大配線長さ 早見表</a></li>
+    <li><a href="#symptoms">最大長さを超えるとどうなるか</a></li>
+    <li><a href="#solutions">解決策3つ</a></li>
+    <li><a href="#voltage-drop-calc">電圧降下の計算方法</a></li>
+    <li><a href="#power-add">電源追加の手順</a></li>
+    <li><a href="#design-cases">施工ケース別 推奨設計</a></li>
+    <li><a href="#faq">よくある質問</a></li>
+  </ol>
+</nav>
+
+<section id="what-is-max-length">
+  <h2>最大長さとは何か（電圧降下の仕組み）</h2>
+
+  <p>LEDテープは導線（銅箔）に電流を流してLEDを点灯させます。銅箔には抵抗があるため、電源から遠い末端ほど電圧が下がっていきます。これを<strong>電圧降下</strong>と呼びます。</p>
+
+  <p>たとえば12V電源から供給された電圧が、5m先の末端で10Vまで下がると、LEDは設計電圧（12V）より低い電圧で動作することになります。その結果として：</p>
+
+  <ul>
+    <li>末端が<strong>スタート側より明らかに暗くなる</strong></li>
+    <li>色温度が若干変化する（電球色系は黄みが強くなりやすい）</li>
+    <li>LEDへのストレスが増え、<strong>早期劣化・寿命短縮</strong>につながる</li>
+  </ul>
+
+  <p>LEDテープの「最大接続長」はこの電圧降下が許容範囲（通常は定格電圧の約85%以内）に収まる距離の上限を指します。</p>
+
+  <div style="background:#e8f0fe;padding:16px;border-radius:6px;margin:12px 0;">
+    <p style="font-weight:700;margin:0 0 6px">電圧降下が許容範囲を超えるサインは「末端が暗い」</p>
+    <p style="margin:0;font-size:13px">スタートから約1m地点と末端を比較して明らかに輝度が違う場合、電圧降下が発生しています。テスターで末端の電圧を測定して確認してください。</p>
+  </div>
+</section>
+
+<section id="max-length-table">
+  <h2>12V/24V別 最大配線長さ 早見表</h2>
+
+  <p>最大配線長はテープの電圧・W/m（消費電力）によって変わります。以下は代表的な組み合わせの目安です。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>電圧</th>
+        <th>テープ種別</th>
+        <th>W/m</th>
+        <th>最大配線長（目安）</th>
+        <th>補足</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>12V</td>
+        <td>SMD2835 低密度</td>
+        <td>4.8W/m</td>
+        <td><strong>約5m</strong></td>
+        <td>一般的なスタンダードテープ</td>
+      </tr>
+      <tr>
+        <td>12V</td>
+        <td>SMD2835 高密度</td>
+        <td>9.6W/m</td>
+        <td><strong>約3m</strong></td>
+        <td>高密度で電流が多く降下しやすい</td>
+      </tr>
+      <tr>
+        <td>12V</td>
+        <td>COBテープ</td>
+        <td>5〜8W/m</td>
+        <td><strong>約4〜5m</strong></td>
+        <td>COBは均一発光だが電流は同等</td>
+      </tr>
+      <tr>
+        <td>24V</td>
+        <td>SMD2835 低密度</td>
+        <td>4.8W/m</td>
+        <td><strong>約10m</strong></td>
+        <td>24Vは同W/mで電流が半分・降下少</td>
+      </tr>
+      <tr>
+        <td>24V</td>
+        <td>SMD2835 高密度</td>
+        <td>12W/m</td>
+        <td><strong>約7m</strong></td>
+        <td>高密度でも12Vより大幅に長い</td>
+      </tr>
+      <tr>
+        <td>24V</td>
+        <td>COBテープ</td>
+        <td>8W/m</td>
+        <td><strong>約10m</strong></td>
+        <td>業務施工で最も信頼性が高い組み合わせ</td>
+      </tr>
+      <tr>
+        <td>24V</td>
+        <td>COBテープ 高密度</td>
+        <td>14W/m</td>
+        <td><strong>約7m</strong></td>
+        <td>高輝度・高密度タイプ</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note"><strong>注意</strong>：上記は目安値です。実際のケーブル太さ（AWG）・接続部の接触抵抗・環境温度によって変わります。長距離施工の場合はテスターによる実測を必ず行ってください。</p>
+
+  <h3>12V vs 24V の距離比較まとめ</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>比較項目</th>
+        <th>12V</th>
+        <th>24V</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>最大配線長（目安）</td>
+        <td>3〜5m</td>
+        <td>7〜10m</td>
+      </tr>
+      <tr>
+        <td>電圧降下のしやすさ</td>
+        <td>△ 降下しやすい</td>
+        <td>◎ 降下しにくい</td>
+      </tr>
+      <tr>
+        <td>長距離施工の適性</td>
+        <td>△（電源追加か24V化が必要）</td>
+        <td>◎ そのまま使いやすい</td>
+      </tr>
+      <tr>
+        <td>電源コスト</td>
+        <td>やや安い</td>
+        <td>やや高い</td>
+      </tr>
+      <tr>
+        <td>業務施工推奨度</td>
+        <td>△ 短距離のみ</td>
+        <td>◎ 標準推奨</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="symptoms">
+  <h2>最大長さを超えるとどうなるか</h2>
+
+  <p>最大配線長を超えて1本のテープを接続した場合の典型的な症状は以下のとおりです。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>症状</th>
+        <th>原因</th>
+        <th>確認方法</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>末端が暗い（グラデーションに見える）</td>
+        <td>末端の電圧が下がりLEDの輝度が低下</td>
+        <td>テスターで末端電圧を測定</td>
+      </tr>
+      <tr>
+        <td>色温度が変わって見える</td>
+        <td>低電圧でLEDの色特性が変化</td>
+        <td>目視比較・色温度計</td>
+      </tr>
+      <tr>
+        <td>テープが熱くなる</td>
+        <td>電圧降下で発熱効率が悪化</td>
+        <td>手で触れて確認（低温やけどに注意）</td>
+      </tr>
+      <tr>
+        <td>点灯直後は均一だが時間が経つと暗くなる</td>
+        <td>テープ自体の温度上昇で抵抗が増加</td>
+        <td>30分点灯後に末端電圧を再測定</td>
+      </tr>
+      <tr>
+        <td>早期にLEDが切れる</td>
+        <td>電圧ストレスによる早期劣化</td>
+        <td>不点灯箇所の発生を記録</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="solutions">
+  <h2>解決策3つ</h2>
+
+  <p>最大配線長を超える必要がある場合は、以下の3つの方法から施工環境に合わせて選択します。</p>
+
+  <h3>解決策1：電源を追加して複数区間に分ける（最も確実）</h3>
+  <p>長いテープを区間ごとに切断し、各区間に独立した電源を設ける方法です。各区間が最大長さ以内に収まるため電圧降下の心配がなくなります。</p>
+  <ul>
+    <li>メリット：最も確実・任意の長さに対応できる</li>
+    <li>デメリット：電源の台数が増える・配線工事が増える</li>
+    <li>推奨場面：看板バックライト・長尺什器・建築ファサード照明</li>
+  </ul>
+
+  <h3>解決策2：並列配線に切り替える</h3>
+  <p>複数本のテープを同じ電源に並列（同時）接続する方法。各テープが電源から独立して給電されるため、末端の電圧降下が減ります。</p>
+  <ul>
+    <li>メリット：1台の電源でまとめられる場合がある</li>
+    <li>デメリット：分岐配線が必要・ケーブル量が増える</li>
+    <li>推奨場面：棚下照明・什器内の複数本同時点灯</li>
+  </ul>
+
+  <h3>解決策3：12Vから24Vに変更する</h3>
+  <p>12Vテープを24Vテープに変更するだけで最大配線長が約2倍になります。新設工事であれば最初から24Vで設計することを強く推奨します。</p>
+  <ul>
+    <li>メリット：根本解決・配線がシンプルになる</li>
+    <li>デメリット：既設の12V電源・テープをすべて変更する必要がある</li>
+    <li>推奨場面：リニューアル工事・新規設計</li>
+  </ul>
+
+  <div style="background:#e8f0fe;padding:16px;border-radius:6px;margin:16px 0;">
+    <p style="font-weight:700;margin:0 0 6px">業務施工の原則：新設は24V設計・既設12Vは電源分割で対応</p>
+    <p style="margin:0;font-size:13px">新規設計なら24Vテープ+24V電源を選ぶことで最大配線長の問題を最小化できます。既設が12Vの場合は電源を分割して各区間を5m以内に収めるのが最もトラブルの少ない設計です。</p>
+  </div>
+</section>
+
+<section id="voltage-drop-calc">
+  <h2>電圧降下の計算方法</h2>
+
+  <p>施工前に電圧降下量を計算しておくことで、末端の明るさが許容範囲に収まるかを確認できます。</p>
+
+  <h3>電圧降下の計算式</h3>
+  <div style="background:#f5f6f8;padding:16px;border-radius:6px;margin:12px 0;">
+    <p style="font-weight:700;margin:0 0 8px">電圧降下（V）= 電流（A） × 導線抵抗（Ω/m） × 2 × 配線長（m）</p>
+    <p style="margin:0 0 8px;font-size:13px">※ 「×2」はプラス側とマイナス側の両方の導線の抵抗を合計するため</p>
+    <p style="font-weight:700;margin:0 0 6px">電流（A）= テープのW/m × 配線長（m） ÷ 電圧（V）</p>
+  </div>
+
+  <h3>計算例</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>条件</th>
+        <th>値</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>テープ電圧</td>
+        <td>12V</td>
+      </tr>
+      <tr>
+        <td>テープW/m</td>
+        <td>8W/m</td>
+      </tr>
+      <tr>
+        <td>配線長</td>
+        <td>5m</td>
+      </tr>
+      <tr>
+        <td>ケーブル（AWG20・0.5mm²）の抵抗</td>
+        <td>0.033Ω/m</td>
+      </tr>
+    </tbody>
+  </table>
+  <ol style="margin-top:12px">
+    <li>電流 = 8W/m × 5m ÷ 12V = <strong>3.3A</strong></li>
+    <li>電圧降下 = 3.3A × 0.033Ω/m × 2 × 5m = <strong>約1.1V</strong></li>
+    <li>末端電圧 = 12V − 1.1V = <strong>10.9V</strong>（定格の91%：許容範囲内）</li>
+  </ol>
+
+  <p>この計算で末端電圧が定格の85%（12Vなら10.2V・24Vなら20.4V）を下回る場合は電圧降下が大きすぎると判断し、電源追加・ケーブル太さのアップ・24V化を検討してください。</p>
+
+  <h3>主要ケーブルの導線抵抗（参考値）</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>ケーブル規格</th>
+        <th>断面積</th>
+        <th>導線抵抗（Ω/m）</th>
+        <th>許容電流目安</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>AWG20</td>
+        <td>0.5mm²</td>
+        <td>0.033</td>
+        <td>約2.5A</td>
+      </tr>
+      <tr>
+        <td>AWG18</td>
+        <td>0.75mm²</td>
+        <td>0.021</td>
+        <td>約5A</td>
+      </tr>
+      <tr>
+        <td>AWG16</td>
+        <td>1.25mm²</td>
+        <td>0.013</td>
+        <td>約8A</td>
+      </tr>
+      <tr>
+        <td>AWG14</td>
+        <td>2.0mm²</td>
+        <td>0.008</td>
+        <td>約12A</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>ケーブルを太くすると電圧降下が減る</strong>：AWG20（0.033Ω/m）をAWG16（0.013Ω/m）に変えると電圧降下が約60%削減されます。長距離配線ではケーブルを太くすることが有効な対策です。</p>
+</section>
+
+<section id="power-add">
+  <h2>電源追加の手順</h2>
+
+  <p>最大配線長を超える場合に最も確実な方法は、電源を追加して区間ごとに分けることです。</p>
+
+  <h3>電源追加の設計手順</h3>
+  <ol>
+    <li><strong>総配線長を確認</strong>：設置するLEDテープの合計長さを計測する</li>
+    <li><strong>最大長さで区間を分ける</strong>：12Vなら5m・24Vなら10mを目安に区間を設定する</li>
+    <li><strong>各区間に必要なPSU容量を計算</strong>：W/m × 区間メートル × 1.2</li>
+    <li><strong>PSUの設置場所を確保</strong>：各区間の起点近くに電源を設置できるスペースを確認</li>
+    <li><strong>AC電源の引き込みを確認</strong>：各PSUへのAC100V配線ルートを施工前に確認する</li>
+    <li><strong>テープを区間ごとに切断・接続</strong>：切断マーク（ハサミマーク）でカットして各PSUに接続</li>
+    <li><strong>末端電圧を測定して確認</strong>：各区間の末端でテスターを使い電圧が許容範囲内か確認</li>
+  </ol>
+
+  <h3>電源追加の設計例</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>設置総長</th>
+        <th>電圧</th>
+        <th>W/m</th>
+        <th>推奨構成</th>
+        <th>各PSU容量</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>10m</td>
+        <td>12V</td>
+        <td>8W/m</td>
+        <td>PSU×2台（5m×2区間）</td>
+        <td>8×5×1.2=48W → 50W以上</td>
+      </tr>
+      <tr>
+        <td>20m</td>
+        <td>24V</td>
+        <td>8W/m</td>
+        <td>PSU×2台（10m×2区間）</td>
+        <td>8×10×1.2=96W → 100W以上</td>
+      </tr>
+      <tr>
+        <td>30m</td>
+        <td>24V</td>
+        <td>8W/m</td>
+        <td>PSU×3台（10m×3区間）</td>
+        <td>8×10×1.2=96W → 100W以上×3</td>
+      </tr>
+      <tr>
+        <td>50m</td>
+        <td>24V</td>
+        <td>14W/m</td>
+        <td>PSU×7台（7m×7区間）</td>
+        <td>14×7×1.2=118W → 120W以上×7</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="design-cases">
+  <h2>施工ケース別 推奨設計</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>施工場面</th>
+        <th>必要長</th>
+        <th>推奨電圧</th>
+        <th>配線設計</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>棚下照明（1段・1m以内）</td>
+        <td>1m</td>
+        <td>12V or 24V</td>
+        <td>1電源・1本 そのまま接続</td>
+      </tr>
+      <tr>
+        <td>什器多段棚（5段・各1m）</td>
+        <td>5m（並列5本×1m）</td>
+        <td>24V</td>
+        <td>並列配線・端子台1台からまとめる</td>
+      </tr>
+      <tr>
+        <td>カウンター下間接照明（10m連続）</td>
+        <td>10m</td>
+        <td>24V</td>
+        <td>1電源（10m・100W以上）・両端給電推奨</td>
+      </tr>
+      <tr>
+        <td>看板バックライト（20m連続）</td>
+        <td>20m</td>
+        <td>24V</td>
+        <td>PSU×2台・10m区間×2に分割</td>
+      </tr>
+      <tr>
+        <td>建築ファサード（50m連続）</td>
+        <td>50m</td>
+        <td>24V</td>
+        <td>PSU×5〜7台・均等区間に分割・中央給電推奨</td>
+      </tr>
+      <tr>
+        <td>階段手すり間接照明（15m）</td>
+        <td>15m</td>
+        <td>24V</td>
+        <td>PSU×2台（7〜8m区間×2）・中間に電源ボックス設置</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>両端給電で最大長さを延ばす方法</h3>
+  <p>1本のテープの両端（スタート端子・エンド端子）から電源を供給することで、電圧降下の影響を半分に抑えられます。10m（24V）のテープに両端給電すると末端電圧の降下が通常の1/4程度まで低減します。配線ルートの確保が必要ですが、電源を追加する場合の有効な補助手段です。</p>
+</section>
+
+<section id="faq">
+  <h2>よくある質問</h2>
+
+  <div class="faq-item">
+    <h3>Q. メーカーの「最大接続長5m」はどんな条件での値ですか？</h3>
+    <p>A. 一般的にはAWG20程度のケーブルを使用し、電圧降下が定格の85〜90%以内に収まる条件での目安値です。ケーブルが細い・室温が高い・接続部の抵抗が大きい場合は実際の限界距離がさらに短くなります。業務施工では必ず末端電圧をテスターで実測して確認してください。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. 5m以上のテープを1本で購入しても使えますか？</h3>
+    <p>A. 購入自体は可能ですが、5m以上を1本の電源に接続すると末端で電圧降下が発生する場合があります。10mロールを購入した場合は5m地点でカットして2電源に分ける、または両端給電にするのが推奨です。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. 電源を増やさずに長距離配線するにはどうすればいいですか？</h3>
+    <p>A. ①ケーブルをAWG16〜AWG14に太くする ②24Vテープに変更する ③両端給電を採用する、の3つを組み合わせると電源台数を最小化できます。ただし配線設計が複雑になるため、施工前に電圧降下計算を必ず実施してください。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. 延長ケーブルで配線を長くした場合も最大長さに含みますか？</h3>
+    <p>A. はい、電源からLEDテープ末端までの総延長（延長ケーブル含む）が最大配線長の計算対象です。延長ケーブルが細いと電圧降下が増えるため、延長ケーブルはAWG18以上の太めのものを使用してください。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. 12Vテープを使っていて末端が暗い。24V電源に変えれば直りますか？</h3>
+    <p>A. 直りません。12Vテープに24V電源を接続するとテープが過電圧で破損します。解決策は①電源を分割して区間を短くする②12Vのまま両端給電にする③テープごと24V製品に買い替えて電源も24Vに変更する、のいずれかです。</p>
+  </div>
+</section>
+
+<div class="article-cta">
+  <p>業務用LEDテープライト・PSU・アルミフレームはLED PRO SHOPにてプロ価格・最短翌日出荷でご提供しています。</p>
+  <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+</div>
+
+</div><!-- /article-container -->
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-logo">LED PRO SHOP</p>
+    <nav class="footer-nav">
+      <a href="/">商品一覧</a>
+      <a href="/articles/">コラム</a>
+      <a href="/tokushoho.html">特定商取引法</a>
+    </nav>
+    <p class="footer-copy">&copy; 2025 LED PRO SHOP</p>
+  </div>
+</footer>
+
+</body>
+</html>
