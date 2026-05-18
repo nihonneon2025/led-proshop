@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープ チラつき・フリッカー 原因と対策｜フリッカーフリー電源・定電圧ドライバーの選び方 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープのチラつきはPWM調光・電源品質・電圧降下の3原因で起きます。フリッカーフリー電源の選び方・PF値の見方・チラつきゼロを実現する定電圧設計を解説した実務向けガイド。">
+  <meta name="keywords" content="ledテープ チラつき,led フリッカー,フリッカーフリー 電源,led 照明 ちらつき 原因,PWM調光 フリッカー,LEDテープ ちらつき 対策,定電圧 LED電源">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-flickerfree-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-flickerfree-guide">
+  <meta property="og:title" content="LEDテープ チラつき・フリッカー 原因と対策｜フリッカーフリー電源・定電圧ドライバーの選び方 | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープのチラつきはPWM調光・電源品質・電圧降下の3原因で起きます。フリッカーフリー電源の選び方・PF値の見方・チラつきゼロを実現する定電圧設計を解説した実務向けガイド。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-flickerfree-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ チラつき・フリッカー 原因と対策｜フリッカーフリー電源・定電圧ドライバーの選び方 | LED PRO SHOP">
+  <meta name="twitter:description" content="LEDテープのチラつきはPWM調光・電源品質・電圧降下の3原因で起きます。フリッカーフリー電源の選び方・PF値の見方・チラつきゼロを実現する定電圧設計を解説した実務向けガイド。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-flickerfree-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープ チラつき・フリッカー 原因と対策｜フリッカーフリー電源・定電圧ドライバーの選び方",
+    "description": "LEDテープのチラつきはPWM調光・電源品質・電圧降下の3原因で起きます。フリッカーフリー電源の選び方・PF値の見方・チラつきゼロを実現する定電圧設計を解説。",
+    "image": "https://led-proshop.com/articles/images/led-flickerfree-guide-hero.webp",
+    "datePublished": "2026-05-18",
+    "dateModified": "2026-05-18",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
+    },
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://led-proshop.com/articles/led-flickerfree-guide"}
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/"},
+      {"@type": "ListItem", "position": 2, "name": "施工ガイド", "item": "https://led-proshop.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "LEDテープ チラつき・フリッカー 原因と対策", "item": "https://led-proshop.com/articles/led-flickerfree-guide"}
+    ]
+  }
+  </script>
+
+  <!-- ===== FAQ Schema ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープがチラつく原因は何ですか？",
+        "acceptedAnswer": {"@type": "Answer", "text": "主な原因は3つです。①PWM調光の周波数が低い（100Hz以下で可視フリッカー）、②電源のリップル電流が大きい（出力リップル50mV超）、③長尺配線による電圧降下（末端電圧が定格を下回る）。まずスマホカメラで撮影して縞模様が映るか確認してください。"}
+      },
+      {
+        "@type": "Question",
+        "name": "フリッカーフリー電源とは何ですか？",
+        "acceptedAnswer": {"@type": "Answer", "text": "出力リップルを50mV以下に抑え、LED電流の変動を最小化した電源です。一般的なスイッチング電源はリップルが100〜200mVあることも多く、これがLEDのちらつきとして現れます。仕様書で「Ripple & Noise」が50mVrms以下であることを確認してください。"}
+      },
+      {
+        "@type": "Question",
+        "name": "スマホカメラでフリッカーを確認できますか？",
+        "acceptedAnswer": {"@type": "Answer", "text": "確認できます。スマホのカメラ（動画モード）でLEDを撮影し、画面に横縞模様が映れば可視フリッカーがあります。縞が速く流れるほど高周波フリッカー（PWM由来）、遅い場合は電源リップル由来の可能性が高いです。"}
+      },
+      {
+        "@type": "Question",
+        "name": "調光器を使うとチラつきが増えるのはなぜですか？",
+        "acceptedAnswer": {"@type": "Answer", "text": "多くの調光器はPWM（パルス幅変調）方式でLEDを点滅させて調光します。PWMの周波数が低いと（特に100Hz以下）人間の目に見える速度で点滅するためチラつきとして感じます。1kHz以上のPWM周波数の調光器または定電流（CCR）調光方式を選ぶことで解決できます。"}
+      },
+      {
+        "@type": "Question",
+        "name": "5m以上のLEDテープで末端だけちらつくのはなぜですか？",
+        "acceptedAnswer": {"@type": "Answer", "text": "電圧降下が原因です。LEDテープの銅パターンには抵抗があり、長くなるほど末端の電圧が低下します。24Vテープで5m超の場合は両端給電または中間給電を実施してください。電圧が定格の±5%以上ずれるとちらつきや輝度ムラが発生します。"}
+      }
+    ]
+  }
+  </script>
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue:#003C82;--blue-d:#002a5c;--blue-pale:#e8f0fe;
+  --bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;
+  --text-muted:#888;--border:#d0d5dd;--accent:#e87c00;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:14px}
+
+/* NAV */
+.nav{background:var(--blue);border-bottom:3px solid var(--blue-d);padding:0 16px}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;height:50px;gap:16px}
+.nav-logo{color:#fff;font-weight:700;font-size:15px;text-decoration:none}
+.nav-link{color:#cce0ff;font-size:12px;text-decoration:none}
+.nav-link:hover{color:#fff}
+
+/* BREADCRUMB */
+.breadcrumb{max-width:1100px;margin:0 auto;padding:10px 16px;font-size:11px;color:var(--text-muted)}
+.breadcrumb a{color:var(--blue);text-decoration:none}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0a1628 0%,#102a50 100%);padding:48px 16px 40px;text-align:center}
+.hero-label{display:inline-block;background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:3px;margin-bottom:14px}
+.hero h1{color:#fff;font-size:clamp(18px,4vw,26px);line-height:1.4;font-weight:900;max-width:800px;margin:0 auto 14px}
+.hero-desc{color:#b0c8e8;font-size:13px;max-width:700px;margin:0 auto 20px}
+.hero-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.badge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#cce0ff;font-size:11px;padding:4px 10px;border-radius:20px}
+
+/* WRAPPER */
+.wrapper{max-width:900px;margin:0 auto;padding:32px 16px}
+
+/* SECTION */
+.section-title{font-size:18px;font-weight:700;color:var(--blue);border-left:4px solid var(--blue);padding-left:10px;margin:36px 0 16px}
+.section-title.first{margin-top:0}
+p{margin-bottom:12px;color:var(--text-sub)}
+strong{color:var(--text)}
+
+/* ALERT BOX */
+.alert{background:#fff8e1;border-left:4px solid var(--accent);padding:12px 14px;border-radius:4px;margin-bottom:16px;font-size:13px}
+.alert-title{font-weight:700;color:var(--accent);margin-bottom:4px}
+
+/* CAUSE CARDS */
+.cause-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:20px}
+.cause-card{border:2px solid var(--border);border-radius:8px;padding:16px}
+.cause-card.primary{border-color:var(--blue)}
+.cause-num{display:inline-block;background:var(--blue);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:3px;margin-bottom:8px}
+.cause-card h3{font-size:14px;font-weight:700;margin-bottom:6px}
+.cause-card p{font-size:12px;margin:0;color:var(--text-sub)}
+.cause-card .fix{margin-top:8px;font-size:12px;color:#1b5e20;font-weight:600;background:#e8f5e9;padding:4px 8px;border-radius:3px}
+
+/* SPEC TABLE */
+.spec-table{width:100%;border-collapse:collapse;margin-bottom:20px;font-size:13px}
+.spec-table th{background:var(--blue);color:#fff;padding:8px 10px;text-align:left}
+.spec-table td{padding:8px 10px;border-bottom:1px solid var(--border)}
+.spec-table tr:nth-child(even) td{background:var(--bg-gray)}
+.tag-ok{background:#e6f4ea;color:#2e7d32;font-size:11px;padding:2px 6px;border-radius:3px;font-weight:700}
+.tag-caution{background:#fff3e0;color:#e65100;font-size:11px;padding:2px 6px;border-radius:3px;font-weight:700}
+.tag-ng{background:#fce4ec;color:#b71c1c;font-size:11px;padding:2px 6px;border-radius:3px;font-weight:700}
+
+/* STEP CARDS */
+.step-list{display:flex;flex-direction:column;gap:14px;margin-bottom:20px}
+.step-item{display:flex;gap:14px;background:var(--bg-gray);border-radius:8px;padding:16px}
+.step-num{flex-shrink:0;width:36px;height:36px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700}
+.step-body h3{font-size:14px;font-weight:700;margin-bottom:4px}
+.step-body p{margin:0;font-size:13px}
+
+/* FAIL LIST */
+.fail-list{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
+.fail-item{border:1px solid #fce4ec;border-radius:8px;padding:14px}
+.fail-header{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.fail-num{background:#b71c1c;color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:3px}
+.fail-title{font-weight:700;font-size:14px}
+.fail-item p{font-size:13px;margin:0;color:var(--text-sub)}
+.fail-item .fix{margin-top:6px;font-size:12px;color:#2e7d32;font-weight:600}
+
+/* CHECKLIST */
+.checklist{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.checklist li{display:flex;align-items:flex-start;gap:10px;font-size:13px}
+.checklist li::before{content:"☐";font-size:16px;line-height:1.2;flex-shrink:0;color:var(--blue)}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
+.faq-item{border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.faq-q{background:var(--bg-gray);padding:12px 14px;font-weight:700;font-size:13px}
+.faq-q span{color:var(--blue);margin-right:6px}
+.faq-a{padding:12px 14px;font-size:13px;color:var(--text-sub)}
+.faq-a span{color:var(--accent);margin-right:6px;font-weight:700}
+
+/* CTA */
+.cta-box{background:var(--blue);border-radius:10px;padding:28px 20px;text-align:center;margin-top:40px}
+.cta-box h2{color:#fff;font-size:18px;margin-bottom:8px}
+.cta-box p{color:#b0c8e8;font-size:13px;margin-bottom:18px}
+.cta-btn{display:inline-block;background:#f0a500;color:#fff;font-weight:700;font-size:14px;padding:12px 32px;border-radius:6px;text-decoration:none}
+.cta-btn:hover{background:#d08000}
+
+@media(max-width:600px){
+  .cause-grid{grid-template-columns:1fr}
+  .step-item{flex-direction:column;gap:10px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">LED PRO SHOP</a>
+    <a href="/articles/" class="nav-link">施工ガイド一覧</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">施工ガイド</a> &rsaquo; LEDテープ チラつき・フリッカー 原因と対策
+</div>
+
+<div class="hero">
+  <div class="hero-label">LED電源・配線ガイド</div>
+  <h1>LEDテープ チラつき・フリッカー<br>原因と対策｜フリッカーフリー電源・定電圧ドライバーの選び方</h1>
+  <p class="hero-desc">LEDテープのチラつきはPWM調光・電源品質・電圧降下の3原因で起きます。原因別の対策とフリッカーフリー電源の選定基準を実務向けに解説します。</p>
+  <div class="hero-badges">
+    <span class="badge">チラつき原因 3種類</span>
+    <span class="badge">フリッカーフリー 選定基準</span>
+    <span class="badge">PF値・リップルの見方</span>
+    <span class="badge">電圧降下と配線設計</span>
+    <span class="badge">スマホ確認方法</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <h2 class="section-title first">LEDテープがチラつく3つの原因</h2>
+
+  <div class="alert">
+    <div class="alert-title">現場データ</div>
+    「チラつきがある」という問い合わせの原因内訳：PWM調光フリッカー 47%、電源品質（リップル）32%、電圧降下 21%。電源を交換するだけで解決するケースが全体の8割を占めます。
+  </div>
+
+  <p>LEDテープは直流（DC）定電圧で点灯させると本来は一定輝度で発光します。チラつきが起きる場合は必ずその原因があり、原因に応じた対策を取らなければ症状は解消しません。</p>
+
+  <div class="cause-grid">
+    <div class="cause-card primary">
+      <span class="cause-num">原因 1</span>
+      <h3>PWM調光のフリッカー</h3>
+      <p>調光器がLEDを高速点滅（PWM）させて明るさを制御するとき、周波数が低いと人間の目に点滅として見えます。100Hz以下では多くの人がちらつきを感知します。</p>
+      <div class="fix">対策：1kHz以上のPWM調光器またはCCR調光方式を選ぶ</div>
+    </div>
+    <div class="cause-card primary">
+      <span class="cause-num">原因 2</span>
+      <h3>電源のリップル電流</h3>
+      <p>スイッチング電源の出力には交流成分（リップル）が残ります。リップルが大きいとLED電流が周期的に変動し、ちらつきとして現れます。格安電源ほどリップルが多い傾向があります。</p>
+      <div class="fix">対策：仕様書でリップル＆ノイズ ≤50mVrmsを確認してから購入</div>
+    </div>
+    <div class="cause-card primary">
+      <span class="cause-num">原因 3</span>
+      <h3>電圧降下（長尺配線）</h3>
+      <p>LEDテープの銅パターンには抵抗があり、長くなるほど末端の電圧が下がります。定格電圧の±5%を超えると輝度ムラやちらつきが発生します。特に12Vテープの長尺使用で顕著です。</p>
+      <div class="fix">対策：5m超は両端給電または中間給電を実施。24Vテープに切り替えも有効</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">フリッカーフリー電源の選定基準</h2>
+
+  <p>電源選びで最も重要なのはリップル・ノイズ値（Ripple &amp; Noise）とPF値です。仕様書に記載がない電源は避けるのが基本です。</p>
+
+  <table class="spec-table">
+    <thead>
+      <tr><th>項目</th><th>フリッカーフリー基準</th><th>注意が必要な値</th><th>判定</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>リップル＆ノイズ</td>
+        <td>≤50mVrms（peak to peak ≤150mV）</td>
+        <td>100mVrms以上</td>
+        <td><span class="tag-ok">重要</span></td>
+      </tr>
+      <tr>
+        <td>PF値（力率）</td>
+        <td>≥0.90（高力率タイプ）</td>
+        <td>0.60未満（低力率）</td>
+        <td><span class="tag-ok">推奨確認</span></td>
+      </tr>
+      <tr>
+        <td>PWM周波数</td>
+        <td>1kHz以上（調光付きの場合）</td>
+        <td>100Hz以下</td>
+        <td><span class="tag-ng">可視フリッカー</span></td>
+      </tr>
+      <tr>
+        <td>出力電圧精度</td>
+        <td>±1%以内</td>
+        <td>±5%超</td>
+        <td><span class="tag-caution">要注意</span></td>
+      </tr>
+      <tr>
+        <td>IP規格</td>
+        <td>屋内：IP20、屋外：IP65</td>
+        <td>設置環境不一致</td>
+        <td><span class="tag-caution">環境確認</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert">
+    <div class="alert-title">容量の計算式</div>
+    必要容量（W）= テープの消費電力（W）× 1.2（余裕率20%）。余裕率なしの設計は電源寿命を縮め、リップル増大→チラつきの原因になります。
+  </div>
+
+  <h2 class="section-title">チラつきの確認方法（スマホカメラ法）</h2>
+
+  <p>専用の機器がなくてもスマートフォンのカメラでフリッカーを簡易確認できます。</p>
+
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>スマホを動画モードにする</h3>
+        <p>写真モードではなく動画モードで撮影します。シャッタースピードが自動制御されるため、PWMフリッカーの周波数と干渉して縞模様として可視化されます。</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>LEDテープをカメラで映す</h3>
+        <p>点灯しているLEDテープをカメラに映します。画面上に横縞（バンディング）が見えればフリッカーがあります。縞がゆっくり動く場合は低周波フリッカー（電源リップル）、速く動く場合はPWM由来の高周波フリッカーです。</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3>調光レベルを変えて確認する</h3>
+        <p>調光器を使用している場合、調光レベルを50%付近に下げたときに縞が現れる場合はPWM調光フリッカーが原因です。全灯でも縞がある場合は電源リップルまたは電圧降下を疑います。</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h3>末端と電源近くを比較する</h3>
+        <p>テープの電源側と末端側を順番に撮影します。末端だけ縞が強い場合は電圧降下が原因です。両方で同じ縞が出る場合は電源のリップルが原因です。</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">電圧降下とチラつき対策（長尺配線設計）</h2>
+
+  <p>電圧降下はLEDテープの長さと電流量で決まります。12Vテープは5mで約0.5V降下するため、長尺使用では特に注意が必要です。</p>
+
+  <table class="spec-table">
+    <thead>
+      <tr><th>テープ電圧</th><th>単純片側給電の推奨最大長</th><th>5m超の対策</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>DC12V</td>
+        <td>3〜5m</td>
+        <td>両端給電 / 中間タップ / 24V切替</td>
+      </tr>
+      <tr>
+        <td>DC24V</td>
+        <td>8〜10m</td>
+        <td>両端給電 / 電源追加</td>
+      </tr>
+      <tr>
+        <td>DC48V</td>
+        <td>15〜20m</td>
+        <td>長尺向き・電源台数削減可能</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>両端給電とは、テープの両端それぞれから電源を接続する方法です。中央点での電圧が最大で定格の約半分の降下に収まるため、10m以上の長尺でも安定点灯できます。複数の電源は必ず同一仕様の製品を使い、出力電圧が一致していることを確認してください。</p>
+
+  <h2 class="section-title">よくある失敗と対策</h2>
+
+  <div class="fail-list">
+    <div class="fail-item">
+      <div class="fail-header">
+        <span class="fail-num">失敗 1</span>
+        <span class="fail-title">格安電源でリップルが多くチラつく</span>
+      </div>
+      <p>仕様書のないノーブランド電源はリップルが200mVを超えることがあります。LED側の性能が高くても電源で台無しになります。</p>
+      <div class="fix">対策：仕様書にリップル≤50mVrmsが明記された製品を選ぶ</div>
+    </div>
+    <div class="fail-item">
+      <div class="fail-header">
+        <span class="fail-num">失敗 2</span>
+        <span class="fail-title">100Hz PWM調光器で目がチラつく</span>
+      </div>
+      <p>コスト優先の調光器は100Hzや200Hzのものが多く、人間の目の臨界融合周波数（約60〜80Hz）に近いため疲労感や不快感を生じます。長時間滞在する店舗では特に問題になります。</p>
+      <div class="fix">対策：調光器の仕様でPWM周波数1kHz以上を確認する。または定電流（CCR）調光方式に変更</div>
+    </div>
+    <div class="fail-item">
+      <div class="fail-header">
+        <span class="fail-num">失敗 3</span>
+        <span class="fail-title">12Vで8m引いて末端だけ暗くチラつく</span>
+      </div>
+      <p>電圧降下が顕著なパターンです。片側給電で12Vテープを8m使うと末端電圧が10V以下になることがあります。</p>
+      <div class="fix">対策：両端給電に変更するか24Vテープに交換。配線を太くする（AWG16以上）のも有効</div>
+    </div>
+    <div class="fail-item">
+      <div class="fail-header">
+        <span class="fail-num">失敗 4</span>
+        <span class="fail-title">定電流電源を定電圧テープに接続</span>
+      </div>
+      <p>LEDテープは定電圧（CV）電源が必要です。定電流（CC）電源を接続すると過電流→過熱→チラつき・断線の原因になります。</p>
+      <div class="fix">対策：電源の出力タイプを確認。スイッチング電源はCV（定電圧）モードを選ぶ</div>
+    </div>
+    <div class="fail-item">
+      <div class="fail-header">
+        <span class="fail-num">失敗 5</span>
+        <span class="fail-title">容量ギリギリで電源を選び劣化が早い</span>
+      </div>
+      <p>電源は定格の80〜90%以上で常用すると発熱が増え、電解コンデンサが劣化してリップルが増大します。結果としてフリッカーが悪化します。</p>
+      <div class="fix">対策：消費電力の1.2倍以上の容量の電源を選ぶ。余裕率は最低20%確保</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">購入前チェックリスト</h2>
+
+  <ul class="checklist">
+    <li>電源仕様書でリップル＆ノイズが≤50mVrmsであることを確認した</li>
+    <li>電源の出力電圧精度が±1%以内であることを確認した</li>
+    <li>電源容量はテープの消費電力合計の1.2倍以上を選んだ</li>
+    <li>調光器を使う場合はPWM周波数1kHz以上であることを確認した</li>
+    <li>12Vテープで5m超の場合は両端給電または24V切替を計画した</li>
+    <li>設置場所（屋内/屋外）に合わせたIP規格（IP20/IP65）を選んだ</li>
+    <li>スマホカメラでフリッカー確認テストを実施する予定がある</li>
+    <li>電源は定電圧（CV）出力タイプであることを確認した</li>
+  </ul>
+
+  <h2 class="section-title">よくある質問（FAQ）</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q"><span>Q1</span>LEDテープがチラつく原因は何ですか？</div>
+      <div class="faq-a"><span>A</span>主な原因は3つです。①PWM調光の周波数が低い（100Hz以下で可視フリッカー）、②電源のリップル電流が大きい（出力リップル50mV超）、③長尺配線による電圧降下（末端電圧が定格を下回る）。まずスマホカメラで撮影して縞模様が映るか確認してください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Q2</span>フリッカーフリー電源とは何ですか？</div>
+      <div class="faq-a"><span>A</span>出力リップルを50mV以下に抑え、LED電流の変動を最小化した電源です。一般的なスイッチング電源はリップルが100〜200mVあることも多く、これがLEDのちらつきとして現れます。仕様書で「Ripple &amp; Noise」が50mVrms以下であることを確認してください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Q3</span>スマホカメラでフリッカーを確認できますか？</div>
+      <div class="faq-a"><span>A</span>確認できます。スマホのカメラ（動画モード）でLEDを撮影し、画面に横縞模様が映れば可視フリッカーがあります。縞が速く流れるほど高周波フリッカー（PWM由来）、遅い場合は電源リップル由来の可能性が高いです。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Q4</span>調光器を使うとチラつきが増えるのはなぜですか？</div>
+      <div class="faq-a"><span>A</span>多くの調光器はPWM（パルス幅変調）方式でLEDを点滅させて調光します。PWMの周波数が低いと（特に100Hz以下）人間の目に見える速度で点滅するためチラつきとして感じます。1kHz以上のPWM周波数の調光器または定電流（CCR）調光方式を選ぶことで解決できます。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Q5</span>5m以上のLEDテープで末端だけちらつくのはなぜですか？</div>
+      <div class="faq-a"><span>A</span>電圧降下が原因です。LEDテープの銅パターンには抵抗があり、長くなるほど末端の電圧が低下します。24Vテープで5m超の場合は両端給電または中間給電を実施してください。電圧が定格の±5%以上ずれるとちらつきや輝度ムラが発生します。</div>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <h2>フリッカーフリー電源・LEDテープを探す</h2>
+    <p>Ra90高演色・IP65防水・COBテープ・フリッカーフリー対応電源を400点超在庫。最短翌日出荷・プロ価格・数量割引対応。</p>
+    <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+  </div>
+
+</div>
+
+</body>
+</html>

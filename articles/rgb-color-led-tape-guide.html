@@ -140,6 +140,7 @@
       h2 { font-size: 1.15rem; }
       .color-grid { grid-template-columns: 1fr 1fr; }
     }
+      .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
   </style>
 </head>
 <body>
@@ -165,7 +166,7 @@
     <span>カラーLED</span>
   </div>
 </div>
-
+<img src="/articles/images/rgb-color-led-tape-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
 <div class="container">
 <article class="article-body">
 
@@ -544,7 +545,19 @@
 </div>
 
 <div class="container">
-  <div class="cta-block">
+  
+<!-- related-articles -->
+<div style="max-width:900px;margin:0 auto 40px;padding:0 20px">
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px">
+    <h3 style="font-size:1rem;font-weight:700;color:var(--text-muted);margin-bottom:16px">関連するLED選び方ガイド</h3>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+      <li><a href="/articles/cob-led-tape-density-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>COB LEDテープのチップ密度・輝度の選び方｜W/mと密度で光量と均一性を決める完全ガイド</a></li>
+      <li><a href="/articles/led-tape-wiring-basics" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープ 並列配線・つなぎ方の基本｜ハンダ付け・コネクタ・端子台の選び方</a></li>
+      <li><a href="/articles/fluorescent-led-replacement-2027-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>蛍光灯からLED照明への交換ガイド｜2027年生産終了前の移行手順・費用・補助金</a></li>
+    </ul>
+  </div>
+</div>
+<div class="cta-block">
     <h2>業務用LEDテープの色・演色性を確認する</h2>
     <p>Ra90高演色・電球色〜昼光色まで全色温度対応。COB/SMD・12V/24V・IP65防水・400点超の業務用品揃い。</p>
     <a href="/" class="cta-btn">商品一覧を見る</a>
