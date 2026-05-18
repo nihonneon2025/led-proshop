@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LEDテープ はんだ付け ガイド｜修理・延長・接続の手順と失敗しないコツ | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープのはんだ付けは低温はんだ（180〜200℃）とフラックスを使うと剥がれずに接続できます。切れたテープの修理・延長・2本接続の手順・焼き付き防止・絶縁処理の方法を施工業者向けに解説した実務ガイド。">
+  <meta name="keywords" content="LEDテープ はんだ付け,テープライト はんだ,LED はんだ 修理,LEDテープ 延長 はんだ,LEDテープ 接続 はんだ,COBテープ はんだ,LEDテープ はんだごて">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-soldering-guide">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-soldering-guide">
+  <meta property="og:title" content="LEDテープ はんだ付け ガイド｜修理・延長・接続の手順と失敗しないコツ | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープのはんだ付けは低温はんだ（180〜200℃）とフラックスを使うと剥がれずに接続できます。切れたテープの修理・延長・2本接続の手順・焼き付き防止・絶縁処理の方法を施工業者向けに解説した実務ガイド。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-soldering-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ はんだ付け ガイド｜修理・延長・接続の手順と失敗しないコツ | LED PRO SHOP">
+  <meta name="twitter:description" content="LEDテープのはんだ付けは低温はんだ（180〜200℃）とフラックスを使うと剥がれずに接続できます。切れたテープの修理・延長・2本接続の手順・焼き付き防止・絶縁処理の方法を施工業者向けに解説した実務ガイド。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-soldering-guide-hero.webp">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDテープ はんだ付け ガイド｜修理・延長・接続の手順と失敗しないコツ",
+    "description": "LEDテープのはんだ付け手順・工具選定・よくある失敗と対処法を施工業者向けに解説した実務ガイド。",
+    "image": "https://led-proshop.com/articles/images/led-tape-soldering-guide-hero.webp",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP 編集部"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
+    },
+    "datePublished": "2026-05-18",
+    "dateModified": "2026-05-18",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-soldering-guide"
+  }
+  </script>
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/articles/articles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">LED PRO SHOP</a>
+    <nav class="global-nav">
+      <a href="/articles/">記事一覧</a>
+      <a href="/">商品一覧</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-main">
+<article>
+
+<div class="article-hero">
+  <img src="/articles/images/led-tape-soldering-guide-hero.webp"
+       alt="LEDテープ はんだ付け ガイド"
+       width="1200" height="630" loading="eager">
+</div>
+
+<div class="article-container">
+
+<h1>LEDテープ はんだ付け ガイド｜修理・延長・接続の手順と失敗しないコツ</h1>
+
+<p class="article-meta">
+  <span>2026-05-18</span>
+  <span class="article-cat">LED施工ガイド</span>
+</p>
+
+<div class="article-lead">
+  <p>LEDテープのはんだ付けは<strong>低温はんだ（180〜200℃）とフラックス</strong>を使うと、銅パッドを焼かずに確実に接続できます。切れたテープの修理・本数を延長する接続・コネクターが使えない場所での固定接続まで、施工現場で役立つはんだ付けの実務手順をまとめました。</p>
+</div>
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#when-to-solder">はんだ付けが必要な場面</a></li>
+    <li><a href="#tools">必要な工具・材料</a></li>
+    <li><a href="#smd-soldering">SMDテープのはんだ付け手順</a></li>
+    <li><a href="#cob-soldering">COBテープのはんだ付け</a></li>
+    <li><a href="#failures">よくある失敗と対処法</a></li>
+    <li><a href="#vs-connector">はんだ付け vs コネクター 比較</a></li>
+    <li><a href="#insulation">絶縁処理と防水処理</a></li>
+    <li><a href="#faq">よくある質問</a></li>
+  </ol>
+</nav>
+
+<section id="when-to-solder">
+  <h2>はんだ付けが必要な場面</h2>
+
+  <p>コネクタークリップで対応できる場面が多い一方、はんだ付けが必要になる場面は主に以下の4つです。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>場面</th>
+        <th>はんだ付けが必要な理由</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>テープが断線・点灯不良</td>
+        <td>破断した銅パッドをジャンパー線で橋渡し修理</td>
+      </tr>
+      <tr>
+        <td>5m以上の延長接続</td>
+        <td>コネクターの接触抵抗が積み重なるとチラつき発生</td>
+      </tr>
+      <tr>
+        <td>曲げ・折れ部分への対応</td>
+        <td>コネクターでは追従できない複雑な形状</td>
+      </tr>
+      <tr>
+        <td>電源リード線の直付け</td>
+        <td>コネクターの差し込み口がないカスタム端子への接続</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="tools">
+  <h2>必要な工具・材料</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>工具・材料</th>
+        <th>推奨仕様</th>
+        <th>選定ポイント</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>はんだごて</td>
+        <td>温度調整式 200〜300℃</td>
+        <td>固定温度型は過熱リスクあり。温度調整式が必須</td>
+      </tr>
+      <tr>
+        <td>低温はんだ</td>
+        <td>Sn63/Pb37（融点183℃）またはSn-Bi系（138〜170℃）</td>
+        <td>高温はんだ（鉛フリーSn-Ag-Cu）はLEDパッドを焼くため不可</td>
+      </tr>
+      <tr>
+        <td>フラックス</td>
+        <td>ロジン系フラックス（液体またはペースト）</td>
+        <td>パッドの酸化膜を除去し濡れ性を向上。省略するとはんだが弾かれる</td>
+      </tr>
+      <tr>
+        <td>ピンセット</td>
+        <td>先端が細いステンレス製</td>
+        <td>リード線の固定・位置合わせ用</td>
+      </tr>
+      <tr>
+        <td>はんだ吸い取り線</td>
+        <td>幅2〜3mm</td>
+        <td>失敗したはんだの除去用</td>
+      </tr>
+      <tr>
+        <td>テスター（マルチメーター）</td>
+        <td>導通チェック機能付き</td>
+        <td>接続後の導通確認・ショート確認用</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note"><strong>温度設定の目安</strong>：SMDテープは200〜220℃、COBテープは180〜200℃。高すぎると銅パッドが剥離し修復不可能になります。</p>
+</section>
+
+<section id="smd-soldering">
+  <h2>SMDテープのはんだ付け手順</h2>
+
+  <h3>手順1：パッドの準備</h3>
+  <ol>
+    <li>電源を必ずオフにして作業開始</li>
+    <li>カット位置（はさみマーク）でテープをカット済みであることを確認</li>
+    <li>パッド表面をIPA（イソプロパノール）で軽く拭き、酸化膜・油脂を除去</li>
+    <li>液体フラックスをパッド面に薄く塗布（量が多すぎると後処理が煩雑になる）</li>
+  </ol>
+
+  <h3>手順2：予備はんだ（ティンニング）</h3>
+  <ol>
+    <li>はんだごてを200℃に設定し先端を清潔な状態にする</li>
+    <li>パッド面にごてを当て、1〜2秒でパッドが温まったところにはんだを少量流し込む</li>
+    <li>均一な薄い膜（予備はんだ）が乗れば成功。銀色に輝く凸状のはんだ盛りが目安</li>
+    <li>3秒以上ごてを当て続けない（銅パッド剥離のリスク）</li>
+  </ol>
+
+  <h3>手順3：リード線の接続</h3>
+  <ol>
+    <li>リード線末端の被覆を3〜4mmむいて予備はんだを乗せる</li>
+    <li>ピンセットでリード線をパッドに位置合わせして固定</li>
+    <li>ごてを当て、パッドのはんだとリード線のはんだが融合したら離す</li>
+    <li>冷却するまでリード線を動かさない（動かすとクラック発生）</li>
+  </ol>
+
+  <h3>手順4：接続確認</h3>
+  <ul>
+    <li>テスターの導通チェックで接続点を確認</li>
+    <li>電源を入れて点灯確認</li>
+    <li>チラつきがある場合は接触抵抗が高い → 再加熱してはんだを追加</li>
+  </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <th>確認項目</th>
+        <th>正常</th>
+        <th>異常の原因</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>外観</td>
+        <td>銀色・なめらか・凸状</td>
+        <td>くすんだグレー → 冷えはんだ（クラック）</td>
+      </tr>
+      <tr>
+        <td>導通</td>
+        <td>テスターで鳴く</td>
+        <td>鳴かない → 未接続またはオープン</td>
+      </tr>
+      <tr>
+        <td>点灯</td>
+        <td>全LEDが均一に点灯</td>
+        <td>一部不点灯 → 極性間違い・断線</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="cob-soldering">
+  <h2>COBテープのはんだ付け</h2>
+
+  <p>COBテープはシリコン樹脂でLEDチップが覆われているため、<strong>銅パッドへのアクセスが難しく難易度が高い</strong>です。無理に行うとシリコン被覆を溶かしてLEDを破損させます。</p>
+
+  <h3>COBテープはんだ付けの注意点</h3>
+  <ul>
+    <li>カット位置（シリコン被覆の途切れ目）以外ではんだ付けしない</li>
+    <li>温度は180〜200℃に抑える（シリコンは250℃以上で変色・変形）</li>
+    <li>はんだごての当て時間は1〜2秒以内を厳守</li>
+    <li>可能であれば専用COBコネクターを優先使用する</li>
+  </ul>
+
+  <h3>COBテープのはんだ付け手順</h3>
+  <ol>
+    <li>カット位置の銅パッド帯（2本のライン）を確認</li>
+    <li>パッド表面のシリコン残渣をカッターで慎重に除去（削りすぎ注意）</li>
+    <li>IPAで清掃後、フラックスを少量塗布</li>
+    <li>ごてを180℃に設定して予備はんだを流す（時間は2秒以内）</li>
+    <li>リード線を固定してごてで接合（合計加熱時間は3秒以内）</li>
+    <li>冷却後にテスターで導通確認</li>
+  </ol>
+
+  <p class="note">COBテープのはんだ付けは失敗すると銅パッドが剥がれて修復不可能になります。コネクターが使える場合はコネクターを優先してください。</p>
+</section>
+
+<section id="failures">
+  <h2>よくある失敗と対処法</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>失敗例</th>
+        <th>原因</th>
+        <th>対処法</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>はんだが弾かれる・乗らない</td>
+        <td>パッドの酸化・油脂汚れ、フラックス未使用</td>
+        <td>IPAで清掃してフラックスを塗り直す</td>
+      </tr>
+      <tr>
+        <td>銅パッドが剥がれた</td>
+        <td>高温・長時間加熱</td>
+        <td>剥がれたパッドは修復不可。隣のカット位置を使ってジャンパー線で橋渡し</td>
+      </tr>
+      <tr>
+        <td>クラックはんだ（冷えはんだ）</td>
+        <td>はんだ冷却中にリード線を動かした</td>
+        <td>はんだ吸い取り線で除去し、再度はんだ付け</td>
+      </tr>
+      <tr>
+        <td>点灯するが一部チラつく</td>
+        <td>接触抵抗が高い（はんだ量不足）</td>
+        <td>フラックスを追加してごてで再加熱し、はんだを追加</td>
+      </tr>
+      <tr>
+        <td>ショート（全灯しない・熱い）</td>
+        <td>+/-のはんだが橋渡し状態（ブリッジ）</td>
+        <td>はんだ吸い取り線でブリッジを除去後、テスターで再確認</td>
+      </tr>
+      <tr>
+        <td>シリコン被覆が溶けた（COB）</td>
+        <td>高温・長時間加熱</td>
+        <td>軽微な溶け：機能には影響なし。大きな損傷：その部分は使用不可</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="vs-connector">
+  <h2>はんだ付け vs コネクター 比較</h2>
+
+  <p>施工現場では状況によってはんだ付けとコネクターを使い分けることが重要です。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>比較項目</th>
+        <th>はんだ付け</th>
+        <th>コネクター（クリップ式）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>接続強度</td>
+        <td>◎ 高い（永続的）</td>
+        <td>○ 十分だが取り外し可能</td>
+      </tr>
+      <tr>
+        <td>接触抵抗</td>
+        <td>◎ 低い（電圧降下少）</td>
+        <td>△ やや高い（長距離で影響）</td>
+      </tr>
+      <tr>
+        <td>作業時間</td>
+        <td>△ 5〜15分/箇所</td>
+        <td>◎ 30秒〜2分/箇所</td>
+      </tr>
+      <tr>
+        <td>再接続・修正</td>
+        <td>△ 困難（はんだ吸い取りが必要）</td>
+        <td>◎ 容易</td>
+      </tr>
+      <tr>
+        <td>曲げ・複雑形状</td>
+        <td>◎ 対応可能</td>
+        <td>△ 形状によっては使用不可</td>
+      </tr>
+      <tr>
+        <td>防水処理</td>
+        <td>○ 熱収縮チューブで対応可</td>
+        <td>△ 接続部の防水が難しい</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>推奨ルール</strong>：5m以下の接続・取り外し予定あり → コネクター。5m超の長距離・固定設置・屋外防水 → はんだ付けを選択。</p>
+</section>
+
+<section id="insulation">
+  <h2>絶縁処理と防水処理</h2>
+
+  <h3>屋内使用（非防水）の絶縁処理</h3>
+  <ul>
+    <li>はんだ接続部を<strong>自己融着テープ</strong>または<strong>絶縁テープ</strong>で2層以上巻く</li>
+    <li>リード線の根元が露出している場合は熱収縮チューブを使用</li>
+    <li>ショートのリスクがある隣接パッドとの距離が1mm未満の場合はエポキシ樹脂で絶縁</li>
+  </ul>
+
+  <h3>屋外・防水環境（IP65以上）の処理</h3>
+  <ul>
+    <li><strong>熱収縮チューブ（接着剤入り）</strong>で接続部全体を覆う</li>
+    <li>シュリンクチューブを収縮後、接続部端部にシリコンシーラントを追加</li>
+    <li>完全水没環境（IP68）：シリコン充填後に防水モールドで固める</li>
+  </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <th>環境</th>
+        <th>推奨処理</th>
+        <th>IP相当</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>屋内・乾燥環境</td>
+        <td>絶縁テープ巻き</td>
+        <td>IP20相当</td>
+      </tr>
+      <tr>
+        <td>屋内・湿気あり（洗面台・厨房）</td>
+        <td>自己融着テープ + 熱収縮チューブ</td>
+        <td>IP44相当</td>
+      </tr>
+      <tr>
+        <td>屋外・雨がかかる</td>
+        <td>接着剤入り熱収縮チューブ + シリコンシーラント</td>
+        <td>IP65相当</td>
+      </tr>
+      <tr>
+        <td>水中・浴室水没部位</td>
+        <td>シリコン充填 + 防水モールド</td>
+        <td>IP68相当</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="faq">
+  <h2>よくある質問</h2>
+
+  <div class="faq-item">
+    <h3>Q. はんだごての温度は何度が正しいですか？</h3>
+    <p>A. SMDテープは200〜220℃、COBテープは180〜200℃が推奨です。温度調整式のはんだごてを使用し、作業ごとに温度を確認してください。固定温度型（350〜400℃）のごては高すぎてパッドを焼く可能性があります。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. フラックスは必ず使わなければいけませんか？</h3>
+    <p>A. 必須ではありませんが、使うとはんだの濡れ性が大幅に向上します。フラックスなしではパッドの酸化膜ではんだが弾かれ、接触不良の原因になります。作業後はIPAで残渣を拭き取ると腐食を防げます。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. COBテープにはんだ付けできますか？</h3>
+    <p>A. カット位置（シリコン被覆の途切れ目）であれば可能です。ただし難易度が高く、過熱するとシリコン被覆が溶けてLEDを破損させます。COBテープには専用コネクターが販売されているため、コネクターで対応できる場合は優先してください。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. はんだ付けした部分から煙が出ました。大丈夫ですか？</h3>
+    <p>A. フラックスの煙であれば正常です（やや刺激臭がある）。ただしプラスチックやシリコンが溶けた煙（白煙・異臭）の場合は温度が高すぎるサインです。すぐに作業を止めて温度を下げ、損傷箇所を確認してください。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. はんだ付けなしで長距離（10m以上）延長できますか？</h3>
+    <p>A. コネクターのみでの10m以上延長は電圧降下とチラつきのリスクが高まります。5m超の延長はははんだ付けによる直結接続か、途中に電源（PSU）を追加する分散給電を推奨します。</p>
+  </div>
+</section>
+
+<div class="article-cta">
+  <p>LEDテープライト・専用コネクター・アルミフレームはLED PRO SHOPにてプロ価格・最短翌日出荷でご提供しています。</p>
+  <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+</div>
+
+</div><!-- /article-container -->
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-logo">LED PRO SHOP</p>
+    <nav class="footer-nav">
+      <a href="/">商品一覧</a>
+      <a href="/articles/">コラム</a>
+      <a href="/tokushoho.html">特定商取引法</a>
+    </nav>
+    <p class="footer-copy">&copy; 2025 LED PRO SHOP</p>
+  </div>
+</footer>
+
+</body>
+</html>
