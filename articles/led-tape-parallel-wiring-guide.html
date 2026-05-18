@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LEDテープ 並列配線・分岐 完全ガイド｜つなぎ方・電圧降下防止・分岐ケーブルの実務手順 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープの並列配線は同じ電圧で複数本をつなぐ方法で、直列より電圧降下しにくく長距離設置に向きます。分岐ケーブルの作り方・並列つなぎ方の手順・1本あたりの最大接続長・電源容量計算を施工業者向けに解説した実務ガイド。">
+  <meta name="keywords" content="LEDテープ 並列 つなぎ 方,LEDテープ 並列配線,LEDテープ 分岐,ledテープライト 分岐 方法,LED配線 繋ぎ 方,LEDテープ 延長 配線,LEDテープ 電圧降下">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-parallel-wiring-guide">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-parallel-wiring-guide">
+  <meta property="og:title" content="LEDテープ 並列配線・分岐 完全ガイド｜つなぎ方・電圧降下防止・分岐ケーブルの実務手順 | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープの並列配線は同じ電圧で複数本をつなぐ方法で、直列より電圧降下しにくく長距離設置に向きます。分岐ケーブルの作り方・並列つなぎ方の手順・1本あたりの最大接続長・電源容量計算を施工業者向けに解説した実務ガイド。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-parallel-wiring-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ 並列配線・分岐 完全ガイド｜つなぎ方・電圧降下防止・分岐ケーブルの実務手順 | LED PRO SHOP">
+  <meta name="twitter:description" content="LEDテープの並列配線は同じ電圧で複数本をつなぎ、直列より電圧降下しにくく長距離設置に向きます。分岐ケーブルの作り方・並列つなぎ方・最大接続長・電源容量計算を施工業者向けに解説した実務ガイド。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-parallel-wiring-guide-hero.webp">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDテープ 並列配線・分岐 完全ガイド｜つなぎ方・電圧降下防止・分岐ケーブルの実務手順",
+    "description": "LEDテープ並列配線のつなぎ方・電圧降下防止・分岐ケーブル作成手順を施工業者向けに解説した実務ガイド。",
+    "image": "https://led-proshop.com/articles/images/led-tape-parallel-wiring-guide-hero.webp",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP 編集部"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
+    },
+    "datePublished": "2026-05-19",
+    "dateModified": "2026-05-19",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-parallel-wiring-guide"
+  }
+  </script>
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/articles/articles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">LED PRO SHOP</a>
+    <nav class="global-nav">
+      <a href="/articles/">記事一覧</a>
+      <a href="/">商品一覧</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-main">
+<article>
+
+<div class="article-hero">
+  <img src="/articles/images/led-tape-parallel-wiring-guide-hero.webp"
+       alt="LEDテープ 並列配線・分岐 完全ガイド"
+       width="1200" height="630" loading="eager">
+</div>
+
+<div class="article-container">
+
+<h1>LEDテープ 並列配線・分岐 完全ガイド｜つなぎ方・電圧降下防止・分岐ケーブルの実務手順</h1>
+
+<p class="article-meta">
+  <span>2026-05-19</span>
+  <span class="article-cat">LED施工ガイド</span>
+</p>
+
+<div class="article-lead">
+  <p>LEDテープの<strong>並列配線</strong>は複数本のテープを同じ電源の＋とーに接続する方法です。直列（数珠つなぎ）とは異なり、<strong>1本あたりの電圧降下が小さく、長距離設置でも均一な明るさを保てます</strong>。本ガイドでは並列と直列の違い・分岐ケーブルの作り方・実際の配線手順・電源容量計算まで施工業者向けに解説します。</p>
+</div>
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#parallel-vs-series">並列配線と直列配線の違い</a></li>
+    <li><a href="#when-parallel">並列配線が必要な場面</a></li>
+    <li><a href="#max-length">並列配線での最大接続長</a></li>
+    <li><a href="#how-to-wire">並列つなぎ方の手順</a></li>
+    <li><a href="#branch-cable">分岐ケーブルの作り方</a></li>
+    <li><a href="#psu-calc">電源（PSU）容量計算</a></li>
+    <li><a href="#voltage-drop">電圧降下の防ぎ方</a></li>
+    <li><a href="#faq">よくある質問</a></li>
+  </ol>
+</nav>
+
+<section id="parallel-vs-series">
+  <h2>並列配線と直列配線の違い</h2>
+
+  <p>LEDテープの接続には大きく2つの方式があります。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>比較項目</th>
+        <th>並列配線</th>
+        <th>直列（数珠つなぎ）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>仕組み</td>
+        <td>各テープを電源の+/-に直接接続</td>
+        <td>テープのエンド端子を次のテープのスタート端子に接続</td>
+      </tr>
+      <tr>
+        <td>電圧</td>
+        <td>全本に同じ電圧（12V or 24V）が供給される</td>
+        <td>本数が増えるにつれて末端電圧が下がる</td>
+      </tr>
+      <tr>
+        <td>明るさの均一性</td>
+        <td>◎ 各本が均一（電圧降下の影響を受けにくい）</td>
+        <td>△ 末端ほど暗くなりやすい</td>
+      </tr>
+      <tr>
+        <td>配線の複雑さ</td>
+        <td>△ 各本に電源線が必要（配線量が増える）</td>
+        <td>◎ シンプルにつなぐだけ</td>
+      </tr>
+      <tr>
+        <td>1本障害時</td>
+        <td>◎ その1本だけが影響・他は点灯継続</td>
+        <td>× 直列途中の断線で後続が全滅</td>
+      </tr>
+      <tr>
+        <td>推奨用途</td>
+        <td>長距離・多灯・高品質が必要な設置</td>
+        <td>短距離・簡易設置・DIY</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note"><strong>業務施工では並列配線が基本</strong>：電圧降下と明るさムラを防ぎ、保守性も高いため、プロの施工では並列配線が推奨されます。</p>
+</section>
+
+<section id="when-parallel">
+  <h2>並列配線が必要な場面</h2>
+
+  <ul>
+    <li><strong>1本5m以上の設置</strong>：12Vテープは5m超・24Vテープは10m超で電圧降下が顕著になる</li>
+    <li><strong>複数の棚・什器に同時設置</strong>：各棚から個別に電源を引く並列設計が管理しやすい</li>
+    <li><strong>明るさの均一性が求められる場所</strong>：ショーウィンドウ・食品陳列棚・美術館展示</li>
+    <li><strong>障害時に部分点灯を維持したい場所</strong>：非常誘導灯の補助照明・安全確保が必要な施設</li>
+    <li><strong>総消費電力30W以上の設置</strong>：電源から分岐して複数本に並列供給</li>
+  </ul>
+</section>
+
+<section id="max-length">
+  <h2>並列配線での最大接続長</h2>
+
+  <p>並列配線でも1本あたりの長さには限界があります。これは1本の抵抗による電圧降下の許容範囲によります。一般的な目安は以下のとおりです。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>電圧</th>
+        <th>テープ種別</th>
+        <th>1並列あたり最大長</th>
+        <th>根拠</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>12V</td>
+        <td>SMD2835（60LED/m・4.8W/m）</td>
+        <td>約5m</td>
+        <td>末端電圧10V以下で暗くなる（許容降下2V）</td>
+      </tr>
+      <tr>
+        <td>12V</td>
+        <td>SMD2835（120LED/m・9.6W/m）</td>
+        <td>約3m</td>
+        <td>高密度で電流が多く降下しやすい</td>
+      </tr>
+      <tr>
+        <td>24V</td>
+        <td>COBテープ（8W/m）</td>
+        <td>約10m</td>
+        <td>24Vは許容降下幅が大きく降下率が低い</td>
+      </tr>
+      <tr>
+        <td>24V</td>
+        <td>SMD2835（120LED/m・12W/m）</td>
+        <td>約7m</td>
+        <td>高密度・高W/mでは短め</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>24Vテープが有利な理由</strong>：同じW/mでも電流が半分（I=P/V）なので線抵抗による電圧降下が小さく、長距離配線に適しています。業務施工では24Vが標準推奨です。</p>
+</section>
+
+<section id="how-to-wire">
+  <h2>並列つなぎ方の手順</h2>
+
+  <h3>基本的な並列接続の手順</h3>
+  <ol>
+    <li><strong>電源（PSU）の出力端子を確認</strong>：+と-の端子を特定する</li>
+    <li><strong>幹線ケーブルを用意</strong>：電源から各テープへの分岐起点となるケーブル（AWG18〜AWG16推奨）</li>
+    <li><strong>各テープの入力端子を幹線に並列接続</strong>：全テープの+を幹線+に、-を幹線-に接続</li>
+    <li><strong>接続部の絶縁処理</strong>：はんだ付けまたはクランプ端子でしっかり固定し、絶縁テープで保護</li>
+    <li><strong>テスターで導通確認</strong>：各テープの入力端子で電圧を測定（全本が電源電圧±0.5V以内か確認）</li>
+    <li><strong>点灯確認</strong>：全本が均一に点灯するか目視確認</li>
+  </ol>
+
+  <h3>接続図イメージ（テキスト表現）</h3>
+  <pre style="background:#f5f6f8;padding:16px;border-radius:6px;font-size:13px;overflow-x:auto;">
+PSU(+) ─────┬─── テープ1 (+)
+             ├─── テープ2 (+)
+             └─── テープ3 (+)
+
+PSU(-) ─────┬─── テープ1 (-)
+             ├─── テープ2 (-)
+             └─── テープ3 (-)
+  </pre>
+
+  <p class="note">全テープのスタート端子を電源に並列接続します。テープ間をつなぐ（直列）のではなく、各テープを電源に独立して接続するのがポイントです。</p>
+</section>
+
+<section id="branch-cable">
+  <h2>分岐ケーブルの作り方</h2>
+
+  <p>複数本を並列接続するには、電源から複数に分岐する「分岐ケーブル（ディストリビューター）」を作ると整線しやすくなります。</p>
+
+  <h3>方法1：結線端子台（ターミナルブロック）を使う（推奨）</h3>
+  <ul>
+    <li>電源から幹線を端子台の+/-に接続</li>
+    <li>端子台の各出力ポートから各テープへの配線を引く</li>
+    <li>追加・変更が容易で、メンテナンス性が高い</li>
+    <li>プロ施工で最も一般的な方法</li>
+  </ul>
+
+  <h3>方法2：クランプ形分岐コネクター（ワゴコネ等）</h3>
+  <ul>
+    <li>幹線ケーブルに差し込み型コネクターで枝線を接続</li>
+    <li>はんだ不要・工具少なめ</li>
+    <li>接触抵抗が端子台よりやや高い傾向</li>
+  </ul>
+
+  <h3>方法3：はんだ付けで幹線から分岐</h3>
+  <ul>
+    <li>幹線ケーブルの途中に枝線をはんだ付けして熱収縮チューブで保護</li>
+    <li>接続抵抗が最も低い（固定施工向き）</li>
+    <li>後から変更が難しいため計画的に設計する必要あり</li>
+  </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <th>分岐方法</th>
+        <th>推奨場面</th>
+        <th>メンテナンス性</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>端子台（ターミナルブロック）</td>
+        <td>業務施工・増設予定あり</td>
+        <td>◎</td>
+      </tr>
+      <tr>
+        <td>クランプ分岐コネクター</td>
+        <td>簡易施工・DIY</td>
+        <td>○</td>
+      </tr>
+      <tr>
+        <td>はんだ付け分岐</td>
+        <td>固定施工・防水環境</td>
+        <td>△</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="psu-calc">
+  <h2>電源（PSU）容量計算</h2>
+
+  <p>並列接続では全テープの消費電力が電源1台にかかります。電源容量が不足すると過熱・出力低下・最悪の場合は電源故障の原因になります。</p>
+
+  <h3>必要電源容量の計算式</h3>
+  <div style="background:#e8f0fe;padding:16px;border-radius:6px;margin:12px 0;">
+    <p style="font-weight:700;margin:0 0 8px">必要電源容量（W）= テープのW/m × 総メートル数 × 1.2（余裕率）</p>
+    <p style="margin:0;font-size:13px">例：8W/m × 30m × 1.2 = 288W → 300W以上のPSUを選択</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>並列本数×長さ</th>
+        <th>W/m</th>
+        <th>総W数</th>
+        <th>推奨PSU容量</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>3本×5m（計15m）</td>
+        <td>4.8W/m</td>
+        <td>72W → ×1.2 = 86W</td>
+        <td>100W以上</td>
+      </tr>
+      <tr>
+        <td>5本×5m（計25m）</td>
+        <td>8W/m</td>
+        <td>200W → ×1.2 = 240W</td>
+        <td>250〜300W</td>
+      </tr>
+      <tr>
+        <td>10本×5m（計50m）</td>
+        <td>8W/m</td>
+        <td>400W → ×1.2 = 480W</td>
+        <td>500W以上 または PSU分割</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note"><strong>PSU分割</strong>：電源容量が大きくなる場合は1台のPSUに集中させず、エリアごとに複数のPSUに分けることを検討してください。PSU分割は電源障害時の影響範囲を限定する効果もあります。</p>
+</section>
+
+<section id="voltage-drop">
+  <h2>電圧降下の防ぎ方</h2>
+
+  <p>並列配線でも幹線ケーブルが細いと電圧降下が発生します。以下の対策で電圧降下を最小化します。</p>
+
+  <h3>対策1：幹線ケーブルを太くする</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>総消費電力</th>
+        <th>推奨ケーブル太さ</th>
+        <th>許容電流</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>〜50W</td>
+        <td>AWG20（0.5mm²）</td>
+        <td>約2.5A</td>
+      </tr>
+      <tr>
+        <td>50〜100W</td>
+        <td>AWG18（0.75mm²）</td>
+        <td>約5A</td>
+      </tr>
+      <tr>
+        <td>100〜200W</td>
+        <td>AWG16（1.25mm²）</td>
+        <td>約8A</td>
+      </tr>
+      <tr>
+        <td>200W以上</td>
+        <td>AWG14（2.0mm²）以上</td>
+        <td>約12A以上</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>対策2：電源から分岐点までの幹線を短くする</h3>
+  <p>電源を設置場所の中央に置き、各テープへの分岐距離を均等・最短にすることで全体の電圧降下を均一化できます。</p>
+
+  <h3>対策3：24V化する</h3>
+  <p>12Vを24Vに変更するだけで同じW/mでも電流が半分になり、電圧降下が約1/4に減少します。新設施工であれば24V設計が推奨です。</p>
+
+  <h3>対策4：両端給電（テープの両端から電源供給）</h3>
+  <p>1本のテープに対して電源側（スタート端子）と反対側（エンド端子）の両方から電源を供給することで、実質的な電圧降下距離を半分にできます。長距離テープ（5m超）の均一化に効果的です。</p>
+</section>
+
+<section id="faq">
+  <h2>よくある質問</h2>
+
+  <div class="faq-item">
+    <h3>Q. 並列配線と直列配線のどちらを選べばいいですか？</h3>
+    <p>A. 業務施工では並列配線を選んでください。直列（数珠つなぎ）は末端で電圧が下がって明るさムラが発生し、途中断線で後続が全滅するリスクもあります。並列配線は複雑に見えますが、障害時の影響が限定的で明るさが均一になります。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. 並列で何本まで接続できますか？</h3>
+    <p>A. 電源容量が許す限り本数に上限はありません。ただし1つのPSUへの集中を避けるため、200W以上になる場合はPSUを分割することを推奨します。また各本のスタート端子から電源までの幹線長が長い場合はケーブルを太くしてください。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. 並列接続した一部のテープが暗い場合の原因は？</h3>
+    <p>A. 主な原因は①接続部の接触不良（確認：クランプ締め直し・はんだ付け確認）②その本だけ電圧降下が大きい（確認：テスターで端子電圧を測定）③その本のW/mが異なる製品が混在している、の3つです。テスターで各テープの入力電圧を測定して原因を切り分けてください。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. 12Vと24Vのテープを同じ電源に並列接続できますか？</h3>
+    <p>A. できません。12V専用テープと24V専用テープは定格電圧が異なるため、同じ電源に混在接続すると片方が過電圧または電圧不足になります。電圧の異なるテープには必ず別の電源を用意してください。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. 分岐コネクターなしで並列接続する方法は？</h3>
+    <p>A. 幹線ケーブルの途中にリード線をはんだ付けして分岐する方法が最もシンプルです。接続部を熱収縮チューブで絶縁処理してください。工具が揃っていない現場では、端子台（ターミナルブロック）を用意すると追加や変更が簡単です。</p>
+  </div>
+</section>
+
+<div class="article-cta">
+  <p>業務用LEDテープライト・PSU・アルミフレームはLED PRO SHOPにてプロ価格・最短翌日出荷でご提供しています。</p>
+  <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+</div>
+
+</div><!-- /article-container -->
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-logo">LED PRO SHOP</p>
+    <nav class="footer-nav">
+      <a href="/">商品一覧</a>
+      <a href="/articles/">コラム</a>
+      <a href="/tokushoho.html">特定商取引法</a>
+    </nav>
+    <p class="footer-copy">&copy; 2025 LED PRO SHOP</p>
+  </div>
+</footer>
+
+</body>
+</html>
