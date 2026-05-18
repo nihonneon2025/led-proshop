@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープ コネクターの付け方ガイド｜ワンタッチ・はんだ・クリップ 3種類の接続手順と失敗しないコツ | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープの接続方法はワンタッチコネクター・はんだ付け・クリップ端子の3種類。ワンタッチ＝初心者向け・施工スピード重視、はんだ＝信頼性最高、クリップ＝仮留め向き――この使い分けで迷わなくなります。各手順・失敗しないコツ・よくある断線原因を実務向けに解説。">
+  <meta name="keywords" content="LEDテープ コネクター 付け方,LEDテープ はんだ付け,LED コネクター 接続,LEDテープ つなぎ方,LED配線 繋ぎ方,LEDテープ 接続方法,LEDテープ 延長,コネクター 断線">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-connector-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-connector-guide">
+  <meta property="og:title" content="LEDテープ コネクターの付け方ガイド｜ワンタッチ・はんだ・クリップ 3種類の接続手順と失敗しないコツ | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープの接続方法はワンタッチ・はんだ・クリップの3種類。使い分け・各手順・失敗しないコツ・断線原因を実務向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-connector-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ コネクターの付け方ガイド｜ワンタッチ・はんだ・クリップ 3種類の接続手順と失敗しないコツ | LED PRO SHOP">
+  <meta name="twitter:description" content="LEDテープの接続方法はワンタッチ・はんだ・クリップの3種類。使い分け・各手順・失敗しないコツ・断線原因を実務向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-connector-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープ コネクターの付け方ガイド｜ワンタッチ・はんだ・クリップ 3種類の接続手順と失敗しないコツ",
+    "description": "LEDテープの接続方法はワンタッチコネクター・はんだ付け・クリップ端子の3種類。使い分け・各手順・失敗しないコツ・よくある断線原因を実務向けに解説。",
+    "image": "https://led-proshop.com/articles/images/led-tape-connector-guide-hero.webp",
+    "datePublished": "2026-05-18",
+    "dateModified": "2026-05-18",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-connector-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープ コネクターの付け方ガイド", "item": "https://led-proshop.com/articles/led-tape-connector-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== FAQ JSON-LD ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープのコネクターが接触不良になる原因は何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "主な原因は①コネクターへの挿し込み不足（端子まで届いていない）、②LEDテープの切断端のカットずれ（銅箔パッドが残っていない）、③コネクターとLEDテープの幅が合っていない（8mm用に10mm幅のテープを差し込むなど）の3つです。挿し込み後に軽く引っ張って抜けないか確認し、点灯テストを必ず実施してください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "はんだ付けとワンタッチコネクターはどちらが信頼性が高いですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "はんだ付けの方が接続信頼性が高く、振動・引っ張りに強いため業務施工の永久設置に適しています。ワンタッチコネクターは施工速度が速く初心者でもできますが、接触抵抗がはんだより若干高く、振動環境や高電流（10A以上）では接触不良リスクが高まります。店舗内装・間接照明の固定設置ではどちらも実用上問題ありません。" }
+      },
+      {
+        "@type": "Question",
+        "name": "LEDテープのはんだ付けに必要な道具は何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "必要な道具は①はんだごて（30〜40W・コテ先温度350〜380℃）、②フラックス入りはんだ線（直径0.6〜0.8mm・Sn60/Pb40またはRoHSはんだ）、③フラックスリムーバー（はんだ後の洗浄用）、④ピンセット・第三の手（テープ固定用）、⑤テスター（導通確認用）の5点です。はんだごての温度が低すぎると冷えはんだになり、高すぎるとLEDチップが熱損傷します。" }
+      },
+      {
+        "@type": "Question",
+        "name": "COBテープのコネクターはSMDテープと同じものが使えますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "使えません。COBテープは連続した発光帯（銅箔パッドの位置が異なる）のため、COBテープ専用コネクターが必要です。SMD用コネクターをCOBテープに接続しても正しい位置に端子が当たらず接触不良になります。購入時に「COBテープ対応」「COB LEDストリップ用」と記載されたコネクターを選択してください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "RGBテープやCCTテープのコネクターは何芯が必要ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "単色テープ（白・電球色など）は2芯（＋/−）、RGB 3色テープは4芯（R/G/B/共通GND）、RGBWテープは5芯、CCT（色温度可変）テープは4芯（温白＋昼白＋GND×2）が必要です。芯数が合わないコネクターを接続すると一部の色が点灯しません。コネクターを購入する際はテープの芯数（ピン数）を先に確認してください。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --blue:#003C82;--blue-pale:#e8f0fe;--orange:#e07b00;--orange-pale:#fff3e0;
+      --green:#1a7a3c;--green-pale:#e6f4ec;
+      --bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.75}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:860px;margin:0 auto;padding:0 20px}
+    header.site-header{background:var(--blue);padding:14px 20px;display:flex;align-items:center;gap:12px}
+    header.site-header a{color:#fff;font-size:18px;font-weight:700;letter-spacing:.03em}
+    header.site-header span{color:rgba(255,255,255,.6);font-size:12px}
+
+    .hero{background:linear-gradient(135deg,#0a2a52 0%,#1a4a00 100%);padding:48px 20px 40px;text-align:center;color:#fff}
+    .hero .cat-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:11px;letter-spacing:.08em;margin-bottom:16px}
+    .hero h1{font-size:clamp(18px,3.5vw,26px);font-weight:900;line-height:1.45;margin-bottom:14px}
+    .hero .hero-meta{font-size:12px;color:rgba(255,255,255,.7);display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+    .hero-img{width:100%;max-height:380px;object-fit:cover;display:block}
+
+    .breadcrumb{font-size:11px;color:var(--text-muted);padding:10px 0;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+    .breadcrumb a{color:var(--text-muted)}
+
+    .toc{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:28px 0}
+    .toc h2{font-size:13px;font-weight:700;color:var(--text-sub);margin-bottom:10px;letter-spacing:.06em}
+    .toc ol{padding-left:18px}
+    .toc li{font-size:13px;margin-bottom:6px}
+    .toc a{color:var(--blue)}
+
+    .article-body{padding:32px 0 48px}
+    .article-body h2{font-size:20px;font-weight:900;color:var(--blue);border-left:4px solid var(--blue);padding-left:12px;margin:40px 0 16px}
+    .article-body h3{font-size:16px;font-weight:700;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:6px;margin:28px 0 12px}
+    .article-body p{margin-bottom:14px}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:14px}
+    .article-body li{margin-bottom:6px}
+
+    .box-blue{background:var(--blue-pale);border-left:4px solid var(--blue);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-orange{background:var(--orange-pale);border-left:4px solid var(--orange);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-green{background:var(--green-pale);border-left:4px solid var(--green);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-blue p,.box-orange p,.box-green p{margin-bottom:0}
+
+    .method-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:20px 0}
+    .method-card{border-radius:12px;padding:20px;border:2px solid var(--border)}
+    .method-card.recommended{border-color:var(--blue);background:var(--blue-pale)}
+    .method-card .badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-bottom:8px;letter-spacing:.06em}
+    .method-card .badge.easy{background:#dcfce7;color:#166534}
+    .method-card .badge.pro{background:#dbeafe;color:#1e40af}
+    .method-card .badge.temp{background:#fef3c7;color:#92400e}
+    .method-card h4{font-size:15px;font-weight:900;margin-bottom:6px}
+    .method-card .verdict{font-size:12px;color:var(--text-sub);margin-bottom:8px}
+    .method-card ul{padding-left:16px;font-size:13px}
+    .method-card li{margin-bottom:4px}
+
+    .step-list{list-style:none;padding:0;margin:16px 0;counter-reset:step}
+    .step-list li{counter-increment:step;display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #eaecf0}
+    .step-list li:last-child{border-bottom:none}
+    .step-list li::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:28px;height:28px;min-width:28px;background:var(--blue);color:#fff;border-radius:50%;font-size:13px;font-weight:700;flex-shrink:0}
+    .step-body{flex:1}
+    .step-body strong{display:block;margin-bottom:4px}
+    .step-body .tip{font-size:12px;color:var(--text-sub);margin-top:4px;font-style:italic}
+
+    .tbl-wrap{overflow-x:auto;margin:16px 0}
+    table{width:100%;border-collapse:collapse;font-size:13px;min-width:420px}
+    th{background:var(--blue);color:#fff;padding:9px 10px;text-align:left;font-weight:700}
+    td{padding:8px 10px;border-bottom:1px solid #eaecf0;vertical-align:top}
+    tr:nth-child(even) td{background:#f8f9fb}
+    .good{color:#1a7a3c;font-weight:700}
+    .bad{color:#b91c1c;font-weight:700}
+    .mid{color:#92400e;font-weight:700}
+
+    .trouble-list{list-style:none;padding:0;margin:16px 0}
+    .trouble-list li{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #eaecf0;align-items:flex-start}
+    .trouble-list li:last-child{border-bottom:none}
+    .t-icon{font-size:20px;flex-shrink:0;line-height:1.4}
+    .t-body strong{display:block;margin-bottom:2px;font-size:14px}
+    .t-body span{font-size:13px;color:var(--text-sub)}
+
+    .checklist{list-style:none;padding:0;margin:16px 0}
+    .checklist li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #eaecf0;font-size:14px}
+    .checklist li:last-child{border-bottom:none}
+    .checklist li::before{content:"☐";font-size:18px;color:var(--blue);flex-shrink:0;line-height:1.3}
+
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--blue)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+
+    .cta-section{background:linear-gradient(135deg,#0a2a52,#1a4a00);border-radius:16px;padding:36px 24px;text-align:center;margin:40px 0;color:#fff}
+    .cta-section h2{font-size:18px;font-weight:900;margin-bottom:8px;color:#fff;border:none;padding:0}
+    .cta-section p{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:20px}
+    .cta-btn{display:inline-block;background:#f0a500;color:#1a1a1a;font-weight:900;font-size:15px;padding:14px 36px;border-radius:50px;transition:opacity .2s}
+    .cta-btn:hover{opacity:.88;text-decoration:none}
+
+    footer.site-footer{background:#1a1a1a;color:#888;font-size:12px;text-align:center;padding:20px}
+    footer.site-footer a{color:#aaa}
+
+    @media(max-width:600px){
+      .hero{padding:32px 16px 28px}
+      .hero h1{font-size:17px}
+      .method-cards{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/">LED PRO SHOP</a>
+  <span>プロ仕様LED専門店</span>
+</header>
+
+<div class="hero">
+  <div class="cat-badge">LEDテープ 施工・接続技術</div>
+  <h1>LEDテープ コネクターの付け方ガイド<br>ワンタッチ・はんだ・クリップ 3種類の<br>接続手順と失敗しないコツ</h1>
+  <div class="hero-meta">
+    <span>公開: 2026-05-18</span>
+    <span>対象: 電気工事業者・内装施工業者・DIY施工者</span>
+  </div>
+</div>
+
+<img src="/articles/images/led-tape-connector-guide-hero.webp" alt="LEDテープ コネクターの付け方ガイド｜ワンタッチ・はんだ・クリップ 3種類の接続手順" class="hero-img" width="860" height="430" loading="eager">
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/">LED PRO SHOP</a><span>›</span>
+    <a href="/articles/">コラム</a><span>›</span>
+    <span>LEDテープ コネクターの付け方ガイド</span>
+  </nav>
+
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#types">接続方法3種類の比較（ワンタッチ・はんだ・クリップ）</a></li>
+      <li><a href="#push-in">ワンタッチ（プッシュイン）コネクターの付け方</a></li>
+      <li><a href="#solder">はんだ付けの手順と失敗しないコツ</a></li>
+      <li><a href="#clip">クリップ端子の使い方</a></li>
+      <li><a href="#pin-count">芯数・幅・対応テープの確認方法</a></li>
+      <li><a href="#trouble">よくある失敗と原因</a></li>
+      <li><a href="#checklist">接続前チェックリスト</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ol>
+  </nav>
+
+  <div class="article-body">
+
+    <p>LEDテープの接続作業で最も多いトラブルは「点灯しない」「部分的に暗い」「施工後に接触不良」の3つです。いずれもコネクターの選び方・付け方の基本を押さえれば防げます。このページでは3種類の接続方法の使い分けから各手順・よくある失敗まで実務向けに整理します。</p>
+
+    <!-- ===== 1. 比較 ===== -->
+    <h2 id="types">1. 接続方法3種類の比較</h2>
+
+    <div class="method-cards">
+      <div class="method-card recommended">
+        <span class="badge easy">初心者・業務施工向け</span>
+        <h4>ワンタッチ（プッシュイン）コネクター</h4>
+        <p class="verdict">最も多く使われる接続方法。差し込むだけで接続完了。</p>
+        <ul>
+          <li>工具不要・1か所10〜30秒</li>
+          <li>取り外し・やり直しが容易</li>
+          <li>2/4/5芯対応あり（RGB・RGBW）</li>
+          <li>接触抵抗はんだより若干高め</li>
+          <li>推奨: 一般施工・間接照明・店舗内装</li>
+        </ul>
+      </div>
+      <div class="method-card">
+        <span class="badge pro">信頼性最重視</span>
+        <h4>はんだ付け</h4>
+        <p class="verdict">業務施工の永久設置に最適。振動・引っ張りに強い。</p>
+        <ul>
+          <li>接続信頼性が最も高い</li>
+          <li>振動・高電流環境に強い</li>
+          <li>技術が必要（コテ温度・加熱時間の管理）</li>
+          <li>やり直しがコネクターより手間</li>
+          <li>推奨: 屋外・車載・高電流（5A以上）</li>
+        </ul>
+      </div>
+      <div class="method-card">
+        <span class="badge temp">仮留め・テスト用</span>
+        <h4>クリップ端子（テスト用）</h4>
+        <p class="verdict">ワニ口クリップ・テスト端子。施工確認・仮接続向き。</p>
+        <ul>
+          <li>ドライバー不要で着脱自在</li>
+          <li>接触抵抗が高く本番施工には不向き</li>
+          <li>点灯確認・電圧測定用途に最適</li>
+          <li>長期使用で酸化・接触不良が出やすい</li>
+          <li>推奨: テスト・デモ・一時設置のみ</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>比較項目</th><th>ワンタッチコネクター</th><th>はんだ付け</th><th>クリップ端子</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>施工速度</td><td class="good">速い（10〜30秒/箇所）</td><td class="bad">遅い（2〜5分/箇所）</td><td class="good">速い</td></tr>
+          <tr><td>接続信頼性</td><td class="good">高い（本番施工OK）</td><td class="good">最高</td><td class="bad">低い（本番NG）</td></tr>
+          <tr><td>取り外し</td><td class="good">容易</td><td class="bad">困難（はんだ除去が必要）</td><td class="good">容易</td></tr>
+          <tr><td>工具</td><td class="good">不要</td><td class="bad">はんだごて・はんだ必要</td><td class="good">不要</td></tr>
+          <tr><td>高電流対応</td><td class="mid">〜5A程度（製品による）</td><td class="good">制限なし</td><td class="bad">テスト用のみ</td></tr>
+          <tr><td>RGB/RGBW対応</td><td class="good">4/5芯あり</td><td class="good">対応（芯数分はんだ）</td><td class="mid">要確認</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== 2. ワンタッチ ===== -->
+    <h2 id="push-in">2. ワンタッチ（プッシュイン）コネクターの付け方</h2>
+
+    <h3>必要なもの</h3>
+    <ul>
+      <li>LEDテープ専用ワンタッチコネクター（幅・芯数をテープに合わせる）</li>
+      <li>ニッパー・カッター（テープの切断用）</li>
+      <li>テスター（点灯確認用）</li>
+    </ul>
+
+    <h3>手順</h3>
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>LEDテープのカット位置を確認する</strong>
+          LEDテープはカット可能な位置（銅箔パッドのある部分）が決まっています。SMDテープは2〜3チップごと、COBテープは指定間隔ごと。カット位置から外れると銅箔パッドがなく接続できません。
+          <p class="tip">カット線（---印）が印刷されているテープはその線でカットしてください。</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>テープ端の幅とコネクター幅を確認する</strong>
+          8mm幅テープには8mm用、10mm幅には10mm用コネクターが必要です。幅が違うと端子が銅箔パッドに当たらず不点灯になります。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>コネクターのロックを開く</strong>
+          プッシュイン式はロック（フラップ）を起こした状態でテープを差し込みます。ロックを開かずに差し込もうとすると挿し込み不足になります。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>テープを奥まで差し込む（銅箔パッドが端子に当たる位置まで）</strong>
+          テープの銅箔面（接点側）が金属端子に確実に触れるよう、奥まで押し込みます。半差しは接触不良の最多原因です。
+          <p class="tip">差し込んだ後に軽く引っ張って抜けないか確認してください。</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>ロックを閉じる</strong>
+          フラップをパチンと閉めてテープを固定します。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>テスターで導通確認・点灯テスト</strong>
+          接続後に必ずテスターで導通確認か、電源に繋いで点灯確認をしてから固定作業に入ります。
+        </div>
+      </li>
+    </ul>
+
+    <div class="box-orange">
+      <p><strong>極性（＋/−）に注意:</strong> ワンタッチコネクターはテープの＋側（赤線または「＋」マーク）と電源の＋側が一致するように接続します。逆接続すると点灯せず、LEDチップへのダメージリスクもあります。</p>
+    </div>
+
+    <!-- ===== 3. はんだ付け ===== -->
+    <h2 id="solder">3. はんだ付けの手順と失敗しないコツ</h2>
+
+    <h3>必要な道具</h3>
+    <ul>
+      <li>はんだごて（30〜40W・コテ先温度設定式推奨）</li>
+      <li>フラックス入りはんだ線（0.6〜0.8mm径・Sn60/Pb40またはRoHSはんだ）</li>
+      <li>フラックス（ペースト状・銅箔酸化除去用）</li>
+      <li>ピンセット・第三の手（テープ固定用）</li>
+      <li>フラックスリムーバー（施工後洗浄）</li>
+      <li>テスター</li>
+    </ul>
+
+    <h3>手順</h3>
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>コテを350〜380℃に予熱する</strong>
+          低温（300℃以下）は冷えはんだになり接続強度が落ちます。高温（400℃以上）はLEDチップへの熱ダメージリスクがあります。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>銅箔パッドにフラックスを塗布する</strong>
+          銅箔表面の酸化被膜を除去してはんだ付着性を改善します。フラックス不足ははんだがはじかれる原因になります。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>コテ先ではんだをパッドに予備はんだする</strong>
+          銅箔パッドに薄くはんだをコーティング（予備はんだ）します。加熱は1〜2秒以内。長時間加熱するとテープが焦げます。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>電線をあてがって接続はんだを流す</strong>
+          接続する電線（リード線）を予備はんだのうえに置き、コテを当てて溶かしながら電線を固定します。加熱は2秒以内。
+          <p class="tip">はんだが固まるまで電線を動かさないでください（冷えはんだになります）。</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>フラックスリムーバーで洗浄する</strong>
+          フラックスの残渣は腐食の原因になります。IPA（イソプロパノール）またはフラックスリムーバーで拭き取ってください。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>テスターで導通確認・点灯テスト</strong>
+          はんだ完了後に必ず導通を確認してから次の施工へ進みます。
+        </div>
+      </li>
+    </ul>
+
+    <div class="box-green">
+      <p><strong>はんだ付けの判断基準:</strong> 光沢があり山型に盛り上がった「よいはんだ」= 接続OK。表面が曇っていたり凸凹している「冷えはんだ」= 再加熱が必要。コネクターが取れないか確認後に絶縁処理（熱収縮チューブ）をしてください。</p>
+    </div>
+
+    <!-- ===== 4. クリップ ===== -->
+    <h2 id="clip">4. クリップ端子の使い方</h2>
+
+    <p>クリップ端子（ワニ口クリップ、テストクリップ）は施工前の点灯テスト・導通確認に使用します。接触抵抗が高く、長期設置すると腐食・接触不良が起きるため本番施工には使用しないでください。</p>
+
+    <div class="box-blue">
+      <p><strong>クリップ端子の適切な用途:</strong> ①電源の出力電圧確認、②LEDテープの点灯テスト（仮接続）、③デモ・展示用の一時設置、④施工手順のトレーニング。本番施工では必ずワンタッチコネクターまたははんだ付けに切り替えてください。</p>
+    </div>
+
+    <!-- ===== 5. 芯数・幅 ===== -->
+    <h2 id="pin-count">5. 芯数・幅・対応テープの確認方法</h2>
+
+    <h3>コネクター選定の3つの確認項目</h3>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>確認項目</th><th>確認方法</th><th>間違えた場合</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>テープ幅</td>
+            <td>テープをノギスまたはスケールで計測（8mm/10mm/12mm/16mmが一般的）</td>
+            <td>端子が銅箔パッドに当たらず不点灯</td>
+          </tr>
+          <tr>
+            <td>芯数（ピン数）</td>
+            <td>単色=2芯、RGB=4芯、RGBW=5芯、CCT=4芯。テープの銅箔パッド数を数える</td>
+            <td>一部の色が点灯しない</td>
+          </tr>
+          <tr>
+            <td>COB/SMDの区別</td>
+            <td>COBテープ専用コネクターが必要（「COB対応」表記を確認）</td>
+            <td>SMD用はCOBテープに使用不可</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== 6. トラブル ===== -->
+    <h2 id="trouble">6. よくある失敗と原因</h2>
+
+    <ul class="trouble-list">
+      <li>
+        <span class="t-icon">❌</span>
+        <div class="t-body">
+          <strong>差し込んだのに点灯しない</strong>
+          <span>原因: コネクターの半差し・銅箔パッドとの位置ズレ。テープを抜き差ししてから点灯確認。改善しない場合は銅箔パッドの位置とコネクター幅が合っているか再確認。</span>
+        </div>
+      </li>
+      <li>
+        <span class="t-icon">🔆</span>
+        <div class="t-body">
+          <strong>一部分だけ暗い（接触抵抗が高い）</strong>
+          <span>原因: コネクター端子の腐食・汚れ、または接続部の電圧降下。端子を紙やすり（#400程度）で軽く磨いてから再接続。改善しない場合はコネクター交換。</span>
+        </div>
+      </li>
+      <li>
+        <span class="t-icon">💡</span>
+        <div class="t-body">
+          <strong>はんだ付け後に点灯しない</strong>
+          <span>原因: 冷えはんだ・極性逆接続・加熱しすぎによるLEDチップ損傷。テスターで各接続点の導通を確認。極性が正しければはんだを除去して再施工。</span>
+        </div>
+      </li>
+      <li>
+        <span class="t-icon">⚠️</span>
+        <div class="t-body">
+          <strong>しばらくして接触不良になる（断続点灯）</strong>
+          <span>原因: コネクターの締め付け不足・振動による緩み。コネクターのロックを確認・再締め。頻繁に発生する場合ははんだ付けに切り替えるか、コネクター固定用テープで固定する。</span>
+        </div>
+      </li>
+    </ul>
+
+    <!-- ===== CTA ===== -->
+    <div class="cta-section">
+      <h2>LEDテープ・コネクター・接続用品を探す</h2>
+      <p>ワンタッチコネクター（2/4/5芯）・各種幅対応・COBテープ専用コネクターを在庫から即納。<br>LEDテープ・アルミフレームも合わせてプロ価格でご提供。</p>
+      <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+    </div>
+
+    <!-- ===== 7. チェックリスト ===== -->
+    <h2 id="checklist">7. 接続前チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>LEDテープの幅（mm）とコネクターの対応幅が一致しているか確認した</li>
+      <li>芯数（単色=2芯・RGB=4芯・RGBW=5芯・CCT=4芯）が正しいか確認した</li>
+      <li>COBテープにはCOBテープ専用コネクターを選択した</li>
+      <li>テープのカット位置が銅箔パッドのある位置になっているか確認した</li>
+      <li>極性（＋/−）の向きが電源・コントローラーと一致しているか確認した</li>
+      <li>差し込み後に軽く引っ張って抜けないか確認した</li>
+      <li>電源接続前に必ず点灯テストを実施する計画を立てた</li>
+      <li>高電流（5A以上）の場合ははんだ付けまたは高電流対応コネクターを使用する</li>
+    </ul>
+
+    <!-- ===== 8. FAQ ===== -->
+    <h2 id="faq">8. よくある質問</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">LEDテープのコネクターが接触不良になる原因は何ですか？</div>
+      <div class="faq-a">主な原因は①コネクターへの挿し込み不足（端子まで届いていない）、②LEDテープの切断端のカットずれ（銅箔パッドが残っていない）、③コネクターとLEDテープの幅が合っていない（8mm用に10mm幅のテープを差し込むなど）の3つです。挿し込み後に軽く引っ張って抜けないか確認し、点灯テストを必ず実施してください。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">はんだ付けとワンタッチコネクターはどちらが信頼性が高いですか？</div>
+      <div class="faq-a">はんだ付けの方が接続信頼性が高く、振動・引っ張りに強いため業務施工の永久設置に適しています。ワンタッチコネクターは施工速度が速く初心者でもできますが、接触抵抗がはんだより若干高く、振動環境や高電流（10A以上）では接触不良リスクが高まります。店舗内装・間接照明の固定設置ではどちらも実用上問題ありません。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">LEDテープのはんだ付けに必要な道具は何ですか？</div>
+      <div class="faq-a">必要な道具は①はんだごて（30〜40W・コテ先温度350〜380℃）、②フラックス入りはんだ線（直径0.6〜0.8mm・Sn60/Pb40またはRoHSはんだ）、③フラックスリムーバー（はんだ後の洗浄用）、④ピンセット・第三の手（テープ固定用）、⑤テスター（導通確認用）の5点です。はんだごての温度が低すぎると冷えはんだになり、高すぎるとLEDチップが熱損傷します。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">COBテープのコネクターはSMDテープと同じものが使えますか？</div>
+      <div class="faq-a">使えません。COBテープは連続した発光帯（銅箔パッドの位置が異なる）のため、COBテープ専用コネクターが必要です。SMD用コネクターをCOBテープに接続しても正しい位置に端子が当たらず接触不良になります。購入時に「COBテープ対応」「COB LEDストリップ用」と記載されたコネクターを選択してください。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">RGBテープやCCTテープのコネクターは何芯が必要ですか？</div>
+      <div class="faq-a">単色テープ（白・電球色など）は2芯（＋/−）、RGB 3色テープは4芯（R/G/B/共通GND）、RGBWテープは5芯、CCT（色温度可変）テープは4芯（温白＋昼白＋GND×2）が必要です。芯数が合わないコネクターを接続すると一部の色が点灯しません。コネクターを購入する際はテープの芯数（ピン数）を先に確認してください。</div>
+    </div>
+
+  </div><!-- /.article-body -->
+</div><!-- /.container -->
+
+<footer class="site-footer">
+  <p><a href="/">LED PRO SHOP</a> — プロ仕様LED専門店 &copy; 2026</p>
+</footer>
+
+</body>
+</html>
