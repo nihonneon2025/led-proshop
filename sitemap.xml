@@ -63,10 +63,11 @@
     <priority>0.3</priority>
   </url>
 
-  <!-- column articles (262) -->
+  <!-- column articles (284) -->
   <url><loc>https://led-proshop.com/articles/12v-vs-24v-led-tape</loc><lastmod>2025-09-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/acupuncture-clinic-led-case</loc><lastmod>2025-09-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/airport-terminal-led-case</loc><lastmod>2025-09-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/aluminum-frame-endcap-guide</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/aluminum-frame-normal-vs-recessed</loc><lastmod>2025-09-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/antique-shop-led-case</loc><lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/apartment-common-area-led-case</loc><lastmod>2025-09-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -82,9 +83,11 @@
   <url><loc>https://led-proshop.com/articles/barbershop-led-case</loc><lastmod>2025-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/batting-center-led-case</loc><lastmod>2025-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/beauty-salon-led-case</loc><lastmod>2025-09-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/beauty-salon-led-lighting-guide</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/bento-shop-led-case</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/bicycle-shop-led-case</loc><lastmod>2025-09-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/billiards-hall-led-case</loc><lastmod>2025-09-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/board-game-cafe-led-case</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/bookstore-led-case</loc><lastmod>2025-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/bowling-alley-led-case</loc><lastmod>2025-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/boxing-gym-led-case</loc><lastmod>2025-09-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -130,8 +133,10 @@
   <url><loc>https://led-proshop.com/articles/data-center-led-case</loc><lastmod>2025-11-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/dc24v-led-power-supply-guide</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/dental-clinic-led-case</loc><lastmod>2025-11-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/dental-clinic-led-lighting-guide</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/driving-school-led-case</loc><lastmod>2025-11-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/drugstore-led-case</loc><lastmod>2025-11-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/drugstore-led-lighting-case</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/drugstore-pharmacy-led-case</loc><lastmod>2025-11-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/drugstore-pharmacy-led-guide</loc><lastmod>2026-05-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/dry-cleaning-led-case</loc><lastmod>2025-11-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -158,6 +163,7 @@
   <url><loc>https://led-proshop.com/articles/funeral-hall-led-case</loc><lastmod>2025-12-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/game-center-led-case</loc><lastmod>2025-12-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/gas-station-led-case</loc><lastmod>2025-12-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/ghost-kitchen-led-case</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/golf-driving-range-led-case</loc><lastmod>2025-12-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/greenhouse-agriculture-led-case</loc><lastmod>2025-12-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/guest-house-hostel-led-case</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -181,22 +187,30 @@
   <url><loc>https://led-proshop.com/articles/internet-cafe-led-case</loc><lastmod>2026-01-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/italian-restaurant-led-case</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/izakaya-dining-led-case</loc><lastmod>2026-01-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/izakaya-led-lighting-case</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/izakaya-led-lighting-guide</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/izakaya-restaurant-led-case</loc><lastmod>2026-01-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/japanese-restaurant-led-case</loc><lastmod>2026-01-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/jewelry-showcase-led-case</loc><lastmod>2026-01-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/jewelry-store-led-case</loc><lastmod>2026-01-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/kaiten-sushi-led-case</loc><lastmod>2026-05-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/karaoke-led-case</loc><lastmod>2026-01-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/karaoke-led-lighting-case</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/kimono-shop-led-case</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/kindergarten-school-led-case</loc><lastmod>2026-01-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/language-school-led-case</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/law-office-led-case</loc><lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/led-color-temperature-guide</loc><lastmod>2026-01-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/led-electricity-savings-guide</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/led-flickerfree-guide</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/led-indirect-lighting-design-guide</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/led-insect-repellent-lighting-guide</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/led-lighting-lux-calculation-guide</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/led-lighting-subsidy-energy-saving-2026</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/led-motion-sensor-lighting-guide</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/led-neon-flex-guide</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/led-psu-capacity-guide</loc><lastmod>2026-01-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/led-signage-lighting-guide</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/led-tape-12v-vs-24v-guide</loc><lastmod>2026-01-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/led-tape-aluminum-frame-installation-guide</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/led-tape-brightness-lumen-guide</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -222,9 +236,11 @@
   <url><loc>https://led-proshop.com/articles/led-tape-outdoor-sign-guide</loc><lastmod>2026-01-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/led-tape-parallel-wiring-guide</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/led-tape-psu-wiring-guide</loc><lastmod>2026-01-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/led-tape-purple-guide</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/led-tape-rgb-rgbw-guide</loc><lastmod>2026-01-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/led-tape-soldering-guide</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/led-tape-troubleshooting-guide</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/led-tape-voltage-drop-guide</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/led-tape-waterproof-ip-guide</loc><lastmod>2026-01-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/led-tape-wiring-basics</loc><lastmod>2026-01-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/led-tape-wiring-diagram-guide</loc><lastmod>2026-05-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -248,8 +264,10 @@
   <url><loc>https://led-proshop.com/articles/nursing-home-lighting-lux-guide</loc><lastmod>2026-05-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/office-coworking-led-case</loc><lastmod>2026-02-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/office-factory-led-guide</loc><lastmod>2026-02-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/office-led-lighting-guide</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/office-lighting-jis-guide</loc><lastmod>2026-05-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/okonomiyaki-restaurant-led-case</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/onsen-sento-led-lighting-case</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/optical-shop-led-case</loc><lastmod>2026-02-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/osteopathic-clinic-led-case</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/outdoor-gear-shop-led-case</loc><lastmod>2026-02-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -287,6 +305,8 @@
   <url><loc>https://led-proshop.com/articles/sauna-spa-led-case</loc><lastmod>2026-03-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/school-classroom-led-case</loc><lastmod>2026-03-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/secondhand-shop-led-case</loc><lastmod>2026-04-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/seikotsu-chiropractor-led-case</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/seikotsu-led-lighting-guide</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/self-storage-led-case</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/semiconductor-factory-led-case</loc><lastmod>2026-04-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/shabu-shabu-restaurant-led-case</loc><lastmod>2026-05-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -299,6 +319,7 @@
   <url><loc>https://led-proshop.com/articles/solar-power-plant-led-case</loc><lastmod>2026-04-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/spa-bath-facility-led-guide</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/spa-super-sento-led-case</loc><lastmod>2026-04-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/sports-bar-led-case</loc><lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/sports-goods-store-led-case</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/sports-gymnasium-led-case</loc><lastmod>2026-04-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/stationery-store-led-case</loc><lastmod>2026-05-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -316,6 +337,7 @@
   <url><loc>https://led-proshop.com/articles/toy-hobby-shop-led-case</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/train-station-led-case</loc><lastmod>2026-04-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/trampoline-park-led-case</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://led-proshop.com/articles/tunable-white-led-tape-guide</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/udon-soba-restaurant-led-case</loc><lastmod>2026-04-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/university-campus-led-case</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://led-proshop.com/articles/veterinary-clinic-led-case</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
