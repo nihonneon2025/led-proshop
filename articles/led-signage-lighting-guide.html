@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LED看板照明ガイド｜内照式・外照式・チャンネル文字・バックライト看板のLED選定基準と省エネ試算 | LED PRO SHOP</title>
+  <meta name="description" content="看板照明をLEDに切り替えると消費電力を蛍光灯比80%削減でき、冬季始動不良・頻繁な球切れトラブルもなくなります。内照式・外照式・チャンネル文字・バックライト看板ごとに必要な光束・IP規格・色温度が異なり、選定ミスで看板面が均一に光らない・色がくすむトラブルが多発します。内照式/外照式/チャンネル文字/バックライト看板別LED選定基準・IP規格・色温度・投資回収シミュレーションを看板施工業者・店舗オーナー向けに公開。">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-signage-lighting-guide">
+
+  <!-- OGP -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="LED看板照明ガイド｜内照式・外照式・チャンネル文字・バックライト看板のLED選定基準と省エネ試算 | LED PRO SHOP">
+  <meta property="og:description" content="看板照明をLEDに切り替えると蛍光灯比80%省エネ・球切れトラブルなし。内照式・外照式・チャンネル文字・バックライト別の必要光束・IP規格・色温度・投資回収試算を看板施工業者向けに公開。">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-signage-lighting-guide">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-signage-lighting-guide-hero.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LED看板照明ガイド｜内照式・外照式・チャンネル文字・バックライト看板のLED選定基準と省エネ試算 | LED PRO SHOP">
+  <meta name="twitter:description" content="看板照明をLEDに切り替えると蛍光灯比80%省エネ・球切れトラブルなし。内照式・外照式・チャンネル文字・バックライト別の必要光束・IP規格・色温度・投資回収試算を看板施工業者向けに公開。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-signage-lighting-guide-hero.webp">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LED看板照明ガイド｜内照式・外照式・チャンネル文字・バックライト看板のLED選定基準と省エネ試算",
+    "description": "看板照明をLEDに切り替えると消費電力を蛍光灯比80%削減でき、冬季始動不良・頻繁な球切れトラブルもなくなります。内照式・外照式・チャンネル文字・バックライト看板ごとに必要な光束・IP規格・色温度が異なり、選定ミスで看板面が均一に光らない・色がくすむトラブルが多発します。",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP"},
+    "publisher": {"@type": "Organization", "name": "LED PRO SHOP"},
+    "datePublished": "2026-05-19",
+    "dateModified": "2026-05-19",
+    "url": "https://led-proshop.com/articles/led-signage-lighting-guide"
+  }
+  </script>
+
+  <!-- FAQ JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "看板照明をLEDに替えると電気代はどのくらい削減できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "蛍光灯・HIDランプからLEDに切り替えると消費電力を60〜80%削減できます。例えば40W蛍光灯2本の内照式看板（80W）をLEDモジュールに換えると消費電力は約20〜30Wになり、1日12時間点灯で年間約6,000〜8,000円の電気代削減になります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "内照式看板にはどのようなLEDが適していますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "内照式看板（アクリル板・乳白板を内部から照らすタイプ）にはLEDモジュール（ドット式）またはCOBテープライトが適しています。アクリル板の厚みと奥行きに合わせて光束を設計し、均一な面発光のためにLED間隔は30〜50mmが目安です。色温度は白色系なら6500K、電球色系なら3000Kが一般的です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "屋外看板に使うLEDの防水規格はどれが必要ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "屋外露出設置の看板照明にはIP65以上が必須です。直接雨水がかかる場所はIP67、水没リスクがある低位置設置ではIP68を選んでください。屋内の内照式看板はIP20〜IP33で十分です。チャンネル文字の内部配線部分はIP44以上を推奨します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "看板用LEDの寿命はどのくらいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "品質の高いLED看板モジュール・テープライトの寿命は30,000〜50,000時間（L70基準）です。1日12時間点灯で換算すると約7〜11年相当です。ただし高温多湿環境・密閉筐体への設置では熱劣化が早まるため、放熱設計が寿命に大きく影響します。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #1a1a2e;
+      --accent: #e94560;
+      --accent2: #f5a623;
+      --bg: #0f0f1a;
+      --surface: #16213e;
+      --surface2: #1e2a4a;
+      --text: #e8e8f0;
+      --text-muted: #9999bb;
+      --border: #2a3a5e;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header */
+    .site-header {
+      background: var(--primary);
+      border-bottom: 2px solid var(--accent);
+      padding: 12px 24px;
+    }
+    .site-header a { color: var(--text); font-weight: 700; font-size: 18px; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0d0d1a 100%);
+      border-bottom: 3px solid var(--accent);
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: clamp(22px, 4vw, 36px);
+      font-weight: 900;
+      line-height: 1.4;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .hero-lead {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 24px;
+    }
+    .hero-meta {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Layout */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+    .article-body { padding: 48px 0 80px; }
+
+    /* Warning box */
+    .warning-box {
+      background: linear-gradient(135deg, #2d0a0a, #3d1a00);
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      padding: 24px;
+      margin: 32px 0;
+    }
+    .warning-box .wbox-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .warning-box ul { padding-left: 20px; }
+    .warning-box li { margin-bottom: 6px; font-size: 15px; }
+
+    /* Info box */
+    .info-box {
+      background: var(--surface2);
+      border-left: 4px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .info-box .ibox-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent2);
+      margin-bottom: 10px;
+    }
+
+    /* Section headings */
+    h2 {
+      font-size: clamp(18px, 3vw, 24px);
+      font-weight: 900;
+      color: #fff;
+      margin: 48px 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--accent);
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent2);
+      margin: 32px 0 14px;
+    }
+    p { margin-bottom: 16px; }
+    ul, ol { padding-left: 24px; margin-bottom: 16px; }
+    li { margin-bottom: 6px; }
+
+    /* Tables */
+    .tbl-wrap { overflow-x: auto; margin: 24px 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      min-width: 540px;
+    }
+    th {
+      background: var(--surface2);
+      color: var(--accent2);
+      font-weight: 700;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+    td {
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+    .td-good { color: #4caf50; font-weight: 700; }
+    .td-warn { color: var(--accent2); font-weight: 700; }
+    .td-bad { color: var(--accent); font-weight: 700; }
+
+    /* Grid */
+    .type-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .type-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .type-card .tc-head {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent2);
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .type-card .tc-spec { font-size: 13px; color: var(--text-muted); margin-bottom: 4px; }
+    .type-card .tc-spec span { color: var(--text); font-weight: 600; }
+
+    /* Checklist */
+    .checklist { list-style: none; padding: 0; }
+    .checklist li {
+      padding: 8px 0 8px 32px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+    }
+    .checklist li::before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+      color: var(--accent2);
+      font-size: 18px;
+    }
+
+    /* CTA */
+    .cta-block {
+      background: linear-gradient(135deg, var(--surface) 0%, var(--surface2) 100%);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 32px 24px;
+      text-align: center;
+      margin: 48px 0;
+    }
+    .cta-block h3 { color: #fff; font-size: 20px; margin-bottom: 12px; }
+    .cta-block p { color: var(--text-muted); font-size: 15px; margin-bottom: 24px; }
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 14px 36px;
+      border-radius: 4px;
+      transition: opacity 0.2s;
+    }
+    .cta-btn:hover { opacity: 0.85; text-decoration: none; }
+
+    /* Footer */
+    .site-footer {
+      background: var(--primary);
+      border-top: 2px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .type-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/">LED PRO SHOP</a>
+</header>
+
+<section class="hero">
+  <div class="hero-badge">看板LED照明 完全ガイド</div>
+  <h1>LED看板照明ガイド<br>内照式・外照式・チャンネル文字・バックライト看板の<br>LED選定基準と省エネ試算</h1>
+  <p class="hero-lead">看板照明をLEDに切り替えると消費電力を蛍光灯比80%削減できます。ただし看板の種類ごとに必要な光束・IP規格・色温度が異なり、選定ミスで均一に光らない・色がくすむトラブルが多発します。</p>
+  <p class="hero-meta">公開日: 2026-05-19 | 対象: 看板施工業者・店舗オーナー</p>
+</section>
+
+<main class="container article-body">
+
+  <div class="warning-box">
+    <div class="wbox-title">▲ 看板LED照明でよくある選定ミス3パターン</div>
+    <ul>
+      <li><strong>内照式看板に屋外用IP65テープを使用</strong> → 粗い点発光でアクリル面が均一に光らない（LEDモジュールかCOBテープが必要）</li>
+      <li><strong>外照式看板に低IP規格のLEDを設置</strong> → 雨水浸入で短期故障・漏電リスク（屋外露出はIP65以上必須）</li>
+      <li><strong>色温度の選定ミス</strong> → 食品・飲食店看板に6500K（青白い）を使うと食欲減退・暖色の商品が色あせて見える</li>
+    </ul>
+  </div>
+
+  <h2>1. 看板の種類とLED選定の基本</h2>
+
+  <p>看板照明に使うLEDは「どの種類の看板か」によって最適な製品が大きく異なります。大きく4種類に分類して考えます。</p>
+
+  <div class="type-grid">
+    <div class="type-card">
+      <div class="tc-head">内照式看板（アクリル内部から照射）</div>
+      <div class="tc-spec">推奨LED: <span>LEDモジュール・COBテープ</span></div>
+      <div class="tc-spec">色温度: <span>6500K（白）or 3000K（電球色）</span></div>
+      <div class="tc-spec">IP規格: <span>IP20〜IP33（屋内筐体内部）</span></div>
+      <div class="tc-spec">光束目安: <span>奥行き5cm: 500〜800lm/m</span></div>
+    </div>
+    <div class="type-card">
+      <div class="tc-head">外照式看板（外部から看板面を照らす）</div>
+      <div class="tc-spec">推奨LED: <span>屋外用投光器・LEDバーライト</span></div>
+      <div class="tc-spec">色温度: <span>4000K〜6500K（視認性重視）</span></div>
+      <div class="tc-spec">IP規格: <span>IP65以上（屋外露出）</span></div>
+      <div class="tc-spec">光束目安: <span>看板面積1㎡あたり1,500〜3,000lm</span></div>
+    </div>
+    <div class="type-card">
+      <div class="tc-head">チャンネル文字（立体文字内部LED）</div>
+      <div class="tc-spec">推奨LED: <span>LEDモジュール（専用）</span></div>
+      <div class="tc-spec">色温度: <span>ブランド指定色・白6500K多い</span></div>
+      <div class="tc-spec">IP規格: <span>IP44以上（筐体内・防滴）</span></div>
+      <div class="tc-spec">光束目安: <span>文字奥行き5cm: 400〜600lm/m</span></div>
+    </div>
+    <div class="type-card">
+      <div class="tc-head">バックライト看板（フィルムシート透過）</div>
+      <div class="tc-spec">推奨LED: <span>高密度LEDテープ・COBテープ</span></div>
+      <div class="tc-spec">色温度: <span>6500K（白系）・RGB対応可</span></div>
+      <div class="tc-spec">IP規格: <span>IP20〜IP44（筐体内）</span></div>
+      <div class="tc-spec">光束目安: <span>800〜1,200lm/m（均一性重視）</span></div>
+    </div>
+  </div>
+
+  <h2>2. 看板種類別 LED仕様比較表</h2>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>看板種類</th>
+          <th>LED製品</th>
+          <th>W数目安</th>
+          <th>IP規格</th>
+          <th>色温度</th>
+          <th>主な注意点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>内照式（アクリル）</td>
+          <td>LEDモジュール</td>
+          <td>0.5〜1W/個</td>
+          <td class="td-good">IP20以上</td>
+          <td>6500K / 3000K</td>
+          <td>LED間隔30〜50mm・均一発光</td>
+        </tr>
+        <tr>
+          <td>内照式（乳白板）</td>
+          <td>COBテープ</td>
+          <td>8〜14W/m</td>
+          <td class="td-good">IP20以上</td>
+          <td>6500K / 4000K</td>
+          <td>奥行き最低3cm確保・過熱注意</td>
+        </tr>
+        <tr>
+          <td>外照式（路面・壁面）</td>
+          <td>LED投光器</td>
+          <td>30〜100W</td>
+          <td class="td-warn">IP65以上</td>
+          <td>4000K〜6500K</td>
+          <td>光源が直接雨にかかるためIP65必須</td>
+        </tr>
+        <tr>
+          <td>チャンネル文字</td>
+          <td>LEDモジュール</td>
+          <td>0.3〜0.8W/個</td>
+          <td class="td-warn">IP44以上</td>
+          <td>6500K / ブランド指定</td>
+          <td>文字内部は防滴・配線防水処理必須</td>
+        </tr>
+        <tr>
+          <td>バックライト</td>
+          <td>高密度テープ</td>
+          <td>10〜20W/m</td>
+          <td class="td-good">IP33以上</td>
+          <td>6500K / RGB</td>
+          <td>均一性最優先・COBテープ推奨</td>
+        </tr>
+        <tr>
+          <td>屋外スタンド看板</td>
+          <td>LEDバーライト</td>
+          <td>10〜30W</td>
+          <td class="td-bad">IP67以上</td>
+          <td>4000K〜6500K</td>
+          <td>低位置設置は水没リスク→IP67以上</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>3. 屋外看板のIP規格選定</h2>
+
+  <p>屋外に設置する看板照明では防水規格（IP規格）が最重要です。IP規格の選定ミスは雨水浸入による早期故障・漏電・火災リスクに直結します。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>IP規格</th>
+          <th>防水レベル</th>
+          <th>用途</th>
+          <th>適否</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>IP20</strong></td>
+          <td>防水なし（固形物保護のみ）</td>
+          <td>屋内内照式看板の内部</td>
+          <td class="td-good">屋内OK</td>
+        </tr>
+        <tr>
+          <td><strong>IP33</strong></td>
+          <td>防滴（60°以内の降雨に対応）</td>
+          <td>軒下・屋根あり設置</td>
+          <td class="td-warn">軒下のみ</td>
+        </tr>
+        <tr>
+          <td><strong>IP44</strong></td>
+          <td>飛沫防護（全方向の飛沫）</td>
+          <td>チャンネル文字・半屋外</td>
+          <td class="td-warn">半屋外OK</td>
+        </tr>
+        <tr>
+          <td><strong>IP65</strong></td>
+          <td>防塵・防噴流（直射水流に対応）</td>
+          <td>屋外露出設置の看板照明</td>
+          <td class="td-good">屋外標準</td>
+        </tr>
+        <tr>
+          <td><strong>IP67</strong></td>
+          <td>防水（30分間の水没に対応）</td>
+          <td>地面近く・水没リスクあり</td>
+          <td class="td-good">低位置設置</td>
+        </tr>
+        <tr>
+          <td><strong>IP68</strong></td>
+          <td>完全防水（継続水没対応）</td>
+          <td>噴水・池・完全水中</td>
+          <td class="td-good">水中演出</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box">
+    <div class="ibox-title">IP規格の見方</div>
+    <p>IPの後の数字は「第1数字（固形物保護）＋第2数字（液体保護）」です。IP65なら「6=完全防塵・5=噴流保護」。屋外看板照明にはIP65が最低ラインで、台風・強雨が想定される設置場所ではIP66以上を推奨します。</p>
+  </div>
+
+  <h2>4. 色温度の選定基準</h2>
+
+  <p>看板照明の色温度は業種・ブランドイメージと視認性の両方を考慮して選びます。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>色温度</th>
+          <th>色の印象</th>
+          <th>適した業種・用途</th>
+          <th>避けるべき用途</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>2700K〜3000K</strong></td>
+          <td>電球色（温かみ・オレンジ）</td>
+          <td>飲食店・バー・旅館・高級店</td>
+          <td>食品スーパー・医療機関</td>
+        </tr>
+        <tr>
+          <td><strong>3500K〜4000K</strong></td>
+          <td>温白色（中間・自然）</td>
+          <td>アパレル・美容院・カフェ・複合施設</td>
+          <td>特になし（汎用）</td>
+        </tr>
+        <tr>
+          <td><strong>5000K〜6500K</strong></td>
+          <td>昼白色・昼光色（白・青白）</td>
+          <td>コンビニ・病院・ガソリンスタンド・工場</td>
+          <td>高級飲食店・温浴施設</td>
+        </tr>
+        <tr>
+          <td><strong>RGB（フルカラー）</strong></td>
+          <td>色変化・演出</td>
+          <td>エンターテイメント・ナイトクラブ・イベント</td>
+          <td>視認性が重要な業務用途</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warning-box">
+    <div class="wbox-title">▲ 飲食店看板の色温度ミスは集客に直結</div>
+    <ul>
+      <li>ラーメン・焼肉・居酒屋の看板に6500K（青白）を使うと食品が不健康に見え食欲を下げる</li>
+      <li>コンビニ・ドラッグストアに2700K（電球色）を使うと清潔感が失われブランドイメージと乖離する</li>
+      <li>医療機関・歯科は4000K〜5000Kが清潔・信頼感に最適</li>
+    </ul>
+  </div>
+
+  <h2>5. 省エネ・投資回収シミュレーション</h2>
+
+  <p>蛍光灯・HIDランプからLEDへの切り替えによる電気代削減と投資回収期間の目安です。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>現状照明</th>
+          <th>消費電力</th>
+          <th>LED置換後</th>
+          <th>削減W数</th>
+          <th>年間削減額<br>（12h/日）</th>
+          <th>投資回収期間<br>（LED費用3万円）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>蛍光灯40W×2本</td>
+          <td>80W</td>
+          <td>LEDモジュール</td>
+          <td>約55W削減</td>
+          <td>約26,000円</td>
+          <td>約14ヶ月</td>
+        </tr>
+        <tr>
+          <td>蛍光灯40W×4本</td>
+          <td>160W</td>
+          <td>LEDテープ+モジュール</td>
+          <td>約110W削減</td>
+          <td>約52,000円</td>
+          <td>約7ヶ月</td>
+        </tr>
+        <tr>
+          <td>メタルハライド250W</td>
+          <td>250W</td>
+          <td>LED投光器100W</td>
+          <td>約150W削減</td>
+          <td>約71,000円</td>
+          <td>約5ヶ月</td>
+        </tr>
+        <tr>
+          <td>HIDランプ400W</td>
+          <td>400W</td>
+          <td>LED投光器150W</td>
+          <td>約250W削減</td>
+          <td>約119,000円</td>
+          <td>約5ヶ月</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:13px;color:var(--text-muted);">※電気代単価27円/kWhで計算。実際の削減額は使用時間・電力会社・契約内容により異なります。</p>
+
+  <h2>6. 内照式看板のLED交換手順と注意点</h2>
+
+  <h3>既存蛍光灯筐体へのLED組み込み</h3>
+
+  <p>既存の内照式看板（蛍光灯式）をLEDに換える場合、筐体をそのまま使える場合と交換が必要な場合があります。</p>
+
+  <div class="info-box">
+    <div class="ibox-title">筐体流用の判定基準</div>
+    <ul>
+      <li><strong>筐体奥行き3cm以上</strong>: LEDモジュールまたはCOBテープを内部に配置可能</li>
+      <li><strong>筐体奥行き1〜3cm</strong>: エッジ型（側面から照射）のバックライトLEDを使用</li>
+      <li><strong>アクリル板の状態</strong>: 黄変・ひび割れがあれば筐体ごと交換を推奨</li>
+      <li><strong>電源容量</strong>: LEDドライバー（DC電源）の設置スペースを確認</li>
+    </ul>
+  </div>
+
+  <h3>LEDモジュールの間隔設計</h3>
+
+  <p>内照式看板の均一発光を実現するためのLEDモジュール間隔の目安:</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>筐体奥行き</th>
+          <th>推奨LED間隔</th>
+          <th>推奨W数/個</th>
+          <th>均一性評価</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>3〜5cm</td>
+          <td>25〜35mm間隔</td>
+          <td>0.5〜0.8W</td>
+          <td class="td-warn">やや点発光</td>
+        </tr>
+        <tr>
+          <td>5〜10cm</td>
+          <td>35〜50mm間隔</td>
+          <td>0.5〜1W</td>
+          <td class="td-good">良好</td>
+        </tr>
+        <tr>
+          <td>10cm以上</td>
+          <td>50〜80mm間隔</td>
+          <td>1〜2W</td>
+          <td class="td-good">均一・高輝度</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>7. 施工前チェックリスト</h2>
+
+  <ul class="checklist">
+    <li>看板の種類（内照式/外照式/チャンネル文字/バックライト）を確認し、適切なLED製品を選定した</li>
+    <li>設置環境（屋内/屋外露出/軒下/低位置）に合ったIP規格（IP20〜IP68）を確認した</li>
+    <li>業種・ブランドに合った色温度（2700K〜6500K）を選定した</li>
+    <li>筐体の奥行きを計測し、LEDモジュール間隔または COBテープの取り付け可否を確認した</li>
+    <li>LEDドライバー（DC電源）の設置スペースと容量（LEDの消費W×1.2）を計算した</li>
+    <li>屋外設置の場合、電気工事士による施工・電気工事届出の要否を確認した</li>
+    <li>既存電源（安定器）の撤去またはバイパス工事が必要かどうか確認した</li>
+  </ul>
+
+  <h2>8. よくある質問</h2>
+
+  <h3>Q. 蛍光灯の安定器はそのまま使えますか？</h3>
+  <p>いいえ、LEDに交換する場合は安定器をバイパス（撤去または無効化）する必要があります。安定器に直結するとLEDが点灯しない・誤動作・故障の原因になります。バイパス工事は電気工事士が必要です。</p>
+
+  <h3>Q. 内照式看板が端だけ暗くなる原因は？</h3>
+  <p>LEDモジュールの間隔が広すぎる、または筐体奥行きが浅く光が拡散できていないことが原因です。奥行き5cm以下の筐体では25〜30mm間隔のLEDモジュール、またはCOBテープライトの使用を推奨します。COBテープは点発光がなく均一な面発光が得やすい特性があります。</p>
+
+  <h3>Q. 看板LED照明に調光機能は必要ですか？</h3>
+  <p>深夜の減光（明るさを下げて電気代を削減）や昼夜の明るさ調整をしたい場合は調光対応のLEDドライバーと調光対応LEDの組み合わせが必要です。特に24時間営業の店舗や、深夜帯に明るさを落とす規制がある地域では有効です。</p>
+
+  <div class="cta-block">
+    <h3>看板LED照明の仕様選定はLED PRO SHOPにご相談ください</h3>
+    <p>内照式・外照式・チャンネル文字・バックライト看板のLED選定・施工計画をサポートします。IP規格・色温度・光束の計算からドライバー選定まで対応可能です。</p>
+    <a href="/" class="cta-btn">商品ラインナップを見る</a>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 LED PRO SHOP | <a href="/articles/">記事一覧</a></p>
+</footer>
+
+</body>
+</html>
