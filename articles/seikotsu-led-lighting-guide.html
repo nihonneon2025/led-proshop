@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>整骨院・接骨院 LED照明ガイド｜照度基準・色温度・演色性Ra90以上・施術室/受付別選定 | LED PRO SHOP</title>
+<meta name="description" content="整骨院・接骨院で照明の色温度や演色性を誤ると患者が「暗い・疲れやすい・皮膚の状態が見えにくい」と感じ施術品質の低下とリピート率悪化につながります。施術室Ra90以上・受付3000〜4000K・施術台面照度500lx以上の選定基準、グレア対策、消費電力60%削減の省エネ試算を施設担当者向けに公開。">
+<meta property="og:title" content="整骨院・接骨院 LED照明ガイド｜照度基準・色温度・演色性Ra90以上・施術室/受付別選定 | LED PRO SHOP">
+<meta property="og:description" content="整骨院で照明の演色性や色温度を誤ると皮膚の状態が見えにくく施術品質が低下します。施術室Ra90以上・受付3000〜4000K・施術台面500lx以上の選定基準・グレア対策・省エネ試算を施設担当者向けに公開。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/seikotsu-led-lighting-guide">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="整骨院・接骨院 LED照明ガイド｜照度基準・色温度・演色性Ra90以上・施術室/受付別選定 | LED PRO SHOP">
+<meta name="twitter:description" content="整骨院で照明の演色性や色温度を誤ると皮膚の状態が見えにくく施術品質が低下します。施術室Ra90以上・受付3000〜4000K・施術台面500lx以上の選定基準・グレア対策・省エネ試算を施設担当者向けに公開。">
+<link rel="canonical" href="https://led-proshop.com/articles/seikotsu-led-lighting-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.75; font-size: 15px; }
+  a { color: #0369a1; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #0c4a6e 0%, #075985 50%, #0369a1 100%); padding: 56px 20px 48px; text-align: center; border-bottom: 3px solid #0ea5e9; }
+  .hero-badge { display: inline-block; background: #ef4444; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 14px; }
+  .hero h1 { font-size: clamp(20px, 3.5vw, 32px); font-weight: 800; color: #f0f9ff; line-height: 1.35; max-width: 780px; margin: 0 auto 14px; }
+  .hero-sub { font-size: 14px; color: #bae6fd; max-width: 660px; margin: 0 auto 20px; }
+  .hero-meta { font-size: 12px; color: #7dd3fc; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 44px 0 80px; }
+
+  h2 { font-size: 21px; font-weight: 800; color: #0c4a6e; border-left: 4px solid #0284c7; padding-left: 14px; margin: 48px 0 18px; }
+  h3 { font-size: 16px; font-weight: 700; color: #075985; margin: 28px 0 10px; }
+  p { margin-bottom: 14px; color: #334155; }
+
+  .alert-box { background: #fff1f2; border: 1px solid #fecdd3; border-left: 4px solid #ef4444; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #b91c1c; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #7f1d1d; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #f0f9ff; border: 1px solid #bae6fd; border-left: 4px solid #0284c7; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #0c4a6e; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 28px; font-size: 13px; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  thead th { background: #0369a1; color: #fff; padding: 10px 12px; text-align: left; font-size: 12px; font-weight: 700; }
+  tbody td { padding: 9px 12px; border-bottom: 1px solid #e2e8f0; color: #334155; vertical-align: top; background: #fff; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) td { background: #f8fafc; }
+  .tag-req { color: #0369a1; font-weight: 700; }
+  .tag-ok { color: #16a34a; font-weight: 700; }
+  .tag-warn { color: #d97706; font-weight: 700; }
+  .tag-ng { color: #dc2626; font-weight: 700; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 18px 0 32px; }
+  .spec-card { background: #fff; border: 1px solid #e2e8f0; border-top: 3px solid #0284c7; border-radius: 10px; padding: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .spec-card .spec-label { font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .spec-card .spec-value { font-size: 22px; font-weight: 800; color: #0c4a6e; line-height: 1.2; }
+  .spec-card .spec-note { font-size: 12px; color: #64748b; margin-top: 4px; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 14px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #0369a1; color: #fff; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .step-list li span { color: #334155; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #e2e8f0; font-size: 14px; color: #334155; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #16a34a; font-weight: 900; }
+
+  .area-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 18px 0 32px; }
+  .area-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .area-card h4 { font-size: 14px; font-weight: 700; color: #0c4a6e; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 2px solid #0284c7; }
+  .area-card .spec-row { display: flex; justify-content: space-between; font-size: 13px; padding: 4px 0; border-bottom: 1px solid #f1f5f9; }
+  .area-card .spec-row:last-child { border-bottom: none; }
+  .area-card .spec-row .key { color: #64748b; }
+  .area-card .spec-row .val { font-weight: 700; color: #0369a1; }
+
+  .energy-box { background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border: 1px solid #6ee7b7; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .energy-box h3 { color: #065f46; margin-top: 0; font-size: 16px; }
+  .energy-table { width: 100%; margin-top: 12px; }
+  .energy-table td { padding: 6px 10px; font-size: 13px; color: #064e3b; }
+  .energy-table .highlight { font-weight: 700; color: #047857; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 14px; overflow: hidden; }
+  .faq-q { background: #f0f9ff; padding: 14px 18px; font-weight: 700; color: #0c4a6e; font-size: 14px; }
+  .faq-a { padding: 14px 18px; font-size: 13px; color: #334155; background: #fff; }
+
+  .cta-box { background: linear-gradient(135deg, #0c4a6e 0%, #075985 100%); border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f0f9ff; margin-bottom: 10px; }
+  .cta-box p { color: #bae6fd; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #fff; color: #0c4a6e; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #f0f9ff; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #64748b; }
+  .breadcrumb a { color: #64748b; }
+  .breadcrumb a:hover { color: #0369a1; }
+
+  @media (max-width: 600px) { .hero { padding: 36px 16px 32px; } h2 { font-size: 18px; } .spec-grid { grid-template-columns: repeat(2, 1fr); } .area-grid { grid-template-columns: 1fr; } }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "整骨院・接骨院の施術室に適した照明の色温度は何Kですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "施術室は4000K〜5000Kの白色〜昼白色が推奨です。3000K以下の電球色では皮膚の状態や筋肉の張りが見えにくく施術精度が下がります。一方6500K以上の高色温度は患者に冷たい印象を与えリラックス効果が低下します。受付・待合は3000K〜3500Kで温もりを演出するのが一般的です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "整骨院の施術室に必要な演色性（Ra値）はいくつですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "施術室の演色性はRa90以上が推奨です。Ra80の照明では皮膚の色や筋肉の状態が実際の色と異なって見え、内出血・炎症の見落としリスクがあります。特に高齢者の皮膚は色変化が微妙なため、Ra95以上あるとより正確な視認が可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "整骨院の施術室の照度（明るさ）の目安はどのくらいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "施術台面の照度は500lx以上が目安です。JIS Z 9110では精密作業500〜1500lx、一般作業300〜500lxとされており、施術の種類によって必要照度が変わります。鍼施術など細かい作業を行う場合は750lx以上あると安全性が高まります。受付カウンターは300lx以上、待合室は150〜200lxが適切です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "整骨院でLEDのチラつき（フリッカー）が患者に影響しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "フリッカー（点滅）がある照明は施術を受ける患者の眼精疲労や頭痛を引き起こす可能性があります。特に長時間施術台で仰向けに照明を直視する患者にとって影響が大きく、フリッカーフリー（TI値1%以下）のLED照明を選ぶことが推奨されます。また調光器との組み合わせではフリッカーが増加するため相性確認が必要です。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">施設照明ガイド</div>
+    <h1>整骨院・接骨院 LED照明ガイド<br>施術室・受付・待合の照度基準と演色性Ra90選定</h1>
+    <p class="hero-sub">色温度・照度・グレア対策・省エネ試算を施設担当者・施術師向けに徹底解説</p>
+    <p class="hero-meta">公開: 2026-05-19 | カテゴリ: 施設照明ガイド</p>
+  </div>
+</div>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; 整骨院・接骨院LED照明ガイド
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="alert-box">
+      <div class="alert-title">照明選定ミスが施術品質とリピート率に直結する</div>
+      <p>整骨院・接骨院で照明の演色性（Ra値）や色温度を誤ると、<strong>皮膚の炎症・内出血・筋肉の張りが見えにくくなり施術精度が低下</strong>します。また待合室の照明が高色温度で明るすぎると患者のリラックス効果が損なわれ、施術後の満足度とリピート率に影響します。蛍光灯からLEDへの切り替え時に同じW数・色温度で選ぶと、Ra値が低下して施術環境が悪化するケースがあります。</p>
+    </div>
+
+    <h2>整骨院・接骨院 エリア別照明基準</h2>
+
+    <div class="area-grid">
+      <div class="area-card">
+        <h4>施術室（ベッド・施術台）</h4>
+        <div class="spec-row"><span class="key">照度（台面）</span><span class="val">500lx以上</span></div>
+        <div class="spec-row"><span class="key">色温度</span><span class="val">4000〜5000K</span></div>
+        <div class="spec-row"><span class="key">演色性</span><span class="val">Ra90以上</span></div>
+        <div class="spec-row"><span class="key">フリッカー</span><span class="val">TI値1%以下</span></div>
+        <div class="spec-row"><span class="key">グレア対策</span><span class="val">UGR19以下</span></div>
+      </div>
+      <div class="area-card">
+        <h4>受付・カウンター</h4>
+        <div class="spec-row"><span class="key">照度</span><span class="val">300〜500lx</span></div>
+        <div class="spec-row"><span class="key">色温度</span><span class="val">3000〜4000K</span></div>
+        <div class="spec-row"><span class="key">演色性</span><span class="val">Ra85以上</span></div>
+        <div class="spec-row"><span class="key">目的</span><span class="val">温かみ・清潔感</span></div>
+      </div>
+      <div class="area-card">
+        <h4>待合室・ロビー</h4>
+        <div class="spec-row"><span class="key">照度</span><span class="val">150〜300lx</span></div>
+        <div class="spec-row"><span class="key">色温度</span><span class="val">2700〜3500K</span></div>
+        <div class="spec-row"><span class="key">演色性</span><span class="val">Ra80以上</span></div>
+        <div class="spec-row"><span class="key">目的</span><span class="val">リラックス・安心感</span></div>
+      </div>
+      <div class="area-card">
+        <h4>廊下・トイレ</h4>
+        <div class="spec-row"><span class="key">照度</span><span class="val">100〜200lx</span></div>
+        <div class="spec-row"><span class="key">色温度</span><span class="val">3000〜4000K</span></div>
+        <div class="spec-row"><span class="key">演色性</span><span class="val">Ra80以上</span></div>
+        <div class="spec-row"><span class="key">備考</span><span class="val">センサー対応で省エネ</span></div>
+      </div>
+    </div>
+
+    <h2>施術室の演色性（Ra値）選定が重要な理由</h2>
+
+    <p>整骨院では施術師が患者の皮膚の状態（内出血・炎症・浮腫・筋肉の張り）を視覚で確認しながら施術します。演色性が低い照明では実際の色と異なって見えるため、施術精度に直接影響します。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Ra値</th>
+          <th>見え方の特徴</th>
+          <th>整骨院への適合性</th>
+          <th>代表的な用途</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Ra95以上</strong></td>
+          <td>自然光に最も近い・皮膚色・内出血が正確に見える</td>
+          <td class="tag-req">最適 ◎</td>
+          <td>鍼施術・細かい施術</td>
+        </tr>
+        <tr>
+          <td><strong>Ra90〜94</strong></td>
+          <td>皮膚の状態が概ね正確に見える・実用的</td>
+          <td class="tag-ok">推奨 ○</td>
+          <td>一般整骨・マッサージ</td>
+        </tr>
+        <tr>
+          <td><strong>Ra80〜89</strong></td>
+          <td>赤系が弱く皮膚の血色・炎症が見えにくい</td>
+          <td class="tag-warn">要注意 △</td>
+          <td>待合・廊下のみ</td>
+        </tr>
+        <tr>
+          <td><strong>Ra80未満</strong></td>
+          <td>色の再現性が低く施術環境として不適切</td>
+          <td class="tag-ng">不適 ✗</td>
+          <td>施術室での使用禁止</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <p><strong>蛍光灯からLEDへの切り替え注意点：</strong>一般的なLED電球のRa値は80程度です。蛍光灯（Ra85程度）からLEDへの単純置き換えでRa値が下がる可能性があります。施術室のLED選定では必ずスペック表の「Ra値」または「CRI値」が90以上であることを確認してから購入してください。</p>
+    </div>
+
+    <h2>色温度 — エリア別推奨値と効果</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>色温度</th>
+          <th>印象・効果</th>
+          <th>施術室</th>
+          <th>待合室</th>
+          <th>受付</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2700〜3000K（電球色）</td>
+          <td>温かみ・くつろぎ・眠気促進</td>
+          <td class="tag-ng">不向き ✗</td>
+          <td class="tag-ok">推奨 ○</td>
+          <td class="tag-warn">△</td>
+        </tr>
+        <tr>
+          <td>3500〜4000K（温白色）</td>
+          <td>温もりと清潔感のバランス</td>
+          <td class="tag-warn">△</td>
+          <td class="tag-ok">○</td>
+          <td class="tag-req">推奨 ◎</td>
+        </tr>
+        <tr>
+          <td>4000〜5000K（白色/昼白色）</td>
+          <td>清潔・集中・作業効率向上</td>
+          <td class="tag-req">推奨 ◎</td>
+          <td class="tag-warn">△（高齢者に刺激感）</td>
+          <td class="tag-ok">○</td>
+        </tr>
+        <tr>
+          <td>5000〜6500K（昼光色）</td>
+          <td>覚醒・冷たい印象・目が疲れやすい</td>
+          <td class="tag-warn">施術内容による△</td>
+          <td class="tag-ng">不向き ✗</td>
+          <td class="tag-warn">△</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>グレア（まぶしさ）対策 — 患者が仰向けになる施術台の注意点</h2>
+
+    <p>施術台では患者が仰向けになって天井を直視する状態が続きます。照明が直接視野に入るとまぶしさ（グレア）が不快感・眼精疲労・リラックス阻害を引き起こします。</p>
+
+    <ul class="step-list">
+      <li><span><strong>間接照明を組み合わせる：</strong>天井に直接LED照明を設置せず、間接照明（コーニス照明・コーブ照明）とダウンライトを組み合わせて直射を避ける。</span></li>
+      <li><span><strong>UGR（統一グレア評価）19以下を選ぶ：</strong>LED照明のスペックにUGR値が記載されている場合、UGR19以下の製品を選定する。</span></li>
+      <li><span><strong>グレアシールド付きダウンライトを使用：</strong>施術台の真上には深型ダウンライト（シールドアングル深い）を使用して直射光を防ぐ。</span></li>
+      <li><span><strong>調光機能で場面に応じた明るさに：</strong>施術前（明るめ）・施術中（やや暗め）・後処理（明るめ）と段階的に調光できると患者の快適性が上がる。</span></li>
+    </ul>
+
+    <h2>施術室の推奨スペックまとめ</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="spec-label">台面照度</div>
+        <div class="spec-value">500lx<span style="font-size:14px;font-weight:400;color:#64748b">以上</span></div>
+        <div class="spec-note">JIS Z 9110 精密作業基準</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">色温度</div>
+        <div class="spec-value">4000〜<br>5000K</div>
+        <div class="spec-note">昼白色・集中・皮膚視認</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">演色性</div>
+        <div class="spec-value">Ra90<span style="font-size:14px;font-weight:400;color:#64748b">以上</span></div>
+        <div class="spec-note">Ra95以上を強く推奨</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">フリッカー</div>
+        <div class="spec-value">TI<span style="font-size:14px;font-weight:400;color:#64748b"> 1%以下</span></div>
+        <div class="spec-note">フリッカーフリー製品を選択</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">グレア指数</div>
+        <div class="spec-value">UGR<span style="font-size:14px;font-weight:400;color:#64748b"> 19以下</span></div>
+        <div class="spec-note">仰向け時の眩しさ対策</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">IP規格</div>
+        <div class="spec-value">IP20<span style="font-size:14px;font-weight:400;color:#64748b">以上</span></div>
+        <div class="spec-note">屋内防塵対応（標準品）</div>
+      </div>
+    </div>
+
+    <h2>蛍光灯からLED切り替え時の省エネ試算</h2>
+
+    <div class="energy-box">
+      <h3>整骨院モデル（施術室3室 + 待合・受付）の試算例</h3>
+      <table class="energy-table">
+        <thead><tr style="background:#d1fae5"><td style="font-weight:700;padding:6px 10px">項目</td><td style="font-weight:700">蛍光灯（現状）</td><td style="font-weight:700">LED切替後</td><td style="font-weight:700">削減効果</td></tr></thead>
+        <tbody>
+          <tr><td>施術室3室（天井灯計12本）</td><td>Hf32W×12 = 384W</td><td>18W×12 = 216W</td><td class="highlight">▲168W (44%削減)</td></tr>
+          <tr><td>待合室・受付（8本）</td><td>FLR40×8 = 320W</td><td>20W×8 = 160W</td><td class="highlight">▲160W (50%削減)</td></tr>
+          <tr><td>廊下・トイレ（4本）</td><td>FLR20×4 = 80W</td><td>8W×4 = 32W</td><td class="highlight">▲48W (60%削減)</td></tr>
+          <tr style="background:#ecfdf5"><td><strong>合計（12時間/日・300日/年）</strong></td><td>2,827kWh/年</td><td>1,476kWh/年</td><td class="highlight">▲1,351kWh (48%削減)</td></tr>
+          <tr style="background:#ecfdf5"><td><strong>電気代削減（30円/kWh想定）</strong></td><td>84,810円/年</td><td>44,280円/年</td><td class="highlight">▲40,530円/年</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>照明リニューアルの手順</h2>
+
+    <ul class="step-list">
+      <li><span><strong>現状照度・演色性の確認：</strong>照度計で施術台面の照度を測定。スペック表でRa値を確認し基準（500lx・Ra90）を満たしているか確認する。</span></li>
+      <li><span><strong>エリア別スペック決定：</strong>施術室（4000〜5000K・Ra90以上・UGR19以下）・受付（3000〜4000K）・待合（2700〜3500K）の色温度を分けて選定する。</span></li>
+      <li><span><strong>グレア対策の設計：</strong>施術台の位置と天井照明の角度を確認し、直射が台面に向かないよう器具の配置または角度を調整する。</span></li>
+      <li><span><strong>試験点灯と照度測定：</strong>施工後に照度計で施術台面・受付面の照度を実測し、基準値を満たしていることを確認してから本格稼働。</span></li>
+      <li><span><strong>フリッカー確認：</strong>スマートフォンのスローモーション動画機能（240fps以上）で天井照明を撮影し、明滅が映っていないか確認する。</span></li>
+    </ul>
+
+    <h2>LED選定チェックリスト（施術室）</h2>
+
+    <ul class="checklist">
+      <li>Ra値（CRI）が90以上であることをスペック表で確認した</li>
+      <li>色温度が4000〜5000Kの白色または昼白色であることを確認した</li>
+      <li>施術台面の照度が500lx以上確保できる光束（lm）であることを計算した</li>
+      <li>フリッカーフリー（TI値1%以下）の製品であることを確認した</li>
+      <li>UGR19以下または間接照明・深型ダウンライトでグレア対策を施した</li>
+      <li>調光機能が必要な場合、調光器とLEDの互換性を事前確認した</li>
+      <li>IP規格が設置場所（屋内：IP20、水回り近辺：IP44以上）に適合している</li>
+      <li>蛍光灯からの切り替えで口金・器具形状が適合することを確認した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 整骨院・接骨院の施術室に適した照明の色温度は何Kですか？</div>
+        <div class="faq-a">施術室は4000K〜5000Kの白色〜昼白色が推奨です。3000K以下の電球色では皮膚の状態や筋肉の張りが見えにくく施術精度が下がります。一方6500K以上の高色温度は患者に冷たい印象を与えリラックス効果が低下します。受付・待合は3000K〜3500Kで温もりを演出するのが一般的です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 整骨院の施術室に必要な演色性（Ra値）はいくつですか？</div>
+        <div class="faq-a">施術室の演色性はRa90以上が推奨です。Ra80の照明では皮膚の色や筋肉の状態が実際の色と異なって見え、内出血・炎症の見落としリスクがあります。特に高齢者の皮膚は色変化が微妙なため、Ra95以上あるとより正確な視認が可能です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 整骨院の施術室の照度（明るさ）の目安はどのくらいですか？</div>
+        <div class="faq-a">施術台面の照度は500lx以上が目安です。JIS Z 9110では精密作業500〜1500lx、一般作業300〜500lxとされており、施術の種類によって必要照度が変わります。鍼施術など細かい作業を行う場合は750lx以上あると安全性が高まります。受付カウンターは300lx以上、待合室は150〜200lxが適切です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 整骨院でLEDのチラつき（フリッカー）が患者に影響しますか？</div>
+        <div class="faq-a">フリッカー（点滅）がある照明は施術を受ける患者の眼精疲労や頭痛を引き起こす可能性があります。特に長時間施術台で仰向けに照明を直視する患者にとって影響が大きく、フリッカーフリー（TI値1%以下）のLED照明を選ぶことが推奨されます。また調光器との組み合わせではフリッカーが増加するため相性確認が必要です。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>Ra90以上・フリッカーフリー LEDを探す</h3>
+      <p>施術室対応の高演色Ra90以上・フリッカーフリーLED照明を取り揃えています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
