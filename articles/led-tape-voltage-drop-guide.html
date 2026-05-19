@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープ電圧降下ガイド｜5m超えで暗くなる原因・12V/24V対策・両端給電・ブースター選定 | LED PRO SHOP</title>
+<meta name="description" content="LEDテープライトを5m以上つなぐと先端が暗くなる・全体が点滅する原因は電圧降下で、12V帯では5m超えで輝度が約5〜10%低下し10m超えでは均一な明るさが保てなくなります。24V化・両端給電・ブースター接続の3つの対策と、何mまで1本で使えるかの計算式を施工業者向けに解説。">
+<meta property="og:title" content="LEDテープ電圧降下ガイド｜5m超えで暗くなる原因・12V/24V対策・両端給電・ブースター選定 | LED PRO SHOP">
+<meta property="og:description" content="LEDテープを5m以上つなぐと先端が暗くなる原因は電圧降下で、12V帯では10m超えで均一な明るさが保てなくなります。24V化・両端給電・ブースターの3対策と計算式を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-voltage-drop-guide">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープ電圧降下ガイド｜5m超えで暗くなる原因・12V/24V対策・両端給電・ブースター選定 | LED PRO SHOP">
+<meta name="twitter:description" content="LEDテープを5m以上つなぐと先端が暗くなる原因は電圧降下で、12V帯では10m超えで均一な明るさが保てなくなります。24V化・両端給電・ブースターの3対策と計算式を施工業者向けに解説。">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-voltage-drop-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #0a0f1e; color: #e2e8f0; line-height: 1.7; font-size: 15px; }
+  a { color: #60a5fa; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #1a0a2e 0%, #0f2744 50%, #0a1a3a 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #1e3a5f; }
+  .hero-badge { display: inline-block; background: #dc2626; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f1f5f9; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #94a3b8; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #64748b; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f1f5f9; border-left: 4px solid #3b82f6; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #93c5fd; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #cbd5e1; }
+
+  .alert-box { background: #1c1010; border: 1px solid #7f1d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #0c1a2e; border: 1px solid #1e3a5f; border-left: 4px solid #3b82f6; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #bfdbfe; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #0c1a2e; border-radius: 10px; overflow: hidden; }
+  thead th { background: #1e3a5f; color: #93c5fd; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #1e2a3a; color: #cbd5e1; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #0e1e30; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #0d1f0d; border: 1px solid #166534; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #4ade80; margin-top: 0; }
+  .calc-formula { background: #061006; border: 1px solid #14532d; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #86efac; margin: 12px 0; line-height: 2; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #0c1a2e; border: 1px solid #1e3a5f; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #3b82f6; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #93c5fd; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #94a3b8; margin-bottom: 0; }
+  .method-card .method-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 3px; margin-bottom: 8px; }
+  .badge-easy { background: #14532d; color: #4ade80; }
+  .badge-mid { background: #713f12; color: #fbbf24; }
+  .badge-pro { background: #1e1b4b; color: #a5b4fc; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #3b82f6; color: #fff; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #cbd5e1; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #1e2a3a; font-size: 14px; color: #cbd5e1; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #1e3a5f; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #0c1a2e; padding: 16px 20px; font-weight: 700; color: #93c5fd; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #cbd5e1; background: #070e1c; }
+
+  .cta-box { background: linear-gradient(135deg, #1e3a5f 0%, #0c2340 100%); border: 1px solid #3b82f6; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f1f5f9; margin-bottom: 10px; }
+  .cta-box p { color: #94a3b8; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #2563eb; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #1d4ed8; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #64748b; }
+  .breadcrumb a { color: #64748b; }
+  .breadcrumb a:hover { color: #93c5fd; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid { grid-template-columns: 1fr; } }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "LEDテープライトを5m以上つないだら先端が暗くなりました。なぜですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "原因は電圧降下です。LEDテープは電流が流れるにつれて配線の抵抗で電圧が下がり、末端ほど電圧不足で暗くなります。12Vテープは特に降下の影響を受けやすく、5m超えから目視で確認できる輝度差が生じます。対策は24Vテープへの変更・両端給電・ブースター接続の3つです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "LEDテープを12Vと24Vで比べると電圧降下はどう違いますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "同じ消費電力なら24Vは12Vの半分の電流で済むため、配線の抵抗損失（電力損失 = 電流² × 抵抗）が1/4になります。実用上、12Vテープの最大連続使用推奨は5m以下、24Vテープは10m以下が目安です。長尺施工では24Vテープが有利です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "両端給電とはどういう方法ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "両端給電はLEDテープの始端と終端の両方に電源を接続する方法です。片端給電と比べて電流を両側から供給するため、テープ中央に向かう電圧降下が半減します。電源は同容量の2台を使い、GND（マイナス）を共通接続してから両端の＋ラインに繋ぎます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "LEDテープの電圧降下の計算式はありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "電圧降下 = 電流(A) × 配線抵抗(Ω/m) × 長さ(m) × 2（往復分）で計算します。例：12Vテープ 0.5A/m × 10m = 5A、配線0.1Ω/m × 10m × 2 = 2Ω → 5A × 2Ω = 10V降下（許容値の約83%超過）。実用的には12Vで5m、24Vで10mを上限の目安にしてください。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">施工技術ガイド</div>
+    <h1>LEDテープ 電圧降下ガイド<br>5m超えで先端が暗くなる原因と3つの対策</h1>
+    <p class="hero-sub">12V/24V別の最大長・両端給電・ブースター接続・電圧降下計算式を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-05-19 | カテゴリ: LEDテープ施工ガイド</p>
+  </div>
+</div>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープ電圧降下ガイド
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="alert-box">
+      <div class="alert-title">よくある施工トラブル：「先端が暗い・全体が暗くなった」</div>
+      <p>LEDテープライトを5m以上つないだとき、電源側は明るいのに末端に向かって徐々に暗くなる現象の原因は<strong>電圧降下</strong>です。12V帯では5m超えで輝度差が目視で確認でき、10m超えでは末端が著しく暗くなり施工クレームの原因になります。この問題は電源容量を増やしても解決しません。</p>
+    </div>
+
+    <h2>電圧降下が起きる仕組み</h2>
+
+    <p>LEDテープは銅箔の配線に電流を流して発光します。銅箔には抵抗があるため、電源から離れるほど電圧が下がり（オームの法則：V = I × R）、末端に向かうほど電圧が不足して暗くなります。</p>
+
+    <p>電圧降下は<strong>電流×配線長×抵抗値</strong>で決まります。12Vテープは電圧が低い分、同じ消費電力でも電流が大きく（P = V × I）、降下の影響を受けやすい構造です。</p>
+
+    <div class="info-box">
+      <p><strong>例：12V 10W/mのLEDテープを10mつないだ場合</strong><br>
+      消費電流 = 100W ÷ 12V ≒ 8.3A。配線抵抗が仮に0.15Ω/mなら、往復で3Ω。電圧降下 = 8.3A × 3Ω = 24.9V（12Vを大幅に超える計算値）。実際には途中で電圧が落ちきって末端は半分以下の輝度になります。</p>
+    </div>
+
+    <h2>12V / 24V 別の推奨最大長</h2>
+
+    <p>以下は一般的なLEDテープの電圧降下に基づく推奨連続使用長です。消費電力・テープ幅・ハーネス配線の太さによって変わるため、実際の施工では計算確認を推奨します。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>電圧</th>
+          <th>消費電力</th>
+          <th>推奨最大長（片端給電）</th>
+          <th>両端給電時の最大長</th>
+          <th>備考</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>12V</td>
+          <td>〜5W/m</td>
+          <td class="tag-ok">5m以下 ✓</td>
+          <td>8〜10m</td>
+          <td>低電力タイプ・間接照明向け</td>
+        </tr>
+        <tr>
+          <td>12V</td>
+          <td>10W/m前後</td>
+          <td class="tag-warn">3〜4m 注意</td>
+          <td>6〜8m</td>
+          <td>高輝度テープは電流大・降下大</td>
+        </tr>
+        <tr>
+          <td>12V</td>
+          <td>10m超え</td>
+          <td class="tag-ng">不可 ✗</td>
+          <td>—</td>
+          <td>24V化またはブースター必須</td>
+        </tr>
+        <tr>
+          <td>24V</td>
+          <td>〜10W/m</td>
+          <td class="tag-ok">10m以下 ✓</td>
+          <td>18〜20m</td>
+          <td>長尺施工の基本選択</td>
+        </tr>
+        <tr>
+          <td>24V</td>
+          <td>10〜20W/m</td>
+          <td class="tag-warn">5〜8m 注意</td>
+          <td>10〜15m</td>
+          <td>高出力タイプは要計算確認</td>
+        </tr>
+        <tr>
+          <td>24V</td>
+          <td>20m超え</td>
+          <td class="tag-ng">要分割給電 ✗</td>
+          <td>—</td>
+          <td>ブースターまたは分岐給電</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>電圧降下の計算式</h2>
+
+    <div class="calc-box">
+      <h3>電圧降下計算（簡易版）</h3>
+      <div class="calc-formula">
+電圧降下（V）= 電流（A）× 配線抵抗（Ω/m）× テープ長（m）× 2（往復）
+
+電流（A）= テープ消費電力合計（W）÷ 電圧（V）
+
+許容降下 = 定格電圧の ±10%（12V→1.2V以下・24V→2.4V以下が目安）
+      </div>
+      <p style="color:#86efac; font-size:13px; margin-top:12px; margin-bottom:0">
+        例：24V・8W/m × 10m = 80W → 電流 80W÷24V = 3.3A<br>
+        配線抵抗0.1Ω/m × 10m × 2 = 2Ω → 電圧降下 3.3A × 2Ω = 6.6V<br>
+        → 24V - 6.6V = 17.4V到達（許容外）→ 両端給電 or 24V配線太め対応が必要
+      </p>
+    </div>
+
+    <h2>電圧降下の3つの対策</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-badge badge-easy">最も簡単</div>
+        <div class="method-num">①</div>
+        <h4>12V → 24V テープに変更</h4>
+        <p>同じ消費電力なら電流が半分になり、電力損失は1/4に減る。新規施工では24Vテープを第一選択にすることで5〜10mの長尺でも均一な明るさを実現できる。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-mid">設置済み向け</div>
+        <div class="method-num">②</div>
+        <h4>両端給電（始端・終端から電源供給）</h4>
+        <p>テープの両端に電源を繋ぎ、電流を双方向から供給する。中央での電圧降下が片端給電の約半分になる。電源2台を同電圧・同容量で使い、GNDを共通接続する必要がある。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-pro">長尺・高出力向け</div>
+        <div class="method-num">③</div>
+        <h4>ブースター（電圧補償器）の中間挿入</h4>
+        <p>テープの途中にブースターを接続して電圧を補償し、以降のセクションに安定した電圧を供給する。20m超えの長尺施工や高出力テープの均一輝度が求められる場合に有効。</p>
+      </div>
+    </div>
+
+    <h2>両端給電の具体的な手順</h2>
+
+    <ul class="step-list">
+      <li><span><strong>同じ電圧・同じ容量の電源を2台</strong>用意する（12Vなら12V×2台、24Vなら24V×2台）。異電圧・異容量は混在禁止。</span></li>
+      <li><span>電源A・電源BのGND（マイナス端子）を共通のマイナス配線に接続する。GND共通化が両端給電の必須条件。</span></li>
+      <li><span>電源AのプラスをLEDテープの<strong>始端（+端子）</strong>に接続する。</span></li>
+      <li><span>電源BのプラスをLEDテープの<strong>終端（+端子）</strong>に接続する。テープの終端は通常、カット位置から露出させた銅パッドに接続する。</span></li>
+      <li><span>点灯確認後、始端と終端の輝度を比較して均一になっていることを確認する。輝度差が残る場合は配線の接触不良または電源容量不足を疑う。</span></li>
+    </ul>
+
+    <h2>電圧降下チェックリスト（施工前確認）</h2>
+
+    <ul class="checklist">
+      <li>テープの全消費電力を計算し、電源の出力容量が80%以下に収まっているか確認した</li>
+      <li>テープ長が12Vで5m以内、24Vで10m以内に収まっている（またはそれに応じた対策を実施済み）</li>
+      <li>配線ハーネスの断面積が電流容量に対して適切か確認した（電流5A以下→0.75mm²以上）</li>
+      <li>両端給電を採用する場合、GNDを共通接続している</li>
+      <li>ブースターを使用する場合、ブースターの入力電圧が電源電圧と一致している</li>
+      <li>長尺施工の場合、中間地点での電圧を実測して許容値（±10%）内に収まっているか確認した</li>
+      <li>施工後、始端・中間・終端の輝度を目視で比較して均一であることを確認した</li>
+    </ul>
+
+    <h2>12V・24Vテープの選び方まとめ</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>選定基準</th>
+          <th>12V推奨</th>
+          <th>24V推奨</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>使用長</td>
+          <td>5m以内</td>
+          <td>5m超え・長尺施工</td>
+        </tr>
+        <tr>
+          <td>電源コスト</td>
+          <td>比較的安価</td>
+          <td>やや高価だが長尺では必須</td>
+        </tr>
+        <tr>
+          <td>安全性</td>
+          <td>標準</td>
+          <td>低電流で発熱リスク低減</td>
+        </tr>
+        <tr>
+          <td>商品バリエーション</td>
+          <td>多い（汎用品が豊富）</td>
+          <td>増加傾向・業務用が多い</td>
+        </tr>
+        <tr>
+          <td>電圧降下耐性</td>
+          <td>低い（短距離専用）</td>
+          <td>高い（長尺施工に有利）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. LEDテープライトを5m以上つないだら先端が暗くなりました。なぜですか？</div>
+        <div class="faq-a">原因は電圧降下です。LEDテープは電流が流れるにつれて配線の抵抗で電圧が下がり、末端ほど電圧不足で暗くなります。12Vテープは特に降下の影響を受けやすく、5m超えから目視で確認できる輝度差が生じます。対策は24Vテープへの変更・両端給電・ブースター接続の3つです。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. LEDテープを12Vと24Vで比べると電圧降下はどう違いますか？</div>
+        <div class="faq-a">同じ消費電力なら24Vは12Vの半分の電流で済むため、配線の抵抗損失（電力損失 = 電流² × 抵抗）が1/4になります。実用上、12Vテープの最大連続使用推奨は5m以下、24Vテープは10m以下が目安です。長尺施工では24Vテープが有利です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 両端給電とはどういう方法ですか？</div>
+        <div class="faq-a">両端給電はLEDテープの始端と終端の両方に電源を接続する方法です。片端給電と比べて電流を両側から供給するため、テープ中央に向かう電圧降下が半減します。電源は同容量の2台を使い、GND（マイナス）を共通接続してから両端の＋ラインに繋ぎます。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. LEDテープの電圧降下の計算式はありますか？</div>
+        <div class="faq-a">電圧降下 = 電流(A) × 配線抵抗(Ω/m) × 長さ(m) × 2（往復分）で計算します。例：12Vテープ 0.5A/m × 10m = 5A、配線0.1Ω/m × 10m × 2 = 2Ω → 5A × 2Ω = 10V降下（許容値の約83%超過）。実用的には12Vで5m、24Vで10mを上限の目安にしてください。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>長尺対応・24V LEDテープを探す</h3>
+      <p>電圧降下に強い24Vテープライト・COBテープ・アルミフレームセットを取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
