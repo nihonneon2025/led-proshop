@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>居酒屋 LED照明ガイド｜食欲増進の電球色2700K・カウンター/テーブル/個室別照度・間接照明設計 | LED PRO SHOP</title>
+<meta name="description" content="居酒屋の照明を白色・昼白色のまま営業すると料理の見た目が悪くなり居心地が悪く感じられ客単価とリピート率が下がります。食欲を高める電球色2700〜3000K・カウンター/テーブル/個室別照度設計・料理を美味しく見せるRa90以上の演色性・調光で雰囲気を変えるシステム設計を飲食店オーナー向けに公開。">
+<meta property="og:title" content="居酒屋 LED照明ガイド｜食欲増進の電球色2700K・カウンター/テーブル/個室別照度・間接照明設計 | LED PRO SHOP">
+<meta property="og:description" content="居酒屋の照明を白色・昼白色のまま営業すると料理の見た目が悪くなり客単価とリピート率が下がります。食欲増進2700〜3000K・エリア別照度・Ra90以上・調光設計を飲食店オーナー向けに公開。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/izakaya-led-lighting-guide">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="居酒屋 LED照明ガイド｜食欲増進の電球色2700K・カウンター/テーブル/個室別照度・間接照明設計 | LED PRO SHOP">
+<meta name="twitter:description" content="居酒屋の照明を白色・昼白色のまま営業すると料理の見た目が悪くなり客単価とリピート率が下がります。食欲増進2700〜3000K・エリア別照度・Ra90以上・調光設計を飲食店オーナー向けに公開。">
+<link rel="canonical" href="https://led-proshop.com/articles/izakaya-led-lighting-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #0f0a05; color: #e8dcc8; line-height: 1.75; font-size: 15px; }
+  a { color: #f59e0b; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #1c0a00 0%, #3b1506 50%, #1c0a00 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 2px solid #92400e; }
+  .hero-badge { display: inline-block; background: #92400e; color: #fef3c7; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(20px, 3.5vw, 32px); font-weight: 800; color: #fef3c7; line-height: 1.35; max-width: 780px; margin: 0 auto 14px; }
+  .hero-sub { font-size: 14px; color: #d97706; max-width: 660px; margin: 0 auto 20px; }
+  .hero-meta { font-size: 12px; color: #92400e; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 44px 0 80px; }
+
+  h2 { font-size: 21px; font-weight: 800; color: #fef3c7; border-left: 4px solid #f59e0b; padding-left: 14px; margin: 48px 0 18px; }
+  h3 { font-size: 16px; font-weight: 700; color: #fcd34d; margin: 28px 0 10px; }
+  p { margin-bottom: 14px; color: #d1bfa0; }
+
+  .alert-box { background: #1c0a00; border: 1px solid #92400e; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fed7aa; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #1c1200; border: 1px solid #92400e; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #fde68a; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 28px; font-size: 13px; background: #180e04; border-radius: 10px; overflow: hidden; }
+  thead th { background: #3b1506; color: #fcd34d; padding: 10px 12px; text-align: left; font-size: 12px; font-weight: 700; }
+  tbody td { padding: 9px 12px; border-bottom: 1px solid #2c1a08; color: #d1bfa0; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #1c1208; }
+  .tag-best { color: #f59e0b; font-weight: 700; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fb923c; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .area-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 18px 0 32px; }
+  .area-card { background: #180e04; border: 1px solid #3b1a08; border-top: 3px solid #f59e0b; border-radius: 10px; padding: 18px; }
+  .area-card h4 { font-size: 14px; font-weight: 700; color: #fcd34d; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #3b1a08; }
+  .area-card .row { display: flex; justify-content: space-between; font-size: 13px; padding: 4px 0; border-bottom: 1px solid #1c1208; }
+  .area-card .row:last-child { border-bottom: none; }
+  .area-card .row .k { color: #92400e; }
+  .area-card .row .v { font-weight: 700; color: #fcd34d; }
+
+  .temp-strip { display: flex; border-radius: 8px; overflow: hidden; margin: 16px 0 28px; }
+  .temp-block { flex: 1; padding: 14px 10px; text-align: center; }
+  .temp-block .k { font-size: 14px; font-weight: 800; }
+  .temp-block .name { font-size: 11px; margin-top: 3px; }
+  .temp-block .desc { font-size: 11px; margin-top: 6px; line-height: 1.4; }
+  .t2700 { background: #7c2d12; color: #fed7aa; }
+  .t3000 { background: #92400e; color: #fef3c7; }
+  .t4000 { background: #365314; color: #d9f99d; }
+  .t5000 { background: #1e3a5f; color: #bae6fd; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 14px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #d97706; color: #1c0a00; font-size: 13px; font-weight: 900; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .step-list li span { color: #d1bfa0; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #2c1a08; font-size: 14px; color: #d1bfa0; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #f59e0b; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #3b1a08; border-radius: 10px; margin-bottom: 14px; overflow: hidden; }
+  .faq-q { background: #1c1200; padding: 14px 18px; font-weight: 700; color: #fcd34d; font-size: 14px; }
+  .faq-a { padding: 14px 18px; font-size: 13px; color: #d1bfa0; background: #110900; }
+
+  .cta-box { background: linear-gradient(135deg, #3b1506 0%, #1c0a00 100%); border: 1px solid #92400e; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #fef3c7; margin-bottom: 10px; }
+  .cta-box p { color: #d97706; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #f59e0b; color: #1c0a00; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #d97706; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #92400e; }
+  .breadcrumb a { color: #92400e; }
+  .breadcrumb a:hover { color: #d97706; }
+
+  @media (max-width: 600px) { .hero { padding: 36px 16px 32px; } h2 { font-size: 18px; } .area-grid { grid-template-columns: repeat(2, 1fr); } .temp-strip { flex-wrap: wrap; } .temp-block { flex: 0 0 50%; } }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "居酒屋の照明に最適な色温度は何Kですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "居酒屋のメインエリア（テーブル・カウンター）は2700K〜3000Kの電球色が最も適しています。電球色は赤みのある温かい光で料理の色（肉の赤・野菜の緑・ビールのゴールド）が美しく見え、食欲増進とリラックス効果があります。厨房・洗い場は安全・衛生管理のために4000K〜5000K（白色〜昼白色）に分けるのが一般的です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "居酒屋のテーブル照明の適切な照度（明るさ）はどのくらいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "居酒屋のテーブル面照度は100〜200lxが目安です。明るすぎると昼間の食堂のような雰囲気になりリラックス感が損なわれます。個室や落ち着いた雰囲気を重視する席は50〜100lx、カウンターや活気のあるエリアは150〜300lxとエリアで変化をつけることで空間の演出効果が高まります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "居酒屋でRa（演色性）が低い照明を使うとどうなりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ra値が低い照明（Ra80未満）では料理の色が本来の色と異なって見えます。例えばRa70の照明では生ビールのゴールドが薄く見え、刺身の赤身が暗く見え、野菜の緑が黄みがかって見えます。Ra85以上、できればRa90以上の照明を選ぶと料理が本来の鮮やかな色で見え、食欲増進と顧客満足度向上につながります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "居酒屋で調光システムを導入するメリットは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "調光システムにより時間帯・席の用途・イベントに応じて照明を変えられます。開店直後は明るめ（集客効果）・ピーク時は少し暗め（雰囲気重視）・閉店前は明るく（客の回転促進）といった運用が可能です。また法事・宴会・記念日など用途別のプリセットを設定しておくと対応の幅が広がります。省エネ効果（最大50%削減）も副次的メリットです。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">飲食店照明ガイド</div>
+    <h1>居酒屋 LED照明ガイド<br>食欲増進の電球色・エリア別照度・間接照明設計</h1>
+    <p class="hero-sub">カウンター/テーブル/個室別照度・Ra90以上演色性・調光システム導入を飲食店オーナー向けに解説</p>
+    <p class="hero-meta">公開: 2026-05-20 | カテゴリ: 施設照明ガイド</p>
+  </div>
+</div>
+
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; 居酒屋LED照明ガイド
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="alert-box">
+      <div class="alert-title">照明の色温度ひとつで売上が変わる</div>
+      <p>居酒屋の照明を白色・昼白色（4000K〜6500K）のまま営業すると、<strong>料理の色が悪く見え・食欲が低下し・居心地が悪く感じられ</strong>、客単価とリピート率に直接影響します。「なんとなく居づらい」と感じさせる原因の多くは照明の色温度と照度のバランスにあります。蛍光灯（昼白色）からLEDに切り替える際に同じ色温度で選ぶと、居酒屋の雰囲気が損なわれるケースが多発しています。</p>
+    </div>
+
+    <h2>色温度と居酒屋への効果</h2>
+
+    <div class="temp-strip">
+      <div class="temp-block t2700">
+        <div class="k">2700K</div>
+        <div class="name">電球色（推奨）</div>
+        <div class="desc">温かみ・くつろぎ・食欲増進。ビールや焼き鳥・刺身の色が美しく見える</div>
+      </div>
+      <div class="temp-block t3000">
+        <div class="k">3000K</div>
+        <div class="name">温白色</div>
+        <div class="desc">電球色より明るく活気感も出せる。カウンター・立ち飲みに適する</div>
+      </div>
+      <div class="temp-block t4000">
+        <div class="k">4000K</div>
+        <div class="name">白色（厨房向け）</div>
+        <div class="desc">清潔感・作業効率。テーブル席には使わず厨房・洗い場に限定する</div>
+      </div>
+      <div class="temp-block t5000">
+        <div class="k">5000K+</div>
+        <div class="name">昼白色・昼光色（NG）</div>
+        <div class="desc">コンビニ・病院の印象。居酒屋には使わない。料理の色も冷たく見える</div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <p><strong>食欲と色温度の関係：</strong>暖色系の光（2700〜3000K）は食欲中枢を刺激し料理を美味しく見せる効果があります。一方青白い冷色系（5000K以上）は覚醒・集中を促すため居酒屋には不適合です。蛍光灯を撤去してLED電球色に変えるだけで「雰囲気が良くなった」「料理が映えるようになった」という改善事例が多数あります。</p>
+    </div>
+
+    <h2>エリア別 照明基準</h2>
+
+    <div class="area-grid">
+      <div class="area-card">
+        <h4>テーブル席</h4>
+        <div class="row"><span class="k">照度</span><span class="v">100〜200lx</span></div>
+        <div class="row"><span class="k">色温度</span><span class="v">2700〜3000K</span></div>
+        <div class="row"><span class="k">演色性</span><span class="v">Ra85以上</span></div>
+        <div class="row"><span class="k">照明器具</span><span class="v">ペンダント・間接照明</span></div>
+      </div>
+      <div class="area-card">
+        <h4>カウンター</h4>
+        <div class="row"><span class="k">照度</span><span class="v">150〜300lx</span></div>
+        <div class="row"><span class="k">色温度</span><span class="v">2700〜3500K</span></div>
+        <div class="row"><span class="k">演色性</span><span class="v">Ra90以上</span></div>
+        <div class="row"><span class="k">照明器具</span><span class="v">ダウンライト・LEDテープ</span></div>
+      </div>
+      <div class="area-card">
+        <h4>個室・掘りごたつ</h4>
+        <div class="row"><span class="k">照度</span><span class="v">50〜150lx</span></div>
+        <div class="row"><span class="k">色温度</span><span class="v">2700K</span></div>
+        <div class="row"><span class="k">演色性</span><span class="v">Ra85以上</span></div>
+        <div class="row"><span class="k">照明器具</span><span class="v">調光対応ダウンライト</span></div>
+      </div>
+      <div class="area-card">
+        <h4>厨房・洗い場</h4>
+        <div class="row"><span class="k">照度</span><span class="v">300〜500lx</span></div>
+        <div class="row"><span class="k">色温度</span><span class="v">4000〜5000K</span></div>
+        <div class="row"><span class="k">演色性</span><span class="v">Ra90以上</span></div>
+        <div class="row"><span class="k">目的</span><span class="v">衛生・安全・食材確認</span></div>
+      </div>
+      <div class="area-card">
+        <h4>入口・看板</h4>
+        <div class="row"><span class="k">照度</span><span class="v">300〜500lx</span></div>
+        <div class="row"><span class="k">色温度</span><span class="v">2700〜3500K</span></div>
+        <div class="row"><span class="k">目的</span><span class="v">集客・店名の視認性</span></div>
+        <div class="row"><span class="k">IP規格</span><span class="v">IP65以上（屋外設置）</span></div>
+      </div>
+      <div class="area-card">
+        <h4>トイレ・廊下</h4>
+        <div class="row"><span class="k">照度</span><span class="v">100〜200lx</span></div>
+        <div class="row"><span class="k">色温度</span><span class="v">3000〜4000K</span></div>
+        <div class="row"><span class="k">備考</span><span class="v">センサー灯で省エネ</span></div>
+      </div>
+    </div>
+
+    <h2>演色性（Ra値）で料理の見え方が変わる</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Ra値</th>
+          <th>料理への影響</th>
+          <th>居酒屋への適合性</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Ra90以上</strong></td>
+          <td>生ビールのゴールド・刺身の赤・野菜の緑が鮮明。料理写真映えも良い</td>
+          <td class="tag-best">最適 ◎（カウンター・看板料理席）</td>
+        </tr>
+        <tr>
+          <td><strong>Ra85〜89</strong></td>
+          <td>概ね自然な色再現。実用的なバランス</td>
+          <td class="tag-ok">推奨 ○（テーブル席）</td>
+        </tr>
+        <tr>
+          <td><strong>Ra80〜84</strong></td>
+          <td>赤系が弱く肉・刺身の色が暗く見えがち</td>
+          <td class="tag-warn">可 △（待合・廊下のみ）</td>
+        </tr>
+        <tr>
+          <td><strong>Ra80未満</strong></td>
+          <td>料理全体の色再現が悪く食欲減退に繋がる</td>
+          <td class="tag-ng">不可 ✗（飲食エリア不適合）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>間接照明で「居心地」を作る</h2>
+
+    <p>居酒屋の照明設計で差が出るのは<strong>間接照明の使い方</strong>です。天井からダウンライトのみの直接照明は明るいが「ファミレス感」になります。テープライトを使った間接照明を組み合わせることで、影と光のコントラストが生まれ、居酒屋らしい落ち着いた雰囲気になります。</p>
+
+    <ul class="step-list">
+      <li><span><strong>カウンター下にLEDテープを仕込む：</strong>カウンター天板の下面にテープライト（電球色2700K）を貼ることで、足元に温かい光が広がり「ほのかに光るカウンター」の演出になる。</span></li>
+      <li><span><strong>棚・酒瓶をバックライトで照らす：</strong>壁面の棚やボトル棚の背面にLEDテープを設置するとボトルがシルエットで浮かび上がり、視覚的なアクセントになる。</span></li>
+      <li><span><strong>天井コーニスに間接照明を仕込む：</strong>天井の周縁（コーニス）にテープライトを収めて壁面を照らすと、天井が高く見え空間に奥行きが出る。</span></li>
+      <li><span><strong>テーブル上にペンダントライトを吊る：</strong>テーブル正面に低いペンダントライトを吊すことで、料理と手元だけを照らす集光効果と「食事空間の演出」が実現できる。電球色Ra90以上を選ぶと料理がより映える。</span></li>
+    </ul>
+
+    <h2>調光システムの導入効果</h2>
+
+    <p>居酒屋に調光システムを導入すると時間帯・用途別に照明を最適化できます。</p>
+
+    <table>
+      <thead>
+        <tr><th>時間帯・用途</th><th>推奨明るさ</th><th>効果</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>開店〜ランチ（17〜18時）</td><td>100%（明るめ）</td><td>集客・入りやすさ演出</td></tr>
+        <tr><td>夕方ピーク（18〜21時）</td><td>70〜80%</td><td>活気と居心地のバランス</td></tr>
+        <tr><td>深夜・落ち着き（21時〜）</td><td>50〜60%</td><td>長居しやすい雰囲気</td></tr>
+        <tr><td>宴会・イベント</td><td>プリセット設定</td><td>場面に合わせた演出</td></tr>
+        <tr><td>閉店前（ラストオーダー後）</td><td>90〜100%</td><td>客の回転促進（心理的に帰りたくなる）</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <p><strong>省エネ効果：</strong>調光システム＋LED化で蛍光灯比較50%以上の省エネが見込めます。居酒屋の営業時間（1日8〜10時間・300日/年）で換算すると年間電気代削減は規模に応じて3〜10万円程度になります。</p>
+    </div>
+
+    <h2>LEDテープ・照明選定チェックリスト（居酒屋向け）</h2>
+
+    <ul class="checklist">
+      <li>テーブル席・カウンターは電球色（2700〜3000K）を選んだ</li>
+      <li>厨房・洗い場のみ白色・昼白色（4000〜5000K）に分けた</li>
+      <li>飲食エリアの演色性がRa85以上（カウンターはRa90以上）であることを確認した</li>
+      <li>テーブル面照度が100〜200lx（明るすぎない）になるよう器具選定した</li>
+      <li>間接照明（LEDテープ）を棚下・カウンター下・コーニスに計画した</li>
+      <li>調光対応照明器具を選定し、調光器との互換性を確認した</li>
+      <li>入口・看板の屋外設置灯はIP65以上のLEDを選んだ</li>
+      <li>蛍光灯からLED切り替えで色温度が変わることを事前に確認した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 居酒屋の照明に最適な色温度は何Kですか？</div>
+        <div class="faq-a">居酒屋のメインエリア（テーブル・カウンター）は2700K〜3000Kの電球色が最も適しています。電球色は赤みのある温かい光で料理の色（肉の赤・野菜の緑・ビールのゴールド）が美しく見え、食欲増進とリラックス効果があります。厨房・洗い場は安全・衛生管理のために4000K〜5000K（白色〜昼白色）に分けるのが一般的です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 居酒屋のテーブル照明の適切な照度（明るさ）はどのくらいですか？</div>
+        <div class="faq-a">居酒屋のテーブル面照度は100〜200lxが目安です。明るすぎると昼間の食堂のような雰囲気になりリラックス感が損なわれます。個室や落ち着いた雰囲気を重視する席は50〜100lx、カウンターや活気のあるエリアは150〜300lxとエリアで変化をつけることで空間の演出効果が高まります。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 居酒屋でRa（演色性）が低い照明を使うとどうなりますか？</div>
+        <div class="faq-a">Ra値が低い照明（Ra80未満）では料理の色が本来の色と異なって見えます。例えばRa70の照明では生ビールのゴールドが薄く見え、刺身の赤身が暗く見え、野菜の緑が黄みがかって見えます。Ra85以上、できればRa90以上の照明を選ぶと料理が本来の鮮やかな色で見え、食欲増進と顧客満足度向上につながります。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 居酒屋で調光システムを導入するメリットは何ですか？</div>
+        <div class="faq-a">調光システムにより時間帯・席の用途・イベントに応じて照明を変えられます。開店直後は明るめ（集客効果）・ピーク時は少し暗め（雰囲気重視）・閉店前は明るく（客の回転促進）といった運用が可能です。また法事・宴会・記念日など用途別のプリセットを設定しておくと対応の幅が広がります。省エネ効果（最大50%削減）も副次的メリットです。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>電球色・Ra90以上 LEDを探す</h3>
+      <p>居酒屋の雰囲気づくりに最適な電球色LEDテープ・ダウンライト・調光対応照明を取り揃えています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
