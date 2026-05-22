@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープ 延長ケーブル・接続方法ガイド｜5m超の長距離配線・電圧降下対策・延長コネクター選び方 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープを延長するとき電源ケーブルが細すぎると電圧降下で末端が暗くなり、コネクターの接触不良は点滅・断線・最悪の場合発熱・焼損の原因になります。5m超の長距離配線に必要な延長ケーブル太さ（AWG）・コネクター選び方・電圧降下計算・並列給電設計を施工業者向けに解説。">
+  <meta name="keywords" content="ledテープ 延長,led テープ 延長 ケーブル,ledテープ 延長 方法,LEDテープ 長距離配線,電圧降下 LEDテープ,延長コネクター,AWG 選び方">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-extension-cable-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-extension-cable-guide">
+  <meta property="og:title" content="LEDテープ 延長ケーブル・接続方法ガイド｜5m超の長距離配線・電圧降下対策・延長コネクター選び方 | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープを延長するとき電源ケーブルが細すぎると電圧降下で末端が暗くなり、コネクターの接触不良は点滅・断線・最悪の場合発熱・焼損の原因になります。5m超の長距離配線に必要な延長ケーブル太さ（AWG）・コネクター選び方・電圧降下計算・並列給電設計を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-extension-cable-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ 延長ケーブル・接続方法ガイド｜5m超の長距離配線・電圧降下対策・延長コネクター選び方 | LED PRO SHOP">
+  <meta name="twitter:description" content="LEDテープを延長するとき電源ケーブルが細すぎると電圧降下で末端が暗くなり、コネクターの接触不良は点滅・断線・最悪の場合発熱・焼損の原因になります。5m超の長距離配線に必要な延長ケーブル太さ（AWG）・コネクター選び方・電圧降下計算・並列給電設計を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-extension-cable-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープ 延長ケーブル・接続方法ガイド｜5m超の長距離配線・電圧降下対策・延長コネクター選び方",
+    "description": "LEDテープ延長時の電圧降下・コネクター接触不良リスクと、AWGケーブル選定・並列給電設計を施工業者向けに解説。",
+    "datePublished": "2026-05-22",
+    "dateModified": "2026-05-22",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
+    },
+    "image": "https://led-proshop.com/articles/images/led-tape-extension-cable-guide-hero.webp",
+    "url": "https://led-proshop.com/articles/led-tape-extension-cable-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/"},
+      {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "LEDテープ 延長ケーブル・接続方法ガイド", "item": "https://led-proshop.com/articles/led-tape-extension-cable-guide"}
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープを5m以上延長するにはどうすればいいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "5mを超える延長では、①電圧を12Vから24Vに変更する、②太いケーブル（AWG18以上）で電圧降下を抑える、③中間点からも電源を追加供給する並列給電設計の3つが有効です。12Vシステムで細いケーブルのまま5m以上延長すると末端での電圧降下が0.5V以上になり、目で分かる輝度ムラが発生します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "LEDテープの延長コネクターが点滅する原因は何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "コネクターの接触不良が主な原因です。コネクターのクリップがLEDテープの銅パッドに正確に当たっていないと接触抵抗が増大し、電流が流れるたびに電圧降下→消灯を繰り返す「点滅」が起きます。LEDテープの端をコネクターの奥まで差し込んだか、ロックが完全にかかっているかを確認してください。端末部のはんだ付けが最も確実な接続方法です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "LEDテープの延長に適したケーブルの太さ（AWG）は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "12Vシステムで2m以内ならAWG22（0.3mm²）でも問題ありませんが、5m以上の延長ではAWG18（0.75mm²）以上を推奨します。24Vシステムは同じ電力でも電流が半分になるため、12VよりAWGを1〜2段細くしても同等の電圧降下率になります。電圧降下の計算式は「電圧降下[V] = 電流[A] × 抵抗[Ω/m] × 配線長[m] × 2」です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "LEDテープの延長はんだ付けとコネクターどちらが良いですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "屋外・防水・振動環境ではんだ付けが最も確実です。コネクターは施工時間を大幅に短縮できますが、接触抵抗が0.05〜0.2Ω程度あるため多数直列接続すると電圧降下が累積します。室内・固定設置・少数接続ならコネクターで十分です。屋外・防水用途ではコネクター後にシリコンシールで防水処理が必要です。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --navy:#1a2a4a;--blue:#2a4a7a;--blue-acc:#d4600a;
+      --bg:#f5f7fb;--bg-card:#ffffff;--text:#1a1e2a;--text-sub:#445060;--text-muted:#7a8090;
+      --border:#c8d0e0;--warn:#c0392b;--warn-bg:#fdf0ef;--amber:#b85800;--amber-bg:#fff4e8;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:15px}
+
+    .site-header{background:var(--navy);padding:14px 20px;display:flex;align-items:center;gap:14px}
+    .site-header a{color:#fff;text-decoration:none;font-size:13px;opacity:.85}
+    .site-header a:hover{opacity:1}
+    .header-sep{color:rgba(255,255,255,.4);font-size:12px}
+
+    .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 60%,#2a5a9a 100%);color:#fff;padding:52px 20px 44px;text-align:center}
+    .hero-badge{display:inline-block;background:rgba(212,96,10,.3);border:1px solid rgba(212,96,10,.6);color:#ffb47a;font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 14px;border-radius:20px;margin-bottom:16px}
+    .hero h1{font-size:clamp(18px,4vw,26px);font-weight:900;line-height:1.4;margin-bottom:14px;letter-spacing:.02em}
+    .hero-sub{font-size:13px;color:rgba(255,255,255,.75);max-width:600px;margin:0 auto 22px}
+    .hero-kpi{display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
+    .kpi-item{text-align:center}
+    .kpi-num{font-size:26px;font-weight:900;color:#ffb47a}
+    .kpi-label{font-size:10px;color:rgba(255,255,255,.65);margin-top:2px}
+
+    .container{max-width:860px;margin:0 auto;padding:0 16px}
+    section{margin:40px 0}
+    h2{font-size:18px;font-weight:800;color:var(--navy);border-left:4px solid var(--blue-acc);padding-left:12px;margin-bottom:18px}
+    h3{font-size:15px;font-weight:700;color:var(--navy);margin:20px 0 10px}
+
+    .warn-box{background:var(--warn-bg);border:2px solid var(--warn);border-radius:10px;padding:18px 20px;margin-bottom:32px}
+    .warn-box .warn-title{font-size:14px;font-weight:800;color:var(--warn);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+    .warn-box ul{padding-left:18px;font-size:13px;color:#5a1a1a;line-height:1.8}
+
+    .method-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;margin-bottom:20px}
+    .method-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px}
+    .method-name{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+    .method-badge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px}
+    .badge-rec{background:var(--blue-acc);color:#fff}
+    .badge-ok{background:#4a7a9a;color:#fff}
+    .badge-ng{background:var(--warn);color:#fff}
+    .method-body{font-size:12px;color:var(--text-sub);line-height:1.7}
+    .method-pro{color:#1a6a2a;font-size:11px;margin-top:6px}
+    .method-con{color:var(--warn);font-size:11px}
+
+    .spec-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--bg-card);border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+    .spec-table th{background:var(--navy);color:#fff;padding:10px 12px;text-align:left;font-weight:700;font-size:12px}
+    .spec-table td{padding:9px 12px;border-bottom:1px solid var(--border)}
+    .spec-table tr:last-child td{border-bottom:none}
+    .spec-table .highlight{background:#eef2f9;font-weight:700;color:var(--navy)}
+    .badge-best{background:var(--blue-acc);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-left:6px}
+    .badge-good{background:#4a7a9a;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-left:6px}
+    .badge-ngb{background:#c0392b;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-left:6px}
+
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+    .spec-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:18px;position:relative;overflow:hidden}
+    .spec-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue-acc),var(--blue))}
+    .spec-label{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--blue-acc);text-transform:uppercase;margin-bottom:6px}
+    .spec-value{font-size:20px;font-weight:900;color:var(--navy);margin-bottom:4px}
+    .spec-desc{font-size:11px;color:var(--text-sub);line-height:1.6}
+
+    .note-box{background:#eef2f9;border:1px solid #9ab0d0;border-radius:10px;padding:16px 18px;margin:20px 0;font-size:13px;color:#1a2a3a}
+    .note-box strong{color:var(--navy)}
+
+    .amber-box{background:var(--amber-bg);border:2px solid #e8a060;border-radius:10px;padding:18px 20px;margin:20px 0}
+    .amber-box .amber-title{font-size:14px;font-weight:800;color:var(--amber);margin-bottom:8px}
+    .amber-box .formula{font-family:monospace;font-size:14px;font-weight:700;color:var(--navy);background:#fff;border:1px solid #e8a060;border-radius:6px;padding:8px 14px;margin:10px 0;display:inline-block}
+    .amber-box p{font-size:13px;color:#5a3a1a;line-height:1.7}
+
+    .steps{counter-reset:step}
+    .step{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start}
+    .step-num{background:var(--blue-acc);color:#fff;font-size:13px;font-weight:800;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .step-body{flex:1}
+    .step-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px}
+    .step-desc{font-size:13px;color:var(--text-sub);line-height:1.6}
+
+    .checklist{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
+    .checklist li{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:13px;display:flex;align-items:flex-start;gap:8px;line-height:1.5}
+    .checklist li::before{content:'□';font-size:16px;color:var(--blue-acc);flex-shrink:0;margin-top:-1px}
+
+    .cta-section{background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:14px;padding:36px 24px;text-align:center;color:#fff;margin:48px 0}
+    .cta-section h2{color:#fff;border:none;padding:0;margin-bottom:10px}
+    .cta-section p{font-size:13px;color:rgba(255,255,255,.75);margin-bottom:22px}
+    .cta-btn{display:inline-block;background:var(--blue-acc);color:#fff;font-size:14px;font-weight:700;padding:14px 32px;border-radius:8px;text-decoration:none;transition:.2s}
+    .cta-btn:hover{background:#b84e00}
+
+    .site-footer{background:var(--navy);color:rgba(255,255,255,.6);text-align:center;font-size:11px;padding:20px}
+    .site-footer a{color:rgba(255,255,255,.6);text-decoration:none}
+
+    @media(max-width:600px){
+      .hero{padding:36px 16px 30px}
+      .spec-grid,.method-grid{grid-template-columns:1fr 1fr}
+      .checklist{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="/">LED PRO SHOP</a>
+  <span class="header-sep">›</span>
+  <a href="/articles/">コラム</a>
+  <span class="header-sep">›</span>
+  <span style="color:rgba(255,255,255,.55);font-size:13px">LEDテープ 延長ケーブル・接続方法ガイド</span>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">延長ケーブル・長距離配線ガイド</div>
+  <h1>LEDテープ 延長ケーブル・接続方法ガイド<br>5m超の長距離配線 / 電圧降下対策<br>延長コネクター選び方</h1>
+  <p class="hero-sub">ケーブルが細すぎると末端が暗くなる電圧降下の原因と、AWG選定・並列給電・コネクター接続の正しい方法を解説</p>
+  <div class="hero-kpi">
+    <div class="kpi-item"><div class="kpi-num">AWG18</div><div class="kpi-label">5m超 延長の推奨ケーブル</div></div>
+    <div class="kpi-item"><div class="kpi-num">24V</div><div class="kpi-label">長距離配線の推奨電圧</div></div>
+    <div class="kpi-item"><div class="kpi-num">3種</div><div class="kpi-label">延長接続方法の比較</div></div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="container">
+
+  <!-- WARNING -->
+  <section>
+    <div class="warn-box">
+      <div class="warn-title">⚠ 誤った延長配線が引き起こすリスク</div>
+      <ul>
+        <li>電源ケーブルが細すぎると電圧降下が起きLEDテープの末端が暗くなり、長くなるほど輝度ムラが顕著になる（12Vシステムで0.5V降下＝約4%輝度ダウン）</li>
+        <li>延長コネクターの接続不良は接触抵抗の増大を招き、点滅・チラつき・過熱・最悪の場合コネクター部の発熱・焼損につながる</li>
+        <li>ハンダ付けをせず安価な延長コネクターを多数直列接続すると、接触抵抗が累積し末端での電圧降下がさらに拡大する</li>
+        <li>屋外・防水環境でコネクター部を防水処理しないと、水分侵入で腐食・短絡が起き絶縁不良の原因になる</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EXTENSION METHODS -->
+  <section>
+    <h2>LEDテープ 延長接続方法 3種 比較</h2>
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-name">① ハンダ付け<span class="method-badge badge-rec">最推奨</span></div>
+        <div class="method-body">LEDテープの銅パッドにケーブルを直接ハンダ付けして延長する。最も確実な接続方法。</div>
+        <div class="method-pro">◎ 接触抵抗最小 / 振動・屋外・防水に最強 / 電圧降下ロスが最少</div>
+        <div class="method-con">△ ハンダごて・技術が必要 / 施工時間がかかる</div>
+      </div>
+      <div class="method-card">
+        <div class="method-name">② クリップコネクター<span class="method-badge badge-ok">室内向き</span></div>
+        <div class="method-body">LEDテープにクリップで噛み合わせるワンタッチコネクター。工具不要で短時間接続できる。</div>
+        <div class="method-pro">◎ 工具不要・施工が早い / DIY・室内固定設置向き</div>
+        <div class="method-con">△ 接触抵抗0.05〜0.2Ω / 振動・屋外環境では接触不良が起きやすい</div>
+      </div>
+      <div class="method-card">
+        <div class="method-name">③ ターミナルブロック<span class="method-badge badge-ok">業務向き</span></div>
+        <div class="method-body">ネジ締め式の端子台にケーブルを固定して接続する。業務用・固定設置の分岐に最適。</div>
+        <div class="method-pro">◎ 工具はドライバーのみ / 多分岐に対応 / ハンダよりやや簡単</div>
+        <div class="method-con">△ ターミナルブロックの設置スペースが必要 / コネクターより固定作業あり</div>
+      </div>
+      <div class="method-card">
+        <div class="method-name">④ コネクターNG例<span class="method-badge badge-ng">失敗例</span></div>
+        <div class="method-body">コネクターの挿入が浅い・ロック未確認・防水処理なしでの屋外使用は接触不良の原因になる。</div>
+        <div class="method-pro"></div>
+        <div class="method-con">✕ 点滅・チラつき・発熱・腐食の原因 / 屋外無防水は絶縁不良リスク</div>
+      </div>
+    </div>
+    <div class="note-box">
+      <strong>コネクター使用時の必須確認ポイント</strong><br>
+      LEDテープの端をコネクターの奥まで完全に差し込み、ロッククリップが確実に噛んでいるか確認する。接続後に軽く引っ張ってみて外れなければOK。複数コネクターを直列接続する場合は総電圧降下を計算し、必要に応じて24Vシステムへ変更する。
+    </div>
+  </section>
+
+  <!-- VOLTAGE DROP -->
+  <section>
+    <h2>電圧降下の計算方法</h2>
+    <div class="amber-box">
+      <div class="amber-title">電圧降下 計算式</div>
+      <div class="formula">電圧降下[V] = 電流[A] × 抵抗[Ω/m] × 配線長[m] × 2（往復）</div>
+      <p>例: 12V・5A・AWG22（抵抗0.054Ω/m）・配線長5m の場合<br>
+      電圧降下 = 5A × 0.054Ω/m × 5m × 2 = <strong>2.7V降下</strong>（12Vの22%）→ 末端輝度が大幅に低下する</p>
+      <p style="margin-top:8px">同条件でAWG18（0.021Ω/m）に変更すると: 5A × 0.021Ω/m × 5m × 2 = <strong>1.05V降下</strong>（12Vの8.75%）</p>
+      <p style="margin-top:8px">さらに24Vシステムに変更（同電力・電流は半分の2.5A）: 2.5A × 0.021Ω/m × 5m × 2 = <strong>0.525V降下</strong>（24Vの2.2%）→ 輝度ムラ実質ゼロ</p>
+    </div>
+    <div class="note-box">
+      <strong>目安として知っておくべき閾値</strong><br>
+      電圧降下が元電圧の3〜5%以内なら輝度ムラは目で分かりません。12Vで0.36〜0.6V以内、24Vで0.72〜1.2V以内が許容範囲の目安です。これを超える場合はケーブルを太くする・24Vに変更する・中間点から並列給電するのいずれかで対処します。
+    </div>
+  </section>
+
+  <!-- AWG TABLE -->
+  <section>
+    <h2>AWGケーブル太さ 選定基準</h2>
+    <table class="spec-table">
+      <thead>
+        <tr><th>AWG</th><th>断面積</th><th>抵抗（Ω/m）</th><th>12V推奨最大電流</th><th>延長用途の目安</th><th>判定</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AWG14</td><td>2.08mm²</td><td>0.008Ω/m</td><td>15A</td><td>高出力・10m超の長距離配線</td><td><span class="badge-best">最適（長距離）</span></td>
+        </tr>
+        <tr class="highlight">
+          <td>AWG16</td><td>1.31mm²</td><td>0.013Ω/m</td><td>10A</td><td>5m〜10m・高輝度テープの延長</td><td><span class="badge-best">推奨</span></td>
+        </tr>
+        <tr class="highlight">
+          <td>AWG18</td><td>0.82mm²</td><td>0.021Ω/m</td><td>7A</td><td>5m以内・一般業務用延長</td><td><span class="badge-best">推奨</span></td>
+        </tr>
+        <tr>
+          <td>AWG20</td><td>0.52mm²</td><td>0.033Ω/m</td><td>5A</td><td>2〜3m以内・低電流テープのみ</td><td><span class="badge-good">許容（短距離）</span></td>
+        </tr>
+        <tr>
+          <td>AWG22</td><td>0.33mm²</td><td>0.054Ω/m</td><td>3A</td><td>2m以内のごく短い延長のみ</td><td><span class="badge-good">限定可</span></td>
+        </tr>
+        <tr>
+          <td>AWG24以下</td><td>0.20mm²以下</td><td>0.086Ω/m以上</td><td>2A未満</td><td>LEDテープ延長には使用しない</td><td><span class="badge-ngb">NG</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:11px;color:var(--text-muted);margin-top:8px">※ 許容電流は絶縁体の種類・周囲温度により変動します。余裕を持った太さを選択してください。</p>
+  </section>
+
+  <!-- PARALLEL FEEDING -->
+  <section>
+    <h2>並列給電（中間給電）設計</h2>
+    <div class="method-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">
+      <div class="method-card">
+        <div class="method-name">片端給電</div>
+        <div class="method-body">LEDテープの片方の端からのみ電源を接続する。最も一般的な接続方法。</div>
+        <div class="method-pro">◎ 配線がシンプル / 短距離・低電流なら問題なし</div>
+        <div class="method-con">✕ 5m以上では末端が暗くなる電圧降下が発生しやすい</div>
+      </div>
+      <div class="method-card">
+        <div class="method-name">両端給電<span class="method-badge badge-rec">長距離推奨</span></div>
+        <div class="method-body">LEDテープの両端から電源を接続する。片端給電の約2倍の距離まで輝度ムラなく延長できる。</div>
+        <div class="method-pro">◎ 電圧降下が半減 / 片端給電の2倍まで伸ばせる / コスパ良し</div>
+        <div class="method-con">△ 両端に配線を引く必要がある</div>
+      </div>
+      <div class="method-card">
+        <div class="method-name">中間給電<span class="method-badge badge-rec">超長距離向き</span></div>
+        <div class="method-body">長いLEDテープの中間点にも電源を接続して給電する。10m超の長距離配線に最適。</div>
+        <div class="method-pro">◎ 電圧降下を均等分散 / 10m超でも輝度ムラゼロ可能 / 細いケーブルでも対応可</div>
+        <div class="method-con">△ 中間部への配線引き回しが必要 / 電源ユニット追加が必要な場合あり</div>
+      </div>
+    </div>
+    <div class="note-box">
+      <strong>24Vシステムへの変更が最もコスパ高い解決策</strong><br>
+      同じ電力（ワット数）で電圧を12Vから24Vに倍増すると電流は半分になります。電流が半分になると同じケーブル太さでも電圧降下は1/2。配線コストを増やさずに長距離配線の輝度ムラを解消できます。新規設置では最初から24Vシステムを選択することを強く推奨します。
+    </div>
+  </section>
+
+  <!-- SPEC CARDS -->
+  <section>
+    <h2>LEDテープ延長 選定スペックまとめ</h2>
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="spec-label">推奨電圧（長距離）</div>
+        <div class="spec-value">24V</div>
+        <div class="spec-desc">5m超の配線は12Vより24Vが電圧降下の影響が小さく、同じケーブルで2倍の距離に対応</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">推奨AWG（5m超）</div>
+        <div class="spec-value">AWG18以上</div>
+        <div class="spec-desc">5m以内の延長はAWG18、5〜10mはAWG16、10m超はAWG14を目安に選定する</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">許容電圧降下率</div>
+        <div class="spec-value">3〜5%以内</div>
+        <div class="spec-desc">12Vで0.36〜0.6V、24Vで0.72〜1.2Vを超えると肉眼で輝度ムラが分かるようになる</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">コネクター接触抵抗</div>
+        <div class="spec-value">0.05〜0.2Ω</div>
+        <div class="spec-desc">コネクター1個あたり0.05〜0.2Ωの接触抵抗あり。多数直列は電圧降下が累積するため注意</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">最確実な接続方法</div>
+        <div class="spec-value">ハンダ付け</div>
+        <div class="spec-desc">屋外・防水・振動環境では必ずハンダ付けで接続。コネクターより接触抵抗が1/10以下</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-label">防水処理（屋外）</div>
+        <div class="spec-value">シリコンシール必須</div>
+        <div class="spec-desc">屋外・防水環境でコネクターを使う場合はハンダ後にシリコンシールで完全封止する</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section>
+    <h2>LEDテープ 延長配線 手順 5ステップ</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">配線長・電流・電圧降下を事前計算する</div>
+          <div class="step-desc">延長後の総配線長とLEDテープの消費電流を確認し、「電圧降下 = 電流 × 抵抗/m × 配線長 × 2」で電圧降下を計算。許容値（3〜5%以内）を超える場合はAWGを太くする・24Vに変更する・並列給電に変更するかを判断する</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">接続方法を選ぶ（ハンダ / コネクター / ターミナル）</div>
+          <div class="step-desc">屋外・防水・振動環境はハンダ付け一択。室内固定設置でコスト・施工時間を優先するならコネクター。複数系統を分岐させる業務用途はターミナルブロックが作業性が高い</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">選定したAWGのケーブルで延長接続する</div>
+          <div class="step-desc">ケーブルの極性（+/-）を必ず確認してから接続する。ハンダ付けの場合はフラックスを使い短時間（2〜3秒）で仕上げる。コネクターの場合はLEDテープの端を奥まで差し込みロックを確認する</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">屋外・防水環境はシリコンシールで封止する</div>
+          <div class="step-desc">IP65以上の防水用途ではハンダ接続部をシリコンシールで完全に覆い、硬化するまで24時間乾燥させる。コネクター使用の場合も必ず同様に封止する。封止なしでの屋外設置は腐食・絶縁不良の原因になる</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <div class="step-title">点灯確認・輝度ムラ・チラつきを目視検査する</div>
+          <div class="step-desc">延長後に全体を点灯し、片端と末端の輝度差・チラつきがないことを目視確認する。輝度ムラがある場合は電圧降下超過（ケーブルを太くする・並列給電に変更）、チラつきがある場合はコネクターの接触不良（差し直し・ハンダ付けに変更）を疑う</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section>
+    <h2>延長配線チェックリスト</h2>
+    <ul class="checklist">
+      <li>延長後の配線長とLED消費電流で電圧降下を事前計算したか</li>
+      <li>電圧降下が元電圧の3〜5%以内に収まっているか</li>
+      <li>5m以上の延長でAWG18以上のケーブルを使用しているか</li>
+      <li>10m超の長距離配線で24Vシステムを選択しているか</li>
+      <li>コネクターはLEDテープの端を奥まで差し込みロックを確認したか</li>
+      <li>屋外・防水環境でハンダ付けを採用しているか</li>
+      <li>屋外用途でシリコンシールによる防水封止を実施したか</li>
+      <li>電源容量（PSU）が延長後の総消費電力×1.2倍以上あるか</li>
+      <li>点灯後に片端と末端の輝度差が肉眼で分からないか確認したか</li>
+      <li>点灯後にチラつき・点滅がないことを確認したか</li>
+    </ul>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>延長配線向け AWGケーブル・コネクターを業務用価格で</h2>
+    <p>LEDテープ延長用のAWG対応ケーブル・ターミナルブロック・延長コネクターをプロ向け価格で提供しています</p>
+    <a href="/" class="cta-btn">商品ラインナップを見る</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p><a href="/">LED PRO SHOP</a> &copy; 2026 日本ネオン株式会社 — 公開日: 2026-05-22</p>
+</footer>
+
+</body>
+</html>
