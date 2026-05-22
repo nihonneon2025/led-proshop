@@ -242,6 +242,7 @@
       .spec-grid{grid-template-columns:1fr 1fr}
       .hero-kpi{flex-direction:column;align-items:center}
     }
+      .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
   </style>
 </head>
 <body>
@@ -575,7 +576,19 @@
   </section>
 
   <!-- CTA -->
-  <div class="cta-section">
+  
+<!-- related-articles -->
+<div style="max-width:900px;margin:0 auto 40px;padding:0 20px">
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px">
+    <h3 style="font-size:1rem;font-weight:700;color:var(--text-muted);margin-bottom:16px">関連するLED選び方ガイド</h3>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+      <li><a href="/articles/led-tape-soldering-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープ はんだ付け ガイド｜修理・延長・接続の手順と失敗しないコツ</a></li>
+      <li><a href="/articles/tunable-white-led-tape-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>チューナブルホワイト LEDテープ 選び方ガイド｜色温度可変（2700K〜6500K）の仕組み・配線・コントローラー選定</a></li>
+      <li><a href="/articles/led-insect-repellent-lighting-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>防虫LED照明 選び方ガイド｜波長560nm以上・食品工場・飲食店屋外・農業施設向け</a></li>
+    </ul>
+  </div>
+</div>
+<div class="cta-section">
     <h2>高演色・フリッカーフリーLED照明を探す</h2>
     <p>美容室・ヘアサロン向けにRa95以上・フリッカーフリー対応の業務用LED照明を取り扱っています</p>
     <a href="/" class="cta-btn">商品ラインナップを見る</a>

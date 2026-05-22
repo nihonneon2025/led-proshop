@@ -89,7 +89,8 @@
   .breadcrumb a:hover { color: #93c5fd; }
 
   @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid { grid-template-columns: 1fr; } }
-</style>
+    .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+  </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -141,7 +142,7 @@
     <p class="hero-meta">公開: 2026-05-19 | カテゴリ: LEDテープ施工ガイド</p>
   </div>
 </div>
-
+<img src="/articles/images/led-tape-voltage-drop-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
 <div class="container">
   <nav class="breadcrumb">
     <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープ電圧降下ガイド
@@ -351,7 +352,19 @@
       </div>
     </div>
 
-    <div class="cta-box">
+    
+<!-- related-articles -->
+<div style="max-width:900px;margin:0 auto 40px;padding:0 20px">
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px">
+    <h3 style="font-size:1rem;font-weight:700;color:var(--text-muted);margin-bottom:16px">関連するLED選び方ガイド</h3>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+      <li><a href="/articles/esthetic-salon-led-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>エステサロン・整骨院 LED照明ガイド｜施術室Ra95高演色・色温度3000K〜5000K・省エネ50%の選定基準</a></li>
+      <li><a href="/articles/led-tape-cover-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>テープライトカバー 選び方ガイド｜透明・乳白・フロスト 粒感を消すサイズ対応表</a></li>
+      <li><a href="/articles/nursing-home-lighting-lux-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>介護施設・老人ホームの照明明るさ基準｜JIS Z 9110照度基準・夜間転倒防止・LED選定ガイド</a></li>
+    </ul>
+  </div>
+</div>
+<div class="cta-box">
       <h3>長尺対応・24V LEDテープを探す</h3>
       <p>電圧降下に強い24Vテープライト・COBテープ・アルミフレームセットを取り扱っています</p>
       <a href="/" class="cta-btn">商品ラインナップを見る</a>

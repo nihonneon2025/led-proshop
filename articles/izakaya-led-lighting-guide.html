@@ -94,7 +94,8 @@
   .breadcrumb a:hover { color: #d97706; }
 
   @media (max-width: 600px) { .hero { padding: 36px 16px 32px; } h2 { font-size: 18px; } .area-grid { grid-template-columns: repeat(2, 1fr); } .temp-strip { flex-wrap: wrap; } .temp-block { flex: 0 0 50%; } }
-</style>
+    .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+  </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -146,7 +147,7 @@
     <p class="hero-meta">公開: 2026-05-20 | カテゴリ: 施設照明ガイド</p>
   </div>
 </div>
-
+<img src="/articles/images/izakaya-led-lighting-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
 <div class="container">
   <nav class="breadcrumb">
     <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; 居酒屋LED照明ガイド
@@ -337,7 +338,19 @@
       </div>
     </div>
 
-    <div class="cta-box">
+    
+<!-- related-articles -->
+<div style="max-width:900px;margin:0 auto 40px;padding:0 20px">
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px">
+    <h3 style="font-size:1rem;font-weight:700;color:var(--text-muted);margin-bottom:16px">関連するLED選び方ガイド</h3>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+      <li><a href="/articles/cob-led-tape-density-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>COB LEDテープのチップ密度・輝度の選び方｜W/mと密度で光量と均一性を決める完全ガイド</a></li>
+      <li><a href="/articles/led-tape-ceiling-indirect-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープ 天井間接照明 施工ガイド｜コーニス照明・建築化照明の設計・取り付け・電圧選定</a></li>
+      <li><a href="/articles/led-tape-soldering-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープ はんだ付け ガイド｜修理・延長・接続の手順と失敗しないコツ</a></li>
+    </ul>
+  </div>
+</div>
+<div class="cta-box">
       <h3>電球色・Ra90以上 LEDを探す</h3>
       <p>居酒屋の雰囲気づくりに最適な電球色LEDテープ・ダウンライト・調光対応照明を取り揃えています</p>
       <a href="/" class="cta-btn">商品ラインナップを見る</a>
