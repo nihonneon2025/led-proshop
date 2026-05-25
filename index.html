@@ -9086,6 +9086,10 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         const allOOS = isGrouped
           ? variants.every(function(v) { return v.outOfStock; })
           : !!product.outOfStock;
+        // グループの場合: 在庫ありの最初のバリアントIDをモーダルの初期選択に使う
+        const defaultModalId = isGrouped
+          ? (variants.find(function(v) { return !v.outOfStock; }) || product).id
+          : product.id;
         if (allOOS) {
           btn.textContent = '欠品中';
           btn.disabled = true;
@@ -9099,8 +9103,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           e.stopPropagation();
           if (allOOS) return;
           if (isGrouped) {
-            // グループカードはモーダル開いて選択させる
-            if (typeof openModal === 'function') openModal(product.id);
+            if (typeof openModal === 'function') openModal(defaultModalId);
             return;
           }
           const isEC = product.code.startsWith('EC-');
@@ -9120,7 +9123,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         // カード全体をクリック→モーダル
         card.addEventListener('click', function(e) {
           if (e.target.closest('.card-btn')) return;
-          if (typeof openModal === 'function') openModal(product.id);
+          if (typeof openModal === 'function') openModal(defaultModalId);
         });
 
         return card;
