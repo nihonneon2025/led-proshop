@@ -7936,7 +7936,8 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
             const label = window.variantSizeLabel(v);
             const selected = v.id === product.id ? 'selected' : '';
             const oosLabel = v.outOfStock ? ' ⚠ 欠品中' : '';
-            return '<option value="' + v.id + '" ' + selected + '>' +
+            const disabled = v.outOfStock ? ' disabled' : '';
+            return '<option value="' + v.id + '" ' + selected + disabled + '>' +
               label + ' — ¥' + dispPrice.toLocaleString('ja-JP') + unit + ' （' + v.code + '）' + oosLabel +
               '</option>';
           }).join('');
@@ -8092,6 +8093,8 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     }
 
     function modalAddToCart() {
+      var product = PRODUCTS.find(function(p) { return p.id === currentModalProductId; });
+      if (product && product.outOfStock) return;
       var qty = parseInt(document.getElementById('modalQty').value) || 1;
       // カスタムサイズ選択時: 記入内容を取得して cart に note 付きで追加
       var variantSel = document.getElementById('modalVariantSelect');
@@ -9080,9 +9083,21 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         // カートに入れるボタン
         const btn = document.createElement('button');
         btn.className = 'card-btn cart-btn';
-        btn.textContent = isGrouped ? 'サイズを選択' : 'カートに入れる';
+        const allOOS = isGrouped
+          ? variants.every(function(v) { return v.outOfStock; })
+          : !!product.outOfStock;
+        if (allOOS) {
+          btn.textContent = '欠品中';
+          btn.disabled = true;
+          btn.style.background = '#d1d5db';
+          btn.style.color = '#6b7280';
+          btn.style.cursor = 'default';
+        } else {
+          btn.textContent = isGrouped ? 'サイズを選択' : 'カートに入れる';
+        }
         btn.addEventListener('click', function(e) {
           e.stopPropagation();
+          if (allOOS) return;
           if (isGrouped) {
             // グループカードはモーダル開いて選択させる
             if (typeof openModal === 'function') openModal(product.id);
