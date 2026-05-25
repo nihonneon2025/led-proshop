@@ -7339,6 +7339,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "tags": [
       "埋め込み"
     ],
+    "outOfStock": true,
     "specs": {
       "形状": "T字型（埋め込み型）",
       "仕上げ": "シルバーアルマイト",
@@ -7364,6 +7365,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "tags": [
       "埋め込み"
     ],
+    "outOfStock": true,
     "specs": {
       "形状": "T字型（埋め込み型）",
       "仕上げ": "マットブラックアルマイト",
@@ -7552,6 +7554,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "tags": [
       "埋め込み"
     ],
+    "outOfStock": true,
     "specs": {
       "形状": "T字型（埋め込み型）",
       "仕上げ": "シルバーアルマイト",
@@ -7577,6 +7580,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "tags": [
       "埋め込み"
     ],
+    "outOfStock": true,
     "specs": {
       "形状": "T字型（埋め込み型）",
       "仕上げ": "シルバーアルマイト",
@@ -7627,6 +7631,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "tags": [
       "埋め込み"
     ],
+    "outOfStock": true,
     "specs": {
       "形状": "T字型（埋め込み型）",
       "仕上げ": "マットブラックアルマイト",
@@ -7652,6 +7657,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     "tags": [
       "埋め込み"
     ],
+    "outOfStock": true,
     "specs": {
       "形状": "T字型（埋め込み型）",
       "仕上げ": "マットブラックアルマイト",
@@ -7924,8 +7930,9 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
             const unit = isEC ? ' / 10個セット' : (v.code.startsWith('SC-') ? ' / 10m巻' : '');
             const label = window.variantSizeLabel(v);
             const selected = v.id === product.id ? 'selected' : '';
+            const oosLabel = v.outOfStock ? ' ⚠ 欠品中' : '';
             return '<option value="' + v.id + '" ' + selected + '>' +
-              label + ' — ¥' + dispPrice.toLocaleString('ja-JP') + unit + ' （' + v.code + '）' +
+              label + ' — ¥' + dispPrice.toLocaleString('ja-JP') + unit + ' （' + v.code + '）' + oosLabel +
               '</option>';
           }).join('');
           if (supportsCustom) {
@@ -9034,9 +9041,18 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         if (isGrouped) {
           const variantBadge = document.createElement('div');
           variantBadge.className = 'card-price-incl';
-          variantBadge.textContent = '全' + variants.length + 'サイズ展開';
-          variantBadge.style.color = '#92400e';
           variantBadge.style.fontWeight = '700';
+          const oosCount = variants.filter(function(v) { return v.outOfStock; }).length;
+          if (oosCount === variants.length) {
+            variantBadge.textContent = '全サイズ欠品中';
+            variantBadge.style.color = '#c0392b';
+          } else if (oosCount > 0) {
+            variantBadge.textContent = '全' + variants.length + 'サイズ展開（一部欠品中）';
+            variantBadge.style.color = '#b45309';
+          } else {
+            variantBadge.textContent = '全' + variants.length + 'サイズ展開';
+            variantBadge.style.color = '#92400e';
+          }
           body.appendChild(variantBadge);
         }
 
