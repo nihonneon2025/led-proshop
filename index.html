@@ -8189,18 +8189,17 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         const variants = window.getGroupVariants(product);
         // 「その他」オプションは シリコン/エンドキャップ/アルミ の3カテゴリに表示
         const supportsCustom = product.code.startsWith('SC-') || product.code.startsWith('EC-') || product.code.startsWith('ALM-');
-        if (variants.length > 1 || supportsCustom) {
+        const activeVariants = variants.filter(function(v) { return !v.outOfStock; });
+        if (activeVariants.length > 1 || supportsCustom) {
           variantRow.style.display = '';
-          let opts = variants.map(function(v) {
+          let opts = activeVariants.map(function(v) {
             const isEC = v.code.startsWith('EC-');
             const dispPrice = isEC ? v.price * 10 : v.price;
             const unit = isEC ? ' / 10個セット' : (v.code.startsWith('SC-') ? ' / 10m巻' : '');
             const label = window.variantSizeLabel(v);
             const selected = v.id === product.id ? 'selected' : '';
-            const oosLabel = v.outOfStock ? ' ⚠ 欠品中' : '';
-            const disabled = v.outOfStock ? ' disabled' : '';
-            return '<option value="' + v.id + '" ' + selected + disabled + '>' +
-              label + ' — ¥' + dispPrice.toLocaleString('ja-JP') + unit + ' （' + v.code + '）' + oosLabel +
+            return '<option value="' + v.id + '" ' + selected + '>' +
+              label + ' — ¥' + dispPrice.toLocaleString('ja-JP') + unit + ' （' + v.code + '）' +
               '</option>';
           }).join('');
           if (supportsCustom) {
@@ -9057,7 +9056,8 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       window.getProductGroup = function(product) {
         if (!product || !product.code) return null;
         const c = product.code;
-        if (c.startsWith('SC-F-'))  return 'SC-F';
+        if (c.match(/^SC-F-\d+-W$/)) return 'SC-F-WH';
+        if (c.startsWith('SC-F-'))  return 'SC-F-BK';
         if (c.startsWith('SC-3S-')) return 'SC-3S';
         if (c.startsWith('SC-SD-')) return 'SC-SD';
         if (c.startsWith('SC-NB-')) return 'SC-NB';
@@ -9138,7 +9138,8 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       // グループ表示名
       window.groupDisplayName = function(groupKey, sampleProduct) {
         const MAP = {
-          'SC-F':  '正面発光タイプ シリコンカバー',
+          'SC-F-BK': '正面発光タイプ シリコンカバー（黒）',
+          'SC-F-WH': '正面発光タイプ シリコンカバー（白）',
           'SC-3S': '三面発光タイプ シリコンカバー',
           'SC-SD': '側面発光タイプ シリコンカバー',
           'SC-NB': '底なしタイプ シリコンカバー',
@@ -9290,14 +9291,12 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           variantBadge.className = 'card-price-incl';
           variantBadge.style.fontWeight = '700';
           const oosCount = variants.filter(function(v) { return v.outOfStock; }).length;
+          const inStockCount = variants.length - oosCount;
           if (oosCount === variants.length) {
             variantBadge.textContent = '全サイズ欠品中';
             variantBadge.style.color = '#c0392b';
-          } else if (oosCount > 0) {
-            variantBadge.textContent = '全' + variants.length + 'サイズ展開（一部欠品中）';
-            variantBadge.style.color = '#b45309';
           } else {
-            variantBadge.textContent = '全' + variants.length + 'サイズ展開';
+            variantBadge.textContent = '全' + inStockCount + 'サイズ展開';
             variantBadge.style.color = '#92400e';
           }
           body.appendChild(variantBadge);
