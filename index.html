@@ -7906,9 +7906,14 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     var currentModalProductId = null;
 
     function openModal(productId) {
-      const product = PRODUCTS.find(p => p.id === productId);
+      let product = PRODUCTS.find(p => p.id === productId);
       if (!product) return;
-      currentModalProductId = productId;
+      if (product.outOfStock && typeof window.getGroupVariants === 'function') {
+        const grpVars = window.getGroupVariants(product);
+        const inStockFirst = grpVars.find(function(v) { return !v.outOfStock; });
+        if (inStockFirst) product = inStockFirst;
+      }
+      currentModalProductId = product.id;
 
       const modal = document.getElementById('productModal');
       if (!modal) return;
