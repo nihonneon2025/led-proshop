@@ -8233,6 +8233,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
             opts += '<option value="__CUSTOM__">その他（選択にないサイズ／形状はこちら・任意記入）</option>';
           }
           variantSelect.innerHTML = opts;
+          variantSelect.value = String(product.id);
         } else {
           variantRow.style.display = 'none';
           variantSelect.innerHTML = '';
