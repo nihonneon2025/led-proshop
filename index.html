@@ -7507,7 +7507,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "長さ": "1m/本",
       "材質": "6063アルミ合金",
       "幅": "25mm",
-      "高さ": "8mm",
+      "高さ": "10mm",
       "対応LEDテープ幅": "〜21mm",
       "取付方式": "ネジ止め（フランジ付き）",
       "付属品": "なし",
@@ -7578,7 +7578,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "長さ": "1m/本",
       "材質": "6063アルミ合金",
       "幅": "25mm",
-      "高さ": "8mm",
+      "高さ": "10mm",
       "対応LEDテープ幅": "〜21mm",
       "取付方式": "ネジ止め（フランジ付き）",
       "付属品": "なし",
@@ -9202,13 +9202,15 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         const hasDiscount = marketLower > product.price;
         const pct = hasDiscount ? Math.round((1 - product.price / marketLower) * 100) : 0;
 
-        // グループ化ありの場合: 価格レンジ表示
+        // グループ化ありの場合: 価格レンジ表示（在庫ありバリアントのみ）
         const variants = groupKey ? window.getGroupVariants(product) : [product];
         const isGrouped = variants.length > 1;
-        const prices = variants.map(v => effectivePrice(v));
+        const inStockVariants = variants.filter(function(v) { return !v.outOfStock; });
+        const priceSource = inStockVariants.length > 0 ? inStockVariants : variants;
+        const prices = priceSource.map(v => effectivePrice(v));
         const minPrice = Math.min.apply(null, prices);
         const maxPrice = Math.max.apply(null, prices);
-        const displayPrice = effectivePrice(product);
+        const displayPrice = effectivePrice(inStockVariants.length > 0 ? inStockVariants[0] : product);
         const incl = Math.round(displayPrice * (1 + TAX_RATE));
 
         const card = document.createElement('div');
