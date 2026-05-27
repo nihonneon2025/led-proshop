@@ -9119,9 +9119,9 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       window.variantSizeLabel = function(product) {
         const c = product.code;
         const scFColor = c.match(/^SC-F-(\d{2})(\d{2})(-W)?$/);
-        if (scFColor) return (scFColor[3] ? '白 ' : '黒 ') + scFColor[1] + 'mm × ' + scFColor[2] + 'mm';
+        if (scFColor) return (scFColor[3] ? '白 ' : '黒 ') + scFColor[1] + 'mm幅';
         const scSize = c.match(/^SC-(?:3S|SD|NB|WB|SP)-D?(\d{2})(\d{2})$/);
-        if (scSize) return scSize[1] + 'mm × ' + scSize[2] + 'mm';
+        if (scSize) return scSize[1] + 'mm幅';
         const scSp = c.match(/^SC-SP-D(\d{2})(\d{2})$/);
         if (scSp) return 'φ' + scSp[1] + '×' + scSp[2] + 'mm（特殊）';
         const scR = c.match(/^SC-R-φ(\d+)$/);
