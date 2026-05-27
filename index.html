@@ -9337,10 +9337,13 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           body.appendChild(perPiece);
         }
 
-        if (!isGrouped && hasDiscount) {
+        if (hasDiscount) {
+          const repMarket = (isGrouped && inStockVariants.length > 0)
+            ? inStockVariants[0].marketPrice
+            : product.marketPrice;
           const mk = document.createElement('div');
           mk.className = 'card-market';
-          mk.textContent = '他店 ' + product.marketPrice;
+          mk.textContent = '他店 ' + repMarket;
           body.appendChild(mk);
         }
 
