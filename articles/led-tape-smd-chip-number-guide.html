@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープ SMDチップ番号の読み方｜2835・5050・5630・2216の違いと施工用途ガイド | LED PRO SHOP</title>
+  <meta name="description" content="「2835と5050どっちが明るい？」SMDチップの番号は幅mm×長さmmを表します。2835は省電力・長寿命、5050は高光量、2216は高密度COB代替、5630は超高輝度。施工用途別の選定早見表と発注前チェックリストを施工業者向けに公開。">
+  <meta name="keywords" content="smd 2835,5050 2835 違い,ledチップ 番号,smd led 種類,ledテープ smd 型番,2216 led,5630 led,3528 smd">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-smd-chip-number-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-smd-chip-number-guide">
+  <meta property="og:title" content="LEDテープ SMDチップ番号の読み方｜2835・5050・5630・2216の違いと施工用途ガイド | LED PRO SHOP">
+  <meta property="og:description" content="SMDチップ番号は幅mm×長さmmのサイズコードです。2835・5050・5630・2216・3528の仕様差・明るさ・消費電力・用途を比較表付きで解説。施工業者向け選定ガイド。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-smd-chip-number-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ SMDチップ番号の読み方｜2835・5050・5630・2216の違いと施工用途ガイド | LED PRO SHOP">
+  <meta name="twitter:description" content="SMDチップ番号は幅mm×長さmmのサイズコードです。2835・5050・5630・2216・3528の仕様差・明るさ・消費電力・用途を比較表付きで解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-smd-chip-number-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDテープ SMDチップ番号の読み方｜2835・5050・5630・2216の違いと施工用途ガイド",
+    "description": "SMDチップ番号（2835/5050/5630/2216/3528）の読み方・仕様差・明るさ・施工用途を比較表付きで解説する施工業者向けガイド。",
+    "image": "https://led-proshop.com/articles/images/led-tape-smd-chip-number-guide-hero.webp",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
+    },
+    "datePublished": "2026-05-31",
+    "dateModified": "2026-05-31",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-smd-chip-number-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/"},
+      {"@type": "ListItem", "position": 2, "name": "技術コラム", "item": "https://led-proshop.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "SMDチップ番号ガイド", "item": "https://led-proshop.com/articles/led-tape-smd-chip-number-guide"}
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "SMD 2835と5050はどちらが明るいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "1チップあたりの光束は5050が上（30〜60lm）ですが、2835は高効率設計（最大180lm/W超）のため同消費電力では2835が同等以上の明るさになる製品も多くあります。テープライト全体の明るさはチップ数と1mあたりのW数で決まるため、「2835か5050か」より「lm/m（1mあたり光束）」を比較するのが正確です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "SMD 2216はどんな用途に使いますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2216は幅2.2mm×長さ1.6mmの超小型チップで、1mあたり160〜240個と高密度実装が可能です。チップ間隔が狭いため粒感が出にくく、棚下・什器エッジ・細い溝など狭幅アルミフレームへの施工に最適です。COBに近い均一光を低コストで実現できます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "5630と5050の違いを教えてください",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "5630は幅5.6mm×長さ3.0mmで、5050（5.0mm×5.0mm）より若干細長い形状です。5630は1チップあたり50〜100lmと高光束なため、1mあたりチップ数が少なくてもルーメン合計が大きくなります。屋外看板バックライト・工場・倉庫など高照度が必要な用途向けです。ただし発熱も大きいためアルミベースや放熱対策が必要です。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --accent:#2563eb;
+      --accent2:#93c5fd;
+      --accent-light:rgba(37,99,235,.15);
+      --bg:#080d18;
+      --surface:#0f1628;
+      --card:#131c32;
+      --border:#1e2d4a;
+      --text:#e8edf5;
+      --muted:#8b9bb8;
+      --radius:10px;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:15px}
+    a{color:var(--accent2);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* NAVBAR */
+    .navbar{background:#060b14;border-bottom:1px solid var(--border);padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+    .nav-brand{font-weight:700;font-size:16px;color:var(--accent2);letter-spacing:.05em}
+    .nav-links{display:flex;gap:20px;list-style:none}
+    .nav-links a{color:var(--muted);font-size:13px;transition:color .15s}
+    .nav-links a:hover{color:var(--text)}
+
+    /* BREADCRUMB */
+    .breadcrumb{padding:14px 20px;font-size:12px;color:var(--muted);max-width:860px;margin:0 auto}
+    .breadcrumb a{color:var(--muted)}
+    .breadcrumb span{margin:0 6px}
+
+    /* HERO */
+    .hero{background:linear-gradient(135deg,#060e20 0%,#0d1f3c 50%,#060e20 100%);border-bottom:1px solid var(--border);padding:52px 20px 44px;text-align:center}
+    .hero-eyebrow{display:inline-block;background:rgba(37,99,235,.18);border:1px solid var(--accent);color:var(--accent2);font-size:11px;font-weight:700;letter-spacing:.12em;padding:4px 14px;border-radius:20px;margin-bottom:18px;text-transform:uppercase}
+    .hero h1{font-size:clamp(20px,4vw,32px);font-weight:800;line-height:1.3;margin-bottom:18px;max-width:720px;margin-left:auto;margin-right:auto}
+    .hero h1 em{font-style:normal;color:var(--accent2)}
+    .hero-meta{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+    .hero-meta span{display:flex;align-items:center;gap:5px}
+
+    /* ARTICLE */
+    .article-wrap{max-width:860px;margin:0 auto;padding:40px 20px 80px}
+
+    /* LEAD */
+    .lead{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius);padding:24px 28px;margin-bottom:40px;font-size:15px;color:var(--muted);line-height:1.9}
+    .lead strong{color:var(--text)}
+
+    /* SECTION */
+    .section{margin-bottom:52px}
+    .section-title{font-size:20px;font-weight:800;color:var(--accent2);border-bottom:2px solid var(--accent);padding-bottom:8px;margin-bottom:24px;letter-spacing:.03em}
+    .section-body{color:var(--muted);line-height:1.9}
+    .section-body p{margin-bottom:16px}
+    .section-body strong{color:var(--text)}
+    .section-body h3{font-size:16px;font-weight:700;color:var(--text);margin:28px 0 12px;padding-left:12px;border-left:3px solid var(--accent)}
+
+    /* SMD NUMBER VISUAL */
+    .smd-decode{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:28px;text-align:center}
+    .smd-formula{font-size:clamp(22px,5vw,40px);font-weight:900;letter-spacing:.05em;color:var(--text);margin-bottom:16px}
+    .smd-formula .w{color:#f59e0b}
+    .smd-formula .l{color:#34d399}
+    .smd-formula .sep{color:var(--muted)}
+    .decode-row{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+    .decode-item span{display:inline-block;font-weight:700;font-size:15px;margin-right:4px}
+    .decode-item .w{color:#f59e0b}
+    .decode-item .l{color:#34d399}
+
+    /* CHIP CARDS */
+    .chip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:32px}
+    .chip-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;position:relative;overflow:hidden}
+    .chip-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+    .chip-card.c2835::before{background:var(--accent)}
+    .chip-card.c5050::before{background:#a855f7}
+    .chip-card.c5630::before{background:#f59e0b}
+    .chip-card.c2216::before{background:#34d399}
+    .chip-card.c3528::before{background:#6b7280}
+    .chip-num{font-size:22px;font-weight:900;margin-bottom:6px;letter-spacing:.05em}
+    .chip-card.c2835 .chip-num{color:var(--accent2)}
+    .chip-card.c5050 .chip-num{color:#d8b4fe}
+    .chip-card.c5630 .chip-num{color:#fcd34d}
+    .chip-card.c2216 .chip-num{color:#6ee7b7}
+    .chip-card.c3528 .chip-num{color:#9ca3af}
+    .chip-tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-bottom:10px;letter-spacing:.06em}
+    .chip-card.c2835 .chip-tag{background:rgba(37,99,235,.2);color:var(--accent2);border:1px solid var(--accent)}
+    .chip-card.c5050 .chip-tag{background:rgba(168,85,247,.2);color:#d8b4fe;border:1px solid #9333ea}
+    .chip-card.c5630 .chip-tag{background:rgba(245,158,11,.2);color:#fcd34d;border:1px solid #d97706}
+    .chip-card.c2216 .chip-tag{background:rgba(52,211,153,.2);color:#6ee7b7;border:1px solid #10b981}
+    .chip-card.c3528 .chip-tag{background:rgba(107,114,128,.2);color:#9ca3af;border:1px solid #6b7280}
+    .chip-spec{font-size:12px;color:var(--muted);line-height:1.8}
+    .chip-spec dt{display:inline;font-weight:700;color:var(--text)}
+    .chip-spec dd{display:inline;margin-left:4px}
+    .chip-spec dl{margin-bottom:4px}
+
+    /* SPEC TABLE */
+    .spec-table{width:100%;border-collapse:collapse;margin-bottom:28px;font-size:13px}
+    .spec-table th{background:var(--surface);color:var(--accent2);font-weight:700;padding:10px 14px;text-align:left;border:1px solid var(--border)}
+    .spec-table td{padding:10px 14px;border:1px solid var(--border);color:var(--muted);vertical-align:top}
+    .spec-table tr:hover td{background:rgba(37,99,235,.04)}
+    .spec-table td:first-child{font-weight:700;color:var(--text)}
+    .badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px}
+    .b-blue{background:rgba(37,99,235,.2);color:var(--accent2);border:1px solid var(--accent)}
+    .b-purple{background:rgba(168,85,247,.2);color:#d8b4fe;border:1px solid #9333ea}
+    .b-amber{background:rgba(245,158,11,.2);color:#fcd34d;border:1px solid #d97706}
+    .b-green{background:rgba(52,211,153,.2);color:#6ee7b7;border:1px solid #10b981}
+    .b-gray{background:rgba(107,114,128,.2);color:#9ca3af;border:1px solid #6b7280}
+
+    /* USE CASE TABLE */
+    .use-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:28px}
+    .use-table th{background:var(--surface);color:var(--accent2);font-weight:700;padding:10px 14px;text-align:left;border:1px solid var(--border)}
+    .use-table td{padding:10px 14px;border:1px solid var(--border);color:var(--muted);vertical-align:top}
+    .use-table td:first-child{font-weight:700;color:var(--text);white-space:nowrap}
+    .use-table tr:hover td{background:rgba(37,99,235,.04)}
+    .rec{font-weight:700}
+    .rec-2835{color:var(--accent2)}
+    .rec-5050{color:#d8b4fe}
+    .rec-5630{color:#fcd34d}
+    .rec-2216{color:#6ee7b7}
+
+    /* CHECKLIST */
+    .checklist{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px 28px;margin-bottom:28px}
+    .checklist h3{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px}
+    .cl-item{display:flex;gap:12px;margin-bottom:12px;font-size:13px;color:var(--muted);align-items:flex-start;line-height:1.7}
+    .cl-box{width:18px;height:18px;border:2px solid var(--accent);border-radius:4px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center}
+    .cl-box::after{content:'✓';color:var(--accent2);font-size:11px;font-weight:700}
+    .cl-item strong{color:var(--text)}
+
+    /* FAQ */
+    .faq-list{margin-bottom:28px}
+    .faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+    .faq-q{padding:18px 20px;font-weight:700;color:var(--text);font-size:14px;display:flex;gap:12px;align-items:flex-start;line-height:1.6}
+    .faq-q::before{content:'Q';background:var(--accent);color:#fff;font-size:11px;font-weight:800;padding:3px 7px;border-radius:4px;flex-shrink:0;margin-top:1px}
+    .faq-a{padding:0 20px 18px 52px;font-size:13px;color:var(--muted);line-height:1.9}
+
+    /* CTA */
+    .cta{background:linear-gradient(135deg,var(--surface) 0%,#0d1f3c 100%);border:1px solid var(--accent);border-radius:var(--radius);padding:36px 28px;text-align:center;margin-top:52px}
+    .cta h2{font-size:20px;font-weight:800;color:var(--text);margin-bottom:10px}
+    .cta p{font-size:14px;color:var(--muted);margin-bottom:24px;line-height:1.8}
+    .cta-btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:15px;padding:14px 40px;border-radius:8px;transition:opacity .15s}
+    .cta-btn:hover{opacity:.85;text-decoration:none}
+
+    @media(max-width:600px){
+      .chip-grid{grid-template-columns:1fr 1fr}
+      .decode-row{gap:20px}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/" class="nav-brand">LED PRO SHOP</a>
+  <ul class="nav-links">
+    <li><a href="/articles/">技術コラム</a></li>
+    <li><a href="/">商品一覧</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb">
+  <a href="/">LED PRO SHOP</a><span>›</span>
+  <a href="/articles/">技術コラム</a><span>›</span>
+  SMDチップ番号ガイド
+</div>
+
+<div class="hero">
+  <div class="hero-eyebrow">施工業者向け 仕様ガイド</div>
+  <h1>LEDテープ <em>SMDチップ番号</em> の読み方<br>2835・5050・5630・2216の違いと施工用途</h1>
+  <div class="hero-meta">
+    <span>📐 チップサイズ比較表</span>
+    <span>⚡ 消費電力・光束データ</span>
+    <span>🏗️ 用途別選定早見表</span>
+  </div>
+</div>
+
+<div class="article-wrap">
+
+  <div class="lead">
+    「<strong>2835と5050どっちが明るい？</strong>」「<strong>2216ってCOBと同じ？</strong>」——仕様書のチップ番号がわからないまま発注すると、現場で「思ったより粒感が出る」「光量が足りない」という事態になります。SMDの番号は単なる型番ではなく<strong>チップサイズを直接示すコード</strong>です。番号の読み方と各チップの特性を把握すれば、カタログ比較が格段に速くなります。
+  </div>
+
+  <!-- SECTION 1 -->
+  <section class="section">
+    <h2 class="section-title">1. SMD番号はサイズコードである</h2>
+    <div class="section-body">
+      <p>SMD（Surface Mount Device）チップの型番は <strong>「幅（mm）× 長さ（mm）×10」</strong> で構成されています。例えば「2835」は幅2.8mm、長さ3.5mmを意味します。</p>
+
+      <div class="smd-decode">
+        <div class="smd-formula">
+          <span class="w">28</span><span class="sep"> × </span><span class="l">35</span>
+        </div>
+        <div class="decode-row">
+          <div class="decode-item"><span class="w">28</span> = 幅 2.8mm</div>
+          <div class="decode-item"><span class="l">35</span> = 長さ 3.5mm</div>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin-top:14px">※ 数値は10分の1mm単位（2桁ずつ分割して読む）</p>
+      </div>
+
+      <p>サイズが大きいほど1チップあたりの発光面積が広く、高光束化・多ダイ構成が可能です。ただし放熱面積も大きくなるため、チップサイズ＝明るさではなく、<strong>チップ設計と実装密度で最終的な明るさが変わります</strong>。</p>
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="section">
+    <h2 class="section-title">2. 主要SMDチップ 仕様比較</h2>
+    <div class="section-body">
+      <div class="chip-grid">
+        <div class="chip-card c2835">
+          <div class="chip-num">2835</div>
+          <div class="chip-tag">汎用スタンダード</div>
+          <dl class="chip-spec">
+            <div><dt>サイズ:</dt><dd>2.8mm × 3.5mm</dd></div>
+            <div><dt>チップ/m:</dt><dd>60〜240個</dd></div>
+            <div><dt>光束/chip:</dt><dd>6〜30 lm</dd></div>
+            <div><dt>効率:</dt><dd>最大180+ lm/W</dd></div>
+          </dl>
+        </div>
+        <div class="chip-card c5050">
+          <div class="chip-num">5050</div>
+          <div class="chip-tag">RGB・高光量</div>
+          <dl class="chip-spec">
+            <div><dt>サイズ:</dt><dd>5.0mm × 5.0mm</dd></div>
+            <div><dt>チップ/m:</dt><dd>30〜60個</dd></div>
+            <div><dt>光束/chip:</dt><dd>30〜60 lm（白色）</dd></div>
+            <div><dt>特徴:</dt><dd>3ダイ構成（RGB可）</dd></div>
+          </dl>
+        </div>
+        <div class="chip-card c5630">
+          <div class="chip-num">5630</div>
+          <div class="chip-tag">超高輝度</div>
+          <dl class="chip-spec">
+            <div><dt>サイズ:</dt><dd>5.6mm × 3.0mm</dd></div>
+            <div><dt>チップ/m:</dt><dd>30〜60個</dd></div>
+            <div><dt>光束/chip:</dt><dd>50〜100 lm</dd></div>
+            <div><dt>特徴:</dt><dd>高出力・高発熱</dd></div>
+          </dl>
+        </div>
+        <div class="chip-card c2216">
+          <div class="chip-num">2216</div>
+          <div class="chip-tag">高密度・粒感なし</div>
+          <dl class="chip-spec">
+            <div><dt>サイズ:</dt><dd>2.2mm × 1.6mm</dd></div>
+            <div><dt>チップ/m:</dt><dd>160〜240個</dd></div>
+            <div><dt>光束/chip:</dt><dd>4〜10 lm</dd></div>
+            <div><dt>特徴:</dt><dd>COB近似・細幅対応</dd></div>
+          </dl>
+        </div>
+        <div class="chip-card c3528">
+          <div class="chip-num">3528</div>
+          <div class="chip-tag">レガシー・低消費</div>
+          <dl class="chip-spec">
+            <div><dt>サイズ:</dt><dd>3.5mm × 2.8mm</dd></div>
+            <div><dt>チップ/m:</dt><dd>60〜120個</dd></div>
+            <div><dt>光束/chip:</dt><dd>2〜8 lm</dd></div>
+            <div><dt>特徴:</dt><dd>旧規格・単ダイ構成</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <h3>5チップ詳細スペック比較</h3>
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>チップ</th>
+            <th>サイズ</th>
+            <th>明るさ目安<br>(lm/chip)</th>
+            <th>効率<br>(lm/W)</th>
+            <th>粒感</th>
+            <th>発熱</th>
+            <th>RGB対応</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge b-blue">2835</span></td>
+            <td>2.8×3.5mm</td>
+            <td>6〜30</td>
+            <td>100〜180+</td>
+            <td>中</td>
+            <td>低〜中</td>
+            <td>不可</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-purple">5050</span></td>
+            <td>5.0×5.0mm</td>
+            <td>30〜60</td>
+            <td>80〜130</td>
+            <td>大</td>
+            <td>中〜高</td>
+            <td>可（3ダイ）</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-amber">5630</span></td>
+            <td>5.6×3.0mm</td>
+            <td>50〜100</td>
+            <td>110〜160</td>
+            <td>大</td>
+            <td>高</td>
+            <td>不可</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-green">2216</span></td>
+            <td>2.2×1.6mm</td>
+            <td>4〜10</td>
+            <td>90〜150</td>
+            <td>極小</td>
+            <td>低</td>
+            <td>不可</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-gray">3528</span></td>
+            <td>3.5×2.8mm</td>
+            <td>2〜8</td>
+            <td>60〜100</td>
+            <td>中</td>
+            <td>低</td>
+            <td>不可</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>※効率・光束は製品グレードにより大幅に異なります。最終的な明るさはカタログの「lm/m（1mあたり光束）」で必ず確認してください。</p>
+    </div>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="section">
+    <h2 class="section-title">3. 施工用途別 チップ選定早見表</h2>
+    <div class="section-body">
+      <p>用途の「何を重視するか」でチップを選びます。<strong>粒感NGなら2216か高密度2835、最高光量なら5630、RGB演出なら5050</strong>が基本です。</p>
+
+      <table class="use-table">
+        <thead>
+          <tr>
+            <th>施工用途</th>
+            <th>主な要求</th>
+            <th>推奨チップ</th>
+            <th>選定理由</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>棚下・什器エッジ</td>
+            <td>粒感NG・狭幅</td>
+            <td><span class="rec rec-2216">2216</span> / 高密度2835</td>
+            <td>チップ間隔が狭く光が均一。細幅フレームに収まる</td>
+          </tr>
+          <tr>
+            <td>美容室・アパレル</td>
+            <td>高演色・粒感少</td>
+            <td><span class="rec rec-2835">2835</span> (Ra90+)</td>
+            <td>高Ra対応の2835が種類豊富。均一光で演色性も確保</td>
+          </tr>
+          <tr>
+            <td>RGB演出・カラー変色</td>
+            <td>色変え・カラー</td>
+            <td><span class="rec rec-5050">5050</span> RGB</td>
+            <td>3ダイ構造（R/G/B各1ダイ）でフルカラー発光が可能</td>
+          </tr>
+          <tr>
+            <td>看板バックライト<br>屋外チャンネル文字</td>
+            <td>超高輝度</td>
+            <td><span class="rec rec-5630">5630</span> / 高W 2835</td>
+            <td>1チップ光束が大きくAC/DC変換後の損失を補いやすい</td>
+          </tr>
+          <tr>
+            <td>間接照明・コーニス</td>
+            <td>柔らかい光</td>
+            <td><span class="rec rec-2835">2835</span> 高密度</td>
+            <td>120個/m以上の製品で壁面ムラを軽減。アルミフレームと組み合わせると効果的</td>
+          </tr>
+          <tr>
+            <td>工場・倉庫・冷凍庫</td>
+            <td>高照度・長寿命</td>
+            <td><span class="rec rec-5630">5630</span> / 2835 (高W)</td>
+            <td>1mあたりWが大きい製品を選びアルミベースで放熱管理</td>
+          </tr>
+          <tr>
+            <td>旅館・ホテル客室</td>
+            <td>温白色・高演色</td>
+            <td><span class="rec rec-2835">2835</span> (Ra95+, 2700K)</td>
+            <td>Ra95以上の2835は高演色白熱灯代替に最適。調光対応も豊富</td>
+          </tr>
+          <tr>
+            <td>植物育成（補光）</td>
+            <td>特定波長</td>
+            <td>育成専用チップ<br>（赤660nm/青450nm）</td>
+            <td>SMD型番よりも波長スペックが重要。汎用チップは育成不適</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>アルミフレームとテープ幅の対応</h3>
+      <p>チップ番号によってテープの実装幅が変わるため、<strong>アルミフレームのテープ収納幅との照合</strong>が必要です。</p>
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>チップ</th>
+            <th>テープ幅の目安</th>
+            <th>対応フレーム幅</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge b-green">2216</span></td>
+            <td>5〜8mm</td>
+            <td>8mm幅以上のスリムフレーム</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-blue">2835</span></td>
+            <td>8〜12mm</td>
+            <td>10mm幅以上の標準フレーム</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-purple">5050</span></td>
+            <td>10〜12mm</td>
+            <td>12mm幅以上のフレーム推奨</td>
+          </tr>
+          <tr>
+            <td><span class="badge b-amber">5630</span></td>
+            <td>10〜14mm</td>
+            <td>放熱重視・アルミベース必須</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section class="section">
+    <h2 class="section-title">4. 発注前チェックリスト</h2>
+    <div class="section-body">
+      <p>チップ番号だけで製品を選ぶと「想定と違う明るさ」「粒感が出た」「フレームに入らない」といったミスが起きます。以下の項目を必ず確認してください。</p>
+
+      <div class="checklist">
+        <h3>発注前 確認7項目</h3>
+        <div class="cl-item">
+          <div class="cl-box"></div>
+          <div><strong>lm/m（1mあたり光束）</strong>を確認済み。チップ番号でなくこの数値が実際の明るさの根拠</div>
+        </div>
+        <div class="cl-item">
+          <div class="cl-box"></div>
+          <div><strong>テープ幅</strong>を計測し、アルミフレームの収納幅と照合済み</div>
+        </div>
+        <div class="cl-item">
+          <div class="cl-box"></div>
+          <div>RGB用途の場合、<strong>5050 RGB</strong>（3ダイ）であることを確認済み。単色用2835との混同に注意</div>
+        </div>
+        <div class="cl-item">
+          <div class="cl-box"></div>
+          <div>高密度2216・COBを使う場合、<strong>1mあたりのW数</strong>と電源容量の計算済み（必要W×1.2以上の電源を選定）</div>
+        </div>
+        <div class="cl-item">
+          <div class="cl-box"></div>
+          <div>屋外・水回り施工では<strong>IP等級</strong>（IP65以上）を確認。チップ番号に防水情報は含まれない</div>
+        </div>
+        <div class="cl-item">
+          <div class="cl-box"></div>
+          <div>演色性（Ra値）が必要な業種では、<strong>Ra値の記載</strong>があるチップのみ採用</div>
+        </div>
+        <div class="cl-item">
+          <div class="cl-box"></div>
+          <div>5630など高W品を長尺使用する場合は<strong>電圧降下の計算</strong>と中間給電の検討済み</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: FAQ -->
+  <section class="section">
+    <h2 class="section-title">5. よくある質問（FAQ）</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">SMD 2835と5050はどちらが明るいですか？</div>
+        <div class="faq-a">1チップあたりの光束は5050が上（30〜60lm）ですが、2835は高効率設計（最大180lm/W超）のため同消費電力では2835が同等以上の明るさになる製品も多くあります。テープライト全体の明るさはチップ数と1mあたりのW数で決まるため、「2835か5050か」より<strong>「lm/m（1mあたり光束）」</strong>を比較するのが正確です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">SMD 2216はCOBと何が違いますか？どんな用途に使いますか？</div>
+        <div class="faq-a">2216は個別のSMDチップを高密度実装したもの、COBはチップを直接基板上に接合する製法です。光の均一性・粒感のなさはCOBが勝りますが、2216の高密度品（160〜240個/m以上）はCOBに近い均一光を実現します。幅2.2mm×長さ1.6mmの超小型チップなので、8mm幅のスリムアルミフレームや棚板エッジへの施工に適しています。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">5630と5050の違いを教えてください</div>
+        <div class="faq-a">5630は幅5.6mm×長さ3.0mmで、1チップあたり50〜100lmと高光束です。5050（5.0mm×5.0mm、30〜60lm/chip）より1チップあたりの光量が大きいため、屋外看板バックライト・工場・倉庫など高照度が必要な場面に向きます。ただし発熱が大きく、アルミベースや十分な換気が必要です。RGB対応の5050と異なり、5630は白色系単色が主流です。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>SMDチップ別のLEDテープラインナップを見る</h2>
+    <p>2835高密度・5050 RGB・2216スリム幅など、施工用途に対応した業務用LEDテープを取り揃えています。</p>
+    <a href="/" class="cta-btn">商品一覧を見る</a>
+  </div>
+
+</div><!-- /.article-wrap -->
+
+</body>
+</html>
