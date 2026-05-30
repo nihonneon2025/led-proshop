@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープ配線のケーブル太さ（mm²/AWG）選び方と電流容量計算｜電気工事業者向け配線完全ガイド | LED PRO SHOP</title>
+<meta name="description" content="LEDテープ施工で「細すぎる配線→過熱・電圧降下」「太すぎる→コスト増」のトラブルを防ぐ。電流容量計算の手順・mm²/AWG対応表・12V/24V別ケーブル選定基準を電気工事業者向けに解説。実例付き。">
+<meta property="og:title" content="LEDテープ配線のケーブル太さ（mm²/AWG）選び方と電流容量計算｜電気工事業者向け配線完全ガイド | LED PRO SHOP">
+<meta property="og:description" content="LEDテープ施工で「細すぎる配線→過熱・電圧降下」「太すぎる→コスト増」のトラブルを防ぐ。電流容量計算の手順・mm²/AWG対応表・12V/24V別ケーブル選定基準を電気工事業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-cable-gauge-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-cable-gauge-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープ配線のケーブル太さ（mm²/AWG）選び方と電流容量計算｜電気工事業者向け配線完全ガイド | LED PRO SHOP">
+<meta name="twitter:description" content="LEDテープ施工で「細すぎる配線→過熱・電圧降下」のトラブルを防ぐ。電流容量計算の手順・mm²/AWG対応表・12V/24V別ケーブル選定基準を解説。">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-cable-gauge-guide">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "LEDテープ配線のケーブル太さ（mm²/AWG）選び方と電流容量計算｜電気工事業者向け配線完全ガイド",
+      "description": "LEDテープ施工で細すぎる配線による過熱・電圧降下トラブルを防ぐ電流容量計算の手順・mm²/AWG対応表・12V/24V別ケーブル選定基準を電気工事業者向けに解説。",
+      "datePublished": "2026-05-31",
+      "publisher": {
+        "@type": "Organization",
+        "name": "LED PRO SHOP",
+        "url": "https://led-proshop.com"
+      },
+      "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-cable-gauge-guide"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com" },
+        { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+        { "@type": "ListItem", "position": 3, "name": "LEDテープ配線ケーブル太さ選び方ガイド", "item": "https://led-proshop.com/articles/led-tape-cable-gauge-guide" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "LEDテープ配線に使うケーブルの太さはどう決めればいいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "まず「テープ消費電力合計（W）÷ 電圧（V）」で最大電流（A）を計算し、その電流に対応するmm²を選びます。安全率として計算値の125%（＝電流の80%運用）のケーブルを選ぶのが基本です。例：12V・50Wのテープなら50W÷12V≒4.2A → 4.2A×1.25=5.2A → 0.75mm²（定格7A）では不足、1.25mm²（定格12A）が推奨です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "AWGとmm²はどう換算しますか？AWG18はmm²でいくつですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AWG18は約0.82mm²、AWG16は約1.31mm²、AWG14は約2.08mm²、AWG12は約3.31mm²です。日本のVVFケーブル（1.6mm→2.0mm²相当）との対応はAWG14に近い値になります。LED施工では「AWG18＝細め・短距離小電流向け」「AWG16＝汎用」「AWG14＝大電流・長距離」の使い分けが一般的です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "同じ電流でも配線が長くなると何が変わりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "配線が長くなるほど抵抗が増えるため、電圧降下（V=I×R）が大きくなります。例えば0.75mm²配線を5m引いた場合、往復10mの抵抗は約0.24Ω。電流5Aなら電圧降下は1.2Vになります。12Vテープでは許容降下±10%（1.2V以下）をギリギリ超えるため、長距離配線では1本のケーブルを太くするか、電源をテープに近い場所に設置する方法が有効です。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #0a0f1e; color: #e2e8f0; line-height: 1.7; font-size: 15px; }
+  a { color: #60a5fa; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #0a1a0a 0%, #0f2920 50%, #0a1f1a 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #1a4a3a; }
+  .hero-badge { display: inline-block; background: #059669; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f1f5f9; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #94a3b8; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #64748b; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f1f5f9; border-left: 4px solid #10b981; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #6ee7b7; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #cbd5e1; }
+
+  .alert-box { background: #1c1010; border: 1px solid #7f1d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #071a0f; border: 1px solid #065f46; border-left: 4px solid #10b981; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #a7f3d0; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #071a0f; border-radius: 10px; overflow: hidden; }
+  thead th { background: #064e3b; color: #6ee7b7; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #0d2a1a; color: #cbd5e1; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #091f12; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+  .tag-rec { color: #34d399; font-weight: 700; }
+
+  .calc-box { background: #0d1f0d; border: 1px solid #166534; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #4ade80; margin-top: 0; }
+  .calc-formula { background: #061006; border: 1px solid #14532d; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #86efac; margin: 12px 0; line-height: 2; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #071a0f; border: 1px solid #065f46; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #10b981; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #6ee7b7; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #94a3b8; margin-bottom: 0; }
+  .method-card .method-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 3px; margin-bottom: 8px; }
+  .badge-easy { background: #14532d; color: #4ade80; }
+  .badge-mid { background: #713f12; color: #fbbf24; }
+  .badge-pro { background: #1e1b4b; color: #a5b4fc; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #10b981; color: #fff; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #cbd5e1; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #0d2a1a; font-size: 14px; color: #cbd5e1; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 20px 0 32px; }
+  .spec-card { background: #071a0f; border: 1px solid #065f46; border-radius: 10px; padding: 18px 16px; text-align: center; }
+  .spec-card .spec-val { font-size: 28px; font-weight: 900; color: #10b981; line-height: 1; margin-bottom: 6px; }
+  .spec-card .spec-label { font-size: 12px; color: #6ee7b7; font-weight: 700; margin-bottom: 6px; }
+  .spec-card .spec-desc { font-size: 12px; color: #94a3b8; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #065f46; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #071a0f; padding: 16px 20px; font-weight: 700; color: #6ee7b7; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #cbd5e1; background: #040d07; }
+
+  .cta-box { background: linear-gradient(135deg, #064e3b 0%, #022c22 100%); border: 1px solid #10b981; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f1f5f9; margin-bottom: 10px; }
+  .cta-box p { color: #94a3b8; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #059669; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #047857; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #64748b; }
+  .breadcrumb a { color: #64748b; }
+  .breadcrumb a:hover { color: #6ee7b7; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid { grid-template-columns: 1fr; } .spec-grid { grid-template-columns: repeat(2, 1fr); } }
+  .article-hero-img { width: 100%; max-height: 420px; object-fit: cover; display: block; margin-bottom: 24px; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">施工方法ガイド</div>
+    <h1>LEDテープ配線のケーブル太さ（mm²/AWG）<br>選び方と電流容量計算</h1>
+    <p class="hero-sub">「細すぎて過熱・電圧降下」「太すぎてコスト増」を防ぐ。電気工事業者向けケーブル選定の完全手順</p>
+    <p class="hero-meta">公開: 2026-05-31 | カテゴリ: LEDテープ施工ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-cable-gauge-guide-hero.webp" alt="LEDテープ配線ケーブル太さ選び方" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープ配線ケーブル太さ選び方ガイド
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="alert-box">
+      <div class="alert-title">よくある施工ミス：「電源容量は足りているのに配線が熱くなる・暗くなる」</div>
+      <p>LEDテープ施工では電源容量（W・A）だけを確認して配線ケーブルの太さを軽視するケースが多く、細すぎるケーブルによる<strong>過熱・絶縁劣化・火災リスク</strong>や<strong>電圧降下による輝度不均一</strong>が発生します。電源が正常でも配線が細ければトラブルは起きます。</p>
+    </div>
+
+    <h2>なぜ配線の太さが重要か</h2>
+
+    <p>ケーブルには電気抵抗があり、細いほど抵抗値が高くなります。電流が流れると抵抗によって<strong>発熱（P = I² × R）</strong>と<strong>電圧降下（V = I × R）</strong>が起きます。LEDテープは電圧に敏感なため、配線で1〜2Vの損失が生じると端部が著しく暗くなります。</p>
+
+    <p>また、ケーブルが電流容量（定格値）を超えると絶縁被覆が溶け、最悪の場合は火災につながります。LED照明は長時間通電が前提であるため、電流に対して適切なケーブルの選定は安全施工の基本です。</p>
+
+    <div class="info-box">
+      <p><strong>基本原則：ケーブルの定格電流はテープの実際の電流値の125%以上を確保する（実電流は定格の80%以下で使用）。</strong><br>例：実電流5Aなら定格6.25A以上のケーブルを選ぶ → 0.75mm²（定格7A）が最低ライン、余裕を見て1.25mm²（定格12A）推奨。</p>
+    </div>
+
+    <h2>AWG・mm²対応表と電流容量</h2>
+
+    <p>日本市場では断面積（mm²）表記が主流ですが、海外製のLEDテープ製品には AWG（American Wire Gauge）表記のケーブルが付属することがあります。以下の対応表を参照してください。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>AWG</th>
+          <th>断面積（mm²）</th>
+          <th>外径（概算）</th>
+          <th>連続定格電流（目安）</th>
+          <th>LEDテープでの用途例</th>
+          <th>推奨</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AWG 22</td>
+          <td>0.32mm²</td>
+          <td>約1.4mm</td>
+          <td class="tag-ng">3A以下</td>
+          <td>信号線・調光器制御線のみ</td>
+          <td class="tag-ng">電源配線NG</td>
+        </tr>
+        <tr>
+          <td>AWG 20</td>
+          <td>0.52mm²</td>
+          <td>約1.6mm</td>
+          <td class="tag-warn">5A以下</td>
+          <td>12V低電力テープ（〜3W/m・2m以内）</td>
+          <td class="tag-warn">短距離小電流のみ</td>
+        </tr>
+        <tr>
+          <td>AWG 18</td>
+          <td>0.82mm²</td>
+          <td>約2.0mm</td>
+          <td class="tag-ok">7A以下</td>
+          <td>12V〜24V中電力テープ（5W/m以下・5m以内）</td>
+          <td class="tag-ok">汎用標準</td>
+        </tr>
+        <tr>
+          <td>AWG 16</td>
+          <td>1.31mm²</td>
+          <td>約2.6mm</td>
+          <td class="tag-ok">12A以下</td>
+          <td>24V高輝度テープ（10W/m前後・10m以内）</td>
+          <td class="tag-rec">業務用推奨</td>
+        </tr>
+        <tr>
+          <td>AWG 14</td>
+          <td>2.08mm²</td>
+          <td>約3.0mm</td>
+          <td class="tag-ok">20A以下</td>
+          <td>24V大電力テープ（15W/m以上）・長尺幹線</td>
+          <td class="tag-ok">大電流・長尺対応</td>
+        </tr>
+        <tr>
+          <td>AWG 12</td>
+          <td>3.31mm²</td>
+          <td>約3.7mm</td>
+          <td class="tag-ok">30A以下</td>
+          <td>大型看板・複数回路の幹線配線</td>
+          <td class="tag-ok">大規模施工向け</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>※電流容量は周囲温度30℃・単線・露出配線を想定した目安値です。束線・高温環境・管内配線では定格を下げて計算してください。</p>
+
+    <h2>電流容量の計算手順</h2>
+
+    <div class="calc-box">
+      <h3>ケーブルサイズ選定 計算式</h3>
+      <div class="calc-formula">
+① テープ全消費電力(W) = W/m × テープ長(m)
+② 最大電流(A)        = 全消費電力(W) ÷ 電圧(V)
+③ 必要定格電流(A)    = 最大電流(A) × 1.25（安全率125%）
+④ ケーブル選定       = 必要定格電流(A)以上のmm²を上表から選択
+
+電圧降下チェック:
+⑤ 往復抵抗(Ω) = (導体抵抗値Ω/m) × 配線長(m) × 2
+⑥ 電圧降下(V) = 最大電流(A) × 往復抵抗(Ω)
+⑦ 許容値      = 定格電圧の ±5〜10% 以内
+      </div>
+      <p style="color:#86efac; font-size:13px; margin-top:12px; margin-bottom:0">
+        【計算例】24V・8W/m × 10m = 80W → 最大電流 80÷24 = 3.3A → 必要定格 3.3×1.25 = 4.2A<br>
+        → AWG18（定格7A）で問題なし。<br>
+        電圧降下確認：AWG18の導体抵抗≒0.022Ω/m × 10m × 2 = 0.44Ω → 3.3A × 0.44Ω = 1.45V降下<br>
+        → 24V × 5% = 1.2V（許容値を若干超過） → 配線を短くするか AWG16 に変更推奨。
+      </p>
+    </div>
+
+    <h2>用途別・ケーブル選定の目安表</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>テープ仕様</th>
+          <th>電圧</th>
+          <th>長さ</th>
+          <th>最大電流</th>
+          <th>推奨ケーブル</th>
+          <th>備考</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>4.8W/m（低電力）</td>
+          <td>12V</td>
+          <td>2m</td>
+          <td>0.8A</td>
+          <td class="tag-ok">AWG20以上（0.52mm²）</td>
+          <td>カウンター下・棚下の短尺</td>
+        </tr>
+        <tr>
+          <td>4.8W/m（低電力）</td>
+          <td>12V</td>
+          <td>5m</td>
+          <td>2.0A</td>
+          <td class="tag-ok">AWG18以上（0.82mm²）</td>
+          <td>間接照明標準施工</td>
+        </tr>
+        <tr>
+          <td>9.6W/m（中電力）</td>
+          <td>12V</td>
+          <td>5m</td>
+          <td>4.0A</td>
+          <td class="tag-ok">AWG18（0.82mm²）</td>
+          <td>電圧降下は要計算確認</td>
+        </tr>
+        <tr>
+          <td>9.6W/m（中電力）</td>
+          <td>24V</td>
+          <td>10m</td>
+          <td>4.0A</td>
+          <td class="tag-ok">AWG18（0.82mm²）</td>
+          <td>24Vで電流半減・降下少</td>
+        </tr>
+        <tr>
+          <td>14.4W/m（高電力）</td>
+          <td>24V</td>
+          <td>10m</td>
+          <td>6.0A</td>
+          <td class="tag-rec">AWG16（1.31mm²）</td>
+          <td>業務用高輝度テープ標準</td>
+        </tr>
+        <tr>
+          <td>20W/m（超高電力）</td>
+          <td>24V</td>
+          <td>10m</td>
+          <td>8.3A</td>
+          <td class="tag-rec">AWG16（1.31mm²）以上</td>
+          <td>屋外看板・大型サイン向け</td>
+        </tr>
+        <tr>
+          <td>幹線（複数系統集約）</td>
+          <td>24V</td>
+          <td>—</td>
+          <td>15A超</td>
+          <td class="tag-ok">AWG14（2.08mm²）以上</td>
+          <td>電源BOXからの主幹線</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>ケーブル選定の3つの判断ポイント</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-badge badge-easy">最優先</div>
+        <div class="method-num">①</div>
+        <h4>電流容量（安全率125%）</h4>
+        <p>計算した最大電流の1.25倍の定格電流を持つケーブルを選ぶ。これが安全施工の絶対条件。ケーブルの発熱・絶縁劣化・火災リスクを防ぐ最重要基準。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-mid">必ず確認</div>
+        <div class="method-num">②</div>
+        <h4>電圧降下（配線長×抵抗）</h4>
+        <p>電流容量をクリアしても配線が長い場合は電圧降下を計算する。許容値は定格電圧の±5〜10%以内。超える場合はケーブルを1ランク太く変更するか、電源をテープ近くに設置。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-pro">環境条件</div>
+        <div class="method-num">③</div>
+        <h4>周囲温度・配線環境</h4>
+        <p>管内配線・束線・40℃超の高温環境では定格電流を70〜80%にデレーティングする。夏場の屋外・厨房・機械室内では特に注意。高温環境では1ランク上の太さを選ぶ習慣をつける。</p>
+      </div>
+    </div>
+
+    <h2>配線工事の手順（電源BOXからテープまで）</h2>
+
+    <ul class="step-list">
+      <li><span><strong>消費電力と最大電流の計算</strong>：「W/m × テープ総長 ÷ 電圧 = 最大電流(A)」を算出。複数回路がある場合は系統ごとに計算する。</span></li>
+      <li><span><strong>ケーブルサイズの決定</strong>：最大電流 × 1.25（安全率）を定格電流が上回るケーブルを選択。配線長が長い場合は電圧降下計算も実施。</span></li>
+      <li><span><strong>電源BOXとケーブルの接続</strong>：スイッチング電源の出力端子（+/-）にケーブルを接続。プラス/マイナスを色分け（赤/黒または赤/白）して誤接続を防止。</span></li>
+      <li><span><strong>経路の確保と固定</strong>：壁内・天井内を通す場合は電線管を使用。アルミフレームの溝内に配線する場合はケーブルが熱源（LEDチップ）に近づきすぎないよう注意。</span></li>
+      <li><span><strong>テープとの接続</strong>：テープのハーネス（リード線）またはコネクタに接続。コネクタ接続部の接触抵抗が発生源になるため、圧着または半田処理を確実に実施。</span></li>
+      <li><span><strong>通電前の絶縁チェック</strong>：テスターでプラス/マイナス間のショートがないことを確認してから電源を投入。テープの点灯確認後、配線温度を手で触れて異常な熱がないか確認。</span></li>
+    </ul>
+
+    <h2>ケーブル選定チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>最大電流（W÷V）を系統ごとに計算した</li>
+      <li>選定したケーブルの定格電流が最大電流の125%以上である</li>
+      <li>配線長が長い場合（5m超）は電圧降下計算を実施し、許容値（±5〜10%）以内であることを確認した</li>
+      <li>束線・管内・高温環境の場合はデレーティング（定格の70〜80%）を考慮した</li>
+      <li>プラス/マイナスを色分けして誤接続リスクを排除した</li>
+      <li>コネクタ接続部は圧着または半田処理で接触不良を防止した</li>
+      <li>施工後、配線の発熱を手で確認し異常がないことを確かめた</li>
+    </ul>
+
+    <h2>導体抵抗値の参考データ</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="spec-val">54.8Ω</div>
+        <div class="spec-label">AWG20（0.52mm²）/ km</div>
+        <div class="spec-desc">10m配線で往復 ≒ 1.1Ω<br>5A流すと電圧降下 5.5V</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-val">21.8Ω</div>
+        <div class="spec-label">AWG18（0.82mm²）/ km</div>
+        <div class="spec-desc">10m配線で往復 ≒ 0.44Ω<br>5A流すと電圧降下 2.2V</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-val">13.6Ω</div>
+        <div class="spec-label">AWG16（1.31mm²）/ km</div>
+        <div class="spec-desc">10m配線で往復 ≒ 0.27Ω<br>5A流すと電圧降下 1.35V</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-val">8.5Ω</div>
+        <div class="spec-label">AWG14（2.08mm²）/ km</div>
+        <div class="spec-desc">10m配線で往復 ≒ 0.17Ω<br>5A流すと電圧降下 0.85V</div>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. LEDテープ配線に使うケーブルの太さはどう決めればいいですか？</div>
+        <div class="faq-a">まず「テープ消費電力合計（W）÷ 電圧（V）」で最大電流（A）を計算し、その電流に対応するmm²を選びます。安全率として計算値の125%（＝電流の80%運用）のケーブルを選ぶのが基本です。例：12V・50Wのテープなら50W÷12V≒4.2A → 4.2A×1.25=5.2A → AWG18（定格7A）が推奨です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. AWGとmm²はどう換算しますか？AWG18はmm²でいくつですか？</div>
+        <div class="faq-a">AWG18は約0.82mm²、AWG16は約1.31mm²、AWG14は約2.08mm²、AWG12は約3.31mm²です。日本のVVFケーブル1.6mm径は断面積約2.0mm²でAWG14相当です。LED施工では「AWG18＝汎用標準」「AWG16＝業務用推奨」「AWG14＝大電流・長尺幹線」の使い分けが一般的です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 同じ電流でも配線が長くなると何が変わりますか？</div>
+        <div class="faq-a">配線が長くなるほど抵抗が増えるため、電圧降下（V=I×R）が大きくなります。例えばAWG18を5m引いた場合、往復10mの抵抗は約0.22Ω。電流5Aなら電圧降下は1.1V。12Vテープでは許容降下±10%（1.2V以下）をギリギリ超えます。長距離配線ではケーブルを太くするか、電源をテープに近づける配置にしてください。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>適切なケーブル付きLEDテープを探す</h3>
+      <p>24V対応テープ・アルミフレームセット・電源ユニットを取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

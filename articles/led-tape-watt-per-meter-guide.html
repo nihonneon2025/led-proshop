@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープのW/m（ワット密度）の選び方｜用途別・放熱・電源容量から最適なワット数を選ぶ仕様選定ガイド | LED PRO SHOP</title>
+<meta name="description" content="LEDテープのW/m（ワット密度）は用途によって4.8W/m〜20W/mまで幅広い。間接照明・看板バックライト・作業照明ごとの推奨W/m・放熱との関係・電源容量計算を施工業者向けに解説。">
+<meta property="og:title" content="LEDテープのW/m（ワット密度）の選び方｜用途別・放熱・電源容量から最適なワット数を選ぶ仕様選定ガイド | LED PRO SHOP">
+<meta property="og:description" content="LEDテープのW/m（ワット密度）の選び方。用途別推奨W/m・放熱との関係・電源容量計算を施工業者向けに解説。間接照明から屋外看板まで網羅。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-watt-per-meter-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-watt-per-meter-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープのW/m（ワット密度）の選び方｜用途別・放熱・電源容量から最適なワット数を選ぶ仕様選定ガイド | LED PRO SHOP">
+<meta name="twitter:description" content="LEDテープのW/m（ワット密度）の選び方。用途別推奨W/m・放熱との関係・電源容量計算を施工業者向けに解説。">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-watt-per-meter-guide">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "LEDテープのW/m（ワット密度）の選び方｜用途別・放熱・電源容量から最適なワット数を選ぶ仕様選定ガイド",
+      "description": "LEDテープのW/mの選び方。用途別推奨W/m・放熱との関係・電源容量計算を施工業者向けに解説。",
+      "datePublished": "2026-05-31",
+      "publisher": {
+        "@type": "Organization",
+        "name": "LED PRO SHOP",
+        "url": "https://led-proshop.com"
+      },
+      "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-watt-per-meter-guide"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com" },
+        { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+        { "@type": "ListItem", "position": 3, "name": "LEDテープW/m選び方ガイド", "item": "https://led-proshop.com/articles/led-tape-watt-per-meter-guide" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "間接照明にはW/mがいくつのLEDテープを選べばいいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "アクセント照明・間接照明用途では4.8〜7.2W/mが標準的な選択です。アルミチャンネルに収める場合は放熱性能を考慮して7.2W/m以下を推奨します。主照明の補助や棚下の機能照明として使う場合は9.6W/m前後が適しています。10W/m以上は発熱が大きくなるためアルミフレームへの取付け・放熱シート使用が必須になります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "W/mが高いほど明るくなりますか？W/mとlm/mの関係を教えてください。",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "基本的にW/mが高いほど明るくなりますが、発光効率（lm/W）によって同じW/mでも輝度が異なります。一般的なSMD5050テープは70〜80lm/W、高品質COBテープは100〜120lm/Wの効率があります。例えば9.6W/mのテープでも、効率80lm/Wなら768lm/m、効率110lm/Wなら1056lm/mと約38%の差が生じます。明るさを重視する場合はW/mと同時にlm/mの仕様を確認してください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "W/mが高いテープを選ぶと電源や配線はどう変わりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "W/mが高いほど電流が増えるため、（1）電源容量（テープ全体の消費電力 × 1.2〜1.25の余裕係数）が大きくなる、（2）配線ケーブルを太くする必要がある（電圧降下と発熱防止）、（3）1本あたりの最大接続長が短くなる（電圧降下の影響大）、の3点が変わります。例：20W/m × 5m = 100W なら24V・5A以上の電源と、AWG16（1.31mm²）以上のケーブルが必要です。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #0a0f1e; color: #e2e8f0; line-height: 1.7; font-size: 15px; }
+  a { color: #60a5fa; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #1a1000 0%, #2a1f00 50%, #1a1500 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #4a3800; }
+  .hero-badge { display: inline-block; background: #d97706; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f1f5f9; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #94a3b8; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #64748b; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f1f5f9; border-left: 4px solid #f59e0b; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #fcd34d; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #cbd5e1; }
+
+  .alert-box { background: #1c1010; border: 1px solid #7f1d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #1a1400; border: 1px solid #78350f; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #fde68a; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #140f00; border-radius: 10px; overflow: hidden; }
+  thead th { background: #451a03; color: #fcd34d; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #2a1e00; color: #cbd5e1; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #1c1500; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+  .tag-rec { color: #34d399; font-weight: 700; }
+
+  .calc-box { background: #1a1400; border: 1px solid #78350f; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #fbbf24; margin-top: 0; }
+  .calc-formula { background: #0d0800; border: 1px solid #451a03; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #fde68a; margin: 12px 0; line-height: 2; }
+
+  .watt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 20px 0 32px; }
+  .watt-card { background: #140f00; border: 1px solid #78350f; border-radius: 10px; padding: 18px 16px; text-align: center; }
+  .watt-card .watt-val { font-size: 26px; font-weight: 900; color: #f59e0b; line-height: 1; margin-bottom: 6px; }
+  .watt-card .watt-label { font-size: 11px; color: #fcd34d; font-weight: 700; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .watt-card .watt-use { font-size: 13px; color: #d97706; font-weight: 700; margin-bottom: 6px; }
+  .watt-card .watt-desc { font-size: 12px; color: #94a3b8; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #140f00; border: 1px solid #78350f; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #f59e0b; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #fcd34d; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #94a3b8; margin-bottom: 0; }
+  .method-card .method-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 3px; margin-bottom: 8px; }
+  .badge-light { background: #064e3b; color: #6ee7b7; }
+  .badge-mid { background: #78350f; color: #fcd34d; }
+  .badge-heavy { background: #7f1d1d; color: #fca5a5; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #d97706; color: #fff; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #cbd5e1; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #2a1e00; font-size: 14px; color: #cbd5e1; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #78350f; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #140f00; padding: 16px 20px; font-weight: 700; color: #fcd34d; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #cbd5e1; background: #0d0800; }
+
+  .cta-box { background: linear-gradient(135deg, #451a03 0%, #2d1100 100%); border: 1px solid #f59e0b; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f1f5f9; margin-bottom: 10px; }
+  .cta-box p { color: #94a3b8; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #d97706; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #b45309; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #64748b; }
+  .breadcrumb a { color: #64748b; }
+  .breadcrumb a:hover { color: #fcd34d; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid { grid-template-columns: 1fr; } .watt-grid { grid-template-columns: repeat(2, 1fr); } }
+  .article-hero-img { width: 100%; max-height: 420px; object-fit: cover; display: block; margin-bottom: 24px; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">仕様選定ガイド</div>
+    <h1>LEDテープのW/m（ワット密度）の選び方<br>用途・放熱・電源容量から最適なワット数を選ぶ</h1>
+    <p class="hero-sub">4.8W/mから20W/mまでの違いと、間接照明・看板・作業照明・屋外サインごとの選定基準を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-05-31 | カテゴリ: LEDテープ仕様選定ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-watt-per-meter-guide-hero.webp" alt="LEDテープW/m選び方ガイド" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープW/m選び方ガイド
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="alert-box">
+      <div class="alert-title">よくある失敗：「明るくしたくて高W/mを選んだら発熱・寿命低下・電源オーバーロード」</div>
+      <p>W/m（1メートルあたりの消費電力）は「明るさの目安」として使われますが、高W/mを選ぶと<strong>発熱増大・電源容量不足・電圧降下の悪化・ケーブル太さ変更</strong>が連鎖します。用途に必要な輝度から逆算してW/mを決め、放熱と電源を合わせて設計する流れが現場の基本です。</p>
+    </div>
+
+    <h2>W/mとは何か、なぜ重要か</h2>
+
+    <p>W/m（ワット/メートル）はLEDテープが1メートルあたりに消費する電力を示す数値です。一般的には<strong>W/mが高いほど明るく、発熱が多く、電源・配線も大きくなる</strong>という相関があります。</p>
+
+    <p>ただし、明るさ（lm/m）はW/mだけで決まらず、<strong>発光効率（lm/W）</strong>も重要です。高効率のテープは同じW/mでも輝度が20〜40%高くなります。W/mを選ぶ際は「何のためにその明るさが必要か」という用途から逆算するのが正しいアプローチです。</p>
+
+    <div class="info-box">
+      <p><strong>W/mと消費電力の計算：</strong><br>
+      全消費電力（W）= W/m × テープ総長（m）<br>
+      例：9.6W/m × 8m = 76.8W → 電源は少なくとも76.8W ÷ 0.8（余裕係数80%） = 96W以上が必要。24V電源なら96W÷24V = 4Aの電源が必要。</p>
+    </div>
+
+    <h2>W/m別・主な用途と特徴</h2>
+
+    <div class="watt-grid">
+      <div class="watt-card">
+        <div class="watt-val">4.8W/m</div>
+        <div class="watt-label">低電力</div>
+        <div class="watt-use">アクセント・間接照明</div>
+        <div class="watt-desc">発熱が少なく省エネ。棚下・間接照明・デコレーション向け。アルミフレームなしでも使用可能。</div>
+      </div>
+      <div class="watt-card">
+        <div class="watt-val">7.2W/m</div>
+        <div class="watt-label">標準</div>
+        <div class="watt-use">間接照明・陳列棚照明</div>
+        <div class="watt-desc">間接照明の最もポピュラーなW/m。アルミフレームへの取付け推奨。汎用性が高い。</div>
+      </div>
+      <div class="watt-card">
+        <div class="watt-val">9.6W/m</div>
+        <div class="watt-label">中電力</div>
+        <div class="watt-use">機能照明・補助主照明</div>
+        <div class="watt-desc">主照明の補助・作業照明として使える輝度。アルミフレーム必須。電源・配線の計算を丁寧に実施。</div>
+      </div>
+      <div class="watt-card">
+        <div class="watt-val">14.4W/m</div>
+        <div class="watt-label">高電力</div>
+        <div class="watt-use">看板内照・ショーケース</div>
+        <div class="watt-desc">看板バックライト・ショーケース主照明として十分な輝度。放熱設計が重要。24V推奨。</div>
+      </div>
+      <div class="watt-card">
+        <div class="watt-val">20W/m</div>
+        <div class="watt-label">超高電力</div>
+        <div class="watt-use">屋外看板・大型サイン</div>
+        <div class="watt-desc">屋外看板・大型サインの主光源。発熱が大きく放熱シート＋アルミフレーム＋換気が必須。</div>
+      </div>
+    </div>
+
+    <h2>用途別・推奨W/m選定表</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>用途カテゴリ</th>
+          <th>推奨W/m</th>
+          <th>目安lm/m（効率80lm/W時）</th>
+          <th>放熱対策</th>
+          <th>推奨電圧</th>
+          <th>備考</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>棚下・間接照明（アクセント）</strong></td>
+          <td class="tag-ok">4.8〜7.2W/m</td>
+          <td>384〜576lm/m</td>
+          <td>アルミフレーム推奨（なしでも可）</td>
+          <td>12V / 24V</td>
+          <td>長時間通電が多い。省エネ重視なら低W/m</td>
+        </tr>
+        <tr>
+          <td><strong>天井コーブ・建築間接照明</strong></td>
+          <td class="tag-ok">7.2〜9.6W/m</td>
+          <td>576〜768lm/m</td>
+          <td>アルミフレーム必須</td>
+          <td>24V推奨</td>
+          <td>均一な照度が求められるため、高効率テープを選択</td>
+        </tr>
+        <tr>
+          <td><strong>陳列棚・ショーケース照明</strong></td>
+          <td class="tag-ok">7.2〜14.4W/m</td>
+          <td>576〜1152lm/m</td>
+          <td>アルミフレーム必須</td>
+          <td>24V推奨</td>
+          <td>Ra90以上の高演色テープと組み合わせる</td>
+        </tr>
+        <tr>
+          <td><strong>看板内照バックライト（小〜中型）</strong></td>
+          <td class="tag-ok">9.6〜14.4W/m</td>
+          <td>768〜1152lm/m</td>
+          <td>アルミフレーム必須＋換気</td>
+          <td>24V必須</td>
+          <td>面発光均一性のためCOBタイプも検討</td>
+        </tr>
+        <tr>
+          <td><strong>屋外看板・大型電飾サイン</strong></td>
+          <td class="tag-warn">14.4〜20W/m</td>
+          <td>1152〜1600lm/m</td>
+          <td>放熱シート＋アルミフレーム＋換気穴必須</td>
+          <td>24V必須</td>
+          <td>IP65以上の防水テープを使用。電圧降下に注意</td>
+        </tr>
+        <tr>
+          <td><strong>作業照明・工場ワークライト補助</strong></td>
+          <td class="tag-warn">14.4〜20W/m</td>
+          <td>1152〜1600lm/m</td>
+          <td>放熱シート＋アルミフレーム必須</td>
+          <td>24V必須</td>
+          <td>粉塵環境はIP54以上。高天井は別途照明器具を検討</td>
+        </tr>
+        <tr>
+          <td><strong>植物育成・農業施設</strong></td>
+          <td class="tag-ng">20W/m以上</td>
+          <td>（育成用波長で判断）</td>
+          <td>専用放熱機構必須</td>
+          <td>24V / 48V</td>
+          <td>PPFDで設計する。汎用テープは不適切なケースが多い</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>W/mと発熱・放熱の関係</h2>
+
+    <p>LEDテープは消費電力の<strong>約70〜75%が熱</strong>に変換されます（残り25〜30%が光）。W/mが高いほど単位長さあたりの発熱量が増え、チップ接合部温度（Tj）が上昇します。Tjが高すぎると光束低下・色ずれ・寿命短縮が加速します。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>W/m</th>
+          <th>発熱量（目安）</th>
+          <th>アルミフレームなし時の基板温度</th>
+          <th>アルミフレームあり時の基板温度</th>
+          <th>判定</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>4.8W/m</td>
+          <td>≒ 3.4W/m（熱）</td>
+          <td>40〜50℃</td>
+          <td>35〜40℃</td>
+          <td class="tag-ok">長寿命</td>
+        </tr>
+        <tr>
+          <td>7.2W/m</td>
+          <td>≒ 5.2W/m（熱）</td>
+          <td>50〜60℃</td>
+          <td>40〜48℃</td>
+          <td class="tag-ok">良好</td>
+        </tr>
+        <tr>
+          <td>9.6W/m</td>
+          <td>≒ 6.9W/m（熱）</td>
+          <td>60〜75℃</td>
+          <td>48〜58℃</td>
+          <td class="tag-warn">アルミフレーム必須</td>
+        </tr>
+        <tr>
+          <td>14.4W/m</td>
+          <td>≒ 10.4W/m（熱）</td>
+          <td>75〜90℃+（危険域）</td>
+          <td>55〜68℃</td>
+          <td class="tag-warn">放熱シート＋フレーム必須</td>
+        </tr>
+        <tr>
+          <td>20W/m</td>
+          <td>≒ 14.5W/m（熱）</td>
+          <td>90℃+（寿命激減）</td>
+          <td>65〜80℃</td>
+          <td class="tag-ng">強制換気・大型フレーム必須</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <p><strong>放熱設計の実務：</strong> 基板温度が60℃を超えると寿命が半分以下になります。アルミフレームは放熱だけでなく、テープの固定・光線のコントロール（拡散カバー）も兼ねるため、9.6W/m以上では必ず採用してください。フレームと壁の間に隙間を設けて対流換気を確保することも効果的です。</p>
+    </div>
+
+    <h2>W/mと電源容量の選定手順</h2>
+
+    <div class="calc-box">
+      <h3>電源容量の計算手順</h3>
+      <div class="calc-formula">
+① 全消費電力(W) = W/m × テープ総長(m)
+② 必要電源容量  = ① × 1.25（余裕係数125%）
+③ 電源電圧      = テープ定格電圧（12V または 24V）に一致させる
+④ 必要電流(A)   = ② ÷ 電源電圧(V)
+
+例：9.6W/m × 10m = 96W → 96W × 1.25 = 120W
+   24V電源なら 120W ÷ 24V = 5A → 24V・5A以上の電源を選択
+      </div>
+      <p style="color:#fde68a; font-size:13px; margin-top:12px; margin-bottom:0">
+        電源は「余裕係数1.25」を確保することで過負荷による保護回路動作・発熱・寿命低下を防げます。<br>
+        複数回路がある場合は系統ごとに計算して個別の電源を割り当てるか、<br>
+        大型の集中電源BOXと回路ブレーカーを組み合わせる構成にします。
+      </p>
+    </div>
+
+    <h2>W/m選定の3ステップ</h2>
+
+    <ul class="step-list">
+      <li><span><strong>用途から必要照度・輝度を決める</strong>：間接照明なら300〜500lx補助、看板バックライトなら面輝度1000cd/m²以上など、目的を照度・輝度の数値で定義する。数値が定まれば必要なlm/mが逆算できる。</span></li>
+      <li><span><strong>lm/mとW/mの関係を確認する</strong>：選定するテープ製品の発光効率（lm/W）から「必要W/m = 必要lm/m ÷ 効率（lm/W）」を計算する。高効率テープほどW/mを下げて同じ明るさを達成できる。</span></li>
+      <li><span><strong>発熱・電源・配線との整合を確認する</strong>：決定したW/mに基づいて①アルミフレームの要否・②電源容量（W/m × 長さ × 1.25）・③ケーブル太さ（電流から選定）の3点を確認し、設計を完成させる。</span></li>
+    </ul>
+
+    <h2>用途別W/m選定チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>用途と設置場所を確認し、必要な照度・輝度の目安を設定した</li>
+      <li>W/mだけでなくlm/m（明るさ）の仕様を製品スペックで確認した</li>
+      <li>9.6W/m以上を選ぶ場合はアルミフレームへの取付けを計画した</li>
+      <li>全消費電力（W/m × 総長）× 1.25の余裕係数で電源容量を選定した</li>
+      <li>電流値から適切なケーブル太さ（AWG16/18以上）を確認した</li>
+      <li>電圧降下の影響（12Vは5m以内、24Vは10m以内の目安）を考慮した</li>
+      <li>屋外・高湿・高温環境では対応したIP等級・耐熱仕様のテープを選んだ</li>
+    </ul>
+
+    <h2>間違いやすいW/m選択のケース</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-badge badge-light">間接照明の誤選択</div>
+        <div class="method-num">×</div>
+        <h4>「明るくしたい」だけで20W/mを選ぶ</h4>
+        <p>間接照明は壁・天井に拡散した光が目的であり、20W/mの直接光は眩しさのトラブルになりやすい。7.2〜9.6W/mに拡散カバーを組み合わせる方が品質が高い。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-mid">看板の誤選択</div>
+        <div class="method-num">×</div>
+        <h4>看板バックライトに4.8W/mを選ぶ</h4>
+        <p>小型の薄型看板（アクリル板）では面輝度が不足して文字が読みにくくなる。看板用途では最低でも9.6W/m以上を選び、必要に応じてCOBテープを検討する。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-heavy">電源オーバーロード</div>
+        <div class="method-num">×</div>
+        <h4>W/mを上げたのに電源を変えない</h4>
+        <p>既設の電源でW/mの高いテープに交換すると電源の定格を超えて保護回路が動作・頻繁にリセットが起きる。テープのW/mを変える際は電源容量も必ず再計算する。</p>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 間接照明にはW/mがいくつのLEDテープを選べばいいですか？</div>
+        <div class="faq-a">アクセント照明・間接照明用途では4.8〜7.2W/mが標準的な選択です。アルミチャンネルに収める場合は放熱性能を考慮して7.2W/m以下を推奨します。主照明の補助や棚下の機能照明として使う場合は9.6W/m前後が適しています。10W/m以上は発熱が大きくなるためアルミフレームへの取付け・放熱シート使用が必須になります。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. W/mが高いほど明るくなりますか？W/mとlm/mの関係を教えてください。</div>
+        <div class="faq-a">基本的にW/mが高いほど明るくなりますが、発光効率（lm/W）によって同じW/mでも輝度が異なります。一般的なSMD5050テープは70〜80lm/W、高品質COBテープは100〜120lm/Wの効率があります。例えば9.6W/mのテープでも、効率80lm/Wなら768lm/m、効率110lm/Wなら1056lm/mと約38%の差が生じます。明るさを重視する場合はW/mと同時にlm/mの仕様を確認してください。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. W/mが高いテープを選ぶと電源や配線はどう変わりますか？</div>
+        <div class="faq-a">W/mが高いほど電流が増えるため、（1）電源容量（テープ全体の消費電力 × 1.25の余裕係数）が大きくなる、（2）配線ケーブルを太くする必要がある（電圧降下と発熱防止）、（3）1本あたりの最大接続長が短くなる（電圧降下の影響大）、の3点が変わります。例：20W/m × 5m = 100W なら24V・5A以上の電源とAWG16（1.31mm²）以上のケーブルが必要です。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>用途に合ったW/mのLEDテープを探す</h3>
+      <p>4.8W/m〜20W/mまで幅広いラインナップのLEDテープを取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
