@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープの幅 5mm・8mm・10mm の違いと選び方｜溝幅・曲げ半径から逆算する施工業者向け判断基準 | LED PRO SHOP</title>
+  <meta name="description" content="アルミ溝に入らない・コーナーで割れる・棚下に厚みが出すぎる——テープ幅の選定ミスは現場で必ず返ってきます。5mm/8mm/10mm/12mm幅の違い、基板幅とアルミフレーム内寸・最小曲げ半径・実装密度の関係を、溝幅から逆算する判断基準として施工業者向けに解説。">
+  <meta name="keywords" content="LEDテープ,幅,基板幅,5mm,8mm,10mm,12mm,アルミフレーム,溝幅,曲げ半径,選び方,施工,COB,SMD,LEDストリップ">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-width-selection-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-width-selection-guide">
+  <meta property="og:title" content="LEDテープの幅 5mm・8mm・10mm の違いと選び方｜溝幅・曲げ半径から逆算する施工業者向け判断基準 | LED PRO SHOP">
+  <meta property="og:description" content="アルミ溝に入らない・コーナーで割れる・棚下に厚みが出すぎる——テープ幅の選定ミスは現場で必ず返ってきます。基板幅とフレーム内寸・最小曲げ半径・実装密度の関係を溝幅から逆算する判断基準として解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-width-selection-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープの幅 5mm・8mm・10mm の違いと選び方｜溝幅・曲げ半径から逆算する判断基準 | LED PRO SHOP">
+  <meta name="twitter:description" content="アルミ溝に入らない・コーナーで割れる・棚下に厚みが出すぎる——テープ幅の選定ミスを防ぐ。基板幅とフレーム内寸・最小曲げ半径・実装密度の関係を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-width-selection-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープの幅 5mm・8mm・10mm の違いと選び方｜溝幅・曲げ半径から逆算する施工業者向け判断基準",
+    "description": "基板幅とアルミフレーム内寸・最小曲げ半径・実装密度の関係を、溝幅から逆算する判断基準として施工業者向けに解説。",
+    "image": "https://led-proshop.com/articles/images/led-tape-width-selection-guide-hero.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP 編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://led-proshop.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-06-01",
+    "dateModified": "2026-06-01",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-width-selection-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "LED PRO SHOP",
+        "item": "https://led-proshop.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "コラム",
+        "item": "https://led-proshop.com/articles/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "LEDテープの幅 5mm・8mm・10mm の違いと選び方",
+        "item": "https://led-proshop.com/articles/led-tape-width-selection-guide"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "アルミフレームの内寸ぴったりの基板幅を選べば良いですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "内寸と同寸は避けてください。挿入できない・防水コーティングの厚み分で入らないトラブルが起きます。基板幅＋0.3〜0.5mm程度のクリアランスを持つ内寸のフレームを選ぶのが実務上の目安です。例えば10mm基板なら内寸10.3〜11mmのフレームが適合します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "細い5mm幅テープは曲げに強いですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "面方向（平面上）の曲げには5mm幅が有利で最小曲げ半径も小さくできますが、基板が細い分だけ放熱面積が小さく、同じW/mなら温度が上がりやすい傾向があります。細幅は曲面・什器内部の狭所向け、放熱が必要な高出力用途は8〜10mm幅が無難です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "幅が広いテープほど明るいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "幅と明るさは直結しません。明るさはW/m（1mあたりワット数）と実装密度で決まります。幅は主に放熱面積・LED配置の自由度・フレーム適合に影響します。明るさで選ぶ場合はW/mとlm/mの仕様を確認してください。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== RESET & CSS Variables（index.html と共通） ===== */
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --blue:#1f6f4a;--blue-pale:#e6f3ec;--bg:#fff;--bg-gray:#f5f6f8;
+      --text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+
+    /* ===== NAVBAR ===== */
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #154d33}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+
+    /* ===== FOOTER ===== */
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+
+    /* ===== LAYOUT ===== */
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+
+    /* ===== BREADCRUMB ===== */
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+
+    /* ===== ARTICLE HERO ===== */
+    .article-hero{background:linear-gradient(135deg,#0e3322 0%,#1f6f4a 50%,#12422c 100%);padding:40px 16px 32px;border-bottom:3px solid #154d33}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-hero h1 em{font-style:normal;color:#7fe0ab}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+
+    /* ===== ARTICLE LAYOUT（2カラム） ===== */
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){
+      .article-layout{grid-template-columns:1fr;padding:24px 16px 40px}
+      .article-sidebar{order:2}
+    }
+
+    /* ===== ARTICLE MAIN ===== */
+    .article-main{}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+
+    /* TOC */
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--blue);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+
+    /* ARTICLE BODY */
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--blue);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--blue);padding:6px 10px;background:var(--blue-pale);border-left:3px solid var(--blue);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,
+    .article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body em{font-style:italic;color:var(--text-sub)}
+    .article-body a{color:var(--blue);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+
+    /* TABLE */
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--blue);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--blue-pale)}
+
+    /* CODE */
+    .article-body code{background:#f0f2f5;color:#1f6f4a;padding:1px 5px;border-radius:2px;font-size:12px;font-family:monospace}
+
+    /* CALLOUT */
+    .article-callout{border-left:4px solid var(--blue);background:var(--blue-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--blue)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+
+    /* SPEC CARD GRID */
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:20px 0 26px}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:4px;padding:14px 16px}
+    .spec-card .sc-w{font-size:20px;font-weight:900;color:var(--blue);line-height:1.2}
+    .spec-card .sc-name{font-size:12px;font-weight:700;color:var(--text);margin:4px 0 8px}
+    .spec-card .sc-desc{font-size:11px;color:var(--text-sub);line-height:1.65}
+
+    /* CHECKLIST */
+    .checklist{list-style:none;padding:0;margin:18px 0 24px}
+    .checklist li{position:relative;padding:8px 8px 8px 30px;border-bottom:1px solid var(--border);font-size:13px}
+    .checklist li::before{content:"☑";position:absolute;left:6px;color:var(--blue);font-weight:700}
+
+    /* FAQ */
+    .article-faq{margin-top:24px}
+    .faq-item{border:1px solid var(--border);border-radius:4px;margin-bottom:10px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:12px 16px;font-weight:700;font-size:13px;color:var(--text)}
+    .faq-q::before{content:"Q. ";color:var(--blue)}
+    .faq-a{padding:12px 16px;font-size:13px;color:var(--text-sub);line-height:1.8}
+    .faq-a::before{content:"A. ";color:var(--red);font-weight:700}
+
+    /* CTA */
+    .article-cta{background:var(--blue);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--blue);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#e6f3ec}
+
+    /* FOOTER META */
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+
+    /* RELATED */
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--blue)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--blue)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--blue);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+
+    /* SIDEBAR */
+    .article-sidebar{}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--blue)}
+    .sidebar-cta{background:var(--blue);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--blue);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#e6f3ec}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .navbar .nav-links{display:none}
+      .article-hero h1{font-size:18px}
+      .article-body{font-size:13px}
+      .article-body h2{font-size:16px}
+      .article-body h3{font-size:13px}
+      .related-articles-list{grid-template-columns:1fr}
+    }
+    @media(max-width:480px){
+      .article-hero{padding:28px 16px 24px}
+      .article-hero h1{font-size:16px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .related-article-card{transition:none}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo" style="text-decoration:none">
+        <div class="logo-main">LED PRO SHOP<small>日本ネオン株式会社</small></div>
+        <div class="logo-tag">
+          <span class="logo-badge">PROFESSIONAL SUPPLY</span>
+          <span class="logo-catch">全国のLED施工業者が選ぶ / 工場直送 × 業界最安値</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+        <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+        <li><a href="/category/psu/" class="nav-link">電源</a></li>
+        <li><a href="/category/controller/" class="nav-link">制御機器</a></li>
+        <li><a href="/articles/" class="nav-link active">コラム</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== BREADCRUMB ===== -->
+  <nav class="article-breadcrumb" aria-label="パンくず">
+    <div class="container">
+      <a href="/">LED PRO SHOP</a>
+      <span class="sep">›</span>
+      <a href="/articles/">コラム</a>
+      <span class="sep">›</span>
+      <span>LEDテープの幅 5mm・8mm・10mm の違いと選び方</span>
+    </div>
+  </nav>
+
+  <!-- ===== ARTICLE HERO ===== -->
+  <header class="article-hero">
+    <div class="container">
+      <span class="article-category-badge">仕様選定ガイド</span>
+      <h1>LEDテープの幅 5mm・8mm・10mm の違いと選び方｜<em>溝幅・曲げ半径</em>から逆算する施工業者向け判断基準</h1>
+      <div class="article-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-01</span>
+        <span>更新日: 2026-06-01</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== ARTICLE LAYOUT ===== -->
+  <div class="article-layout">
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="article-main">
+
+      <img
+        src="/images/hero-scenes/gold_shop.png"
+        alt="LEDテープの幅 5mm・8mm・10mm の違いと選び方"
+        class="article-hero-img"
+        width="840"
+        height="400"
+        loading="lazy"
+      >
+
+      <nav class="article-toc" aria-label="目次" id="article-toc">
+        <h2>目次</h2>
+        <ol id="toc-list"></ol>
+      </nav>
+
+      <article class="article-body" id="article-body">
+
+        <p>LEDテープを発注するとき、W/mや色温度・防水等級は確認しても、<strong>基板幅（テープの横幅）</strong>を仕様の最後まで詰めずに発注して現場で詰まる——これは施工業者なら一度は経験するミスです。「届いたテープがアルミフレームの溝に入らない」「コーナーで曲げたら基板が割れた」「棚下に貼ったら厚みが目立った」。これらはすべて幅の選定で決まります。本記事では 5mm・8mm・10mm・12mm 幅の構造的な違いを整理し、<strong>アルミフレームの溝幅・最小曲げ半径・放熱・実装密度</strong>から逆算してテープ幅を決める判断基準を、現場目線で解説します。</p>
+
+        <h2 id="what-is-width">テープ幅とは何を指すか — 基板幅と外形幅の違い</h2>
+
+        <p>カタログに「幅10mm」とある場合、ふつうは<strong>FPC基板の横幅</strong>を指します。ただし防水コーティング品では、シリコンやゲルの被覆分だけ<strong>外形幅が基板幅より大きくなる</strong>点に注意が必要です。フレームへの挿入可否を判断するのは基板幅ではなく外形幅です。</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>表記</th>
+              <th>意味</th>
+              <th>フレーム適合の判断に使う値</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>基板幅</td>
+              <td>FPC（フレキ基板）そのものの横幅</td>
+              <td>非防水品はこの値で判断</td>
+            </tr>
+            <tr>
+              <td>外形幅</td>
+              <td>防水コーティング込みの実測横幅</td>
+              <td>防水品はこの値で判断（基板幅＋0.5〜1.5mm程度）</td>
+            </tr>
+            <tr>
+              <td>厚み</td>
+              <td>基板＋LED（＋コーティング）の高さ</td>
+              <td>溝深さ・什器のクリアランス判断に使用</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="article-callout warn">
+          <p><strong>現場での失敗例</strong>: 「10mm溝のフレームに10mm基板の防水テープ」を発注したところ、外形幅が11.2mmあり挿入不能。フレーム適合は必ず<strong>外形幅 ＋ クリアランス0.3〜0.5mm</strong>で確認します。</p>
+        </div>
+
+        <h2 id="width-types">代表的な幅とその特性</h2>
+
+        <div class="spec-grid">
+          <div class="spec-card">
+            <div class="sc-w">5mm</div>
+            <div class="sc-name">狭所・曲面特化</div>
+            <div class="sc-desc">什器内部・什器エッジ・細いコーブ照明向け。面方向の最小曲げ半径が小さく、目立たせたくない場所に最適。放熱面積が小さく高出力には不向き。</div>
+          </div>
+          <div class="spec-card">
+            <div class="sc-w">8mm</div>
+            <div class="sc-name">汎用バランス型</div>
+            <div class="sc-desc">棚下・間接照明の標準。多くの細幅アルミフレームに適合。放熱と取り回しのバランスが良く、迷ったらこの幅。</div>
+          </div>
+          <div class="spec-card">
+            <div class="sc-w">10mm</div>
+            <div class="sc-name">主流・高出力対応</div>
+            <div class="sc-desc">最も流通量が多い。放熱面積が確保でき中〜高出力（10〜20W/m）に対応。COBの高密度品もこの幅が中心。</div>
+          </div>
+          <div class="spec-card">
+            <div class="sc-w">12mm〜</div>
+            <div class="sc-name">高出力・RGB多列</div>
+            <div class="sc-desc">高W/m・RGBやRGBWの多列実装・看板内照の高輝度用途。放熱に余裕。フレーム選択肢はやや限られる。</div>
+          </div>
+        </div>
+
+        <h3 id="bend">幅と最小曲げ半径の関係</h3>
+
+        <p>LEDテープは<strong>面方向（平面に沿った曲げ）</strong>には対応しますが、基板が割れない最小曲げ半径は幅に依存します。基板が広いほど外周と内周の伸縮差が大きくなり、割れやすくなります。下表はSMD品の一般的な目安です（COB・防水品はメーカー指定値を優先）。</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>基板幅</th>
+              <th>面方向 最小曲げ半径の目安</th>
+              <th>適した曲げ用途</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5mm</td>
+              <td>約20〜30mm</td>
+              <td>什器のR・円柱・小径コーナー</td>
+            </tr>
+            <tr>
+              <td>8mm</td>
+              <td>約40〜50mm</td>
+              <td>緩いカーブ・什器エッジ</td>
+            </tr>
+            <tr>
+              <td>10mm</td>
+              <td>約60〜80mm</td>
+              <td>大きなカーブのみ（直角はカット＆配線）</td>
+            </tr>
+            <tr>
+              <td>12mm以上</td>
+              <td>面方向曲げは非推奨</td>
+              <td>直線敷設＋コーナーはカット処理</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="article-callout">
+          <p><strong>原則</strong>: 直角（90°）コーナーは曲げで処理せず、<strong>カットして渡り配線（ジャンパー）でつなぐ</strong>のが基本です。曲げ半径を割ると点灯直後は問題なくても、数週間後にFPCの銅箔クラックで断線します。</p>
+        </div>
+
+        <h2 id="frame">アルミフレームの溝幅から逆算する</h2>
+
+        <p>テープ幅を先に決めてからフレームを探すと「適合フレームが無い」事態になりがちです。施工現場では逆に<strong>使うフレームの内寸（溝幅）から適合テープ幅を絞る</strong>方が確実です。</p>
+
+        <h4>適合チェックの計算式</h4>
+        <p><code>適合テープ外形幅 ≦ フレーム内寸 − 0.3mm（最小クリアランス）</code></p>
+        <p>つまり内寸10mmのフレームなら、外形幅9.7mm以下のテープが安全に挿入できます。防水テープを使う場合は外形幅で判断し、基板幅で判断しないこと。</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>フレーム内寸</th>
+              <th>適合する基板幅（非防水）</th>
+              <th>適合する外形幅（防水）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>6mm</td>
+              <td>5mm</td>
+              <td>〜5.7mm</td>
+            </tr>
+            <tr>
+              <td>9mm</td>
+              <td>8mm</td>
+              <td>〜8.7mm</td>
+            </tr>
+            <tr>
+              <td>11mm</td>
+              <td>10mm</td>
+              <td>〜10.7mm</td>
+            </tr>
+            <tr>
+              <td>13mm</td>
+              <td>12mm</td>
+              <td>〜12.7mm</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><a href="/category/alumi-frame/"><strong>アルミフレーム（内寸別ラインナップ）カテゴリを見る</strong></a></p>
+
+        <h2 id="heat">幅と放熱 — 同じW/mでも温度が変わる</h2>
+
+        <p>見落とされがちですが、<strong>幅は放熱性能に直結</strong>します。基板幅が広いほど熱を逃がす面積が大きく、同じW/mでもジャンクション温度が下がります。高出力テープ（15W/m以上）を細幅基板で使うと、寿命低下・色ズレ・最悪は焼損につながります。</p>
+
+        <ul>
+          <li><strong>〜8W/m（低出力）</strong>: 5〜8mm幅で問題なし。什器内部の狭所にも使える。</li>
+          <li><strong>8〜15W/m（中出力）</strong>: 8〜10mm幅。アルミフレームへの収納で放熱を補助する。</li>
+          <li><strong>15W/m以上（高出力）</strong>: 10〜12mm幅＋アルミフレーム必須。放熱設計を前提に選ぶ。</li>
+        </ul>
+
+        <div class="article-callout tip">
+          <p><strong>実務のコツ</strong>: 高出力テープは「幅」と「アルミフレームへの密着」をセットで考えます。フレームをヒートシンク代わりにすることで、同じテープでも体感寿命が大きく変わります。放熱の詳細は別記事も参照してください。</p>
+        </div>
+
+        <h2 id="checklist">幅を決める前の確認チェックリスト</h2>
+
+        <ul class="checklist">
+          <li>使うアルミフレームの内寸（溝幅）を実測またはカタログで確認した</li>
+          <li>防水テープの場合、基板幅ではなく外形幅で適合判断した</li>
+          <li>コーナーの曲げ半径が、選んだ幅の最小曲げ半径を上回っている</li>
+          <li>直角コーナーはカット＆ジャンパー配線で処理する設計にした</li>
+          <li>W/m（出力）に対して放熱面積が足りる幅を選んだ</li>
+          <li>什器・溝の深さに対してテープ厚み＋配線の余裕がある</li>
+          <li>RGB/RGBWなど多列実装が必要な場合、対応する広幅を確保した</li>
+        </ul>
+
+        <h2 id="summary">まとめ — 幅選定の3原則</h2>
+
+        <ol>
+          <li><strong>幅はフレーム内寸から逆算する</strong>: テープ先決めではなく、溝幅 − クリアランスで適合幅を絞る。防水品は外形幅で判断。</li>
+          <li><strong>曲げる現場は細幅・高出力は広幅</strong>: 5mmは曲面と狭所、10〜12mmは放熱と高輝度。8mmは汎用の落としどころ。</li>
+          <li><strong>明るさは幅ではなくW/mで決まる</strong>: 幅は放熱・取り回し・フレーム適合を左右する設計要素。明るさはW/m・lm/mで確認する。</li>
+        </ol>
+
+        <h4>関連商品</h4>
+        <ul>
+          <li><a href="/category/cob-tape/">COB・SMD LEDテープライト（幅・W/mバリエーション）カテゴリ</a></li>
+          <li><a href="/category/alumi-frame/">アルミフレームカテゴリ（内寸別）</a></li>
+        </ul>
+
+        <!-- ===== FAQ ===== -->
+        <h2 id="faq">よくある質問（施工業者向けFAQ）</h2>
+        <div class="article-faq">
+          <div class="faq-item">
+            <div class="faq-q">アルミフレームの内寸ぴったりの基板幅を選べば良いですか？</div>
+            <div class="faq-a">内寸と同寸は避けてください。挿入できない・防水コーティングの厚み分で入らないトラブルが起きます。基板幅＋0.3〜0.5mm程度のクリアランスを持つ内寸のフレームを選ぶのが実務上の目安です。例えば10mm基板なら内寸10.3〜11mmのフレームが適合します。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">細い5mm幅テープは曲げに強いですか？</div>
+            <div class="faq-a">面方向（平面上）の曲げには5mm幅が有利で最小曲げ半径も小さくできますが、基板が細い分だけ放熱面積が小さく、同じW/mなら温度が上がりやすい傾向があります。細幅は曲面・什器内部の狭所向け、放熱が必要な高出力用途は8〜10mm幅が無難です。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">幅が広いテープほど明るいですか？</div>
+            <div class="faq-a">幅と明るさは直結しません。明るさはW/m（1mあたりワット数）と実装密度で決まります。幅は主に放熱面積・LED配置の自由度・フレーム適合に影響します。明るさで選ぶ場合はW/mとlm/mの仕様を確認してください。</div>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ARTICLE FOOTER META -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-01</span>
+        <span>更新日: 2026-06-01</span>
+      </div>
+
+      <!-- ===== RELATED ARTICLES ===== -->
+      <section class="related-articles" aria-label="関連記事">
+        <h2>関連コラム記事</h2>
+        <div class="related-articles-list">
+          <article class="related-article-card">
+            <a href="/articles/led-tape-cover-aluminum-profile-guide">
+              <img src="/images/hero-scenes/gold_shop.png" alt="アルミフレーム・プロファイルの選び方" class="rac-img" loading="lazy">
+              <div class="rac-body">
+                <span class="rac-tag">仕様選定ガイド</span>
+                <span class="rac-title">LEDテープ用アルミフレーム（プロファイル）の選び方</span>
+                <span class="rac-date">2026-06-01</span>
+              </div>
+            </a>
+          </article>
+          <article class="related-article-card">
+            <a href="/articles/led-tape-heat-management-guide">
+              <img src="/images/hero-scenes/gold_shop.png" alt="LEDテープの放熱対策" class="rac-img" loading="lazy">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <span class="rac-title">LEDテープの放熱・過熱対策｜寿命を延ばす設計</span>
+                <span class="rac-date">2026-06-01</span>
+              </div>
+            </a>
+          </article>
+          <article class="related-article-card">
+            <a href="/articles/led-tape-corner-installation-guide">
+              <img src="/images/hero-scenes/gold_shop.png" alt="LEDテープのコーナー施工方法" class="rac-img" loading="lazy">
+              <div class="rac-body">
+                <span class="rac-tag">施工方法ガイド</span>
+                <span class="rac-title">LEDテープのコーナー・直角部の施工方法</span>
+                <span class="rac-date">2026-06-01</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== CTA ===== -->
+      <aside class="article-cta" aria-label="商品ラインナップ">
+        <h2>幅・W/m別のLEDテープラインナップはこちら</h2>
+        <p>現場の溝幅・出力に合わせて、適合する基板幅のテープとフレームをまとめてお選びいただけます。</p>
+        <a href="/" class="article-cta-btn">商品ラインナップを見る</a>
+      </aside>
+
+    </main><!-- /article-main -->
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="article-sidebar" aria-label="サイドバー">
+
+      <div class="sidebar-cta">
+        <p>業務用LED資材は LED PRO SHOP でお選びいただけます。</p>
+        <a href="/">商品ラインナップを見る</a>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3>カテゴリ</h3>
+        <ul>
+          <li><a href="/articles/?cat=guide">仕様選定ガイド</a></li>
+          <li><a href="/articles/?cat=install">施工方法ガイド</a></li>
+          <li><a href="/articles/?cat=trouble">トラブル対処ガイド</a></li>
+          <li><a href="/articles/?cat=product">製品活用ガイド</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3>新着記事</h3>
+        <ul>
+          <li><a href="/articles/led-tape-width-selection-guide">テープ幅 5/8/10mm の選び方</a></li>
+          <li><a href="/articles/led-tape-corner-installation-guide">コーナー・直角部の施工方法</a></li>
+          <li><a href="/articles/led-tape-color-consistency-guide">つなぐと色が違う原因と対処</a></li>
+          <li><a href="/articles/cob-vs-smd-led-tape">COB vs SMD の選び方</a></li>
+          <li><a href="/articles/led-psu-capacity-guide">PSU容量計算 早見表</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3>商品カタログ</h3>
+        <ul>
+          <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+          <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+          <li><a href="/category/psu/">電源装置</a></li>
+          <li><a href="/category/controller/">コントローラー</a></li>
+        </ul>
+      </div>
+
+    </aside><!-- /article-sidebar -->
+
+  </div><!-- /article-layout -->
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div style="margin-bottom:8px;font-size:12px;font-weight:700;color:#ccc">LED PRO SHOP</div>
+    <div style="margin-bottom:4px">
+      <a href="/privacy-policy.html" style="color:#aaa;text-decoration:none">プライバシーポリシー</a>
+      &nbsp;|&nbsp;
+      <a href="/tokushoho.html" style="color:#aaa;text-decoration:none">特定商取引法に基づく表記</a>
+    </div>
+    <div>&copy; 2025 LED PRO SHOP All Rights Reserved.</div>
+  </footer>
+
+  <!-- ===== TOC 自動生成 JS ===== -->
+  <script>
+  (function() {
+    var body = document.getElementById('article-body');
+    var tocList = document.getElementById('toc-list');
+    if (!body || !tocList) return;
+    var headings = body.querySelectorAll('h2, h3');
+    if (headings.length === 0) {
+      var toc = document.getElementById('article-toc');
+      if (toc) toc.style.display = 'none';
+      return;
+    }
+    var counter = 0;
+    var fragment = document.createDocumentFragment();
+    headings.forEach(function(h) {
+      if (!h.id) { h.id = 'section-' + (counter++); }
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent;
+      li.appendChild(a);
+      if (h.tagName === 'H3') {
+        li.style.paddingLeft = '1em';
+        li.style.fontSize = '11px';
+        li.style.color = 'var(--text-muted)';
+      }
+      fragment.appendChild(li);
+    });
+    tocList.appendChild(fragment);
+  })();
+  </script>
+
+</body>
+</html>
