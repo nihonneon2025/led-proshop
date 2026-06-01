@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープライトの分岐配線方法｜T字分岐・並列分岐のやり方と電圧降下・電源容量の注意点 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープを分岐したら末端が暗い・点かない——その原因は電圧降下と電源容量不足です。T字分岐・並列分岐（スター配線）の使い分け、分岐数の上限計算、電源容量×1.2の求め方、コネクタ分岐とはんだ分岐の選び方を施工業者向けに解説。">
+  <meta name="keywords" content="ledテープライト 分岐 方法,LEDテープ 分岐,T字分岐,並列分岐,スター配線,LED 分岐コネクタ,電圧降下,電源容量 計算">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-branch-wiring-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-branch-wiring-guide">
+  <meta property="og:title" content="LEDテープライトの分岐配線方法｜T字分岐・並列分岐のやり方と電圧降下・電源容量の注意点 | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープを分岐したら末端が暗い・点かない——原因は電圧降下と電源容量不足。T字分岐・並列分岐の使い分け、分岐数の上限、電源容量×1.2の計算、コネクタ分岐とはんだ分岐の選び方を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-branch-wiring-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープライトの分岐配線方法｜T字分岐・並列分岐のやり方と電圧降下・電源容量の注意点 | LED PRO SHOP">
+  <meta name="twitter:description" content="LEDテープを分岐したら末端が暗い・点かない——原因は電圧降下と電源容量不足。T字分岐・並列分岐の使い分け、分岐数の上限、電源容量×1.2の計算を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-branch-wiring-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープライトの分岐配線方法｜T字分岐・並列分岐のやり方と電圧降下・電源容量の注意点",
+    "description": "LEDテープライトの分岐配線（T字分岐・並列分岐・スター配線）の方法を施工業者向けに解説。末端が暗くなる電圧降下の原因、分岐数の上限、電源容量の計算式、コネクタ分岐とはんだ分岐の使い分けを整理。",
+    "image": "https://led-proshop.com/articles/images/led-tape-branch-wiring-guide-hero.webp",
+    "datePublished": "2026-06-02",
+    "dateModified": "2026-06-02",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-branch-wiring-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQ ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープを分岐すると末端が暗くなるのはなぜですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "主な原因は電圧降下と電源容量不足の2つです。分岐後の配線が長くなるほど、銅箔や延長ケーブルの抵抗で電圧が下がり、電源から遠い末端ほど明るさが落ちます。特に12Vは24Vよりも電圧降下の影響を受けやすく、長い分岐ほど暗くなります。また分岐した全テープの合計消費電力が電源容量を超えていると、全体が暗くなったり点滅したりします。対策は、直列でつなぎ続けず電源から各テープへ個別給電する並列分岐（スター配線）にすること、電源を必要容量の1.2倍以上にすること、配線を太く・短くすることです。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "LEDテープは何本まで分岐できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "分岐できる本数は電源容量と配線径で決まり、本数そのものに固定の上限はありません。判断基準は『分岐した全テープの合計消費電力（W/m×合計長）× 1.2 ≦ 電源容量』です。例えば14.4W/mのテープを5mずつ3本に分岐すると合計216W、電源は216×1.2＝約260W以上が必要で300W電源を選びます。さらに各分岐の幹線ケーブルが合計電流に耐える太さ（断面積）であることも確認してください。容量が足りない場合は電源を分けるか、複数電源で分散給電します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "T字分岐コネクタとはんだ付け分岐はどちらを選ぶべきですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "屋内・短期・やり直しの可能性がある現場はワンタッチのT字分岐コネクタ、屋外・長期・確実性重視の現場ははんだ付け分岐が向きます。コネクタは施工が速く再利用もできますが、接点が増えるぶん接触不良や緩みのリスクがあり、振動・湿気のある場所では経年で不点灯の原因になります。はんだ付けは接点抵抗が小さく確実ですが、施工に時間がかかり、屋外では熱収縮チューブや防水シーリングでの絶縁・防水処理が必須です。長尺・屋外・天井裏など後から手が入りにくい場所でははんだ付けを推奨します。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/"},
+      {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "LEDテープライトの分岐配線方法ガイド", "item": "https://led-proshop.com/articles/led-tape-branch-wiring-guide"}
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --teal:#0d9488;--teal-dark:#0f766e;--teal-light:#ecfdf5;
+      --dark:#0f172a;--mid:#334155;--muted:#64748b;--border:#334155;
+      --bg:#08110f;--bg2:#0d1a18;--white:#ffffff;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:#e2e8f0;line-height:1.7;font-size:15px}
+
+    /* NAV */
+    .g-nav{background:rgba(8,17,15,.95);border-bottom:1px solid rgba(13,148,136,.3);padding:14px 20px;display:flex;align-items:center;gap:20px;backdrop-filter:blur(8px)}
+    .g-nav a{color:#5eead4;text-decoration:none;font-size:13px}
+    .g-nav a:hover{color:#fff}
+    .g-nav .logo{font-weight:900;font-size:16px;color:#2dd4bf;letter-spacing:.04em}
+
+    /* HERO */
+    .hero{background:linear-gradient(135deg,#08110f 0%,#0f766e 50%,#08110f 100%);padding:64px 20px 56px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 50%,rgba(13,148,136,.22),transparent);pointer-events:none}
+    .hero-badge{display:inline-block;background:rgba(13,148,136,.3);border:1px solid rgba(13,148,136,.6);color:#99f6e4;font-size:11px;font-weight:700;padding:4px 14px;border-radius:20px;letter-spacing:.08em;margin-bottom:18px}
+    .hero h1{font-size:clamp(18px,4vw,28px);font-weight:900;line-height:1.35;color:#fff;max-width:760px;margin:0 auto 16px;text-shadow:0 0 30px rgba(13,148,136,.4)}
+    .hero-sub{font-size:14px;color:rgba(153,246,228,.8);max-width:620px;margin:0 auto 28px}
+    .hero-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+    .hero-tag{background:rgba(13,148,136,.25);border:1px solid rgba(13,148,136,.4);color:#99f6e4;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px}
+
+    /* BREADCRUMB */
+    .breadcrumb{background:rgba(8,17,15,.8);border-bottom:1px solid rgba(13,148,136,.2);padding:10px 20px;font-size:12px;color:var(--muted)}
+    .breadcrumb a{color:var(--muted);text-decoration:none}
+    .breadcrumb a:hover{color:#2dd4bf}
+
+    /* MAIN */
+    .container{max-width:860px;margin:0 auto;padding:0 20px}
+
+    /* ALERT */
+    .alert-box{background:rgba(239,68,68,.1);border-left:4px solid #ef4444;border-radius:0 8px 8px 0;padding:16px 20px;margin:32px 0;font-size:14px;color:#e2e8f0}
+    .alert-box strong{color:#fca5a5;display:block;font-size:15px;margin-bottom:6px}
+
+    /* SECTION */
+    section{padding:40px 0;border-bottom:1px solid rgba(13,148,136,.15)}
+    section:last-of-type{border-bottom:none}
+    h2{font-size:20px;font-weight:800;color:#e2e8f0;border-left:4px solid var(--teal);padding-left:14px;margin-bottom:20px}
+    h3{font-size:16px;font-weight:700;color:#2dd4bf;margin:24px 0 10px}
+    p{margin-bottom:14px;color:#94a3b8;line-height:1.8}
+
+    /* PATTERN CARDS */
+    .size-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin:20px 0}
+    .size-card{background:rgba(13,148,136,.12);border:1px solid rgba(13,148,136,.3);border-radius:12px;padding:18px;text-align:center}
+    .size-num{font-size:30px;font-weight:900;color:#2dd4bf;margin-bottom:4px}
+    .size-label{font-size:12px;color:#99f6e4;font-weight:700;margin-bottom:8px}
+    .size-desc{font-size:11px;color:#64748b;line-height:1.6}
+    .size-badge{display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;margin-top:8px}
+    .badge-ok{background:rgba(34,197,94,.2);color:#4ade80;border:1px solid rgba(34,197,94,.3)}
+    .badge-mid{background:rgba(234,179,8,.2);color:#fbbf24;border:1px solid rgba(234,179,8,.3)}
+    .badge-ng{background:rgba(239,68,68,.2);color:#f87171;border:1px solid rgba(239,68,68,.3)}
+
+    /* TABLE */
+    .table-wrap{overflow-x:auto;margin:16px 0}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th{background:rgba(13,148,136,.4);color:#e2e8f0;padding:10px 12px;text-align:left;font-weight:700}
+    td{padding:9px 12px;border-bottom:1px solid rgba(13,148,136,.15);color:#94a3b8}
+    tr:last-child td{border-bottom:none}
+    tr:nth-child(even) td{background:rgba(13,148,136,.05)}
+    .ok{color:#4ade80;font-weight:700}
+    .ng{color:#f87171;font-weight:700}
+    .mid{color:#fbbf24;font-weight:700}
+
+    /* MATERIAL CARDS */
+    .mat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+    .mat-card{border-radius:12px;padding:18px}
+    .mat-abs{background:rgba(13,148,136,.12);border:1px solid rgba(13,148,136,.3)}
+    .mat-metal{background:rgba(100,116,139,.12);border:1px solid rgba(100,116,139,.3)}
+    .mat-card h4{font-size:15px;font-weight:800;color:#e2e8f0;margin-bottom:10px}
+    .mat-card ul{list-style:none}
+    .mat-card ul li{font-size:13px;color:#94a3b8;padding:4px 0 4px 16px;position:relative}
+    .mat-card ul li::before{content:'→';position:absolute;left:0;color:#2dd4bf}
+
+    /* CHECKLIST */
+    .checklist{list-style:none;margin:16px 0}
+    .checklist li{padding:8px 0 8px 28px;border-bottom:1px solid rgba(13,148,136,.15);font-size:14px;position:relative;color:#94a3b8}
+    .checklist li::before{content:'☐';position:absolute;left:0;color:#2dd4bf;font-size:16px}
+    .checklist li:last-child{border-bottom:none}
+
+    /* STEP BOX */
+    .step-list{counter-reset:step;margin:16px 0}
+    .step-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid rgba(13,148,136,.15)}
+    .step-item:last-child{border-bottom:none}
+    .step-num{counter-increment:step;min-width:32px;height:32px;background:var(--teal);color:#fff;font-weight:900;font-size:14px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .step-num::before{content:counter(step)}
+    .step-body{flex:1}
+    .step-title{font-size:14px;font-weight:700;color:#e2e8f0;margin-bottom:4px}
+    .step-desc{font-size:13px;color:#64748b;line-height:1.7}
+
+    /* FAQ */
+    .faq-list{margin:16px 0}
+    .faq-item{background:rgba(13,148,136,.1);border:1px solid rgba(13,148,136,.25);border-radius:10px;margin-bottom:10px;overflow:hidden}
+    .faq-q{font-size:14px;font-weight:700;color:#e2e8f0;padding:14px 16px;display:flex;gap:10px;align-items:flex-start}
+    .faq-q::before{content:'Q';color:#2dd4bf;font-weight:900;font-size:15px;flex-shrink:0}
+    .faq-a{padding:0 16px 14px 40px;font-size:13px;color:#94a3b8;line-height:1.7}
+
+    /* CTA */
+    .cta-section{background:linear-gradient(135deg,#08140f,#0f766e);border:1px solid rgba(13,148,136,.4);border-radius:16px;padding:40px 24px;text-align:center;margin:40px 0}
+    .cta-section h2{color:#fff;border:none;padding:0;font-size:22px;margin-bottom:10px}
+    .cta-section p{color:rgba(153,246,228,.8);font-size:14px;margin-bottom:24px}
+    .cta-btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;padding:14px 36px;border-radius:8px;font-weight:700;font-size:15px;letter-spacing:.05em;transition:opacity .2s;box-shadow:0 0 20px rgba(13,148,136,.4)}
+    .cta-btn:hover{opacity:.85}
+
+    /* FOOTER */
+    footer{background:#040908;color:rgba(255,255,255,.35);text-align:center;padding:24px 20px;font-size:12px;margin-top:48px;border-top:1px solid rgba(13,148,136,.2)}
+    footer a{color:rgba(255,255,255,.35);text-decoration:none}
+
+    @media(max-width:600px){
+      .size-grid{grid-template-columns:1fr 1fr}
+      .mat-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="g-nav">
+  <a href="/" class="logo">LED PRO SHOP</a>
+  <a href="/articles/">コラム一覧</a>
+  <a href="/">商品一覧</a>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="/">HOME</a> &rsaquo; <a href="/articles/">コラム</a> &rsaquo; LEDテープライトの分岐配線方法ガイド
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">LEDテープ 分岐配線 施工ガイド</div>
+  <h1>LEDテープライトの分岐配線方法<br>T字分岐・並列分岐のやり方と電圧降下・電源容量の注意点</h1>
+  <p class="hero-sub">「分岐したら末端が暗い・点かない」を防ぐ、配線パターンの使い分けと容量計算</p>
+  <div class="hero-tags">
+    <span class="hero-tag">T字分岐</span>
+    <span class="hero-tag">並列分岐（スター配線）</span>
+    <span class="hero-tag">電圧降下対策</span>
+    <span class="hero-tag">電源容量 ×1.2</span>
+  </div>
+</div>
+
+<main class="container">
+
+  <!-- WARNING -->
+  <div class="alert-box">
+    <strong>⚠ 「とりあえず分岐」は末端が暗くなる・点かない原因になります</strong>
+    LEDテープを直列でつなぎ続けたり、容量を確認せず分岐すると、電源から遠い末端ほど明るさが落ち（電圧降下）、全テープの合計消費電力が電源容量を超えると全体が暗く・点滅します。分岐は「配線パターンの選定」と「電源容量の計算」をセットで設計してから施工してください。
+  </div>
+
+  <!-- 分岐パターン -->
+  <section>
+    <h2>分岐配線の3つの基本パターン</h2>
+    <p>LEDテープの分岐は大きく3パターンあります。明るさのムラを抑えるなら、電源から各テープへ個別に給電する並列分岐（スター配線）が基本です。</p>
+
+    <div class="size-grid">
+      <div class="size-card">
+        <div class="size-num">直列</div>
+        <div class="size-label">直列延長つなぎ</div>
+        <div class="size-desc">1本のテープを端から端へつなぎ続ける。配線は最短だが末端ほど暗くなりやすい。短尺向き。</div>
+        <div class="size-badge badge-mid">短尺のみ</div>
+      </div>
+      <div class="size-card">
+        <div class="size-num">T字</div>
+        <div class="size-label">T字分岐</div>
+        <div class="size-desc">幹線の途中から枝を出す。コの字・ロの字の間接照明など分岐点が少ない配置に。</div>
+        <div class="size-badge badge-ok">L字・コの字</div>
+      </div>
+      <div class="size-card">
+        <div class="size-num">並列</div>
+        <div class="size-label">並列分岐（スター配線）</div>
+        <div class="size-desc">電源（または分配器）から各テープへ個別給電。電圧降下を分散でき明るさが揃う。長尺・多分岐の基本。</div>
+        <div class="size-badge badge-ok">推奨・多分岐向き</div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>パターン</th><th>明るさの揃いやすさ</th><th>配線量</th><th>向いている現場</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>直列延長つなぎ</td><td class="ng">末端が暗くなりやすい</td><td>少ない</td><td>合計5m以下（12V）/10m以下（24V）の短尺</td></tr>
+          <tr><td>T字分岐</td><td class="mid">分岐数が少なければ良好</td><td>中</td><td>L字・コの字の間接照明、看板の枠</td></tr>
+          <tr><td>並列分岐（スター配線）</td><td class="ok">揃いやすい（推奨）</td><td>多い</td><td>長尺・多分岐・店舗全体の間接照明</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 電圧降下 -->
+  <section>
+    <h2>分岐で末端が暗くなる原因＝電圧降下</h2>
+    <p>分岐後の配線（テープの銅箔＋延長ケーブル）が長いほど抵抗で電圧が下がり、電源から遠い末端ほど暗くなります。電圧降下は <strong>ΔV ＝ 2 × 電流 I × ケーブル抵抗 R × こう長 L</strong> で増減し、同じ消費電力なら電流の大きい12Vの方が24Vより約2倍降下します。長い分岐ほど24V・太線・短経路で設計してください。</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>電圧</th><th>直列でつなげる目安の長さ</th><th>末端電圧降下の傾向</th><th>長尺時の対策</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>DC12V</td><td>合計約5mまで</td><td class="ng">短い距離で降下が大きい</td><td>並列分岐＋中間給電（両端給電）</td></tr>
+          <tr><td>DC24V</td><td>合計約10mまで</td><td class="mid">12Vの約半分</td><td>並列分岐＋電源を近接配置</td></tr>
+          <tr><td>共通</td><td>—</td><td>—</td><td>延長ケーブルを太く（断面積を上げる）・短くする</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>※ 上限長はテープのW/m（消費電力）でも変わります。高密度・高出力テープほど許容長は短くなるため、メーカー仕様の「最大連結長」を必ず確認してください。</p>
+  </section>
+
+  <!-- 電源容量 -->
+  <section>
+    <h2>分岐時の電源容量の計算（合計W × 1.2）</h2>
+    <p>分岐した<strong>全テープの合計消費電力</strong>に対し、電源（PSU/ドライバー）は余裕率を見て1.2倍以上の容量を選びます。容量ギリギリは発熱・寿命低下・電圧不安定の原因です。</p>
+
+    <h3>計算式</h3>
+    <p>必要電源容量（W）＝ テープのW/m × 分岐の合計長（m）× 1.2</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>条件（例）</th><th>合計長</th><th>合計消費電力</th><th>×1.2</th><th>選ぶ電源</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>14.4W/m を 5m×2分岐</td><td>10m</td><td>144W</td><td>173W</td><td class="ok">200W電源</td></tr>
+          <tr><td>14.4W/m を 5m×3分岐</td><td>15m</td><td>216W</td><td>259W</td><td class="ok">300W電源</td></tr>
+          <tr><td>9.6W/m を 3m×4分岐</td><td>12m</td><td>115W</td><td>138W</td><td class="ok">150W電源</td></tr>
+          <tr><td>19.2W/m を 4m×3分岐</td><td>12m</td><td>230W</td><td>276W</td><td class="ok">300W電源</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>合計が1台の電源容量を超える場合は、電源を2台に分けてエリアごとに分散給電します。幹線ケーブルも合計電流に耐える断面積（例：合計10AならAWG16〜14相当以上）を選んでください。</p>
+  </section>
+
+  <!-- コネクタ vs はんだ -->
+  <section>
+    <h2>分岐の接続方法（コネクタ分岐 vs はんだ分岐）</h2>
+    <p>分岐点の接続はワンタッチコネクタとはんだ付けの2通り。現場条件で使い分けます。</p>
+
+    <div class="mat-grid">
+      <div class="mat-card mat-abs">
+        <h4>T字分岐コネクタ（ワンタッチ）</h4>
+        <ul>
+          <li>施工が速い・工具不要で再利用も可能</li>
+          <li>屋内・短期・やり直しの可能性がある現場向き</li>
+          <li>接点が増えるため接触不良・緩みのリスク</li>
+          <li>振動・湿気のある場所では経年で不点灯の恐れ</li>
+          <li>テープ幅・極数に合った専用品を選ぶ</li>
+        </ul>
+      </div>
+      <div class="mat-card mat-metal">
+        <h4>はんだ付け分岐</h4>
+        <ul>
+          <li>接点抵抗が小さく確実・長期安定</li>
+          <li>屋外・長尺・天井裏など手が入りにくい場所向き</li>
+          <li>施工に時間と技術が必要</li>
+          <li>屋外は熱収縮チューブ＋防水処理が必須</li>
+          <li>RGB/RGBWは極性・配列の間違いに注意</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 施工手順 -->
+  <section>
+    <h2>分岐配線の施工手順</h2>
+    <div class="step-list">
+      <div class="step-item">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <div class="step-title">配線図で分岐パターンと給電点を決める</div>
+          <div class="step-desc">テープの総延長・分岐数・電源の設置位置から、直列／T字／並列分岐のどれにするかを先に決めます。長尺・多分岐は並列分岐（スター配線）を基本にします。</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <div class="step-title">合計消費電力から電源容量を計算する</div>
+          <div class="step-desc">W/m×合計長×1.2で電源を選定。1台で足りなければエリア分けして電源を分散します。幹線ケーブルの断面積も合計電流で確認。</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <div class="step-title">カット位置（ハサミマーク）で正確に切る</div>
+          <div class="step-desc">分岐するテープは必ずカットマーク上で切断します。中途半端な位置で切るとその区画が点灯しません。極性（＋/−、RGB配列）も確認。</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <div class="step-title">コネクタまたははんだで分岐接続する</div>
+          <div class="step-desc">屋内短期はコネクタ、屋外長尺ははんだ付け。極性を揃え、はんだは熱収縮チューブで絶縁。接続後は引っ張って外れないか確認します。</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <div class="step-title">通電して末端の明るさ・発熱を確認する</div>
+          <div class="step-desc">固定前に仮通電し、全分岐が点灯するか、末端が暗くなっていないか、電源・接続部が異常発熱していないかを確認してから本固定します。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- チェックリスト -->
+  <section>
+    <h2>分岐配線 施工前チェックリスト</h2>
+    <ul class="checklist">
+      <li>分岐パターン（直列／T字／並列）を配線図で決めた</li>
+      <li>分岐した全テープの合計消費電力を計算した（W/m×合計長）</li>
+      <li>電源容量が合計消費電力の1.2倍以上ある</li>
+      <li>12Vは合計5m・24Vは合計10mの直列目安を超えていない</li>
+      <li>長尺・多分岐は並列分岐（スター配線）で設計した</li>
+      <li>幹線ケーブルが合計電流に耐える断面積である</li>
+      <li>カットはハサミマーク上・極性（＋/−・RGB配列）を確認した</li>
+      <li>屋外・長尺の接続ははんだ付け＋防水処理にした</li>
+    </ul>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <h2>よくある質問（FAQ）</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">LEDテープを分岐すると末端が暗くなるのはなぜ？</div>
+        <div class="faq-a">主な原因は電圧降下と電源容量不足です。分岐後の配線が長いほど抵抗で電圧が下がり、電源から遠い末端ほど暗くなります。12Vは24Vより約2倍降下しやすいため長い分岐ほど顕著です。また全テープの合計消費電力が電源容量を超えると全体が暗く・点滅します。対策は、直列でつなぎ続けず電源から各テープへ個別給電する並列分岐（スター配線）にすること、電源を必要容量の1.2倍以上にすること、配線を太く・短くすることです。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">LEDテープは何本まで分岐できる？</div>
+        <div class="faq-a">本数の固定上限はなく、電源容量と配線径で決まります。基準は「合計消費電力（W/m×合計長）×1.2 ≦ 電源容量」。例えば14.4W/mを5m×3本に分岐すると216W、電源は約260W以上必要で300W電源を選びます。さらに幹線ケーブルが合計電流に耐える太さであることを確認し、容量が足りなければ電源を分けて分散給電します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">T字分岐コネクタとはんだ付けはどちらが良い？</div>
+        <div class="faq-a">屋内・短期・やり直しの可能性がある現場はワンタッチのT字分岐コネクタ、屋外・長期・確実性重視ははんだ付けが向きます。コネクタは速くて再利用できますが接点が増えるぶん接触不良のリスクがあります。はんだ付けは確実ですが時間がかかり、屋外では熱収縮チューブや防水シーリングでの絶縁・防水が必須です。天井裏など後から手が入りにくい場所でははんだ付けを推奨します。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>LEDテープと分岐配線の資材を揃える</h2>
+    <p>LEDテープ本体・分岐コネクタ・延長ケーブル・各容量の電源（PSU）まで、分岐配線に必要な資材を取り揃えています。</p>
+    <a href="/" class="cta-btn">LED PRO SHOPで分岐資材を見る</a>
+  </div>
+
+</main>
+
+<footer>
+  <p><a href="/">LED PRO SHOP</a> &copy; 2026 日本ネオン株式会社</p>
+</footer>
+
+</body>
+</html>
