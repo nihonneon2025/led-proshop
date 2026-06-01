@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープ 中間給電（パワーインジェクション）の方法｜長尺で末端が暗いを解消する配線手順 | LED PRO SHOP</title>
+<meta name="description" content="LEDテープを長尺で施工して末端が暗くなる電圧降下は、中間給電（パワーインジェクション）で解消できます。電源から離れた中間地点に＋とGNDを追加給電することで全長にわたって電圧を均一化。給電間隔の目安・配線手順・GND共通化の注意点・電源容量の計算を施工業者向けに解説します。">
+<meta property="og:title" content="LEDテープ 中間給電（パワーインジェクション）の方法｜長尺で末端が暗いを解消する配線手順 | LED PRO SHOP">
+<meta property="og:description" content="LEDテープの長尺施工で末端が暗くなる電圧降下は中間給電で解消できます。給電間隔の目安・配線手順・GND共通化の注意点・電源容量の計算を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-power-injection-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-power-injection-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープ 中間給電（パワーインジェクション）の方法｜長尺で末端が暗いを解消 | LED PRO SHOP">
+<meta name="twitter:description" content="LEDテープの長尺施工で末端が暗くなる電圧降下は中間給電で解消。給電間隔・配線手順・GND共通化・電源容量計算を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-power-injection-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-power-injection-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #06120c; color: #e2e8f0; line-height: 1.7; font-size: 15px; }
+  a { color: #4ade80; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #0a2e1a 0%, #0f4428 50%, #0a3a24 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #1d5f3a; }
+  .hero-badge { display: inline-block; background: #16a34a; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f1f5f9; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #8fd6ab; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #5aa87a; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f1f5f9; border-left: 4px solid #22c55e; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #86efac; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #c5d8cd; }
+
+  .alert-box { background: #101c14; border: 1px solid #1d7f4d; border-left: 4px solid #16a34a; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #86efac; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #c8fdd9; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #081a10; border: 1px solid #1d5f3a; border-left: 4px solid #22c55e; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #c8fdd9; margin-bottom: 0; font-size: 14px; }
+
+  .warn-box { background: #1c1410; border: 1px solid #7f4d1d; border-left: 4px solid #d97706; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .warn-box .alert-title { font-weight: 700; color: #fcd34d; font-size: 15px; margin-bottom: 8px; }
+  .warn-box p { color: #fde9c8; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #081a10; border-radius: 10px; overflow: hidden; }
+  thead th { background: #1d5f3a; color: #86efac; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #18281e; color: #c5d8cd; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #0c2014; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #0a140e; border: 1px solid #1d7f4d; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #4ade80; margin-top: 0; }
+  .calc-formula { background: #050a07; border: 1px solid #14532d; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #86efac; margin: 12px 0; line-height: 2; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #16a34a; color: #fff; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #c5d8cd; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #18281e; font-size: 14px; color: #c5d8cd; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #1d5f3a; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #081a10; padding: 16px 20px; font-weight: 700; color: #86efac; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #c5d8cd; background: #050f0a; }
+
+  .cta-box { background: linear-gradient(135deg, #1d5f3a 0%, #0c3a24 100%); border: 1px solid #22c55e; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f1f5f9; margin-bottom: 10px; }
+  .cta-box p { color: #8fd6ab; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #16a34a; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #15803d; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #5aa87a; }
+  .breadcrumb a { color: #5aa87a; }
+  .breadcrumb a:hover { color: #86efac; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LEDテープ 中間給電（パワーインジェクション）の方法｜長尺で末端が暗いを解消する配線手順",
+  "description": "LEDテープの長尺施工で末端が暗くなる電圧降下は中間給電（パワーインジェクション）で解消できます。給電間隔の目安・配線手順・GND共通化の注意点・電源容量の計算を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-power-injection-guide-hero.webp",
+  "datePublished": "2026-06-02",
+  "dateModified": "2026-06-02",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-power-injection-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "LEDテープ 中間給電（パワーインジェクション）の方法", "item": "https://led-proshop.com/articles/led-tape-power-injection-guide" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "中間給電（パワーインジェクション）とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "中間給電は、長尺のLEDテープの始端だけでなく途中の地点にも＋とGNDを追加で配線して電気を供給する方法です。電源から離れるほど電圧降下で末端が暗くなりますが、中間に電気を注入することで全長にわたって電圧を均一化できます。1台の電源から太い母線（バス配線）を引き、数mごとにテープへ分岐給電するのが基本構成です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "中間給電は何メートルごとに入れればよいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "目安は12Vテープで2〜3mごと、24Vテープで4〜5mごとです。ただしW/m（出力）が高いほど電流が大きく電圧降下が早いため間隔を詰める必要があります。確実なのは施工後に末端電圧を実測し、定格の±10%以内（24Vなら21.6V以上）に収まる間隔に調整することです。高出力テープでは間隔を半分にして確認します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "中間給電するとき注意することは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "極性を必ず合わせること（＋は＋、GNDはGNDへ。逆接続は点灯不良や故障の原因）、給電に使う母線は電流容量に合った太さ（5A以下0.75mm²以上が目安）にすること、すべての給電点で同じ1台の電源から供給するか、複数電源ならGNDを共通化することが重要です。異なる電源の＋同士を直結するのは避けてください。RGB等の多芯テープは全色の信号線も正しく対応させます。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">施工方法ガイド</div>
+    <h1>LEDテープ 中間給電（パワーインジェクション）の方法<br>長尺で末端が暗いを解消する配線手順</h1>
+    <p class="hero-sub">給電間隔の目安・配線手順・GND共通化の注意点・電源容量の計算を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-06-02 | カテゴリ: LEDテープ施工方法ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-power-injection-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープ 中間給電の方法
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="alert-box">
+      <div class="alert-title">こんな現場で有効：「長尺にしたら末端が暗い」</div>
+      <p>LEDテープを長尺で施工すると、電源側は明るいのに末端へ向かって暗くなる電圧降下が起きます。電源容量を増やしても解決しません。このとき<strong>中間給電（パワーインジェクション）</strong>で途中から電気を注入すれば、全長にわたって電圧を均一化でき、末端まで明るさを保てます。長尺のコーブ照明・看板内照・什器ライン施工の定番テクニックです。</p>
+    </div>
+
+    <h2>中間給電（パワーインジェクション）とは</h2>
+
+    <p>LEDテープは電源から離れるほど銅箔配線の抵抗で電圧が下がり、末端が暗くなります（電圧降下）。中間給電は、テープの<strong>始端だけでなく途中の地点にも＋とGNDを追加で配線</strong>して電気を供給し、降下を打ち消す方法です。</p>
+
+    <p>イメージは「テープに沿って太い母線（バス配線）を1本引き、数mおきにテープへ分岐して電気を注入する」構成です。母線は電源から直接引くため抵抗が小さく、各給電点に定格電圧をほぼそのまま届けられます。</p>
+
+    <div class="info-box">
+      <p><strong>両端給電との違い</strong><br>
+      両端給電はテープの「始端と終端」の2点給電。中間給電は必要に応じて「途中に何点でも」給電を追加できるため、20m級の超長尺や高出力テープでも均一化できます。両端給電は中間給電の最小構成（2点）とも言えます。</p>
+    </div>
+
+    <h2>給電間隔の目安</h2>
+
+    <p>下表は電圧・出力別の中間給電間隔の目安です。テープのW/m・銅箔厚・母線の太さで変わるため、最終的には末端電圧の実測で確定します。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>電圧</th>
+          <th>出力</th>
+          <th>給電間隔の目安</th>
+          <th>20m施工の給電点数</th>
+          <th>備考</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>12V</td>
+          <td>〜5W/m</td>
+          <td class="tag-warn">2〜3mごと</td>
+          <td>7〜10点</td>
+          <td>12Vは降下が早く間隔を詰める</td>
+        </tr>
+        <tr>
+          <td>12V</td>
+          <td>10W/m前後</td>
+          <td class="tag-ng">1.5〜2mごと</td>
+          <td>10〜13点</td>
+          <td>高出力＋低電圧は最も厳しい</td>
+        </tr>
+        <tr>
+          <td>24V</td>
+          <td>〜10W/m</td>
+          <td class="tag-ok">4〜5mごと</td>
+          <td>4〜5点</td>
+          <td>長尺施工の標準・最も効率的</td>
+        </tr>
+        <tr>
+          <td>24V</td>
+          <td>15W/m超</td>
+          <td class="tag-warn">2.5〜3mごと</td>
+          <td>7〜8点</td>
+          <td>高出力は間隔を半分目安に</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>母線（バス配線）の太さの計算</h2>
+
+    <div class="calc-box">
+      <h3>母線に流れる電流と必要断面積</h3>
+      <div class="calc-formula">
+母線の総電流 = テープ全消費電力（W）÷ 電圧（V）
+
+電線の電流容量の目安：
+0.75mm² → 約5A ／ 1.25mm² → 約7A ／ 2.0mm² → 約10A
+      </div>
+      <p style="color:#86efac; font-size:13px; margin-top:12px; margin-bottom:0">
+        例：24V・10W/m × 20m = 200W → 母線の総電流 200W÷24V ≒ 8.3A<br>
+        → 8.3Aを流すには 1.25mm²（約7A）では不足 → 2.0mm²（約10A）を選定<br>
+        ※ 母線は電源直近ほど全電流が流れるため、最も太い区間に合わせて選ぶ
+      </p>
+    </div>
+
+    <div class="warn-box">
+      <div class="alert-title">⚠ 母線の細さは発熱・電圧降下の二次トラブルの元</div>
+      <p>中間給電で末端を均一化しても、母線（電源からの送り線）が細いと母線自体で電圧降下・発熱が起きます。母線は「テープ全体の電流」が流れる前提で、余裕を持った太さ（電流容量の70%以下で運用）を選んでください。</p>
+    </div>
+
+    <h2>中間給電の配線手順</h2>
+
+    <ul class="step-list">
+      <li><span>テープ全体の<strong>総消費電力と総電流</strong>を計算し、電源容量（出力の80%以下で使う）と母線の太さを決める。</span></li>
+      <li><span>テープに沿って<strong>＋とGNDの母線2本</strong>を電源から引く。母線はテープ全長をカバーする1本のラインとして配線する。</span></li>
+      <li><span>給電間隔（24V・10W/mなら4〜5mごと）の各地点で、テープの＋パッドへ母線の＋、GNDパッドへ母線のGNDを分岐接続する。<strong>極性は必ず一致</strong>させる。</span></li>
+      <li><span>接続はテープのカット位置に露出した銅パッドへ、はんだ付けまたは差込コネクタで行う。RGB等の多芯は全極を対応させる。</span></li>
+      <li><span>全点接続後に点灯し、<strong>テスターで末端電圧を実測</strong>。定格の±10%以内（24Vなら21.6V以上）に入っているか確認する。</span></li>
+      <li><span>末端が許容外なら給電間隔を詰める（給電点を追加）か、母線を太くして再確認する。始端・中間・末端の輝度が目視で均一になればOK。</span></li>
+    </ul>
+
+    <h2>中間給電 vs その他の電圧降下対策</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>対策</th>
+          <th>適した場面</th>
+          <th>メリット</th>
+          <th>注意点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>24V化</td>
+          <td>新規施工</td>
+          <td>根本的に降下を減らせる</td>
+          <td>既設12Vからの変更は電源も交換</td>
+        </tr>
+        <tr>
+          <td>両端給電</td>
+          <td>10m前後</td>
+          <td>配線がシンプル（2点）</td>
+          <td>超長尺では中央が不足することも</td>
+        </tr>
+        <tr>
+          <td>中間給電</td>
+          <td>長尺・高出力</td>
+          <td>何点でも追加でき均一化に強い</td>
+          <td>母線の太さ・極性管理が必要</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>中間給電チェックリスト（施工前・施工後）</h2>
+
+    <ul class="checklist">
+      <li>テープ全体の総消費電力・総電流を計算し、電源容量を出力の80%以下に収めた</li>
+      <li>母線の太さを総電流に対して電流容量70%以下で選定した</li>
+      <li>給電間隔を電圧・出力に応じて決めた（24V・10W/mで4〜5m目安）</li>
+      <li>すべての給電点で極性（＋・GND）を一致させた</li>
+      <li>同一電源から供給、または複数電源ならGNDを共通化した</li>
+      <li>施工後に末端電圧を実測し、定格の±10%以内に収まっている</li>
+      <li>始端・中間・末端の輝度を目視で比較して均一であることを確認した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 中間給電（パワーインジェクション）とは何ですか？</div>
+        <div class="faq-a">中間給電は、長尺のLEDテープの始端だけでなく途中の地点にも＋とGNDを追加で配線して電気を供給する方法です。電源から離れるほど電圧降下で末端が暗くなりますが、中間に電気を注入することで全長にわたって電圧を均一化できます。1台の電源から太い母線（バス配線）を引き、数mごとにテープへ分岐給電するのが基本構成です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 中間給電は何メートルごとに入れればよいですか？</div>
+        <div class="faq-a">目安は12Vテープで2〜3mごと、24Vテープで4〜5mごとです。ただしW/m（出力）が高いほど電流が大きく電圧降下が早いため間隔を詰める必要があります。確実なのは施工後に末端電圧を実測し、定格の±10%以内（24Vなら21.6V以上）に収まる間隔に調整することです。高出力テープでは間隔を半分にして確認します。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 中間給電するとき注意することは？</div>
+        <div class="faq-a">極性を必ず合わせること（＋は＋、GNDはGNDへ。逆接続は点灯不良や故障の原因）、給電に使う母線は電流容量に合った太さ（5A以下0.75mm²以上が目安）にすること、すべての給電点で同じ1台の電源から供給するか、複数電源ならGNDを共通化することが重要です。異なる電源の＋同士を直結するのは避けてください。RGB等の多芯テープは全色の信号線も正しく対応させます。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>長尺施工向けLEDテープ・電源を探す</h3>
+      <p>24V業務用テープ・大容量電源・配線コネクタ・アルミフレームを取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RGB LEDテープの色が正しく出ない原因と対処法｜赤しか光らない・色が逆・末端で色ずれを診断 | LED PRO SHOP</title>
+<meta name="description" content="RGB LEDテープで「赤しか光らない」「指定色と違う」「リモコンの色と実際の色が逆」「末端だけ色がずれる」などのトラブルは、配線の極性・コネクタの向き・コントローラの規格不一致・電圧降下が主な原因です。症状別の原因切り分けフローと現場での確認手順を施工業者向けに解説します。">
+<meta property="og:title" content="RGB LEDテープの色が正しく出ない原因と対処法｜赤しか光らない・色が逆・末端で色ずれを診断 | LED PRO SHOP">
+<meta property="og:description" content="RGB LEDテープで色が正しく出ないトラブルは配線の極性・コネクタの向き・コントローラ規格・電圧降下が主因。症状別の切り分けフローと確認手順を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-rgb-color-troubleshooting-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-rgb-color-troubleshooting-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RGB LEDテープの色が正しく出ない原因と対処法｜症状別に診断 | LED PRO SHOP">
+<meta name="twitter:description" content="RGB LEDテープで色が正しく出ないトラブルの原因切り分けと現場での確認手順を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-rgb-color-troubleshooting-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-rgb-color-troubleshooting-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #0d0716; color: #e2e8f0; line-height: 1.7; font-size: 15px; }
+  a { color: #c084fc; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #2a0a3e 0%, #3a0f44 50%, #1a0a3a 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #4a2070; }
+  .hero-badge { display: inline-block; background: #9333ea; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f1f5f9; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #c4a8e0; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #9a7ac0; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f1f5f9; border-left: 4px solid #a855f7; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #d8b4fe; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #cfc5da; }
+
+  .alert-box { background: #1c1010; border: 1px solid #7f1d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #14092a; border: 1px solid #4a2070; border-left: 4px solid #a855f7; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #e0cffd; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #14092a; border-radius: 10px; overflow: hidden; }
+  thead th { background: #4a2070; color: #d8b4fe; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #241a32; color: #cfc5da; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #180c30; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .diag-box { background: #100a1e; border: 1px solid #6b21a8; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .diag-box h3 { color: #d8b4fe; margin-top: 0; }
+  .diag-flow { background: #0a0614; border: 1px solid #4a2070; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 13px; color: #d8b4fe; margin: 12px 0; line-height: 1.9; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #9333ea; color: #fff; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #cfc5da; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #241a32; font-size: 14px; color: #cfc5da; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #4a2070; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #14092a; padding: 16px 20px; font-weight: 700; color: #d8b4fe; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #cfc5da; background: #0a0614; }
+
+  .cta-box { background: linear-gradient(135deg, #4a2070 0%, #2a0f44 100%); border: 1px solid #a855f7; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f1f5f9; margin-bottom: 10px; }
+  .cta-box p { color: #c4a8e0; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #9333ea; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #7e22ce; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #9a7ac0; }
+  .breadcrumb a { color: #9a7ac0; }
+  .breadcrumb a:hover { color: #d8b4fe; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "RGB LEDテープの色が正しく出ない原因と対処法｜赤しか光らない・色が逆・末端で色ずれを診断",
+  "description": "RGB LEDテープで色が正しく出ないトラブルは配線の極性・コネクタの向き・コントローラの規格不一致・電圧降下が主な原因です。症状別の原因切り分けフローと現場での確認手順を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-rgb-color-troubleshooting-guide-hero.webp",
+  "datePublished": "2026-06-02",
+  "dateModified": "2026-06-02",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-rgb-color-troubleshooting-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "RGB LEDテープの色が正しく出ない原因と対処法", "item": "https://led-proshop.com/articles/led-tape-rgb-color-troubleshooting-guide" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "RGBテープで赤（または1色）しか光りません。なぜですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "多くは配線・コネクタの接触不良か極の対応ズレです。RGBテープは＋（共通）・R・G・Bの4極（RGBWは5極）で、どれか1極が未接続だとその色が出ません。1色しか光らない場合はR・G・Bのうち2極が接続不良の可能性が高いです。コネクタを差し直し、テープとコントローラのR・G・B・＋の刻印が一致しているか確認してください。差込コネクタは銅パッドへの噛み込み不良が多発します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "リモコンで指定した色と実際の色が違う・逆になります。どうすれば？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "テープとコントローラのR・G・Bの配線対応が入れ替わっているのが原因です。例えばRとBが逆だと、赤を指定すると青が点く症状になります。コネクタや配線を一度外し、テープ側の刻印（R/G/B/＋）とコントローラ側の刻印を1対1で正しく合わせ直してください。延長や中継コネクタを挟んでいる場合、その箇所で入れ替わっていることもあります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "RGBテープの末端だけ色がずれる・白がピンクや黄色っぽくなります。なぜですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "電圧降下が原因です。RGBは赤・緑・青のLEDの順電圧が異なり、青と緑は赤より高い電圧を必要とします。末端で電圧が下がると順電圧の高い青・緑から先に暗くなり、相対的に赤が強く残るため白がピンク・赤寄りに見えます。対策は24V化・両端給電・中間給電で末端電圧を定格の±10%以内に保つことです。長尺RGB施工では特に起きやすい症状です。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">トラブル対処ガイド</div>
+    <h1>RGB LEDテープの色が正しく出ない原因と対処法<br>赤しか光らない・色が逆・末端で色ずれを診断</h1>
+    <p class="hero-sub">症状別の原因切り分けフローと現場での確認手順を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-06-02 | カテゴリ: LEDテープトラブル対処ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-rgb-color-troubleshooting-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; RGBテープの色が正しく出ない原因と対処
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="alert-box">
+      <div class="alert-title">RGB施工のよくあるトラブル</div>
+      <p>「赤しか光らない」「リモコンで青を選ぶと緑が点く」「末端だけ白がピンクになる」——RGB LEDテープの色トラブルは、ほぼすべて<strong>配線の極性ズレ・接触不良・コントローラ規格の不一致・電圧降下</strong>のいずれかが原因です。原因ごとに症状が決まっているため、症状から逆引きすれば短時間で切り分けられます。</p>
+    </div>
+
+    <h2>まず仕組みを理解する：RGBテープの4極</h2>
+
+    <p>RGBテープは<strong>＋（共通アノード）・R・G・B の4極</strong>で構成されます（RGBWは＋・R・G・B・Wの5極）。コントローラが各色のマイナス側をPWMでON/OFFすることで色を混ぜます。つまり、どれか1極でも未接続・誤接続だと、その色が出ない／別の色になります。</p>
+
+    <div class="info-box">
+      <p><strong>色トラブルの4大原因</strong><br>
+      ① 極の対応ズレ（R・G・Bの入れ替わり）→ 指定色と違う色<br>
+      ② 接触不良・断線 → 特定の色が出ない<br>
+      ③ コントローラ／テープの規格不一致（共通アノード/カソード違い・電圧違い）→ 全く点かない／不安定<br>
+      ④ 電圧降下 → 末端だけ色ずれ（白がピンク・赤寄り）</p>
+    </div>
+
+    <h2>症状別 原因切り分け表</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>症状</th>
+          <th>最有力の原因</th>
+          <th>まず確認すること</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1色しか光らない</td>
+          <td class="tag-ng">2極の接触不良・断線</td>
+          <td>コネクタの差し直し・各極の導通確認</td>
+        </tr>
+        <tr>
+          <td>指定色と実際の色が違う／逆</td>
+          <td class="tag-warn">R・G・Bの対応ズレ</td>
+          <td>テープとコントローラのR/G/B刻印の一致</td>
+        </tr>
+        <tr>
+          <td>全く点灯しない</td>
+          <td class="tag-ng">＋の未接続・規格不一致・電源</td>
+          <td>＋（共通）の接続・電圧・コントローラ対応</td>
+        </tr>
+        <tr>
+          <td>末端だけ色がずれる（白がピンク等）</td>
+          <td class="tag-warn">電圧降下</td>
+          <td>末端電圧の実測・給電方法</td>
+        </tr>
+        <tr>
+          <td>点滅・ちらつき・反応が不安定</td>
+          <td class="tag-warn">電源容量不足・接触不良</td>
+          <td>電源容量・コネクタの噛み込み</td>
+        </tr>
+        <tr>
+          <td>色の変化が指定と微妙にずれる</td>
+          <td class="tag-warn">延長部での極入れ替わり</td>
+          <td>中継・延長コネクタの結線順</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>切り分けフロー（現場で順に確認）</h2>
+
+    <div class="diag-box">
+      <h3>RGB色トラブル 診断フロー</h3>
+      <div class="diag-flow">
+[START] 単色（赤など）を指定して点灯<br>
+  ↓<br>
+全く点かない？ → ＋（共通）接続・電圧・コントローラ規格を確認<br>
+  ↓ 点く<br>
+指定色と違う色が出る？ → R/G/Bの刻印対応を合わせ直す<br>
+  ↓ 正しい色<br>
+1色だけ出ない？ → その色の極の導通・コネクタを確認<br>
+  ↓ 全色OK<br>
+末端だけ色がずれる？ → 末端電圧を実測・給電を強化<br>
+  ↓ 均一<br>
+[正常]
+      </div>
+    </div>
+
+    <h2>原因別の対処手順</h2>
+
+    <h3>① 1色しか光らない／特定の色が出ない</h3>
+    <ul class="step-list">
+      <li><span>コネクタを一度抜き、銅パッドにしっかり噛んでいるか確認して差し直す。差込コネクタは噛み込み不良が最多原因。</span></li>
+      <li><span>テスターの導通モードで＋・R・G・B各極の導通を確認。導通しない極が出ない色に対応している。</span></li>
+      <li><span>はんだ付け部はクラック（割れ）や付け忘れを確認。再はんだで復旧することが多い。</span></li>
+    </ul>
+
+    <h3>② 指定色と違う・色が逆になる</h3>
+    <ul class="step-list">
+      <li><span>テープ側の刻印（R/G/B/＋）とコントローラ側の刻印を1対1で照合する。RとBの入れ替わりが定番。</span></li>
+      <li><span>延長・中継コネクタを挟んでいる場合、その結線順で入れ替わっていないか確認する。</span></li>
+      <li><span>正しく繋ぎ直し、赤・緑・青を順に単色点灯させて刻印通りに点くか検証する。</span></li>
+    </ul>
+
+    <h3>③ 末端だけ色がずれる（白がピンク・赤寄り）</h3>
+    <ul class="step-list">
+      <li><span>白（フルカラー）を点灯した状態で末端電圧をテスターで実測。定格の±10%（24Vなら21.6V以上）を割っていれば電圧降下。</span></li>
+      <li><span>24V化・両端給電・中間給電のいずれかで末端電圧を回復させる。RGBは電圧降下で色バランスが崩れやすいため長尺は要注意。</span></li>
+      <li><span>給電強化後、白を点灯して末端まで色温度が揃っているか目視で確認する。</span></li>
+    </ul>
+
+    <div class="info-box">
+      <p><strong>なぜ電圧降下で「白がピンク」になるのか</strong><br>
+      青・緑LEDは赤LEDより順電圧が高いため、末端で電圧が下がると青・緑が先に暗くなります。結果、相対的に赤が残って白がピンク・赤寄りに見えます。色ずれが末端に向かって進行していれば電圧降下が原因とほぼ断定できます。</p>
+    </div>
+
+    <h2>施工後トラブルを防ぐチェックリスト</h2>
+
+    <ul class="checklist">
+      <li>テープとコントローラのR/G/B/＋の刻印を結線前に照合した</li>
+      <li>コントローラがテープの電圧（12V/24V）・共通アノード方式に対応しているか確認した</li>
+      <li>差込コネクタは銅パッドへの噛み込みを引っ張って確認した（抜けない＝OK）</li>
+      <li>電源容量がRGB全点灯時の消費電力の80%以下に収まっている</li>
+      <li>長尺施工では白（フルカラー）点灯で末端の色ずれがないか確認した</li>
+      <li>延長・中継部の結線順をテープ側と同一にした</li>
+      <li>引き渡し前に赤・緑・青の単色とフルカラーで全パターン点灯確認した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. RGBテープで赤（または1色）しか光りません。なぜですか？</div>
+        <div class="faq-a">多くは配線・コネクタの接触不良か極の対応ズレです。RGBテープは＋（共通）・R・G・Bの4極（RGBWは5極）で、どれか1極が未接続だとその色が出ません。1色しか光らない場合はR・G・Bのうち2極が接続不良の可能性が高いです。コネクタを差し直し、テープとコントローラのR・G・B・＋の刻印が一致しているか確認してください。差込コネクタは銅パッドへの噛み込み不良が多発します。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. リモコンで指定した色と実際の色が違う・逆になります。どうすれば？</div>
+        <div class="faq-a">テープとコントローラのR・G・Bの配線対応が入れ替わっているのが原因です。例えばRとBが逆だと、赤を指定すると青が点く症状になります。コネクタや配線を一度外し、テープ側の刻印（R/G/B/＋）とコントローラ側の刻印を1対1で正しく合わせ直してください。延長や中継コネクタを挟んでいる場合、その箇所で入れ替わっていることもあります。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. RGBテープの末端だけ色がずれる・白がピンクや黄色っぽくなります。なぜですか？</div>
+        <div class="faq-a">電圧降下が原因です。RGBは赤・緑・青のLEDの順電圧が異なり、青と緑は赤より高い電圧を必要とします。末端で電圧が下がると順電圧の高い青・緑から先に暗くなり、相対的に赤が強く残るため白がピンク・赤寄りに見えます。対策は24V化・両端給電・中間給電で末端電圧を定格の±10%以内に保つことです。長尺RGB施工では特に起きやすい症状です。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>RGB／RGBW LEDテープ・コントローラを探す</h3>
+      <p>RGBテープ・対応コントローラ・コネクタ・電源を取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

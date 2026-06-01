@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープ 銅箔厚（1oz/2oz/3oz）の違いと選び方｜FPC基板の放熱・電圧降下・長尺施工の判断基準 | LED PRO SHOP</title>
+<meta name="description" content="LEDテープのFPC基板の銅箔厚（1oz=35μm/2oz=70μm/3oz=105μm）は放熱性・電圧降下・寿命を左右する重要スペックです。銅箔が厚いほど配線抵抗が下がり末端の輝度低下を抑え、放熱性が上がって寿命が延びます。1oz/2oz/3ozの見分け方・業種別の選び方・長尺施工での判断基準を施工業者向けに解説。">
+<meta property="og:title" content="LEDテープ 銅箔厚（1oz/2oz/3oz）の違いと選び方｜FPC基板の放熱・電圧降下・長尺施工の判断基準 | LED PRO SHOP">
+<meta property="og:description" content="LEDテープのFPC基板の銅箔厚（1oz/2oz/3oz）は放熱性・電圧降下・寿命を左右します。厚いほど抵抗が下がり末端の輝度低下を抑え放熱性が向上。見分け方と業種別の選び方を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-pcb-copper-weight-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-pcb-copper-weight-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープ 銅箔厚（1oz/2oz/3oz）の違いと選び方｜FPC基板の放熱・電圧降下 | LED PRO SHOP">
+<meta name="twitter:description" content="LEDテープのFPC基板の銅箔厚は放熱性・電圧降下・寿命を左右します。1oz/2oz/3ozの見分け方と業種別の選び方を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-pcb-copper-weight-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-pcb-copper-weight-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #0f0a07; color: #e2e8f0; line-height: 1.7; font-size: 15px; }
+  a { color: #fbbf24; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #2e1a0a 0%, #44280f 50%, #3a1f0a 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #5f4020; }
+  .hero-badge { display: inline-block; background: #d97706; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f1f5f9; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #d6b88f; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #a8845a; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f1f5f9; border-left: 4px solid #f59e0b; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #fcd34d; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #d8ccbd; }
+
+  .alert-box { background: #1c1410; border: 1px solid #7f4d1d; border-left: 4px solid #d97706; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fcd34d; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fde9c8; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #1a1208; border: 1px solid #5f4020; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #fde9c8; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #1a1208; border-radius: 10px; overflow: hidden; }
+  thead th { background: #5f4020; color: #fcd34d; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #2e2418; color: #d8ccbd; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #1e160c; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #14110a; border: 1px solid #78581f; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #fbbf24; margin-top: 0; }
+  .calc-formula { background: #0a0805; border: 1px solid #5f4020; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #fcd34d; margin: 12px 0; line-height: 2; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .spec-card { background: #1a1208; border: 1px solid #5f4020; border-radius: 10px; padding: 20px; }
+  .spec-card .spec-num { font-size: 24px; font-weight: 900; color: #f59e0b; line-height: 1; margin-bottom: 8px; }
+  .spec-card h4 { font-size: 14px; font-weight: 700; color: #fcd34d; margin-bottom: 10px; }
+  .spec-card p { font-size: 13px; color: #b89c7a; margin-bottom: 0; }
+  .spec-card .spec-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 3px; margin-bottom: 8px; }
+  .badge-easy { background: #14532d; color: #4ade80; }
+  .badge-mid { background: #713f12; color: #fbbf24; }
+  .badge-pro { background: #4c1d95; color: #c4b5fd; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #2e2418; font-size: 14px; color: #d8ccbd; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #5f4020; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #1a1208; padding: 16px 20px; font-weight: 700; color: #fcd34d; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #d8ccbd; background: #100c07; }
+
+  .cta-box { background: linear-gradient(135deg, #5f4020 0%, #3a2510 100%); border: 1px solid #f59e0b; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f1f5f9; margin-bottom: 10px; }
+  .cta-box p { color: #d6b88f; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #d97706; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #b45309; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #a8845a; }
+  .breadcrumb a { color: #a8845a; }
+  .breadcrumb a:hover { color: #fcd34d; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LEDテープ 銅箔厚（1oz/2oz/3oz）の違いと選び方｜FPC基板の放熱・電圧降下・長尺施工の判断基準",
+  "description": "LEDテープのFPC基板の銅箔厚（1oz/2oz/3oz）は放熱性・電圧降下・寿命を左右します。1oz/2oz/3ozの見分け方・業種別の選び方・長尺施工での判断基準を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-pcb-copper-weight-guide-hero.webp",
+  "datePublished": "2026-06-02",
+  "dateModified": "2026-06-02",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-pcb-copper-weight-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "LEDテープ 銅箔厚（1oz/2oz/3oz）の選び方", "item": "https://led-proshop.com/articles/led-tape-pcb-copper-weight-guide" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "LEDテープの銅箔厚は何で見分けられますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "外観だけで正確に見分けるのは困難ですが、メーカー仕様書の「Copper Weight」「銅箔厚」欄に1oz・2oz・3oz（または35μm・70μm・105μm）として明記されています。仕様書がない場合、同じ消費電力・同じ長さで末端の輝度低下が小さいテープほど銅箔が厚い傾向です。長尺施工や高出力テープでは仕様書で2oz以上を確認することを推奨します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "銅箔が厚いと施工にどんなメリットがありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "銅箔が厚いほど配線抵抗が下がるため、電圧降下が小さくなり末端の輝度低下を抑えられます。1ozから2ozにすると配線抵抗が約半分になり、同じ長さでも均一な明るさを保ちやすくなります。また放熱性が向上してLEDのジャンクション温度が下がり、寿命が延びる効果もあります。長尺・高出力・連続点灯の現場ほど効果が大きくなります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "薄い銅箔のテープを長尺で使うとどうなりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1ozの薄い銅箔テープを高出力・長尺で使うと、配線抵抗が大きいため末端が暗くなる電圧降下が顕著になり、銅箔自体も発熱して劣化が早まります。発熱はLEDの寿命低下や、ひどい場合は基板の変色・剥離につながります。5m超えや10W/m以上の高出力タイプでは2oz以上を選ぶか、両端給電・中間給電で補うのが安全です。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">仕様選定ガイド</div>
+    <h1>LEDテープ 銅箔厚の違いと選び方<br>1oz / 2oz / 3oz が放熱・電圧降下・寿命を左右する</h1>
+    <p class="hero-sub">FPC基板の銅箔厚（35μm/70μm/105μm）の見分け方・長尺施工での判断基準・業種別の選び方を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-06-02 | カテゴリ: LEDテープ仕様選定ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-pcb-copper-weight-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープ 銅箔厚の選び方
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="alert-box">
+      <div class="alert-title">見落とされがちなスペック：「銅箔厚（Copper Weight）」</div>
+      <p>LEDテープを選ぶときチップ種類・W/m・色温度は確認しても、<strong>FPC基板の銅箔厚</strong>を確認する施工業者は多くありません。しかし銅箔厚は電圧降下・放熱・寿命を直接左右する重要スペックです。同じ24V・同じW/mのテープでも、銅箔が薄ければ末端が暗くなり発熱で劣化が早まります。長尺・高出力の現場ほど差が出ます。</p>
+    </div>
+
+    <h2>銅箔厚（oz）とは何か</h2>
+
+    <p>LEDテープのFPC（フレキシブル基板）には電気を流す銅箔の配線があります。この銅箔の厚さを「oz（オンス）」という単位で表します。1ozは「1平方フィートあたり1オンスの銅を広げた厚さ」を意味し、約35μm（マイクロメートル）に相当します。</p>
+
+    <p>銅箔が厚いほど配線の断面積が大きくなり、<strong>電気抵抗が下がります</strong>（抵抗は断面積に反比例）。抵抗が下がると電圧降下が小さくなり、銅箔自体の発熱も減るため、放熱性と寿命が向上します。</p>
+
+    <div class="info-box">
+      <p><strong>換算の目安</strong><br>
+      1oz = 約35μm ／ 2oz = 約70μm ／ 3oz = 約105μm。<br>
+      2ozは1ozの2倍の厚さなので配線抵抗は約1/2、3ozなら約1/3になります（同じ配線パターンの場合）。</p>
+    </div>
+
+    <h2>1oz / 2oz / 3oz スペック比較表</h2>
+
+    <p>銅箔厚による特性の違いを、施工現場で効いてくる項目で整理しました。テープのW/m・配線パターン・幅によって実値は変わるため、仕様書の確認を前提とした傾向比較です。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>銅箔厚</th>
+          <th>厚さ</th>
+          <th>配線抵抗（相対）</th>
+          <th>電圧降下耐性</th>
+          <th>放熱性</th>
+          <th>適した用途</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1oz</td>
+          <td>約35μm</td>
+          <td>基準（×1.0）</td>
+          <td class="tag-warn">標準</td>
+          <td class="tag-warn">標準</td>
+          <td>短尺・低出力の間接照明（〜5W/m・〜3m）</td>
+        </tr>
+        <tr>
+          <td>2oz</td>
+          <td>約70μm</td>
+          <td class="tag-ok">約1/2</td>
+          <td class="tag-ok">高い</td>
+          <td class="tag-ok">高い</td>
+          <td>長尺・中〜高出力の業務用（5〜15W/m）</td>
+        </tr>
+        <tr>
+          <td>3oz</td>
+          <td>約105μm</td>
+          <td class="tag-ok">約1/3</td>
+          <td class="tag-ok">非常に高い</td>
+          <td class="tag-ok">非常に高い</td>
+          <td>高出力・長尺・連続点灯（15W/m超・看板内照）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>銅箔厚が電圧降下に効く仕組み（計算で確認）</h2>
+
+    <div class="calc-box">
+      <h3>配線抵抗と電圧降下の関係</h3>
+      <div class="calc-formula">
+配線抵抗 R（Ω）= 抵抗率 × 配線長 ÷ 断面積
+
+→ 断面積は銅箔厚に比例 → 厚さ2倍で抵抗1/2
+
+電圧降下 V = 電流 I × 配線抵抗 R
+      </div>
+      <p style="color:#fcd34d; font-size:13px; margin-top:12px; margin-bottom:0">
+        例：24V・10W/m × 5m = 50W → 電流 50W÷24V ≒ 2.1A<br>
+        1oz基板の往復抵抗を仮に2.0Ωとすると → 電圧降下 2.1A × 2.0Ω = 4.2V（末端19.8V）<br>
+        同条件を2oz化すると往復抵抗 約1.0Ω → 電圧降下 2.1A × 1.0Ω = 2.1V（末端21.9V）<br>
+        → 銅箔を厚くするだけで末端電圧が約2V改善＝末端の暗さが大幅に軽減
+      </p>
+    </div>
+
+    <p>※ 上記は配線抵抗を単純化した試算です。実際の抵抗はテープの配線パターン・幅・ハーネス断面積で変わるため、長尺施工では仕様書の値または実測で確認してください。</p>
+
+    <h2>銅箔厚はこう選ぶ（用途別の判断基準）</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="spec-badge badge-easy">短尺・低出力</div>
+        <div class="spec-num">1oz</div>
+        <h4>間接照明・棚下・短尺装飾</h4>
+        <p>3m以内・5W/m以下の低出力間接照明なら1ozで十分。コストが抑えられ、電圧降下も問題になりにくい。住宅・小規模店舗の装飾照明向け。</p>
+      </div>
+      <div class="spec-card">
+        <div class="spec-badge badge-mid">標準業務用</div>
+        <div class="spec-num">2oz</div>
+        <h4>長尺の間接照明・什器・コーブ照明</h4>
+        <p>5〜15m級の長尺施工や5〜15W/mの中〜高出力には2ozが標準。電圧降下と発熱の両面で余裕が生まれ、業務用施工の安心ラインになる。</p>
+      </div>
+      <div class="spec-card">
+        <div class="spec-badge badge-pro">高出力・連続点灯</div>
+        <div class="spec-num">3oz</div>
+        <h4>看板内照・高天井・24時間点灯</h4>
+        <p>15W/m超の高出力や常時点灯の看板内照・施設照明には3oz。発熱を抑えてLED寿命を確保し、長尺でも輝度の均一性を保ちやすい。</p>
+      </div>
+    </div>
+
+    <h2>放熱と寿命の関係</h2>
+
+    <p>LEDの寿命はジャンクション温度（チップ内部の温度）に大きく依存します。一般にチップ温度が10℃上がると寿命が約半分になると言われ、温度管理は長寿命施工の要です。</p>
+
+    <p>銅箔は配線であると同時に<strong>ヒートシンク（放熱経路）</strong>としても働きます。厚い銅箔ほど熱を横方向に逃がす能力が高く、LED直下の温度上昇を抑えます。アルミフレームに取り付ける施工では、銅箔厚＋アルミ放熱の組み合わせで寿命がさらに安定します。</p>
+
+    <div class="info-box">
+      <p><strong>現場での判断のコツ</strong><br>
+      点灯後10〜30分でテープ表面を触り、「熱くて長く触れない」レベルなら放熱不足のサイン。アルミフレーム追加・銅箔の厚いテープへの変更・W/mを下げる、のいずれかで対策します。</p>
+    </div>
+
+    <h2>銅箔厚の確認チェックリスト（発注前）</h2>
+
+    <ul class="checklist">
+      <li>メーカー仕様書の「Copper Weight / 銅箔厚」欄を確認した（1oz/2oz/3ozまたはμm表記）</li>
+      <li>施工長が5m超え、またはW/mが10W/m以上なら2oz以上を選んでいる</li>
+      <li>看板内照・24時間連続点灯など高負荷用途では3ozを検討した</li>
+      <li>長尺施工では銅箔厚に加えて電圧降下（12V/24V・両端給電）も併せて確認した</li>
+      <li>高出力テープはアルミフレームへの取り付けを前提に放熱経路を確保した</li>
+      <li>仕様書に銅箔厚の記載がない場合、同等品の実測または高出力時の末端輝度で傾向を確認した</li>
+    </ul>
+
+    <h2>まとめ：銅箔厚は「長尺・高出力ほど効く」スペック</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>現場条件</th>
+          <th>推奨銅箔厚</th>
+          <th>理由</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>3m以内・5W/m以下</td>
+          <td>1oz</td>
+          <td>電圧降下・発熱とも軽微でコスト優先でよい</td>
+        </tr>
+        <tr>
+          <td>5〜15m・5〜15W/m</td>
+          <td>2oz</td>
+          <td>抵抗1/2で末端輝度を確保・放熱に余裕</td>
+        </tr>
+        <tr>
+          <td>15W/m超・看板内照・常時点灯</td>
+          <td>3oz</td>
+          <td>発熱抑制で寿命確保・長尺の均一性</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. LEDテープの銅箔厚は何で見分けられますか？</div>
+        <div class="faq-a">外観だけで正確に見分けるのは困難ですが、メーカー仕様書の「Copper Weight」「銅箔厚」欄に1oz・2oz・3oz（または35μm・70μm・105μm）として明記されています。仕様書がない場合、同じ消費電力・同じ長さで末端の輝度低下が小さいテープほど銅箔が厚い傾向です。長尺施工や高出力テープでは仕様書で2oz以上を確認することを推奨します。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 銅箔が厚いと施工にどんなメリットがありますか？</div>
+        <div class="faq-a">銅箔が厚いほど配線抵抗が下がるため、電圧降下が小さくなり末端の輝度低下を抑えられます。1ozから2ozにすると配線抵抗が約半分になり、同じ長さでも均一な明るさを保ちやすくなります。また放熱性が向上してLEDのジャンクション温度が下がり、寿命が延びる効果もあります。長尺・高出力・連続点灯の現場ほど効果が大きくなります。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 薄い銅箔のテープを長尺で使うとどうなりますか？</div>
+        <div class="faq-a">1ozの薄い銅箔テープを高出力・長尺で使うと、配線抵抗が大きいため末端が暗くなる電圧降下が顕著になり、銅箔自体も発熱して劣化が早まります。発熱はLEDの寿命低下や、ひどい場合は基板の変色・剥離につながります。5m超えや10W/m以上の高出力タイプでは2oz以上を選ぶか、両端給電・中間給電で補うのが安全です。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>放熱・長尺に強いLEDテープを探す</h3>
+      <p>業務用2oz基板テープ・COBテープ・アルミフレームセットを取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
