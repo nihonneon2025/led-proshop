@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金属面・屋外看板へのLEDテープ取付｜絶縁・漏電・アース処理の手順を施工業者向けに解説 | LED PRO SHOP</title>
+<meta name="description" content="アルミ複合板や鋼板の看板・金属下地にLEDテープを直貼りすると、銅箔と金属面が接触してショート・漏電・腐食の原因になります。絶縁シート・絶縁テープの施工手順、金属看板のアース（接地）の考え方、屋外での漏電遮断対策を施工業者・看板屋・電気工事業者向けに解説。">
+<meta property="og:title" content="金属面・屋外看板へのLEDテープ取付｜絶縁・漏電・アース処理の手順を施工業者向けに解説 | LED PRO SHOP">
+<meta property="og:description" content="金属看板・金属下地へのLEDテープ取付時のショート・漏電・腐食を防ぐ絶縁施工手順とアース（接地）の考え方、屋外の漏電対策を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-metal-surface-insulation-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-metal-surface-insulation-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="金属面・屋外看板へのLEDテープ取付｜絶縁・漏電・アース処理を施工業者向けに解説 | LED PRO SHOP">
+<meta name="twitter:description" content="金属看板・金属下地へのLEDテープ取付時のショート・漏電・腐食を防ぐ絶縁施工手順とアース（接地）の考え方を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-metal-surface-insulation-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-metal-surface-insulation-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #1a140a; color: #e7e2d8; line-height: 1.7; font-size: 15px; }
+  a { color: #fbbf24; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #3e2a0a 0%, #44330f 50%, #3a2a0a 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #6f5a1e; }
+  .hero-badge { display: inline-block; background: #d97706; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #faf6ec; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #b8a784; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #806b4b; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #faf6ec; border-left: 4px solid #f59e0b; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #fcd34d; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #dcd3c1; }
+
+  .alert-box { background: #1c1006; border: 1px solid #7f3d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #2a1e0c; border: 1px solid #6f5a1e; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #f0e4c5; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #261c0e; border-radius: 10px; overflow: hidden; }
+  thead th { background: #6f5a1e; color: #fde68a; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #3a2e1a; color: #dcd3c1; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #2c2010; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #241a0c; border: 1px solid #92560a; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #fbbf24; margin-top: 0; }
+  .calc-formula { background: #140e06; border: 1px solid #78350f; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #fde68a; margin: 12px 0; line-height: 2; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .spec-card { background: #261c0e; border: 1px solid #6f5a1e; border-radius: 10px; padding: 20px; }
+  .spec-card h4 { font-size: 15px; font-weight: 700; color: #fcd34d; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #3a2e1a; }
+  .spec-card .spec-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding: 5px 0; }
+  .spec-card .spec-row span:first-child { color: #b8a784; }
+  .spec-card .spec-row span:last-child { color: #e7e2d8; font-weight: 600; text-align: right; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #261c0e; border: 1px solid #6f5a1e; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #f59e0b; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #fcd34d; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #b8a784; margin-bottom: 0; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #f59e0b; color: #1a140a; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #dcd3c1; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #3a2e1a; font-size: 14px; color: #dcd3c1; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #6f5a1e; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #261c0e; padding: 16px 20px; font-weight: 700; color: #fcd34d; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #dcd3c1; background: #18120a; }
+
+  .cta-box { background: linear-gradient(135deg, #6f5a1e 0%, #402c0c 100%); border: 1px solid #f59e0b; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #faf6ec; margin-bottom: 10px; }
+  .cta-box p { color: #b8a784; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #d97706; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #b45309; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #806b4b; }
+  .breadcrumb a { color: #806b4b; }
+  .breadcrumb a:hover { color: #fcd34d; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid, .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "金属面・屋外看板へのLEDテープ取付｜絶縁・漏電・アース処理の手順を施工業者向けに解説",
+  "description": "金属看板・金属下地へのLEDテープ取付時のショート・漏電・腐食を防ぐ絶縁施工手順とアース（接地）の考え方、屋外の漏電対策を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-metal-surface-insulation-guide-hero.webp",
+  "datePublished": "2026-06-03",
+  "dateModified": "2026-06-03",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-metal-surface-insulation-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "金属面・屋外看板へのLEDテープ取付（絶縁・漏電・アース）" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "アルミ複合板や鋼板の看板にLEDテープを直貼りしても大丈夫ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "直貼りは避けてください。LEDテープの裏面は両面テープで絶縁されているように見えても、はんだ付け部やカット端、被覆が傷ついた箇所で銅箔が金属面に接触するとショートや漏電の原因になります。金属下地にはアルミフレーム（プロファイル）を介して取り付けるか、絶縁シート・絶縁テープを下敷きにしてから貼るのが基本です。特に屋外看板は結露・雨水で導通リスクが上がるため、絶縁とIP等級の防水を両立させてください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "金属看板にLEDを付ける場合、アース（接地）は必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LEDテープ自体はDC低電圧（12V/24V）なので、テープ側にアースは不要です。ただし金属看板の筐体と、その中に収める100V/200VのAC電源（ACアダプタ・スイッチング電源）側で絶縁不良が起きると、金属筐体に漏電して感電の危険があります。金属製の看板筐体・支柱は電気設備技術基準に従って接地し、屋外回路には漏電遮断器（ELB/RCD）を設けるのが安全です。AC一次側の工事は電気工事士の資格範囲となるため、有資格者が施工してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "屋外の金属看板で結露による漏電を防ぐにはどうすればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "三つの対策を組み合わせます。第一にLEDテープはIP65以上の防水品を使い、カット端・はんだ部を防水処理して水の侵入を防ぎます。第二に金属面とテープの間に絶縁層（絶縁シートやアルミフレーム）を設け、万一の結露でも導通しないようにします。第三に筐体内に水抜き穴を設けて結露水を排出し、電源やコネクタは筐体内の上部・乾いた位置に配置します。これらに加えて屋外回路に漏電遮断器を設置すれば、漏電時に回路を遮断できます。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">施工技術ガイド</div>
+    <h1>金属面・屋外看板への<br>LEDテープ取付と絶縁・漏電対策</h1>
+    <p class="hero-sub">絶縁シート施工・金属看板のアース（接地）・屋外結露の漏電対策を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-06-03 | カテゴリ: LEDテープ施工技術ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-metal-surface-insulation-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; 金属面・屋外看板へのLEDテープ取付（絶縁・漏電）
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="alert-box">
+      <div class="alert-title">よくある施工トラブル：「金属看板に直貼りしてショート・腐食した」</div>
+      <p>アルミ複合板・鋼板・ステンレスなどの金属下地にLEDテープを直接貼ると、<strong>はんだ部やカット端の銅箔が金属面に触れてショート・漏電</strong>を起こしたり、異種金属の接触で電食（腐食）が進行したりします。屋外では結露・雨水で導通リスクがさらに上がります。金属面への取付は必ず絶縁を介してください。</p>
+    </div>
+
+    <h2>なぜ金属面への直貼りが危険なのか</h2>
+
+    <p>LEDテープの裏面は両面テープで覆われていますが、<strong>カット端の銅パッド・はんだ付け部・被覆が傷ついた箇所</strong>では導体が露出します。これが導電性の金属下地に触れると、＋とGND（または＋同士）が金属を介して短絡し、ショート・発熱・電源破損の原因になります。</p>
+
+    <p>さらに、アルミと銅・はんだなど異種金属が湿気の中で接触すると<strong>電食（ガルバニック腐食）</strong>が進み、数か月で接点が腐って不点灯になることもあります。屋外金属看板は雨水・結露が常にあるため、絶縁と防水の両立が必須です。</p>
+
+    <div class="info-box">
+      <p><strong>基本原則</strong>：金属下地には「アルミフレーム（プロファイル）を介して取り付ける」か「絶縁シート／絶縁テープを下敷きにする」。どちらもLEDテープの導体を金属から物理的に離すことが目的です。屋外ではこれにIP65以上の防水を組み合わせます。</p>
+    </div>
+
+    <h2>絶縁方法の比較</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>絶縁方法</th>
+          <th>絶縁性</th>
+          <th>放熱性</th>
+          <th>向く用途</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>アルミフレーム＋裏面絶縁</td>
+          <td class="tag-ok">高い ✓</td>
+          <td class="tag-ok">良好（放熱兼用）</td>
+          <td>看板内照・長尺ライン</td>
+        </tr>
+        <tr>
+          <td>絶縁シート（PET/絶縁紙）</td>
+          <td class="tag-ok">高い ✓</td>
+          <td class="tag-warn">中</td>
+          <td>平面の金属下地全般</td>
+        </tr>
+        <tr>
+          <td>絶縁テープ下敷き</td>
+          <td class="tag-warn">中（重ね貼り必要）</td>
+          <td class="tag-warn">中</td>
+          <td>部分・端部の補助絶縁</td>
+        </tr>
+        <tr>
+          <td>金属面に直貼り</td>
+          <td class="tag-ng">不可 ✗</td>
+          <td>—</td>
+          <td>禁止（ショート/電食リスク）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>絶縁施工の手順（金属下地への取付）</h2>
+
+    <ul class="step-list">
+      <li><span>金属面の<strong>油分・サビ・粉塵を脱脂洗浄</strong>し、平滑にする。汚れは絶縁シート・粘着の浮きの原因になる。</span></li>
+      <li><span>取付幅より<strong>左右各5mm以上広い絶縁シート</strong>を金属面に貼る、またはアルミフレームを固定する。テープ端の銅パッドが金属からはみ出さないようにする。</span></li>
+      <li><span>絶縁層の上にLEDテープを貼り、<strong>カット端・はんだ部は特に金属から離す</strong>。コーナーやカット箇所には追加で絶縁テープを当てる。</span></li>
+      <li><span>はんだ付け部・コネクタ部は<strong>絶縁＋防水処理</strong>（収縮チューブ＋防水シール）を行い、金属面・外気から保護する。</span></li>
+      <li><span>通電前に<strong>テスターで＋−間・＋と金属筐体間の絶縁（導通なし）</strong>を確認する。金属筐体に導通がある場合は絶縁不良を修正する。</span></li>
+      <li><span>点灯後に異常発熱・ちらつきが無いか確認し、屋外は防水カバー・水抜き穴の状態も点検する。</span></li>
+    </ul>
+
+    <h2>金属看板のアース（接地）と漏電対策</h2>
+
+    <p>LEDテープ自体はDC12V/24Vの低電圧で、テープ側にアースは不要です。問題になるのは<strong>金属筐体内に収める100V/200VのAC電源（一次側）</strong>です。</p>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">①</div>
+        <h4>金属筐体・支柱の接地</h4>
+        <p>金属製の看板筐体・支柱は電気設備技術基準に従って接地する。AC電源の絶縁不良時に筐体へ漏電しても、接地により感電を防ぎ漏電遮断器を動作させられる。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">②</div>
+        <h4>漏電遮断器（ELB/RCD）</h4>
+        <p>屋外回路・金属筐体の回路には漏電遮断器を設置する。漏電を検知して回路を遮断し、感電・火災を防ぐ。屋外は特に必須と考える。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">③</div>
+        <h4>AC一次側は有資格者</h4>
+        <p>AC100V/200Vの結線・接地工事は電気工事士の資格範囲。DC低電圧側の配線とは扱いが異なるため、一次側は必ず有資格者が施工する。</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <p><strong>役割分担の目安</strong>：LEDテープ・コネクタ・DC配線（電源二次側）は看板施工側で対応可。AC一次側の結線・接地・漏電遮断器の設置は電気工事士の領域。現場では両者の境界（ACアダプタ/電源の入力端子）を明確にして施工区分を分けると安全です。</p>
+    </div>
+
+    <h2>屋外金属看板の結露・漏電を防ぐ3要素</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h4>防水（IP等級）</h4>
+        <div class="spec-row"><span>テープ等級</span><span>IP65以上</span></div>
+        <div class="spec-row"><span>カット端</span><span>防水シール処理</span></div>
+        <div class="spec-row"><span>コネクタ</span><span>防水型・上部配置</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>絶縁</h4>
+        <div class="spec-row"><span>下地</span><span>絶縁層を必須</span></div>
+        <div class="spec-row"><span>金属間</span><span>導体を直接触れさせない</span></div>
+        <div class="spec-row"><span>確認</span><span>筐体間の絶縁を実測</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>排水・換気</h4>
+        <div class="spec-row"><span>水抜き穴</span><span>筐体下部に設置</span></div>
+        <div class="spec-row"><span>電源位置</span><span>乾いた上部に配置</span></div>
+        <div class="spec-row"><span>結露対策</span><span>密閉しすぎない</span></div>
+      </div>
+    </div>
+
+    <div class="calc-box">
+      <h3>絶縁シートのはみ出し寸法（目安）</h3>
+      <div class="calc-formula">
+絶縁シート幅 = テープ幅 + 左右各5mm以上
+
+例：テープ幅10mm
+   → 絶縁シート幅 10 + 5 + 5 = 20mm以上
+   （カット端の銅パッドが金属からはみ出さない幅を確保）
+      </div>
+      <p style="color:#fde68a; font-size:13px; margin-top:12px; margin-bottom:0">
+        コーナーやカット箇所は導体が露出しやすいため、絶縁シートを長め・広めに取り、はんだ部には収縮チューブで二重に絶縁する。
+      </p>
+    </div>
+
+    <h2>施工前・施工後チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>金属下地にアルミフレームまたは絶縁シートを介して取り付ける設計にした</li>
+      <li>絶縁シートはテープ幅＋左右各5mm以上を確保し、カット端の銅パッドが金属からはみ出していない</li>
+      <li>はんだ部・コネクタ部に絶縁＋防水処理を施した</li>
+      <li>通電前にテスターで＋−間および＋と金属筐体間の絶縁（導通なし）を確認した</li>
+      <li>屋外はIP65以上のテープを使用し、カット端・接続部を防水処理した</li>
+      <li>金属筐体・支柱の接地、屋外回路の漏電遮断器を計画に含めた（AC一次側は有資格者）</li>
+      <li>屋外筐体に水抜き穴を設け、電源・コネクタを乾いた上部に配置した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. アルミ複合板や鋼板の看板にLEDテープを直貼りしても大丈夫ですか？</div>
+        <div class="faq-a">直貼りは避けてください。LEDテープの裏面は両面テープで絶縁されているように見えても、はんだ付け部やカット端、被覆が傷ついた箇所で銅箔が金属面に接触するとショートや漏電の原因になります。金属下地にはアルミフレーム（プロファイル）を介して取り付けるか、絶縁シート・絶縁テープを下敷きにしてから貼るのが基本です。特に屋外看板は結露・雨水で導通リスクが上がるため、絶縁とIP等級の防水を両立させてください。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 金属看板にLEDを付ける場合、アース（接地）は必要ですか？</div>
+        <div class="faq-a">LEDテープ自体はDC低電圧（12V/24V）なので、テープ側にアースは不要です。ただし金属看板の筐体と、その中に収める100V/200VのAC電源（ACアダプタ・スイッチング電源）側で絶縁不良が起きると、金属筐体に漏電して感電の危険があります。金属製の看板筐体・支柱は電気設備技術基準に従って接地し、屋外回路には漏電遮断器（ELB/RCD）を設けるのが安全です。AC一次側の工事は電気工事士の資格範囲となるため、有資格者が施工してください。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 屋外の金属看板で結露による漏電を防ぐにはどうすればいいですか？</div>
+        <div class="faq-a">三つの対策を組み合わせます。第一にLEDテープはIP65以上の防水品を使い、カット端・はんだ部を防水処理して水の侵入を防ぎます。第二に金属面とテープの間に絶縁層（絶縁シートやアルミフレーム）を設け、万一の結露でも導通しないようにします。第三に筐体内に水抜き穴を設けて結露水を排出し、電源やコネクタは筐体内の上部・乾いた位置に配置します。これらに加えて屋外回路に漏電遮断器を設置すれば、漏電時に回路を遮断できます。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>金属看板向け 防水LEDテープ・アルミフレームを探す</h3>
+      <p>IP65以上の防水テープ・絶縁兼放熱に使えるアルミフレーム・防水コネクタを取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

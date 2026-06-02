@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アドレサブルLEDテープとアナログRGBの違い｜マイコン内蔵(WS2812/SK6812)の選び方・制御方式を施工業者向けに解説 | LED PRO SHOP</title>
+<meta name="description" content="LEDテープの「アドレサブル（デジタル/マイコン内蔵）」と「アナログRGB」は制御方式が全く異なり、コントローラ・配線・電源計算も変わります。アドレサブルは1粒ずつ個別制御で流れる演出が可能・アナログは全体一色制御でシンプル。WS2812B・SK6812の信号方式、データ線の配線、電圧降下対策まで施工業者向けに解説。">
+<meta property="og:title" content="アドレサブルLEDテープとアナログRGBの違い｜マイコン内蔵(WS2812/SK6812)の選び方・制御方式を施工業者向けに解説 | LED PRO SHOP">
+<meta property="og:description" content="アドレサブル（デジタル/マイコン内蔵）LEDテープとアナログRGBの違いを制御方式・配線・電源計算の観点から比較。WS2812B・SK6812の信号方式とデータ線配線を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-addressable-vs-analog-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-addressable-vs-analog-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="アドレサブルLEDテープとアナログRGBの違い｜マイコン内蔵の選び方を施工業者向けに解説 | LED PRO SHOP">
+<meta name="twitter:description" content="アドレサブル（デジタル/マイコン内蔵）LEDテープとアナログRGBの違いを制御方式・配線・電源計算の観点から比較。WS2812B・SK6812の信号方式を解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-addressable-vs-analog-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-addressable-vs-analog-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #0c0a1e; color: #e2e8f0; line-height: 1.7; font-size: 15px; }
+  a { color: #c084fc; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #2a0a3e 0%, #1a0f44 50%, #2a0a3a 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #4a1e6f; }
+  .hero-badge { display: inline-block; background: #9333ea; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f1f5f9; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #a394b8; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #6b5b80; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f1f5f9; border-left: 4px solid #a855f7; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #d8b4fe; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #d1c9dc; }
+
+  .alert-box { background: #1c1010; border: 1px solid #7f1d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #1a0c2e; border: 1px solid #4a1e6f; border-left: 4px solid #a855f7; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #e0cdf5; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #150c26; border-radius: 10px; overflow: hidden; }
+  thead th { background: #4a1e6f; color: #d8b4fe; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #2a1e3a; color: #d1c9dc; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #1a0e30; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #160d24; border: 1px solid #6b21a8; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #c084fc; margin-top: 0; }
+  .calc-formula { background: #0d0614; border: 1px solid #581c87; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #e9d5ff; margin: 12px 0; line-height: 2; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .spec-card { background: #150c26; border: 1px solid #4a1e6f; border-radius: 10px; padding: 20px; }
+  .spec-card h4 { font-size: 15px; font-weight: 700; color: #d8b4fe; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #2a1e3a; }
+  .spec-card .spec-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding: 5px 0; }
+  .spec-card .spec-row span:first-child { color: #a394b8; }
+  .spec-card .spec-row span:last-child { color: #e2e8f0; font-weight: 600; text-align: right; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #150c26; border: 1px solid #4a1e6f; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #a855f7; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #d8b4fe; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #a394b8; margin-bottom: 0; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #a855f7; color: #fff; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #d1c9dc; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #2a1e3a; font-size: 14px; color: #d1c9dc; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #4a1e6f; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #150c26; padding: 16px 20px; font-weight: 700; color: #d8b4fe; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #d1c9dc; background: #0d0818; }
+
+  .cta-box { background: linear-gradient(135deg, #4a1e6f 0%, #2a0c40 100%); border: 1px solid #a855f7; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f1f5f9; margin-bottom: 10px; }
+  .cta-box p { color: #a394b8; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #9333ea; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #7e22ce; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #6b5b80; }
+  .breadcrumb a { color: #6b5b80; }
+  .breadcrumb a:hover { color: #d8b4fe; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid, .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "アドレサブルLEDテープとアナログRGBの違い｜マイコン内蔵(WS2812/SK6812)の選び方・制御方式を施工業者向けに解説",
+  "description": "アドレサブル（デジタル/マイコン内蔵）LEDテープとアナログRGBの違いを制御方式・配線・電源計算の観点から比較し、WS2812B・SK6812の信号方式とデータ線配線を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-addressable-vs-analog-guide-hero.webp",
+  "datePublished": "2026-06-03",
+  "dateModified": "2026-06-03",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-addressable-vs-analog-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "アドレサブルLEDテープとアナログRGBの違い" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "アドレサブルLEDテープとアナログRGBテープは何が違いますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "制御の単位が違います。アナログRGBテープはテープ全体を1色に制御する方式で、配線はR・G・B・V（またはGND）の電源線のみです。アドレサブル（デジタル/マイコン内蔵）テープはLED1粒ずつにICが入っていて1粒単位で色・明るさを制御でき、流れるグラデーションや虹色アニメーションが可能です。配線は電源（V・GND）に加えてデータ線（DI/DO）が必要で、専用コントローラで信号を送ります。WS2812BやSK6812が代表的なアドレサブル品です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "アドレサブルテープの配線で気をつけることは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "データ線には向き（DI=入力・DO=出力）があり、コントローラ→DIの順で接続しないと点灯しません。テープ表面の矢印が信号の流れる方向です。データ線が長いと信号が劣化するため、コントローラとテープ先頭は近づけ、データ線にはノイズ対策の抵抗（330〜470Ω程度）を挟むと安定します。電源は片端だけでなく長尺では数mごとに電源（V・GND）を別途注入し、電圧降下による末端の色化けを防ぎます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "看板や店舗の常時一色点灯にはどちらが向いていますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "常に一色・全体同色で点灯させる用途ならアナログRGBで十分です。コントローラがシンプルで配線もデータ線が不要なため、施工も保守も容易でコストを抑えられます。流れる演出・グラデーション・1粒単位のアニメーションが必要な場合のみアドレサブルを選びます。アドレサブルはコントローラ・プログラム・データ配線が必要になり、保守難易度とコストが上がるため、演出要件が明確な場合に採用するのが現場の判断基準です。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">製品活用ガイド</div>
+    <h1>アドレサブルLEDテープと<br>アナログRGBの違い・選び方</h1>
+    <p class="hero-sub">マイコン内蔵(WS2812B/SK6812)の制御方式・データ線配線・電源計算を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-06-03 | カテゴリ: LEDテープ製品活用ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-addressable-vs-analog-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; アドレサブルLEDテープとアナログRGBの違い
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="alert-box">
+      <div class="alert-title">よくある選定ミス：「演出したいのにアナログを買ってしまった」</div>
+      <p>「流れる・虹色に変化する」演出はアドレサブル（デジタル/マイコン内蔵）でしかできません。逆に「全体を一色で点灯させるだけ」ならアナログRGBで十分で、コストも保守性も有利です。両者は<strong>制御方式・配線・コントローラ・電源計算がすべて異なる</strong>ため、演出要件を確定してから選定してください。</p>
+    </div>
+
+    <h2>アドレサブルとアナログRGBの根本的な違い</h2>
+
+    <p><strong>アナログRGB</strong>は、テープ全体を1つの単位として色を制御します。R・G・Bそれぞれの明るさを変えて混色し、テープ全長が同じ色で光ります。配線は電源＋R・G・Bの信号線で、コントローラもシンプルです。</p>
+
+    <p><strong>アドレサブル（デジタル/マイコン内蔵）</strong>は、LED1粒ごと（または数粒のセグメントごと）に制御ICが内蔵され、<strong>1粒単位で色と明るさを個別制御</strong>できます。これにより流れる光・グラデーション・虹色アニメーションが可能です。WS2812B・SK6812・APA102などが代表的な型番です。</p>
+
+    <div class="info-box">
+      <p><strong>見分け方</strong>：テープに「DI」「DO」「DIN」などデータ端子があればアドレサブル。端子が「R・G・B・V/GND」だけならアナログRGB。型番にWS2812・WS2813・SK6812・APA102が含まれればアドレサブルと判断できます。</p>
+    </div>
+
+    <h2>方式の比較表</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>比較項目</th>
+          <th>アナログRGB</th>
+          <th>アドレサブル（デジタル）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>制御単位</td>
+          <td>テープ全体を一色</td>
+          <td class="tag-ok">LED1粒ごと ✓</td>
+        </tr>
+        <tr>
+          <td>可能な演出</td>
+          <td>全体の色替え・調光</td>
+          <td class="tag-ok">流れる・虹色・アニメ ✓</td>
+        </tr>
+        <tr>
+          <td>配線</td>
+          <td class="tag-ok">電源＋R/G/B（データ不要）</td>
+          <td>電源＋データ線（DI/DO）</td>
+        </tr>
+        <tr>
+          <td>代表型番</td>
+          <td>汎用5050 RGB</td>
+          <td>WS2812B / SK6812 / APA102</td>
+        </tr>
+        <tr>
+          <td>コントローラ</td>
+          <td class="tag-ok">シンプル・安価</td>
+          <td>プログラム/専用コントローラ</td>
+        </tr>
+        <tr>
+          <td>保守難易度</td>
+          <td class="tag-ok">低い</td>
+          <td class="tag-warn">中〜高（信号トラブル要因）</td>
+        </tr>
+        <tr>
+          <td>コスト</td>
+          <td class="tag-ok">低い</td>
+          <td class="tag-warn">高い</td>
+        </tr>
+        <tr>
+          <td>向く用途</td>
+          <td>看板内照・間接照明の色替え</td>
+          <td>イルミ演出・サイネージ・装飾</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>主なアドレサブルIC型番の選び方</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h4>WS2812B（汎用・定番）</h4>
+        <div class="spec-row"><span>信号方式</span><span>1線式（DIのみ）</span></div>
+        <div class="spec-row"><span>電圧</span><span>DC5V</span></div>
+        <div class="spec-row"><span>色</span><span>RGB（IC内蔵）</span></div>
+        <div class="spec-row"><span>特徴</span><span>安価・情報量豊富</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>SK6812（RGBW対応）</h4>
+        <div class="spec-row"><span>信号方式</span><span>1線式（WS2812互換）</span></div>
+        <div class="spec-row"><span>電圧</span><span>DC5V</span></div>
+        <div class="spec-row"><span>色</span><span>RGBW（白を追加）</span></div>
+        <div class="spec-row"><span>特徴</span><span>白色表現が自然</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>WS2813（断線冗長）</h4>
+        <div class="spec-row"><span>信号方式</span><span>2線式（BI予備信号）</span></div>
+        <div class="spec-row"><span>電圧</span><span>DC5V</span></div>
+        <div class="spec-row"><span>色</span><span>RGB</span></div>
+        <div class="spec-row"><span>特徴</span><span>1粒断線でも以降が点灯</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>APA102 / SK9822（高速）</h4>
+        <div class="spec-row"><span>信号方式</span><span>2線式（CLK＋DATA）</span></div>
+        <div class="spec-row"><span>電圧</span><span>DC5V</span></div>
+        <div class="spec-row"><span>色</span><span>RGB（高リフレッシュ）</span></div>
+        <div class="spec-row"><span>特徴</span><span>撮影向き・高速描画</span></div>
+      </div>
+    </div>
+
+    <h2>アドレサブルテープの配線手順</h2>
+
+    <ul class="step-list">
+      <li><span>テープ表面の<strong>信号方向の矢印</strong>を確認する。矢印の根本がDI（入力）、先がDO（出力）。コントローラはDI側に接続する。</span></li>
+      <li><span>コントローラの信号出力をテープの<strong>DIN（データ入力）</strong>に接続する。向きを逆にすると一切点灯しないので注意。</span></li>
+      <li><span>データ線に<strong>330〜470Ω程度の直列抵抗</strong>を挟み、先頭ICへの信号反射・ノイズを抑える。</span></li>
+      <li><span>電源（V・GND）をテープの先頭に接続。<strong>GNDはコントローラと必ず共通</strong>にする（GNDが浮くと信号が伝わらない）。</span></li>
+      <li><span>長尺の場合は数mごとに電源（V・GND）を追加注入し、電圧降下による末端の色化け（白が黄色っぽくなる等）を防ぐ。</span></li>
+      <li><span>通電前に＋とデータ線・GNDの短絡が無いかテスターで確認し、コントローラの設定（IC種別・LED数・色順RGB/GRB）を実機に合わせる。</span></li>
+    </ul>
+
+    <div class="calc-box">
+      <h3>アドレサブルテープの電源容量計算（DC5V例）</h3>
+      <div class="calc-formula">
+最大消費電流（A）= LED粒数 × 1粒あたり最大電流（約0.06A／白フル点灯）
+
+例：60粒/m × 5m = 300粒
+   300粒 × 0.06A = 18A（全白フル点灯時）
+   → DC5V・20A以上の電源、または複数箇所給電が必要
+      </div>
+      <p style="color:#e9d5ff; font-size:13px; margin-top:12px; margin-bottom:0">
+        アドレサブルは全白フル点灯時に大電流が流れるため、演出が常に全点灯でない場合でも最大値で電源を選定する。5Vは電圧降下が大きいので、長尺では複数箇所給電が前提になる。
+      </p>
+    </div>
+
+    <h2>アドレサブルでよくあるトラブルと対処</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>症状</th>
+          <th>主な原因</th>
+          <th>対処</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>全く点灯しない</td>
+          <td>データ線の向き逆・GND未共通</td>
+          <td>DI側接続・GND共通を確認</td>
+        </tr>
+        <tr>
+          <td>先頭だけ点灯・途中で止まる</td>
+          <td>ICの断線・信号劣化</td>
+          <td>該当粒を交換・データ抵抗追加</td>
+        </tr>
+        <tr>
+          <td>色が違う（赤緑入れ替わる）</td>
+          <td>色順設定ミス（RGB/GRB）</td>
+          <td>コントローラの色順をGRB等に変更</td>
+        </tr>
+        <tr>
+          <td>末端の白が黄色っぽい</td>
+          <td>電圧降下</td>
+          <td>中間に電源を追加注入</td>
+        </tr>
+        <tr>
+          <td>ちらつく・ノイズで誤動作</td>
+          <td>データ線が長い・ノイズ</td>
+          <td>抵抗挿入・配線短縮・電源安定化</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>選定チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>「全体一色でよいか／1粒単位の演出が必要か」を施主と確定した</li>
+      <li>演出が一色のみならアナログRGB、流れる演出が必要ならアドレサブルを選定した</li>
+      <li>アドレサブルの場合、IC型番（WS2812B/SK6812/WS2813/APA102）と色順を把握した</li>
+      <li>データ線の向き（DI→DO）とGND共通化を配線図に反映した</li>
+      <li>全白フル点灯時の最大電流で電源容量を計算した（DC5Vは特に余裕を確保）</li>
+      <li>長尺は数mごとの電源注入を設計に組み込んだ</li>
+      <li>コントローラの設定（IC種別・LED数・色順）を実機に合わせて確認した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. アドレサブルLEDテープとアナログRGBテープは何が違いますか？</div>
+        <div class="faq-a">制御の単位が違います。アナログRGBテープはテープ全体を1色に制御する方式で、配線はR・G・B・V（またはGND）の電源線のみです。アドレサブル（デジタル/マイコン内蔵）テープはLED1粒ずつにICが入っていて1粒単位で色・明るさを制御でき、流れるグラデーションや虹色アニメーションが可能です。配線は電源（V・GND）に加えてデータ線（DI/DO）が必要で、専用コントローラで信号を送ります。WS2812BやSK6812が代表的なアドレサブル品です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. アドレサブルテープの配線で気をつけることは何ですか？</div>
+        <div class="faq-a">データ線には向き（DI=入力・DO=出力）があり、コントローラ→DIの順で接続しないと点灯しません。テープ表面の矢印が信号の流れる方向です。データ線が長いと信号が劣化するため、コントローラとテープ先頭は近づけ、データ線にはノイズ対策の抵抗（330〜470Ω程度）を挟むと安定します。電源は片端だけでなく長尺では数mごとに電源（V・GND）を別途注入し、電圧降下による末端の色化けを防ぎます。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 看板や店舗の常時一色点灯にはどちらが向いていますか？</div>
+        <div class="faq-a">常に一色・全体同色で点灯させる用途ならアナログRGBで十分です。コントローラがシンプルで配線もデータ線が不要なため、施工も保守も容易でコストを抑えられます。流れる演出・グラデーション・1粒単位のアニメーションが必要な場合のみアドレサブルを選びます。アドレサブルはコントローラ・プログラム・データ配線が必要になり、保守難易度とコストが上がるため、演出要件が明確な場合に採用するのが現場の判断基準です。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>RGB・アドレサブルLEDテープを探す</h3>
+      <p>アナログRGBからWS2812B・SK6812アドレサブルテープ・コントローラ・電源まで取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
