@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープが調光時に「ジー」「ブーン」と鳴る原因と対策｜コイル鳴き・電源うなりを施工業者向けに診断 | LED PRO SHOP</title>
+<meta name="description" content="LEDテープを調光器で絞ると「ジー」「ブーン」というコイル鳴き・うなり音が出る原因はPWM調光の周波数とインダクタ・コンデンサの振動、電源容量過多、調光器の相性です。発生源（電源・調光器・テープ）の切り分け手順とPWM周波数の上げ方・容量見直し・配線対策を施工業者向けに解説。">
+<meta property="og:title" content="LEDテープが調光時に「ジー」「ブーン」と鳴る原因と対策｜コイル鳴き・電源うなりを施工業者向けに診断 | LED PRO SHOP">
+<meta property="og:description" content="LEDテープを調光すると鳴る「ジー」「ブーン」というコイル鳴き・うなり音の原因と、電源・調光器・テープの切り分け手順、PWM周波数や容量の見直し対策を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-dimmer-buzzing-noise-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-dimmer-buzzing-noise-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープが調光時に「ジー」「ブーン」と鳴る原因と対策｜コイル鳴き・うなりを診断 | LED PRO SHOP">
+<meta name="twitter:description" content="LEDテープを調光すると鳴るコイル鳴き・うなり音の原因と、電源・調光器・テープの切り分け手順、PWM周波数や容量の見直し対策を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-dimmer-buzzing-noise-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-dimmer-buzzing-noise-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #120a1e; color: #e6e2f0; line-height: 1.7; font-size: 15px; }
+  a { color: #c084fc; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #2a0a3e 0%, #1f1244 50%, #1a0a3a 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #4c1d95; }
+  .hero-badge { display: inline-block; background: #7c3aed; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f5f1fc; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #b8a7d4; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #8b6bb1; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f5f1fc; border-left: 4px solid #8b5cf6; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #c4b5fd; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #d4cce4; }
+
+  .alert-box { background: #1c1010; border: 1px solid #7f1d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #1a1030; border: 1px solid #4c1d95; border-left: 4px solid #8b5cf6; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #ddd6fe; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #1a1030; border-radius: 10px; overflow: hidden; }
+  thead th { background: #4c1d95; color: #ddd6fe; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #2e1d4a; color: #d4cce4; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #1d1336; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #1a0d2e; border: 1px solid #6d28d9; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #c4b5fd; margin-top: 0; }
+  .calc-formula { background: #100620; border: 1px solid #4c1d95; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #ddd6fe; margin: 12px 0; line-height: 2; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .spec-card { background: #1a1030; border: 1px solid #4c1d95; border-radius: 10px; padding: 20px; }
+  .spec-card h4 { font-size: 15px; font-weight: 700; color: #c4b5fd; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #2e1d4a; }
+  .spec-card .spec-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding: 5px 0; }
+  .spec-card .spec-row span:first-child { color: #b8a7d4; }
+  .spec-card .spec-row span:last-child { color: #e6e2f0; font-weight: 600; text-align: right; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #1a1030; border: 1px solid #4c1d95; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #8b5cf6; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #c4b5fd; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #b8a7d4; margin-bottom: 0; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #8b5cf6; color: #fff; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #d4cce4; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #2e1d4a; font-size: 14px; color: #d4cce4; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #4c1d95; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #1a1030; padding: 16px 20px; font-weight: 700; color: #c4b5fd; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #d4cce4; background: #0e0820; }
+
+  .cta-box { background: linear-gradient(135deg, #4c1d95 0%, #2a0d4e 100%); border: 1px solid #8b5cf6; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f5f1fc; margin-bottom: 10px; }
+  .cta-box p { color: #b8a7d4; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #7c3aed; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #6d28d9; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #8b6bb1; }
+  .breadcrumb a { color: #8b6bb1; }
+  .breadcrumb a:hover { color: #c4b5fd; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid, .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LEDテープが調光時に「ジー」「ブーン」と鳴る原因と対策｜コイル鳴き・電源うなりを施工業者向けに診断",
+  "description": "LEDテープを調光すると鳴る「ジー」「ブーン」というコイル鳴き・うなり音の原因と、電源・調光器・テープの切り分け手順、PWM周波数や容量の見直し対策を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-dimmer-buzzing-noise-guide-hero.webp",
+  "datePublished": "2026-06-04",
+  "dateModified": "2026-06-04",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-dimmer-buzzing-noise-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "LEDテープの調光時うなり音（コイル鳴き）の原因と対策" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "LEDテープを調光器で絞ると「ジー」という音が出ます。故障ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "多くの場合は故障ではなく、PWM調光のオン・オフ周波数が可聴域（およそ20Hz〜20kHz）に入り、電源内部のコイル（インダクタ）やコンデンサ、LEDテープ上の部品が周波数に合わせて微振動して音になっています。とくに調光を10〜40%に絞った中間域で音が大きくなりやすいのが特徴です。まず音が「電源」「調光器」「テープ」のどこから出ているかを耳で近づけて切り分け、PWM周波数の高い調光器（おおむね数kHz以上、可聴域上限を超える数十kHz品が理想）へ変更する、電源容量を負荷に対して適正化する、といった対策を取ります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "電源（PSU）からブーンという低いうなりが出ます。原因は何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "スイッチング電源のうなりは、負荷が軽すぎる（容量に対してLEDの消費電力が小さすぎる）場合や、PWM調光で電流が断続することでトランス・コイルが磁歪（じわい）振動を起こす場合に発生します。電源の定格に対して負荷が20%未満だと無負荷に近い不安定動作でうなりやすいため、電源容量を負荷の1.2〜1.5倍程度に適正化する、調光は電源より後段（二次側DC側）のPWMコントローラで行う、電源を防振ゴムで固定し共鳴を抑える、といった対策が有効です。それでも消えない個体差の大きい電源は、別ロット・別機種へ交換すると改善することがあります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "調光しても音が出ないようにするにはどの方式を選べばいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可聴域を超える高いPWM周波数（数十kHz以上）で動作する二次側DC調光のコントローラを選ぶのが基本です。AC位相制御（トライアック）調光対応の電源は、一次側で電流を切るためうなりが出やすい傾向があります。静音性を重視するなら、二次側でMOSFETによる高周波PWM調光を行うコントローラ、または電流を連続的に絞るCCR（定電流リニア）方式を選びます。CCRはちらつきも音も出にくい一方で効率がやや落ち発熱が増えるため、放熱設計とセットで検討してください。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">トラブル対処ガイド</div>
+    <h1>LEDテープが調光時に「ジー」「ブーン」と鳴る<br>原因とコイル鳴き・うなりの対策</h1>
+    <p class="hero-sub">電源・調光器・テープの発生源切り分けとPWM周波数・容量・配線対策を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-06-04 | カテゴリ: LEDテープ トラブル対処ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-dimmer-buzzing-noise-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープの調光時うなり音（コイル鳴き）の原因と対策
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="alert-box">
+      <div class="alert-title">よくある施工トラブル：「調光すると静かな部屋でジー・ブーンと鳴る」</div>
+      <p>納品後に施主から「夜になると照明から虫の羽音のような<strong>ジーという音</strong>がする」「電源ボックスが<strong>ブーンとうなる</strong>」とクレームが来るのは、LEDテープ調光施工で最も多い見えにくいトラブルです。原因は故障ではなくPWM調光の周波数と部品の振動であることが大半で、発生源を切り分けて適切な機器に替えれば解決できます。</p>
+    </div>
+
+    <h2>なぜ調光すると音が出るのか</h2>
+
+    <p>LEDテープの一般的な調光は<strong>PWM（パルス幅変調）</strong>で、電流を高速にオン・オフしてその比率で明るさを変えます。このオン・オフの周波数が人の<strong>可聴域（およそ20Hz〜20kHz）</strong>に入ると、電源内部のコイル（インダクタ）やセラミックコンデンサ、テープ上の部品が周波数に合わせて微妙に伸縮・振動し、それが空気を震わせて「ジー」「キー」という音になります。</p>
+
+    <p>低い「ブーン」といううなりは、スイッチング電源のトランス・コイルが<strong>磁歪（じわい：磁界で材料が伸縮する現象）</strong>で振動するもので、負荷が軽すぎる・調光で電流が断続するときに出やすくなります。いずれも電気的な異常ではありませんが、静かな店舗・寝室・クリニックでは無視できないクレームになります。</p>
+
+    <div class="info-box">
+      <p><strong>ポイント</strong>：音は「絞り切った時」より「10〜40%程度の中間調光」で最も大きくなることが多いです。これはPWMのデューティ比が中間でパルス成分が最も豊かになり、部品の振動が励起されやすいためです。確認は必ず中間調光域で行ってください。</p>
+    </div>
+
+    <h2>音の発生源を切り分ける（耳で特定）</h2>
+
+    <p>対策の前に、音が<strong>電源・調光器（コントローラ）・LEDテープ本体</strong>のどこから出ているかを特定します。各部に耳を近づけ、調光を中間に固定して比較します。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>発生源</th>
+          <th>音の傾向</th>
+          <th>主な原因</th>
+          <th>対策の方向性</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>電源（PSU）</td>
+          <td>低い「ブーン」</td>
+          <td>軽負荷・磁歪振動・個体差</td>
+          <td>容量適正化・防振固定・交換</td>
+        </tr>
+        <tr>
+          <td>調光器/コントローラ</td>
+          <td>「ジー」「ピー」</td>
+          <td>PWM周波数が可聴域・部品共振</td>
+          <td>高周波PWM品へ変更</td>
+        </tr>
+        <tr>
+          <td>LEDテープ本体</td>
+          <td>細かい「ジー」</td>
+          <td>テープ上の部品が周波数で振動</td>
+          <td>調光周波数を上げる・方式変更</td>
+        </tr>
+        <tr>
+          <td>アルミフレーム/造作</td>
+          <td>共鳴して増幅</td>
+          <td>振動が中空部材で響く</td>
+          <td>制振材・隙間充填で共鳴抑制</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>発生源の切り分け手順</h2>
+
+    <ul class="step-list">
+      <li><span>静かな環境で<strong>調光を中間（20〜40%）に固定</strong>し、音が最大になる位置を探す。これが診断の基準点になる。</span></li>
+      <li><span><strong>電源・調光器・テープの各部に順番に耳を近づけ</strong>、どこが一番大きいかを特定する。スマホの録音アプリで近接録音し波形を比べると客観的に判断できる。</span></li>
+      <li><span>調光器を<strong>一旦フル点灯（100%）</strong>にして音が消えるか確認する。消えるならPWM起因、消えないなら電源の軽負荷うなりの可能性が高い。</span></li>
+      <li><span>可能なら<strong>別の調光器（高PWM周波数品）に差し替えて</strong>音が変わるか確認する。これで調光器起因かどうかが確定する。</span></li>
+      <li><span>テープを電源直結（調光なし・100%）にして無音なら、テープ自体は正常で調光系の問題と確定できる。</span></li>
+    </ul>
+
+    <h2>原因別の対策</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">①</div>
+        <h4>PWM周波数を上げる</h4>
+        <p>調光コントローラを可聴域を超える高周波PWM（おおむね数十kHz以上）品に変更する。周波数が20kHzを超えると人にはほぼ聞こえなくなり、ジー音が解消する。静音をうたう二次側DC調光器を選ぶ。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">②</div>
+        <h4>電源容量を適正化する</h4>
+        <p>電源の定格に対し負荷が軽すぎる（20%未満）とうなりやすい。負荷の1.2〜1.5倍程度の容量に見直し、過大な電源を避ける。複数系統を1台にまとめている場合は分割も検討する。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">③</div>
+        <h4>調光位置を二次側に</h4>
+        <p>AC一次側で切るトライアック調光はうなりが出やすい。電源の後段（DC二次側）でMOSFET高周波PWM調光するか、電流を連続で絞るCCR（定電流リニア）方式にすると静かになる。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">④</div>
+        <h4>共鳴・固定を見直す</h4>
+        <p>電源を金属パネルに直付けすると振動が増幅される。防振ゴム・制振材を挟んで固定し、アルミフレームの中空部や隙間が共鳴している場合は充填材で響きを抑える。</p>
+      </div>
+    </div>
+
+    <h2>調光方式別の静音性・特性比較</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>調光方式</th>
+          <th>静音性</th>
+          <th>ちらつき</th>
+          <th>効率/発熱</th>
+          <th>備考</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>低周波PWM（数百Hz〜数kHz）</td>
+          <td class="tag-ng">鳴りやすい ✗</td>
+          <td class="tag-warn">低速で視認も</td>
+          <td class="tag-ok">高効率</td>
+          <td>安価だが可聴域に入りやすい</td>
+        </tr>
+        <tr>
+          <td>高周波PWM（数十kHz〜）</td>
+          <td class="tag-ok">静か ✓</td>
+          <td class="tag-ok">視認されにくい</td>
+          <td class="tag-ok">高効率</td>
+          <td>静音施工の基本選択</td>
+        </tr>
+        <tr>
+          <td>CCR（定電流リニア）</td>
+          <td class="tag-ok">非常に静か ✓</td>
+          <td class="tag-ok">出にくい</td>
+          <td class="tag-warn">発熱増・放熱必須</td>
+          <td>低照度・撮影・医療向け</td>
+        </tr>
+        <tr>
+          <td>AC位相制御（トライアック）</td>
+          <td class="tag-warn">電源でうなりやすい</td>
+          <td class="tag-warn">電源依存</td>
+          <td class="tag-ok">高効率</td>
+          <td>対応電源・調光器の組合せ必須</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="calc-box">
+      <h3>可聴域とPWM周波数の関係（目安）</h3>
+      <div class="calc-formula">
+人の可聴域 ≒ 20Hz 〜 20,000Hz（20kHz）
+
+PWM周波数が可聴域内（〜20kHz） → 鳴る可能性あり
+PWM周波数が可聴域超（20kHz超〜）→ ほぼ聞こえない
+
+推奨：静音施工は 20kHz を明確に超える
+      高周波PWM、または CCR 方式を選ぶ
+      </div>
+      <p style="color:#ddd6fe; font-size:13px; margin-top:12px; margin-bottom:0">
+        ※加齢で高域は聞こえにくくなるため、若年層が使う空間（学習塾・寝室・スタジオ等）ほど高周波化のメリットが大きい。撮影現場では高速度撮影でちらつきが映らない周波数も併せて確認する。
+      </p>
+    </div>
+
+    <h2>静音調光のための機器選定チェック</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h4>調光コントローラ</h4>
+        <div class="spec-row"><span>PWM周波数</span><span>可聴域超（高周波）</span></div>
+        <div class="spec-row"><span>調光位置</span><span>二次側DC側</span></div>
+        <div class="spec-row"><span>方式</span><span>静音PWM/CCR</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>電源（PSU）</h4>
+        <div class="spec-row"><span>容量</span><span>負荷の1.2〜1.5倍</span></div>
+        <div class="spec-row"><span>軽負荷</span><span>20%未満は避ける</span></div>
+        <div class="spec-row"><span>固定</span><span>防振ゴム併用</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>設置環境</h4>
+        <div class="spec-row"><span>静音要求</span><span>寝室/医療/撮影は高</span></div>
+        <div class="spec-row"><span>共鳴</span><span>中空部材に注意</span></div>
+        <div class="spec-row"><span>確認</span><span>中間調光で試聴</span></div>
+      </div>
+    </div>
+
+    <h2>施工前・引渡し前チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>調光コントローラのPWM周波数が可聴域を超える高周波品（または静音をうたう機種）であることを確認した</li>
+      <li>電源容量を負荷の1.2〜1.5倍程度に適正化し、軽負荷（20%未満）になっていない</li>
+      <li>調光は一次側トライアックではなく二次側DC側で行う構成にした（静音要求が高い現場）</li>
+      <li>電源を金属パネルに直付けせず、防振ゴム・制振材を介して固定した</li>
+      <li>引渡し前に中間調光（20〜40%）で静かな環境での試聴を行い、ジー・ブーン音がないことを確認した</li>
+      <li>寝室・医療・撮影など静音要求が高い現場ではCCR方式も比較検討した</li>
+      <li>電源・調光器に個体差うなりが残る場合、別ロット・別機種への交換可否を確認した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. LEDテープを調光器で絞ると「ジー」という音が出ます。故障ですか？</div>
+        <div class="faq-a">多くの場合は故障ではなく、PWM調光のオン・オフ周波数が可聴域（およそ20Hz〜20kHz）に入り、電源内部のコイル（インダクタ）やコンデンサ、LEDテープ上の部品が周波数に合わせて微振動して音になっています。とくに調光を10〜40%に絞った中間域で音が大きくなりやすいのが特徴です。まず音が「電源」「調光器」「テープ」のどこから出ているかを耳で近づけて切り分け、PWM周波数の高い調光器（おおむね数kHz以上、可聴域上限を超える数十kHz品が理想）へ変更する、電源容量を負荷に対して適正化する、といった対策を取ります。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 電源（PSU）からブーンという低いうなりが出ます。原因は何ですか？</div>
+        <div class="faq-a">スイッチング電源のうなりは、負荷が軽すぎる（容量に対してLEDの消費電力が小さすぎる）場合や、PWM調光で電流が断続することでトランス・コイルが磁歪（じわい）振動を起こす場合に発生します。電源の定格に対して負荷が20%未満だと無負荷に近い不安定動作でうなりやすいため、電源容量を負荷の1.2〜1.5倍程度に適正化する、調光は電源より後段（二次側DC側）のPWMコントローラで行う、電源を防振ゴムで固定し共鳴を抑える、といった対策が有効です。それでも消えない個体差の大きい電源は、別ロット・別機種へ交換すると改善することがあります。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 調光しても音が出ないようにするにはどの方式を選べばいいですか？</div>
+        <div class="faq-a">可聴域を超える高いPWM周波数（数十kHz以上）で動作する二次側DC調光のコントローラを選ぶのが基本です。AC位相制御（トライアック）調光対応の電源は、一次側で電流を切るためうなりが出やすい傾向があります。静音性を重視するなら、二次側でMOSFETによる高周波PWM調光を行うコントローラ、または電流を連続的に絞るCCR（定電流リニア）方式を選びます。CCRはちらつきも音も出にくい一方で効率がやや落ち発熱が増えるため、放熱設計とセットで検討してください。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>静音調光対応のLEDテープ・コントローラを探す</h3>
+      <p>高周波PWM・CCR対応の調光コントローラ、適正容量の電源、放熱用アルミフレームを取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

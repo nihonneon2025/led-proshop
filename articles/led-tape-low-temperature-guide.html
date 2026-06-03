@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>冷蔵・冷凍倉庫向けLEDテープの選び方｜低温環境の動作温度・結露・電源配置を施工業者向けに解説 | LED PRO SHOP</title>
+<meta name="description" content="冷蔵ショーケース・冷凍倉庫・プレハブ冷蔵庫にLEDテープを使うときは、動作温度範囲（−20〜−40℃対応）・結露と着霜による絶縁/防水・電源の常温側配置が要点です。低温でのLED特性、IP67/68防水とコーティング、ヒーター結露対策、電源を冷気外に出す配線手順を施工業者向けに解説。">
+<meta property="og:title" content="冷蔵・冷凍倉庫向けLEDテープの選び方｜低温環境の動作温度・結露・電源配置を施工業者向けに解説 | LED PRO SHOP">
+<meta property="og:description" content="冷蔵・冷凍倉庫向けLEDテープの選定。動作温度範囲・結露/着霜対策の防水とコーティング・電源を常温側に出す配置を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-low-temperature-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-low-temperature-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="冷蔵・冷凍倉庫向けLEDテープの選び方｜低温の動作温度・結露・電源配置を解説 | LED PRO SHOP">
+<meta name="twitter:description" content="冷蔵・冷凍倉庫向けLEDテープの選定。動作温度範囲・結露/着霜対策・電源を常温側に出す配置を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-low-temperature-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-low-temperature-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #07141a; color: #dcedf2; line-height: 1.7; font-size: 15px; }
+  a { color: #38bdf8; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #042f3e 0%, #06384a 50%, #032a3a 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #155e75; }
+  .hero-badge { display: inline-block; background: #0891b2; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #eefaff; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #9cc7d6; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #5e93a5; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #eefaff; border-left: 4px solid #06b6d4; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #7dd3fc; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #c9e3ec; }
+
+  .alert-box { background: #101c1c; border: 1px solid #1d6f6f; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #06222e; border: 1px solid #155e75; border-left: 4px solid #06b6d4; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #bae8f8; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #06222e; border-radius: 10px; overflow: hidden; }
+  thead th { background: #155e75; color: #a5e9f8; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #103340; color: #c9e3ec; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #082833; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #06222e; border: 1px solid #0e7490; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #7dd3fc; margin-top: 0; }
+  .calc-formula { background: #021318; border: 1px solid #155e75; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #a5e9f8; margin: 12px 0; line-height: 2; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .spec-card { background: #06222e; border: 1px solid #155e75; border-radius: 10px; padding: 20px; }
+  .spec-card h4 { font-size: 15px; font-weight: 700; color: #7dd3fc; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #103340; }
+  .spec-card .spec-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding: 5px 0; }
+  .spec-card .spec-row span:first-child { color: #9cc7d6; }
+  .spec-card .spec-row span:last-child { color: #dcedf2; font-weight: 600; text-align: right; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #06222e; border: 1px solid #155e75; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #06b6d4; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #7dd3fc; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #9cc7d6; margin-bottom: 0; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #06b6d4; color: #032a3a; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #c9e3ec; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #103340; font-size: 14px; color: #c9e3ec; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #155e75; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #06222e; padding: 16px 20px; font-weight: 700; color: #7dd3fc; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #c9e3ec; background: #041820; }
+
+  .cta-box { background: linear-gradient(135deg, #155e75 0%, #042f3e 100%); border: 1px solid #06b6d4; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #eefaff; margin-bottom: 10px; }
+  .cta-box p { color: #9cc7d6; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #0891b2; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #0e7490; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #5e93a5; }
+  .breadcrumb a { color: #5e93a5; }
+  .breadcrumb a:hover { color: #7dd3fc; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid, .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "冷蔵・冷凍倉庫向けLEDテープの選び方｜低温環境の動作温度・結露・電源配置を施工業者向けに解説",
+  "description": "冷蔵・冷凍倉庫向けLEDテープの選定。動作温度範囲・結露/着霜対策の防水とコーティング・電源を常温側に出す配置を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-low-temperature-guide-hero.webp",
+  "datePublished": "2026-06-04",
+  "dateModified": "2026-06-04",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-low-temperature-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "冷蔵・冷凍倉庫向けLEDテープの選び方（低温・結露・電源配置）" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "冷凍倉庫（−25℃前後）でも普通のLEDテープは使えますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "一般的なLEDテープの多くは動作温度の下限が−20℃前後までで、それ以下では仕様外になります。LEDチップ自体は低温で発光効率がむしろ上がり寿命にも有利ですが、問題になるのは粘着テープの密着力低下による剥がれ、シリコンコーティングや配線被覆の硬化・ひび割れ、はんだ部の機械的ストレスです。−25℃や−40℃といった冷凍環境では、必ずメーカーの動作温度範囲がその温度をカバーする低温対応品を選び、貼り付けは粘着だけに頼らず低温対応両面テープ＋アルミフレームやクリップで機械的に固定してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "冷蔵・冷凍庫内のLEDで一番のトラブルは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "結露と着霜（霜付き）です。庫内の冷えた面に湿った空気が触れると結露し、霜取り（デフロスト）運転で温度が上下するたびに凍結と融解を繰り返します。この水分がカット端・はんだ部・コネクタに侵入すると、ショート・腐食・不点灯の原因になります。対策はIP67以上（できればIP68）の防水テープを使い、カット端とはんだ部を防水コーティングで完全に塞ぐこと、コネクタは庫内に置かず常温側に出すこと、配線の貫通部をパテやグロメットで気密シールして庫内の湿気が外に逃げる/外気が入る経路を断つことです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "電源（PSU）は冷凍庫の中と外、どちらに置くべきですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "原則として電源は庫外の常温側に置きます。スイッチング電源は低温に弱い電解コンデンサを内蔵しており、多くの製品の動作下限は0℃や−10℃程度で、冷凍庫内では仕様外になり寿命短縮・始動不良の原因になります。庫内に通すのはDC低電圧の配線だけにし、電源・コネクタ・調光器は庫外の乾いた常温位置にまとめると、保守時の出入りも最小限で済みます。やむを得ず庫内側に機器を置く場合は、低温対応を明記した製品を選び、結露対策の密閉ボックスに収めてください。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">製品活用ガイド</div>
+    <h1>冷蔵・冷凍倉庫向けLEDテープの選び方<br>低温の動作温度・結露・電源配置の要点</h1>
+    <p class="hero-sub">低温対応の動作温度範囲・IP67/68防水と結露/着霜対策・電源を常温側に出す配線を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-06-04 | カテゴリ: LEDテープ製品活用ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-low-temperature-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; 冷蔵・冷凍倉庫向けLEDテープの選び方（低温・結露・電源配置）
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="alert-box">
+      <div class="alert-title">よくある施工トラブル：「冷凍庫に付けたら数か月で剥がれ・不点灯」</div>
+      <p>冷蔵ショーケースや冷凍倉庫にLEDテープを使うと、<strong>低温で粘着が効かず剥がれる</strong>・<strong>結露と霜取りの繰り返しで水分が侵入してショート/腐食する</strong>・<strong>庫内に置いた電源が低温で寿命短縮・始動不良</strong>という3つのトラブルが起きがちです。常温の店内と同じ感覚で施工すると短期間で不具合になります。低温環境は専用の選定と固定・防水・電源配置がカギです。</p>
+    </div>
+
+    <h2>低温環境でLEDテープに起きること</h2>
+
+    <p>意外に思われますが、<strong>LEDチップ自体は低温に強い</strong>方です。温度が下がると発光効率が上がり、寿命にも有利に働きます。問題になるのは半導体ではなく、テープを構成する<strong>周辺の材料と水分</strong>です。</p>
+
+    <p>低温では、貼り付け用の<strong>粘着テープの密着力が大きく低下</strong>して剥がれやすくなり、<strong>シリコンコーティングや配線被覆が硬化・ひび割れ</strong>を起こします。さらに庫内特有の<strong>結露・着霜（霜付き）</strong>がカット端・はんだ部・コネクタに侵入し、霜取り運転の温度変化と相まってショート・腐食・不点灯を招きます。</p>
+
+    <div class="info-box">
+      <p><strong>低温施工の3本柱</strong>：①動作温度範囲がその庫内温度をカバーする<strong>低温対応品</strong>を選ぶ ②<strong>IP67以上の防水＋カット端/はんだ部の完全シール</strong>で水分侵入を断つ ③<strong>電源・コネクタは庫外の常温側</strong>に出す。この3つが揃って初めて長期安定します。</p>
+    </div>
+
+    <h2>環境温度帯別の選定目安</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>用途・温度帯</th>
+          <th>必要な動作温度</th>
+          <th>推奨防水等級</th>
+          <th>固定方法</th>
+          <th>電源位置</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>冷蔵ショーケース（0〜5℃）</td>
+          <td>−20℃〜対応</td>
+          <td class="tag-ok">IP65〜67</td>
+          <td>低温両面＋フレーム</td>
+          <td>庫外/常温側</td>
+        </tr>
+        <tr>
+          <td>冷蔵庫・チルド室（−5〜5℃）</td>
+          <td>−20℃〜対応</td>
+          <td class="tag-ok">IP67</td>
+          <td>アルミフレーム固定</td>
+          <td>庫外/常温側</td>
+        </tr>
+        <tr>
+          <td>冷凍倉庫（−18〜−25℃）</td>
+          <td class="tag-warn">−30℃〜対応必須</td>
+          <td class="tag-ok">IP67〜68</td>
+          <td>フレーム＋クリップ機械固定</td>
+          <td>庫外必須</td>
+        </tr>
+        <tr>
+          <td>超低温倉庫（−40℃前後）</td>
+          <td class="tag-ng">−40℃対応の専用品</td>
+          <td class="tag-ok">IP68</td>
+          <td>全長機械固定</td>
+          <td>庫外必須</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>低温対応LEDテープの選定ポイント</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">①</div>
+        <h4>動作温度範囲を必ず確認</h4>
+        <p>「使用温度」ではなく「動作（通電）温度の下限」が庫内最低温度（霜取り後の変動も含む）を下回る製品を選ぶ。−20℃止まりの汎用品を冷凍庫に使わない。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">②</div>
+        <h4>IP67以上＋端部シール</h4>
+        <p>結露・着霜の水分を防ぐためIP67以上（冷凍はIP68推奨）。さらにカット端・はんだ部は防水コーティングやシールで完全に塞ぐ。防水等級だけでは切断端は守れない。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">③</div>
+        <h4>機械固定を前提にする</h4>
+        <p>低温で粘着は効きにくい。低温対応両面テープを使ったうえで、アルミフレーム・クリップ・ネジ等で機械的に固定し、剥がれと垂れを防ぐ。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">④</div>
+        <h4>電源・接続は常温側へ</h4>
+        <p>電源・コネクタ・調光器は低温に弱い。庫内へはDC配線のみを通し、機器は庫外の乾いた常温位置に集約する。保守の出入りも減らせる。</p>
+      </div>
+    </div>
+
+    <h2>結露・着霜への防水処理手順</h2>
+
+    <ul class="step-list">
+      <li><span>貼り付け面の<strong>霜・水分・油分を除去し乾燥</strong>させる。冷えた面は施工前に庫内温度へ慣らすか、可能なら昇温して結露を飛ばしてから作業する。</span></li>
+      <li><span><strong>IP67以上の防水テープ</strong>を使用し、低温対応両面テープ＋アルミフレーム／クリップで<strong>機械固定</strong>する。粘着のみの固定は不可。</span></li>
+      <li><span><strong>カット端・はんだ部は防水コーティング／端部キャップ</strong>で完全密閉する。ここが結露侵入の最大の弱点になる。</span></li>
+      <li><span>コネクタは庫内に置かず、<strong>配線を常温側まで延長</strong>してから接続する。庫内接続が避けられない場合は防水コネクタ＋追加シール。</span></li>
+      <li><span>庫壁の<strong>配線貫通部をグロメット・パテで気密シール</strong>し、庫内の湿気の流出入を断つ。貫通部の結露・凍結を防ぐ。</span></li>
+      <li><span>通電後、<strong>霜取り運転を1サイクル</strong>させ、温度変化後に点灯・浸水・結露の有無を確認する。低温施工は1回の点灯確認で終わらせない。</span></li>
+    </ul>
+
+    <div class="calc-box">
+      <h3>低温での電力・電源容量の考え方</h3>
+      <div class="calc-formula">
+LED合計電力(W) = W/m × 全長(m)
+電源容量 = LED合計電力 ÷ 0.8（余裕率80%運用）
+
+※注意：電源は庫外（常温）配置が前提。
+  庫内配置時は電源の動作下限温度を必ず確認
+  （多くは0℃〜/−10℃〜で冷凍庫は仕様外）
+      </div>
+      <p style="color:#a5e9f8; font-size:13px; margin-top:12px; margin-bottom:0">
+        例：24V・6W/m × 8m = 48W → 電源容量 48W ÷ 0.8 = 60W以上<br>
+        電源は庫外の常温側に設置し、庫内へはDC24Vの配線のみを通す。
+      </p>
+    </div>
+
+    <h2>低温施工の機器・部材チェック</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h4>LEDテープ</h4>
+        <div class="spec-row"><span>動作下限</span><span>庫内最低温以下</span></div>
+        <div class="spec-row"><span>防水等級</span><span>IP67〜68</span></div>
+        <div class="spec-row"><span>端部</span><span>完全シール</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>固定・配線</h4>
+        <div class="spec-row"><span>固定</span><span>機械固定併用</span></div>
+        <div class="spec-row"><span>両面テープ</span><span>低温対応品</span></div>
+        <div class="spec-row"><span>貫通部</span><span>気密シール</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>電源・接続</h4>
+        <div class="spec-row"><span>電源位置</span><span>庫外/常温側</span></div>
+        <div class="spec-row"><span>コネクタ</span><span>常温側に集約</span></div>
+        <div class="spec-row"><span>庫内</span><span>DC配線のみ</span></div>
+      </div>
+    </div>
+
+    <h2>施工前・引渡し前チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>LEDテープの動作温度下限が庫内の最低温度（霜取り変動含む）を下回っている</li>
+      <li>防水等級がIP67以上（冷凍庫はIP68推奨）である</li>
+      <li>カット端・はんだ部を防水コーティング／端部キャップで完全密閉した</li>
+      <li>低温対応両面テープ＋アルミフレーム/クリップで機械的に固定した（粘着のみにしていない）</li>
+      <li>電源・コネクタ・調光器を庫外の常温側に配置し、庫内へはDC配線のみを通した</li>
+      <li>庫壁の配線貫通部をグロメット・パテで気密シールした</li>
+      <li>電源容量を合計電力÷0.8で確保した</li>
+      <li>霜取り運転を1サイクルさせ、温度変化後に点灯・浸水・結露の有無を確認した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 冷凍倉庫（−25℃前後）でも普通のLEDテープは使えますか？</div>
+        <div class="faq-a">一般的なLEDテープの多くは動作温度の下限が−20℃前後までで、それ以下では仕様外になります。LEDチップ自体は低温で発光効率がむしろ上がり寿命にも有利ですが、問題になるのは粘着テープの密着力低下による剥がれ、シリコンコーティングや配線被覆の硬化・ひび割れ、はんだ部の機械的ストレスです。−25℃や−40℃といった冷凍環境では、必ずメーカーの動作温度範囲がその温度をカバーする低温対応品を選び、貼り付けは粘着だけに頼らず低温対応両面テープ＋アルミフレームやクリップで機械的に固定してください。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 冷蔵・冷凍庫内のLEDで一番のトラブルは何ですか？</div>
+        <div class="faq-a">結露と着霜（霜付き）です。庫内の冷えた面に湿った空気が触れると結露し、霜取り（デフロスト）運転で温度が上下するたびに凍結と融解を繰り返します。この水分がカット端・はんだ部・コネクタに侵入すると、ショート・腐食・不点灯の原因になります。対策はIP67以上（できればIP68）の防水テープを使い、カット端とはんだ部を防水コーティングで完全に塞ぐこと、コネクタは庫内に置かず常温側に出すこと、配線の貫通部をパテやグロメットで気密シールして庫内の湿気が外に逃げる/外気が入る経路を断つことです。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 電源（PSU）は冷凍庫の中と外、どちらに置くべきですか？</div>
+        <div class="faq-a">原則として電源は庫外の常温側に置きます。スイッチング電源は低温に弱い電解コンデンサを内蔵しており、多くの製品の動作下限は0℃や−10℃程度で、冷凍庫内では仕様外になり寿命短縮・始動不良の原因になります。庫内に通すのはDC低電圧の配線だけにし、電源・コネクタ・調光器は庫外の乾いた常温位置にまとめると、保守時の出入りも最小限で済みます。やむを得ず庫内側に機器を置く場合は、低温対応を明記した製品を選び、結露対策の密閉ボックスに収めてください。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>低温・防水対応のLEDテープ・部材を探す</h3>
+      <p>IP67/68防水テープ・低温対応の固定部材・庫外設置用の電源と防水コネクタを取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープにヒューズは必要？過電流保護（回路保護）の入れ方と容量計算｜施工業者向け配線ガイド | LED PRO SHOP</title>
+<meta name="description" content="LEDテープのDC配線に短絡・過電流が起きると配線が発熱・発火する恐れがあります。ヒューズ・サーキットプロテクタの選定（定格電流＝最大負荷の1.25〜1.5倍）、設置位置（電源直近のプラス側）、ヒューズホルダ・配線太さとの整合を計算式付きで施工業者向けに解説。複数系統の分岐保護も網羅。">
+<meta property="og:title" content="LEDテープにヒューズは必要？過電流保護（回路保護）の入れ方と容量計算｜施工業者向け配線ガイド | LED PRO SHOP">
+<meta property="og:description" content="LEDテープのDC配線の短絡・過電流対策。ヒューズ容量の計算式（最大負荷の1.25〜1.5倍）、設置位置、配線太さとの整合、分岐回路の保護を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-fuse-circuit-protection-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-fuse-circuit-protection-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープにヒューズは必要？過電流保護の入れ方と容量計算｜施工業者向け配線ガイド | LED PRO SHOP">
+<meta name="twitter:description" content="LEDテープのDC配線の短絡・過電流対策。ヒューズ容量計算（最大負荷の1.25〜1.5倍）、設置位置、配線太さとの整合を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-fuse-circuit-protection-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-fuse-circuit-protection-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #07140f; color: #dceee6; line-height: 1.7; font-size: 15px; }
+  a { color: #34d399; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #052e22 0%, #06342a 50%, #042a20 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #115e45; }
+  .hero-badge { display: inline-block; background: #059669; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f0fdf8; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #99c9b8; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #5e9580; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f0fdf8; border-left: 4px solid #10b981; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #6ee7b7; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #cbe5db; }
+
+  .alert-box { background: #1c1006; border: 1px solid #7f3d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #06241b; border: 1px solid #115e45; border-left: 4px solid #10b981; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #bbf7e0; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #06241b; border-radius: 10px; overflow: hidden; }
+  thead th { background: #115e45; color: #a7f3d0; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #11352a; color: #cbe5db; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #08291f; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #06241b; border: 1px solid #047857; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #6ee7b7; margin-top: 0; }
+  .calc-formula { background: #02120c; border: 1px solid #065f46; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #a7f3d0; margin: 12px 0; line-height: 2; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .spec-card { background: #06241b; border: 1px solid #115e45; border-radius: 10px; padding: 20px; }
+  .spec-card h4 { font-size: 15px; font-weight: 700; color: #6ee7b7; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #11352a; }
+  .spec-card .spec-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding: 5px 0; }
+  .spec-card .spec-row span:first-child { color: #99c9b8; }
+  .spec-card .spec-row span:last-child { color: #dceee6; font-weight: 600; text-align: right; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #06241b; border: 1px solid #115e45; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #10b981; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #6ee7b7; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #99c9b8; margin-bottom: 0; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #10b981; color: #042a20; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #cbe5db; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #11352a; font-size: 14px; color: #cbe5db; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #115e45; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #06241b; padding: 16px 20px; font-weight: 700; color: #6ee7b7; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #cbe5db; background: #04190f; }
+
+  .cta-box { background: linear-gradient(135deg, #115e45 0%, #052e22 100%); border: 1px solid #10b981; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f0fdf8; margin-bottom: 10px; }
+  .cta-box p { color: #99c9b8; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #059669; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #047857; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #5e9580; }
+  .breadcrumb a { color: #5e9580; }
+  .breadcrumb a:hover { color: #6ee7b7; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid, .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LEDテープにヒューズは必要？過電流保護（回路保護）の入れ方と容量計算｜施工業者向け配線ガイド",
+  "description": "LEDテープのDC配線の短絡・過電流対策。ヒューズ容量の計算式（最大負荷の1.25〜1.5倍）、設置位置、配線太さとの整合、分岐回路の保護を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-fuse-circuit-protection-guide-hero.webp",
+  "datePublished": "2026-06-04",
+  "dateModified": "2026-06-04",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-fuse-circuit-protection-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "LEDテープの過電流保護（ヒューズ・回路保護）の入れ方" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "LEDテープのDC配線にヒューズは必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "強く推奨します。電源（PSU）自体に過負荷・短絡保護が内蔵されていても、電源から先のDC配線で短絡（プラスとマイナスの接触）が起きると、電源の保護が働く前に細い配線が一気に発熱して被覆溶融・発火に至る恐れがあります。とくに自動車・什器・屋外サインのように振動や水分でショートしやすい環境、配線が長い・束ねる現場では、電源直近のプラス側にヒューズまたはサーキットプロテクタを入れて回路を保護してください。ヒューズは「機器を守る」より「配線を守る」ために入れるのが基本の考え方です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ヒューズの容量（A）はどう決めればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "まずLEDテープの最大負荷電流を求めます。電流(A)＝合計消費電力(W)÷電源電圧(V)です。例えば24V・8W/mを10m使うなら 80W÷24V≒3.3A。これに対しヒューズは突入電流による誤断を避けるため、最大負荷の1.25〜1.5倍程度を選び、規格値に丸めます（3.3A×1.5≒5A）。ただし重要なのは、ヒューズ容量が配線（ハーネス）の許容電流を超えないことです。配線が4Aまでしか流せないのに10Aヒューズを入れると配線が先に焼けるため、ヒューズは必ず配線許容電流以下に設定します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ヒューズはプラス側とマイナス側どちらに、どの位置に入れますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DC回路では電源のプラス側に、できるだけ電源出口の直近に入れます。理由は、保護したい配線の最上流（電源側）で切ることで、短絡時に下流の配線全体を保護できるためです。マイナス（GND）側に入れると、ショート箇所によってはヒューズを経由せずに電流が流れ保護できない場合があります。複数系統に分岐する場合は、幹線に主ヒューズを入れたうえで各分岐にも分岐ヒューズを入れる多段構成にすると、1系統の短絡で全系統が落ちるのを防げます。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">施工方法ガイド</div>
+    <h1>LEDテープにヒューズは必要？<br>過電流保護（回路保護）の入れ方と容量計算</h1>
+    <p class="hero-sub">ヒューズ容量の計算式・設置位置・配線太さとの整合・分岐回路の保護を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-06-04 | カテゴリ: LEDテープ施工方法ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-fuse-circuit-protection-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープの過電流保護（ヒューズ・回路保護）の入れ方
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="alert-box">
+      <div class="alert-title">よくある施工リスク：「配線が短絡して被覆が溶けた・焦げた」</div>
+      <p>LEDテープのDC配線でプラスとマイナスが触れて短絡すると、電源の保護が働く前に<strong>細い配線が一瞬で過熱し、被覆溶融・発火</strong>に至ることがあります。電源側に保護があっても、電源から先の配線は無防備になりがちです。ヒューズは「LEDを守る」ためではなく<strong>「配線を守る」</strong>ために入れる——これが過電流保護の出発点です。</p>
+    </div>
+
+    <h2>なぜDC配線にヒューズ・回路保護が要るのか</h2>
+
+    <p>スイッチング電源には過負荷・短絡保護が内蔵されていることが多いですが、その保護は<strong>電源自身を守るための動作</strong>です。電源から先のDC配線で短絡が起きると、電源の保護が落ちるまでの短時間でも、許容を超える電流が細い配線に流れて急激に発熱します。</p>
+
+    <p>とくに<strong>振動・水分・人の出入りでショートしやすい環境</strong>（什器・移動什器・屋外サイン・車載・イベント設営）や、<strong>配線が長い・束ねる・金属に這わせる</strong>現場では、配線側に独立した過電流保護を設けるのが安全です。保護は配線の最上流（電源直近のプラス側）で切るのが鉄則です。</p>
+
+    <div class="info-box">
+      <p><strong>原則</strong>：ヒューズ容量は「LEDの最大負荷を流せる大きさ」かつ「配線の許容電流を超えない大きさ」の両方を満たすこと。配線が先に焼けるヒューズ設定（配線許容＜ヒューズ容量）は保護になりません。</p>
+    </div>
+
+    <h2>ヒューズ容量の計算手順</h2>
+
+    <div class="calc-box">
+      <h3>ヒューズ容量の決め方（DC低電圧回路）</h3>
+      <div class="calc-formula">
+① 最大負荷電流 = LED合計消費電力(W) ÷ 電源電圧(V)
+
+② ヒューズ容量 = 最大負荷電流 × 1.25〜1.5（突入余裕）
+   → 規格値（3A/5A/7.5A/10A…）に切り上げ
+
+③ 条件： ヒューズ容量 ≦ 配線（ハーネス）の許容電流
+   （これを満たさない場合は配線を太くする）
+      </div>
+      <p style="color:#a7f3d0; font-size:13px; margin-top:12px; margin-bottom:0">
+        例：24V・8W/m × 10m = 80W → 80W ÷ 24V ≒ 3.3A<br>
+        ヒューズ = 3.3A × 1.5 ≒ 5A（規格値5Aを選択）<br>
+        条件確認：使用配線0.75mm²の許容が約7A → 5A ≦ 7A で成立（OK）
+      </p>
+    </div>
+
+    <h2>負荷電流とヒューズ・配線の早見表</h2>
+
+    <p>下表は一般的なDC配線の目安です。配線の許容電流は被覆種類・周囲温度・束ね方で変わるため、実際はメーカー値で確認してください。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>最大負荷電流</th>
+          <th>推奨ヒューズ容量</th>
+          <th>最低配線断面積の目安</th>
+          <th>判定</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>〜2A</td>
+          <td>3A</td>
+          <td>0.5mm²（許容約5A）</td>
+          <td class="tag-ok">OK ✓</td>
+        </tr>
+        <tr>
+          <td>〜3.5A</td>
+          <td>5A</td>
+          <td>0.75mm²（許容約7A）</td>
+          <td class="tag-ok">OK ✓</td>
+        </tr>
+        <tr>
+          <td>〜5A</td>
+          <td>7.5A</td>
+          <td>1.25mm²（許容約12A）</td>
+          <td class="tag-ok">OK ✓</td>
+        </tr>
+        <tr>
+          <td>〜7A</td>
+          <td>10A</td>
+          <td>2.0mm²（許容約17A）</td>
+          <td class="tag-ok">OK ✓</td>
+        </tr>
+        <tr>
+          <td>5A負荷に10Aヒューズ＋0.5mm²配線</td>
+          <td>10A（過大）</td>
+          <td>0.5mm²（許容約5A）</td>
+          <td class="tag-ng">不可 ✗ 配線が先に焼ける</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>保護デバイスの種類と使い分け</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">①</div>
+        <h4>管ヒューズ／ブレードヒューズ</h4>
+        <p>最も安価で確実。溶断したら交換が必要。ヒューズホルダ・インラインヒューズで配線途中に挿入する。DC定格電圧（例：DC32V以上）が回路電圧以上の品を選ぶ。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">②</div>
+        <h4>サーキットプロテクタ（再起動式）</h4>
+        <p>過電流で遮断し、原因除去後にボタンやレバーで復帰できる。交換不要で保守性が高い。常設の什器・サインや、点検しにくい場所に向く。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">③</div>
+        <h4>ポリスイッチ（PTC）</h4>
+        <p>過電流で抵抗が急増し電流を制限、冷えると自動復帰する自己復帰型。小電流回路の基板保護向き。大電流幹線の主保護には管ヒューズ等を併用する。</p>
+      </div>
+    </div>
+
+    <h2>正しい設置位置と配線手順</h2>
+
+    <ul class="step-list">
+      <li><span>ヒューズは<strong>電源のプラス（＋）出力の直近</strong>に入れる。保護したい配線の最上流で切ることで下流全体を守れる。GND側だけに入れるのは不可。</span></li>
+      <li><span>ヒューズ容量を<strong>最大負荷×1.25〜1.5</strong>で算出し規格値に丸める。同時に<strong>配線許容電流以下</strong>であることを必ず確認する。</span></li>
+      <li><span>ヒューズホルダ・インラインヒューズの<strong>定格電圧がDC回路電圧以上</strong>（12V/24V回路ならDC32V品など）であることを確認する。AC用ヒューズの流用は避ける。</span></li>
+      <li><span>複数系統に分岐する場合は<strong>幹線に主ヒューズ＋各分岐に分岐ヒューズ</strong>の多段構成にする。1系統の短絡で全系統が落ちるのを防げる。</span></li>
+      <li><span>圧着端子・ヒューズホルダの接続が緩いと接触抵抗で発熱するため、<strong>確実に圧着・締結</strong>し、増し締め点検を施工後に行う。</span></li>
+      <li><span>施工後、<strong>意図的な過電流試験は行わず</strong>、テスターでヒューズ前後の導通と、＋−間の短絡が無いことを確認してから通電する。</span></li>
+    </ul>
+
+    <div class="info-box">
+      <p><strong>AC一次側との区分</strong>：ここで扱うのは電源より後段のDC低電圧側の保護です。AC100V/200Vの一次側のブレーカ・漏電遮断器・接地は電気工事士の資格範囲となるため、有資格者が施工してください。施工区分は電源の入力端子で明確に分けます。</p>
+    </div>
+
+    <h2>分岐回路の保護構成（多系統サイン・什器）</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h4>幹線（主保護）</h4>
+        <div class="spec-row"><span>位置</span><span>電源＋出力直近</span></div>
+        <div class="spec-row"><span>容量</span><span>全系統合計×1.25〜1.5</span></div>
+        <div class="spec-row"><span>配線</span><span>合計電流に耐える太さ</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>各分岐（分岐保護）</h4>
+        <div class="spec-row"><span>位置</span><span>分岐点の各＋線</span></div>
+        <div class="spec-row"><span>容量</span><span>その系統負荷×1.25〜1.5</span></div>
+        <div class="spec-row"><span>狙い</span><span>1系統障害の局所化</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>環境別の配慮</h4>
+        <div class="spec-row"><span>屋外/車載</span><span>防水ホルダ・振動対策</span></div>
+        <div class="spec-row"><span>常設什器</span><span>再起動式が保守◎</span></div>
+        <div class="spec-row"><span>束ね配線</span><span>許容電流を減じて計算</span></div>
+      </div>
+    </div>
+
+    <h2>過電流保護チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>LEDの最大負荷電流（合計W÷電圧V）を算出した</li>
+      <li>ヒューズ容量を最大負荷×1.25〜1.5で求め、規格値に丸めた</li>
+      <li>ヒューズ容量が使用配線（ハーネス）の許容電流以下に収まっている</li>
+      <li>ヒューズを電源のプラス側・電源出力の直近に設置した（GND側のみは不可）</li>
+      <li>ヒューズホルダの定格電圧がDC回路電圧以上の品である</li>
+      <li>複数系統は幹線＋分岐の多段保護にした</li>
+      <li>圧着・締結が確実で、屋外・車載は防水/防振ホルダを使用した</li>
+      <li>通電前にテスターで＋−間の短絡がないこと、ヒューズ前後の導通を確認した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. LEDテープのDC配線にヒューズは必要ですか？</div>
+        <div class="faq-a">強く推奨します。電源（PSU）自体に過負荷・短絡保護が内蔵されていても、電源から先のDC配線で短絡（プラスとマイナスの接触）が起きると、電源の保護が働く前に細い配線が一気に発熱して被覆溶融・発火に至る恐れがあります。とくに自動車・什器・屋外サインのように振動や水分でショートしやすい環境、配線が長い・束ねる現場では、電源直近のプラス側にヒューズまたはサーキットプロテクタを入れて回路を保護してください。ヒューズは「機器を守る」より「配線を守る」ために入れるのが基本の考え方です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. ヒューズの容量（A）はどう決めればいいですか？</div>
+        <div class="faq-a">まずLEDテープの最大負荷電流を求めます。電流(A)＝合計消費電力(W)÷電源電圧(V)です。例えば24V・8W/mを10m使うなら 80W÷24V≒3.3A。これに対しヒューズは突入電流による誤断を避けるため、最大負荷の1.25〜1.5倍程度を選び、規格値に丸めます（3.3A×1.5≒5A）。ただし重要なのは、ヒューズ容量が配線（ハーネス）の許容電流を超えないことです。配線が4Aまでしか流せないのに10Aヒューズを入れると配線が先に焼けるため、ヒューズは必ず配線許容電流以下に設定します。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. ヒューズはプラス側とマイナス側どちらに、どの位置に入れますか？</div>
+        <div class="faq-a">DC回路では電源のプラス側に、できるだけ電源出口の直近に入れます。理由は、保護したい配線の最上流（電源側）で切ることで、短絡時に下流の配線全体を保護できるためです。マイナス（GND）側に入れると、ショート箇所によってはヒューズを経由せずに電流が流れ保護できない場合があります。複数系統に分岐する場合は、幹線に主ヒューズを入れたうえで各分岐にも分岐ヒューズを入れる多段構成にすると、1系統の短絡で全系統が落ちるのを防げます。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>過電流保護に使えるヒューズ・電源・配線を探す</h3>
+      <p>インラインヒューズホルダ・適正容量の電源・許容電流に合った配線ハーネスを取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
