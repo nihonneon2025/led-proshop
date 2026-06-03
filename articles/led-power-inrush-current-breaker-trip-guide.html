@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LED電源を増やしたらブレーカーが落ちる｜突入電流の原因と対策（時差投入・インラッシュ抑制・遮断特性）| LED PRO SHOP</title>
+<meta name="description" content="LEDテープ用スイッチング電源を複数台つないだら通電のたびにブレーカーが落ちる——原因は容量オーバーではなく投入時の突入電流（インラッシュ）です。突入電流が重なる仕組み、ブレーカーのB/C/D特性、時差投入・突入電流抑制ユニット・回路分散など現場の対策を施工業者向けに解説。">
+<meta property="og:title" content="LED電源を増やしたらブレーカーが落ちる｜突入電流の原因と対策 | LED PRO SHOP">
+<meta property="og:description" content="LED電源を複数台つなぐと投入時の突入電流が重なりブレーカーが瞬時トリップ。容量オーバーとの見分け方、B/C/D遮断特性、時差投入・突入電流抑制・回路分散の対策を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-power-inrush-current-breaker-trip-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-power-inrush-current-breaker-trip-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LED電源を増やしたらブレーカーが落ちる｜突入電流の原因と対策 | LED PRO SHOP">
+<meta name="twitter:description" content="LED電源の複数台接続で投入時の突入電流が重なりブレーカーが瞬時トリップ。時差投入・突入電流抑制・遮断特性の見直しなど現場対策を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-power-inrush-current-breaker-trip-guide-hero.webp">
+<meta name="keywords" content="LED 電源 ブレーカー 落ちる,突入電流 ブレーカー,スイッチング電源 突入電流,LED 電源 増設 ブレーカー,インラッシュ電流 対策,LED 通電 トリップ,ブレーカー 瞬時 遮断 特性">
+<link rel="canonical" href="https://led-proshop.com/articles/led-power-inrush-current-breaker-trip-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #140f07; color: #f0e6d4; line-height: 1.7; font-size: 15px; }
+  a { color: #fbbf24; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #3a2606 0%, #432a07 50%, #2c1c04 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #92590f; }
+  .hero-badge { display: inline-block; background: #d97706; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #fdf6ec; line-height: 1.35; max-width: 820px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #d3b483; max-width: 700px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #a07d44; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #fdf6ec; border-left: 4px solid #f59e0b; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #fcd34d; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #e4d4ba; }
+
+  .alert-box { background: #1f0d08; border: 1px solid #7f3d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #241803; border: 1px solid #92590f; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #fde6b8; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #241803; border-radius: 10px; overflow: hidden; }
+  thead th { background: #78440a; color: #fde68a; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #3a2a0d; color: #e4d4ba; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #2a1d05; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #241803; border: 1px solid #b45309; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #fcd34d; margin-top: 0; }
+  .calc-formula { background: #160f03; border: 1px solid #92590f; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #fde68a; margin: 12px 0; line-height: 2; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .spec-card { background: #241803; border: 1px solid #92590f; border-radius: 10px; padding: 20px; }
+  .spec-card h4 { font-size: 15px; font-weight: 700; color: #fcd34d; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #3a2a0d; }
+  .spec-card .spec-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding: 5px 0; }
+  .spec-card .spec-row span:first-child { color: #d3b483; }
+  .spec-card .spec-row span:last-child { color: #f0e6d4; font-weight: 600; text-align: right; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #241803; border: 1px solid #92590f; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #f59e0b; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #fcd34d; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #d3b483; margin-bottom: 0; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #f59e0b; color: #2c1c04; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #e4d4ba; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #3a2a0d; font-size: 14px; color: #e4d4ba; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #92590f; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #241803; padding: 16px 20px; font-weight: 700; color: #fcd34d; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #e4d4ba; background: #190f03; }
+
+  .cta-box { background: linear-gradient(135deg, #78440a 0%, #2c1c04 100%); border: 1px solid #f59e0b; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #fdf6ec; margin-bottom: 10px; }
+  .cta-box p { color: #d3b483; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #d97706; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #b45309; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #a07d44; }
+  .breadcrumb a { color: #a07d44; }
+  .breadcrumb a:hover { color: #fcd34d; }
+
+  .related { border-top: 1px solid #3a2a0d; margin-top: 40px; padding-top: 24px; }
+  .related h3 { color: #fcd34d; font-size: 16px; margin-bottom: 12px; }
+  .related ul { list-style: none; }
+  .related li { padding: 6px 0 6px 18px; position: relative; font-size: 14px; }
+  .related li::before { content: '›'; position: absolute; left: 0; color: #f59e0b; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid, .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LED電源を増やしたらブレーカーが落ちる｜突入電流の原因と対策（時差投入・インラッシュ抑制・遮断特性）",
+  "description": "LEDテープ用スイッチング電源を複数台つなぐと投入時の突入電流が重なりブレーカーが瞬時トリップ。容量オーバーとの見分け方、B/C/D遮断特性、時差投入・突入電流抑制・回路分散の対策を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-power-inrush-current-breaker-trip-guide-hero.webp",
+  "datePublished": "2026-06-04",
+  "dateModified": "2026-06-04",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-power-inrush-current-breaker-trip-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "LED電源の突入電流でブレーカーが落ちる原因と対策" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "LED電源を増やしたら通電のたびにブレーカーが落ちます。容量オーバーですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "多くの場合、定常の容量オーバーではなく電源投入時の突入電流（インラッシュ電流）が原因です。見分け方は単純で、ブレーカーが落ちるタイミングを確認します。スイッチを入れた瞬間（通電直後）に落ちるなら突入電流、しばらく点灯した後にじわじわ落ちるなら定常負荷の容量オーバーや過熱が疑われます。スイッチング電源は内部の入力コンデンサを充電するため投入の瞬間だけ定格の数十倍の電流が数ミリ秒流れます。複数台を同時投入するとこのピークが重なり、定常では余裕があってもブレーカーの瞬時引外しが働いて落ちます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "突入電流でブレーカーが落ちるとき、容量の大きいブレーカーに替えれば解決しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "安易な容量アップは推奨しません。ブレーカーは配線を保護するための装置なので、配線の許容を超える容量に上げると、過電流時に配線が先に発熱する危険があります。突入電流対策として正しいのは、まず投入を分散すること（時差投入・順次起動）、突入電流抑制ユニットやNTCサーミスタを入れること、それでも足りなければ遮断特性を瞬時引外し倍率の高いC特性へ見直すことです。B特性（定格の3〜5倍で瞬時遮断）よりC特性（5〜10倍）の方が突入電流に強く、照明・電源回路で一般的に使われます。なお分電盤側のブレーカー交換や回路変更は電気工事士の資格範囲のため、有資格者が施工してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "電源を1つの大容量品にまとめれば突入電流の問題は減りますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "台数を減らせば突入ピークが重なる回数は減りますが、1台あたりの突入電流は容量が大きいほど大きくなる傾向があるため、単純には言えません。大容量電源1台は1回の突入ピークが大きく、小容量電源を時差投入する方がピークを低く抑えられる場合もあります。実務では、各電源のデータシートに記載された突入電流（Inrush current）のピーク値と継続時間を確認し、同時投入台数×ピーク値がブレーカーの瞬時引外し電流を超えないように、台数・投入順序・抑制部品で設計します。仕様が不明な電源は、突入電流が大きい前提で時差投入を組むのが安全です。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">施工トラブル対策ガイド</div>
+    <h1>LED電源を増やしたらブレーカーが落ちる<br>突入電流の原因と現場でできる対策</h1>
+    <p class="hero-sub">容量オーバーとの見分け方・ブレーカーのB/C/D遮断特性・時差投入・突入電流抑制ユニット・回路分散を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-06-04 | カテゴリ: LEDテープ施工トラブル対策ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-power-inrush-current-breaker-trip-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LED電源の突入電流でブレーカーが落ちる原因と対策
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="alert-box">
+      <div class="alert-title">よくある施工トラブル：「電源を増設したら通電のたびにブレーカーが落ちる」</div>
+      <p>合計ワット数には余裕があるのに、スイッチを入れた<strong>瞬間だけブレーカーが落ちる</strong>——これは容量オーバーではなく、スイッチング電源の<strong>突入電流（インラッシュ電流）が複数台で重なって瞬時引外しが働いた</strong>サインです。容量アップで対処すると配線保護を崩しかねません。原因の切り分けと正しい対策を順に解説します。</p>
+    </div>
+
+    <h2>なぜ突入電流でブレーカーが落ちるのか</h2>
+
+    <p>LEDテープに使うスイッチング電源（ACアダプタ・定電圧PSU）は、入力側に大きな平滑コンデンサを持っています。電源を入れた瞬間、この空のコンデンサを一気に充電するため、<strong>ごく短時間（数ミリ秒）だけ定格入力電流の数十倍に達する大電流</strong>が流れます。これが突入電流（インラッシュ電流）です。</p>
+
+    <p>1台だけなら一瞬で収まりブレーカーは反応しませんが、<strong>複数台の電源を1つのスイッチ・1回路で同時に投入</strong>すると、各台の突入ピークが同じ瞬間に重なります。定常運転では合計電流に余裕があっても、投入の一瞬だけブレーカーの<strong>瞬時引外し電流</strong>を超え、通電と同時にトリップします。</p>
+
+    <div class="info-box">
+      <p><strong>切り分けの第一歩</strong>：落ちる「タイミング」を見ます。<strong>スイッチを入れた瞬間</strong>に落ちる＝突入電流が主因。<strong>しばらく点灯した後</strong>に落ちる＝定常の容量オーバー・過熱・地絡が主因。原因が違えば対策も変わります。</p>
+    </div>
+
+    <h2>容量オーバーと突入電流トラブルの見分け方</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>症状</th>
+          <th>落ちるタイミング</th>
+          <th>主な原因</th>
+          <th>一次対応</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>通電と同時に落ちる</td>
+          <td>スイッチON直後（瞬間）</td>
+          <td class="tag-warn">突入電流の重なり</td>
+          <td>時差投入・突入抑制・遮断特性見直し</td>
+        </tr>
+        <tr>
+          <td>点灯後しばらくして落ちる</td>
+          <td>数分〜数十分後</td>
+          <td class="tag-ng">定常容量オーバー・過熱</td>
+          <td>負荷分散・容量計算の再確認</td>
+        </tr>
+        <tr>
+          <td>不定期にバチッと落ちる</td>
+          <td>振動・接触時など</td>
+          <td class="tag-ng">短絡・地絡（漏電遮断器）</td>
+          <td>配線の短絡/絶縁を点検</td>
+        </tr>
+        <tr>
+          <td>毎回ではなく寒い朝だけ落ちる</td>
+          <td>低温時の初回投入</td>
+          <td class="tag-warn">低温で突入電流が増大</td>
+          <td>時差投入・突入抑制を追加</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>突入電流は<strong>気温が低いほど大きくなる</strong>傾向があります（コンデンサ・サーミスタの特性のため）。「冬の朝の一斉点灯だけ落ちる」という現場は、突入電流が原因のサインです。</p>
+
+    <h2>ブレーカーの遮断特性（B/C/D）を理解する</h2>
+
+    <p>配線用遮断器（MCB）には、定格電流の何倍で瞬時に遮断するかを表す<strong>瞬時引外し特性</strong>があります。突入電流のある負荷では、この倍率が低いと投入のたびに落ちます。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>特性</th>
+          <th>瞬時引外し電流（定格比）</th>
+          <th>向いている負荷</th>
+          <th>突入電流への強さ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>B特性</td>
+          <td>定格の 3〜5 倍</td>
+          <td>白熱灯・抵抗負荷・コンセント</td>
+          <td class="tag-ng">弱い（突入で落ちやすい）</td>
+        </tr>
+        <tr>
+          <td>C特性</td>
+          <td>定格の 5〜10 倍</td>
+          <td>蛍光灯・LED電源・小型モーター</td>
+          <td class="tag-ok">標準（照明回路で一般的）</td>
+        </tr>
+        <tr>
+          <td>D特性</td>
+          <td>定格の 10〜20 倍</td>
+          <td>変圧器・大きな突入のある機器</td>
+          <td class="tag-ok">強い（過保護に注意）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <p><strong>注意</strong>：遮断特性の値はIEC/JISの一般的な区分です。瞬時引外し電流を上げる（B→C→D）と突入には強くなりますが、短絡時の保護が遅くなる方向でもあります。特性変更・分電盤側のブレーカー交換・回路の増設は<strong>電気工事士の資格範囲</strong>です。有資格者が配線許容・上位遮断器との協調を確認のうえ施工してください。</p>
+    </div>
+
+    <h2>突入電流の目安を見積もる</h2>
+
+    <div class="calc-box">
+      <h3>同時投入時の突入ピークをざっくり確認する</h3>
+      <div class="calc-formula">
+① 1台の突入電流ピーク = データシートの Inrush current 値
+   （例：AC100V 300W電源で 「最大40A / 数ms」 など）
+
+② 同時投入の合計ピーク ≒ ①のピーク × 同時に入る台数
+   （厳密には完全一致しないが安全側で重なる前提）
+
+③ 判定： 合計ピーク が ブレーカーの瞬時引外し電流 未満か
+   20A・B特性 → 瞬時引外し ≒ 20A×3〜5 = 60〜100A
+      </div>
+      <p style="color:#fde68a; font-size:13px; margin-top:12px; margin-bottom:0">
+        例：突入40A/台の電源を3台同時投入 → 40A×3＝約120A<br>
+        20A・B特性（瞬時60〜100A）→ <span class="tag-ng">超過＝瞬時トリップ</span><br>
+        対策：3台を1台ずつ時差投入すれば各瞬間は約40Aに収まり成立
+      </p>
+    </div>
+
+    <p>実際の突入電流値は電源のメーカー・容量・入力電圧・温度で変わります。必ず各電源のデータシート（Inrush current / 突入電流）を確認し、不明な場合は「突入が大きい前提」で時差投入を設計してください。</p>
+
+    <h2>現場でできる5つの対策</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">①</div>
+        <h4>時差投入（順次起動）</h4>
+        <p>全電源を一斉に入れず、1台ずつ時間差で投入する。突入ピークが重ならず最も効果が高い。投入タイマー・順次起動リレー・複数スイッチへの分割で実現する。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">②</div>
+        <h4>突入電流抑制ユニット</h4>
+        <p>NTCサーミスタや突入電流リミッタを電源の入力側に入れ、投入時の抵抗でピークを抑える。1台あたりの突入を下げ、同時投入台数の許容を増やせる。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">③</div>
+        <h4>回路（分岐）を分ける</h4>
+        <p>電源群を1回路に集中させず、複数の分岐回路へ分散する。各ブレーカーに掛かる同時投入台数を減らせる。分電盤側の作業は電気工事士が行う。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">④</div>
+        <h4>遮断特性をC特性へ</h4>
+        <p>B特性で落ちる照明回路は、瞬時引外し倍率の高いC特性ブレーカーへ見直す。配線許容・上位協調の確認が必要で、有資格者が施工する。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">⑤</div>
+        <h4>電源台数・容量の適正化</h4>
+        <p>過剰な台数を整理し、配線・調光要件に合った容量構成へ。台数を減らすと突入が重なる確率は下がるが、1台の突入は増える点も考慮する。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">⑥</div>
+        <h4>調光・リレーの起動順制御</h4>
+        <p>調光コントローラやリレーシーケンスで、エリアごとに数百msずつずらして立ち上げる。大規模サイン・什器一斉点灯で有効。</p>
+      </div>
+    </div>
+
+    <h2>切り分けと対策の手順</h2>
+
+    <ul class="step-list">
+      <li><span>まず<strong>落ちるタイミングを観察</strong>する。通電の瞬間なら突入電流、点灯後しばらくなら定常容量オーバーと切り分ける。</span></li>
+      <li><span>各電源の<strong>データシートで突入電流（Inrush current）のピークと継続時間</strong>を確認する。不明なら大きい前提で進める。</span></li>
+      <li><span><strong>同時投入台数 × 突入ピーク</strong>を概算し、ブレーカーの瞬時引外し電流（定格×特性倍率）と比較する。</span></li>
+      <li><span>超過していれば<strong>時差投入を最優先で導入</strong>する。1台ずつ／エリアごとに数百msずらして立ち上げる。</span></li>
+      <li><span>それでも余裕が乏しければ<strong>突入電流抑制ユニットを各電源入力に追加</strong>、または<strong>回路を分散</strong>する。</span></li>
+      <li><span>分電盤側の<strong>遮断特性変更・ブレーカー交換・回路増設は電気工事士が施工</strong>。配線許容と上位遮断器との協調を確認する。</span></li>
+      <li><span>対策後、<strong>低温時（冬の朝）を含めて複数回投入テスト</strong>し、再現しないことを確認してから引き渡す。</span></li>
+    </ul>
+
+    <h2>電源構成の設計目安</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h4>小規模（電源1〜2台）</h4>
+        <div class="spec-row"><span>突入対策</span><span>通常は不要</span></div>
+        <div class="spec-row"><span>遮断特性</span><span>既設のままで可</span></div>
+        <div class="spec-row"><span>確認</span><span>初回投入で1回確認</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>中規模（3〜6台）</h4>
+        <div class="spec-row"><span>突入対策</span><span>時差投入を推奨</span></div>
+        <div class="spec-row"><span>遮断特性</span><span>C特性が無難</span></div>
+        <div class="spec-row"><span>確認</span><span>低温時も投入テスト</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>大規模（7台〜・一斉点灯）</h4>
+        <div class="spec-row"><span>突入対策</span><span>順次起動＋抑制部品</span></div>
+        <div class="spec-row"><span>遮断特性</span><span>回路分散＋C特性</span></div>
+        <div class="spec-row"><span>確認</span><span>シーケンス起動を設計</span></div>
+      </div>
+    </div>
+
+    <h2>突入電流トラブル対策チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>ブレーカーが落ちるのが「通電の瞬間」か「点灯後しばらく」かを確認した</li>
+      <li>各電源のデータシートで突入電流（Inrush current）のピーク値を確認した</li>
+      <li>同時投入台数×突入ピークがブレーカーの瞬時引外し電流未満か概算した</li>
+      <li>超過する場合は時差投入（順次起動）を最優先で導入した</li>
+      <li>必要に応じて突入電流抑制ユニット／NTCサーミスタを各電源入力に追加した</li>
+      <li>回路を複数分岐へ分散し、1回路あたりの同時投入台数を減らした</li>
+      <li>遮断特性の変更・ブレーカー交換・回路増設は電気工事士が施工した</li>
+      <li>低温時を含め複数回の投入テストで再現しないことを確認した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. LED電源を増やしたら通電のたびにブレーカーが落ちます。容量オーバーですか？</div>
+        <div class="faq-a">多くの場合、定常の容量オーバーではなく電源投入時の突入電流（インラッシュ電流）が原因です。見分け方は単純で、ブレーカーが落ちるタイミングを確認します。スイッチを入れた瞬間（通電直後）に落ちるなら突入電流、しばらく点灯した後にじわじわ落ちるなら定常負荷の容量オーバーや過熱が疑われます。スイッチング電源は内部の入力コンデンサを充電するため投入の瞬間だけ定格の数十倍の電流が数ミリ秒流れます。複数台を同時投入するとこのピークが重なり、定常では余裕があってもブレーカーの瞬時引外しが働いて落ちます。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 突入電流で落ちるとき、容量の大きいブレーカーに替えれば解決しますか？</div>
+        <div class="faq-a">安易な容量アップは推奨しません。ブレーカーは配線を保護するための装置なので、配線の許容を超える容量に上げると、過電流時に配線が先に発熱する危険があります。突入電流対策として正しいのは、まず投入を分散すること（時差投入・順次起動）、突入電流抑制ユニットやNTCサーミスタを入れること、それでも足りなければ遮断特性を瞬時引外し倍率の高いC特性へ見直すことです。B特性（定格の3〜5倍で瞬時遮断）よりC特性（5〜10倍）の方が突入電流に強く、照明・電源回路で一般的に使われます。なお分電盤側のブレーカー交換や回路変更は電気工事士の資格範囲のため、有資格者が施工してください。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 電源を1つの大容量品にまとめれば突入電流の問題は減りますか？</div>
+        <div class="faq-a">台数を減らせば突入ピークが重なる回数は減りますが、1台あたりの突入電流は容量が大きいほど大きくなる傾向があるため、単純には言えません。大容量電源1台は1回の突入ピークが大きく、小容量電源を時差投入する方がピークを低く抑えられる場合もあります。実務では、各電源のデータシートに記載された突入電流（Inrush current）のピーク値と継続時間を確認し、同時投入台数×ピーク値がブレーカーの瞬時引外し電流を超えないように、台数・投入順序・抑制部品で設計します。仕様が不明な電源は、突入電流が大きい前提で時差投入を組むのが安全です。</div>
+      </div>
+    </div>
+
+    <div class="related">
+      <h3>関連ガイド</h3>
+      <ul>
+        <li><a href="/articles/led-tape-fuse-circuit-protection-guide">LEDテープにヒューズは必要？過電流保護の入れ方と容量計算</a></li>
+        <li><a href="/articles/led-psu-capacity-guide">LEDテープ用電源の容量（W）の選び方と余裕率</a></li>
+        <li><a href="/articles/led-tape-psu-wiring-guide">LEDテープと電源（PSU）の配線方法</a></li>
+        <li><a href="/articles/led-tape-voltage-drop-guide">LEDテープの電圧降下と対策（端が暗い）</a></li>
+      </ul>
+    </div>
+
+    <div class="cta-box">
+      <h3>突入電流に強い電源・抑制部品・配線を探す</h3>
+      <p>データシートに突入電流値を明記した定電圧電源・突入電流抑制ユニット・適正容量の配線を取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
