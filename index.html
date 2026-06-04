@@ -8477,26 +8477,28 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       // Cart section
       var qtyInput = document.getElementById('modalQty');
       var isEC = product.code.startsWith('EC-');
+      var ecUnit = isEC ? (product.minOrderQty || 100) : 1;
       if (qtyInput) {
-        qtyInput.value = isEC ? 10 : 1;
-        qtyInput.min = isEC ? 10 : 1;
-        qtyInput.step = isEC ? 10 : 1;
+        qtyInput.value = isEC ? ecUnit : 1;
+        qtyInput.min = isEC ? ecUnit : 1;
+        qtyInput.step = isEC ? ecUnit : 1;
       }
       var unitEl = document.getElementById('modalQtyUnit');
       if (unitEl) {
-        if (isEC) unitEl.textContent = '個（10個単位）';
+        if (isEC) unitEl.textContent = '個（' + ecUnit + '個単位）';
         else if (product.code.startsWith('SC-')) unitEl.textContent = '巻 (10m)';
         else if (product.code.startsWith('ALM-')) unitEl.textContent = '本 (1m)';
         else if (product.category === 'CAT1') unitEl.textContent = '巻 (5m)';
         else if (product.category === 'CAT2') unitEl.textContent = 'm';
         else unitEl.textContent = '台';
       }
-      // Quick select buttons for EC-* (10/20/30/40/50)
+      // Quick select buttons for EC-* (100個単位: 100/200/300/400/500)
       var qSel = document.getElementById('modalQtyQuickSelect');
       if (qSel) {
         if (isEC) {
           qSel.style.display = 'flex';
-          qSel.innerHTML = [10,20,30,40,50].map(function(n){
+          qSel.innerHTML = [1,2,3,4,5].map(function(m){
+            var n = ecUnit * m;
             return '<button type="button" class="qty-preset" onclick="setModalQty(' + n + ')">' + n + '個</button>';
           }).join('');
         } else {
@@ -8543,8 +8545,9 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       var input = document.getElementById('modalQty');
       var product = PRODUCTS.find(p => p.id === currentModalProductId);
       var isEC = product && product.code && product.code.startsWith('EC-');
-      var step = isEC ? 10 : 1;
-      var min = isEC ? 10 : 1;
+      var ecUnit = isEC ? (product.minOrderQty || 100) : 1;
+      var step = isEC ? ecUnit : 1;
+      var min = isEC ? ecUnit : 1;
       var val = parseInt(input.value) || min;
       val = Math.max(min, val + delta * step);
       input.value = val;
@@ -8742,9 +8745,10 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       qty = parseInt(qty) || 1;
       const product = PRODUCTS.find(p => p.id === productId);
       if (!product) return;
-      // エンドキャップは10個単位（10個未満は10に切り上げ、10の倍数でない場合は次の10の倍数に）
+      // エンドキャップは100個単位（minOrderQty に切り上げ収束。手入力50→100等）
       if (product.code && product.code.startsWith('EC-')) {
-        qty = Math.max(10, Math.ceil(qty / 10) * 10);
+        var unit = product.minOrderQty || 100;
+        qty = Math.max(unit, Math.ceil(qty / unit) * unit);
       }
 
       const noteText = (customNote || '').trim();
@@ -8792,7 +8796,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 
     function addToCartQuick(productId) {
       var p = PRODUCTS.find(x => x.id === productId);
-      var defaultQty = (p && p.code && p.code.startsWith('EC-')) ? 10 : 1;
+      var defaultQty = (p && p.code && p.code.startsWith('EC-')) ? (p.minOrderQty || 100) : 1;
       addToCart(productId, defaultQty);
       // Show brief notification
       const badge = document.getElementById('cartBadge');
@@ -9562,7 +9566,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
             return;
           }
           const isEC = product.code.startsWith('EC-');
-          const qty = isEC ? 10 : 1;
+          const qty = isEC ? (product.minOrderQty || 100) : 1;
           if (typeof addToCart === 'function') addToCart(product.id, qty);
           btn.textContent = '✓ 追加済';
           btn.classList.add('added');
