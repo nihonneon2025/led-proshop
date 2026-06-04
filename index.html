@@ -8815,8 +8815,18 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
     function updateCartQty(productId, delta) {
       const item = cart.find(i => i.id === productId);
       if (!item) return;
-      item.qty += delta;
-      if (item.qty <= 0) { removeFromCart(productId); return; }
+      // エンドキャップ(EC-)は minOrderQty(=100) 刻みで増減・下限unitで止める。非ECは±1。
+      var isEC = item.code && item.code.indexOf('EC-') === 0;
+      var unit = 1;
+      if (isEC) {
+        var prod = PRODUCTS.find(p => p.code === (item.code || '').replace(/ \(カスタム\)$/, ''));
+        unit = (prod && prod.minOrderQty) ? prod.minOrderQty : 100;
+      }
+      item.qty += delta * unit;
+      if (item.qty < unit) {
+        if (isEC) { item.qty = unit; }            // EC: 下限100で止める（削除は削除ボタンで）
+        else { removeFromCart(productId); return; } // 非EC: 0以下で削除（従来挙動）
+      }
       saveCart();
       updateCartUI();
     }
