@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープは定格の何％で使う？余裕設計（ディレーティング）で寿命を延ばす選定・施工ガイド | LED PRO SHOP</title>
+<meta name="description" content="LEDテープを定格ギリギリで使うと発熱で寿命が縮みます。電源は定格の70〜80%、最大接続長は規定の8割、周囲温度の上昇分はW/mを減じる——という余裕設計（ディレーティング）の考え方と、必要電源容量＝合計W÷0.8の計算式、部材別の推奨余裕率を施工業者向けに解説。">
+<meta property="og:title" content="LEDテープは定格の何％で使う？余裕設計（ディレーティング）で寿命を延ばす選定・施工ガイド | LED PRO SHOP">
+<meta property="og:description" content="電源は定格の70〜80%、最大接続長は8割、周囲温度上昇分はW/mを減じる——LEDテープの余裕設計（ディレーティング）の考え方と計算式・部材別推奨余裕率を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-derating-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-derating-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープは定格の何％で使う？余裕設計（ディレーティング）で寿命を延ばすガイド | LED PRO SHOP">
+<meta name="twitter:description" content="電源は定格の70〜80%、最大接続長は8割、温度上昇分はW/mを減じる——LEDテープの余裕設計の考え方と計算式・部材別推奨余裕率を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-derating-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-derating-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #04161a; color: #d6f0ec; line-height: 1.7; font-size: 15px; }
+  a { color: #2dd4bf; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #042e2e 0%, #06403c 50%, #032826 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #115e59; }
+  .hero-badge { display: inline-block; background: #0d9488; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #effefb; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #93c9c0; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #4e9088; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #effefb; border-left: 4px solid #14b8a6; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #5eead4; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #c4e6e0; }
+
+  .alert-box { background: #1c1006; border: 1px solid #7f3d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #06302c; border: 1px solid #115e59; border-left: 4px solid #14b8a6; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #b8f0e6; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #06302c; border-radius: 10px; overflow: hidden; }
+  thead th { background: #115e59; color: #99f6e4; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #0f3d38; color: #c4e6e0; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #08332e; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #06302c; border: 1px solid #0f766e; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #5eead4; margin-top: 0; }
+  .calc-formula { background: #02100f; border: 1px solid #134e4a; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #99f6e4; margin: 12px 0; line-height: 2; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .spec-card { background: #06302c; border: 1px solid #115e59; border-radius: 10px; padding: 20px; }
+  .spec-card h4 { font-size: 15px; font-weight: 700; color: #5eead4; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #0f3d38; }
+  .spec-card .spec-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding: 5px 0; }
+  .spec-card .spec-row span:first-child { color: #93c9c0; }
+  .spec-card .spec-row span:last-child { color: #d6f0ec; font-weight: 600; text-align: right; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #06302c; border: 1px solid #115e59; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #14b8a6; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #5eead4; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #93c9c0; margin-bottom: 0; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #14b8a6; color: #04161a; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #c4e6e0; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #0f3d38; font-size: 14px; color: #c4e6e0; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #115e59; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #06302c; padding: 16px 20px; font-weight: 700; color: #5eead4; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #c4e6e0; background: #021a16; }
+
+  .cta-box { background: linear-gradient(135deg, #115e59 0%, #042e2e 100%); border: 1px solid #14b8a6; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #effefb; margin-bottom: 10px; }
+  .cta-box p { color: #93c9c0; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #0d9488; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #0f766e; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #4e9088; }
+  .breadcrumb a { color: #4e9088; }
+  .breadcrumb a:hover { color: #5eead4; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid, .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LEDテープは定格の何％で使う？余裕設計（ディレーティング）で寿命を延ばす選定・施工ガイド",
+  "description": "電源は定格の70〜80%、最大接続長は8割、周囲温度上昇分はW/mを減じる——LEDテープの余裕設計（ディレーティング）の考え方と計算式・部材別推奨余裕率を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-derating-guide-hero.webp",
+  "datePublished": "2026-06-05",
+  "dateModified": "2026-06-05",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-derating-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "LEDテープの余裕設計（ディレーティング）ガイド" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "LEDテープ用の電源（PSU）は定格何％までで使うべきですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "連続点灯する常設の照明では、電源の定格出力に対して負荷を70〜80%までに抑えるのが基本です。定格100%ギリギリで使うと電源内部の発熱が大きく、内部のコンデンサが高温で早く劣化して寿命が短くなり、夏場の温度上昇で保護が働いて消灯することもあります。必要電源容量は、必要電源容量＝LED合計W÷0.8（80%設計）で求めます。例えばLED合計が80Wなら 80÷0.8＝100W以上の電源を選びます。さらに点滅・突入電流の大きい用途や高温環境では70%（÷0.7）まで余裕をとると安定します。電源は安いからと容量ぴったりを選ばず、一回り上の容量を選ぶのが故障とクレームを減らす近道です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ディレーティング（余裕設計）をすると何が良くなりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "最大の効果は寿命が延びることです。LEDも電源も、寿命を縮める最大要因は熱です。定格いっぱいで使うほど発熱が増え、LEDの蛍光体劣化や樹脂の黄変、電源コンデンサの劣化が早まります。電流や負荷に余裕をもたせて温度を下げると、これらの劣化が遅くなり、明るさの低下（光束減退）や色ずれ、早期故障が起きにくくなります。加えて、夏場の温度上昇や電圧変動に対する安全マージンが生まれ、保護動作による突然の消灯や、ヒューズ・端子の発熱トラブルも避けられます。余裕設計は部材コストがわずかに上がる代わりに、施工後の再訪・交換・クレーム対応のコストを大きく下げる投資です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "周囲温度が高い場所ではどう余裕をとればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "周囲温度（Ta）が高いほど、LEDテープも電源も許容できる負荷が下がるため、温度ディレーティングが必要です。具体的には、密閉什器内・天井裏・厨房・屋外サイン内部など熱がこもる場所では、放熱用のアルミフレームに必ず貼って素子温度を下げ、電源も周囲温度に応じた出力低減（メーカーのディレーティング曲線）を確認します。多くの電源は周囲40〜50度を超えると定格出力を段階的に下げて使う必要があります。実務では、想定最高室温に夏場と機器発熱を上乗せした温度を前提に、電源負荷率をさらに下げる（80%→70%など）、テープのW/mを下げる、放熱面積を増やす、の3点で対応します。温度が読めない現場では試験点灯で実際の温度上昇を確認してから本施工するのが安全です。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">製品活用ガイド</div>
+    <h1>LEDテープは定格の何％で使う？<br>余裕設計（ディレーティング）で寿命を延ばす</h1>
+    <p class="hero-sub">電源は定格70〜80%・最大接続長は8割・温度上昇分はW/mを減じる——寿命を縮めないための余裕設計を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-06-05 | カテゴリ: LEDテープ製品活用ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-derating-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープの余裕設計（ディレーティング）ガイド
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="info-box">
+      <p><strong>この記事の結論</strong>：LEDテープも電源も「定格ギリギリ」で使うと発熱で寿命が縮みます。電源は定格の<strong>70〜80%</strong>、最大接続長は規定の<strong>8割程度</strong>、周囲温度が高い場所は<strong>W/mや負荷率をさらに下げる</strong>——この余裕設計（ディレーティング）が、施工後の早期故障・色ずれ・クレームを防ぐ最大のポイントです。</p>
+    </div>
+
+    <h2>ディレーティング（余裕設計）とは</h2>
+
+    <p>ディレーティングとは、部材を<strong>定格（仕様上の最大値）よりも余裕をもたせて使う</strong>設計手法です。電源・配線・LEDテープいずれも、定格いっぱいで連続使用すると発熱が大きく、寿命を縮めたり保護動作で停止したりします。あらかじめ負荷を下げて使うことで、温度・電圧の変動に対する安全マージンを確保します。</p>
+
+    <p>LED照明で寿命を縮める最大の要因は<strong>熱</strong>です。LEDの明るさは時間とともに低下（光束減退）しますが、その速度は温度が高いほど速くなります。電源内部のコンデンサも高温で劣化が加速します。つまり「温度を下げる＝寿命を延ばす」であり、ディレーティングは温度を下げるための設計上の余白づくりです。</p>
+
+    <div class="alert-box">
+      <div class="alert-title">よくある失敗：「容量ぴったりの電源を選んだら夏に落ちた／数ヶ月で電源が壊れた」</div>
+      <p>LED合計100Wに対して定格100Wの電源を選ぶと、常時フル負荷で内部が高温になり、<strong>夏場の温度上昇で保護が働いて消灯</strong>したり、<strong>コンデンサ劣化で早期故障</strong>したりします。電源は容量ぴったりではなく、一回り上を選ぶのが鉄則です。</p>
+    </div>
+
+    <h2>電源（PSU）の余裕設計と計算式</h2>
+
+    <div class="calc-box">
+      <h3>必要な電源容量の求め方（80%設計）</h3>
+      <div class="calc-formula">
+必要電源容量(W) = LED合計消費電力(W) ÷ 0.8
+
+例）24V・8W/m × 12m = 96W のLEDを使う場合
+  必要電源容量 = 96W ÷ 0.8 = 120W
+  → 120W以上の電源を選ぶ（150W品ならさらに余裕）
+
+※点滅が多い／高温環境では ÷0.7（70%設計）を推奨
+      </div>
+      <p style="color:#99f6e4; font-size:13px; margin-top:12px; margin-bottom:0">
+        「÷0.8」は負荷率80%で使うという意味です。電源は定格の70〜80%で運用するとコンデンサの温度が下がり、寿命が大きく延びます。電源容量の詳しい計算は <a href="/articles/led-psu-capacity-guide">LED電源容量ガイド</a> も参照してください。
+      </p>
+    </div>
+
+    <h2>部材別の推奨余裕率（早見表）</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>推奨の使い方</th>
+          <th>定格いっぱいで使うと</th>
+          <th>判定</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>電源（常設・連続点灯）</td>
+          <td>定格の70〜80%まで</td>
+          <td>発熱増・コンデンサ早期劣化</td>
+          <td class="tag-ok">余裕◎</td>
+        </tr>
+        <tr>
+          <td>電源（点滅・突入大）</td>
+          <td>定格の60〜70%まで</td>
+          <td>突入電流で保護動作・寿命低下</td>
+          <td class="tag-ok">余裕◎</td>
+        </tr>
+        <tr>
+          <td>LEDテープ接続長</td>
+          <td>最大接続長の8割程度</td>
+          <td>末端の電圧降下・端が暗い</td>
+          <td class="tag-warn">要注意</td>
+        </tr>
+        <tr>
+          <td>配線（ハーネス）電流</td>
+          <td>許容電流の70〜80%まで</td>
+          <td>配線発熱・被覆劣化</td>
+          <td class="tag-warn">要注意</td>
+        </tr>
+        <tr>
+          <td>周囲温度（高温環境）</td>
+          <td>W/m・負荷率をさらに低減</td>
+          <td>光束減退・色ずれ加速</td>
+          <td class="tag-ng">放熱必須</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>余裕設計の4つの軸</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">①</div>
+        <h4>電源の負荷率</h4>
+        <p>定格の70〜80%で使う。容量ぴったりは避け一回り上を選定。複数電源に分散するのも有効。発熱の少ない電源は寿命が延びる。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">②</div>
+        <h4>接続長・電流</h4>
+        <p>最大接続長は規定の8割を目安に。超える場合は両端給電・電源分散・電圧降下対策を行う。末端の電圧降下による暗化を防ぐ。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">③</div>
+        <h4>放熱（温度）</h4>
+        <p>アルミフレームに密着させて素子温度を下げる。密閉什器・天井裏・厨房など熱がこもる場所ほど放熱が寿命を左右する。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">④</div>
+        <h4>調光・運用</h4>
+        <p>常時フルパワーを避け、調光や点灯時間の最適化で発熱を抑える。連続フル運転より平均負荷を下げるほど寿命に有利。</p>
+      </div>
+    </div>
+
+    <h2>温度ディレーティングの考え方</h2>
+
+    <p>周囲温度（Ta）が高いほど、LEDテープも電源も許容できる負荷が下がります。多くの電源は周囲40〜50度を超えると定格出力を段階的に下げて使う必要があり、メーカーの<strong>ディレーティング曲線</strong>で確認します。LEDテープも素子温度（Tj）が上がると光束減退と色ずれが加速します。</p>
+
+    <div class="info-box">
+      <p><strong>実務の進め方</strong>：想定最高室温に、夏場の上昇分と機器の発熱を上乗せした温度を前提に設計します。熱がこもる場所では「①電源負荷率を下げる（80%→70%）」「②テープのW/mを下げる」「③放熱面積を増やす（アルミフレーム）」の3点で対応し、温度が読めない現場は試験点灯で実際の温度上昇を確認してから本施工します。変色・黄ばみが心配な現場は <a href="/articles/led-tape-discoloration-guide">変色・黄ばみの原因と対策</a> も併読してください。</p>
+    </div>
+
+    <h2>余裕設計の進め方（手順）</h2>
+
+    <ul class="step-list">
+      <li><span>LEDの<strong>合計消費電力</strong>（W/m × 総延長）を算出する。</span></li>
+      <li><span>必要電源容量＝合計W÷0.8 で計算し、<strong>一回り上の定格</strong>の電源を選ぶ（点滅・高温は÷0.7）。</span></li>
+      <li><span>1系統の長さが<strong>最大接続長の8割</strong>を超えないよう、超える場合は両端給電・電源分散にする。</span></li>
+      <li><span>配線は許容電流の70〜80%で使える太さを選び、長距離は<strong>電圧降下</strong>を計算して太さを上げる。</span></li>
+      <li><span>熱がこもる場所は<strong>アルミフレームで放熱</strong>し、周囲温度に応じて負荷率・W/mをさらに下げる。</span></li>
+      <li><span>本施工前に<strong>試験点灯で温度上昇</strong>を確認し、想定より熱ければ余裕を増やす方向に見直す。</span></li>
+    </ul>
+
+    <h2>余裕設計のチェック指標</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h4>電源</h4>
+        <div class="spec-row"><span>常設</span><span>負荷率 70〜80%</span></div>
+        <div class="spec-row"><span>点滅/高温</span><span>負荷率 60〜70%</span></div>
+        <div class="spec-row"><span>選定式</span><span>合計W ÷ 0.8</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>テープ・配線</h4>
+        <div class="spec-row"><span>接続長</span><span>最大の8割</span></div>
+        <div class="spec-row"><span>配線電流</span><span>許容の70〜80%</span></div>
+        <div class="spec-row"><span>長距離</span><span>電圧降下を計算</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>温度</h4>
+        <div class="spec-row"><span>放熱</span><span>アルミフレーム</span></div>
+        <div class="spec-row"><span>高温環境</span><span>負荷率/W/m低減</span></div>
+        <div class="spec-row"><span>確認</span><span>試験点灯で実測</span></div>
+      </div>
+    </div>
+
+    <h2>余裕設計チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>必要電源容量＝合計W÷0.8 で計算し、一回り上の定格を選んだ</li>
+      <li>点滅・高温環境では÷0.7（負荷率70%）でさらに余裕をとった</li>
+      <li>1系統の長さを最大接続長の8割以内に収めた（超過は両端給電/電源分散）</li>
+      <li>配線は許容電流の70〜80%で使える太さを選んだ</li>
+      <li>熱がこもる場所はアルミフレームで放熱を確保した</li>
+      <li>周囲温度に応じて電源のディレーティング曲線を確認した</li>
+      <li>本施工前に試験点灯で温度上昇を実測し、余裕を最終調整した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. LEDテープ用の電源（PSU）は定格何％までで使うべきですか？</div>
+        <div class="faq-a">連続点灯する常設の照明では、電源の定格出力に対して負荷を70〜80%までに抑えるのが基本です。定格100%ギリギリで使うと電源内部の発熱が大きく、内部のコンデンサが高温で早く劣化して寿命が短くなり、夏場の温度上昇で保護が働いて消灯することもあります。必要電源容量は、必要電源容量＝LED合計W÷0.8（80%設計）で求めます。例えばLED合計が80Wなら 80÷0.8＝100W以上の電源を選びます。さらに点滅・突入電流の大きい用途や高温環境では70%（÷0.7）まで余裕をとると安定します。電源は安いからと容量ぴったりを選ばず、一回り上の容量を選ぶのが故障とクレームを減らす近道です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. ディレーティング（余裕設計）をすると何が良くなりますか？</div>
+        <div class="faq-a">最大の効果は寿命が延びることです。LEDも電源も、寿命を縮める最大要因は熱です。定格いっぱいで使うほど発熱が増え、LEDの蛍光体劣化や樹脂の黄変、電源コンデンサの劣化が早まります。電流や負荷に余裕をもたせて温度を下げると、これらの劣化が遅くなり、明るさの低下（光束減退）や色ずれ、早期故障が起きにくくなります。加えて、夏場の温度上昇や電圧変動に対する安全マージンが生まれ、保護動作による突然の消灯や、ヒューズ・端子の発熱トラブルも避けられます。余裕設計は部材コストがわずかに上がる代わりに、施工後の再訪・交換・クレーム対応のコストを大きく下げる投資です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 周囲温度が高い場所ではどう余裕をとればいいですか？</div>
+        <div class="faq-a">周囲温度（Ta）が高いほど、LEDテープも電源も許容できる負荷が下がるため、温度ディレーティングが必要です。具体的には、密閉什器内・天井裏・厨房・屋外サイン内部など熱がこもる場所では、放熱用のアルミフレームに必ず貼って素子温度を下げ、電源も周囲温度に応じた出力低減（メーカーのディレーティング曲線）を確認します。多くの電源は周囲40〜50度を超えると定格出力を段階的に下げて使う必要があります。実務では、想定最高室温に夏場と機器発熱を上乗せした温度を前提に、電源負荷率をさらに下げる（80%→70%など）、テープのW/mを下げる、放熱面積を増やす、の3点で対応します。温度が読めない現場では試験点灯で実際の温度上昇を確認してから本施工するのが安全です。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>余裕をもった電源・放熱フレーム・LEDテープを探す</h3>
+      <p>容量に余裕のある電源・放熱用アルミフレーム・W/mを選べるLEDテープを取り扱っています。寿命を延ばす余裕設計をサポートします。</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

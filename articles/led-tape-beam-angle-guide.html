@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープの配光角・ビーム角の選び方｜120度・広角・狭角の違いと照射幅の計算式｜施工業者向け判断基準 | LED PRO SHOP</title>
+<meta name="description" content="LEDテープの配光角（ビーム角）は照射範囲とドット感・グレアを左右する重要な仕様です。標準120度・広角・狭角（レンズ付き・サイドビュー）の違い、照射幅＝2×距離×tan(配光角÷2)の計算式、間接照明・什器内・ウォールウォッシュ別の選び方、拡散カバーとの組み合わせを施工業者向けに解説。">
+<meta property="og:title" content="LEDテープの配光角・ビーム角の選び方｜120度・広角・狭角の違いと照射幅の計算式｜施工業者向け判断基準 | LED PRO SHOP">
+<meta property="og:description" content="LEDテープの配光角（ビーム角）120度・広角・狭角の違いと、照射幅＝2×距離×tan(配光角÷2)の計算式、用途別の選び方、拡散カバーとの組み合わせを施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-beam-angle-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-beam-angle-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープの配光角・ビーム角の選び方｜120度・広角・狭角の違いと照射幅の計算式 | LED PRO SHOP">
+<meta name="twitter:description" content="LEDテープの配光角（ビーム角）の違いと照射幅の計算式、間接照明・什器内・ウォールウォッシュ別の選び方を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-beam-angle-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-beam-angle-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #07121f; color: #dce9f5; line-height: 1.7; font-size: 15px; }
+  a { color: #38bdf8; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #052036 0%, #06294a 50%, #041b30 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #1e4d7b; }
+  .hero-badge { display: inline-block; background: #0284c7; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f0f8ff; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #9cc0dd; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #5e85a8; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f0f8ff; border-left: 4px solid #0ea5e9; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #7dd3fc; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #cbdcec; }
+
+  .alert-box { background: #1c1006; border: 1px solid #7f3d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #06213a; border: 1px solid #1e4d7b; border-left: 4px solid #0ea5e9; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #bae0fd; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #06213a; border-radius: 10px; overflow: hidden; }
+  thead th { background: #1e4d7b; color: #bae6fd; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #112d44; color: #cbdcec; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #08263f; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #06213a; border: 1px solid #0369a1; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #7dd3fc; margin-top: 0; }
+  .calc-formula { background: #02101f; border: 1px solid #0c4a6e; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #bae6fd; margin: 12px 0; line-height: 2; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .spec-card { background: #06213a; border: 1px solid #1e4d7b; border-radius: 10px; padding: 20px; }
+  .spec-card h4 { font-size: 15px; font-weight: 700; color: #7dd3fc; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #112d44; }
+  .spec-card .spec-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding: 5px 0; }
+  .spec-card .spec-row span:first-child { color: #9cc0dd; }
+  .spec-card .spec-row span:last-child { color: #dce9f5; font-weight: 600; text-align: right; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #06213a; border: 1px solid #1e4d7b; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #0ea5e9; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #7dd3fc; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #9cc0dd; margin-bottom: 0; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #0ea5e9; color: #04161f; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #cbdcec; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #112d44; font-size: 14px; color: #cbdcec; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #1e4d7b; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #06213a; padding: 16px 20px; font-weight: 700; color: #7dd3fc; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #cbdcec; background: #04141f; }
+
+  .cta-box { background: linear-gradient(135deg, #075985 0%, #052036 100%); border: 1px solid #0ea5e9; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f0f8ff; margin-bottom: 10px; }
+  .cta-box p { color: #9cc0dd; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #0284c7; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #0369a1; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #5e85a8; }
+  .breadcrumb a { color: #5e85a8; }
+  .breadcrumb a:hover { color: #7dd3fc; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid, .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LEDテープの配光角・ビーム角の選び方｜120度・広角・狭角の違いと照射幅の計算式｜施工業者向け判断基準",
+  "description": "LEDテープの配光角（ビーム角）120度・広角・狭角の違いと、照射幅＝2×距離×tan(配光角÷2)の計算式、用途別の選び方、拡散カバーとの組み合わせを施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-beam-angle-guide-hero.webp",
+  "datePublished": "2026-06-05",
+  "dateModified": "2026-06-05",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-beam-angle-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "LEDテープの配光角・ビーム角の選び方" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "LEDテープの配光角（ビーム角）は何度のものを選べばいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "一般的なLEDテープの配光角は約120度で、間接照明・棚下・什器内の面照射ではこの広角タイプが標準です。広い面をムラなく照らしたい・近接で広げたい用途は120度、対象を絞って当てたい・距離があり手元やディスプレイをスポット的に照らしたい用途はレンズ付きの狭角タイプ（15〜60度程度）を選びます。照射範囲は照射幅＝2×距離×tan(配光角÷2)で見積もれます。例えば配光角120度を照射距離0.5mで使うと約1.7mの幅に広がります。まず照らしたい対象の幅と取付距離を決め、その範囲をカバーする配光角を逆算するのが実務的です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "配光角と拡散カバー（乳白アクリル）はどう関係しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "拡散カバーは配光角そのものを大きく広げる部材ではなく、光源のドット感や粒々を消して面光源化するための部材です。乳白（フロスト）カバーは光を散乱させて見た目を均一にしますが、その分10〜30%程度の光量ロスが生じます。クリアカバーはロスが少ない代わりにLEDの粒や配光が見えやすくなります。配光角はLEDチップとレンズの光学設計で決まり、カバーは見え方を整えるものと切り分けて考えると選定を誤りません。広い面を均一に見せたいなら広角テープ＋乳白カバー＋十分な取付奥行きの3点をセットで設計します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "壁面を上から下まで均一に照らす（ウォールウォッシュ）には何度が向きますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "壁から離して全体を均一に洗うように照らすウォールウォッシュには、広角（120度前後）が向きます。壁から10〜15cm程度離した位置に設置し、光を壁面に沿わせず面で当てると上下のムラが減ります。逆に壁ぎわに設置して壁スレスレに当てるグレージング（陰影を強調する手法）では、テクスチャを際立たせたい場合に有効ですが、ボードの不陸（凹凸）も目立つため下地精度が必要です。狭角タイプは特定の絵画やサインをスポット的に浮かせたいときに使い分けます。取付距離と狙う効果（均一に洗う／陰影を出す）を先に決めてから配光角を選びます。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">仕様選定ガイド</div>
+    <h1>LEDテープの配光角・ビーム角の選び方<br>120度・広角・狭角の違いと照射幅の計算式</h1>
+    <p class="hero-sub">標準120度／レンズ付き狭角／サイドビューの違いと、照射幅の計算式・用途別の判断基準を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-06-05 | カテゴリ: LEDテープ仕様選定ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-beam-angle-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープの配光角・ビーム角の選び方
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="info-box">
+      <p><strong>この記事の結論</strong>：配光角は「照らしたい対象の幅」と「取付距離」から逆算して選びます。間接照明・棚下・什器内の面照射は標準120度、距離をとってディスプレイや手元を絞って当てる用途はレンズ付きの狭角タイプ。照射幅は <strong>2 × 距離 × tan(配光角÷2)</strong> で見積もれます。</p>
+    </div>
+
+    <h2>配光角（ビーム角）とは何か</h2>
+
+    <p>配光角（ビーム角）とは、LED光源から出た光が広がる角度のことです。一般には<strong>光の強さが中心（最大値）の50%になるところまでの角度＝半値角</strong>で表され、LEDテープの仕様欄に「配光角 120°」などと記載されます。</p>
+
+    <p>同じ明るさ（lm/m）のテープでも、配光角が広ければ光は広く薄く広がり、狭ければ狭い範囲に集中して明るくなります。<strong>「照らす範囲」と「その範囲での明るさ」はトレードオフ</strong>であり、配光角の選定はこのバランスを決める作業です。色温度やRa値と並ぶ重要仕様でありながら見落とされやすく、施工後に「照らしたい場所に光が届かない」「逆に広がりすぎて隣に漏れる」というやり直しの原因になります。</p>
+
+    <h2>配光角の種類と特徴</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">①</div>
+        <h4>広角（約120°）標準タイプ</h4>
+        <p>一般的なLEDテープの標準配光。面を広くムラなく照らせるため、間接照明・棚下・什器内・サイン内照など「面で見せる」用途の基本。近接でも光が広がる。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">②</div>
+        <h4>狭角（レンズ付き 15〜60°）</h4>
+        <p>レンズで光を絞ったタイプ。距離をとって対象を狙い撃ちする展示・ディスプレイ・什器の縦長スポットに向く。広がりが少なく中心照度が高い。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">③</div>
+        <h4>サイドビュー（側面発光）</h4>
+        <p>基板の側面方向に光が出るタイプ。薄い溝・コーナー・段差の側面を光らせる、見切り材の小口を光らせるなど、正面発光では収まらない狭所に使う。</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <p><strong>補足</strong>：COBテープは発光部が連続している分、SMDテープより光の出方が均一でドット感が出にくい一方、配光自体は広角（ランバート配光）が基本です。狭く絞りたい場合はレンズ付き品やアルミフレームのレンズカバーで光学的に制御します。</p>
+    </div>
+
+    <h2>照射幅の計算式と距離別の早見表</h2>
+
+    <div class="calc-box">
+      <h3>配光角から照射幅を見積もる</h3>
+      <div class="calc-formula">
+照射幅(m) = 2 × 照射距離(m) × tan(配光角 ÷ 2)
+
+例）配光角120° / 距離0.5m の場合
+  = 2 × 0.5 × tan(60°)
+  = 2 × 0.5 × 1.732
+  ≒ 1.73m の幅に広がる
+      </div>
+      <p style="color:#bae6fd; font-size:13px; margin-top:12px; margin-bottom:0">
+        照らしたい範囲の幅が先に決まっている場合は、この式を逆算して必要な配光角と取付距離を求めます。距離が近いほど同じ角度でも照射幅は狭くなる点に注意してください。
+      </p>
+    </div>
+
+    <p>下表は配光角と照射距離ごとの「片側に広がる幅」と「全体の照射幅」の目安です（理論値・反射やカバーの影響は含みません）。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>配光角</th>
+          <th>距離0.3m</th>
+          <th>距離0.5m</th>
+          <th>距離1.0m</th>
+          <th>向く用途</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>120°（広角）</td>
+          <td>約1.04m</td>
+          <td>約1.73m</td>
+          <td>約3.46m</td>
+          <td>間接照明・棚下・什器内・面照射</td>
+        </tr>
+        <tr>
+          <td>90°</td>
+          <td>約0.60m</td>
+          <td>約1.00m</td>
+          <td>約2.00m</td>
+          <td>やや広い面・幅木/巾木の足元照射</td>
+        </tr>
+        <tr>
+          <td>60°（中角）</td>
+          <td>約0.35m</td>
+          <td>約0.58m</td>
+          <td>約1.15m</td>
+          <td>カウンター天板・縦長ディスプレイ</td>
+        </tr>
+        <tr>
+          <td>30°（狭角）</td>
+          <td>約0.16m</td>
+          <td>約0.27m</td>
+          <td>約0.54m</td>
+          <td>サイン・絵画・什器のスポット照射</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert-box">
+      <div class="alert-title">よくある失敗：「広角テープを近距離で当ててムラ・グレアになった」</div>
+      <p>配光角120°のテープを浅い溝に近接設置すると、光が壁や天井に届く前に広がりきらず、<strong>テープ直近だけ明るく端が暗い・粒が見える</strong>状態になります。広い面を均一に見せたいときは、配光角だけでなく<strong>取付奥行き（光が広がる距離）と乳白カバー</strong>をセットで確保してください。</p>
+    </div>
+
+    <h2>用途別の配光角の選び方</h2>
+
+    <h3>間接照明・コーブ照明（面で均一に見せる）</h3>
+    <p>天井・壁を面で柔らかく照らす間接照明は、広角120°が基本です。光源と照射面の間に十分な距離（奥行き）を確保し、乳白カバーでドット感を消すと均一な面光源になります。光源が直接見えるとグレアになるため、見切り材で光源を隠す納まりにします。</p>
+
+    <h3>棚下・什器内（手元・商品を照らす）</h3>
+    <p>棚板下や什器内のように照射距離が短い（数cm〜数十cm）場合は、広角120°で近接でも広がる配光が有利です。狭角を近接で使うと棚板に光のスジが出ます。商品の質感を出したい物販什器では、配光に加えてRa（演色性）も合わせて選定します。</p>
+
+    <h3>ウォールウォッシュ／グレージング（壁面演出）</h3>
+    <p>壁全体を均一に洗うウォールウォッシュは広角を壁から離して設置。壁スレスレに当てて陰影を強調するグレージングは下地の不陸が出やすいため、ボード精度が必要です。狙う効果を先に決めてから配光と取付距離を設計します。</p>
+
+    <h3>サイン・ディスプレイ（対象を絞って当てる）</h3>
+    <p>距離をとって特定の対象を浮かせたいときは、レンズ付きの狭角（15〜60°）で光のロスを抑えつつ中心照度を確保します。内照式サインの内部均一化は逆に広角＋拡散が向きます。</p>
+
+    <h2>配光角を整える周辺部材</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h4>乳白（フロスト）カバー</h4>
+        <div class="spec-row"><span>役割</span><span>ドット感を消す</span></div>
+        <div class="spec-row"><span>光量ロス</span><span>約10〜30%</span></div>
+        <div class="spec-row"><span>向く用途</span><span>面で見せる間接照明</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>クリアカバー</h4>
+        <div class="spec-row"><span>役割</span><span>保護・粉塵対策</span></div>
+        <div class="spec-row"><span>光量ロス</span><span>少ない</span></div>
+        <div class="spec-row"><span>注意</span><span>粒・配光が見える</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>レンズカバー</h4>
+        <div class="spec-row"><span>役割</span><span>配光を絞る</span></div>
+        <div class="spec-row"><span>効果</span><span>中心照度を上げる</span></div>
+        <div class="spec-row"><span>向く用途</span><span>スポット・縦長照射</span></div>
+      </div>
+    </div>
+
+    <h2>配光角の選定手順</h2>
+
+    <ul class="step-list">
+      <li><span>照らしたい<strong>対象の幅</strong>（壁の幅・棚の奥行き・商品の範囲）を実測する。</span></li>
+      <li><span>テープの<strong>取付距離（照射距離）</strong>を納まりから決める。間接照明なら光源〜照射面の奥行き。</span></li>
+      <li><span>照射幅＝2×距離×tan(配光角÷2)で、対象幅をカバーする<strong>配光角を逆算</strong>する。</span></li>
+      <li><span>面で均一に見せるなら<strong>広角＋乳白カバー</strong>、対象を絞るなら<strong>レンズ付き狭角</strong>を選ぶ。</span></li>
+      <li><span>カバーの光量ロスを見込み、必要明るさ（lm/m・W/m）を<strong>余裕をもって</strong>選定する。</span></li>
+      <li><span>本施工前に<strong>1mの試験点灯</strong>で、ムラ・グレア・照射範囲を実物で確認する。</span></li>
+    </ul>
+
+    <h2>配光角選定チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>照らしたい対象の幅と取付（照射）距離を実測した</li>
+      <li>照射幅＝2×距離×tan(配光角÷2)で必要配光角を逆算した</li>
+      <li>面照射は広角120°、絞り照射はレンズ付き狭角を選び分けた</li>
+      <li>狭所・側面照射が必要な箇所はサイドビュータイプを検討した</li>
+      <li>乳白カバーの光量ロス（約10〜30%）を明るさ選定に織り込んだ</li>
+      <li>光源が直接見えてグレアにならない納まりにした</li>
+      <li>本施工前に試験点灯でムラ・照射範囲・粒感を確認した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. LEDテープの配光角（ビーム角）は何度のものを選べばいいですか？</div>
+        <div class="faq-a">一般的なLEDテープの配光角は約120度で、間接照明・棚下・什器内の面照射ではこの広角タイプが標準です。広い面をムラなく照らしたい・近接で広げたい用途は120度、対象を絞って当てたい・距離があり手元やディスプレイをスポット的に照らしたい用途はレンズ付きの狭角タイプ（15〜60度程度）を選びます。照射範囲は照射幅＝2×距離×tan(配光角÷2)で見積もれます。例えば配光角120度を照射距離0.5mで使うと約1.7mの幅に広がります。まず照らしたい対象の幅と取付距離を決め、その範囲をカバーする配光角を逆算するのが実務的です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 配光角と拡散カバー（乳白アクリル）はどう関係しますか？</div>
+        <div class="faq-a">拡散カバーは配光角そのものを大きく広げる部材ではなく、光源のドット感や粒々を消して面光源化するための部材です。乳白（フロスト）カバーは光を散乱させて見た目を均一にしますが、その分10〜30%程度の光量ロスが生じます。クリアカバーはロスが少ない代わりにLEDの粒や配光が見えやすくなります。配光角はLEDチップとレンズの光学設計で決まり、カバーは見え方を整えるものと切り分けて考えると選定を誤りません。広い面を均一に見せたいなら広角テープ＋乳白カバー＋十分な取付奥行きの3点をセットで設計します。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 壁面を上から下まで均一に照らす（ウォールウォッシュ）には何度が向きますか？</div>
+        <div class="faq-a">壁から離して全体を均一に洗うように照らすウォールウォッシュには、広角（120度前後）が向きます。壁から10〜15cm程度離した位置に設置し、面で当てると上下のムラが減ります。逆に壁ぎわに設置して壁スレスレに当てるグレージング（陰影を強調する手法）では、テクスチャを際立たせたい場合に有効ですが、ボードの不陸（凹凸）も目立つため下地精度が必要です。狭角タイプは特定の絵画やサインをスポット的に浮かせたいときに使い分けます。取付距離と狙う効果（均一に洗う／陰影を出す）を先に決めてから配光角を選びます。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>用途に合った配光・カバーのLEDテープを探す</h3>
+      <p>広角COBテープ・レンズ付きフレーム・乳白／クリアカバーを取り扱っています。照射距離と対象幅から最適な配光をお選びください。</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

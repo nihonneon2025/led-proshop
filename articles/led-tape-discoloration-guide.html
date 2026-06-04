@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープが施工後に黄ばむ・変色する原因と対策｜色ずれ・部分暗化を施工業者向けに診断 | LED PRO SHOP</title>
+<meta name="description" content="LEDテープが施工後に黄ばむ・青ばむ・部分的に変色するのは、樹脂カバーの黄変、過熱による蛍光体劣化、電極の硫化黒変、はんだ・銅箔の酸化、結露・水分侵入が主因です。症状別の原因切り分けと、放熱・電流余裕・密閉環境のガス対策・適合カバーによる予防を施工業者向けに解説。">
+<meta property="og:title" content="LEDテープが施工後に黄ばむ・変色する原因と対策｜色ずれ・部分暗化を施工業者向けに診断 | LED PRO SHOP">
+<meta property="og:description" content="LEDテープの黄ばみ・青ばみ・部分変色の原因（樹脂黄変・蛍光体劣化・電極硫化・銅箔酸化・水分）と症状別の切り分け・予防対策を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-discoloration-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-discoloration-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープが施工後に黄ばむ・変色する原因と対策｜色ずれ・部分暗化を診断 | LED PRO SHOP">
+<meta name="twitter:description" content="LEDテープの黄ばみ・変色の原因（樹脂黄変・蛍光体劣化・電極硫化・銅箔酸化・水分）と症状別の切り分け・予防対策を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-discoloration-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-discoloration-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #1a1206; color: #f0e7d6; line-height: 1.7; font-size: 15px; }
+  a { color: #fbbf24; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #3a2606 0%, #44300a 50%, #2e1f04 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #854d0e; }
+  .hero-badge { display: inline-block; background: #d97706; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #fffaf0; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #d8c29a; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #a3814e; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #fffaf0; border-left: 4px solid #f59e0b; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #fcd34d; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #e8dcc4; }
+
+  .alert-box { background: #2a0f0f; border: 1px solid #7f1d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #2a1d08; border: 1px solid #854d0e; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #fde9c8; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #2a1d08; border-radius: 10px; overflow: hidden; }
+  thead th { background: #854d0e; color: #fde68a; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #3d2c10; color: #e8dcc4; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #2f2109; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #2a1d08; border: 1px solid #b45309; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #fcd34d; margin-top: 0; }
+  .calc-formula { background: #160f03; border: 1px solid #92400e; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #fde68a; margin: 12px 0; line-height: 2; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .spec-card { background: #2a1d08; border: 1px solid #854d0e; border-radius: 10px; padding: 20px; }
+  .spec-card h4 { font-size: 15px; font-weight: 700; color: #fcd34d; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #3d2c10; }
+  .spec-card .spec-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding: 5px 0; }
+  .spec-card .spec-row span:first-child { color: #d8c29a; }
+  .spec-card .spec-row span:last-child { color: #f0e7d6; font-weight: 600; text-align: right; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #2a1d08; border: 1px solid #854d0e; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #f59e0b; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #fcd34d; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #d8c29a; margin-bottom: 0; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #f59e0b; color: #1a1206; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #e8dcc4; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #3d2c10; font-size: 14px; color: #e8dcc4; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #854d0e; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #2a1d08; padding: 16px 20px; font-weight: 700; color: #fcd34d; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #e8dcc4; background: #160f03; }
+
+  .cta-box { background: linear-gradient(135deg, #92400e 0%, #3a2606 100%); border: 1px solid #f59e0b; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #fffaf0; margin-bottom: 10px; }
+  .cta-box p { color: #d8c29a; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #d97706; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #b45309; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #a3814e; }
+  .breadcrumb a { color: #a3814e; }
+  .breadcrumb a:hover { color: #fcd34d; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid, .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LEDテープが施工後に黄ばむ・変色する原因と対策｜色ずれ・部分暗化を施工業者向けに診断",
+  "description": "LEDテープの黄ばみ・青ばみ・部分変色の原因（樹脂黄変・蛍光体劣化・電極硫化・銅箔酸化・水分）と症状別の切り分け・予防対策を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-discoloration-guide-hero.webp",
+  "datePublished": "2026-06-05",
+  "dateModified": "2026-06-05",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-discoloration-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "LEDテープが施工後に黄ばむ・変色する原因と対策" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "LEDテープが施工後しばらくして黄ばんできました。原因は何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "黄ばみの主因は2つに切り分けられます。1つはテープ表面のシリコンコーティングや拡散カバー（アクリル・PC）など樹脂部材の黄変で、紫外線や継続的な熱で樹脂が劣化して起きます。点灯を消しても黄色みが残り、テープ全体や日射の当たる側で進むのが特徴です。もう1つはLED素子内部の蛍光体の劣化で、過熱や過電流で進むと色温度がずれて黄色や緑がかって見えます。判別は、消灯時にカバー単体が黄ばんでいれば樹脂黄変、消灯時は白いのに点灯すると色がずれているなら蛍光体側を疑います。いずれも熱が加速要因なので、放熱の見直しと電流の余裕設計（ディレーティング）が対策の基本です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "一部の区間だけ色が変わったり暗くなったりするのはなぜですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "局所的な変色・暗化は、接続部や基板の劣化が疑われます。よくあるのは、はんだ付け部やコネクタ接点の酸化・腐食による接触抵抗の増加で、その部分が発熱して焦げや変色を起こし、下流が暗くなります。また密閉空間で硫黄系・酢酸系のガスを出す接着剤やコーキングを使うと、LEDの銀メッキ電極が硫化して黒く変色し、その素子だけ暗くなる現象（電極硫化）も起こります。確認は、変色区間の前後で電圧を測り、接続部で電圧が大きく落ちていないか、接点が変色・腐食していないかを見ます。全体が均一に暗いなら電圧降下や寿命、局所的なら接続部・ガス・水分侵入を優先して調べます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "変色を防ぐには施工時に何に気をつければいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第一に放熱です。アルミフレーム（放熱チャンネル）に貼って素子温度を下げると、樹脂黄変も蛍光体劣化も大幅に遅らせられます。第二に電流の余裕設計で、最大接続長を守り、電源容量に余裕をもたせて連続フルパワー運転を避けます。第三に密閉環境のガス対策で、屋外サインや什器内の密閉部では硫黄系・酢酸系を含む接着剤やシリコーンの使用を避け、LEDメーカーが指定する適合材を使います。第四に水分・結露対策で、屋外や水回りはIP等級に合った防水品を選び、端面処理を確実に行います。最後に、屋外や直射日光下では耐候・耐UVをうたった製品を選定します。これらは施工後の黄ばみ・変色クレームを未然に防ぐ要点です。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">トラブル対処ガイド</div>
+    <h1>LEDテープが施工後に黄ばむ・変色する原因と対策<br>色ずれ・部分暗化を現場で切り分ける</h1>
+    <p class="hero-sub">樹脂の黄変・蛍光体劣化・電極の硫化・銅箔/はんだの酸化・水分侵入——症状別の原因と予防策を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-06-05 | カテゴリ: LEDテープトラブル対処ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-discoloration-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープが施工後に黄ばむ・変色する原因と対策
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="alert-box">
+      <div class="alert-title">よくある施工後トラブル：「納品時は白かったのに数ヶ月で黄ばんだ／一部だけ色が変わった」</div>
+      <p>LEDテープの変色は「製品不良」と片づけられがちですが、実際は<strong>熱・電流・周辺材料・水分</strong>といった施工環境が引き金になっているケースが多くあります。原因を切り分けないまま交換しても、同じ環境で再発します。まず症状から原因を特定するのが復旧と再発防止の近道です。</p>
+    </div>
+
+    <h2>変色は大きく2系統に分けて考える</h2>
+
+    <p>LEDテープの変色は、<strong>①テープ全体・広範囲が均一に変わる</strong>タイプと、<strong>②一部の区間や素子だけ局所的に変わる</strong>タイプに分けると原因を絞りやすくなります。前者は熱や紫外線による経年劣化、後者は接続部・周辺材料・水分といった「特定箇所の問題」を疑います。</p>
+
+    <div class="info-box">
+      <p><strong>最初の切り分け</strong>：消灯した状態でカバーやコーティングが黄ばんでいれば<strong>樹脂の黄変</strong>。消灯時は白いのに点灯すると色がずれて見えるなら<strong>蛍光体側</strong>。局所的に焦げ・黒変があれば<strong>接続部の発熱やガス・水分</strong>を疑います。</p>
+    </div>
+
+    <h2>変色の主な原因と見分け方</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>症状</th>
+          <th>主な原因</th>
+          <th>現場での確認方法</th>
+          <th>進行要因</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>全体が黄ばむ（消灯時も黄色い）</td>
+          <td>シリコン/アクリル/PC等 樹脂部材の黄変</td>
+          <td>消灯時にカバー・コーティング単体を見る</td>
+          <td class="tag-warn">熱・紫外線</td>
+        </tr>
+        <tr>
+          <td>点灯時だけ黄/緑がかる</td>
+          <td>蛍光体の劣化・色温度ずれ</td>
+          <td>消灯時は白いか／新品と並べて比較</td>
+          <td class="tag-warn">過熱・過電流</td>
+        </tr>
+        <tr>
+          <td>一部区間が焦げて暗い</td>
+          <td>はんだ・コネクタ接点の酸化／発熱</td>
+          <td>接続部の変色・前後の電圧降下を測定</td>
+          <td class="tag-ng">接触抵抗</td>
+        </tr>
+        <tr>
+          <td>素子が黒く点状に変色</td>
+          <td>銀メッキ電極の硫化（ガス腐食）</td>
+          <td>密閉部か／硫黄系・酢酸系材料の使用有無</td>
+          <td class="tag-ng">腐食性ガス</td>
+        </tr>
+        <tr>
+          <td>水回り・屋外で白濁・腐食</td>
+          <td>水分侵入・結露による基板/電極腐食</td>
+          <td>IP等級・端面処理・結露の有無を確認</td>
+          <td class="tag-ng">水分・結露</td>
+        </tr>
+        <tr>
+          <td>銅パターンが緑/黒に変色</td>
+          <td>銅箔の酸化・腐食（湿気・フラックス残渣）</td>
+          <td>基板パターンの変色・はんだ周辺を確認</td>
+          <td class="tag-warn">湿気・残渣</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>原因別のメカニズムと対策</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">①</div>
+        <h4>樹脂の黄変</h4>
+        <p>コーティングや拡散カバーの樹脂が熱・UVで劣化し黄色くなる。対策は放熱（アルミフレーム）と、屋外・直射日光下では耐候/耐UV品の選定。安価なシリコンより耐候グレードが有利。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">②</div>
+        <h4>蛍光体の劣化</h4>
+        <p>過熱・過電流でLED内部の蛍光体が劣化し色温度がずれる。対策は電流の余裕設計（ディレーティング）と放熱で素子温度を抑えること。連続フルパワー運転を避ける。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">③</div>
+        <h4>接続部の酸化・発熱</h4>
+        <p>はんだ不良やコネクタの緩み・酸化で接触抵抗が増え、その点が発熱・焦げて下流が暗くなる。対策は確実なはんだ／圧着と、屋外は防水コネクタ・端面処理の徹底。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">④</div>
+        <h4>電極の硫化（ガス腐食）</h4>
+        <p>密閉空間で硫黄系・酢酸系のガスを出す接着剤・コーキングを使うと銀電極が黒変。対策はLEDメーカー適合材の使用と、密閉部の換気・脱ガス確認。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">⑤</div>
+        <h4>水分・結露</h4>
+        <p>水分侵入や結露で基板・電極が腐食。対策は用途に合うIP等級の選定、端面のしっかりした防水処理、温度差の大きい場所の結露対策。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">⑥</div>
+        <h4>銅箔の酸化・残渣</h4>
+        <p>湿気やフラックス残渣で銅パターンが緑青・黒変し、抵抗増・断線につながる。対策ははんだ後の残渣洗浄／低残渣フラックスと、湿気の多い環境での防湿。</p>
+      </div>
+    </div>
+
+    <h2>変色トラブルの切り分け手順</h2>
+
+    <ul class="step-list">
+      <li><span>まず<strong>消灯状態</strong>で観察。カバー・コーティング単体が黄ばんでいれば樹脂黄変、表面は白いままなら点灯して色を確認する。</span></li>
+      <li><span>変色が<strong>全体か局所か</strong>を判定。全体均一なら熱・UVによる経年劣化、局所なら接続部・ガス・水分を優先して調べる。</span></li>
+      <li><span>局所変色は<strong>接続部の前後で電圧を測定</strong>し、接点での電圧降下・焦げ・腐食の有無を確認する。</span></li>
+      <li><span>密閉部・屋外なら<strong>使用した接着剤・コーキング・防水材</strong>を洗い出し、硫黄系/酢酸系の有無とIP等級・端面処理を確認する。</span></li>
+      <li><span>取付面を触って<strong>異常な熱</strong>がないか確認。熱ければ放熱不足・過電流を疑い、アルミフレームの有無・接続長・電源容量を点検する。</span></li>
+      <li><span>原因を特定したうえで交換し、<strong>同じ環境要因（熱・ガス・水分）を除去</strong>してから再施工する。除去せず交換すると再発する。</span></li>
+    </ul>
+
+    <h2>再発を防ぐ予防設計のポイント</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h4>放熱（最重要）</h4>
+        <div class="spec-row"><span>手段</span><span>アルミフレーム</span></div>
+        <div class="spec-row"><span>効果</span><span>黄変/劣化を遅延</span></div>
+        <div class="spec-row"><span>注意</span><span>密着・連続接触</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>電流の余裕</h4>
+        <div class="spec-row"><span>手段</span><span>ディレーティング</span></div>
+        <div class="spec-row"><span>目安</span><span>連続フル運転回避</span></div>
+        <div class="spec-row"><span>確認</span><span>最大接続長厳守</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>材料・環境</h4>
+        <div class="spec-row"><span>密閉部</span><span>適合接着剤のみ</span></div>
+        <div class="spec-row"><span>屋外</span><span>耐候/耐UV品</span></div>
+        <div class="spec-row"><span>水回り</span><span>IP等級・端面処理</span></div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <p><strong>関連</strong>：熱と電流の余裕設計については <a href="/articles/led-tape-derating-guide">LEDテープの余裕設計（ディレーティング）ガイド</a>、放熱の基礎は <a href="/articles/led-tape-heat-management-guide">放熱・ヒートマネジメントガイド</a>、寿命の考え方は <a href="/articles/led-tape-lifespan-guide">LEDテープの寿命ガイド</a> も参照してください。</p>
+    </div>
+
+    <h2>変色トラブル予防チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>テープをアルミフレーム（放熱チャンネル）に密着させて放熱を確保した</li>
+      <li>最大接続長を守り、電源容量に余裕をもたせて連続フル運転を避けた</li>
+      <li>屋外・直射日光下は耐候/耐UVをうたう製品を選定した</li>
+      <li>密閉部で硫黄系・酢酸系の接着剤/コーキングを使っていない（適合材を確認）</li>
+      <li>水回り・屋外は用途に合うIP等級を選び、端面の防水処理を確実に行った</li>
+      <li>はんだ後の残渣を洗浄／低残渣フラックスを使用した</li>
+      <li>接続部（はんだ・コネクタ）の圧着・締結を確実にし、増し締め点検をした</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. LEDテープが施工後しばらくして黄ばんできました。原因は何ですか？</div>
+        <div class="faq-a">黄ばみの主因は2つに切り分けられます。1つはテープ表面のシリコンコーティングや拡散カバー（アクリル・PC）など樹脂部材の黄変で、紫外線や継続的な熱で樹脂が劣化して起きます。点灯を消しても黄色みが残り、テープ全体や日射の当たる側で進むのが特徴です。もう1つはLED素子内部の蛍光体の劣化で、過熱や過電流で進むと色温度がずれて黄色や緑がかって見えます。判別は、消灯時にカバー単体が黄ばんでいれば樹脂黄変、消灯時は白いのに点灯すると色がずれているなら蛍光体側を疑います。いずれも熱が加速要因なので、放熱の見直しと電流の余裕設計（ディレーティング）が対策の基本です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 一部の区間だけ色が変わったり暗くなったりするのはなぜですか？</div>
+        <div class="faq-a">局所的な変色・暗化は、接続部や基板の劣化が疑われます。よくあるのは、はんだ付け部やコネクタ接点の酸化・腐食による接触抵抗の増加で、その部分が発熱して焦げや変色を起こし、下流が暗くなります。また密閉空間で硫黄系・酢酸系のガスを出す接着剤やコーキングを使うと、LEDの銀メッキ電極が硫化して黒く変色し、その素子だけ暗くなる現象（電極硫化）も起こります。確認は、変色区間の前後で電圧を測り、接続部で電圧が大きく落ちていないか、接点が変色・腐食していないかを見ます。全体が均一に暗いなら電圧降下や寿命、局所的なら接続部・ガス・水分侵入を優先して調べます。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 変色を防ぐには施工時に何に気をつければいいですか？</div>
+        <div class="faq-a">第一に放熱です。アルミフレーム（放熱チャンネル）に貼って素子温度を下げると、樹脂黄変も蛍光体劣化も大幅に遅らせられます。第二に電流の余裕設計で、最大接続長を守り、電源容量に余裕をもたせて連続フルパワー運転を避けます。第三に密閉環境のガス対策で、屋外サインや什器内の密閉部では硫黄系・酢酸系を含む接着剤やシリコーンの使用を避け、LEDメーカーが指定する適合材を使います。第四に水分・結露対策で、屋外や水回りはIP等級に合った防水品を選び、端面処理を確実に行います。最後に、屋外や直射日光下では耐候・耐UVをうたった製品を選定します。これらは施工後の黄ばみ・変色クレームを未然に防ぐ要点です。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>変色しにくい施工に使えるLEDテープ・放熱フレームを探す</h3>
+      <p>放熱用アルミフレーム・耐候グレードのLEDテープ・防水仕様品を取り扱っています。設置環境に合わせた選定で変色トラブルを防ぎます。</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
