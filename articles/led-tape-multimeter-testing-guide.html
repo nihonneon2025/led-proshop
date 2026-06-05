@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープの通電チェック手順｜テスター（マルチメーター）で電圧・導通・極性を測る方法 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープが点かない・チラつく現場で原因を切り分ける基本は、テスター（マルチメーター）での測定です。DCV（電圧）・導通（極性とカット位置）・抵抗の測り方、PSU出力24Vの確認、電圧降下を数値で見抜く方法、ショート診断の手順を施工業者向けに具体的な測定値つきで解説します。">
+  <meta name="keywords" content="LEDテープ テスター,LEDテープ 通電チェック,マルチメーター LED 測定,LED 極性 確認 テスター,LEDテープ 電圧 測り方,DCV 測定 LED,LED 導通チェック,電圧降下 測定">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-multimeter-testing-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-multimeter-testing-guide">
+  <meta property="og:title" content="LEDテープの通電チェック手順｜テスター（マルチメーター）で電圧・導通・極性を測る方法 | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープが点かない・チラつく現場で原因を切り分ける基本はテスター測定。DCV（電圧）・導通（極性・カット位置）・抵抗の測り方、PSU出力24Vの確認、電圧降下を数値で見抜く方法、ショート診断の手順を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/images/hero-scenes/blue_desk.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープの通電チェック手順｜テスターで電圧・導通・極性を測る方法 | LED PRO SHOP">
+  <meta name="twitter:description" content="LEDテープが点かない・チラつく現場で原因を切り分けるテスター測定の手順。DCV・導通・抵抗の測り方、24V出力確認、電圧降下の数値判定、ショート診断を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/images/hero-scenes/blue_desk.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープの通電チェック手順｜テスター（マルチメーター）で電圧・導通・極性を測る方法",
+    "description": "テスター（マルチメーター）でLEDテープの電圧・導通・極性・抵抗を測り、不点灯やチラつきの原因を切り分ける手順を施工業者向けに測定値つきで解説します。",
+    "image": "https://led-proshop.com/images/hero-scenes/blue_desk.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP 編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://led-proshop.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-06-06",
+    "dateModified": "2026-06-06",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-multimeter-testing-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープの通電チェック手順｜テスターで電圧・導通・極性を測る方法", "item": "https://led-proshop.com/articles/led-tape-multimeter-testing-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "テスターはどのレンジで測ればよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "電源電圧の確認はDCV（直流電圧）レンジで、24V品なら最低でも測定範囲が直流30V以上を含むレンジに合わせます。オートレンジ式ならそのままDCVに合わせれば自動で範囲が選ばれます。テープの極性やカット位置の導通確認はブザー付きの導通（連続性）レンジ、抵抗値を見たいときはΩレンジを使います。間違ってACVや電流（A）レンジのまま端子に当てるとヒューズ切れや誤測定の原因になるため、測定前に必ずレンジを確認してください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "PSU出力は24Vのはずなのに21Vしか出ていません。故障ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "無負荷（テープを外した状態）で測って21Vなら電源側の異常が疑われますが、テープを接続した負荷状態で測っている場合は電圧降下や過負荷の可能性があります。まずテープを外してPSU出力端子だけを測り、24V前後（定電圧PSUは23.5〜24.5V程度）が出ているか確認します。無負荷で正常なら、負荷時の電圧低下はケーブルが細い・長い・接続不良・容量不足のいずれかです。テープ末端側で測って電圧が大きく落ちていれば電圧降下、全体的に低ければPSU容量不足を疑います。" }
+      },
+      {
+        "@type": "Question",
+        "name": "導通レンジでテープの+と−を測ると鳴りますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "正常なテープでは+と−の間は導通ブザーが鳴りません（LEDと抵抗が間に入っているため）。鳴る、または抵抗値がほぼ0Ωの場合は+−がショート（短絡）しています。はんだのブリッジ・金属面との接触・コネクタ内部の変形などを確認してください。逆に同じ極性の銅パッド同士（例：+から+へ流れる導体ライン）は導通が鳴れば正常です。カット位置をまたいで導通が切れていれば断線、極性を逆に覚えていないかもあわせて確認します。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#003C82;--blue-pale:#e8f0fe;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;--accent:#1d6fb8;--accent-pale:#e7f1fb;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px;text-decoration:none}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#0a2c4d 0%,#1d6fb8 55%,#0d3a63 100%);padding:40px 16px 32px;border-bottom:3px solid #0d3a63}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:4px;padding:14px}
+    .spec-card .spec-label{font-size:10px;font-weight:700;color:var(--text-muted);letter-spacing:1px;display:block;margin-bottom:5px}
+    .spec-card .spec-value{font-size:17px;font-weight:900;color:var(--accent);line-height:1.25}
+    .spec-card .spec-note{font-size:11px;color:var(--text-sub);margin-top:6px;line-height:1.5}
+    .checklist{list-style:none!important;padding:0!important;margin:16px 0}
+    .checklist li{position:relative;padding:9px 8px 9px 32px;border-bottom:1px solid var(--border);font-size:13px;line-height:1.6}
+    .checklist li::before{content:"✓";position:absolute;left:8px;top:9px;color:var(--accent);font-weight:900}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#e7f1fb}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#e7f1fb}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>LEDテープの通電チェック手順</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">LED施工方法ガイド</div>
+    <h1>LEDテープの通電チェック手順<br>テスター（マルチメーター）で電圧・導通・極性を測る方法</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-06-06</span>
+      <span>更新日: 2026-06-06</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/blue_desk.webp"
+      alt="テスター（マルチメーター）でLEDテープの電圧と導通を測定する施工現場のイメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>LEDテープが「点かない」「片側だけ暗い」「チラつく」——こうした現場でやみくもに配線をやり直すと、原因が分からないまま時間だけが過ぎます。<strong>テスター（マルチメーター）を1本持って電圧・導通・極性を測るだけで、原因が「電源側」「配線側」「テープ側」のどこにあるかを数分で切り分けられます。</strong>本記事では、施工業者が現場で実際に行う測定の順番、DCV・導通・抵抗の測り方、PSU出力24Vの確認、電圧降下を数値で見抜く方法、ショート診断までを、具体的な測定値の目安つきで解説します。</p>
+
+      <div class="article-callout warn">
+        <p><strong>測定前の安全確認:</strong> 測定中はDC（直流）回路を扱います。テープ側を測るときは原則PSUの一次側（AC100V）を切らずに行いますが、配線をつなぎ替える作業は必ず電源を切ってから。レンジを「電流（A）」のまま電圧端子に当てるとヒューズが飛ぶため、測定の都度レンジを確認してください。</p>
+      </div>
+
+      <h2 id="sec-tools">用意するテスターと設定</h2>
+      <p>特別な高級機は不要です。DCV・導通（ブザー）・抵抗（Ω）が測れる一般的なデジタルマルチメーターがあれば十分です。</p>
+
+      <div class="spec-grid">
+        <div class="spec-card">
+          <span class="spec-label">DCV レンジ</span>
+          <span class="spec-value">直流30V以上</span>
+          <p class="spec-note">24V品の電源電圧を測る。オートレンジ式が便利</p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">導通（連続性）</span>
+          <span class="spec-value">ブザー付き</span>
+          <p class="spec-note">極性・カット位置・断線・ショートの確認</p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">抵抗 Ω レンジ</span>
+          <span class="spec-value">200Ω〜</span>
+          <p class="spec-note">ショート（0Ω付近）と断線（∞）の判別</p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">テストリード</span>
+          <span class="spec-value">先細プローブ</span>
+          <p class="spec-note">2mm幅の銅パッドに正確に当てられる先端</p>
+        </div>
+      </div>
+
+      <p>テストリードは黒を「COM」端子、赤を「VΩ」端子に差します（電流レンジの「10A」端子には差さない）。これだけで電圧・導通・抵抗の測定に対応できます。</p>
+
+      <h2 id="sec-order">不点灯時の測定順序（上流から下流へ）</h2>
+      <p>切り分けの鉄則は<strong>「電源 → 配線 → テープ」の上流から順に測る</strong>ことです。下流（テープ）から測ると、原因が電源にある場合に無駄が出ます。</p>
+
+      <table>
+        <thead>
+          <tr><th>順</th><th>測定箇所</th><th>レンジ</th><th>正常値の目安</th><th>異常なら疑う原因</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>①</td><td>PSU出力端子（無負荷）</td><td>DCV</td><td>23.5〜24.5V</td><td>0V→PSU故障・AC未供給／低い→PSU不良</td></tr>
+          <tr><td>②</td><td>テープ接続点（始端）</td><td>DCV</td><td>23〜24V</td><td>大きく低い→配線細い・接続不良</td></tr>
+          <tr><td>③</td><td>テープ末端（終端）</td><td>DCV</td><td>始端比 −2V以内</td><td>−2V超→電圧降下（電線・長さ）</td></tr>
+          <tr><td>④</td><td>テープ +/− 間</td><td>導通/Ω</td><td>鳴らない（数百Ω）</td><td>鳴る・0Ω→ショート</td></tr>
+          <tr><td>⑤</td><td>カット位置をまたぐ導体</td><td>導通</td><td>鳴る</td><td>鳴らない→断線・カット誤り</td></tr>
+        </tbody>
+      </table>
+
+      <div class="article-callout tip">
+        <p><strong>切り分けの考え方:</strong> ①でNG＝電源側、①OK・②NG＝始端の配線/接続、②OK・③で電圧が大きく落ちる＝電圧降下、④で鳴る＝ショート。この4分岐で原因のほぼすべてが特定できます。</p>
+      </div>
+
+      <h2 id="sec-dcv">① 電圧（DCV）の測り方とPSU出力の確認</h2>
+      <p>まず<strong>テープを外した「無負荷」の状態でPSU出力端子（V+とV−）にプローブを当てます</strong>。赤プローブをV+、黒をV−に当て、定電圧24V品なら23.5〜24.5V前後が表示されれば電源は正常です。</p>
+      <ul>
+        <li><strong>0Vを表示</strong>：AC100Vが来ていない（コンセント・ブレーカー・ヒューズ）か、PSU本体の故障。一次側にAC100Vが来ているかをACVレンジで確認します。</li>
+        <li><strong>10〜20Vと中途半端</strong>：PSU内部の不良、または出力短絡による保護動作。テープを外しても低いままなら電源を交換します。</li>
+        <li><strong>無負荷24V・負荷で大きく低下</strong>：PSU容量不足か、出力側のショート・過負荷。<a href="/articles/led-psu-capacity-guide">電源容量（PSU）の選び方</a>で必要W数を再計算してください。</li>
+      </ul>
+      <p>表示が「−24V」のようにマイナスになったら、プローブの赤黒が逆なだけで電圧自体は正常です。これは<strong>極性の確認にも使えます</strong>（マイナス表示になった側がV−）。</p>
+
+      <h2 id="sec-vdrop">③ 電圧降下を数値で見抜く</h2>
+      <p>「末端だけ暗い」現象の正体はほぼ電圧降下です。テープの<strong>始端と終端の両方でDCVを測り、その差を見ます</strong>。24V品でおおむね2V以上落ちていると、末端の明るさ低下や色ずれ（電球色が黄ばむ等）が体感できるレベルになります。</p>
+
+      <table>
+        <thead>
+          <tr><th>始端電圧</th><th>終端電圧</th><th>電圧降下</th><th>判定</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>24.0V</td><td>23.2V</td><td>0.8V</td><td>正常（許容内）</td></tr>
+          <tr><td>24.0V</td><td>22.3V</td><td>1.7V</td><td>許容上限付近・要注意</td></tr>
+          <tr><td>24.0V</td><td>21.0V</td><td>3.0V</td><td>NG・末端が暗くなる</td></tr>
+          <tr><td>24.0V</td><td>19.5V</td><td>4.5V</td><td>NG・色ずれ＋著しい減光</td></tr>
+        </tbody>
+      </table>
+
+      <p>電圧降下が大きいときの対策は、①給電線を太くする（断面積アップ）、②両端給電・中間給電にして給電点を増やす、③テープの一筆書き長さを短くする、のいずれかです。詳しくは<a href="/articles/led-tape-voltage-drop-guide">LEDテープの電圧降下と対策</a>を参照してください。</p>
+
+      <div class="article-callout warn">
+        <p><strong>勘違いしやすい点:</strong> 末端が暗いのを見て「テープ不良」と判断しがちですが、始端と終端の電圧差を測れば電圧降下か不良かは一目で分かります。電圧差が小さいのに末端だけ点かない場合は、その手前のカット位置やはんだ・コネクタの断線を疑います。</p>
+      </div>
+
+      <h2 id="sec-continuity">④⑤ 導通・極性・断線のチェック</h2>
+      <p>導通（連続性）レンジは、回路に電気を流さず「つながっているか」を音で確認できます。<strong>必ず電源を切った状態</strong>で測ります（通電中に導通レンジを使うと正しく測れません）。</p>
+
+      <h3>極性（+/−）の確認</h3>
+      <p>テープの銅パッドには「+」「−」の表記があります。プローブを当てて<strong>同じラインの導体同士は導通が鳴り、+と−の間は鳴らない</strong>のが正常です。表記が消えている中古・流用品は、PSU側から電圧を流して先述のマイナス表示で極性を判定できます。</p>
+
+      <h3>断線・カット位置の確認</h3>
+      <ul>
+        <li>不点灯区間の手前と先で同じ極性の導体に当て、<strong>導通が鳴らなければその区間で断線</strong>しています。</li>
+        <li>カット位置（はさみマーク）以外で切っていないか確認。マーク外で切ると回路が成立せず点きません。</li>
+        <li>コネクタ接続部は、コネクタの入口と出口で導通を測り、コネクタ内部の接触不良を切り分けます。</li>
+      </ul>
+
+      <h3>ショート（短絡）の確認</h3>
+      <p>テープの+と−の間を<strong>Ωレンジで測り、0Ω付近（または導通ブザーが鳴る）ならショート</strong>です。原因はほぼ次の3つです。</p>
+      <ul>
+        <li>はんだのブリッジ（+と−のはんだがつながっている）</li>
+        <li>カット端面の銅が金属什器・アルミフレームに接触（<a href="/articles/led-tape-metal-surface-insulation-guide">金属面への絶縁処理</a>不足）</li>
+        <li>コネクタ内部での端子変形・噛み込み</li>
+      </ul>
+
+      <h2 id="sec-checklist">現場での通電チェック・チェックリスト</h2>
+      <p>結線後・トラブル時に上から順に確認すれば、原因の取りこぼしを防げます。</p>
+      <ul class="checklist">
+        <li>テスターのレンジが目的（DCV／導通／Ω）に合っているか測定の都度確認した</li>
+        <li>PSU出力を無負荷で測り24V前後（23.5〜24.5V）が出ている</li>
+        <li>テープ始端の電圧が23V以上ある（配線・接続の損失が小さい）</li>
+        <li>始端と終端の電圧差が2V以内に収まっている</li>
+        <li>+/−間がショートしていない（Ωが0Ω付近でない）</li>
+        <li>不点灯区間をまたぐ導体の導通が確認できる（断線していない）</li>
+        <li>カット位置以外で切っていない／コネクタが奥まで刺さっている</li>
+        <li>金属什器・アルミフレームとテープ導体が絶縁されている</li>
+      </ul>
+
+      <h2 id="sec-summary">まとめ</h2>
+      <table>
+        <thead>
+          <tr><th>症状</th><th>まず測る場所</th><th>判定の目安</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>まったく点かない</td><td>PSU出力（無負荷DCV）</td><td>0V→電源側／24V→下流の配線・テープ</td></tr>
+          <tr><td>末端だけ暗い</td><td>始端と終端のDCV差</td><td>2V超の降下→電圧降下対策</td></tr>
+          <tr><td>一部区間が点かない</td><td>導通（その区間の導体）</td><td>鳴らない→断線・カット誤り</td></tr>
+          <tr><td>すぐ消える・電源が落ちる</td><td>+/−間のΩ</td><td>0Ω付近→ショート（保護動作）</td></tr>
+        </tbody>
+      </table>
+      <p>テスター1本で「電源・配線・テープ」のどこに原因があるかを数値で切り分けられます。勘で配線をやり直す前に、まずDCVと導通を測る——これが手戻りを最小にする最短ルートです。配線そのものの基礎は<a href="/articles/led-tape-wiring-basics">LEDテープ配線の基礎</a>、点灯不良全般の対処は<a href="/articles/led-tape-troubleshooting-guide">LEDテープのトラブル診断</a>もあわせてご確認ください。</p>
+
+      <!-- FAQ -->
+      <h2 id="faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">テスターはどのレンジで測ればよいですか？</div>
+        <div class="faq-a">電源電圧の確認はDCV（直流電圧）レンジで、24V品なら測定範囲が直流30V以上を含むレンジに合わせます。オートレンジ式ならDCVに合わせれば自動で範囲が選ばれます。極性やカット位置の導通確認はブザー付きの導通（連続性）レンジ、抵抗値を見たいときはΩレンジを使います。ACVや電流（A）レンジのまま端子に当てるとヒューズ切れや誤測定の原因になるため、測定前に必ずレンジを確認してください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">PSU出力は24Vのはずなのに21Vしか出ていません。故障ですか？</div>
+        <div class="faq-a">無負荷（テープを外した状態）で21Vなら電源側の異常が疑われますが、テープを接続した負荷状態で測っているなら電圧降下や過負荷の可能性があります。まずテープを外してPSU出力端子だけを測り、24V前後（定電圧PSUは23.5〜24.5V程度）が出ているか確認します。無負荷で正常なら、負荷時の低下はケーブルが細い・長い・接続不良・容量不足のいずれかです。末端側で大きく落ちていれば電圧降下、全体的に低ければPSU容量不足を疑います。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">導通レンジでテープの+と−を測ると鳴りますか？</div>
+        <div class="faq-a">正常なテープでは+と−の間は導通ブザーが鳴りません（間にLEDと抵抗が入っているため）。鳴る、または抵抗値がほぼ0Ωの場合は+−がショート（短絡）しています。はんだのブリッジ・金属面との接触・コネクタ内部の変形などを確認してください。逆に同じ極性の導体ライン同士は導通が鳴れば正常です。カット位置をまたいで導通が切れていれば断線、極性を逆に覚えていないかもあわせて確認します。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-tape-voltage-drop-guide">
+              <img src="/images/hero-scenes/blue_desk.webp" alt="LEDテープの電圧降下と対策" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">LED施工方法ガイド</span>
+                <div class="rac-title">LEDテープの電圧降下とは？末端が暗くなる原因と給電方法の対策</div>
+                <span class="rac-date">2026-05-20</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-troubleshooting-guide">
+              <img src="/images/hero-scenes/lightblue_kitchen.webp" alt="LEDテープのトラブル診断" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <div class="rac-title">LEDテープが点灯しない・チラつく原因と対処法｜現場の診断手順</div>
+                <span class="rac-date">2026-05-19</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-psu-capacity-guide">
+              <img src="/images/hero-scenes/blue_kitchen.webp" alt="LED電源（PSU）容量の選び方" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">LED選び方ガイド</span>
+                <div class="rac-title">LED電源（PSU）容量の選び方｜W数の計算と余裕率の取り方</div>
+                <span class="rac-date">2026-05-18</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>業務用LEDテープ・電源装置をプロ価格で</h2>
+        <p>24V定電圧PSU・COBテープ・コネクタまで現場で使う資材を取り揃えています。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">LED PRO SHOP を見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-06</span>
+        <span>更新日: 2026-06-06</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源装置の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-tape-voltage-drop-guide">LEDテープの電圧降下と対策</a></li>
+        <li><a href="/articles/led-tape-troubleshooting-guide">LEDテープのトラブル診断</a></li>
+        <li><a href="/articles/led-psu-capacity-guide">LED電源（PSU）容量の選び方</a></li>
+        <li><a href="/articles/led-tape-wiring-basics">LEDテープ配線の基礎</a></li>
+        <li><a href="/articles/led-tape-connector-guide">LEDテープ コネクタ接続ガイド</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/psu/">業務用定電圧PSU（24V）</a></li>
+        <li><a href="/category/controller/">調光器・コントローラー</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム各種</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>
