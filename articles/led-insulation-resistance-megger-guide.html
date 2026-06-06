@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LED照明の絶縁抵抗測定（メガー）｜ドライバーを壊さない手順と基準値0.1/0.2/0.4MΩ | LED PRO SHOP</title>
+  <meta name="description" content="蛍光灯からLEDに更新した後やLED照明の引き渡し前に、絶縁抵抗計（メガー）でいきなり測ると電源（ドライバー）や調光器が壊れることがあります。電子機器を切り離す手順・測定電圧の選び方・対地電圧別の基準値0.1/0.2/0.4MΩ・漏れ電流測定の代替を電気工事業者向けに解説。">
+  <meta name="keywords" content="LED 絶縁抵抗 測定,LED 照明 メガー,絶縁抵抗 基準値,メガー LED 壊れる,LED ドライバー 絶縁抵抗,絶縁抵抗計 測定電圧,LED 漏れ電流,電気設備技術基準 絶縁抵抗">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-insulation-resistance-megger-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-insulation-resistance-megger-guide">
+  <meta property="og:title" content="LED照明の絶縁抵抗測定（メガー）｜ドライバーを壊さない手順と基準値0.1/0.2/0.4MΩ | LED PRO SHOP">
+  <meta property="og:description" content="LED照明の引き渡し前にメガーでいきなり測ると電源（ドライバー）や調光器が壊れることがあります。電子機器を切り離す手順・測定電圧の選び方・対地電圧別の基準値0.1/0.2/0.4MΩ・漏れ電流測定の代替を電気工事業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-insulation-resistance-megger-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LED照明の絶縁抵抗測定（メガー）｜ドライバーを壊さない手順と基準値 | LED PRO SHOP">
+  <meta name="twitter:description" content="LED照明をメガーでいきなり測ると電源・調光器が壊れることがあります。電子機器を切り離す手順・測定電圧の選び方・対地電圧別の基準値0.1/0.2/0.4MΩ・漏れ電流測定の代替を電気工事業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-insulation-resistance-megger-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LED照明の絶縁抵抗測定（メガー）｜ドライバーを壊さない手順と基準値0.1/0.2/0.4MΩ",
+    "description": "LED照明の絶縁抵抗測定（メガー）で電源（ドライバー）や調光器を壊さない測定手順、測定電圧の選び方、対地電圧別の基準値0.1/0.2/0.4MΩ、漏れ電流測定の代替を電気工事業者向けに解説します。",
+    "image": "https://led-proshop.com/articles/images/led-insulation-resistance-megger-guide-hero.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP 編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://led-proshop.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-06-07",
+    "dateModified": "2026-06-07",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-insulation-resistance-megger-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LED照明の絶縁抵抗測定（メガー）｜ドライバーを壊さない手順と基準値", "item": "https://led-proshop.com/articles/led-insulation-resistance-megger-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LED照明を絶縁抵抗計（メガー）で測ると壊れますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "LED電源（ドライバー）や調光器が接続されたまま測定すると、メガーが印加する250〜500Vの直流電圧で内部の電子部品が破損することがあります。絶縁抵抗測定はあくまで電線（配線）の絶縁を測るものなので、測定対象の回路から電源・調光器・センサーなどの電子機器を切り離してから測るのが原則です。やむを得ず機器をつないだまま確認したいときは、停電させずに測れる漏れ電流（Ior）測定で代替します。" }
+      },
+      {
+        "@type": "Question",
+        "name": "LED照明回路の絶縁抵抗の基準値はいくつですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "電気設備技術基準により、使用電圧300V以下で対地電圧150V以下（単相100V回路など）は0.1MΩ以上、300V以下で対地電圧150V超（単相200V回路など）は0.2MΩ以上、300V超は0.4MΩ以上が必要です。新設・更新工事では基準ぎりぎりではなく、余裕をもって1MΩ以上あることを目安にすると安心です。値が低いときは電線の被覆損傷・湿気・端子の汚れ・接続箱内の水分などを疑います。" }
+      },
+      {
+        "@type": "Question",
+        "name": "蛍光灯をLED（直管LED）に交換した後、メガー測定で注意することは？",
+        "acceptedAnswer": { "@type": "Answer", "text": "直管LEDや電源内蔵LEDは内部に電子回路を持つため、安定器をバイパスした配線のまま回路全体を高い測定電圧で測るとLED側を傷めることがあります。ランプを外す、または器具側を切り離して配線（電線）だけの絶縁を測るのが安全です。測定電圧も500Vではなく250V以下のレンジを選び、印加時間は必要最小限にします。器具を含めて確認したい場合は漏れ電流測定に切り替えてください。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#003C82;--blue-pale:#e8f0fe;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;--accent:#0e7a5f;--accent-pale:#e6f4ef;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px;text-decoration:none}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#0a3a2f 0%,#0e7a5f 55%,#0c4a3a 100%);padding:40px 16px 32px;border-bottom:3px solid #0c4a3a}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:4px;padding:14px}
+    .spec-card .spec-label{font-size:10px;font-weight:700;color:var(--text-muted);letter-spacing:1px;display:block;margin-bottom:5px}
+    .spec-card .spec-value{font-size:17px;font-weight:900;color:var(--accent);line-height:1.25}
+    .spec-card .spec-note{font-size:11px;color:var(--text-sub);margin-top:6px;line-height:1.5}
+    .checklist{list-style:none!important;padding:0!important;margin:16px 0}
+    .checklist li{position:relative;padding:9px 8px 9px 32px;border-bottom:1px solid var(--border);font-size:13px;line-height:1.6}
+    .checklist li::before{content:"✓";position:absolute;left:8px;top:9px;color:var(--accent);font-weight:900}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#e7f1fb}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#e7f1fb}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>LED照明の絶縁抵抗測定（メガー）</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">LED施工方法ガイド</div>
+    <h1>LED照明の絶縁抵抗測定（メガー）<br>ドライバーを壊さない手順と基準値0.1/0.2/0.4MΩ</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-06-07</span>
+      <span>更新日: 2026-06-07</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/blue_desk.webp"
+      alt="LED照明回路の絶縁抵抗を絶縁抵抗計（メガー）で測定する電気工事のイメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>蛍光灯からLEDへ更新した後や、LED照明を引き渡す前の竣工検査。電気工事では当然のように<strong>絶縁抵抗測定（メガー）</strong>を行いますが、LED照明では「いつもどおり回路全体を500Vで測ったらLED電源（ドライバー）が壊れた」というトラブルが起こります。LEDは内部に電子回路を持つため、白熱灯や安定器式の蛍光灯と同じ感覚で測ると一発で破損させてしまうのです。本記事では、施工業者・電気工事士が現場で<strong>LEDを壊さずに絶縁抵抗を測る手順</strong>、測定電圧の選び方、対地電圧別の基準値（0.1／0.2／0.4MΩ）、停電させたくないときの漏れ電流測定までを、具体的な数値の目安つきで整理します。</p>
+
+      <div class="article-callout warn">
+        <p><strong>結論を先に:</strong> 絶縁抵抗測定は「電線（配線）の絶縁」を測るもの。LED電源・調光器・センサーなどの<strong>電子機器を切り離してから測る</strong>のが大原則です。機器を含めて確認したいときは、停電不要の漏れ電流（Ior）測定で代替します。</p>
+      </div>
+
+      <h2 id="sec-why">なぜLED照明はメガーで壊れるのか</h2>
+      <p>絶縁抵抗計（メガー）は、測定のために<strong>250V・500Vといった高い直流電圧を回路に印加</strong>し、その状態で流れるわずかな漏れ電流から絶縁抵抗値（MΩ）を求める計器です。電線同士・電線と大地の間の絶縁を見るには最適ですが、この高い直流電圧がLED内部の電子部品にとっては過大なストレスになります。</p>
+      <ul>
+        <li><strong>LED電源（ドライバー）</strong>：入力側のサージ吸収素子（バリスタ）・コンデンサ・ICが、印加した直流高電圧で破損・劣化する。</li>
+        <li><strong>調光器・コントローラー</strong>：内部の半導体（トライアック・FET）やマイコンが破損する。</li>
+        <li><strong>直管LED・電源内蔵器具</strong>：安定器をバイパスした配線のまま測ると、LED側の整流回路に直流が回り込み傷める。</li>
+      </ul>
+      <p>つまり問題は「LEDが弱い」のではなく、<strong>電子機器をつないだまま絶縁抵抗を測る手順そのものが誤り</strong>だという点にあります。</p>
+
+      <h2 id="sec-standard">対地電圧別の絶縁抵抗 基準値</h2>
+      <p>絶縁抵抗の合否は、電気設備技術基準（電技省令第58条）で使用電圧・対地電圧ごとに定められています。LED照明回路の大半は単相100V／200Vなので、下表の上2行が実務で使う基準です。</p>
+
+      <table>
+        <thead>
+          <tr><th>使用電圧の区分</th><th>対地電圧</th><th>絶縁抵抗の基準</th><th>該当する代表回路</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>300V以下</td><td>150V以下</td><td>0.1MΩ 以上</td><td>単相100V照明回路</td></tr>
+          <tr><td>300V以下</td><td>150V超</td><td>0.2MΩ 以上</td><td>単相200V回路</td></tr>
+          <tr><td>300V超</td><td>—</td><td>0.4MΩ 以上</td><td>三相400V級設備</td></tr>
+        </tbody>
+      </table>
+
+      <div class="article-callout tip">
+        <p><strong>合格ラインと実務の目安:</strong> 上表は「これを下回ると不合格」という最低ライン。新設・更新工事では基準ギリギリではなく、<strong>1MΩ以上（できれば数MΩ以上）</strong>を健全の目安にします。0.1〜0.3MΩ台で合格はするが低め、という配線は被覆損傷や湿気の初期サインのことがあります。</p>
+      </div>
+
+      <h2 id="sec-voltage">測定電圧（レンジ）の選び方</h2>
+      <p>絶縁抵抗計には125V・250V・500V・1000Vなどの測定電圧レンジがあります。回路の電圧と、電子機器を含むかどうかで選びます。</p>
+
+      <div class="spec-grid">
+        <div class="spec-card">
+          <span class="spec-label">100V 回路（配線のみ）</span>
+          <span class="spec-value">125 / 250V</span>
+          <p class="spec-note">電子機器を外した電線の絶縁測定に</p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">200V 回路（配線のみ）</span>
+          <span class="spec-value">250 / 500V</span>
+          <p class="spec-note">対地電圧150V超は0.2MΩ以上が必要</p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">電子機器を含む恐れ</span>
+          <span class="spec-value">250V 以下</span>
+          <p class="spec-note">どうしても測るなら低電圧側で短時間</p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">停電できない現場</span>
+          <span class="spec-value">漏れ電流</span>
+          <p class="spec-note">クランプ式でIor測定に切替（後述）</p>
+        </div>
+      </div>
+
+      <p>原則は「<strong>回路の使用電圧以上で、かつ機器を傷めない最小の測定電圧</strong>」。100V回路の配線だけなら125Vでも測れますが、判定の安定性から250Vを使う現場が多いです。500V以上はモーター・動力など堅牢な負荷向けで、LED器具が残った回路には使いません。</p>
+
+      <h2 id="sec-step">LEDを壊さない測定手順</h2>
+      <ol>
+        <li><strong>停電・施錠（検電）</strong>：対象回路のブレーカーを切り、検電器で無電圧を確認。再投入防止の表示をする。</li>
+        <li><strong>電子機器を切り離す</strong>：LED電源・調光器・センサー・タイマーを回路から外すか、器具側コネクタを抜く。直管LEDはランプを外す。</li>
+        <li><strong>測定電圧を選ぶ</strong>：100V回路なら250V、200V回路なら250〜500Vレンジに設定。</li>
+        <li><strong>線間・対地で測定</strong>：電線相互間（L-N）と、電線と接地（アース）間をそれぞれ測る。印加は数秒で値が落ち着くまで。</li>
+        <li><strong>基準値と照合</strong>：100V回路は0.1MΩ以上、200V回路は0.2MΩ以上。実務目安は1MΩ以上。</li>
+        <li><strong>機器を復旧・再通電</strong>：外した電源・器具を戻し、点灯と動作を確認する。</li>
+      </ol>
+
+      <div class="article-callout warn">
+        <p><strong>やりがちな失敗:</strong> 分電盤で「主幹を入れたまま回路を一括測定」すると、つながっている全器具のLED電源にまとめて高電圧がかかります。回路を分離し、電子機器を切り離してから測る——この一手間が破損を防ぎます。</p>
+      </div>
+
+      <h2 id="sec-leakage">停電できないとき：漏れ電流（Ior）測定</h2>
+      <p>営業中の店舗・稼働中の施設では停電や機器の切り離しが難しいことがあります。その場合は、<strong>クランプ式漏れ電流計で活線のまま漏れ電流を測る</strong>方法が有効です。電子機器をつないだまま測れるためLEDを傷めません。</p>
+      <ul>
+        <li><strong>Io（全漏れ電流）</strong>：対地静電容量による分も含む総合的な漏れ電流。LED電源はノイズフィルタのコンデンサを持つためIoは大きめに出やすい。</li>
+        <li><strong>Ior（抵抗分漏れ電流）</strong>：絶縁劣化に直結する成分。LED回路ではIorで判断するのが実態に合う。一般に<strong>Ior 1mA以下</strong>を健全の目安とする運用が多い。</li>
+      </ul>
+      <p>絶縁抵抗測定（停電・機器切り離し）と漏れ電流測定（活線・機器接続のまま）は、現場条件で使い分けます。竣工検査は前者、稼働中設備の定期点検は後者が向きます。</p>
+
+      <table>
+        <thead>
+          <tr><th>項目</th><th>絶縁抵抗測定（メガー）</th><th>漏れ電流測定（クランプ）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>停電</td><td>必要</td><td>不要（活線）</td></tr>
+          <tr><td>電子機器</td><td>切り離す</td><td>つないだまま可</td></tr>
+          <tr><td>LEDへの影響</td><td>手順を誤ると破損</td><td>傷めない</td></tr>
+          <tr><td>主な用途</td><td>新設・更新の竣工検査</td><td>稼働中設備の定期点検</td></tr>
+          <tr><td>判定の目安</td><td>0.1／0.2／0.4MΩ以上</td><td>Ior 概ね1mA以下</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="sec-low">絶縁抵抗が低いときに疑う箇所</h2>
+      <p>機器を切り離して測っても値が基準を下回る／低めのときは、配線そのものの絶縁が落ちています。次の順で確認します。</p>
+      <ul>
+        <li><strong>湿気・水分</strong>：屋外・浴室・冷蔵区画の接続箱に水分。乾燥後に再測定で回復することも。</li>
+        <li><strong>被覆の損傷</strong>：ステップル打ち込み・ビス・配管通線時の擦れで芯線が露出。</li>
+        <li><strong>端子・圧着部の汚れ</strong>：端子台や接続箱内のホコリ・結露による漏れ。</li>
+        <li><strong>器具の取り残し</strong>：切り離したつもりの電子機器が一部残っている（最も多い原因）。</li>
+      </ul>
+
+      <h2 id="sec-checklist">引き渡し前チェックリスト</h2>
+      <ul class="checklist">
+        <li>対象回路を停電し、検電器で無電圧を確認した</li>
+        <li>LED電源・調光器・センサーなど電子機器を切り離した（直管LEDはランプを外した）</li>
+        <li>測定電圧を回路に合わせて選んだ（100V→250V／200V→250〜500V／機器残存の恐れ→250V以下）</li>
+        <li>線間（L-N）と対地（電線-アース）の両方を測定した</li>
+        <li>100V回路0.1MΩ以上／200V回路0.2MΩ以上を満たし、実務目安1MΩ以上を確認した</li>
+        <li>停電できない現場では漏れ電流（Ior）測定に切り替えた</li>
+        <li>測定後に機器を復旧し、点灯・調光動作を確認した</li>
+      </ul>
+
+      <h2 id="sec-summary">まとめ</h2>
+      <p>LED照明の絶縁抵抗測定で失敗しないコツは、たった2つです。<strong>①電子機器（LED電源・調光器）を切り離してから測る、②回路に合った測定電圧を選ぶ。</strong>この原則を守れば、メガーでLEDドライバーを壊すことはありません。停電や機器の切り離しが難しい現場では漏れ電流（Ior）測定に切り替え、活線のまま絶縁の健全性を確認します。基準値は100V回路0.1MΩ以上・200V回路0.2MΩ以上が合否ライン、実務では1MΩ以上を目安に。施工後の通電確認は<a href="/articles/led-tape-multimeter-testing-guide">テスターでの通電チェック手順</a>、金属面への施工時の絶縁は<a href="/articles/led-tape-metal-surface-insulation-guide">金属面への絶縁処理</a>もあわせてご確認ください。</p>
+
+      <!-- FAQ -->
+      <h2 id="faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">LED照明を絶縁抵抗計（メガー）で測ると壊れますか？</div>
+        <div class="faq-a">LED電源（ドライバー）や調光器が接続されたまま測ると、メガーが印加する250〜500Vの直流電圧で内部の電子部品が破損することがあります。絶縁抵抗測定は電線（配線）の絶縁を測るものなので、電源・調光器・センサーなどの電子機器を切り離してから測るのが原則です。やむを得ず機器をつないだまま確認したいときは、停電させずに測れる漏れ電流（Ior）測定で代替します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">LED照明回路の絶縁抵抗の基準値はいくつですか？</div>
+        <div class="faq-a">電気設備技術基準により、使用電圧300V以下で対地電圧150V以下（単相100V回路など）は0.1MΩ以上、300V以下で対地電圧150V超（単相200V回路など）は0.2MΩ以上、300V超は0.4MΩ以上が必要です。新設・更新工事では基準ギリギリではなく、余裕をもって1MΩ以上あることを目安にすると安心です。値が低いときは電線の被覆損傷・湿気・端子の汚れ・接続箱内の水分などを疑います。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">蛍光灯をLED（直管LED）に交換した後、メガー測定で注意することは？</div>
+        <div class="faq-a">直管LEDや電源内蔵LEDは内部に電子回路を持つため、安定器をバイパスした配線のまま回路全体を高い測定電圧で測るとLED側を傷めることがあります。ランプを外す、または器具側を切り離して配線（電線）だけの絶縁を測るのが安全です。測定電圧も500Vではなく250V以下のレンジを選び、印加時間は必要最小限にします。器具を含めて確認したい場合は漏れ電流測定に切り替えてください。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-tape-multimeter-testing-guide">
+              <img src="/images/hero-scenes/blue_desk.webp" alt="テスターでのLEDテープ通電チェック" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">LED施工方法ガイド</span>
+                <div class="rac-title">LEDテープの通電チェック手順｜テスターで電圧・導通・極性を測る方法</div>
+                <span class="rac-date">2026-06-06</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-metal-surface-insulation-guide">
+              <img src="/images/hero-scenes/lightblue_kitchen.webp" alt="LEDテープの金属面への絶縁処理" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">LED施工方法ガイド</span>
+                <div class="rac-title">LEDテープを金属面に貼るときの絶縁処理｜ショートを防ぐ施工手順</div>
+                <span class="rac-date">2026-05-21</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-power-inrush-current-breaker-trip-guide">
+              <img src="/images/hero-scenes/blue_kitchen.webp" alt="LED電源の突入電流とブレーカー" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <div class="rac-title">LED電源の突入電流でブレーカーが落ちる原因と対策</div>
+                <span class="rac-date">2026-06-05</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>業務用LEDテープ・電源装置をプロ価格で</h2>
+        <p>24V定電圧PSU・COBテープ・調光器まで現場で使う資材を取り揃えています。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">LED PRO SHOP を見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-07</span>
+        <span>更新日: 2026-06-07</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源装置の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-tape-multimeter-testing-guide">LEDテープの通電チェック手順</a></li>
+        <li><a href="/articles/led-tape-metal-surface-insulation-guide">金属面への絶縁処理</a></li>
+        <li><a href="/articles/led-power-inrush-current-breaker-trip-guide">突入電流とブレーカー対策</a></li>
+        <li><a href="/articles/led-tape-voltage-drop-guide">LEDテープの電圧降下と対策</a></li>
+        <li><a href="/articles/led-tape-troubleshooting-guide">LEDテープのトラブル診断</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/psu/">業務用定電圧PSU（24V）</a></li>
+        <li><a href="/category/controller/">調光器・コントローラー</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム各種</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>
