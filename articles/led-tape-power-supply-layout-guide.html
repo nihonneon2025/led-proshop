@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープ電源の集中配置と分散配置｜大規模施工の電源レイアウト設計ガイド | LED PRO SHOP</title>
+  <meta name="description" content="長尺・大面積のLEDテープ施工で電源（PSU）を1か所にまとめるか、複数に分けて配置するか——集中配置と分散配置の違い、電圧降下・配線コスト・メンテ性の比較、PSU設置位置の決め方と配線距離の計算手順を施工業者向けに解説します。">
+  <meta name="keywords" content="LED 電源 配置,PSU 設置場所,LEDテープ 電源 分散,電源 集中 分散,電圧降下 対策,LED 大規模施工,電源 レイアウト,LED 配線 距離,定電圧電源 配置">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-power-supply-layout-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-power-supply-layout-guide">
+  <meta property="og:title" content="LEDテープ電源の集中配置と分散配置｜大規模施工の電源レイアウト設計ガイド | LED PRO SHOP">
+  <meta property="og:description" content="電源（PSU）を1か所にまとめるか複数に分けるか。集中配置と分散配置の違い・電圧降下・配線コスト・メンテ性の比較とPSU設置位置の決め方を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-power-supply-layout-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ電源の集中配置と分散配置｜大規模施工の電源レイアウト設計ガイド | LED PRO SHOP">
+  <meta name="twitter:description" content="電源（PSU）を1か所にまとめるか複数に分けるか。集中配置と分散配置の違い・電圧降下・配線コスト・メンテ性の比較を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-power-supply-layout-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープ電源の集中配置と分散配置｜大規模施工の電源レイアウト設計ガイド",
+    "description": "電源（PSU）の集中配置と分散配置の違い、電圧降下・配線コスト・メンテ性の比較、PSU設置位置の決め方と配線距離の計算手順を施工業者向けに解説します。",
+    "image": "https://led-proshop.com/articles/images/led-tape-power-supply-layout-guide-hero.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP 編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://led-proshop.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-06-07",
+    "dateModified": "2026-06-07",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-power-supply-layout-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "LED PRO SHOP",
+        "item": "https://led-proshop.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "コラム",
+        "item": "https://led-proshop.com/articles/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "LEDテープ電源の集中配置と分散配置｜電源レイアウト設計ガイド",
+        "item": "https://led-proshop.com/articles/led-tape-power-supply-layout-guide"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープの電源は1台にまとめる集中配置と、複数に分ける分散配置のどちらが良いですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "配線距離が短く点検口が1か所にまとまる小〜中規模では、保守が楽な集中配置が有利です。一方、テープが建物全体に広く分散する大規模施工では、各エリアの近くにPSUを置く分散配置のほうが電圧降下と低圧配線（DC側）の太線化を抑えられ、結果的に電線コストとトラブルが減ります。判断軸は『PSUからテープまでのDC配線距離』で、長くなるほど分散配置が有利になります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "電源を分散配置すると、それぞれ別系統のAC電源が必要ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "分散配置でも各PSUへ供給するのはAC100V/200V側です。AC側は電圧降下が小さく長距離を引きやすいので、AC幹線を各エリアまで延ばし、その末端でPSUを設置してDC化するのが定石です。これにより電圧降下が起きやすいDC側の距離を最短化できます。各PSU回路のブレーカー容量・突入電流の合算は必ず事前に確認してください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "PSUはテープからどのくらいの距離まで離して設置できますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "明確な上限はなく、DC配線の電圧降下が許容値（一般に定格電圧の数%以内）に収まる距離が実質的な限界です。24V系は12V系より電圧降下に強く、同じ条件で約2倍の距離を引けます。長い場合は電線を太くする・電源側の電圧を少し上げる・テープ側で電源を分岐供給（パワーインジェクション）するなどで対応します。設計時は必ず配線距離・電流・電線断面積から電圧降下を計算してください。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#003C82;--blue-pale:#e8f0fe;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;--accent:#1457b0;--accent-pale:#e8f0fb;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#0a2c5c 0%,#1457b0 55%,#0d3e80 100%);padding:40px 16px 32px;border-bottom:3px solid #0d3e80}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#e8f0fb}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#e8f0fb}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>電源の集中配置と分散配置</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">施工ガイド</div>
+    <h1>LEDテープ電源の集中配置と分散配置<br>大規模施工の電源レイアウト設計ガイド</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-06-07</span>
+      <span>更新日: 2026-06-07</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/gold_shop.webp"
+      alt="複数エリアにLEDテープを敷設した大規模施工現場の電源レイアウトのイメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>店舗1区画程度なら電源（PSU）を1台置けば済みますが、複数フロア・長尺の間接照明・広い売場のように<strong>LEDテープが建物全体へ広がる大規模施工</strong>になると、「電源を1か所にまとめるか（集中配置）」「エリアごとに分けて置くか（分散配置）」がコストとトラブルを大きく左右します。判断を誤ると、電圧降下で端が暗い・DC配線が太く高い・故障時に全系統が落ちる、といった事態に直結します。本記事では集中配置と分散配置の違い、電圧降下・配線コスト・保守性の比較、そして PSU 設置位置の決め方を施工の現場目線で整理します。</p>
+
+      <h2 id="sec-basic">集中配置と分散配置とは</h2>
+      <p>LEDテープの電源レイアウトは、大きく次の2方式に分かれます。</p>
+      <ul>
+        <li><strong>集中配置</strong>：PSU を電気室・盤・点検口などの1か所にまとめ、そこから各テープへ DC（低圧）配線で送る方式。</li>
+        <li><strong>分散配置</strong>：AC（100V/200V）幹線を各エリアまで延ばし、各エリアの近くに小型 PSU を置いてその場で DC 化する方式。</li>
+      </ul>
+      <p>両者の本質的な違いは「<strong>電圧降下が起きやすい DC 側の配線距離をどれだけ短くできるか</strong>」にあります。集中配置は DC を長く引き、分散配置は AC を長く引いて DC を最短化します。AC 側は電圧が高く電流が小さいため電圧降下に強く、長距離を引きやすいのがポイントです。</p>
+      <div class="article-callout">
+        <p><strong>覚え方:</strong> 「<strong>DC は短く、AC は長く</strong>」。電圧降下のボトルネックは常に DC 側。距離が伸びる現場ほど、DC を短くできる分散配置が有利になります。</p>
+      </div>
+
+      <h2 id="sec-compare">集中配置 vs 分散配置 比較表</h2>
+      <table>
+        <thead>
+          <tr><th>比較項目</th><th>集中配置（1か所に集約）</th><th>分散配置（エリアごとに設置）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>DC配線距離</td><td>長くなりがち</td><td><strong>短くできる</strong></td></tr>
+          <tr><td>電圧降下</td><td>不利（端が暗くなりやすい）</td><td><strong>有利</strong></td></tr>
+          <tr><td>DC電線コスト</td><td>太線化で高くなりやすい</td><td>細線で済みやすい</td></tr>
+          <tr><td>保守・点検</td><td><strong>1か所で完結し楽</strong></td><td>複数箇所を回る必要</td></tr>
+          <tr><td>故障時の影響範囲</td><td>1台故障で広範囲が消灯</td><td><strong>該当エリアのみ消灯</strong></td></tr>
+          <tr><td>放熱・設置スペース</td><td>1か所に発熱が集中</td><td>分散され熱がこもりにくい</td></tr>
+          <tr><td>向いている規模</td><td>小〜中規模・配線が短い</td><td>大規模・建物全体に分散</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout tip">
+        <p><strong>選定の早道:</strong> 「PSU からテープまでの DC 配線が短く収まる」なら保守が楽な<strong>集中配置</strong>。「テープが各所に散らばり DC が長くなる」なら<strong>分散配置</strong>。迷ったら電圧降下を計算し、許容内に収まる最短構成を選びます。</p>
+      </div>
+
+      <h2 id="sec-voltdrop">電圧降下で判断する — 距離の限界を計算する</h2>
+      <p>どちらの方式を採るかは、感覚ではなく <strong>DC 側の電圧降下</strong>で決めます。電圧降下は次式で概算します（往復＝行き帰りの2倍を考慮）。</p>
+      <div class="article-callout">
+        <p><strong>電圧降下（V）≒ 2 × 配線長(m) × 電流(A) × 導体抵抗率(Ω/m)</strong><br>※許容目安は一般に「定格電圧の数%以内」。例）24V なら降下を 1.2V（5%）程度に抑える。</p>
+      </div>
+      <p>同じ電力でも <strong>24V 系は 12V 系より電流が半分</strong>になるため電圧降下に強く、同条件で約2倍の距離を引けます。長距離・大面積では 24V を選ぶのが基本です。下表は「DC 配線が長くなったとき」の対処の優先順位です。</p>
+      <table>
+        <thead>
+          <tr><th>状況</th><th>対処</th><th>効果</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>DCが長く端が暗い</td><td>PSUをテープ近くへ（分散配置）</td><td>DC距離を根本から短縮</td></tr>
+          <tr><td>レイアウト上PSUを動かせない</td><td>DC電線を太く（断面積UP）</td><td>抵抗が下がり降下を抑制</td></tr>
+          <tr><td>1本のテープが長い</td><td>両端／中間から給電（パワーインジェクション）</td><td>給電点からの距離を半減</td></tr>
+          <tr><td>12V系で距離が足りない</td><td>24V系へ変更</td><td>同条件で約2倍引ける</td></tr>
+        </tbody>
+      </table>
+      <p>計算の詳細は<a href="/articles/led-tape-voltage-drop-guide">LEDテープの電圧降下 計算と対策ガイド</a>、長尺給電のやり方は<a href="/articles/led-tape-power-injection-guide">パワーインジェクション（電源分岐給電）ガイド</a>、電線の太さは<a href="/articles/led-tape-cable-gauge-guide">配線ケーブルの太さ選定ガイド</a>を参照してください。</p>
+
+      <h2 id="sec-position">PSU設置位置を決める5つの判断軸</h2>
+      <p>方式が決まったら、PSU の具体的な設置位置を次の順で詰めます。</p>
+      <ol>
+        <li><strong>DC配線距離が最短になる位置</strong>：各テープの"重心"に近い場所を起点に検討。</li>
+        <li><strong>放熱が確保できる場所</strong>：密閉ボックス内・断熱材の中・高温部の近くは避ける。風通しを確保。</li>
+        <li><strong>点検・交換ができる場所</strong>：天井裏でも点検口からアクセスできる位置に。埋め殺しにしない。</li>
+        <li><strong>AC幹線・ブレーカーとの整合</strong>：各PSUの回路・容量・突入電流の合算がブレーカー許容内か確認。</li>
+        <li><strong>水濡れ・結露を避ける</strong>：屋外・厨房・浴室近くは防滴ボックスや設置高さで対策。</li>
+      </ol>
+      <div class="article-callout warn">
+        <p><strong>見落としやすい点:</strong> 分散配置で複数 PSU を同一回路にまとめると、<strong>突入電流（インラッシュ）の合算</strong>でブレーカーが落ちることがあります。台数が増える分散配置では、突入電流対策を必ず設計に織り込んでください。詳しくは<a href="/articles/led-tape-fuse-circuit-protection-guide">ヒューズ・回路保護ガイド</a>と<a href="/articles/led-power-inrush-current-breaker-trip-guide">突入電流でブレーカーが落ちる原因と対策</a>へ。</p>
+      </div>
+
+      <h2 id="sec-capacity">電源容量は余裕率を見込む</h2>
+      <p>集中・分散どちらでも、各 PSU は <strong>負荷に対して余裕（ディレーティング）</strong>を取って選定します。常時フル負荷で使うと発熱・寿命で不利になるため、定格に対して負荷を抑えるのが定石です。</p>
+      <table>
+        <thead>
+          <tr><th>項目</th><th>目安</th><th>理由</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>PSU負荷率</td><td>定格の70〜80%以下で運用</td><td>発熱・寿命・電圧安定のため</td></tr>
+          <tr><td>必要容量の計算</td><td>テープW/m × 総延長 ÷ 負荷率</td><td>余裕を見込んだ容量を確保</td></tr>
+          <tr><td>分散時の集約</td><td>エリア負荷に合わせ小容量を複数</td><td>1台依存を避け影響範囲を限定</td></tr>
+        </tbody>
+      </table>
+      <p>容量計算の手順は<a href="/articles/led-tape-psu-wiring-guide">電源（PSU）の配線・接続ガイド</a>と<a href="/articles/led-psu-capacity-guide">電源容量の計算ガイド</a>で詳しく解説しています。</p>
+
+      <h2 id="sec-summary">まとめ</h2>
+      <table>
+        <thead>
+          <tr><th>ポイント</th><th>内容</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>集中配置</td><td>1か所集約。保守が楽。配線が短い小〜中規模向き</td></tr>
+          <tr><td>分散配置</td><td>エリアごとに設置。電圧降下・DC電線コストに有利。大規模向き</td></tr>
+          <tr><td>判断軸</td><td>DC配線距離。長いほど分散配置が有利</td></tr>
+          <tr><td>原則</td><td>「DCは短く、ACは長く」。24V系は距離に強い</td></tr>
+          <tr><td>注意点</td><td>分散時は突入電流の合算でブレーカー対策を忘れない</td></tr>
+        </tbody>
+      </table>
+      <p>電源レイアウトは「配線距離 → 電圧降下 → 方式 → 設置位置」の順で決めれば失敗しません。最初に DC 距離を見積もる癖をつけると、端だけ暗い・電線が高い・故障で全消灯といった大規模施工特有のトラブルを未然に防げます。</p>
+
+      <!-- FAQ -->
+      <h2 id="faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">LEDテープの電源は1台にまとめる集中配置と、複数に分ける分散配置のどちらが良いですか？</div>
+        <div class="faq-a">配線距離が短く点検口が1か所にまとまる小〜中規模では、保守が楽な集中配置が有利です。一方、テープが建物全体に広く分散する大規模施工では、各エリアの近くにPSUを置く分散配置のほうが電圧降下とDC配線の太線化を抑えられ、結果的に電線コストとトラブルが減ります。判断軸は『PSUからテープまでのDC配線距離』で、長くなるほど分散配置が有利になります。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">電源を分散配置すると、それぞれ別系統のAC電源が必要ですか？</div>
+        <div class="faq-a">分散配置でも各PSUへ供給するのはAC100V/200V側です。AC側は電圧降下が小さく長距離を引きやすいので、AC幹線を各エリアまで延ばし、その末端でPSUを設置してDC化するのが定石です。これにより電圧降下が起きやすいDC側の距離を最短化できます。各PSU回路のブレーカー容量・突入電流の合算は必ず事前に確認してください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">PSUはテープからどのくらいの距離まで離して設置できますか？</div>
+        <div class="faq-a">明確な上限はなく、DC配線の電圧降下が許容値（一般に定格電圧の数%以内）に収まる距離が実質的な限界です。24V系は12V系より電圧降下に強く、同じ条件で約2倍の距離を引けます。長い場合は電線を太くする・電源側の電圧を少し上げる・テープ側で電源を分岐供給（パワーインジェクション）するなどで対応します。設計時は必ず配線距離・電流・電線断面積から電圧降下を計算してください。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-tape-voltage-drop-guide">
+              <img src="/images/hero-scenes/gold_shop.webp" alt="LEDテープの電圧降下 計算と対策ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工ガイド</span>
+                <div class="rac-title">LEDテープの電圧降下 計算と対策ガイド｜端だけ暗いを防ぐ</div>
+                <span class="rac-date">2026-06-07</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-power-injection-guide">
+              <img src="/images/hero-scenes/red_shop.webp" alt="パワーインジェクション（電源分岐給電）ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工ガイド</span>
+                <div class="rac-title">パワーインジェクション（電源分岐給電）ガイド｜長尺テープの均一点灯</div>
+                <span class="rac-date">2026-06-07</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-psu-capacity-guide">
+              <img src="/images/hero-scenes/gold_shop.webp" alt="電源容量の計算ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工ガイド</span>
+                <div class="rac-title">LEDテープの電源容量 計算ガイド｜必要W数と余裕率の決め方</div>
+                <span class="rac-date">2026-06-07</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>業務用LED電源（PSU）をお探しの方へ</h2>
+        <p>大規模施工に対応する各容量の定電圧PSU・LEDテープ・配線資材を取り揃えています。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">商品ラインナップを見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-07</span>
+        <span>更新日: 2026-06-07</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源装置の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-tape-voltage-drop-guide">LEDテープの電圧降下 計算と対策</a></li>
+        <li><a href="/articles/led-tape-power-injection-guide">パワーインジェクション給電ガイド</a></li>
+        <li><a href="/articles/led-psu-capacity-guide">LEDテープの電源容量 計算ガイド</a></li>
+        <li><a href="/articles/led-tape-cable-gauge-guide">配線ケーブルの太さ選定ガイド</a></li>
+        <li><a href="/articles/led-power-inrush-current-breaker-trip-guide">突入電流でブレーカーが落ちる対策</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/alumi-frame/">Uチャンネル（通常取付）</a></li>
+        <li><a href="/category/alumi-frame/">Tチャンネル（埋め込み型）</a></li>
+        <li><a href="/category/psu/">業務用定電圧PSU</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>

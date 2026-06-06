@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>屋外LEDサイン・テープが落雷で壊れる原因と雷サージ対策｜SPD（避雷器）の選び方と接地 | LED PRO SHOP</title>
+  <meta name="description" content="屋外のLEDサイン・テープが落雷後に点灯しない・電源だけ壊れる——原因の多くは雷サージ（過電圧）です。雷サージの侵入経路、誘導雷と直撃雷の違い、SPD（サージ保護デバイス／避雷器）の選び方と設置位置、接地の基本を施工業者向けに解説します。">
+  <meta name="keywords" content="雷サージ 対策,LED 落雷 故障,SPD 選び方,サージ保護デバイス,避雷器 LED,誘導雷,屋外サイン 雷,LED電源 壊れる,過電圧 保護,接地 アース">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-surge-lightning-protection-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-surge-lightning-protection-guide">
+  <meta property="og:title" content="屋外LEDサイン・テープが落雷で壊れる原因と雷サージ対策｜SPD（避雷器）の選び方と接地 | LED PRO SHOP">
+  <meta property="og:description" content="屋外LEDが落雷後に壊れる原因の多くは雷サージ。侵入経路・誘導雷と直撃雷の違い・SPD（サージ保護デバイス）の選び方と設置位置・接地の基本を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-surge-lightning-protection-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="屋外LEDサイン・テープが落雷で壊れる原因と雷サージ対策｜SPD（避雷器）の選び方と接地 | LED PRO SHOP">
+  <meta name="twitter:description" content="屋外LEDが落雷後に壊れる原因の多くは雷サージ。侵入経路・SPDの選び方と設置位置・接地の基本を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-surge-lightning-protection-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "屋外LEDサイン・テープが落雷で壊れる原因と雷サージ対策｜SPD（避雷器）の選び方と接地",
+    "description": "雷サージの侵入経路、誘導雷と直撃雷の違い、SPD（サージ保護デバイス／避雷器）の選び方と設置位置、接地の基本を施工業者向けに解説します。",
+    "image": "https://led-proshop.com/articles/images/led-tape-surge-lightning-protection-guide-hero.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP 編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://led-proshop.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-06-07",
+    "dateModified": "2026-06-07",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-surge-lightning-protection-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "LED PRO SHOP",
+        "item": "https://led-proshop.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "コラム",
+        "item": "https://led-proshop.com/articles/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "屋外LEDの雷サージ対策｜SPD（避雷器）の選び方と接地",
+        "item": "https://led-proshop.com/articles/led-tape-surge-lightning-protection-guide"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "屋外のLEDサインが落雷後に点灯しなくなりました。テープ自体が原因ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "多くの場合、最初に壊れるのはLEDテープ本体ではなくAC側のLED電源（PSU）です。雷サージ（瞬間的な過電圧）はAC電源線から侵入してPSUの入力回路を破壊するため、テープは無事でも電源だけ死ぬケースが典型です。落雷後はまずPSUの出力電圧を測定し、出ていなければPSU交換、出ているのにテープが点かなければテープ側の損傷を確認します。" }
+      },
+      {
+        "@type": "Question",
+        "name": "近くに落ちていないのにLEDが壊れたのはなぜですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "直撃でなくても『誘導雷』で壊れます。近隣への落雷で電源線や信号線に誘導された過電圧（サージ）が、配線を伝ってLED電源やコントローラに侵入するためです。屋外サインや屋上・外壁の配線は誘導雷を受けやすく、直撃よりむしろ誘導雷による故障のほうが頻度は高いと考えてください。だからこそAC側のSPD設置が重要になります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "屋外LEDの雷対策にはどんなSPD（避雷器）を選べばよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "屋外サイン・屋上設備のように誘導雷を受けやすい回路では、分電盤や器具直近のAC側にクラスII（または直撃リスクのある箇所はクラスI）のSPDを設置します。選定では電源の系統（単相100V/200V等）に合った定格電圧、最大放電電流、製品の保護レベル(Up)を確認します。SPDは必ず低インピーダンスで確実に接地（アース）して初めて機能するため、接地の施工とセットで考えてください。具体的な機種・定格は電気工事士・メーカー資料で確認します。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#003C82;--blue-pale:#e8f0fe;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;--accent:#5b3a9e;--accent-pale:#f0ebfa;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#2e1b54 0%,#5b3a9e 55%,#3d2570 100%);padding:40px 16px 32px;border-bottom:3px solid #3d2570}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#f0ebfa}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#f0ebfa}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>屋外LEDの雷サージ対策</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">トラブル対処ガイド</div>
+    <h1>屋外LEDサイン・テープが落雷で壊れる原因と雷サージ対策<br>SPD（避雷器）の選び方と接地</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-06-07</span>
+      <span>更新日: 2026-06-07</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/red_shop.webp"
+      alt="屋外に設置されたLEDサインと、落雷による雷サージから保護するイメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>「夏の雷雨の翌朝、屋外サインが点灯しなくなった」「テープは無事なのに LED 電源だけ壊れた」——屋外 LED 施工でシーズンごとに発生するこのトラブル、原因のほとんどは <strong>雷サージ（落雷に伴う瞬間的な過電圧）</strong>です。しかも厄介なことに、近くに落ちていなくても <strong>誘導雷</strong>で壊れます。本記事では、雷サージがどこから侵入して何を壊すのか、誘導雷と直撃雷の違い、そして <strong>SPD（サージ保護デバイス／避雷器）</strong>の選び方と接地の基本を、屋外サイン・外構・屋上設備を扱う施工業者の現場目線で解説します。</p>
+
+      <h2 id="sec-mechanism">なぜ落雷でLEDが壊れるのか — 雷サージの正体</h2>
+      <p>雷サージとは、落雷によって電源線・信号線・接地系に瞬間的に発生する <strong>過大な電圧（過電圧）</strong>のことです。通常 AC100V の回路に、一瞬だけ数百〜数千 V もの電圧が乗ることがあり、これが電子部品の耐圧を超えて回路を焼き切ります。LED 照明で最初に犠牲になりやすいのは、次の順です。</p>
+      <ul>
+        <li><strong>LED電源（PSU）の入力回路</strong>：AC 側から侵入するため最も壊れやすい。</li>
+        <li><strong>コントローラ・調光器・受信機</strong>：信号線経由でも侵入する。</li>
+        <li><strong>LEDテープ本体</strong>：PSU を通り抜けた過電圧が届くと素子が破損。</li>
+      </ul>
+      <div class="article-callout">
+        <p><strong>切り分けの第一歩:</strong> 落雷後に点かなくなったら、まず <strong>PSU の出力電圧をテスターで測定</strong>。出ていなければ PSU 故障（多くはこれ）。出ているのに点かなければテープ／コントローラ側を確認します。テスターでの診断は<a href="/articles/led-tape-multimeter-testing-guide">テスターによる通電チェックガイド</a>を参照。</p>
+      </div>
+
+      <h2 id="sec-types">直撃雷と誘導雷の違い — 多いのは「誘導雷」</h2>
+      <p>雷の被害は「直撃」だけではありません。実際の故障は、近隣への落雷で配線に過電圧が誘導される <strong>誘導雷</strong>が大半を占めます。</p>
+      <table>
+        <thead>
+          <tr><th>種類</th><th>起き方</th><th>頻度・特徴</th><th>主な侵入経路</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>直撃雷</td><td>設備・建物に直接落雷</td><td>稀だがエネルギー甚大。受雷部・引下げ線で対処</td><td>構造体・接地系</td></tr>
+          <tr><td>誘導雷</td><td>近隣落雷で配線に過電圧が誘導</td><td><strong>頻度が高い</strong>。電子機器故障の主因</td><td>AC電源線・信号線</td></tr>
+          <tr><td>逆流（地電位上昇）</td><td>接地電位が一時的に跳ね上がる</td><td>接地経由で機器に侵入</td><td>接地線・FG</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout warn">
+        <p><strong>誤解しやすい点:</strong> 「うちには落ちていないから大丈夫」は通用しません。<strong>誘導雷は数百m〜数km離れた落雷でも発生</strong>します。屋外サイン・屋上・外壁・自立看板など、配線が長く外気にさらされる施工ほどリスクが高いと考えてください。</p>
+      </div>
+
+      <h2 id="sec-spd">対策の主役 — SPD（サージ保護デバイス／避雷器）</h2>
+      <p>誘導雷対策の中心になるのが <strong>SPD（Surge Protective Device＝サージ保護デバイス、避雷器）</strong>です。SPD は通常時は何もせず、過電圧が来た瞬間だけ<strong>サージ電流を接地（アース）へ逃がし</strong>、機器に届く電圧を抑える部品です。電源側（分電盤）と機器直近に入れることで、LED 電源を守ります。</p>
+      <table>
+        <thead>
+          <tr><th>クラス</th><th>役割</th><th>主な設置位置</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>クラスI</td><td>直撃雷の大電流を分流</td><td>引込口・主分電盤（直撃リスク箇所）</td></tr>
+          <tr><td>クラスII</td><td>誘導雷の過電圧を抑制</td><td>分電盤・分岐回路</td></tr>
+          <tr><td>クラスIII</td><td>機器直近で残留サージを抑制</td><td>器具・PSUの直前</td></tr>
+        </tbody>
+      </table>
+      <p>屋外サインや屋上設備のように誘導雷を受けやすい一般的な回路では、<strong>分電盤のクラスII＋機器直近のクラスIII</strong>を基本に、直撃リスクのある箇所はクラスI を組み合わせる「段階的保護（カスケード）」が定石です。</p>
+
+      <h3 id="sec-spd-select">SPD選定でチェックする項目</h3>
+      <table>
+        <thead>
+          <tr><th>確認項目</th><th>意味・見るポイント</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>電源系統との適合</td><td>単相100V/200V・三相など、回路方式に合った型を選ぶ</td></tr>
+          <tr><td>最大連続使用電圧(Uc)</td><td>回路の常用電圧より十分高いこと（誤動作防止）</td></tr>
+          <tr><td>最大放電電流(Imax)/公称放電電流(In)</td><td>逃がせるサージ電流の大きさ。設置位置に応じて選ぶ</td></tr>
+          <tr><td>電圧保護レベル(Up)</td><td>SPD通過後に機器へ残る電圧。低いほど機器を守れる</td></tr>
+          <tr><td>劣化表示・分離器</td><td>寿命到達を表示する窓・内蔵分離器の有無</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout warn">
+        <p><strong>注意:</strong> SPD の具体的な機種・定格は回路条件と設置環境で変わります。AC 側の SPD 設置・接地工事は<strong>電気工事士による施工が必要</strong>です。本記事は選定の考え方の整理であり、実機選定はメーカー資料と有資格者の判断で行ってください。料金や品番を憶測で決めないこと。</p>
+      </div>
+
+      <h2 id="sec-ground">SPDは「接地」とセットで初めて効く</h2>
+      <p>SPD はサージを<strong>接地（アース）へ逃がす</strong>部品なので、接地が不十分だと本来の性能を発揮できません。施工で外せないポイントは次のとおりです。</p>
+      <ul>
+        <li><strong>低インピーダンスの確実な接地</strong>：接地線は太く・短く。逃がし先がなければ SPD は機能しない。</li>
+        <li><strong>接地線はできるだけ短く直線的に</strong>：曲げ・余長はインピーダンスを上げ効果を削ぐ。</li>
+        <li><strong>等電位ボンディング</strong>：金属筐体・フレーム・接地を電位的につなぎ、電位差での破壊を防ぐ。</li>
+        <li><strong>金属筐体サインのアース</strong>：自立看板・チャンネル文字の金属部は確実に接地する。</li>
+      </ul>
+      <p>屋外金属部の絶縁・アースの基本は<a href="/articles/led-tape-metal-surface-insulation-guide">金属面への絶縁施工ガイド</a>、屋外配線の防水は<a href="/articles/led-tape-waterproof-treatment-guide">防水処理の施工ガイド</a>もあわせてご確認ください。</p>
+
+      <h2 id="sec-design">設計・施工で減らす — SPD以外の予防策</h2>
+      <p>SPD に加え、配線・設置の工夫でサージの侵入確率と被害を下げられます。</p>
+      <table>
+        <thead>
+          <tr><th>対策</th><th>狙い</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>電源線・信号線を長く引き回さない</td><td>誘導される過電圧（ループ面積）を減らす</td></tr>
+          <tr><td>電源線と信号線を離す／必要に応じシールド</td><td>線間での誘導・回り込みを抑える</td></tr>
+          <tr><td>屋外区画ごとにPSU・SPDを分散</td><td>1か所被災時の影響範囲を限定（分散配置）</td></tr>
+          <tr><td>金属筐体・支柱を確実に接地</td><td>地電位上昇による機器破壊を防ぐ</td></tr>
+          <tr><td>交換しやすい設置・予備PSU常備</td><td>被災時の復旧時間を短縮</td></tr>
+        </tbody>
+      </table>
+      <p>電源を区画ごとに分ける考え方は<a href="/articles/led-tape-power-supply-layout-guide">電源の集中配置と分散配置ガイド</a>で詳しく解説しています。屋外用テープ自体の選定は<a href="/articles/led-tape-outdoor-sign-guide">屋外サイン用LEDテープ選定ガイド</a>を参照してください。</p>
+
+      <h2 id="sec-after">被災後の点検・復旧手順</h2>
+      <ol>
+        <li><strong>ブレーカー・SPDの状態確認</strong>：SPD の劣化表示が出ていれば交換。トリップ有無を確認。</li>
+        <li><strong>PSU出力電圧を測定</strong>：規定 DC が出ているか。出ていなければ PSU 交換。</li>
+        <li><strong>テープ・コントローラの点検</strong>：PSU 正常でも点かなければ下流を確認。部分損傷なら該当区間を交換。</li>
+        <li><strong>接地・端子の緩み確認</strong>：サージ後は端子ゆるみ・焼損の有無もチェック。</li>
+        <li><strong>再発防止</strong>：SPD 未設置なら今回を機に AC 側へ追加。被災区画は分散化を検討。</li>
+      </ol>
+      <div class="article-callout tip">
+        <p><strong>現場の備え:</strong> 雷の多い地域・屋外サイン案件では、<strong>同型 PSU を予備在庫</strong>しておくと、被災シーズンの復旧が一気に速くなります。点検口・PSU 設置位置を交換しやすく作っておくのも、引き渡し後の保守を楽にするコツです。</p>
+      </div>
+
+      <h2 id="sec-summary">まとめ</h2>
+      <table>
+        <thead>
+          <tr><th>ポイント</th><th>内容</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>壊れる原因</td><td>雷サージ（過電圧）。最初に壊れるのは多くがLED電源(PSU)</td></tr>
+          <tr><td>多いのは</td><td>直撃でなく「誘導雷」。離れた落雷でも配線経由で侵入</td></tr>
+          <tr><td>主役の対策</td><td>SPD（避雷器）を分電盤＋機器直近に段階設置</td></tr>
+          <tr><td>必須条件</td><td>SPDは確実な接地（低インピーダンス）とセットで効く</td></tr>
+          <tr><td>復旧の順</td><td>SPD/ブレーカー → PSU出力 → テープ/コントローラの順で切り分け</td></tr>
+        </tbody>
+      </table>
+      <p>屋外 LED の落雷被害は「テープが弱い」のではなく、ほとんどが <strong>AC 側から侵入する雷サージ</strong>の問題です。誘導雷を前提に SPD と接地を設計へ織り込めば、被災確率と復旧時間を大きく下げられます。なお AC 側の保護機器の施工は電気工事士の領域です。本記事の考え方を土台に、実機の定格は有資格者とメーカー資料で確定してください。</p>
+
+      <!-- FAQ -->
+      <h2 id="faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">屋外のLEDサインが落雷後に点灯しなくなりました。テープ自体が原因ですか？</div>
+        <div class="faq-a">多くの場合、最初に壊れるのはLEDテープ本体ではなくAC側のLED電源（PSU）です。雷サージ（瞬間的な過電圧）はAC電源線から侵入してPSUの入力回路を破壊するため、テープは無事でも電源だけ死ぬケースが典型です。落雷後はまずPSUの出力電圧を測定し、出ていなければPSU交換、出ているのにテープが点かなければテープ側の損傷を確認します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">近くに落ちていないのにLEDが壊れたのはなぜですか？</div>
+        <div class="faq-a">直撃でなくても『誘導雷』で壊れます。近隣への落雷で電源線や信号線に誘導された過電圧（サージ）が、配線を伝ってLED電源やコントローラに侵入するためです。屋外サインや屋上・外壁の配線は誘導雷を受けやすく、直撃よりむしろ誘導雷による故障のほうが頻度は高いと考えてください。だからこそAC側のSPD設置が重要になります。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">屋外LEDの雷対策にはどんなSPD（避雷器）を選べばよいですか？</div>
+        <div class="faq-a">屋外サイン・屋上設備のように誘導雷を受けやすい回路では、分電盤や器具直近のAC側にクラスII（または直撃リスクのある箇所はクラスI）のSPDを設置します。選定では電源の系統（単相100V/200V等）に合った定格電圧、最大放電電流、製品の保護レベル(Up)を確認します。SPDは必ず低インピーダンスで確実に接地（アース）して初めて機能するため、接地の施工とセットで考えてください。具体的な機種・定格は電気工事士・メーカー資料で確認します。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-tape-outdoor-sign-guide">
+              <img src="/images/hero-scenes/red_shop.webp" alt="屋外サイン用LEDテープ選定ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">製品活用ガイド</span>
+                <div class="rac-title">屋外サイン用LEDテープ選定ガイド｜防水・耐候・明るさの選び方</div>
+                <span class="rac-date">2026-06-07</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-metal-surface-insulation-guide">
+              <img src="/images/hero-scenes/gold_shop.webp" alt="金属面への絶縁施工ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工ガイド</span>
+                <div class="rac-title">LEDテープの金属面への絶縁施工ガイド｜ショート・感電を防ぐ</div>
+                <span class="rac-date">2026-06-07</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-multimeter-testing-guide">
+              <img src="/images/hero-scenes/red_shop.webp" alt="テスターによる通電チェックガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <div class="rac-title">LEDテープのテスター通電チェックガイド｜点かない原因の切り分け</div>
+                <span class="rac-date">2026-06-07</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>屋外対応の業務用LEDテープ・電源をお探しの方へ</h2>
+        <p>防水LEDテープ・各容量の電源装置・配線資材を取り揃えています。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">商品ラインナップを見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-07</span>
+        <span>更新日: 2026-06-07</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源装置の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-tape-outdoor-sign-guide">屋外サイン用LEDテープ選定ガイド</a></li>
+        <li><a href="/articles/led-tape-metal-surface-insulation-guide">金属面への絶縁施工ガイド</a></li>
+        <li><a href="/articles/led-tape-waterproof-treatment-guide">LEDテープの防水処理 施工ガイド</a></li>
+        <li><a href="/articles/led-power-inrush-current-breaker-trip-guide">突入電流でブレーカーが落ちる対策</a></li>
+        <li><a href="/articles/led-tape-multimeter-testing-guide">テスター通電チェックガイド</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/alumi-frame/">Uチャンネル（通常取付）</a></li>
+        <li><a href="/category/alumi-frame/">Tチャンネル（埋め込み型）</a></li>
+        <li><a href="/category/psu/">業務用定電圧PSU</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>
