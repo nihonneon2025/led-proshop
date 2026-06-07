@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープの定尺リール長と必要数量の計算方法｜5m巻・ロス率・端数の出し方を施工業者向けに解説 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープは1リール5m巻が標準。見積で本数を間違えると現場で足りなくなる、もしくは余って利益を削ります。施工長さからの必要リール数の計算式、カットピッチによる端数ロス、予備率の取り方、複数区間の合算手順を施工業者向けに具体例つきで解説。">
+  <meta name="keywords" content="LEDテープ 5m巻,LEDテープ 必要数量 計算,LEDテープ リール長,LEDテープ ロス率,LEDテープ 何メートル,LEDテープ 見積,定尺 LEDテープ,LEDテープ カットピッチ">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-reel-length-quantity-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-reel-length-quantity-guide">
+  <meta property="og:title" content="LEDテープの定尺リール長と必要数量の計算方法｜5m巻・ロス率・端数の出し方 | LED PRO SHOP">
+  <meta property="og:description" content="施工長さからの必要リール数の計算式、カットピッチによる端数ロス、予備率の取り方、複数区間の合算手順を施工業者向けに具体例つきで解説します。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-reel-length-quantity-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープの定尺リール長と必要数量の計算方法｜5m巻・ロス率・端数の出し方 | LED PRO SHOP">
+  <meta name="twitter:description" content="施工長さからの必要リール数の計算式、カットピッチによる端数ロス、予備率の取り方、複数区間の合算手順を施工業者向けに具体例つきで解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-reel-length-quantity-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープの定尺リール長と必要数量の計算方法｜5m巻・ロス率・端数の出し方",
+    "description": "施工長さからの必要リール数の計算式、カットピッチによる端数ロス、予備率の取り方、複数区間の合算手順を施工業者向けに具体例つきで解説します。",
+    "image": "https://led-proshop.com/articles/images/led-tape-reel-length-quantity-guide-hero.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP 編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://led-proshop.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-06-08",
+    "dateModified": "2026-06-08",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-reel-length-quantity-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "LED PRO SHOP",
+        "item": "https://led-proshop.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "コラム",
+        "item": "https://led-proshop.com/articles/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "LEDテープの定尺リール長と必要数量の計算方法",
+        "item": "https://led-proshop.com/articles/led-tape-reel-length-quantity-guide"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープ1リールは何メートルですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "業務用LEDテープは1リール5m巻が標準です（製品により1m・2.5m・10m巻もあります）。見積時はまず「製品の定尺リール長」を確認し、施工総延長を定尺で割って必要リール数を算出します。同じ品番でも電圧（12V/24V）やCOB/SMDの違いで定尺が異なる場合があるため、購入前に必ずスペック表で巻き長を確認してください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "施工長さちょうどの本数を買えば足りますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "ちょうどの本数では足りなくなる現場が多いため危険です。LEDテープはカットピッチ（例: 50mm・25mm単位）でしか切れず、端数が必ずロスになります。さらに採寸誤差・施工中の破損・将来の補修分を見込み、実務では総延長に5〜10%の予備を上乗せして本数を切り上げるのが安全です。生産終了品番は後から同じ色温度・ロットが手に入らないため、予備率を多めに取ります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "5mのリールを途中でカットして別区間に使い回せますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "カットピッチの位置で切れば1リールを複数区間に分けて使えます。ただし各区間は両端から再給電・再接続が必要になり、コネクタや配線が増えます。また切り分けると1区間あたりの最大連長（電圧降下の上限長）を超えないかの確認も必要です。区間ごとに端材が出ることを見込み、合算で本数を出すとロスを抑えられます。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#003C82;--blue-pale:#e8f0fe;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;--accent:#1565c0;--accent-pale:#e7f0fb;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#0a2c5c 0%,#1565c0 55%,#0d3a78 100%);padding:40px 16px 32px;border-bottom:3px solid #0d3a78}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0 24px}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:4px;padding:14px}
+    .spec-card .sc-label{font-size:10px;color:var(--text-muted);font-weight:700;letter-spacing:1px;margin-bottom:6px}
+    .spec-card .sc-value{font-size:20px;font-weight:900;color:var(--accent);line-height:1.2}
+    .spec-card .sc-note{font-size:11px;color:var(--text-sub);margin-top:6px;line-height:1.5}
+    .calc-box{background:#0a2c5c;color:#fff;border-radius:6px;padding:18px 20px;margin:18px 0 24px;font-size:13px;line-height:1.8}
+    .calc-box .cb-title{font-size:12px;font-weight:700;letter-spacing:1px;color:#9ec5f0;margin-bottom:8px}
+    .calc-box code{background:rgba(255,255,255,.12);padding:2px 8px;border-radius:3px;font-size:13px;color:#fff;display:inline-block;margin:2px 0}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#e7f0fb}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#e7f0fb}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>定尺リール長と必要数量の計算方法</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">仕様選定ガイド</div>
+    <h1>LEDテープの定尺リール長と必要数量の計算方法<br>5m巻・ロス率・端数の出し方を施工業者向けに解説</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-06-08</span>
+      <span>更新日: 2026-06-08</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/gold_shop.webp"
+      alt="5m巻のLEDテープリールと施工長さから必要数量を割り出す見積作業のイメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>LEDテープの見積でもっとも事故が多いのが「必要本数（リール数）の読み違い」です。1本足りずに現場で追加発注すると、色温度の違うロットが届いたり納期で工程が止まったりします。逆に余らせれば材料費がそのまま利益を削ります。LEDテープは<strong>1リール5m巻が標準の定尺品</strong>で、しかも<strong>カットピッチ単位でしか切れない</strong>ため、施工長さちょうどを買っても必ず端数ロスが出ます。本記事では、施工総延長から必要リール数を出す計算式、カットピッチによる端数の扱い、予備率の取り方、複数区間の合算手順を、施工業者の見積目線で具体例つきに整理します。</p>
+
+      <h2 id="sec-reel">まず「定尺リール長」を確認する</h2>
+      <p>業務用LEDテープの巻き長は製品ごとに決まっています。発注前に必ずスペック表で確認してください。同じシリーズでも電圧やCOB/SMDの種類で定尺が変わる場合があります。</p>
+      <div class="spec-grid">
+        <div class="spec-card">
+          <div class="sc-label">標準的な定尺</div>
+          <div class="sc-value">5m</div>
+          <div class="sc-note">業務用テープの最も一般的なリール長</div>
+        </div>
+        <div class="spec-card">
+          <div class="sc-label">短尺タイプ</div>
+          <div class="sc-value">1〜2.5m</div>
+          <div class="sc-note">什器・棚下など短区間向け</div>
+        </div>
+        <div class="spec-card">
+          <div class="sc-label">長尺タイプ</div>
+          <div class="sc-value">10m</div>
+          <div class="sc-note">高電圧・定電流ICテープに多い</div>
+        </div>
+        <div class="spec-card">
+          <div class="sc-label">カットピッチ</div>
+          <div class="sc-value">25〜100mm</div>
+          <div class="sc-note">この単位でしか切れない＝端数ロス源</div>
+        </div>
+      </div>
+      <div class="article-callout warn">
+        <p><strong>注意:</strong> 「5m巻」と思い込んで発注したら実は2.5m巻で本数が倍必要だった、という取り違えが起きます。シリーズ名ではなく<strong>品番ごとのスペック表</strong>で巻き長を確認するのが鉄則です。</p>
+      </div>
+
+      <h2 id="sec-formula">必要リール数の基本計算式</h2>
+      <p>必要リール数は、施工総延長を定尺で割り、予備を足して切り上げます。</p>
+      <div class="calc-box">
+        <div class="cb-title">必要リール数の計算式</div>
+        <code>必要リール数 ＝ 切り上げ（ 施工総延長(m) × (1 + 予備率) ÷ 定尺リール長(m) ）</code><br>
+        <code>切り上げ：端数が出たら必ず1リール繰り上げる</code>
+      </div>
+      <p>「切り上げ」が肝心です。5m巻で総延長が11mなら 11÷5＝2.2 リール。0.2リール分は買えないので<strong>3リール</strong>に切り上げます。半端な0.8リール分（4m）が端材として残る、という構造を理解しておくと見積がぶれません。</p>
+
+      <h3>計算例：店舗什器の間接照明（合計18m）</h3>
+      <p>5m巻・予備率10%で18mを施工する場合：</p>
+      <ul>
+        <li>必要長さ ＝ 18m × 1.10 ＝ <strong>19.8m</strong></li>
+        <li>リール数 ＝ 19.8 ÷ 5 ＝ 3.96 → <strong>切り上げて4リール（20m）</strong></li>
+        <li>端材 ＝ 20m − 18m ＝ <strong>2m（予備・補修用に確保）</strong></li>
+      </ul>
+
+      <h2 id="sec-loss">カットピッチによる端数ロスを見込む</h2>
+      <p>LEDテープは任意の長さで切れません。基板上のカットマーク（多くは50mmや25mmピッチ）でしか切断できず、必要長さに対して<strong>1区間ごとに最大1ピッチ分が切り上げロス</strong>になります。区間数が多い現場ほどロスが積み上がります。</p>
+      <table>
+        <thead>
+          <tr><th>カットピッチ</th><th>1区間あたり最大ロス</th><th>10区間での累計ロス目安</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>25mm</td><td>最大24mm</td><td>最大約0.24m</td></tr>
+          <tr><td>50mm</td><td>最大49mm</td><td>最大約0.49m</td></tr>
+          <tr><td>100mm</td><td>最大99mm</td><td>最大約0.99m</td></tr>
+        </tbody>
+      </table>
+      <p>区間が10前後ある什器照明では、カットピッチだけで0.5〜1m近いロスが出ることがあります。区間が細かい現場では予備率を高めに設定してください。</p>
+
+      <h2 id="sec-margin">予備率（ロス率）の目安</h2>
+      <p>採寸誤差・施工中の破損・カット端数・将来補修を見込んで予備を上乗せします。現場条件で次を目安にします。</p>
+      <table>
+        <thead>
+          <tr><th>現場条件</th><th>推奨予備率</th><th>理由</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>直線1区間・採寸確定済み</td><td>5%</td><td>端数ロスが小さい</td></tr>
+          <tr><td>什器・棚下など多区間</td><td><strong>10%</strong></td><td>区間ごとに端数が積み上がる</td></tr>
+          <tr><td>コーナー多数・曲面・現場合わせ</td><td><strong>15%</strong></td><td>採寸誤差と切り直しが増える</td></tr>
+          <tr><td>生産終了・廃番リスクのある品番</td><td><strong>15〜20%</strong></td><td>後から同ロット・同色温度が入手困難</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout tip">
+        <p><strong>現場のコツ:</strong> 補修用にカットピッチ単位の端材を1〜2区間分わざと残しておくと、施工後にテープが破損した際に同ロットで部分交換できます。色温度のばらつきを避けられるため、引き渡し時に施主へ端材を渡しておくと喜ばれます。</p>
+      </div>
+
+      <h2 id="sec-multi">複数区間は「合算」で本数を出す</h2>
+      <p>区間ごとに切り上げて買うとリール数が膨らみます。1リールを複数区間に分けて使えるなら、<strong>全区間の必要長さを合算してから定尺で割る</strong>のが無駄を抑えるコツです。</p>
+      <h3>区間別 vs 合算の比較例</h3>
+      <p>3m・3m・4m の3区間（5m巻）を施工する場合：</p>
+      <table>
+        <thead>
+          <tr><th>方式</th><th>計算</th><th>必要リール数</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>区間別に切り上げ</td><td>各区間1リールずつ</td><td>3リール（15m）</td></tr>
+          <tr><td>合算してから割る</td><td>(3+3+4)=10m ÷ 5</td><td><strong>2リール（10m）</strong></td></tr>
+        </tbody>
+      </table>
+      <p>ただし合算方式では、1リールを途中でカットして2区間に分けるため<strong>各区間の両端から再給電・再接続</strong>が必要になり、コネクタや配線が増えます。また、切り分けた各区間が<strong>1区間あたりの最大連長（電圧降下の上限長）</strong>を超えないことの確認も必須です。配線が増える分のコストと材料費の削減を天秤にかけて判断してください。最大連長の考え方は<a href="/articles/led-tape-max-length-guide">LEDテープの最大接続長さ計算ガイド</a>、再給電の方法は<a href="/articles/led-tape-power-injection-guide">パワーインジェクション（再給電）ガイド</a>を参照してください。</p>
+
+      <h2 id="sec-checklist">発注前チェックリスト</h2>
+      <ul>
+        <li>□ 品番ごとのスペック表で<strong>定尺リール長</strong>を確認した</li>
+        <li>□ 施工図から<strong>区間ごとの長さ</strong>を拾い出した</li>
+        <li>□ <strong>カットピッチ</strong>を確認し、端数ロスを見込んだ</li>
+        <li>□ 現場条件に応じた<strong>予備率（5〜20%）</strong>を上乗せした</li>
+        <li>□ 合算で割る場合、各区間が<strong>最大連長以内</strong>か確認した</li>
+        <li>□ 廃番リスクのある品番は<strong>予備を多め</strong>に確保した</li>
+        <li>□ 電源容量（W）も本数に合わせて再計算した</li>
+      </ul>
+
+      <h2 id="sec-summary">まとめ</h2>
+      <table>
+        <thead>
+          <tr><th>ポイント</th><th>内容</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>定尺の確認</td><td>標準は5m巻だが品番で異なる。スペック表で必ず確認</td></tr>
+          <tr><td>基本計算</td><td>総延長×(1+予備率)÷定尺 を切り上げ</td></tr>
+          <tr><td>端数ロス</td><td>カットピッチ単位でしか切れない。区間数だけ累積</td></tr>
+          <tr><td>予備率</td><td>5%（直線）〜20%（廃番リスク）</td></tr>
+          <tr><td>複数区間</td><td>合算して割ると無駄が減る。ただし最大連長と再給電に注意</td></tr>
+        </tbody>
+      </table>
+      <p>必要数量は「総延長÷定尺」だけでは足りません。カットピッチの端数と予備率を織り込み、最後に切り上げる——この一手間が、現場での不足と過剰在庫の両方を防ぎます。本数が決まったら電源容量も連動して再計算が必要です。<a href="/articles/led-tape-psu-wiring-guide">電源（PSU）容量の計算ガイド</a>とあわせて見積を固めてください。</p>
+
+      <!-- FAQ -->
+      <h2 id="faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">LEDテープ1リールは何メートルですか？</div>
+        <div class="faq-a">業務用LEDテープは1リール5m巻が標準です（製品により1m・2.5m・10m巻もあります）。見積時はまず「製品の定尺リール長」を確認し、施工総延長を定尺で割って必要リール数を算出します。同じ品番でも電圧（12V/24V）やCOB/SMDの違いで定尺が異なる場合があるため、購入前に必ずスペック表で巻き長を確認してください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">施工長さちょうどの本数を買えば足りますか？</div>
+        <div class="faq-a">ちょうどの本数では足りなくなる現場が多いため危険です。LEDテープはカットピッチ（例: 50mm・25mm単位）でしか切れず、端数が必ずロスになります。さらに採寸誤差・施工中の破損・将来の補修分を見込み、実務では総延長に5〜10%の予備を上乗せして本数を切り上げるのが安全です。生産終了品番は後から同じ色温度・ロットが手に入らないため、予備率を多めに取ります。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">5mのリールを途中でカットして別区間に使い回せますか？</div>
+        <div class="faq-a">カットピッチの位置で切れば1リールを複数区間に分けて使えます。ただし各区間は両端から再給電・再接続が必要になり、コネクタや配線が増えます。また切り分けると1区間あたりの最大連長（電圧降下の上限長）を超えないかの確認も必要です。区間ごとに端材が出ることを見込み、合算で本数を出すとロスを抑えられます。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-tape-max-length-guide">
+              <img src="/images/hero-scenes/gold_shop.webp" alt="LEDテープの最大接続長さ計算ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工方法ガイド</span>
+                <div class="rac-title">LEDテープの最大接続長さの計算方法｜電圧降下から連長を決める</div>
+                <span class="rac-date">2026-05-xx</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-cutting-guide">
+              <img src="/images/hero-scenes/red_shop.webp" alt="LEDテープのカット方法ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工方法ガイド</span>
+                <div class="rac-title">LEDテープのカット方法｜カットマークの位置と切断時の注意点</div>
+                <span class="rac-date">2026-05-xx</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-psu-wiring-guide">
+              <img src="/images/hero-scenes/gold_shop.webp" alt="電源容量の計算ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工方法ガイド</span>
+                <div class="rac-title">LEDテープの電源（PSU）容量計算と配線の基礎</div>
+                <span class="rac-date">2026-05-xx</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>定尺5m巻の業務用LEDテープを多数掲載</h2>
+        <p>COB・SMD各シリーズの巻き長・カットピッチ・W/mをスペック表で公開。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">商品ラインナップを見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-08</span>
+        <span>更新日: 2026-06-08</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源装置の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-tape-max-length-guide">LEDテープの最大接続長さ計算ガイド</a></li>
+        <li><a href="/articles/led-tape-power-injection-guide">パワーインジェクション（再給電）ガイド</a></li>
+        <li><a href="/articles/led-tape-psu-wiring-guide">電源（PSU）容量計算と配線の基礎</a></li>
+        <li><a href="/articles/led-tape-cutting-guide">LEDテープのカット方法ガイド</a></li>
+        <li><a href="/articles/cob-vs-smd-led-tape">COBテープとSMDテープの違い</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/alumi-frame/">Uチャンネル（通常取付）</a></li>
+        <li><a href="/category/alumi-frame/">Tチャンネル（埋め込み型）</a></li>
+        <li><a href="/category/psu/">業務用定電圧PSU</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>

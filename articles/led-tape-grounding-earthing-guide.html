@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープのアース・接地施工ガイド｜金属造作・屋外サインでのD種接地と感電・漏電対策 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープを金属什器や屋外サインに取り付けるとき、接地（アース）を取るべきか迷う施工業者向けの実務ガイド。電源（PSU）の接地端子、金属筐体のD種接地、漏電遮断器との組み合わせ、屋外サインのアース処理手順を、感電・漏電・誘導ノイズの観点から具体的に解説します。">
+  <meta name="keywords" content="LEDテープ アース,LEDテープ 接地,LED 屋外 接地,D種接地,LED電源 アース,金属筐体 接地,屋外サイン アース,LED 漏電対策">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-grounding-earthing-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-grounding-earthing-guide">
+  <meta property="og:title" content="LEDテープのアース・接地施工ガイド｜金属造作・屋外サインでのD種接地と感電・漏電対策 | LED PRO SHOP">
+  <meta property="og:description" content="電源（PSU）の接地端子、金属筐体のD種接地、漏電遮断器との組み合わせ、屋外サインのアース処理手順を、感電・漏電・誘導ノイズの観点から施工業者向けに解説します。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-grounding-earthing-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープのアース・接地施工ガイド｜金属造作・屋外サインでのD種接地と感電・漏電対策 | LED PRO SHOP">
+  <meta name="twitter:description" content="PSUの接地端子、金属筐体のD種接地、漏電遮断器との組み合わせ、屋外サインのアース処理手順を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-grounding-earthing-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープのアース・接地施工ガイド｜金属造作・屋外サインでのD種接地と感電・漏電対策",
+    "description": "電源（PSU）の接地端子、金属筐体のD種接地、漏電遮断器との組み合わせ、屋外サインのアース処理手順を、感電・漏電・誘導ノイズの観点から施工業者向けに解説します。",
+    "image": "https://led-proshop.com/articles/images/led-tape-grounding-earthing-guide-hero.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP 編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://led-proshop.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-06-08",
+    "dateModified": "2026-06-08",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-grounding-earthing-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "LED PRO SHOP",
+        "item": "https://led-proshop.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "コラム",
+        "item": "https://led-proshop.com/articles/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "LEDテープのアース・接地施工ガイド",
+        "item": "https://led-proshop.com/articles/led-tape-grounding-earthing-guide"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "DC12V/24VのLEDテープ自体にアースは必要ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "テープのDC低圧側（12V/24V）は人体に危険な電圧ではないため、テープ本体にアース端子はありません。接地が問題になるのはAC100V/200Vを扱う電源（PSU）側です。金属筐体のPSUにはアース（接地）端子があり、ここを建物の接地に確実につなぐことで、絶縁劣化時に金属部へ漏れた電流を地面へ逃がし、感電を防ぎます。テープを金属什器に貼る場合は、その金属什器の接地も検討対象になります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "金属什器や屋外の金属サインにLEDテープを付ける場合、接地はどうしますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "金属筐体・金属什器・金属サイン枠は、内部のAC配線やPSUが絶縁劣化した際に金属部分が充電状態になる恐れがあります。これを防ぐため、金属部を建物のアース（D種接地）に接続し、あわせて漏電遮断器（ELB/RCD）を回路に入れます。屋外サインでは雨水侵入のリスクが高いため接地は必須に近く、接地線は緑/黄の保護導体で確実に締結し、端子の防食処理も行います。電気工事士による施工が前提です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "接地を取らないとどうなりますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "接地がないと、絶縁劣化や雨水侵入でAC側が金属部に漏れたとき、金属に触れた人に電流が流れて感電します。接地と漏電遮断器が正しく機能していれば、漏電を検知して瞬時に回路を遮断し、感電を未然に防げます。特に屋外サイン・厨房・浴室など水気のある場所、不特定多数が触れる場所では、接地と漏電遮断器をセットで設けることが安全施工の基本です。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#003C82;--blue-pale:#e8f0fe;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;--accent:#1a7a3c;--accent-pale:#e9f7ee;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#0c3d20 0%,#1a7a3c 55%,#0f5228 100%);padding:40px 16px 32px;border-bottom:3px solid #0f5228}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.danger{border-color:#c0392b;background:#fdecee}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.danger strong{color:#c0392b}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0 24px}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:4px;padding:14px}
+    .spec-card .sc-label{font-size:10px;color:var(--text-muted);font-weight:700;letter-spacing:1px;margin-bottom:6px}
+    .spec-card .sc-value{font-size:18px;font-weight:900;color:var(--accent);line-height:1.25}
+    .spec-card .sc-note{font-size:11px;color:var(--text-sub);margin-top:6px;line-height:1.5}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#e9f7ee}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#e9f7ee}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>アース・接地施工ガイド</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">施工方法ガイド</div>
+    <h1>LEDテープのアース・接地施工ガイド<br>金属造作・屋外サインでのD種接地と感電・漏電対策</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-06-08</span>
+      <span>更新日: 2026-06-08</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/red_shop.webp"
+      alt="金属サイン筐体に取り付けたLEDテープと電源の接地（アース）配線のイメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>「DC24VのLEDテープだから感電の心配はない」——これは半分正しく、半分危険な思い込みです。テープ自体の低圧側は安全でも、その手前にある<strong>AC100V/200Vの電源（PSU）</strong>と、テープを貼り付ける<strong>金属什器・金属サイン枠</strong>には、絶縁劣化や雨水侵入で金属部が充電状態になるリスクがあります。ここで効いてくるのが<strong>接地（アース）と漏電遮断器</strong>です。本記事では、どこに接地が必要か、金属造作・屋外サインでのD種接地の取り方、漏電遮断器との組み合わせを、施工業者の現場目線で整理します。なお接地・AC配線は電気工事士による施工が前提です。</p>
+
+      <h2 id="sec-where">そもそも「どこ」に接地が必要か</h2>
+      <p>LEDテープ照明の回路は「AC電源 → PSU → DC低圧 → テープ」という流れです。接地が問題になるのは<strong>AC側とPSUの金属筐体、そしてテープを載せる金属造作</strong>です。低圧DC側のテープ本体にはアース端子はありません。</p>
+      <div class="spec-grid">
+        <div class="spec-card">
+          <div class="sc-label">AC側（一次側）</div>
+          <div class="sc-value">接地必須</div>
+          <div class="sc-note">PSUのアース端子を建物の接地へ</div>
+        </div>
+        <div class="spec-card">
+          <div class="sc-label">PSU金属筐体</div>
+          <div class="sc-value">接地必須</div>
+          <div class="sc-note">絶縁劣化時に筐体が充電するのを防ぐ</div>
+        </div>
+        <div class="spec-card">
+          <div class="sc-label">金属造作・サイン枠</div>
+          <div class="sc-value">接地推奨</div>
+          <div class="sc-note">人が触れる金属部は地絡対策が必要</div>
+        </div>
+        <div class="spec-card">
+          <div class="sc-label">DC低圧側（テープ）</div>
+          <div class="sc-value">アース端子なし</div>
+          <div class="sc-note">12V/24Vは人体に危険な電圧ではない</div>
+        </div>
+      </div>
+
+      <h2 id="sec-why">接地を取る理由 — 感電と漏電のメカニズム</h2>
+      <p>金属筐体・金属造作の内部でAC配線の被覆が傷んだり、屋外で雨水が侵入したりすると、本来電気が流れないはずの金属部が「充電状態」になります。ここに人が触れると、人体を通って地面へ電流が流れ<strong>感電</strong>します。</p>
+      <p>接地線で金属部をあらかじめ大地につないでおくと、漏れた電流は抵抗の低い接地線を通って地面へ逃げます。その電流変化を<strong>漏電遮断器（ELB／RCD）</strong>が検知し、瞬時に回路を遮断します。<strong>接地と漏電遮断器はセット</strong>で初めて機能する、と覚えてください。</p>
+      <div class="article-callout danger">
+        <p><strong>危険:</strong> 接地を取らずに漏電遮断器だけ付けても、地絡電流の経路がなければ検知が遅れます。逆に接地だけで漏電遮断器がなければ遮断されません。屋外・水気のある場所では<strong>接地＋漏電遮断器</strong>の両方が安全施工の前提です。</p>
+      </div>
+
+      <h2 id="sec-dtype">金属造作・屋外サインのD種接地</h2>
+      <p>一般的な300V以下の低圧機器・金属造作は<strong>D種接地</strong>が対象です。施工時の要点を整理します。</p>
+      <table>
+        <thead>
+          <tr><th>項目</th><th>D種接地の目安</th><th>施工上のポイント</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>対象</td><td>300V以下の低圧機器・金属筐体</td><td>PSU筐体・金属サイン枠・金属什器</td></tr>
+          <tr><td>接地抵抗</td><td>原則100Ω以下（条件により緩和あり）</td><td>漏電遮断器の動作と組み合わせる</td></tr>
+          <tr><td>接地線の色</td><td>緑／緑‐黄の保護導体</td><td>他の配線と識別できるよう統一</td></tr>
+          <tr><td>締結</td><td>専用の接地端子・アース端子へ確実に</td><td>塗装面は削って金属導通を確保</td></tr>
+          <tr><td>屋外端子</td><td>防食・防水処理</td><td>端子の腐食で接地不良になるのを防ぐ</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout warn">
+        <p><strong>注意:</strong> 接地抵抗値・接地工事の要否は設備・地域条件で異なります。具体の数値・要否は電気設備技術基準と現場条件にもとづき、<strong>電気工事士・電気主任技術者が判断</strong>します。本記事は施工計画を立てる際の目安としてご活用ください。</p>
+      </div>
+
+      <h2 id="sec-outdoor">屋外サインでの接地・防水とアースの実務</h2>
+      <p>屋外サインは雨水・結露・温度変化にさらされ、内部に水が回るとAC側が金属枠へ地絡する典型ケースです。接地は実質必須と考えてください。</p>
+      <h3>屋外サインの接地手順（計画の流れ）</h3>
+      <ol>
+        <li><strong>金属枠の接地点を決める</strong>：塗装を削って金属面を露出させ、専用アース端子を設ける。</li>
+        <li><strong>PSU筐体と金属枠を保護導体で連結</strong>：緑/黄の接地線で確実に締結する。</li>
+        <li><strong>建物のD種接地へ落とす</strong>：分電盤の接地端子・接地極へ接続する。</li>
+        <li><strong>回路に漏電遮断器を入れる</strong>：屋外回路は感度の高いELBを選定する。</li>
+        <li><strong>端子を防食・防水処理</strong>：屋外端子の腐食は接地不良の最大要因。シール・防水カバーで保護する。</li>
+        <li><strong>導通・接地抵抗を測定</strong>：施工後にテスター/接地抵抗計で確認し記録を残す。</li>
+      </ol>
+      <p>屋外サインは防水処理と接地が両輪です。テープ・コネクタ側の防水はIP等級と防水施工で確保し、金属枠側は接地で守ります。防水等級の選び方は<a href="/articles/led-tape-ip-waterproof-guide">IP65・IP67・IP68の違いガイド</a>、屋外サイン向けの防水テープ選定は<a href="/articles/led-tape-outdoor-sign-guide">屋外サイン用LEDテープ選定ガイド</a>を参照してください。</p>
+
+      <h2 id="sec-noise">接地と誘導ノイズ（おまけの効果）</h2>
+      <p>接地は感電対策が主目的ですが、副次的に<strong>誘導ノイズ・静電気の逃がし先</strong>としても働きます。金属造作に貼ったテープの配線が長く引き回される現場では、筐体を確実に接地することでノイズの回り込みが軽減される場合があります。ただしノイズ対策の主役はあくまで配線取り回しとフィルタであり、接地はその補助という位置づけです。詳しくは<a href="/articles/led-tape-emi-radio-noise-guide">LEDテープのEMI・電波ノイズ対策ガイド</a>を参照してください。</p>
+
+      <h2 id="sec-checklist">接地施工チェックリスト</h2>
+      <ul>
+        <li>□ PSUの金属筐体を建物の接地に接続したか</li>
+        <li>□ 人が触れる金属造作・サイン枠を接地したか</li>
+        <li>□ 接地線は緑/緑‐黄の保護導体で識別したか</li>
+        <li>□ 塗装面を削って金属導通を確保したか</li>
+        <li>□ 回路に漏電遮断器（ELB）を入れたか</li>
+        <li>□ 屋外端子を防食・防水処理したか</li>
+        <li>□ 施工後に導通・接地抵抗を測定し記録したか</li>
+      </ul>
+
+      <h2 id="sec-summary">まとめ</h2>
+      <table>
+        <thead>
+          <tr><th>ポイント</th><th>内容</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>接地が必要な箇所</td><td>AC側・PSU金属筐体・人が触れる金属造作</td></tr>
+          <tr><td>テープ本体</td><td>DC低圧でアース端子なし。危険なのは手前のAC側</td></tr>
+          <tr><td>D種接地</td><td>300V以下の低圧機器が対象。緑/黄の保護導体で締結</td></tr>
+          <tr><td>セット運用</td><td>接地＋漏電遮断器で初めて感電を防げる</td></tr>
+          <tr><td>屋外サイン</td><td>接地は実質必須。端子の防食・防水まで行う</td></tr>
+        </tbody>
+      </table>
+      <p>「低圧テープだから安全」で済むのはテープ単体の話です。金属造作・屋外サインでは、その手前のAC側と金属部に接地と漏電遮断器を組み合わせることが、感電・漏電を防ぐ施工品質の分かれ目になります。AC配線・接地工事は必ず電気工事士の手で行ってください。金属面へのテープ施工時の絶縁については<a href="/articles/led-tape-metal-surface-insulation-guide">金属面へのLEDテープ絶縁施工ガイド</a>もあわせてご確認ください。</p>
+
+      <!-- FAQ -->
+      <h2 id="faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">DC12V/24VのLEDテープ自体にアースは必要ですか？</div>
+        <div class="faq-a">テープのDC低圧側（12V/24V）は人体に危険な電圧ではないため、テープ本体にアース端子はありません。接地が問題になるのはAC100V/200Vを扱う電源（PSU）側です。金属筐体のPSUにはアース（接地）端子があり、ここを建物の接地に確実につなぐことで、絶縁劣化時に金属部へ漏れた電流を地面へ逃がし、感電を防ぎます。テープを金属什器に貼る場合は、その金属什器の接地も検討対象になります。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">金属什器や屋外の金属サインにLEDテープを付ける場合、接地はどうしますか？</div>
+        <div class="faq-a">金属筐体・金属什器・金属サイン枠は、内部のAC配線やPSUが絶縁劣化した際に金属部分が充電状態になる恐れがあります。これを防ぐため、金属部を建物のアース（D種接地）に接続し、あわせて漏電遮断器（ELB/RCD）を回路に入れます。屋外サインでは雨水侵入のリスクが高いため接地は必須に近く、接地線は緑/黄の保護導体で確実に締結し、端子の防食処理も行います。電気工事士による施工が前提です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">接地を取らないとどうなりますか？</div>
+        <div class="faq-a">接地がないと、絶縁劣化や雨水侵入でAC側が金属部に漏れたとき、金属に触れた人に電流が流れて感電します。接地と漏電遮断器が正しく機能していれば、漏電を検知して瞬時に回路を遮断し、感電を未然に防げます。特に屋外サイン・厨房・浴室など水気のある場所、不特定多数が触れる場所では、接地と漏電遮断器をセットで設けることが安全施工の基本です。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-tape-metal-surface-insulation-guide">
+              <img src="/images/hero-scenes/red_shop.webp" alt="金属面へのLEDテープ絶縁施工ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工方法ガイド</span>
+                <div class="rac-title">金属面へのLEDテープ絶縁施工ガイド｜ショート・地絡を防ぐ下地処理</div>
+                <span class="rac-date">2026-05-xx</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-ip-waterproof-guide">
+              <img src="/images/hero-scenes/gold_shop.webp" alt="IP65・IP67・IP68の違いガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">仕様選定ガイド</span>
+                <div class="rac-title">LEDテープの防水規格 IP65・IP67・IP68 の違いと用途別の選び方</div>
+                <span class="rac-date">2026-05-xx</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-outdoor-sign-guide">
+              <img src="/images/hero-scenes/red_shop.webp" alt="屋外サイン用LEDテープ選定ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">製品活用ガイド</span>
+                <div class="rac-title">屋外サイン用LEDテープの選定ポイント｜防水・耐候・配線の要点</div>
+                <span class="rac-date">2026-05-xx</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>屋外・金属造作に対応する業務用LEDテープ・電源</h2>
+        <p>IP65/67/68防水テープ、接地端子付き金属筐体PSUを多数掲載。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">商品ラインナップを見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-08</span>
+        <span>更新日: 2026-06-08</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源装置の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-tape-metal-surface-insulation-guide">金属面への絶縁施工ガイド</a></li>
+        <li><a href="/articles/led-tape-ip-waterproof-guide">防水規格 IP65・IP67・IP68 の違い</a></li>
+        <li><a href="/articles/led-tape-outdoor-sign-guide">屋外サイン用LEDテープ選定ガイド</a></li>
+        <li><a href="/articles/led-tape-surge-lightning-protection-guide">屋外の雷サージ・SPD対策ガイド</a></li>
+        <li><a href="/articles/led-tape-emi-radio-noise-guide">EMI・電波ノイズ対策ガイド</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/alumi-frame/">Uチャンネル（通常取付）</a></li>
+        <li><a href="/category/alumi-frame/">Tチャンネル（埋め込み型）</a></li>
+        <li><a href="/category/psu/">業務用定電圧PSU</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>

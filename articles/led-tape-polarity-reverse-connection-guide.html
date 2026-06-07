@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープが逆接続で点かない原因と対処法｜極性（+/−）の見分け方と逆挿し診断 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープをつないだのに点灯しない——多くは極性（プラス・マイナス）の逆接続が原因です。テープ・コネクタ・電源の極性表示の見方、逆挿ししたときの症状、テスターでの極性チェック手順、逆接続でテープが壊れるケースと壊れないケースの違いを施工業者向けに解説します。">
+  <meta name="keywords" content="LEDテープ 逆接続,LEDテープ 極性,LEDテープ プラスマイナス,LEDテープ 点かない 極性,LED 逆挿し,LEDテープ +/-,LEDテープ コネクタ 向き,LED 極性 確認">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-polarity-reverse-connection-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-polarity-reverse-connection-guide">
+  <meta property="og:title" content="LEDテープが逆接続で点かない原因と対処法｜極性（+/−）の見分け方と逆挿し診断 | LED PRO SHOP">
+  <meta property="og:description" content="テープ・コネクタ・電源の極性表示の見方、逆挿し時の症状、テスターでの極性チェック手順、逆接続で壊れるケースと壊れないケースの違いを施工業者向けに解説します。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-polarity-reverse-connection-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープが逆接続で点かない原因と対処法｜極性（+/−）の見分け方と逆挿し診断 | LED PRO SHOP">
+  <meta name="twitter:description" content="極性表示の見方、逆挿し時の症状、テスターでの極性チェック手順、逆接続で壊れるケースと壊れないケースの違いを施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-polarity-reverse-connection-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープが逆接続で点かない原因と対処法｜極性（+/−）の見分け方と逆挿し診断",
+    "description": "テープ・コネクタ・電源の極性表示の見方、逆挿し時の症状、テスターでの極性チェック手順、逆接続でテープが壊れるケースと壊れないケースの違いを施工業者向けに解説します。",
+    "image": "https://led-proshop.com/articles/images/led-tape-polarity-reverse-connection-guide-hero.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP 編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://led-proshop.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-06-08",
+    "dateModified": "2026-06-08",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-polarity-reverse-connection-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "LED PRO SHOP",
+        "item": "https://led-proshop.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "コラム",
+        "item": "https://led-proshop.com/articles/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "LEDテープが逆接続で点かない原因と対処法",
+        "item": "https://led-proshop.com/articles/led-tape-polarity-reverse-connection-guide"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープを逆（プラスとマイナス逆）につなぐと壊れますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "単色（白・電球色など）の定電圧LEDテープは、逆接続では電流が流れず「点灯しないだけ」で壊れないものが大半です。正しい向きに挿し直せば正常に点灯します。一方、RGB/RGBWやアドレサブル（IC内蔵）テープ、信号線を持つ製品は、逆接続でICや素子に逆電圧がかかり破損する場合があります。製品ごとに耐逆接続の仕様が異なるため、通電前に必ず極性を確認するのが安全です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "テープのどちらがプラスか分からないときはどう見分けますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "テープのパターン面に「+」「−」または「+12V」「+24V」「V+」「GND」などの極性表示が必ず印字されています。コネクタにも目印（赤線がプラス、白／黒がマイナスなど）があります。表示が読めない場合はテスターのダイオードモードでパッドに当て、LEDが微かに光る向きが順方向（+→−）です。電源側はDCプラグのセンター極性表示（センタープラス/マイナス）を確認します。判断に迷う場合は通電前にテスターで確定させてください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "正しくつないだはずなのに点かないのは極性以外に何が考えられますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "極性が正しいのに点かない場合、コネクタの接触不良（テープの銅箔とピンが噛んでいない）、はんだ不良、電源の出力電圧違い（12V品に24Vを入れた／その逆）、電源容量不足、カット位置がカットマークからずれて回路が切れている、上流のヒューズ切れ、などが疑われます。まず電源出力電圧をテスターで確認し、次にコネクタを挿し直し、それでも点かなければ区間を短く切り分けて切り分け診断します。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#003C82;--blue-pale:#e8f0fe;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;--accent:#d35400;--accent-pale:#fdf0e6;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#7a2e00 0%,#d35400 55%,#9c3c00 100%);padding:40px 16px 32px;border-bottom:3px solid #9c3c00}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.danger{border-color:#c0392b;background:#fdecee}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.danger strong{color:#c0392b}
+    .article-callout.tip strong{color:#27ae60}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0 24px}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:4px;padding:14px}
+    .spec-card .sc-label{font-size:10px;color:var(--text-muted);font-weight:700;letter-spacing:1px;margin-bottom:6px}
+    .spec-card .sc-value{font-size:17px;font-weight:900;color:var(--accent);line-height:1.25}
+    .spec-card .sc-note{font-size:11px;color:var(--text-sub);margin-top:6px;line-height:1.5}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#fdf0e6}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#fdf0e6}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>逆接続で点かない原因と対処法</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">トラブル対処ガイド</div>
+    <h1>LEDテープが逆接続で点かない原因と対処法<br>極性（+/−）の見分け方と逆挿し診断</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-06-08</span>
+      <span>更新日: 2026-06-08</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/gold_shop.webp"
+      alt="LEDテープのプラス・マイナス極性表示とコネクタの向きを確認する施工作業のイメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>配線を終えて通電したのにLEDテープが点かない——現場で焦る場面ですが、原因の上位は<strong>極性（プラス・マイナス）の逆接続</strong>です。LEDテープは直流（DC）で動く"向きのある"部品で、+と−を逆につなぐと電流が流れません。本記事では、テープ・コネクタ・電源の極性表示の見方、逆挿ししたときの症状、テスターでの極性チェック手順、そして「逆接続で壊れるテープ」と「壊れずに挿し直せば直るテープ」の違いを、施工業者の切り分け目線で整理します。極性以外の不点灯要因への切り分けも最後にまとめます。</p>
+
+      <h2 id="sec-why">なぜ逆接続で点かないのか</h2>
+      <p>LED（発光ダイオード）は電流を一方向にしか流さない部品です。テープは「+から−へ」電流が流れたときだけ発光します。+と−を逆につなぐと、LEDが電流をせき止めるため<strong>電流が流れず、まったく点灯しません</strong>。電圧をかけても光らないのは故障ではなく、向きが逆なだけ——というのが逆接続の正体です。</p>
+      <div class="article-callout tip">
+        <p><strong>まず疑うべき:</strong> 「配線も電源も正しいのに点かない」ときは、故障を疑う前に<strong>極性の逆接続</strong>を最初に確認してください。挿し直すだけで直るケースが非常に多く、部品交換の前にやるべき一手です。</p>
+      </div>
+
+      <h2 id="sec-mark">極性表示の見方 — テープ・コネクタ・電源</h2>
+      <p>LEDテープ照明には3か所に極性の目印があります。すべてを揃えて初めて正しくつながります。</p>
+      <div class="spec-grid">
+        <div class="spec-card">
+          <div class="sc-label">テープ本体</div>
+          <div class="sc-value">+ / − 印字</div>
+          <div class="sc-note">パッド付近に「+12V」「V+」「GND」等</div>
+        </div>
+        <div class="spec-card">
+          <div class="sc-label">コネクタ</div>
+          <div class="sc-value">赤線＝＋</div>
+          <div class="sc-note">赤がプラス、白/黒がマイナスが一般的</div>
+        </div>
+        <div class="spec-card">
+          <div class="sc-label">電源（PSU）</div>
+          <div class="sc-value">V+ / V−端子</div>
+          <div class="sc-note">端子台に+/−が刻印されている</div>
+        </div>
+        <div class="spec-card">
+          <div class="sc-label">DCプラグ</div>
+          <div class="sc-value">センター極性</div>
+          <div class="sc-note">センタープラス/マイナスの表示を確認</div>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>部材</th><th>プラス側の見分け方</th><th>マイナス側の見分け方</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>テープ</td><td>「+」「V+」「+24V」印字のパッド</td><td>「−」「GND」印字のパッド</td></tr>
+          <tr><td>差込コネクタ</td><td>赤い線・赤い目印</td><td>白/黒の線</td></tr>
+          <tr><td>電源端子台</td><td>V+ / +V 刻印</td><td>V− / −V / COM 刻印</td></tr>
+          <tr><td>DCジャック</td><td>センタープラス表示</td><td>外側（スリーブ）</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout warn">
+        <p><strong>RGB/RGBW・アドレサブルは要注意:</strong> 多色・IC内蔵テープは「+」のほかにR・G・B・DIN（信号）など複数パッドがあり、1本ずれて挿すと点かない・色が違う・ICが壊れる原因になります。パッドの並び順を1つずつ照合してください。配線の考え方は<a href="/articles/led-tape-rgb-rgbw-guide">RGB/RGBWテープ配線ガイド</a>を参照。</p>
+      </div>
+
+      <h2 id="sec-symptom">逆挿ししたときの症状で切り分ける</h2>
+      <p>点かない状態でも、症状から原因をある程度絞り込めます。</p>
+      <table>
+        <thead>
+          <tr><th>症状</th><th>考えられる原因</th><th>まず試すこと</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>まったく点かない（電源は正常）</td><td>極性の逆接続が濃厚</td><td>コネクタを180°逆に挿し直す</td></tr>
+          <tr><td>一部の色だけ出ない（RGB）</td><td>色パッドの挿し位置ずれ</td><td>R/G/Bパッドの並びを照合</td></tr>
+          <tr><td>挿し直しても点かない</td><td>接触不良・電圧違い・断線</td><td>電源出力電圧と導通を測定</td></tr>
+          <tr><td>一瞬光って消えた</td><td>逆電圧でIC破損の可能性</td><td>区間を交換し再診断（後述）</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="sec-break">逆接続で「壊れるテープ」と「壊れないテープ」</h2>
+      <p>逆接続が必ず故障につながるわけではありません。製品タイプで結果が分かれます。</p>
+      <table>
+        <thead>
+          <tr><th>テープの種類</th><th>逆接続の結果</th><th>挿し直しで復活するか</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>単色 定電圧テープ（白・電球色等）</td><td>点灯しないだけ（多くは無害）</td><td><strong>多くは復活する</strong></td></tr>
+          <tr><td>RGB / RGBWテープ</td><td>色化け・無点灯。素子に負担</td><td>軽度なら復活、破損なら不可</td></tr>
+          <tr><td>アドレサブル（IC内蔵）</td><td>逆電圧でIC破損のリスク高</td><td><strong>破損すると不可</strong></td></tr>
+          <tr><td>定電流ICテープ</td><td>製品により逆電圧保護の有無が分かれる</td><td>仕様次第</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout danger">
+        <p><strong>鉄則:</strong> 「逆でも単色なら平気」と油断せず、<strong>通電前に必ず極性を確認</strong>してください。IC内蔵・アドレサブルテープは一度の逆接続でICが死ぬことがあり、その区間は丸ごと交換になります。試し点灯のときほど極性チェックを徹底するのが、再施工の手間とロスを防ぐ近道です。</p>
+      </div>
+
+      <h2 id="sec-tester">テスターで極性を確定させる手順</h2>
+      <p>印字が読めない・コネクタの向きが不明なときは、テスター（マルチメーター）で確定させます。通電前にやるのが安全です。</p>
+      <ol>
+        <li><strong>電源出力の極性を測る</strong>：DCモードで電源端子に当て、+表示が出る向きがプラス。値が出力電圧（12V/24V）と一致するかも確認。</li>
+        <li><strong>テープの順方向を確認</strong>：ダイオードモードでテープのパッドに当て、LEDが微かに光る／導通表示が出る向きが「+→−」の順方向。</li>
+        <li><strong>コネクタの導通を追う</strong>：導通モードで赤線がどちらのピン・パッドに繋がるかを追い、テープの+と一致させる。</li>
+        <li><strong>合わせて通電</strong>：電源+→テープ+、電源−→テープ− が揃ったら通電する。</li>
+      </ol>
+      <p>テスターの基本的な使い方は<a href="/articles/led-tape-multimeter-testing-guide">LEDテープのテスター測定ガイド</a>で詳しく解説しています。</p>
+
+      <h2 id="sec-other">極性以外で点かないときの切り分け</h2>
+      <p>極性を正しても点かない場合、次の順で切り分けます。</p>
+      <ul>
+        <li><strong>電源出力電圧</strong>：12V品に24V／24V品に12Vを入れていないか。出力0Vなら電源側の故障やヒューズ切れ。</li>
+        <li><strong>コネクタの接触</strong>：銅箔とピンが噛んでいない・斜め挿し。挿し直し、心配ならはんだ付けに変更。</li>
+        <li><strong>カット位置</strong>：カットマーク以外で切ると回路が切れて点かない。カットの基礎は<a href="/articles/led-tape-cutting-guide">カット方法ガイド</a>へ。</li>
+        <li><strong>電源容量不足</strong>：必要W数に対し電源が小さいと立ち上がらない／保護が働く。<a href="/articles/led-tape-psu-wiring-guide">PSU容量計算</a>を確認。</li>
+        <li><strong>区間の切り分け</strong>：テープを短く切って単体で点くか確認し、不良区間を特定する。</li>
+      </ul>
+      <p>不点灯の総合的な切り分けは<a href="/articles/led-tape-troubleshooting-guide">LEDテープが点灯しない原因と対処ガイド</a>にまとめています。</p>
+
+      <h2 id="sec-prevent">逆接続を未然に防ぐコツ</h2>
+      <ul>
+        <li>通電前に「電源+→テープ+」を指差し確認する習慣をつける</li>
+        <li>コネクタは赤線＝＋で社内ルールを統一し、誰が見ても分かるようにする</li>
+        <li>IC内蔵・RGBはパッドの並びを1つずつ照合してから挿す</li>
+        <li>試験点灯でも極性確認を省略しない（IC破損の多くは試し挿しで起きる）</li>
+        <li>長尺・多区間は1区間ずつ通電して確認しながら進める</li>
+      </ul>
+
+      <h2 id="sec-summary">まとめ</h2>
+      <table>
+        <thead>
+          <tr><th>ポイント</th><th>内容</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>逆接続の症状</td><td>電流が流れず「点灯しないだけ」のことが多い</td></tr>
+          <tr><td>最初に疑う</td><td>故障より先に極性の逆接続を確認・挿し直す</td></tr>
+          <tr><td>極性表示</td><td>テープ印字／コネクタ赤線／電源V+で揃える</td></tr>
+          <tr><td>壊れる/壊れない</td><td>単色は無害が多い／IC内蔵は逆電圧で破損リスク</td></tr>
+          <tr><td>確定方法</td><td>通電前にテスターで電源とテープの向きを照合</td></tr>
+        </tbody>
+      </table>
+      <p>「点かない＝故障」と決めつけて部材を交換する前に、極性を一度確認するだけで解決する現場が大半です。とくにIC内蔵・RGBテープは通電前の極性チェックが破損防止に直結します。指差し確認とテスター照合を習慣にすれば、再施工のロスとクレームを大きく減らせます。</p>
+
+      <!-- FAQ -->
+      <h2 id="faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">LEDテープを逆（プラスとマイナス逆）につなぐと壊れますか？</div>
+        <div class="faq-a">単色（白・電球色など）の定電圧LEDテープは、逆接続では電流が流れず「点灯しないだけ」で壊れないものが大半です。正しい向きに挿し直せば正常に点灯します。一方、RGB/RGBWやアドレサブル（IC内蔵）テープ、信号線を持つ製品は、逆接続でICや素子に逆電圧がかかり破損する場合があります。製品ごとに耐逆接続の仕様が異なるため、通電前に必ず極性を確認するのが安全です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">テープのどちらがプラスか分からないときはどう見分けますか？</div>
+        <div class="faq-a">テープのパターン面に「+」「−」または「+12V」「+24V」「V+」「GND」などの極性表示が必ず印字されています。コネクタにも目印（赤線がプラス、白／黒がマイナスなど）があります。表示が読めない場合はテスターのダイオードモードでパッドに当て、LEDが微かに光る向きが順方向（+→−）です。電源側はDCプラグのセンター極性表示（センタープラス/マイナス）を確認します。判断に迷う場合は通電前にテスターで確定させてください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">正しくつないだはずなのに点かないのは極性以外に何が考えられますか？</div>
+        <div class="faq-a">極性が正しいのに点かない場合、コネクタの接触不良（テープの銅箔とピンが噛んでいない）、はんだ不良、電源の出力電圧違い（12V品に24Vを入れた／その逆）、電源容量不足、カット位置がカットマークからずれて回路が切れている、上流のヒューズ切れ、などが疑われます。まず電源出力電圧をテスターで確認し、次にコネクタを挿し直し、それでも点かなければ区間を短く切り分けて切り分け診断します。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-tape-troubleshooting-guide">
+              <img src="/images/hero-scenes/gold_shop.webp" alt="LEDテープが点灯しない原因と対処ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <div class="rac-title">LEDテープが点灯しない原因と対処法｜電源・接触・配線を切り分け診断</div>
+                <span class="rac-date">2026-05-xx</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-multimeter-testing-guide">
+              <img src="/images/hero-scenes/red_shop.webp" alt="LEDテープのテスター測定ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <div class="rac-title">LEDテープのテスター（マルチメーター）測定ガイド｜電圧・導通・極性の測り方</div>
+                <span class="rac-date">2026-06-xx</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-connector-guide">
+              <img src="/images/hero-scenes/gold_shop.webp" alt="LEDテープのコネクタ接続ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工方法ガイド</span>
+                <div class="rac-title">LEDテープのコネクタ接続｜失敗しない挿し方と接触不良の防ぎ方</div>
+                <span class="rac-date">2026-05-xx</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>極性表示の明確な業務用LEDテープ・コネクタ</h2>
+        <p>単色・RGB・IC内蔵まで、極性・パッド表示の分かりやすい製品を掲載。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">商品ラインナップを見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-08</span>
+        <span>更新日: 2026-06-08</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源装置の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-tape-troubleshooting-guide">点灯しない原因と対処ガイド</a></li>
+        <li><a href="/articles/led-tape-multimeter-testing-guide">テスター測定ガイド</a></li>
+        <li><a href="/articles/led-tape-connector-guide">コネクタ接続ガイド</a></li>
+        <li><a href="/articles/led-tape-rgb-rgbw-guide">RGB/RGBWテープ配線ガイド</a></li>
+        <li><a href="/articles/led-tape-cutting-guide">LEDテープのカット方法ガイド</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/alumi-frame/">Uチャンネル（通常取付）</a></li>
+        <li><a href="/category/alumi-frame/">Tチャンネル（埋め込み型）</a></li>
+        <li><a href="/category/psu/">業務用定電圧PSU</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>
