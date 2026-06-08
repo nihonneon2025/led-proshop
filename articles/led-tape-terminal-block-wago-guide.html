@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープを端子台・WAGOコネクタで接続する方法｜DC24V低電圧の電流容量と緩み対策 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープをWAGOや端子台で接続後にチラつき・発熱が出たら、原因は電流容量不足か低電圧での接触抵抗です。WAGO 221/222・プッシュイン端子台の選び分け、より線にフェルール端子を使う理由、DC12V/24Vでの適合電線サイズと締付確認手順を施工業者向けに解説。">
+  <meta name="keywords" content="LEDテープ 端子台,WAGO LEDテープ,ワンタッチコネクタ LED,端子台 LED 配線,LEDテープ より線 接続,フェルール端子 LED,WAGO 221 LED,プッシュイン端子台 DC">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-terminal-block-wago-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-terminal-block-wago-guide">
+  <meta property="og:title" content="LEDテープを端子台・WAGOコネクタで接続する方法｜DC24V低電圧の電流容量と緩み対策 | LED PRO SHOP">
+  <meta property="og:description" content="WAGOや端子台でLEDテープを接続後にチラつき・発熱が出る原因は電流容量不足か低電圧での接触抵抗。WAGO 221/222・プッシュイン端子台の選び分け、フェルール端子の使い方、DC12V/24Vの適合電線サイズと締付確認手順を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-terminal-block-wago-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープを端子台・WAGOコネクタで接続する方法｜DC24V低電圧の電流容量と緩み対策 | LED PRO SHOP">
+  <meta name="twitter:description" content="WAGOや端子台でLEDテープを接続後にチラつき・発熱が出る原因は電流容量不足か低電圧の接触抵抗。WAGO 221/222・端子台の選び分け、フェルール端子、DC12V/24Vの適合電線サイズと締付確認手順を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-terminal-block-wago-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDテープを端子台・WAGOコネクタで接続する方法｜DC24V低電圧の電流容量と緩み対策",
+    "description": "WAGO 221/222・プッシュイン端子台でLEDテープを接続する手順と、DC低電圧での電流容量・接触抵抗・締付確認の注意点を施工業者向けに解説。",
+    "image": "https://led-proshop.com/articles/images/led-tape-terminal-block-wago-guide-hero.webp",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP 編集部"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
+    },
+    "datePublished": "2026-06-09",
+    "dateModified": "2026-06-09",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-terminal-block-wago-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープ 端子台・WAGO接続ガイド", "item": "https://led-proshop.com/articles/led-tape-terminal-block-wago-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープの低電圧配線にWAGOコネクタを使ってもいいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "使用できます。WAGOのレバー式（221シリーズ）やプッシュイン式は単線・より線の両方に対応し、はんだ付け不要で確実な接続が得られます。ただしDC12V/24Vの低電圧では同じ電力でも電流が大きくなるため、接続部1点あたりの電流が定格内に収まるかを必ず確認してください。より線を差し込む場合はフェルール端子（棒端子）を圧着すると素線のばらけによる接触不良を防げます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "端子台で接続した部分が発熱します。原因は何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "発熱の主因は接触抵抗の増大です。具体的には(1)ねじの締付不足や経年の緩み、(2)より線素線のばらけや酸化、(3)電線が細すぎて電流容量を超過、の3つが代表的です。低電圧大電流の回路ほど接触抵抗による発熱が顕著になります。締付トルクを規定値で確認し、より線にはフェルール端子を使い、電流に対して1ランク太い電線を選ぶと改善します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "LEDテープのコネクタ・はんだ・端子台はどう使い分けますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "テープ本体への直接接続はワンタッチコネクタかはんだ付け、テープから出たリード線同士やリード線と電源の中継には端子台・WAGOが向いています。取り外し・分岐の予定があり点検性を重視するなら端子台/WAGO、長距離で接触抵抗を最小化したい固定設置ならはんだ付け直結が基本です。屋外や湿気のある場所では端子台/WAGOは防水ボックス内に収めて使用してください。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/articles/articles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">LED PRO SHOP</a>
+    <nav class="global-nav">
+      <a href="/articles/">記事一覧</a>
+      <a href="/">商品一覧</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-main">
+<article>
+
+<div class="article-hero">
+  <img src="/articles/images/led-tape-terminal-block-wago-guide-hero.webp"
+       alt="LEDテープ 端子台・WAGOコネクタ 接続ガイド"
+       width="1200" height="630" loading="eager">
+</div>
+
+<div class="article-container">
+
+<h1>LEDテープを端子台・WAGOコネクタで接続する方法｜DC24V低電圧の電流容量と緩み対策</h1>
+
+<p class="article-meta">
+  <span>2026-06-09</span>
+  <span class="article-cat">LED施工ガイド</span>
+</p>
+
+<div class="article-lead">
+  <p>LEDテープの中継接続を<strong>端子台やWAGOコネクタ</strong>で行うと、はんだ付け不要で点検性の高い配線ができます。一方でDC12V/24Vの低電圧回路は<strong>同じ電力でも電流が大きく</strong>、接触抵抗による発熱・チラつきが起こりやすいのが落とし穴です。WAGO 221/222・プッシュイン端子台の選び分け、より線にフェルール端子を使う理由、適合電線サイズと締付確認の手順を施工業者向けに整理しました。</p>
+</div>
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#where">端子台・WAGOを使う場所</a></li>
+    <li><a href="#types">WAGO・端子台の種類と選び方</a></li>
+    <li><a href="#current">DC低電圧での電流容量と電線サイズ</a></li>
+    <li><a href="#ferrule">より線とフェルール端子</a></li>
+    <li><a href="#steps">接続手順と締付確認</a></li>
+    <li><a href="#troubles">発熱・緩み・接触不良の対処</a></li>
+    <li><a href="#compare">コネクタ・はんだ・端子台の使い分け</a></li>
+    <li><a href="#faq">よくある質問</a></li>
+  </ol>
+</nav>
+
+<section id="where">
+  <h2>端子台・WAGOを使う場所</h2>
+
+  <p>端子台・WAGOコネクタは、LEDテープ本体のパッドに直接付けるものではなく、<strong>テープから出たリード線・電源・延長ケーブルを中継する</strong>場所で使います。点検口や分電盤付近など「後から触る可能性がある」箇所に向いています。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>使う場所</th>
+        <th>向いている理由</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>電源（PSU）とリード線の中継</td>
+        <td>電源交換・増設時に工具なしで分離できる</td>
+      </tr>
+      <tr>
+        <td>複数本テープへの分岐（並列給電）</td>
+        <td>1点から複数回路へ分けられ配線がすっきりする</td>
+      </tr>
+      <tr>
+        <td>調光器・コントローラ手前の中継</td>
+        <td>機器交換時に再施工せず差し替えられる</td>
+      </tr>
+      <tr>
+        <td>点検口・天井裏の接続箱内</td>
+        <td>定期点検で増し締め・導通確認がしやすい</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note"><strong>注意</strong>：テープのカット位置パッドに直接リード線を取る場合は、ワンタッチコネクタかはんだ付けを使います。端子台・WAGOは「リード線同士の中継」用と考えてください。</p>
+</section>
+
+<section id="types">
+  <h2>WAGO・端子台の種類と選び方</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>種類</th>
+        <th>対応電線</th>
+        <th>特徴・向く用途</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>WAGO 221（レバー式）</td>
+        <td>単線・より線 両対応</td>
+        <td>透明ハウジングで挿入確認が容易。より線をそのまま挿せる。中継・分岐の定番</td>
+      </tr>
+      <tr>
+        <td>WAGO 222（操作レバー式）</td>
+        <td>単線・より線 両対応</td>
+        <td>221の旧世代。機能は同等だがやや大型</td>
+      </tr>
+      <tr>
+        <td>プッシュイン端子台（差込式）</td>
+        <td>単線・フェルール端子付きより線</td>
+        <td>レール（DINレール）固定で多回路をまとめられる。盤内向き</td>
+      </tr>
+      <tr>
+        <td>ねじ式端子台</td>
+        <td>単線・より線（圧着端子推奨）</td>
+        <td>締付トルクで確実に固定。振動環境に強いが緩み点検が必要</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>LEDテープの中継では、配線が<strong>より線（柔らかいケーブル）</strong>であることが多いため、より線をそのまま挿せる<strong>WAGO 221</strong>か、フェルール端子を併用する<strong>プッシュイン端子台</strong>が扱いやすい選択です。</p>
+</section>
+
+<section id="current">
+  <h2>DC低電圧での電流容量と電線サイズ</h2>
+
+  <p>端子台・WAGO選定で最も見落とされるのが<strong>電流容量</strong>です。LEDテープはDC12V/24Vと電圧が低いため、同じ消費電力でも電流（A）が大きくなります。電流は次の式で求めます。</p>
+
+  <p class="note"><strong>電流(A) ＝ 消費電力(W) ÷ 電圧(V)</strong><br>
+  例）24V・96W のテープ → 96 ÷ 24 ＝ <strong>4.0A</strong><br>
+  例）12V・96W の同出力テープ → 96 ÷ 12 ＝ <strong>8.0A</strong>（24Vの2倍の電流）</p>
+
+  <p>つまり12Vは24Vの2倍の電流が流れ、接続部の電流容量・電線サイズもその分余裕が必要になります。下表は中継1点あたりの目安です（製品の定格・許容電流を必ず併せて確認してください）。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>中継点の電流</th>
+        <th>推奨電線サイズ（目安）</th>
+        <th>選定の考え方</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>〜2A</td>
+        <td>AWG22〜20 / 0.3〜0.5sq</td>
+        <td>短距離の単灯・小規模。電圧降下に注意</td>
+      </tr>
+      <tr>
+        <td>2〜5A</td>
+        <td>AWG18 / 0.75〜1.25sq</td>
+        <td>一般的なテープ1本給電。1ランク太めが安心</td>
+      </tr>
+      <tr>
+        <td>5〜10A</td>
+        <td>AWG16〜14 / 1.25〜2.0sq</td>
+        <td>12Vや並列分岐。発熱・電圧降下対策で太線必須</td>
+      </tr>
+      <tr>
+        <td>10A超</td>
+        <td>AWG12以上 / 2.0sq以上</td>
+        <td>分岐を分割し1点の電流を下げる設計を優先</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note"><strong>原則</strong>：中継1点に電流を集中させず、電源側で複数回路に分けて1点あたりの電流を下げると、発熱と電圧降下の両方を抑えられます。</p>
+</section>
+
+<section id="ferrule">
+  <h2>より線とフェルール端子</h2>
+
+  <p>LEDテープ配線で使うキャブタイヤケーブルなどは<strong>より線（細い素線の束）</strong>です。より線をねじ式端子台やプッシュイン端子に直接差し込むと、素線がばらけて<strong>接触面積が減り発熱・接触不良</strong>の原因になります。</p>
+
+  <h3>フェルール端子（棒端子）を使う理由</h3>
+  <ul>
+    <li>より線の素線を1本にまとめ、端子台への挿入時のばらけを防ぐ</li>
+    <li>接触面積が安定し、接触抵抗による発熱を抑える</li>
+    <li>ねじ締付時に素線を噛み切らず、断面欠損を防ぐ</li>
+    <li>抜き差し時の毛羽立ち・隣接端子へのショートを防ぐ</li>
+  </ul>
+
+  <p>WAGO 221のようにより線を直接保持できる製品ではフェルール端子は必須ではありませんが、<strong>ねじ式・プッシュイン端子台ではフェルール端子の圧着を推奨</strong>します。圧着には専用のフェルール圧着工具を使い、電線サイズに合った端子を選びます。</p>
+</section>
+
+<section id="steps">
+  <h2>接続手順と締付確認</h2>
+
+  <h3>WAGO 221（レバー式）の手順</h3>
+  <ol>
+    <li>電源を必ずオフにして作業開始</li>
+    <li>電線の被覆を規定長（製品のストリップゲージに合わせる／一般に約11mm）むく</li>
+    <li>レバーを起こし、素線をまっすぐ奥まで差し込む</li>
+    <li>レバーを倒して固定。透明窓から芯線が奥まで入っているか目視確認</li>
+    <li>軽く引っ張って抜けないことを確認（プルテスト）</li>
+  </ol>
+
+  <h3>ねじ式端子台の手順</h3>
+  <ol>
+    <li>電源オフを確認し、より線にはフェルール端子を圧着</li>
+    <li>端子に差し込み、規定トルクでねじを締め付ける</li>
+    <li>増し締めで動かないことを確認（締めすぎは素線断面を潰すため規定値を守る）</li>
+    <li>テスターで導通・極性（＋／−）を確認してから通電</li>
+  </ol>
+
+  <table>
+    <thead>
+      <tr>
+        <th>確認項目</th>
+        <th>正常</th>
+        <th>異常のサイン</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>芯線の挿入</td>
+        <td>奥まで到達・被覆を噛んでいない</td>
+        <td>芯線が浅い／被覆を噛む → 接触不良</td>
+      </tr>
+      <tr>
+        <td>プルテスト</td>
+        <td>軽く引いて抜けない</td>
+        <td>抜ける → 挿入不足・端子サイズ不適合</td>
+      </tr>
+      <tr>
+        <td>通電後の温度</td>
+        <td>ほぼ室温・ほんのり温かい程度</td>
+        <td>触れないほど熱い → 電流超過・接触抵抗大</td>
+      </tr>
+      <tr>
+        <td>極性</td>
+        <td>＋−が回路全体で統一</td>
+        <td>逆接 → 単色は不点灯、RGBは色化け</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="troubles">
+  <h2>発熱・緩み・接触不良の対処</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>症状</th>
+        <th>原因</th>
+        <th>対処法</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>接続部が発熱する</td>
+        <td>電流超過・電線が細い・接触抵抗大</td>
+        <td>1ランク太い電線に変更／分岐を分割して1点の電流を下げる</td>
+      </tr>
+      <tr>
+        <td>時間が経つと緩む（ねじ式）</td>
+        <td>より線の直締め・振動・締付不足</td>
+        <td>フェルール端子を圧着し規定トルクで増し締め。定期点検を設定</td>
+      </tr>
+      <tr>
+        <td>挿しても保持されない（WAGO）</td>
+        <td>ストリップ長不足・素線の折れ</td>
+        <td>規定長で剥き直し、まっすぐ奥まで再挿入</td>
+      </tr>
+      <tr>
+        <td>末端だけ暗い・チラつく</td>
+        <td>接触抵抗による電圧降下</td>
+        <td>接続をやり直し、電線を太く／距離が長ければ電源を分散配置</td>
+      </tr>
+      <tr>
+        <td>湿気で錆び・接触不良</td>
+        <td>屋外・水回りでの露出使用</td>
+        <td>防水ボックス内に収める／屋外は防水コネクタ・はんだ＋熱収縮で防水</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note"><strong>低電圧大電流ほど接触抵抗の影響が大きい</strong>のがDC配線の特徴です。「点灯はするが一部暗い・温かい」は接触抵抗のサインなので、放置せず接続をやり直してください。</p>
+</section>
+
+<section id="compare">
+  <h2>コネクタ・はんだ・端子台の使い分け</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>比較項目</th>
+        <th>ワンタッチコネクタ</th>
+        <th>端子台・WAGO</th>
+        <th>はんだ付け直結</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>接続対象</td>
+        <td>テープのパッドに直接</td>
+        <td>リード線・電源の中継</td>
+        <td>パッド・リード線の直結</td>
+      </tr>
+      <tr>
+        <td>取り外し・点検</td>
+        <td>◎ 容易</td>
+        <td>◎ 容易（増設・分岐向き）</td>
+        <td>△ 困難</td>
+      </tr>
+      <tr>
+        <td>接触抵抗</td>
+        <td>△ やや高い</td>
+        <td>○ 良好（締付・挿入が適切なら）</td>
+        <td>◎ 最小</td>
+      </tr>
+      <tr>
+        <td>分岐のしやすさ</td>
+        <td>△ 製品依存</td>
+        <td>◎ 1点から複数回路へ</td>
+        <td>△ 配線が増える</td>
+      </tr>
+      <tr>
+        <td>防水</td>
+        <td>△ 防水型を選ぶ</td>
+        <td>△ 防水ボックス必須</td>
+        <td>○ 熱収縮で対応可</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>推奨ルール</strong>：テープへの取り出しはコネクタ／はんだ、リード線・電源の中継や分岐は端子台・WAGO、長距離固定で接触抵抗を最小化したい箇所ははんだ付け直結。屋外・水回りでは端子台・WAGOは必ず防水ボックス内に収めます。</p>
+</section>
+
+<section id="faq">
+  <h2>よくある質問</h2>
+
+  <div class="faq-item">
+    <h3>Q. LEDテープの低電圧配線にWAGOコネクタを使ってもいいですか？</h3>
+    <p>A. 使用できます。WAGOのレバー式（221）やプッシュイン式は単線・より線の両方に対応し、はんだ不要で確実に接続できます。ただしDC12V/24Vは同じ電力でも電流が大きいため、中継1点あたりの電流が定格内に収まるか確認してください。より線をねじ式・プッシュイン端子台に挿す場合はフェルール端子を圧着すると素線のばらけによる接触不良を防げます。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. 端子台で接続した部分が発熱します。原因は何ですか？</h3>
+    <p>A. 主因は接触抵抗の増大です。(1)ねじの締付不足や経年の緩み、(2)より線素線のばらけ・酸化、(3)電線が細く電流容量を超過、が代表例です。低電圧大電流ほど発熱が顕著になります。規定トルクで締め直し、より線にはフェルール端子を使い、電流に対して1ランク太い電線を選ぶと改善します。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. WAGOにフェルール端子は必要ですか？</h3>
+    <p>A. WAGO 221のようにより線をそのまま保持できる製品では必須ではありません。一方、ねじ式端子台やプッシュイン端子台ではより線がばらけて接触不良・緩みの原因になるため、フェルール端子（棒端子）の圧着を推奨します。電線サイズに合った端子を専用工具で圧着してください。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. 屋外でLEDテープを端子台・WAGOで接続してもいいですか？</h3>
+    <p>A. 端子台・WAGO単体は防水ではありません。屋外や浴室・厨房など水気のある場所では、IP保護等級のある防水ボックス（プールボックス・接続箱）内に収めて使用してください。ボックスに収められない露出箇所では、防水コネクタかはんだ付け＋接着剤入り熱収縮チューブで防水処理する方が確実です。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. 12Vと24Vで配線の注意点は変わりますか？</h3>
+    <p>A. 変わります。12Vは24Vと同じ消費電力でも電流が2倍になるため、端子台の電流容量・電線サイズ・電圧降下のすべてで余裕が必要です。長距離や大出力なら24Vを選ぶ、または電源を分散配置して1回路あたりの電流を下げると、接続部の発熱とチラつきを抑えられます。</p>
+  </div>
+</section>
+
+<div class="article-cta">
+  <p>LEDテープライト・DC24V電源・延長ケーブル・防水コネクタはLED PRO SHOPにてプロ価格・最短翌日出荷でご提供しています。</p>
+  <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+</div>
+
+</div><!-- /article-container -->
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-logo">LED PRO SHOP</p>
+    <nav class="footer-nav">
+      <a href="/">商品一覧</a>
+      <a href="/articles/">コラム</a>
+      <a href="/tokushoho.html">特定商取引法</a>
+    </nav>
+    <p class="footer-copy">&copy; 2025 LED PRO SHOP</p>
+  </div>
+</footer>
+
+</body>
+</html>
