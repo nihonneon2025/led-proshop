@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>48V高電圧LEDテープとは？12V/24V/48Vの違いと長距離配線での選び方｜施工業者向け仕様選定 | LED PRO SHOP</title>
+<meta name="description" content="LEDテープの長尺施工で電圧降下に悩んだら48V（高電圧）テープという選択肢。12V/24V/48Vで1本あたり何mまで引けるか、電流・電圧降下・配線太さがどう変わるかを計算式付きで比較。48Vの注意点（PELV扱い・カット単位・電源選定）まで施工業者目線で解説します。">
+<meta name="keywords" content="48V LEDテープ,高電圧 LEDテープ,LEDテープ 長距離,LEDテープ 何メートル,12V 24V 48V 違い,LEDテープ 電圧 選び方,LEDテープ 電圧降下 対策,長尺 LEDテープ 施工">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-48v-high-voltage-guide">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-48v-high-voltage-guide">
+<meta property="og:title" content="48V高電圧LEDテープとは？12V/24V/48Vの違いと長距離配線での選び方｜施工業者向け仕様選定 | LED PRO SHOP">
+<meta property="og:description" content="長尺施工で電圧降下に悩んだら48V（高電圧）テープ。12V/24V/48Vで1本何mまで引けるか・電流・電圧降下・配線太さの違いを計算式付きで比較。48Vの注意点まで施工業者目線で解説。">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-48v-high-voltage-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="48V高電圧LEDテープとは？12V/24V/48Vの違いと長距離配線での選び方 | LED PRO SHOP">
+<meta name="twitter:description" content="長尺施工で電圧降下に悩んだら48V（高電圧）テープ。12V/24V/48Vで1本何mまで引けるか・電流・電圧降下・配線太さの違いを計算式付きで比較。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-48v-high-voltage-guide-hero.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Article",
+  "headline": "48V高電圧LEDテープとは？12V/24V/48Vの違いと長距離配線での選び方",
+  "description": "LEDテープの長尺施工で電圧降下に悩んだら48V（高電圧）テープという選択肢。12V/24V/48Vで1本何mまで引けるか、電流・電圧降下・配線太さがどう変わるかを計算式付きで比較し、48Vの注意点まで施工業者向けに解説します。",
+  "image": "https://led-proshop.com/articles/images/led-tape-48v-high-voltage-guide-hero.webp",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP 編集部" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "datePublished": "2026-06-09",
+  "dateModified": "2026-06-09",
+  "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-48v-high-voltage-guide"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "48V高電圧LEDテープの選び方", "item": "https://led-proshop.com/articles/led-tape-48v-high-voltage-guide" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "48VのLEDテープは1本で何メートルまで引けますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "同じ消費電力（W/m）なら48Vは24Vの半分・12Vの1/4の電流で済むため、片端給電でも20〜30m前後を1本で引ける製品が一般的です（製品の電流量と配線抵抗で変わります）。12Vが約5m、24Vが約10mを目安とするのに対し、48Vは長尺の什器・コーニス・連続したライン照明で電源・配線箇所を減らせるのが最大のメリットです。実際の上限は必ずメーカー仕様（最大連続使用長）と電圧降下計算で確認してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "48VのLEDテープは感電の危険がありますか？特別な資格は必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DC48VはDC60V以下のため一般にPELV/SELV相当の特別低電圧として扱われ、テープ本体（2次側）は12V/24Vと同様に低圧の直流回路です。ただしAC100V/200Vを入力して48Vを作り出す『LED電源（直流電源装置）』の1次側配線は電気工事士の資格と電気用品安全法（PSE）適合電源が必要です。2次側の48VもDC30V超のため濡れ手での接触や金属端子の露出は避け、結線部の絶縁処理を確実に行ってください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "48Vテープのカット単位や調光は12V/24Vと違いますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "48Vテープは直列に並ぶLEDの数が多いぶん、カット可能な最小単位（1ユニット長）が12V/24Vより長くなる傾向があります（製品により10cm前後〜数十cm）。短い納まりが多い現場では割り切れず端材が出やすいので注意してください。調光はPWM対応の48V出力電源・48V対応コントローラーが必要で、12V/24V用の調光器はそのまま使えません。電源・調光器・テープを必ず同一電圧でそろえてください。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #0a0f1e; color: #e2e8f0; line-height: 1.7; font-size: 15px; }
+  a { color: #22d3ee; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #042f3a 0%, #0a3a52 50%, #062a4a 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #155e75; }
+  .hero-badge { display: inline-block; background: #0891b2; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f1f5f9; line-height: 1.35; max-width: 820px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #94a3b8; max-width: 700px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #64748b; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f1f5f9; border-left: 4px solid #06b6d4; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #67e8f9; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #cbd5e1; }
+
+  .alert-box { background: #1c1010; border: 1px solid #7f1d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #07212b; border: 1px solid #155e75; border-left: 4px solid #06b6d4; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #a5f3fc; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #0c1a2e; border-radius: 10px; overflow: hidden; }
+  thead th { background: #155e75; color: #a5f3fc; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #1e2a3a; color: #cbd5e1; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #0e1e30; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #04221f; border: 1px solid #115e59; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #2dd4bf; margin-top: 0; }
+  .calc-formula { background: #03110f; border: 1px solid #134e4a; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #5eead4; margin: 12px 0; line-height: 2; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin: 20px 0 32px; }
+  .spec-card { background: #0c1a2e; border: 1px solid #1e3a5f; border-top: 3px solid #06b6d4; border-radius: 8px; padding: 16px; }
+  .spec-card .sc-label { font-size: 10px; color: #64748b; font-weight: 700; letter-spacing: 1px; margin-bottom: 6px; }
+  .spec-card .sc-value { font-size: 20px; font-weight: 900; color: #22d3ee; line-height: 1.25; }
+  .spec-card .sc-note { font-size: 11px; color: #94a3b8; margin-top: 6px; line-height: 1.5; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #0c1a2e; border: 1px solid #1e3a5f; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #06b6d4; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #67e8f9; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #94a3b8; margin-bottom: 0; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #1e2a3a; font-size: 14px; color: #cbd5e1; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #155e75; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #07212b; padding: 16px 20px; font-weight: 700; color: #67e8f9; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #cbd5e1; background: #070e1c; }
+
+  .cta-box { background: linear-gradient(135deg, #0a3a52 0%, #062a4a 100%); border: 1px solid #06b6d4; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f1f5f9; margin-bottom: 10px; }
+  .cta-box p { color: #94a3b8; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #0891b2; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #0e7490; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #64748b; }
+  .breadcrumb a { color: #64748b; }
+  .breadcrumb a:hover { color: #67e8f9; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid, .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">仕様選定ガイド</div>
+    <h1>48V高電圧LEDテープとは？<br>12V/24V/48Vの違いと長距離配線での選び方</h1>
+    <p class="hero-sub">電圧降下に強い高電圧テープで1本あたりの引ける長さ・電流・配線太さがどう変わるかを計算式付きで比較</p>
+    <p class="hero-meta">公開: 2026-06-09 | カテゴリ: LEDテープ仕様選定ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-48v-high-voltage-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; 48V高電圧LEDテープの選び方
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="info-box">
+      <p><strong>この記事で分かること：</strong>什器の天端ぐるり一周・長いコーニス・連続したライン照明で「電源と分岐を何箇所も入れたくない」とき、48V（高電圧）LEDテープなら1本で20〜30m前後を均一に引けます。12V/24V/48Vの電流・電圧降下・配線太さの違いと、48V特有の注意点（カット単位・電源・調光・絶縁）を施工業者目線で整理します。</p>
+    </div>
+
+    <h2>なぜ「電圧が高いほど長く引ける」のか</h2>
+
+    <p>LEDテープが末端に向かって暗くなる原因は<strong>電圧降下</strong>で、これは「電流 × 配線・銅箔の抵抗」で発生します。ここでカギになるのが、同じ明るさ（同じ消費電力 W/m）でも<strong>電圧が高いほど流れる電流は小さくて済む</strong>という関係です。</p>
+
+    <p>電力の式は <strong>P（W）= V（電圧）× I（電流）</strong>。たとえば10W/mのテープなら、12Vでは約0.83A/m、24Vでは約0.42A/m、48Vでは約0.21A/m。さらに配線で失われる損失は「電流の<strong>2乗</strong>」に比例する（損失 = I²×R）ため、電流が半分になると損失は1/4に激減します。これが48Vが長尺に強い理由です。</p>
+
+    <div class="info-box">
+      <p><strong>ざっくり目安：</strong>48Vは24Vの電流の半分・12Vの1/4。損失（発熱・電圧降下）は24V比で約1/4、12V比で約1/16。だから同じ配線・同じ明るさなら「より長く・より細い線で」引けます。</p>
+    </div>
+
+    <h2>12V / 24V / 48V 早見スペック</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="sc-label">12V</div>
+        <div class="sc-value">〜5m</div>
+        <div class="sc-note">片端給電の目安。短い什器・棚下・小規模間接照明向け。汎用品が最多。</div>
+      </div>
+      <div class="spec-card">
+        <div class="sc-label">24V</div>
+        <div class="sc-value">〜10m</div>
+        <div class="sc-note">長尺施工の標準。コーニス・コーブの主力。業務用ラインナップが豊富。</div>
+      </div>
+      <div class="spec-card">
+        <div class="sc-label">48V</div>
+        <div class="sc-value">〜20-30m</div>
+        <div class="sc-note">超長尺・連続ライン向け。電源/分岐箇所を削減。カット単位は長め。</div>
+      </div>
+    </div>
+
+    <h2>10W/mのテープを引いたときの比較</h2>
+
+    <p>同じ「10W/m・全長10m（合計100W）」を引いたと仮定し、配線抵抗を仮に0.1Ω/m（往復で長さ×2）として比較します。テープの銅箔抵抗は別途あるため、これは電源〜テープ間ハーネスのイメージです。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>電圧</th>
+          <th>合計電流</th>
+          <th>配線損失の傾向</th>
+          <th>片端給電の現実的な上限</th>
+          <th>必要な配線の太さ感</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>12V</td>
+          <td class="tag-ng">約8.3A</td>
+          <td>大（5m超で目視差）</td>
+          <td class="tag-ng">5m前後</td>
+          <td>太め（1.25〜2.0mm²）</td>
+        </tr>
+        <tr>
+          <td>24V</td>
+          <td class="tag-warn">約4.2A</td>
+          <td>中（10mで要計算）</td>
+          <td class="tag-warn">10m前後</td>
+          <td>標準（0.75〜1.25mm²）</td>
+        </tr>
+        <tr>
+          <td>48V</td>
+          <td class="tag-ok">約2.1A</td>
+          <td>小（20m級でも余裕）</td>
+          <td class="tag-ok">20〜30m前後</td>
+          <td>細めで可（0.5〜0.75mm²）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert-box">
+      <div class="alert-title">注意：上限長は必ず製品仕様で確認</div>
+      <p>「48Vなら何mでもOK」ではありません。最大連続使用長はテープ自体の銅箔厚（カッパーウェイト）・W/m・基板幅で決まります。上の数値は傾向であり、実際の施工では各製品の<strong>「最大連続使用長」</strong>と電圧降下計算の両方で確認してください。</p>
+    </div>
+
+    <h2>引ける長さの計算式</h2>
+
+    <div class="calc-box">
+      <h3>電圧降下から上限長を見積もる</h3>
+      <div class="calc-formula">
+合計電流（A）= テープ全長の消費電力（W）÷ 電圧（V）
+
+電圧降下（V）= 電流（A）× 配線抵抗（Ω/m）× 長さ（m）× 2（往復）
+
+許容降下の目安 = 定格電圧の ±10%
+（12V→1.2V / 24V→2.4V / 48V→4.8V まで）
+      </div>
+      <p style="color:#5eead4; font-size:13px; margin-top:12px; margin-bottom:0">
+        例：48V・10W/m × 20m = 200W → 電流 200W ÷ 48V ≒ 4.2A<br>
+        配線0.1Ω/m × 20m × 2 = 4Ω → 電圧降下 4.2A × 4Ω = 16.8V…これは過大。<br>
+        → 実際は給電点を分けるか、電流の小さい低W/m品を選ぶ。<strong>「48Vでも給電点設計は必要」</strong>という好例。
+      </p>
+    </div>
+
+    <h2>48Vを選ぶべき現場・避けるべき現場</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">◎</div>
+        <h4>48Vが向く現場</h4>
+        <p>大型什器の天端を一周・長いコーニス/コーブ・天井見切りの連続ライン・什器什器をまたぐ通し配灯。電源と分岐を減らして点検性とコストを下げたいケース。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">△</div>
+        <h4>24Vで十分な現場</h4>
+        <p>10m以内のコーニス・一般的な間接照明。製品・調光器・コントローラーの選択肢が最も多く、入手性と汎用性を優先したいケース。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">✕</div>
+        <h4>48Vが不利な現場</h4>
+        <p>短い納まりが多く細かいカットが必要な造作（カット単位が長く端材が出る）。既存12V/24V調光システムへの後付け（電源・調光器の総入替が必要になる）。</p>
+      </div>
+    </div>
+
+    <h2>48V施工で押さえる4つの注意点</h2>
+
+    <h3>1. 電源（1次側）は有資格・PSE適合が前提</h3>
+    <p>AC100V/200Vから48Vを作るLED電源の1次側結線は電気工事士の作業範囲です。電源は<strong>菱形/丸形PSEと事業者名・定格表示</strong>のあるものを選んでください。テープ側（2次側48V）は低圧の直流回路ですが、DC30V超のため端子の露出・濡れ手接触は避け、結線部は熱収縮チューブ等で確実に絶縁します。</p>
+
+    <h3>2. カット単位が長くなる</h3>
+    <p>48Vは直列LED数が多く、1ユニット（カット可能最小長）が12V/24Vより長くなる傾向です。割り付け前に必ずカット単位を確認し、納まり寸法で割り切れるか検討してください。割り切れない端材は別系統で使うか、24Vへ変更します。</p>
+
+    <h3>3. 電源・調光器・テープは同一電圧でそろえる</h3>
+    <p>12V/24V用の調光器・コントローラーは48Vテープに使えません。調光する場合は<strong>48V出力・PWM対応の電源と48V対応コントローラー</strong>を組み合わせます。電圧を混在させると不点灯・故障の原因になります。</p>
+
+    <h3>4. 長尺でも給電点設計は省略しない</h3>
+    <p>48Vは余裕が大きいだけで「無限に引ける」わけではありません。20m級では計算上アウトになる組み合わせもあります（上の計算例参照）。長尺ほど中間給電（パワーインジェクション）や系統分割を前提に設計してください。</p>
+
+    <h2>選定チェックリスト（48V採用前の確認）</h2>
+
+    <ul class="checklist">
+      <li>引きたい連続長を実測し、24Vの上限（約10m）を超えているか確認した</li>
+      <li>採用するテープの「最大連続使用長」をメーカー仕様で確認した</li>
+      <li>全長の合計消費電力（W）を計算し、電源容量を80%以下に収めた</li>
+      <li>電圧降下計算を行い、降下が定格の±10%以内に収まることを確認した</li>
+      <li>カット単位（最小ユニット長）が納まり寸法で割り切れるか検討した</li>
+      <li>調光する場合、48V出力電源・48V対応コントローラーを手配した</li>
+      <li>電源は1次側PSE適合品で、結線は有資格者が行う体制を確認した</li>
+      <li>2次側48Vの結線部の絶縁処理（熱収縮チューブ等）を計画に入れた</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 48VのLEDテープは1本で何メートルまで引けますか？</div>
+        <div class="faq-a">同じ消費電力（W/m）なら48Vは24Vの半分・12Vの1/4の電流で済むため、片端給電でも20〜30m前後を1本で引ける製品が一般的です（製品の電流量と配線抵抗で変わります）。12Vが約5m、24Vが約10mを目安とするのに対し、48Vは長尺の什器・コーニス・連続したライン照明で電源・配線箇所を減らせるのが最大のメリットです。実際の上限は必ずメーカー仕様（最大連続使用長）と電圧降下計算で確認してください。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 48VのLEDテープは感電の危険がありますか？特別な資格は必要ですか？</div>
+        <div class="faq-a">DC48VはDC60V以下のため一般にPELV/SELV相当の特別低電圧として扱われ、テープ本体（2次側）は12V/24Vと同様に低圧の直流回路です。ただしAC100V/200Vを入力して48Vを作り出す「LED電源（直流電源装置）」の1次側配線は電気工事士の資格と電気用品安全法（PSE）適合電源が必要です。2次側の48VもDC30V超のため濡れ手での接触や金属端子の露出は避け、結線部の絶縁処理を確実に行ってください。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 48Vテープのカット単位や調光は12V/24Vと違いますか？</div>
+        <div class="faq-a">48Vテープは直列に並ぶLEDの数が多いぶん、カット可能な最小単位（1ユニット長）が12V/24Vより長くなる傾向があります（製品により10cm前後〜数十cm）。短い納まりが多い現場では割り切れず端材が出やすいので注意してください。調光はPWM対応の48V出力電源・48V対応コントローラーが必要で、12V/24V用の調光器はそのまま使えません。電源・調光器・テープを必ず同一電圧でそろえてください。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>長尺対応のLEDテープ・電源を探す</h3>
+      <p>24V・高電圧対応テープライト、COBテープ、PSE適合電源、アルミフレームを取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

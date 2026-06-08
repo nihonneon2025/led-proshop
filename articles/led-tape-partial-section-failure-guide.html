@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープの一部だけ点灯しない原因と直し方｜区間消灯・部分的なドット抜けを診断 | LED PRO SHOP</title>
+<meta name="description" content="LEDテープの全部ではなく『途中から先だけ消えた』『1区間だけ暗い』『ところどころ粒が消えている』ときの原因診断。カット位置・ジョイント・コネクタ接触不良・チップ不良・電圧降下・部分的な過電流を切り分ける手順を、テスターでの確認方法と合わせて施工業者向けに解説します。">
+<meta name="keywords" content="LEDテープ 一部 点灯しない,LEDテープ 途中から消える,LEDテープ 区間 消灯,LEDテープ ドット抜け,LEDテープ 部分的 暗い,LEDテープ 接触不良,LEDテープ 半分 つかない,LEDテープ 修理">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-partial-section-failure-guide">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-partial-section-failure-guide">
+<meta property="og:title" content="LEDテープの一部だけ点灯しない原因と直し方｜区間消灯・部分的なドット抜けを診断 | LED PRO SHOP">
+<meta property="og:description" content="『途中から先だけ消えた』『1区間だけ暗い』『ところどころ粒が消えている』ときの原因診断。カット位置・ジョイント・コネクタ・チップ不良・電圧降下を切り分ける手順をテスター確認方法と合わせて解説。">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-partial-section-failure-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープの一部だけ点灯しない原因と直し方｜区間消灯・部分的なドット抜けを診断 | LED PRO SHOP">
+<meta name="twitter:description" content="『途中から先だけ消えた』『1区間だけ暗い』『ところどころ粒が消えている』ときの原因診断。接触不良・チップ不良・電圧降下を切り分ける手順をテスター確認方法と合わせて解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-partial-section-failure-guide-hero.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Article",
+  "headline": "LEDテープの一部だけ点灯しない原因と直し方｜区間消灯・部分的なドット抜けを診断",
+  "description": "LEDテープの全部ではなく途中から先だけ消えた・1区間だけ暗い・ところどころ粒が消えているときの原因診断。カット位置・ジョイント・コネクタ接触不良・チップ不良・電圧降下・部分的な過電流を切り分ける手順を、テスターでの確認方法と合わせて施工業者向けに解説します。",
+  "image": "https://led-proshop.com/articles/images/led-tape-partial-section-failure-guide-hero.webp",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP 編集部" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "datePublished": "2026-06-09",
+  "dateModified": "2026-06-09",
+  "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-partial-section-failure-guide"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "LEDテープの一部だけ点灯しない原因と直し方", "item": "https://led-proshop.com/articles/led-tape-partial-section-failure-guide" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "LEDテープが途中から先だけ消えています。どこを疑えばいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "「ある地点から先が全部消える」場合は、その境目に必ず原因があります。境目がジョイント・コネクタ・カット位置なら接触不良や極性ミス、何もない位置なら基板のクラック（曲げ・コーナーでの断線）かチップ不良を疑います。まず消えている区間の直前の接続部を触って点いたり消えたりするか確認し、テスターでその区間の入力端に電圧が来ているかを測ります。電圧が来ているのに点かなければテープ側、来ていなければ手前の接続部が原因です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "LEDの粒（チップ）がところどころ消えています。テープごと交換しないと直りませんか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "点々と消える場合、LEDは数個ずつ直列のグループで配線されているため、1個の不良でそのグループ（数珠つなぎの1ユニット）だけが消えます。原因はチップ不良・はんだクラック・静電気破壊・過熱劣化などです。1ユニット単位で発生していて他が正常なら、その区間だけをカット位置で切り取り、新しい同型テープをはんだ等で繋ぎ直す部分補修が可能です。広範囲・多数ユニットで発生している場合は過電流や過熱など根本原因があるため、テープ交換と原因究明を行います。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "端の方だけ暗いのと、ある区間からスパッと消えるのは原因が違いますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "違います。末端に向かって『じわっと暗くなる』のは電圧降下で、テープ長が長すぎる・電圧が低い・配線が細いことが原因です。一方『ある地点からスパッと消える』のは断線・接触不良・極性ミス・チップ不良など、その地点で回路が切れているサインです。前者は24V化・両端給電・配線増強で改善し、後者は境目の接続部やカット位置の点検・補修で対応します。まず症状が『グラデーション』か『境界線』かを見極めてください。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #0a0f1e; color: #e2e8f0; line-height: 1.7; font-size: 15px; }
+  a { color: #fbbf24; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #2e1a04 0%, #3a2606 50%, #2a1c04 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #78491c; }
+  .hero-badge { display: inline-block; background: #d97706; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f1f5f9; line-height: 1.35; max-width: 820px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #94a3b8; max-width: 700px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #64748b; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f1f5f9; border-left: 4px solid #f59e0b; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #fcd34d; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #cbd5e1; }
+
+  .alert-box { background: #1c1010; border: 1px solid #7f1d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #261a06; border: 1px solid #78491c; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #fde68a; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #0c1a2e; border-radius: 10px; overflow: hidden; }
+  thead th { background: #78491c; color: #fde68a; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #1e2a3a; color: #cbd5e1; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #0e1e30; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin: 20px 0 32px; }
+  .spec-card { background: #0c1a2e; border: 1px solid #1e3a5f; border-top: 3px solid #f59e0b; border-radius: 8px; padding: 16px; }
+  .spec-card .sc-label { font-size: 10px; color: #64748b; font-weight: 700; letter-spacing: 1px; margin-bottom: 6px; }
+  .spec-card .sc-value { font-size: 18px; font-weight: 900; color: #fbbf24; line-height: 1.25; }
+  .spec-card .sc-note { font-size: 11px; color: #94a3b8; margin-top: 6px; line-height: 1.5; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #f59e0b; color: #261a06; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #cbd5e1; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #1e2a3a; font-size: 14px; color: #cbd5e1; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #78491c; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #261a06; padding: 16px 20px; font-weight: 700; color: #fcd34d; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #cbd5e1; background: #070e1c; }
+
+  .cta-box { background: linear-gradient(135deg, #3a2606 0%, #2a1c04 100%); border: 1px solid #f59e0b; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f1f5f9; margin-bottom: 10px; }
+  .cta-box p { color: #94a3b8; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #d97706; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #b45309; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #64748b; }
+  .breadcrumb a { color: #64748b; }
+  .breadcrumb a:hover { color: #fcd34d; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">トラブル対処ガイド</div>
+    <h1>LEDテープの一部だけ点灯しない原因と直し方<br>区間消灯・部分的なドット抜けを診断する</h1>
+    <p class="hero-sub">「途中から先だけ消える」「1区間だけ暗い」「粒がところどころ抜ける」をテスターで切り分ける手順</p>
+    <p class="hero-meta">公開: 2026-06-09 | カテゴリ: LEDテープトラブル対処ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-partial-section-failure-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープの一部だけ点灯しない原因と直し方
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="alert-box">
+      <div class="alert-title">まず症状を見極める：「全消灯」ではなく「一部だけ」が手がかり</div>
+      <p>テープ全体が点かないなら電源・極性・元の結線を疑いますが、<strong>一部だけ消える・暗い</strong>場合は症状のパターンで原因がほぼ絞れます。「ある地点からスパッと消える」「1ユニットだけ消える」「末端に向かってじわっと暗い」では原因が全く違います。まずこの見極めから始めてください。</p>
+    </div>
+
+    <h2>3つの症状パターンと主原因</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="sc-label">パターンA</div>
+        <div class="sc-value">区間消灯</div>
+        <div class="sc-note">ある地点から先が全消灯。断線・接触不良・極性ミス・コネクタ不良。境目に原因あり。</div>
+      </div>
+      <div class="spec-card">
+        <div class="sc-label">パターンB</div>
+        <div class="sc-value">ドット抜け</div>
+        <div class="sc-note">粒が点々と消える。チップ不良・はんだクラック・静電気破壊・過熱劣化。ユニット単位。</div>
+      </div>
+      <div class="spec-card">
+        <div class="sc-label">パターンC</div>
+        <div class="sc-value">じわっと暗い</div>
+        <div class="sc-note">末端に向かう輝度低下。電圧降下。テープ長すぎ・電圧低い・配線細い。</div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <p><strong>切り分けの第一歩：</strong>消え方が「<strong>境界線</strong>（ある線でスパッと）」か「<strong>グラデーション</strong>（じわっと）」か「<strong>点々（飛び飛び）</strong>」かを見る。境界線＝A、グラデーション＝C、点々＝B。これだけで原因の8割は方向が決まります。</p>
+    </div>
+
+    <h2>パターン別の原因と対処</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>症状</th>
+          <th>考えられる原因</th>
+          <th>確認方法</th>
+          <th>対処</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>境目がジョイント/コネクタ</td>
+          <td>差込不足・緩み・極性逆・接触不良</td>
+          <td>接続部を軽く押して点くか／極性表示を確認</td>
+          <td class="tag-ok">差し直し・極性修正・はんだ化</td>
+        </tr>
+        <tr>
+          <td>境目がカット位置</td>
+          <td>カット線をまたいで切った・パッド剥離</td>
+          <td>カットマークどおりか・銅パッドの残り確認</td>
+          <td class="tag-warn">正しいカット位置で再接続</td>
+        </tr>
+        <tr>
+          <td>境目が何もない位置</td>
+          <td>基板クラック（曲げ/コーナー断線）</td>
+          <td>その点を曲げる/押すと点滅するか</td>
+          <td class="tag-warn">該当ユニットを切除し再接続</td>
+        </tr>
+        <tr>
+          <td>1ユニットだけ消灯</td>
+          <td>チップ不良・はんだクラック・静電破壊</td>
+          <td>他ユニットは正常か・1単位かを確認</td>
+          <td class="tag-ok">その区間のみ部分補修</td>
+        </tr>
+        <tr>
+          <td>多数ユニットで点々</td>
+          <td>過電流・過熱・電源過大</td>
+          <td>電源電圧・テープ定格・発熱を確認</td>
+          <td class="tag-ng">原因除去＋テープ交換</td>
+        </tr>
+        <tr>
+          <td>末端に向かい暗い</td>
+          <td>電圧降下（長尺・低電圧・細線）</td>
+          <td>末端の入力電圧をテスターで実測</td>
+          <td class="tag-warn">24V化・両端給電・配線増強</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>テスターを使った切り分け手順</h2>
+
+    <p>「区間消灯（パターンA）」の原因を特定する基本フローです。デジタルテスターのDC電圧レンジを使います。</p>
+
+    <ul class="step-list">
+      <li><span>まず<strong>電源出口の電圧</strong>を測る。定格（12V/24V等）が出ているか確認。出ていなければ電源・元配線側の問題で、ここで切り分け完了。</span></li>
+      <li><span>消えている区間の<strong>直前の接続部（入力端）に電圧が来ているか</strong>を測る。来ていれば手前は正常、来ていなければ手前の接続部・配線が断線。</span></li>
+      <li><span>電圧が来ているのに点かない場合は、その接続部を<strong>軽く押す・差し直す</strong>。点いたり消えたりするならコネクタ接触不良が確定。</span></li>
+      <li><span>接続部が正常でも点かないなら、<strong>消えている区間の極性（＋/−）</strong>を確認。差込コネクタは逆差しでも刺さるため、極性逆は頻出原因。</span></li>
+      <li><span>極性も正しいのに区間全体が消えるなら、その区間の<strong>先頭付近の基板クラック</strong>を疑う。曲げ部・コーナーを軽く動かして点滅するか確認。</span></li>
+      <li><span>原因箇所を特定したら、<strong>正しいカット位置で該当ユニットを切除</strong>し、新しい同型テープをはんだ＋熱収縮、または専用コネクタで再接続する。</span></li>
+    </ul>
+
+    <div class="alert-box">
+      <div class="alert-title">通電のまま触らない・必ず電源を切る</div>
+      <p>接続部の差し直しや切除は<strong>必ず電源を切ってから</strong>行ってください。通電状態でのコネクタ抜き差しはスパーク・ショート・チップ破壊の原因になります。電圧測定だけは通電状態で行い、物理的に触る作業は無通電で実施します。</p>
+    </div>
+
+    <h2>「点々と消える（ドット抜け）」の補修可否</h2>
+
+    <p>LEDテープは数個のLEDが直列のグループ（カット可能な1ユニット）になっており、グループ内の1個が壊れるとそのユニットだけが消えます。発生範囲で対処が変わります。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>発生状況</th>
+          <th>判断</th>
+          <th>対処</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1〜数ユニットが孤発・他は正常</td>
+          <td class="tag-ok">部分補修OK</td>
+          <td>該当ユニットをカット位置で切除し、新テープを接続</td>
+        </tr>
+        <tr>
+          <td>同じ場所で繰り返し消える</td>
+          <td class="tag-warn">局所要因あり</td>
+          <td>過熱・曲げ応力・水気を確認してから補修</td>
+        </tr>
+        <tr>
+          <td>広範囲・進行性に増える</td>
+          <td class="tag-ng">根本原因あり</td>
+          <td>電源電圧過大・過電流・過熱を是正しテープ交換</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>再発防止チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>消え方が「境界線・グラデーション・点々」のどれかを記録した</li>
+      <li>電源出口・区間入力端の電圧をテスターで実測した</li>
+      <li>コネクタの差込・極性（＋/−）・はんだ状態を確認した</li>
+      <li>カット位置がマークどおりか、銅パッドが残っているか確認した</li>
+      <li>コーナー・曲げ部に無理な応力がかかっていないか確認した</li>
+      <li>電源電圧がテープ定格と一致し、容量が80%以下に収まっている</li>
+      <li>過熱の痕（変色・基板焼け）がないか、放熱対策を確認した</li>
+      <li>部分補修後、全長を再点灯して輝度・色・新たなドット抜けを確認した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. LEDテープが途中から先だけ消えています。どこを疑えばいいですか？</div>
+        <div class="faq-a">「ある地点から先が全部消える」場合は、その境目に必ず原因があります。境目がジョイント・コネクタ・カット位置なら接触不良や極性ミス、何もない位置なら基板のクラック（曲げ・コーナーでの断線）かチップ不良を疑います。まず消えている区間の直前の接続部を触って点いたり消えたりするか確認し、テスターでその区間の入力端に電圧が来ているかを測ります。電圧が来ているのに点かなければテープ側、来ていなければ手前の接続部が原因です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. LEDの粒（チップ）がところどころ消えています。テープごと交換しないと直りませんか？</div>
+        <div class="faq-a">点々と消える場合、LEDは数個ずつ直列のグループで配線されているため、1個の不良でそのグループ（数珠つなぎの1ユニット）だけが消えます。原因はチップ不良・はんだクラック・静電気破壊・過熱劣化などです。1ユニット単位で発生していて他が正常なら、その区間だけをカット位置で切り取り、新しい同型テープをはんだ等で繋ぎ直す部分補修が可能です。広範囲・多数ユニットで発生している場合は過電流や過熱など根本原因があるため、テープ交換と原因究明を行います。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 端の方だけ暗いのと、ある区間からスパッと消えるのは原因が違いますか？</div>
+        <div class="faq-a">違います。末端に向かって「じわっと暗くなる」のは電圧降下で、テープ長が長すぎる・電圧が低い・配線が細いことが原因です。一方「ある地点からスパッと消える」のは断線・接触不良・極性ミス・チップ不良など、その地点で回路が切れているサインです。前者は24V化・両端給電・配線増強で改善し、後者は境目の接続部やカット位置の点検・補修で対応します。まず症状が「グラデーション」か「境界線」かを見極めてください。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>補修・交換用のLEDテープ・コネクタを探す</h3>
+      <p>同型テープライト、中継コネクタ、はんだ用部材、24Vテープ・電源を取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
