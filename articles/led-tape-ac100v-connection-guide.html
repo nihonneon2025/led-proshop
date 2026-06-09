@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープを100Vコンセントに直結できる？AC100V接続の正しい方法と危険性 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープを100Vコンセントに直接つなぐと一瞬で焼損します。一般的なDC12V/24Vテープに電源(ACアダプター)が必要な理由、AC100V直結型テープとの違い、コンセント接続の正しい手順、電気工事士資格が要る配線を施工業者向けに解説します。">
+  <meta name="keywords" content="ledテープ 100v 接続,ledテープ コンセント 直接,ledテープ ac100v,ledテープ 100v 直結,高圧ledテープ 100v,ledテープ 配線 コンセント,led 100v 直結">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-ac100v-connection-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-ac100v-connection-guide">
+  <meta property="og:title" content="LEDテープを100Vコンセントに直結できる？AC100V接続の正しい方法と危険性 | LED PRO SHOP">
+  <meta property="og:description" content="DC12V/24V LEDテープを100Vに直結すると即焼損します。電源(ACアダプター)が必要な理由、AC100V直結型テープとの違い、コンセント接続の正しい手順、電気工事士資格が要る配線を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-ac100v-connection-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープを100Vコンセントに直結できる？AC100V接続の正しい方法と危険性 | LED PRO SHOP">
+  <meta name="twitter:description" content="DC12V/24V LEDテープを100Vに直結すると即焼損します。電源が必要な理由・AC100V直結型との違い・正しいコンセント接続・電気工事士資格の要否を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-ac100v-connection-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDテープを100Vコンセントに直結できる？AC100V接続の正しい方法と危険性",
+    "description": "DC12V/24V LEDテープにACアダプター(電源)が必要な理由、AC100V直結型テープとの違い、コンセント接続の手順、電気工事士資格が必要な配線を施工業者向けに解説。",
+    "image": "https://led-proshop.com/articles/images/led-tape-ac100v-connection-guide-hero.webp",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP 編集部"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
+    },
+    "datePublished": "2026-06-10",
+    "dateModified": "2026-06-10",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-ac100v-connection-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープ AC100V接続ガイド", "item": "https://led-proshop.com/articles/led-tape-ac100v-connection-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "DC24VのLEDテープを100Vコンセントに直接つないでもいいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "つないではいけません。DC12V/24VのLEDテープは定格電圧が12Vまたは24Vであり、AC100Vを直結すると定格の4〜8倍の電圧が一瞬でかかり、LEDチップや基板が焼損します。発煙・発火の恐れもあります。必ずAC100VをDC12V/24Vに変換するACアダプターまたはスイッチング電源(PSU)を間に入れ、テープの定格電圧と一致させてから接続してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "AC100V直結型のLEDテープなら100Vをそのまま接続できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AC100V直結型(高圧LEDテープ・高圧ネオンフレックス)は内部に整流回路を持ち、専用の電源プラグ・コントローラを介してAC100Vに接続できる製品です。1本で長距離を点灯でき配線がシンプルですが、テープ自体に高電圧がかかるため切断・接続位置が決まっており、防水処理や感電対策がDC低電圧型より重要になります。製品の取扱説明書に従い、付属の専用コネクタ以外で100Vに直結しないでください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "LEDテープのコンセント接続に電気工事士の資格は必要ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ACアダプターのプラグをコンセントに差し込むだけなら資格は不要です。一方、壁の中に電線を通す、コンセントを増設する、器具を屋内配線に直結する、AC100Vの結線を行うといった『電気工事』に該当する作業は、電気工事士法により第二種電気工事士以上の資格が必要です。資格のない100V直結配線は法令違反であり、感電・火災事故の原因になります。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/articles/articles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">LED PRO SHOP</a>
+    <nav class="global-nav">
+      <a href="/articles/">記事一覧</a>
+      <a href="/">商品一覧</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-main">
+<article>
+
+<div class="article-hero">
+  <img src="/articles/images/led-tape-ac100v-connection-guide-hero.webp"
+       alt="LEDテープ AC100Vコンセント 接続ガイド"
+       width="1200" height="630" loading="eager">
+</div>
+
+<div class="article-container">
+
+<h1>LEDテープを100Vコンセントに直結できる？AC100V接続の正しい方法と危険性</h1>
+
+<p class="article-meta">
+  <span>2026-06-10</span>
+  <span class="article-cat">LED施工ガイド</span>
+</p>
+
+<div class="article-lead">
+  <p>「LEDテープを<strong>100Vコンセントに直接つなげるか</strong>」は施工現場で最も多い誤解のひとつです。結論から言うと、一般的な<strong>DC12V/24VのLEDテープは100V直結不可</strong>で、つないだ瞬間に焼損します。一方で<strong>AC100V直結型(高圧)テープ</strong>という別物も存在します。両者の違い、正しいコンセント接続の手順、そして<strong>電気工事士の資格が必要になる配線</strong>の線引きを、施工業者向けに整理しました。</p>
+</div>
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#conclusion">結論：直結できるかどうか</a></li>
+    <li><a href="#why">なぜDC型は100V直結できないのか</a></li>
+    <li><a href="#types">100Vコンセントから点灯する3方式</a></li>
+    <li><a href="#highvoltage">AC100V直結型(高圧テープ)の特徴</a></li>
+    <li><a href="#steps">正しいコンセント接続の手順</a></li>
+    <li><a href="#license">電気工事士の資格が必要な配線</a></li>
+    <li><a href="#danger">やってはいけない危険な配線</a></li>
+    <li><a href="#faq">よくある質問</a></li>
+  </ol>
+</nav>
+
+<section id="conclusion">
+  <h2>結論：直結できるかどうか</h2>
+
+  <p>まず手元のLEDテープが<strong>「DC低電圧型」か「AC100V直結型」か</strong>を確認してください。市販品の大半はDC12V/24Vの低電圧型で、これを100Vに直結することはできません。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>テープの種類</th>
+        <th>定格電圧</th>
+        <th>100Vコンセント直結</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>DC12V LEDテープ（一般品）</td>
+        <td>DC12V</td>
+        <td>不可（ACアダプター必須）</td>
+      </tr>
+      <tr>
+        <td>DC24V LEDテープ（業務用に多い）</td>
+        <td>DC24V</td>
+        <td>不可（電源(PSU)必須）</td>
+      </tr>
+      <tr>
+        <td>AC100V直結型 高圧テープ／高圧ネオンフレックス</td>
+        <td>AC100V</td>
+        <td>可（専用プラグ・コントローラ経由）</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note"><strong>見分け方</strong>：テープのリールや製品表示に「DC12V」「DC24V」とあればDC型で、コンセントには直結できません。「AC100V」「100V直結」「高圧」と明記され、専用の電源プラグが付属していればAC100V直結型です。</p>
+</section>
+
+<section id="why">
+  <h2>なぜDC型は100V直結できないのか</h2>
+
+  <p>DC12V/24VのLEDテープは、その電圧で点灯するように回路が設計されています。ここに家庭用コンセントのAC100Vをかけると、<strong>定格の約4〜8倍の電圧</strong>が一瞬で加わります。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>テープ定格</th>
+        <th>100V直結時の過電圧倍率</th>
+        <th>起きること</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>DC24V</td>
+        <td>約4倍（100V÷24V）</td>
+        <td>LEDチップ・抵抗が即焼損、発煙</td>
+      </tr>
+      <tr>
+        <td>DC12V</td>
+        <td>約8倍（100V÷12V）</td>
+        <td>瞬時に全焼、発火の恐れ</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>さらにコンセントは<strong>交流(AC)</strong>であり、LEDは<strong>直流(DC)</strong>で点灯する素子です。電圧の大きさだけでなく「交流をそのまま流す」点でもDC型テープには適合しません。だからAC100VをDC12V/24Vへ整流・降圧する<strong>ACアダプター(スイッチング電源)</strong>が必須になります。</p>
+
+  <p class="note"><strong>原則</strong>：DC型テープは「コンセント → ACアダプター(電源) → テープ」の順で接続する。テープの定格電圧と電源の出力電圧（12V/24V）を必ず一致させること。</p>
+</section>
+
+<section id="types">
+  <h2>100Vコンセントから点灯する3方式</h2>
+
+  <p>コンセント(AC100V)からLEDテープを点灯させる方法は、大きく3つに分かれます。施工条件に合わせて選びます。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>方式</th>
+        <th>構成</th>
+        <th>向く現場</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>① ACアダプター式（最も一般的）</td>
+        <td>コンセント→ACアダプター→DCテープ</td>
+        <td>短〜中距離。プラグを挿すだけで資格不要</td>
+      </tr>
+      <tr>
+        <td>② 据置スイッチング電源式</td>
+        <td>コンセント→PSU→分散配線→DCテープ</td>
+        <td>大出力・複数本。盤や点検口に電源を集約</td>
+      </tr>
+      <tr>
+        <td>③ AC100V直結型（高圧テープ）</td>
+        <td>コンセント→専用プラグ／コントローラ→高圧テープ</td>
+        <td>超長距離・屋外サイン。配線をシンプルにしたい</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>①②はテープがDC低電圧なので感電リスクが低く、調光・色温度変更などの自由度も高いのが利点です。③はテープ自体が高電圧になる代わりに、1本で長距離を一括点灯でき配線数を減らせます。</p>
+</section>
+
+<section id="highvoltage">
+  <h2>AC100V直結型(高圧テープ)の特徴</h2>
+
+  <p>AC100V直結型のLEDテープ・ネオンフレックスは、内部に整流回路を内蔵し、付属の専用電源プラグやコントローラを介して<strong>AC100Vをそのまま接続</strong>できる製品です。屋外サインや長尺の間接照明で使われます。</p>
+
+  <h3>メリット</h3>
+  <ul>
+    <li>1本で20〜50m級の長距離を一括点灯でき、電源・配線の数を減らせる</li>
+    <li>電圧降下に強く、長尺でも末端が暗くなりにくい</li>
+    <li>大規模なサイン・外構で配線がシンプルになる</li>
+  </ul>
+
+  <h3>注意点（DC低電圧型より厳しい）</h3>
+  <ul>
+    <li><strong>テープ自体に高電圧</strong>がかかるため、切断位置・接続位置が決まっており任意の場所で切れない</li>
+    <li>切断・接続端は<strong>専用コネクタと防水処理(キャップ・シーリング)</strong>が必須。露出は感電・漏電の原因</li>
+    <li>屋外・水回りはIP等級と防水施工が前提。生活防水では不十分</li>
+    <li>調光は専用コントローラが必要で、DC調光ほど自由度が高くない</li>
+  </ul>
+
+  <p class="note"><strong>必ず取扱説明書に従う</strong>：付属の専用プラグ・コネクタ以外でAC100Vに直結しないでください。整流回路を介さず素のテープに100Vをかけると焼損・発火します。</p>
+</section>
+
+<section id="steps">
+  <h2>正しいコンセント接続の手順</h2>
+
+  <h3>DC型（ACアダプター式）の手順</h3>
+  <ol>
+    <li>テープの定格電圧（DC12V or 24V）を確認する</li>
+    <li>テープ全長の消費電力(W)を計算し、<strong>必要W ÷ 0.8</strong> を満たす容量のACアダプターを選ぶ（2割の余裕）</li>
+    <li>ACアダプターの出力（12V/24V）とテープの定格を一致させる</li>
+    <li>テープ＋電源を先に結線し、極性（＋／−）を確認する</li>
+    <li>最後にACアダプターのプラグをコンセントに差し込み点灯確認</li>
+  </ol>
+
+  <p class="note"><strong>計算例</strong>：DC24V・14.4W/mのテープを5m使用 → 14.4×5＝72W。72÷0.8＝90W以上の24V電源を選ぶ。</p>
+
+  <h3>AC100V直結型の手順</h3>
+  <ol>
+    <li>テープが「AC100V直結型」であることを表示で確認</li>
+    <li>製品指定のカット位置でのみ切断し、専用エンドキャップで端部を防水処理</li>
+    <li>付属の専用電源プラグ／コントローラを規定どおり接続</li>
+    <li>通電前に絶縁・防水を点検し、コンセントに接続して点灯確認</li>
+  </ol>
+</section>
+
+<section id="license">
+  <h2>電気工事士の資格が必要な配線</h2>
+
+  <p>「資格が要るか」は<strong>コンセントから先の作業内容</strong>で決まります。プラグを挿すだけと、屋内配線をいじる作業は法的に別物です。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>作業内容</th>
+        <th>電気工事士資格</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ACアダプターのプラグをコンセントに差し込む</td>
+        <td>不要</td>
+      </tr>
+      <tr>
+        <td>DC側（12V/24V）のテープ・電源の結線</td>
+        <td>不要（低圧DCの軽微な作業）</td>
+      </tr>
+      <tr>
+        <td>コンセントの増設・移設</td>
+        <td>必要（第二種以上）</td>
+      </tr>
+      <tr>
+        <td>壁内に電線を通す・隠蔽配線</td>
+        <td>必要（第二種以上）</td>
+      </tr>
+      <tr>
+        <td>AC100Vを器具・電源に直接結線する</td>
+        <td>必要（第二種以上）</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note"><strong>線引き</strong>：DC低電圧側の作業は資格不要でも、<strong>AC100V側を結線・配線する作業は電気工事士法の対象</strong>です。無資格での100V直結配線は法令違反であり、施工後の事故責任も問われます。</p>
+</section>
+
+<section id="danger">
+  <h2>やってはいけない危険な配線</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>危険な行為</th>
+        <th>起きること</th>
+        <th>正しい対応</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>DC型テープを100Vに直結</td>
+        <td>瞬時焼損・発煙・発火</td>
+        <td>必ずACアダプター(電源)を経由する</td>
+      </tr>
+      <tr>
+        <td>電源容量ギリギリで選定</td>
+        <td>電源の発熱・寿命低下・チラつき</td>
+        <td>必要W÷0.8で2割の余裕を確保</td>
+      </tr>
+      <tr>
+        <td>高圧テープの端部を未処理で露出</td>
+        <td>感電・漏電・トラッキング火災</td>
+        <td>専用キャップ＋防水シーリングで密閉</td>
+      </tr>
+      <tr>
+        <td>無資格でAC100Vを直結配線</td>
+        <td>法令違反・感電・火災</td>
+        <td>有資格者(電気工事士)が施工する</td>
+      </tr>
+      <tr>
+        <td>屋外で生活防水のまま使用</td>
+        <td>浸水ショート・漏電</td>
+        <td>IP65以上＋防水ボックスで保護</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="faq">
+  <h2>よくある質問</h2>
+
+  <div class="faq-item">
+    <h3>Q. DC24VのLEDテープを100Vコンセントに直接つないでもいいですか？</h3>
+    <p>A. いけません。DC24Vテープに100Vを直結すると定格の約4倍（12Vなら約8倍）の電圧が一瞬で加わり、LEDチップや基板が焼損し、発煙・発火の恐れがあります。必ずAC100VをDC12V/24Vに変換するACアダプターまたはスイッチング電源を間に入れ、テープの定格電圧と一致させてください。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. AC100V直結型のLEDテープなら100Vをそのまま接続できますか？</h3>
+    <p>A. できます。AC100V直結型（高圧テープ・高圧ネオンフレックス）は整流回路を内蔵し、専用の電源プラグ・コントローラを介して100Vに接続できます。1本で長距離を点灯でき配線がシンプルですが、テープ自体に高電圧がかかるため切断位置が決まっており、防水処理と感電対策がDC低電圧型より重要です。専用コネクタ以外で直結しないでください。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. LEDテープのコンセント接続に電気工事士の資格は必要ですか？</h3>
+    <p>A. ACアダプターのプラグを挿すだけ、DC側を結線するだけなら資格は不要です。ただしコンセントの増設、壁内への隠蔽配線、AC100Vの直接結線は電気工事に該当し、第二種電気工事士以上の資格が必要です。無資格の100V配線は電気工事士法違反となり、事故時の責任も問われます。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. ACアダプターの容量はどのくらい余裕を見ればいいですか？</h3>
+    <p>A. テープ全長の消費電力(W)に対して、最低でも2割の余裕（必要W÷0.8）を確保してください。容量ギリギリで選ぶと電源が常時フル稼働で発熱し、寿命低下やチラつきの原因になります。例えば72Wのテープなら90W以上の電源を選びます。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. 12Vと24Vのどちらを選ぶべきですか？</h3>
+    <p>A. 長距離・大出力なら24Vが有利です。12Vは同じ電力でも電流が2倍になり、電圧降下で末端が暗くなりやすく、配線も太くする必要があります。短い装飾用途は12V、店舗・施設の本格施工は24Vを基準に選ぶと失敗が少なくなります。</p>
+  </div>
+</section>
+
+<div class="article-cta">
+  <p>DC12V/24V LEDテープライト・対応ACアダプター(スイッチング電源)・防水コネクタはLED PRO SHOPにてプロ価格・最短翌日出荷でご提供しています。</p>
+  <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+</div>
+
+</div><!-- /article-container -->
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-logo">LED PRO SHOP</p>
+    <nav class="footer-nav">
+      <a href="/">商品一覧</a>
+      <a href="/articles/">コラム</a>
+      <a href="/tokushoho.html">特定商取引法</a>
+    </nav>
+    <p class="footer-copy">&copy; 2025 LED PRO SHOP</p>
+  </div>
+</footer>
+
+</body>
+</html>
