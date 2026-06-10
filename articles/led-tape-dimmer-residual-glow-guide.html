@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープが調光しても消えない・微点灯する原因と対処法｜残光・最小負荷・漏れ電流を診断 | LED PRO SHOP</title>
+  <meta name="description" content="調光器を最小／OFFにしてもLEDテープがうっすら点灯する「微点灯・残光」の原因は、位相調光器の漏れ電流・最小負荷不足・コモンライン誤配線・PWM残デューティのいずれか。施工後に消えない・チラ残りするLEDを、調光方式の相性・ダミー負荷・配線の観点から切り分ける診断手順を施工業者向けにまとめました。">
+  <meta name="keywords" content="LEDテープ 消えない,LED 微点灯,LED 残光,調光 漏れ電流,位相調光 LED 相性,最小負荷 LED,LED 調光 消灯しない,LEDテープ うっすら点灯">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-dimmer-residual-glow-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-dimmer-residual-glow-guide">
+  <meta property="og:title" content="LEDテープが調光しても消えない・微点灯する原因と対処法｜残光・最小負荷・漏れ電流を診断 | LED PRO SHOP">
+  <meta property="og:description" content="調光を最小／OFFにしてもLEDがうっすら光る「微点灯・残光」の原因を、位相調光器の漏れ電流・最小負荷不足・コモン誤配線・PWM残デューティの観点で切り分け。施工業者向けの診断手順とダミー負荷・調光方式の対処法。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-dimmer-residual-glow-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープが調光しても消えない・微点灯する原因と対処法｜施工業者向け診断 | LED PRO SHOP">
+  <meta name="twitter:description" content="調光OFFでもLEDがうっすら光る微点灯・残光の原因を、漏れ電流・最小負荷不足・コモン誤配線・PWM残デューティで切り分ける診断手順を解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-dimmer-residual-glow-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDテープが調光しても消えない・微点灯する原因と対処法｜残光・最小負荷・漏れ電流を診断",
+    "description": "調光器を最小／OFFにしてもLEDテープがうっすら点灯する微点灯・残光の原因（位相調光器の漏れ電流・最小負荷不足・コモン誤配線・PWM残デューティ）と、施工業者向けの切り分け診断手順・対処法を解説。",
+    "image": "https://led-proshop.com/articles/images/led-tape-dimmer-residual-glow-guide-hero.webp",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP 編集部"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
+    },
+    "datePublished": "2026-06-11",
+    "dateModified": "2026-06-11",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-dimmer-residual-glow-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープが調光しても消えない・微点灯する原因と対処法", "item": "https://led-proshop.com/articles/led-tape-dimmer-residual-glow-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "調光をゼロにしてもLEDテープがうっすら点灯します。原因は何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "最も多いのは、壁付け位相調光器（トライアック）の漏れ電流です。調光器は内部回路を動かすため完全にゼロにはならず、わずかな電流が負荷側へ流れ続けます。LED電源（PSU）の入力が軽負荷だと、この漏れ電流だけで電源が立ち上がってしまい、LEDがうっすら光ります。次に多いのが最小負荷不足（調光器の定格に対し負荷が小さすぎる）と、コモンライン・中性線の誤配線です。まずどの方式の調光か（一次側位相調光かDC二次側PWMか）を確認してから切り分けます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "微点灯を止めるダミー負荷（ロードコンデンサ）は有効ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "位相調光器の漏れ電流が原因なら有効です。負荷と並列にロード抵抗（メーカー純正のダミーロード／補正コンデンサ）を入れ、漏れ電流を消費させて電源が立ち上がらないようにします。ただし発熱するため放熱に配慮し、必ず調光器・電源メーカーの指定品・指定方法で取り付けてください。根本対策としては、漏れ電流の小さい調光器へ交換する、または一次側位相調光をやめてDC二次側のPWM調光（専用コントローラ）に切り替えるほうが確実です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "位相調光とPWM調光、消灯の確実さで選ぶならどちらですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "確実に消したいならDC二次側のPWM調光が有利です。位相調光（一次側AC100Vを切る方式）はLED電源との相性に依存し、漏れ電流による微点灯やチラつきが起きやすい方式です。PWM調光はDC24V側でテープのデューティ比を制御し、0%でLED電流が完全に切れるため残光が出にくくなります。新規施工で確実な消灯と滑らかな調光を求めるなら、位相調光対応電源にこだわるより、PWM対応コントローラ＋定電圧電源の構成を基本にすると現場トラブルを減らせます。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/articles/articles.css">
+
+  <!-- 記事個別：スペックグリッド／チェックリスト（ダークテーマ・トラブル対処＝アンバー） -->
+  <style>
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:20px 0}
+    .spec-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:14px 16px}
+    .spec-label{font-size:11px;color:#9aa4b2;font-weight:600;margin-bottom:4px;letter-spacing:.06em}
+    .spec-val{font-size:17px;font-weight:900;color:#f59e0b}
+    .spec-note{font-size:11px;color:#9aa4b2;margin-top:4px}
+    .checklist{list-style:none;padding:0;margin:16px 0 28px}
+    .checklist li{padding:10px 0 10px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.10);font-size:.92rem}
+    .checklist li:last-child{border-bottom:none}
+    .checklist li::before{content:'\2713';position:absolute;left:0;color:#f59e0b;font-weight:700}
+    .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">LED PRO SHOP</a>
+    <nav class="global-nav">
+      <a href="/articles/">記事一覧</a>
+      <a href="/">商品一覧</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-main">
+<article>
+
+<div class="article-hero">
+  <img src="/articles/images/led-tape-dimmer-residual-glow-guide-hero.webp"
+       alt="LEDテープが調光しても消えない・微点灯する原因と対処法 診断ガイド"
+       width="1200" height="630" loading="eager">
+</div>
+
+<div class="article-container">
+
+<h1>LEDテープが調光しても消えない・微点灯する原因と対処法｜残光・最小負荷・漏れ電流を診断</h1>
+
+<p class="article-meta">
+  <span>2026-06-11</span>
+  <span class="article-cat">トラブル対処ガイド</span>
+</p>
+
+<div class="article-lead">
+  <p>「調光ツマミを最小にしても消えない」「スイッチを切ったのにLEDテープがうっすら光る」——施工後に多いこの<strong>微点灯（残光・チラ残り）</strong>は、テープ本体の故障ではなく<strong>調光器とLED電源の相性</strong>が原因のことがほとんどです。犯人は主に、位相調光器の<strong>漏れ電流</strong>・<strong>最小負荷不足</strong>・<strong>コモンライン誤配線</strong>・<strong>PWMの残デューティ</strong>の4つ。本記事では、現場でテスターと差し替えだけで原因を切り分ける診断手順と、ダミー負荷・調光方式の見直しといった対処法を施工業者向けに整理しました。</p>
+</div>
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#symptom">微点灯・残光とはどんな症状か</a></li>
+    <li><a href="#cause">4つの主な原因</a></li>
+    <li><a href="#diagnose">現場での切り分け診断手順</a></li>
+    <li><a href="#fix">原因別の対処法</a></li>
+    <li><a href="#prevent">新規施工で残光を防ぐ設計</a></li>
+    <li><a href="#spec">確認するスペック・道具</a></li>
+    <li><a href="#checklist">診断チェックリスト</a></li>
+    <li><a href="#faq">よくある質問</a></li>
+  </ol>
+</nav>
+
+<section id="symptom">
+  <h2>微点灯・残光とはどんな症状か</h2>
+
+  <p>調光・消灯の操作をしたのにLEDが完全に消えない症状は、大きく次の3パターンに分かれます。原因の切り分けにつながるので、まずどれに当たるかを観察します。</p>
+
+  <ul>
+    <li><strong>OFFでも常時うっすら点灯</strong>：壁スイッチ／調光器をOFFにしても消えず、暗い部屋で見えるレベルで光り続ける。漏れ電流が典型。</li>
+    <li><strong>最小調光で消えず、ちらつく</strong>：調光を一番絞ると消える手前で点滅・ちらつく。最小負荷不足・調光下限の相性。</li>
+    <li><strong>消灯後に数秒だけ残光</strong>：OFF直後に暗くなりながら消える。電源内部のコンデンサ放電で、これは正常範囲のことが多い。</li>
+  </ul>
+
+  <p class="note"><strong>まず切り分け</strong>：「ずっと光る」のは配線・漏れ電流系、「消える手前でちらつく」のは負荷・調光下限系、「数秒で消える」は正常の可能性が高い、と当たりを付けます。</p>
+</section>
+
+<section id="cause">
+  <h2>4つの主な原因</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>原因</th>
+        <th>起きる方式</th>
+        <th>症状の特徴</th>
+        <th>主な対処</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>位相調光器の漏れ電流</td>
+        <td>一次側AC位相調光（トライアック）</td>
+        <td>OFFでも常時うっすら点灯</td>
+        <td>ダミー負荷／低漏れ調光器／PWM化</td>
+      </tr>
+      <tr>
+        <td>最小負荷不足</td>
+        <td>一次側位相調光</td>
+        <td>絞り切る手前でちらつき・消えない</td>
+        <td>負荷を増やす／対応調光器に交換</td>
+      </tr>
+      <tr>
+        <td>コモン／中性線の誤配線・回り込み</td>
+        <td>方式問わず</td>
+        <td>スイッチOFFでも電位が残り点灯</td>
+        <td>結線・極性・コモンを是正</td>
+      </tr>
+      <tr>
+        <td>PWMの残デューティ・下限設定</td>
+        <td>DC二次側PWM調光</td>
+        <td>0%設定でも僅かに点灯</td>
+        <td>下限を0%に設定／コントローラ見直し</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>圧倒的に多いのは<strong>位相調光器の漏れ電流</strong>です。AC100Vを切るタイプの調光器は内部回路の電源を取るために微小電流を流し続けるため、軽負荷のLED電源だとこの電流だけで起動して微点灯します。白熱電球時代は問題にならなかった電流量が、消費電力の小さいLEDでは無視できなくなるのが本質です。</p>
+</section>
+
+<section id="diagnose">
+  <h2>現場での切り分け診断手順</h2>
+
+  <p>テスターと差し替え確認だけで、特別な機材なしに原因を絞り込めます。上から順に実施します。</p>
+
+  <h3>手順1：調光方式を確認する</h3>
+  <p>一次側（AC100V）の壁調光器か、DC二次側（24V）のPWMコントローラかを確認します。これで疑う原因が半分に絞れます。</p>
+
+  <h3>手順2：調光器をバイパスして直結する</h3>
+  <p>調光器を外し、電源（PSU）をAC100Vに直結してON/OFFします。<strong>直結で正常に消える</strong>なら、原因は調光器側（漏れ電流・最小負荷）です。<strong>直結でも消えない</strong>なら、二次側配線の回り込み・コモン誤配線を疑います。</p>
+
+  <h3>手順3：負荷を増やして変化を見る</h3>
+  <p>微点灯中にテープ（負荷）を一時的に増設して点灯が消えるか確認します。<strong>負荷を増やすと消える</strong>なら、最小負荷不足／漏れ電流が確定。ダミー負荷で解決できます。</p>
+
+  <h3>手順4：テスターで電圧を測る</h3>
+  <p>OFF状態で電源入力（一次側）の電圧を測ります。OFFなのに数十V残っていれば漏れ電流または配線の回り込み。二次側DC電圧が0Vにならない場合はPWM下限設定・コントローラ不良を疑います。</p>
+
+  <div class="spec-grid">
+    <div class="spec-card">
+      <div class="spec-label">直結で消える</div>
+      <div class="spec-val">調光器側</div>
+      <div class="spec-note">漏れ電流／最小負荷</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">負荷増で消える</div>
+      <div class="spec-val">負荷不足</div>
+      <div class="spec-note">ダミー負荷で対処</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">直結でも消えない</div>
+      <div class="spec-val">配線</div>
+      <div class="spec-note">コモン／回り込み</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">DCが0Vでない</div>
+      <div class="spec-val">PWM側</div>
+      <div class="spec-note">下限設定／コントローラ</div>
+    </div>
+  </div>
+</section>
+
+<section id="fix">
+  <h2>原因別の対処法</h2>
+
+  <h3>漏れ電流（位相調光）→ ダミー負荷 or 調光器交換</h3>
+  <ul>
+    <li><strong>ダミー負荷（ロード抵抗／補正コンデンサ）</strong>を負荷と並列に入れ、漏れ電流を消費させる。発熱するため放熱に配慮し、メーカー指定品・指定方法で取り付ける。</li>
+    <li><strong>低漏れ電流タイプの調光器へ交換</strong>する。LED対応・逆位相（トレーリングエッジ）調光器は漏れが小さい傾向。</li>
+    <li>根本対策は<strong>PWM調光化</strong>（後述）。</li>
+  </ul>
+
+  <h3>最小負荷不足 → 負荷を増やす or 対応調光器</h3>
+  <p>調光器の定格（最小〜最大負荷W）に対し、接続したLEDのW数が下限を下回ると不安定になります。負荷を増やすか、最小負荷の小さいLED対応調光器に交換します。</p>
+
+  <h3>配線・コモン誤り → 結線是正</h3>
+  <p>スイッチが負荷側（中性線側）に入っている、コモンが他回路と共用されている、極性が逆などで電位が残ると微点灯します。<a href="/articles/led-tape-polarity-reverse-connection-guide">極性</a>・スイッチ位置・コモンを図面どおりに是正します。活線作業は避け、必ずブレーカーを落として確認してください。</p>
+
+  <h3>PWM残デューティ → 下限を0%に</h3>
+  <p>DC二次側PWMで0%設定でも光る場合、コントローラの調光下限が0%まで落ちていない、またはコントローラ不良です。下限設定を見直し、改善しなければコントローラを交換します。</p>
+
+  <div class="article-callout warn" style="border-left:4px solid #f59e0b;background:rgba(245,158,11,.08);padding:14px 16px;margin:20px 0;border-radius:0 6px 6px 0;">
+    <p><strong>安全上の注意：</strong>AC100V一次側の作業は電気工事士の有資格者が、ブレーカーを落とした状態で行ってください。ダミー負荷は発熱するため、可燃物から離し放熱を確保します。</p>
+  </div>
+</section>
+
+<section id="prevent">
+  <h2>新規施工で残光を防ぐ設計</h2>
+
+  <p>後追い対策で苦労しないために、新規施工では最初から残光の出にくい構成を選びます。</p>
+
+  <ul>
+    <li><strong>DC二次側PWM調光を基本にする</strong>：DC24V定電圧電源＋PWM対応コントローラの構成。0%でLED電流が切れるため残光が出にくい。</li>
+    <li>位相調光を使う場合は<strong>「LED対応・調光対応電源」と「LED対応調光器」を必ずセット指定</strong>し、対応負荷W範囲を確認する。</li>
+    <li><strong>逆位相（トレーリングエッジ）調光器</strong>を優先する。順位相より漏れ・ちらつきが少ない傾向。</li>
+    <li>調光器1台あたりの負荷を最小負荷以上・最大負荷以下に収める。</li>
+    <li>調光まわりの相性は<a href="/articles/led-tape-dimming-methods-guide">調光方式ガイド</a>・<a href="/articles/led-tape-dimmer-buzzing-noise-guide">調光時のノイズ（うなり）対策</a>もあわせて確認する。</li>
+  </ul>
+</section>
+
+<section id="spec">
+  <h2>確認するスペック・道具</h2>
+
+  <div class="spec-grid">
+    <div class="spec-card">
+      <div class="spec-label">調光方式</div>
+      <div class="spec-val">位相／PWM</div>
+      <div class="spec-note">一次側か二次側か</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">調光器の負荷範囲</div>
+      <div class="spec-val">最小〜最大W</div>
+      <div class="spec-note">最小負荷割れに注意</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">電源の調光対応</div>
+      <div class="spec-val">対応／非対応</div>
+      <div class="spec-note">対応品を必ず指定</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">診断道具</div>
+      <div class="spec-val">テスター</div>
+      <div class="spec-note">OFF時の残電圧を測る</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">ダミー負荷</div>
+      <div class="spec-val">純正品</div>
+      <div class="spec-note">発熱・放熱に配慮</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">調光器タイプ</div>
+      <div class="spec-val">逆位相推奨</div>
+      <div class="spec-note">漏れ・ちらつきが少ない</div>
+    </div>
+  </div>
+</section>
+
+<section id="checklist">
+  <h2>診断チェックリスト</h2>
+  <ul class="checklist">
+    <li>症状が「常時微点灯／絞り際ちらつき／数秒残光」のどれか観察した</li>
+    <li>調光方式（一次側位相／二次側PWM）を確認した</li>
+    <li>調光器をバイパスして直結し、消えるか確認した</li>
+    <li>負荷を増やすと消えるか（最小負荷不足か）確認した</li>
+    <li>OFF時の入力電圧をテスターで測り漏れ電流を確認した</li>
+    <li>コモン・中性線・極性の配線を図面と照合した</li>
+    <li>対策後、調光下限〜OFFまで全域で消灯・無ちらつきを確認した</li>
+  </ul>
+</section>
+
+<section id="faq">
+  <h2>よくある質問</h2>
+
+  <div class="faq-item">
+    <h3>Q. 調光をゼロにしてもLEDテープがうっすら点灯します。原因は何ですか？</h3>
+    <p>A. 最も多いのは壁付け位相調光器（トライアック）の漏れ電流です。調光器は内部回路を動かすため完全にゼロにはならず、わずかな電流が負荷側へ流れ続けます。LED電源（PSU）の入力が軽負荷だと、この漏れ電流だけで電源が立ち上がってLEDがうっすら光ります。次に多いのが最小負荷不足と、コモンライン・中性線の誤配線です。まずどの調光方式か（一次側位相かDC二次側PWMか）を確認してから切り分けます。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. 微点灯を止めるダミー負荷（ロードコンデンサ）は有効ですか？</h3>
+    <p>A. 位相調光器の漏れ電流が原因なら有効です。負荷と並列にロード抵抗（純正ダミーロード／補正コンデンサ）を入れ、漏れ電流を消費させて電源が立ち上がらないようにします。ただし発熱するため放熱に配慮し、必ず調光器・電源メーカーの指定品・指定方法で取り付けてください。根本対策としては、漏れ電流の小さい調光器へ交換する、または一次側位相調光をやめてDC二次側PWM調光に切り替えるほうが確実です。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. 位相調光とPWM調光、消灯の確実さで選ぶならどちらですか？</h3>
+    <p>A. 確実に消したいならDC二次側のPWM調光が有利です。位相調光（一次側AC100Vを切る方式）はLED電源との相性に依存し、漏れ電流による微点灯やちらつきが起きやすい方式です。PWM調光はDC24V側でテープのデューティ比を制御し、0%でLED電流が完全に切れるため残光が出にくくなります。新規施工で確実な消灯と滑らかな調光を求めるなら、PWM対応コントローラ＋定電圧電源の構成を基本にすると現場トラブルを減らせます。</p>
+  </div>
+</section>
+
+<div class="article-cta">
+  <p>DC24V定電圧電源、PWM対応コントローラ・調光器、LEDテープまで、残光トラブルの起きにくい組み合わせをLED PRO SHOPでプロ価格・最短翌日出荷でご提供しています。</p>
+  <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+</div>
+
+</div><!-- /article-container -->
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-logo">LED PRO SHOP</p>
+    <nav class="footer-nav">
+      <a href="/">商品一覧</a>
+      <a href="/articles/">コラム</a>
+      <a href="/tokushoho.html">特定商取引法</a>
+    </nav>
+    <p class="footer-copy">&copy; 2025 LED PRO SHOP</p>
+  </div>
+</footer>
+
+</body>
+</html>
