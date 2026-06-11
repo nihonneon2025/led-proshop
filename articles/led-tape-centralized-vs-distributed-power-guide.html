@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープ 集中電源と分散電源の設計と使い分け｜大規模間接照明の電源レイアウト設計ガイド | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープを長距離・大規模に施工する際、電源（PSU）を1か所にまとめる集中電源か、複数に分けて配置する分散電源かで電圧降下・配線サイズ・メンテナンス性が変わります。集中は管理が楽だが太い給電線と電圧降下対策が必要、分散は配線が短く電圧降下に強いがPSUの設置場所と放熱が課題。電圧降下の計算式・幹線サイズの目安・PSU配置間隔・点検口の取り方を施工業者向けに解説します。">
+  <meta name="keywords" content="LEDテープ 電源 配置,集中電源 分散電源,LED PSU レイアウト,LEDテープ 電圧降下 対策,大規模 間接照明 電源,LED 給電 設計,LEDテープ 電源 何個,LED電源 設置場所">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-centralized-vs-distributed-power-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-centralized-vs-distributed-power-guide">
+  <meta property="og:title" content="LEDテープ 集中電源と分散電源の設計と使い分け｜大規模間接照明の電源レイアウト設計ガイド | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープの集中電源と分散電源の使い分けを電圧降下計算・幹線サイズ・PSU配置間隔・放熱・点検口まで施工業者向けに数値で解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-centralized-vs-distributed-power-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ 集中電源と分散電源の設計と使い分け｜大規模間接照明の電源レイアウト設計ガイド | LED PRO SHOP">
+  <meta name="twitter:description" content="LEDテープの集中電源と分散電源の使い分けを電圧降下計算・幹線サイズ・PSU配置間隔・放熱・点検口まで施工業者向けに数値で解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-centralized-vs-distributed-power-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープ 集中電源と分散電源の設計と使い分け｜大規模間接照明の電源レイアウト設計ガイド",
+    "description": "LEDテープの集中電源と分散電源の使い分けを電圧降下計算・幹線サイズ・PSU配置間隔・放熱・点検口まで施工業者向けに解説。",
+    "image": "https://led-proshop.com/articles/images/led-tape-centralized-vs-distributed-power-guide-hero.webp",
+    "datePublished": "2026-06-12",
+    "dateModified": "2026-06-12",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-centralized-vs-distributed-power-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープ 集中電源と分散電源の設計と使い分け", "item": "https://led-proshop.com/articles/led-tape-centralized-vs-distributed-power-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== FAQ JSON-LD ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープの電源は1か所にまとめるべきですか、分散させるべきですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "総延長が短く（目安20〜30m程度まで）電源置き場を1か所に確保できるなら集中電源が管理・保守の面で有利です。総延長が長い、フロアをまたぐ、ルート上に給電線を太く引けない場合は、テープの各区間近くにPSUを置く分散電源が電圧降下に強く配線も細くて済みます。判断軸は『太い給電線を引けるか』『PSUの設置場所と放熱を確保できるか』『将来の保守でどこを開けるか』の3点です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "LEDテープの電圧降下はどう計算しますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "電圧降下V=2×L×I×R で概算します（L=片道配線長m、I=電流A、R=電線1mあたりの抵抗Ω、2は往復分）。12Vテープは降下の許容幅が小さく端が暗くなりやすいため、24Vテープの方が同じ配線でも余裕があります。許容降下は一般に定格電圧の5%以内（24Vなら約1.2V）を目安にし、超える場合は給電線を太くする、給電点をテープの中央や両端から取る、またはPSUを近くに置く分散化で対処します。" }
+      },
+      {
+        "@type": "Question",
+        "name": "分散電源にすると複数のPSUで明るさがばらつきませんか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "同一型番・同一定格出力のPSUを使い、各PSUの出力電圧を可能なら無負荷時にそろえておくと差は最小化できます。それでも個体差や負荷率の違いで境目がわずかに見えることがあるため、明るさの境目が視線に入りにくい位置（コーナー・見切り・什器の影）でPSUの担当区間を分けるのが実務上のコツです。調光する場合は同じ調光信号・同じ調光方式（PWM等）で全PSU／デコーダーを駆動し、調光カーブのばらつきを避けてください。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --blue:#0e7490;--blue-pale:#e3f3f7;--orange:#e07b00;--orange-pale:#fff3e0;
+      --green:#1a7a3c;--green-pale:#e6f4ec;
+      --bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.75}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:860px;margin:0 auto;padding:0 20px}
+    header.site-header{background:var(--blue);padding:14px 20px;display:flex;align-items:center;gap:12px}
+    header.site-header a{color:#fff;font-size:18px;font-weight:700;letter-spacing:.03em}
+    header.site-header span{color:rgba(255,255,255,.6);font-size:12px}
+
+    .hero{background:linear-gradient(135deg,#0a3a4a 0%,#0e5a4a 100%);padding:48px 20px 40px;text-align:center;color:#fff}
+    .hero .cat-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:11px;letter-spacing:.08em;margin-bottom:16px}
+    .hero h1{font-size:clamp(18px,3.5vw,26px);font-weight:900;line-height:1.45;margin-bottom:14px}
+    .hero .hero-meta{font-size:12px;color:rgba(255,255,255,.7);display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+    .hero-img{width:100%;max-height:380px;object-fit:cover;display:block}
+
+    .breadcrumb{font-size:11px;color:var(--text-muted);padding:10px 0;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+    .breadcrumb a{color:var(--text-muted)}
+
+    .toc{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:28px 0}
+    .toc h2{font-size:13px;font-weight:700;color:var(--text-sub);margin-bottom:10px;letter-spacing:.06em}
+    .toc ol{padding-left:18px}
+    .toc li{font-size:13px;margin-bottom:6px}
+    .toc a{color:var(--blue)}
+
+    .article-body{padding:32px 0 48px}
+    .article-body h2{font-size:20px;font-weight:900;color:var(--blue);border-left:4px solid var(--blue);padding-left:12px;margin:40px 0 16px}
+    .article-body h3{font-size:16px;font-weight:700;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:6px;margin:28px 0 12px}
+    .article-body p{margin-bottom:14px}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:14px}
+    .article-body li{margin-bottom:6px}
+
+    .box-blue{background:var(--blue-pale);border-left:4px solid var(--blue);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-orange{background:var(--orange-pale);border-left:4px solid var(--orange);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-green{background:var(--green-pale);border-left:4px solid var(--green);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-blue p,.box-orange p,.box-green p{margin-bottom:0}
+
+    .method-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:20px 0}
+    .method-card{border-radius:12px;padding:20px;border:2px solid var(--border)}
+    .method-card.recommended{border-color:var(--blue);background:var(--blue-pale)}
+    .method-card .badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-bottom:8px;letter-spacing:.06em}
+    .method-card .badge.easy{background:#dcfce7;color:#166534}
+    .method-card .badge.pro{background:#cffafe;color:#0e7490}
+    .method-card .badge.temp{background:#fef3c7;color:#92400e}
+    .method-card h4{font-size:15px;font-weight:900;margin-bottom:6px}
+    .method-card .verdict{font-size:12px;color:var(--text-sub);margin-bottom:8px}
+    .method-card ul{padding-left:16px;font-size:13px}
+    .method-card li{margin-bottom:4px}
+
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:20px 0}
+    .spec-card{border:1px solid var(--border);border-radius:10px;padding:16px 18px;background:var(--bg-gray)}
+    .spec-card .label{font-size:11px;color:var(--text-muted);letter-spacing:.06em;margin-bottom:4px}
+    .spec-card .value{font-size:20px;font-weight:900;color:var(--blue);line-height:1.3}
+    .spec-card .note{font-size:12px;color:var(--text-sub);margin-top:6px}
+
+    .step-list{list-style:none;padding:0;margin:16px 0;counter-reset:step}
+    .step-list li{counter-increment:step;display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #eaecf0}
+    .step-list li:last-child{border-bottom:none}
+    .step-list li::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:28px;height:28px;min-width:28px;background:var(--blue);color:#fff;border-radius:50%;font-size:13px;font-weight:700;flex-shrink:0}
+    .step-body{flex:1}
+    .step-body strong{display:block;margin-bottom:4px}
+    .step-body .tip{font-size:12px;color:var(--text-sub);margin-top:4px;font-style:italic}
+
+    .tbl-wrap{overflow-x:auto;margin:16px 0}
+    table{width:100%;border-collapse:collapse;font-size:13px;min-width:420px}
+    th{background:var(--blue);color:#fff;padding:9px 10px;text-align:left;font-weight:700}
+    td{padding:8px 10px;border-bottom:1px solid #eaecf0;vertical-align:top}
+    tr:nth-child(even) td{background:#f8f9fb}
+    .good{color:#1a7a3c;font-weight:700}
+    .bad{color:#b91c1c;font-weight:700}
+    .mid{color:#92400e;font-weight:700}
+
+    .trouble-list{list-style:none;padding:0;margin:16px 0}
+    .trouble-list li{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #eaecf0;align-items:flex-start}
+    .trouble-list li:last-child{border-bottom:none}
+    .t-icon{font-size:20px;flex-shrink:0;line-height:1.4}
+    .t-body strong{display:block;margin-bottom:2px;font-size:14px}
+    .t-body span{font-size:13px;color:var(--text-sub)}
+
+    .checklist{list-style:none;padding:0;margin:16px 0}
+    .checklist li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #eaecf0;font-size:14px}
+    .checklist li:last-child{border-bottom:none}
+    .checklist li::before{content:"☐";font-size:18px;color:var(--blue);flex-shrink:0;line-height:1.3}
+
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--blue)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+
+    .cta-section{background:linear-gradient(135deg,#0a3a4a,#0e5a4a);border-radius:16px;padding:36px 24px;text-align:center;margin:40px 0;color:#fff}
+    .cta-section h2{font-size:18px;font-weight:900;margin-bottom:8px;color:#fff;border:none;padding:0}
+    .cta-section p{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:20px}
+    .cta-btn{display:inline-block;background:#f0a500;color:#1a1a1a;font-weight:900;font-size:15px;padding:14px 36px;border-radius:50px;transition:opacity .2s}
+    .cta-btn:hover{opacity:.88;text-decoration:none}
+
+    footer.site-footer{background:#1a1a1a;color:#888;font-size:12px;text-align:center;padding:20px}
+    footer.site-footer a{color:#aaa}
+
+    @media(max-width:600px){
+      .hero{padding:32px 16px 28px}
+      .hero h1{font-size:17px}
+      .method-cards{grid-template-columns:1fr}
+    }
+    .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/">LED PRO SHOP</a>
+  <span>プロ仕様LED専門店</span>
+</header>
+
+<div class="hero">
+  <div class="cat-badge">LEDテープ 電源設計・施工方法</div>
+  <h1>LEDテープ 集中電源と分散電源の<br>設計と使い分け<br>大規模間接照明の電源レイアウト設計</h1>
+  <div class="hero-meta">
+    <span>公開: 2026-06-12</span>
+    <span>対象: 電気工事業者・内装施工業者・設備設計者</span>
+  </div>
+</div>
+
+<img src="/articles/images/led-tape-centralized-vs-distributed-power-guide-hero.webp" alt="LEDテープ 集中電源と分散電源の設計と使い分け" class="hero-img" width="860" height="430" loading="eager">
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/">LED PRO SHOP</a><span>›</span>
+    <a href="/articles/">コラム</a><span>›</span>
+    <span>LEDテープ 集中電源と分散電源の設計と使い分け</span>
+  </nav>
+
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#basics">集中電源・分散電源とは</a></li>
+      <li><a href="#compare">2方式の比較表</a></li>
+      <li><a href="#voltdrop">電圧降下の計算と幹線サイズ</a></li>
+      <li><a href="#layout">PSU配置間隔・設置場所の決め方</a></li>
+      <li><a href="#steps">電源レイアウト設計の手順</a></li>
+      <li><a href="#trouble">よくある設計ミスと対処</a></li>
+      <li><a href="#checklist">電源レイアウト設計チェックリスト</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ol>
+  </nav>
+
+  <div class="article-body">
+
+    <p>LEDテープを長い距離・広い面積に施工するとき、電源（PSU／ACアダプター）を<strong>1か所にまとめる「集中電源」</strong>にするか、<strong>テープの各区間近くに分けて置く「分散電源」</strong>にするかは、電圧降下・配線サイズ・放熱・将来の保守性すべてに効いてくる設計判断です。安易にどちらかに決めると「端だけ暗い」「給電線が太すぎて納まらない」「PSUの熱がこもる」といった問題が後から出ます。このページでは見積・施工図の段階で根拠を持って選べるよう、判断軸と計算式を整理します。</p>
+
+    <!-- ===== 1. 基本 ===== -->
+    <h2 id="basics">1. 集中電源・分散電源とは</h2>
+
+    <p><strong>集中電源</strong>は、大容量のPSUを1か所（盤・点検口内など）に置き、そこから各テープへ給電線を引き回す方式です。電源管理が1か所で済み、保守・交換が楽で、調光や監視も一元化しやすいのが利点です。一方、給電線が長くなるため電圧降下が大きくなりやすく、それを抑えるには太い電線が必要になります。</p>
+
+    <p><strong>分散電源</strong>は、テープの区間ごとに小〜中容量のPSUを近くに配置する方式です。給電線が短いので電圧降下に強く、電線も細くて済みます。反面、PSUの設置場所をテープ近くに複数確保する必要があり、各PSUの放熱・点検口・1次側（AC）配線の取り回しが課題になります。</p>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="label">許容電圧降下の目安</div>
+        <div class="value">定格5%</div>
+        <div class="note">24Vなら約1.2V以内</div>
+      </div>
+      <div class="spec-card">
+        <div class="label">PSU負荷率の上限目安</div>
+        <div class="value">80%</div>
+        <div class="note">余裕＝発熱低減・長寿命化</div>
+      </div>
+      <div class="spec-card">
+        <div class="label">電圧降下に強いのは</div>
+        <div class="value">24V</div>
+        <div class="note">12Vは同条件で約2倍不利</div>
+      </div>
+      <div class="spec-card">
+        <div class="label">PSU周囲の放熱クリアランス</div>
+        <div class="value">数cm〜</div>
+        <div class="note">密閉・断熱材直置きは避ける</div>
+      </div>
+    </div>
+
+    <!-- ===== 2. 比較 ===== -->
+    <h2 id="compare">2. 2方式の比較表</h2>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>比較項目</th><th>集中電源</th><th>分散電源</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>給電線の長さ</td><td class="bad">長い（電圧降下大）</td><td class="good">短い（電圧降下小）</td></tr>
+          <tr><td>必要な電線サイズ</td><td class="bad">太くなりがち</td><td class="good">細くて済む</td></tr>
+          <tr><td>PSU設置場所</td><td class="good">1か所で済む</td><td class="bad">区間ごとに確保</td></tr>
+          <tr><td>保守・交換</td><td class="good">1か所で完結</td><td class="mid">複数箇所を点検</td></tr>
+          <tr><td>放熱の集中</td><td class="mid">1か所に発熱集中（換気要）</td><td class="good">熱が分散</td></tr>
+          <tr><td>1次側(AC)配線</td><td class="good">1系統で簡潔</td><td class="bad">各PSUへAC引き回し</td></tr>
+          <tr><td>調光の一元化</td><td class="good">容易</td><td class="mid">同期設計が必要</td></tr>
+          <tr><td>向く規模</td><td>短〜中距離・電源置場あり</td><td>長距離・フロア横断</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>ハイブリッドも有効:</strong> 「幹線はDC1系統で引き、要所でパワーインジェクション（電源注入）して電圧を持ち上げる」中間案もあります。完全な集中／分散の二択ではなく、電圧降下が許容を超える区間にだけ給電点を追加する発想が実務では現実的です。</p>
+    </div>
+
+    <!-- ===== 3. 電圧降下 ===== -->
+    <h2 id="voltdrop">3. 電圧降下の計算と幹線サイズ</h2>
+
+    <h3>電圧降下の基本式</h3>
+    <p>給電線で生じる電圧降下は次式で概算します。</p>
+
+    <div class="box-orange">
+      <p><strong>V<sub>drop</sub> ＝ 2 × L × I × R</strong><br>
+      L＝片道の配線長（m）／ I＝流れる電流（A）／ R＝電線1mあたりの抵抗（Ω/m）／ 2＝往復（行き帰り）分</p>
+    </div>
+
+    <p>電流Iは「テープのW/m × 区間長 ÷ 電源電圧」で求めます。例えば14.4W/mのテープを5m、24Vで点灯すると、電流＝14.4×5÷24＝3.0A。これを基に給電線の太さを選びます。電線が細いほどR（抵抗）が大きく、電圧降下が増えて端が暗くなります。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>状況</th><th>起きること</th><th>対策</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>給電線が長い・細い</td><td>電圧降下が大きく端が暗い</td><td>電線を太くする／給電点を増やす／分散電源化</td></tr>
+          <tr><td>12Vテープで長距離</td><td>24Vより降下の影響が約2倍</td><td>24Vテープへ変更を検討</td></tr>
+          <tr><td>片端給電で長い1本</td><td>遠端ほど暗くなる</td><td>両端給電・中央給電で降下を半減</td></tr>
+          <tr><td>1台のPSUに過負荷</td><td>発熱・電圧低下・寿命低下</td><td>負荷率80%以内に分割／PSU増設</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-green">
+      <p><strong>許容降下の目安:</strong> 一般に電源電圧の5%以内に収めると明るさ・色味の差が目立ちにくくなります。24Vなら約1.2V、12Vなら約0.6V。計算で超える場合は「電線を太く」「給電点を分ける」「PSUを近くに置く（分散化）」のいずれかで対処します。</p>
+    </div>
+
+    <!-- ===== 4. 配置 ===== -->
+    <h2 id="layout">4. PSU配置間隔・設置場所の決め方</h2>
+
+    <div class="method-cards">
+      <div class="method-card recommended">
+        <span class="badge pro">分散配置の考え方</span>
+        <h4>区間ごとにPSUを担当させる</h4>
+        <p class="verdict">電圧降下が許容内に収まる長さで区切る。</p>
+        <ul>
+          <li>1区間の電圧降下を計算→許容内で分割</li>
+          <li>明るさの境目はコーナー・見切りに隠す</li>
+          <li>各PSUは同一型番・同一定格でそろえる</li>
+          <li>点検口の位置にPSUを集める</li>
+        </ul>
+      </div>
+      <div class="method-card">
+        <span class="badge easy">設置環境の条件</span>
+        <h4>放熱と点検性を確保する</h4>
+        <p class="verdict">熱がこもる場所・開けられない場所はNG。</p>
+        <ul>
+          <li>断熱材に直接埋めない（放熱確保）</li>
+          <li>周囲にクリアランスを取る</li>
+          <li>将来開けられる点検口を必ず設ける</li>
+          <li>結露・水気のある場所は適合IPを選ぶ</li>
+        </ul>
+      </div>
+      <div class="method-card">
+        <span class="badge temp">1次側(AC)の取り回し</span>
+        <h4>AC配線ルートを先に決める</h4>
+        <p class="verdict">PSUへのAC供給が現実に引けるか確認。</p>
+        <ul>
+          <li>各PSUへAC100Vを引けるか確認</li>
+          <li>1次側はPSE適合・有資格者施工</li>
+          <li>分電盤の回路容量に余裕を持たせる</li>
+          <li>突入電流による遮断器トリップに注意</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== 5. 手順 ===== -->
+    <h2 id="steps">5. 電源レイアウト設計の手順</h2>
+
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>テープの総W数（負荷）を算出する</strong>
+          W/m × 総延長＝総W数。これがPSU容量・回路設計の出発点です。
+          <p class="tip">調光・将来増設を見込むなら負荷率80%以内になるよう容量に余裕を取ります。</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>電源置き場（集中）が確保できるか確認する</strong>
+          盤・天井裏・什器内などに大容量PSUと放熱・点検スペースが取れるかを先に判定。取れなければ分散前提で進めます。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>給電ルートと配線長を図面で実測する</strong>
+          最長区間の片道長Lを拾い、電圧降下V＝2×L×I×Rを計算します。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>許容降下（定格5%）を超えるか判定する</strong>
+          超えるなら「電線を太く」「給電点追加」「分散電源化」のいずれかを選択。複数案をコスト・納まりで比較します。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>PSUの担当区間・設置位置・点検口を確定する</strong>
+          分散の場合は各PSUの担当区間と明るさ境目の位置を決め、点検口とAC供給ルートを図面に落とします。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>1次側回路・突入電流・調光方式を確認する</strong>
+          分電盤の回路容量、突入電流による遮断器トリップ、調光する場合の同期方式（全PSU同一信号）を最終確認します。
+        </div>
+      </li>
+    </ul>
+
+    <!-- ===== 6. トラブル ===== -->
+    <h2 id="trouble">6. よくある設計ミスと対処</h2>
+
+    <ul class="trouble-list">
+      <li>
+        <span class="t-icon">🔅</span>
+        <div class="t-body">
+          <strong>長い1本の遠端だけ暗い</strong>
+          <span>原因: 片端給電で電圧降下が累積。両端給電・中央給電に変更するか、遠端側に給電点（パワーインジェクション）を追加する。根本対策は分散電源化。</span>
+        </div>
+      </li>
+      <li>
+        <span class="t-icon">🔥</span>
+        <div class="t-body">
+          <strong>集中電源のPSUが熱い・寿命が短い</strong>
+          <span>原因: 1か所に発熱集中＋換気不足＋過負荷。負荷率80%以内に下げ、放熱クリアランスと換気を確保。容量不足なら分散化・増設する。</span>
+        </div>
+      </li>
+      <li>
+        <span class="t-icon">🎚️</span>
+        <div class="t-body">
+          <strong>分散電源で区間ごとに明るさ・色がばらつく</strong>
+          <span>原因: PSU型番混在・出力電圧差・調光信号の非同期。同一型番でそろえ、調光は全PSU同一信号・同一方式で駆動。境目はコーナーに隠す。</span>
+        </div>
+      </li>
+      <li>
+        <span class="t-icon">⚡</span>
+        <div class="t-body">
+          <strong>電源投入時に遮断器が落ちる</strong>
+          <span>原因: 複数PSUの突入電流が重なる。回路を分ける、突入電流対策（順次投入・インラッシュ対策機器）を検討、分電盤の回路容量を見直す。</span>
+        </div>
+      </li>
+    </ul>
+
+    <!-- ===== CTA ===== -->
+    <div class="cta-section">
+      <h2>LED電源（PSU）・LEDテープ・配線部材を探す</h2>
+      <p>各容量のDC24V/12V電源・LEDテープ・給電/延長ケーブル・アルミフレームをプロ価格で。<br>大規模間接照明の集中／分散どちらの設計にも対応する在庫を即納。</p>
+      <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+    </div>
+
+    <!-- ===== 7. チェックリスト ===== -->
+    <h2 id="checklist">7. 電源レイアウト設計チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>テープのW/m×総延長で総W数（負荷）を算出した</li>
+      <li>PSU容量は負荷率80%以内になるよう余裕を取った</li>
+      <li>最長区間の片道配線長を図面で実測した</li>
+      <li>電圧降下V＝2×L×I×Rを計算し定格5%以内に収めた</li>
+      <li>集中電源の場合、電源置き場・放熱・点検スペースを確保した</li>
+      <li>分散電源の場合、各PSUの担当区間と明るさ境目の位置を決めた</li>
+      <li>各PSUは同一型番・同一定格でそろえた</li>
+      <li>1次側AC配線ルート・回路容量・突入電流・調光同期を確認した</li>
+    </ul>
+
+    <!-- ===== 8. FAQ ===== -->
+    <h2 id="faq">8. よくある質問</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">LEDテープの電源は1か所にまとめるべきですか、分散させるべきですか？</div>
+      <div class="faq-a">総延長が短く（目安20〜30m程度まで）電源置き場を1か所に確保できるなら集中電源が管理・保守の面で有利です。総延長が長い、フロアをまたぐ、ルート上に給電線を太く引けない場合は、テープの各区間近くにPSUを置く分散電源が電圧降下に強く配線も細くて済みます。判断軸は『太い給電線を引けるか』『PSUの設置場所と放熱を確保できるか』『将来の保守でどこを開けるか』の3点です。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">LEDテープの電圧降下はどう計算しますか？</div>
+      <div class="faq-a">電圧降下V=2×L×I×R で概算します（L=片道配線長m、I=電流A、R=電線1mあたりの抵抗Ω、2は往復分）。12Vテープは降下の許容幅が小さく端が暗くなりやすいため、24Vテープの方が同じ配線でも余裕があります。許容降下は一般に定格電圧の5%以内（24Vなら約1.2V）を目安にし、超える場合は給電線を太くする、給電点をテープの中央や両端から取る、またはPSUを近くに置く分散化で対処します。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">分散電源にすると複数のPSUで明るさがばらつきませんか？</div>
+      <div class="faq-a">同一型番・同一定格出力のPSUを使い、各PSUの出力電圧を可能なら無負荷時にそろえておくと差は最小化できます。それでも個体差や負荷率の違いで境目がわずかに見えることがあるため、明るさの境目が視線に入りにくい位置（コーナー・見切り・什器の影）でPSUの担当区間を分けるのが実務上のコツです。調光する場合は同じ調光信号・同じ調光方式（PWM等）で全PSU／デコーダーを駆動し、調光カーブのばらつきを避けてください。</div>
+    </div>
+
+  </div><!-- /.article-body -->
+</div><!-- /.container -->
+
+<footer class="site-footer">
+  <p><a href="/">LED PRO SHOP</a> — プロ仕様LED専門店 &copy; 2026</p>
+</footer>
+
+</body>
+</html>

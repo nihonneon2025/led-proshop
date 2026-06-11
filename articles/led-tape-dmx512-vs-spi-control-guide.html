@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープ DMX512制御とSPI制御の違いと選び方｜建築化照明・演出照明向け制御方式ガイド | LED PRO SHOP</title>
+  <meta name="description" content="フルカラーLEDテープの制御方式はDMX512とSPI（アドレサブル）で配線・伝送距離・対応器材が大きく異なります。SPIはピクセル単価が安いが信号は数m〜十数mで減衰、DMX512は伝送が長く既存の調光卓・施設設備と統合しやすい反面チャンネル設計が必要です。配線本数・伝送距離・ピクセル数の上限・終端抵抗の要否・誤動作（ちらつき・暴走）対策を施工業者向けに数値で解説します。">
+  <meta name="keywords" content="LEDテープ DMX512,SPI LEDテープ,アドレサブル LED 制御,DMX SPI 違い,フルカラー LEDテープ 制御,ピクセルLED 配線,WS2812 DMX,LED 演出照明 制御">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-dmx512-vs-spi-control-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-dmx512-vs-spi-control-guide">
+  <meta property="og:title" content="LEDテープ DMX512制御とSPI制御の違いと選び方｜建築化照明・演出照明向け制御方式ガイド | LED PRO SHOP">
+  <meta property="og:description" content="フルカラーLEDテープの制御方式DMX512とSPI（アドレサブル）の違いを配線本数・伝送距離・ピクセル上限・終端抵抗・ちらつき対策まで施工業者向けに数値で解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-dmx512-vs-spi-control-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ DMX512制御とSPI制御の違いと選び方｜建築化照明・演出照明向け制御方式ガイド | LED PRO SHOP">
+  <meta name="twitter:description" content="フルカラーLEDテープの制御方式DMX512とSPI（アドレサブル）の違いを配線本数・伝送距離・ピクセル上限・終端抵抗・ちらつき対策まで施工業者向けに数値で解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-dmx512-vs-spi-control-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープ DMX512制御とSPI制御の違いと選び方｜建築化照明・演出照明向け制御方式ガイド",
+    "description": "フルカラーLEDテープのDMX512制御とSPI制御の違いを配線・伝送距離・ピクセル上限・終端抵抗・ちらつき対策まで施工業者向けに解説。",
+    "image": "https://led-proshop.com/articles/images/led-tape-dmx512-vs-spi-control-guide-hero.webp",
+    "datePublished": "2026-06-12",
+    "dateModified": "2026-06-12",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-dmx512-vs-spi-control-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープ DMX512制御とSPI制御の違いと選び方", "item": "https://led-proshop.com/articles/led-tape-dmx512-vs-spi-control-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== FAQ JSON-LD ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "DMX512制御とSPI制御はどちらを選べばよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "施設の調光卓・舞台設備・他の照明器具と統合する案件、または信号を数十m引き回す必要がある案件はDMX512が有利です。一方、1本のテープで1ピクセル単位の細かい流れる演出（虹色・追従点灯）を低コストで実現したい屋内サイン・什器・短距離の装飾はSPIが向いています。DMXはピクセルごとにDMXデコーダーが必要でチャンネル設計の手間がありますが、SPIは信号が伝送途中で減衰・崩れやすく長距離に弱いという根本的な違いがあります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "SPIのアドレサブルLEDテープは何mまで1本で引けますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "SPI信号（WS2812B/WS2815/SK6812等）はコントローラーから最初のピクセルまでの距離が長いと波形が鈍りデータ化けします。一般にコントローラー〜先頭ピクセル間は信号線を3〜5m以内に抑えるのが目安で、超える場合は差動信号方式（WS2815は信号＋バックアップ線）の採用、信号リピーター（アンプ）の挿入、または各セグメントの先頭にコントローラー出力を分散配線する設計が必要です。テープ自体の総延長は電源注入（パワーインジェクション）で電圧降下を補えば伸ばせますが、信号の引き回し距離は別問題として管理します。" }
+      },
+      {
+        "@type": "Question",
+        "name": "DMX512配線に終端抵抗（ターミネーター）は必要ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "DMX512はRS-485ベースのデイジーチェーン配線で、バスの最終機器に120Ωの終端抵抗を入れるのが原則です。終端がないと信号反射でちらつき・暴走・チャンネルずれが発生します。短距離・少数のデコーダーでは終端なしでも動くことがありますが、配線が長い・分岐が多い・ちらつきが出る場合は終端抵抗の有無を最初に確認してください。スター配線（分岐）は反射の原因になるため、DMXはデコーダーをデイジーチェーン（数珠つなぎ）でつなぐのが基本です。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --blue:#5b21b6;--blue-pale:#f3eafe;--orange:#e07b00;--orange-pale:#fff3e0;
+      --green:#1a7a3c;--green-pale:#e6f4ec;
+      --bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.75}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:860px;margin:0 auto;padding:0 20px}
+    header.site-header{background:var(--blue);padding:14px 20px;display:flex;align-items:center;gap:12px}
+    header.site-header a{color:#fff;font-size:18px;font-weight:700;letter-spacing:.03em}
+    header.site-header span{color:rgba(255,255,255,.6);font-size:12px}
+
+    .hero{background:linear-gradient(135deg,#3b0a6e 0%,#1a1466 100%);padding:48px 20px 40px;text-align:center;color:#fff}
+    .hero .cat-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:11px;letter-spacing:.08em;margin-bottom:16px}
+    .hero h1{font-size:clamp(18px,3.5vw,26px);font-weight:900;line-height:1.45;margin-bottom:14px}
+    .hero .hero-meta{font-size:12px;color:rgba(255,255,255,.7);display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+    .hero-img{width:100%;max-height:380px;object-fit:cover;display:block}
+
+    .breadcrumb{font-size:11px;color:var(--text-muted);padding:10px 0;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+    .breadcrumb a{color:var(--text-muted)}
+
+    .toc{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:28px 0}
+    .toc h2{font-size:13px;font-weight:700;color:var(--text-sub);margin-bottom:10px;letter-spacing:.06em}
+    .toc ol{padding-left:18px}
+    .toc li{font-size:13px;margin-bottom:6px}
+    .toc a{color:var(--blue)}
+
+    .article-body{padding:32px 0 48px}
+    .article-body h2{font-size:20px;font-weight:900;color:var(--blue);border-left:4px solid var(--blue);padding-left:12px;margin:40px 0 16px}
+    .article-body h3{font-size:16px;font-weight:700;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:6px;margin:28px 0 12px}
+    .article-body p{margin-bottom:14px}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:14px}
+    .article-body li{margin-bottom:6px}
+
+    .box-blue{background:var(--blue-pale);border-left:4px solid var(--blue);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-orange{background:var(--orange-pale);border-left:4px solid var(--orange);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-green{background:var(--green-pale);border-left:4px solid var(--green);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-blue p,.box-orange p,.box-green p{margin-bottom:0}
+
+    .method-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:20px 0}
+    .method-card{border-radius:12px;padding:20px;border:2px solid var(--border)}
+    .method-card.recommended{border-color:var(--blue);background:var(--blue-pale)}
+    .method-card .badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-bottom:8px;letter-spacing:.06em}
+    .method-card .badge.easy{background:#dcfce7;color:#166534}
+    .method-card .badge.pro{background:#ede9fe;color:#5b21b6}
+    .method-card .badge.temp{background:#fef3c7;color:#92400e}
+    .method-card h4{font-size:15px;font-weight:900;margin-bottom:6px}
+    .method-card .verdict{font-size:12px;color:var(--text-sub);margin-bottom:8px}
+    .method-card ul{padding-left:16px;font-size:13px}
+    .method-card li{margin-bottom:4px}
+
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:20px 0}
+    .spec-card{border:1px solid var(--border);border-radius:10px;padding:16px 18px;background:var(--bg-gray)}
+    .spec-card .label{font-size:11px;color:var(--text-muted);letter-spacing:.06em;margin-bottom:4px}
+    .spec-card .value{font-size:20px;font-weight:900;color:var(--blue);line-height:1.3}
+    .spec-card .note{font-size:12px;color:var(--text-sub);margin-top:6px}
+
+    .step-list{list-style:none;padding:0;margin:16px 0;counter-reset:step}
+    .step-list li{counter-increment:step;display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #eaecf0}
+    .step-list li:last-child{border-bottom:none}
+    .step-list li::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:28px;height:28px;min-width:28px;background:var(--blue);color:#fff;border-radius:50%;font-size:13px;font-weight:700;flex-shrink:0}
+    .step-body{flex:1}
+    .step-body strong{display:block;margin-bottom:4px}
+    .step-body .tip{font-size:12px;color:var(--text-sub);margin-top:4px;font-style:italic}
+
+    .tbl-wrap{overflow-x:auto;margin:16px 0}
+    table{width:100%;border-collapse:collapse;font-size:13px;min-width:420px}
+    th{background:var(--blue);color:#fff;padding:9px 10px;text-align:left;font-weight:700}
+    td{padding:8px 10px;border-bottom:1px solid #eaecf0;vertical-align:top}
+    tr:nth-child(even) td{background:#f8f9fb}
+    .good{color:#1a7a3c;font-weight:700}
+    .bad{color:#b91c1c;font-weight:700}
+    .mid{color:#92400e;font-weight:700}
+
+    .trouble-list{list-style:none;padding:0;margin:16px 0}
+    .trouble-list li{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #eaecf0;align-items:flex-start}
+    .trouble-list li:last-child{border-bottom:none}
+    .t-icon{font-size:20px;flex-shrink:0;line-height:1.4}
+    .t-body strong{display:block;margin-bottom:2px;font-size:14px}
+    .t-body span{font-size:13px;color:var(--text-sub)}
+
+    .checklist{list-style:none;padding:0;margin:16px 0}
+    .checklist li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #eaecf0;font-size:14px}
+    .checklist li:last-child{border-bottom:none}
+    .checklist li::before{content:"☐";font-size:18px;color:var(--blue);flex-shrink:0;line-height:1.3}
+
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--blue)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+
+    .cta-section{background:linear-gradient(135deg,#3b0a6e,#1a1466);border-radius:16px;padding:36px 24px;text-align:center;margin:40px 0;color:#fff}
+    .cta-section h2{font-size:18px;font-weight:900;margin-bottom:8px;color:#fff;border:none;padding:0}
+    .cta-section p{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:20px}
+    .cta-btn{display:inline-block;background:#f0a500;color:#1a1a1a;font-weight:900;font-size:15px;padding:14px 36px;border-radius:50px;transition:opacity .2s}
+    .cta-btn:hover{opacity:.88;text-decoration:none}
+
+    footer.site-footer{background:#1a1a1a;color:#888;font-size:12px;text-align:center;padding:20px}
+    footer.site-footer a{color:#aaa}
+
+    @media(max-width:600px){
+      .hero{padding:32px 16px 28px}
+      .hero h1{font-size:17px}
+      .method-cards{grid-template-columns:1fr}
+    }
+    .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/">LED PRO SHOP</a>
+  <span>プロ仕様LED専門店</span>
+</header>
+
+<div class="hero">
+  <div class="cat-badge">LEDテープ 制御方式・製品活用</div>
+  <h1>LEDテープ DMX512制御とSPI制御の<br>違いと選び方<br>建築化照明・演出照明向けガイド</h1>
+  <div class="hero-meta">
+    <span>公開: 2026-06-12</span>
+    <span>対象: 電気工事業者・舞台音響照明業者・内装施工業者</span>
+  </div>
+</div>
+
+<img src="/articles/images/led-tape-dmx512-vs-spi-control-guide-hero.webp" alt="LEDテープ DMX512制御とSPI制御の違いと選び方" class="hero-img" width="860" height="430" loading="eager">
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/">LED PRO SHOP</a><span>›</span>
+    <a href="/articles/">コラム</a><span>›</span>
+    <span>LEDテープ DMX512制御とSPI制御の違いと選び方</span>
+  </nav>
+
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#basics">DMX512とSPI（アドレサブル）の基本</a></li>
+      <li><a href="#compare">2方式の比較表（配線・距離・コスト）</a></li>
+      <li><a href="#select">案件タイプ別の選び方</a></li>
+      <li><a href="#dmx-wiring">DMX512の配線・チャンネル設計</a></li>
+      <li><a href="#spi-wiring">SPIの配線・伝送距離の注意点</a></li>
+      <li><a href="#trouble">ちらつき・暴走など制御トラブルの対処</a></li>
+      <li><a href="#checklist">制御方式選定チェックリスト</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ol>
+  </nav>
+
+  <div class="article-body">
+
+    <p>フルカラー（虹色・流れる・追従）演出ができるLEDテープには、大きく分けて<strong>DMX512制御</strong>と<strong>SPI制御（アドレサブル／ピクセルLED）</strong>の2方式があります。見た目の演出は似ていても、配線本数・伝送できる距離・必要な器材・コストがまったく異なり、選定を誤ると「現場で信号が届かない」「他の照明設備と統合できない」といったやり直しが発生します。このページでは施工業者が見積・設計段階で判断できるよう、2方式の違いを数値で整理します。</p>
+
+    <!-- ===== 1. 基本 ===== -->
+    <h2 id="basics">1. DMX512とSPI（アドレサブル）の基本</h2>
+
+    <p><strong>DMX512</strong>は舞台照明・建築化照明の業界標準プロトコルで、RS-485という差動信号でデータを送ります。1系統（ユニバース）あたり512チャンネルを持ち、LEDテープを点灯させるには「DMXデコーダー」を介してテープに電力と色信号を分配します。調光卓・施設の照明制御盤・他社のムービングライト等と同じDMXラインに乗せられるのが最大の強みです。</p>
+
+    <p><strong>SPI（アドレサブル／ピクセルLED）</strong>は、テープ上の各ICチップ（WS2812B・WS2815・SK6812等）が自分宛のデータを受け取り、残りを次のチップへ送るバケツリレー方式です。1ピクセル単位で色を制御でき、コントローラー1台でテープを直接駆動できるためコストが安く、什器・サイン・装飾の細かい演出に向きます。一方で信号が一方向のバケツリレーのため、距離が伸びると波形が崩れデータ化けが起きやすいという弱点があります。</p>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="label">DMX512 1系統</div>
+        <div class="value">512ch</div>
+        <div class="note">RGB=3chなら最大170素子分のアドレス</div>
+      </div>
+      <div class="spec-card">
+        <div class="label">SPI 信号引き回し目安</div>
+        <div class="value">3〜5m</div>
+        <div class="note">コントローラー〜先頭ピクセル間</div>
+      </div>
+      <div class="spec-card">
+        <div class="label">DMX終端抵抗</div>
+        <div class="value">120Ω</div>
+        <div class="note">バス最終機器に挿入</div>
+      </div>
+      <div class="spec-card">
+        <div class="label">DMXリフレッシュ</div>
+        <div class="value">約44Hz</div>
+        <div class="note">512ch全送信時の更新レート</div>
+      </div>
+    </div>
+
+    <!-- ===== 2. 比較 ===== -->
+    <h2 id="compare">2. 2方式の比較表</h2>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>比較項目</th><th>DMX512制御</th><th>SPI制御（アドレサブル）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>信号方式</td><td>RS-485差動（ノイズに強い）</td><td>シングルエンド・バケツリレー</td></tr>
+          <tr><td>伝送距離（信号）</td><td class="good">数十m〜（中継で数百m）</td><td class="bad">先頭まで3〜5m目安</td></tr>
+          <tr><td>必要器材</td><td class="mid">DMXコントローラー＋デコーダー</td><td class="good">SPIコントローラーのみ</td></tr>
+          <tr><td>ピクセル細かさ</td><td class="mid">デコーダー単位（数素子をまとめて制御）</td><td class="good">1ピクセル単位</td></tr>
+          <tr><td>初期コスト</td><td class="bad">高い（デコーダー台数分）</td><td class="good">安い</td></tr>
+          <tr><td>他設備との統合</td><td class="good">調光卓・制御盤と統合容易</td><td class="bad">独立系統になりがち</td></tr>
+          <tr><td>配線の引き回し耐性</td><td class="good">長距離・分岐に強い</td><td class="bad">長距離でデータ化けしやすい</td></tr>
+          <tr><td>向く用途</td><td>建築化照明・施設・舞台</td><td>什器・サイン・短距離装飾</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== 3. 選び方 ===== -->
+    <h2 id="select">3. 案件タイプ別の選び方</h2>
+
+    <div class="method-cards">
+      <div class="method-card recommended">
+        <span class="badge pro">施設・長距離向け</span>
+        <h4>DMX512を選ぶべき案件</h4>
+        <p class="verdict">設備統合・長距離・信頼性が要る現場。</p>
+        <ul>
+          <li>調光卓・制御盤と統合する建築化照明</li>
+          <li>信号を数十m引き回すファサード・橋梁</li>
+          <li>舞台・イベントで他の灯体と同期</li>
+          <li>長期運用・保守性を重視する施設</li>
+        </ul>
+      </div>
+      <div class="method-card">
+        <span class="badge easy">装飾・短距離向け</span>
+        <h4>SPIを選ぶべき案件</h4>
+        <p class="verdict">1ピクセルの細かい演出を低コストで。</p>
+        <ul>
+          <li>什器・棚・サインの流れる演出</li>
+          <li>コントローラー近傍に収まる短距離</li>
+          <li>1台で完結させたい小規模装飾</li>
+          <li>追従点灯・虹色アニメーション主体</li>
+        </ul>
+      </div>
+      <div class="method-card">
+        <span class="badge temp">折衷案</span>
+        <h4>DMX入力のSPIデコーダー</h4>
+        <p class="verdict">DMXで受けてピクセル変換する器材も。</p>
+        <ul>
+          <li>幹線はDMX（長距離・統合）</li>
+          <li>末端でSPIテープを駆動</li>
+          <li>長距離とピクセル演出を両立</li>
+          <li>器材選定・アドレス設計が必要</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>判断の起点:</strong> 「他の照明設備・調光卓と同じ操作系に乗せるか？」がYESならDMX512、「このテープ単体で細かい演出を安く出したいか？」がYESならSPI、と最初に切り分けると見積がぶれません。</p>
+    </div>
+
+    <!-- ===== 4. DMX配線 ===== -->
+    <h2 id="dmx-wiring">4. DMX512の配線・チャンネル設計</h2>
+
+    <h3>配線の基本手順</h3>
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>デイジーチェーン（数珠つなぎ）で配線する</strong>
+          コントローラー → デコーダー1 → デコーダー2 …と一筆書きでつなぎます。スター配線（途中分岐）は信号反射の原因になるため避けます。
+          <p class="tip">分岐が必要な場合はDMXスプリッター（光絶縁分配器）を使用します。</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>各デコーダーに開始アドレス（DMXアドレス）を設定する</strong>
+          RGBデコーダーは1台3ch消費します。1台目=ch1、2台目=ch4、3台目=ch7…と重複しないように割り当てます。アドレス重複は「複数のテープが同じ動き」になる典型ミスです。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>信号線は2芯シールド（推奨120Ω特性）を使う</strong>
+          DMXは本来120Ω特性インピーダンスのケーブルが規格です。汎用VVFや細い線で長距離を引くと波形が乱れます。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>バス最終機器に120Ωの終端抵抗を入れる</strong>
+          終端がないと反射でちらつき・暴走が出ます。長距離・多台数ほど終端の有無が効いてきます。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>デコーダーの電源容量とテープのW数を合わせる</strong>
+          デコーダーは「信号変換＋電力スイッチ」です。各chの許容電流（例: 1ch 4A）を超えるテープ長を接続しないよう、テープのW/mから電流を計算します。
+        </div>
+      </li>
+    </ul>
+
+    <div class="box-orange">
+      <p><strong>チャンネル計算の例:</strong> RGBデコーダー（3ch/台）を10台使う場合、消費は3ch×10＝30ch。1ユニバース（512ch）に十分収まります。RGBW（4ch/台）なら4ch×台数で計算します。ユニバースを超える規模はDMXユニバースを分割（複数ライン化）します。</p>
+    </div>
+
+    <!-- ===== 5. SPI配線 ===== -->
+    <h2 id="spi-wiring">5. SPIの配線・伝送距離の注意点</h2>
+
+    <h3>SPI特有の3つの落とし穴</h3>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>落とし穴</th><th>原因</th><th>対策</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>先頭まで届かずデータ化け</td>
+            <td>コントローラー〜先頭ピクセルの信号線が長い</td>
+            <td>信号線は3〜5m以内／差動方式（WS2815等）採用／信号アンプ挿入</td>
+          </tr>
+          <tr>
+            <td>後半が暴走・色化け</td>
+            <td>テープ長による電圧降下でICが誤動作</td>
+            <td>パワーインジェクション（数m毎に電源注入）で電圧を維持</td>
+          </tr>
+          <tr>
+            <td>最初の数ピクセルだけ白く点く</td>
+            <td>信号品質不足・GND未共通</td>
+            <td>信号GNDと電源GNDを必ず共通化／先頭に330Ω程度の直列抵抗</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-green">
+      <p><strong>WS2812B系とWS2815系の違い:</strong> WS2812Bは5V・1本の信号線。WS2815は12V駆動でバックアップ信号線を持ち、1ピクセル故障しても以降が消えにくく、長距離の信号安定性も高めです。長めの引き回し・信頼性重視ならWS2815系を検討してください。</p>
+    </div>
+
+    <!-- ===== 6. トラブル ===== -->
+    <h2 id="trouble">6. ちらつき・暴走など制御トラブルの対処</h2>
+
+    <ul class="trouble-list">
+      <li>
+        <span class="t-icon">⚡</span>
+        <div class="t-body">
+          <strong>DMXでテープが不規則にちらつく</strong>
+          <span>原因: 終端抵抗なし・ケーブル不適合・スター配線。まず120Ω終端の有無を確認、次にデイジーチェーン化、それでも出る場合はDMXスプリッターで系統を分ける。</span>
+        </div>
+      </li>
+      <li>
+        <span class="t-icon">🌈</span>
+        <div class="t-body">
+          <strong>複数のテープが同じ動きをする</strong>
+          <span>原因: DMXアドレスの重複設定。各デコーダーの開始アドレスが3ch（RGB）または4ch（RGBW）刻みで重複していないか確認して再設定する。</span>
+        </div>
+      </li>
+      <li>
+        <span class="t-icon">🔌</span>
+        <div class="t-body">
+          <strong>SPIで先頭から数十cmで色が崩れる</strong>
+          <span>原因: 信号GNDと電源GNDが共通化されていない、または信号線が長すぎる。GND共通化と信号線短縮を行い、必要なら先頭に直列抵抗・信号アンプを挿入する。</span>
+        </div>
+      </li>
+      <li>
+        <span class="t-icon">🔆</span>
+        <div class="t-body">
+          <strong>SPIテープの後半だけ暗い・暴走する</strong>
+          <span>原因: 電圧降下によるIC誤動作。テープ後半へパワーインジェクション（電源を数m毎に追加注入）し、定格電圧を維持する。</span>
+        </div>
+      </li>
+    </ul>
+
+    <!-- ===== CTA ===== -->
+    <div class="cta-section">
+      <h2>フルカラーLEDテープ・コントローラーを探す</h2>
+      <p>DMX512デコーダー・SPIアドレサブルテープ（WS2812B/WS2815/SK6812）・コントローラーをプロ価格でご提供。<br>電源・アルミフレームも合わせて在庫から即納。</p>
+      <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+    </div>
+
+    <!-- ===== 7. チェックリスト ===== -->
+    <h2 id="checklist">7. 制御方式選定チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>他の照明設備・調光卓と同じ操作系に統合する必要があるか確認した（YES→DMX有利）</li>
+      <li>コントローラーから先頭ピクセル／デコーダーまでの信号距離を実測した</li>
+      <li>SPIの場合、信号引き回しを3〜5m以内に収められるか検討した</li>
+      <li>DMXの場合、デコーダー台数×chがユニバース（512ch）に収まるか計算した</li>
+      <li>DMXバス最終機器に120Ω終端抵抗を入れる計画にした</li>
+      <li>テープのW/mから電流を計算し、デコーダー／電源容量に余裕を持たせた</li>
+      <li>SPIは信号GNDと電源GNDの共通化を配線図に明記した</li>
+      <li>長距離・電圧降下区間にパワーインジェクションを計画した</li>
+    </ul>
+
+    <!-- ===== 8. FAQ ===== -->
+    <h2 id="faq">8. よくある質問</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">DMX512制御とSPI制御はどちらを選べばよいですか？</div>
+      <div class="faq-a">施設の調光卓・舞台設備・他の照明器具と統合する案件、または信号を数十m引き回す必要がある案件はDMX512が有利です。一方、1本のテープで1ピクセル単位の細かい流れる演出を低コストで実現したい屋内サイン・什器・短距離の装飾はSPIが向いています。DMXはピクセルごとにDMXデコーダーが必要でチャンネル設計の手間がありますが、SPIは信号が伝送途中で減衰・崩れやすく長距離に弱いという根本的な違いがあります。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">SPIのアドレサブルLEDテープは何mまで1本で引けますか？</div>
+      <div class="faq-a">SPI信号（WS2812B/WS2815/SK6812等）はコントローラーから最初のピクセルまでの距離が長いと波形が鈍りデータ化けします。一般にコントローラー〜先頭ピクセル間は信号線を3〜5m以内に抑えるのが目安で、超える場合は差動信号方式（WS2815は信号＋バックアップ線）の採用、信号リピーター（アンプ）の挿入、または各セグメントの先頭にコントローラー出力を分散配線する設計が必要です。テープ自体の総延長は電源注入（パワーインジェクション）で電圧降下を補えば伸ばせますが、信号の引き回し距離は別問題として管理します。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">DMX512配線に終端抵抗（ターミネーター）は必要ですか？</div>
+      <div class="faq-a">DMX512はRS-485ベースのデイジーチェーン配線で、バスの最終機器に120Ωの終端抵抗を入れるのが原則です。終端がないと信号反射でちらつき・暴走・チャンネルずれが発生します。短距離・少数のデコーダーでは終端なしでも動くことがありますが、配線が長い・分岐が多い・ちらつきが出る場合は終端抵抗の有無を最初に確認してください。スター配線（分岐）は反射の原因になるため、DMXはデコーダーをデイジーチェーン（数珠つなぎ）でつなぐのが基本です。</div>
+    </div>
+
+  </div><!-- /.article-body -->
+</div><!-- /.container -->
+
+<footer class="site-footer">
+  <p><a href="/">LED PRO SHOP</a> — プロ仕様LED専門店 &copy; 2026</p>
+</footer>
+
+</body>
+</html>

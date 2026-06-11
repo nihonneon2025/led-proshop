@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープのコネクター接続部が発熱・焦げる原因と対処法｜接触抵抗・過電流を診断 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープのコネクター接続部が熱くなる・変色する・焦げ臭いのは接触抵抗の増大か過電流が原因で、放置すると焼損・断線・最悪は発火につながります。原因は半差し・銅箔の酸化・コネクター容量オーバー・テープの接続しすぎ。接続部の許容電流の考え方、温度の目安、テスターでの切り分け手順、焦げたコネクターの正しい交換方法を施工業者向けに解説します。">
+  <meta name="keywords" content="LEDテープ コネクター 発熱,LED 接続部 焦げる,LEDテープ 熱い,コネクター 焼損,LED 接触抵抗,LEDテープ 過電流,LED配線 変色,コネクター 容量オーバー">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-connector-overheating-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-connector-overheating-guide">
+  <meta property="og:title" content="LEDテープのコネクター接続部が発熱・焦げる原因と対処法｜接触抵抗・過電流を診断 | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープのコネクター接続部の発熱・焦げ・変色の原因（接触抵抗・過電流）と切り分け手順・許容電流の考え方・正しい交換方法を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-connector-overheating-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープのコネクター接続部が発熱・焦げる原因と対処法｜接触抵抗・過電流を診断 | LED PRO SHOP">
+  <meta name="twitter:description" content="LEDテープのコネクター接続部の発熱・焦げ・変色の原因（接触抵抗・過電流）と切り分け手順・許容電流の考え方・正しい交換方法を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-connector-overheating-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープのコネクター接続部が発熱・焦げる原因と対処法｜接触抵抗・過電流を診断",
+    "description": "LEDテープのコネクター接続部の発熱・焦げ・変色の原因（接触抵抗・過電流）と切り分け手順・許容電流の考え方・正しい交換方法を施工業者向けに解説。",
+    "image": "https://led-proshop.com/articles/images/led-tape-connector-overheating-guide-hero.webp",
+    "datePublished": "2026-06-12",
+    "dateModified": "2026-06-12",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-connector-overheating-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープのコネクター接続部が発熱・焦げる原因と対処法", "item": "https://led-proshop.com/articles/led-tape-connector-overheating-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== FAQ JSON-LD ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープのコネクター接続部が熱くなるのはなぜですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "接続部の発熱は『接触抵抗の増大』か『過電流（容量オーバー）』のどちらかが原因です。接触抵抗は半差し・銅箔の酸化や汚れ・端子のゆるみで増え、その部分で電力が熱に変わって発熱します。過電流はコネクターの許容電流を超えるテープ長を1本に接続している場合に起き、端子全体が発熱します。どちらも放置すると樹脂の変色・焦げ・焼損・断線、最悪は発火に至るため、変色や焦げ臭を確認したら通電を止めて原因を切り分けてください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "ワンタッチコネクターの許容電流はどれくらいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "製品により異なりますが、一般的なLEDテープ用ワンタッチコネクターは数A程度（例: 〜5A前後）が目安で、必ず製品仕様の定格電流を確認します。テープの消費電流は『W/m×接続長÷電源電圧』で計算でき、例えば14.4W/mを5m・24Vで点灯すると3Aです。これがコネクター定格に対し余裕（80%以内が目安）があるか確認し、超える場合ははんだ付け・高電流対応コネクター・給電点の分割で対応します。高電流を1つの接続部に集中させない設計が基本です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "焦げたコネクターは交換すれば再使用できますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "焦げた・変色したコネクターは再使用せず必ず新品に交換してください。一度過熱した端子はばね性の低下・酸化・炭化で接触抵抗がさらに悪化し、再発・焼損リスクが高まります。交換時はコネクターだけでなく、テープ側の焦げた銅箔パッド部分もカットして健全な位置で接続し直し、原因（過電流なら接続長を短くするか給電分割、接触抵抗ならはんだ付けへ変更）を取り除いてから通電テストを行います。原因を直さず部品だけ替えると同じ場所がまた焦げます。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --blue:#b91c1c;--blue-pale:#fdeaea;--orange:#e07b00;--orange-pale:#fff3e0;
+      --green:#1a7a3c;--green-pale:#e6f4ec;
+      --bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.75}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:860px;margin:0 auto;padding:0 20px}
+    header.site-header{background:#7f1d1d;padding:14px 20px;display:flex;align-items:center;gap:12px}
+    header.site-header a{color:#fff;font-size:18px;font-weight:700;letter-spacing:.03em}
+    header.site-header span{color:rgba(255,255,255,.6);font-size:12px}
+
+    .hero{background:linear-gradient(135deg,#5a0f0f 0%,#7a2a00 100%);padding:48px 20px 40px;text-align:center;color:#fff}
+    .hero .cat-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:11px;letter-spacing:.08em;margin-bottom:16px}
+    .hero h1{font-size:clamp(18px,3.5vw,26px);font-weight:900;line-height:1.45;margin-bottom:14px}
+    .hero .hero-meta{font-size:12px;color:rgba(255,255,255,.7);display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+    .hero-img{width:100%;max-height:380px;object-fit:cover;display:block}
+
+    .breadcrumb{font-size:11px;color:var(--text-muted);padding:10px 0;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+    .breadcrumb a{color:var(--text-muted)}
+
+    .toc{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:28px 0}
+    .toc h2{font-size:13px;font-weight:700;color:var(--text-sub);margin-bottom:10px;letter-spacing:.06em}
+    .toc ol{padding-left:18px}
+    .toc li{font-size:13px;margin-bottom:6px}
+    .toc a{color:var(--blue)}
+
+    .article-body{padding:32px 0 48px}
+    .article-body h2{font-size:20px;font-weight:900;color:var(--blue);border-left:4px solid var(--blue);padding-left:12px;margin:40px 0 16px}
+    .article-body h3{font-size:16px;font-weight:700;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:6px;margin:28px 0 12px}
+    .article-body p{margin-bottom:14px}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:14px}
+    .article-body li{margin-bottom:6px}
+
+    .box-blue{background:var(--blue-pale);border-left:4px solid var(--blue);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-orange{background:var(--orange-pale);border-left:4px solid var(--orange);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-green{background:var(--green-pale);border-left:4px solid var(--green);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-blue p,.box-orange p,.box-green p{margin-bottom:0}
+
+    .method-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:20px 0}
+    .method-card{border-radius:12px;padding:20px;border:2px solid var(--border)}
+    .method-card.recommended{border-color:var(--blue);background:var(--blue-pale)}
+    .method-card .badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-bottom:8px;letter-spacing:.06em}
+    .method-card .badge.easy{background:#dcfce7;color:#166534}
+    .method-card .badge.pro{background:#fee2e2;color:#b91c1c}
+    .method-card .badge.temp{background:#fef3c7;color:#92400e}
+    .method-card h4{font-size:15px;font-weight:900;margin-bottom:6px}
+    .method-card .verdict{font-size:12px;color:var(--text-sub);margin-bottom:8px}
+    .method-card ul{padding-left:16px;font-size:13px}
+    .method-card li{margin-bottom:4px}
+
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:20px 0}
+    .spec-card{border:1px solid var(--border);border-radius:10px;padding:16px 18px;background:var(--bg-gray)}
+    .spec-card .label{font-size:11px;color:var(--text-muted);letter-spacing:.06em;margin-bottom:4px}
+    .spec-card .value{font-size:20px;font-weight:900;color:var(--blue);line-height:1.3}
+    .spec-card .note{font-size:12px;color:var(--text-sub);margin-top:6px}
+
+    .step-list{list-style:none;padding:0;margin:16px 0;counter-reset:step}
+    .step-list li{counter-increment:step;display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #eaecf0}
+    .step-list li:last-child{border-bottom:none}
+    .step-list li::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:28px;height:28px;min-width:28px;background:var(--blue);color:#fff;border-radius:50%;font-size:13px;font-weight:700;flex-shrink:0}
+    .step-body{flex:1}
+    .step-body strong{display:block;margin-bottom:4px}
+    .step-body .tip{font-size:12px;color:var(--text-sub);margin-top:4px;font-style:italic}
+
+    .tbl-wrap{overflow-x:auto;margin:16px 0}
+    table{width:100%;border-collapse:collapse;font-size:13px;min-width:420px}
+    th{background:var(--blue);color:#fff;padding:9px 10px;text-align:left;font-weight:700}
+    td{padding:8px 10px;border-bottom:1px solid #eaecf0;vertical-align:top}
+    tr:nth-child(even) td{background:#f8f9fb}
+    .good{color:#1a7a3c;font-weight:700}
+    .bad{color:#b91c1c;font-weight:700}
+    .mid{color:#92400e;font-weight:700}
+
+    .trouble-list{list-style:none;padding:0;margin:16px 0}
+    .trouble-list li{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #eaecf0;align-items:flex-start}
+    .trouble-list li:last-child{border-bottom:none}
+    .t-icon{font-size:20px;flex-shrink:0;line-height:1.4}
+    .t-body strong{display:block;margin-bottom:2px;font-size:14px}
+    .t-body span{font-size:13px;color:var(--text-sub)}
+
+    .checklist{list-style:none;padding:0;margin:16px 0}
+    .checklist li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #eaecf0;font-size:14px}
+    .checklist li:last-child{border-bottom:none}
+    .checklist li::before{content:"☐";font-size:18px;color:var(--blue);flex-shrink:0;line-height:1.3}
+
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--blue)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+
+    .cta-section{background:linear-gradient(135deg,#5a0f0f,#7a2a00);border-radius:16px;padding:36px 24px;text-align:center;margin:40px 0;color:#fff}
+    .cta-section h2{font-size:18px;font-weight:900;margin-bottom:8px;color:#fff;border:none;padding:0}
+    .cta-section p{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:20px}
+    .cta-btn{display:inline-block;background:#f0a500;color:#1a1a1a;font-weight:900;font-size:15px;padding:14px 36px;border-radius:50px;transition:opacity .2s}
+    .cta-btn:hover{opacity:.88;text-decoration:none}
+
+    footer.site-footer{background:#1a1a1a;color:#888;font-size:12px;text-align:center;padding:20px}
+    footer.site-footer a{color:#aaa}
+
+    @media(max-width:600px){
+      .hero{padding:32px 16px 28px}
+      .hero h1{font-size:17px}
+      .method-cards{grid-template-columns:1fr}
+    }
+    .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/">LED PRO SHOP</a>
+  <span>プロ仕様LED専門店</span>
+</header>
+
+<div class="hero">
+  <div class="cat-badge">LEDテープ トラブル対処・安全</div>
+  <h1>LEDテープのコネクター接続部が<br>発熱・焦げる原因と対処法<br>接触抵抗・過電流を診断する</h1>
+  <div class="hero-meta">
+    <span>公開: 2026-06-12</span>
+    <span>対象: 電気工事業者・内装施工業者・保守担当者</span>
+  </div>
+</div>
+
+<img src="/articles/images/led-tape-connector-overheating-guide-hero.webp" alt="LEDテープのコネクター接続部が発熱・焦げる原因と対処法" class="hero-img" width="860" height="430" loading="eager">
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/">LED PRO SHOP</a><span>›</span>
+    <a href="/articles/">コラム</a><span>›</span>
+    <span>LEDテープのコネクター接続部が発熱・焦げる原因と対処法</span>
+  </nav>
+
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#danger">まず通電を止める（安全確認）</a></li>
+      <li><a href="#causes">発熱の2大原因（接触抵抗・過電流）</a></li>
+      <li><a href="#capacity">コネクター許容電流の考え方</a></li>
+      <li><a href="#diagnose">テスターでの切り分け手順</a></li>
+      <li><a href="#fix">焦げたコネクターの正しい交換方法</a></li>
+      <li><a href="#prevent">再発を防ぐ設計・施工のポイント</a></li>
+      <li><a href="#checklist">発熱トラブル対処チェックリスト</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ol>
+  </nav>
+
+  <div class="article-body">
+
+    <p>LEDテープの「コネクター接続部だけが熱い」「樹脂が茶色く変色した」「焦げ臭い」は、見過ごすと焼損・断線、最悪は発火につながる危険なサインです。原因は突き詰めると<strong>接触抵抗の増大</strong>か<strong>過電流（容量オーバー）</strong>の2つに集約されます。このページでは現場で安全に原因を切り分け、正しく直し、再発させないための手順を施工業者向けに整理します。</p>
+
+    <!-- ===== 1. 安全 ===== -->
+    <h2 id="danger">1. まず通電を止める（安全確認）</h2>
+
+    <div class="box-blue">
+      <p><strong>変色・焦げ臭・熱を確認したら、まず電源を切ってください。</strong> 通電したまま触る・分解するのは感電・やけど・発火のリスクがあります。電源OFF後も発熱部はしばらく熱いため、冷めてから点検します。煙・炎が出ている場合は分電盤の元電源を落とし、安全を最優先に対応してください。</p>
+    </div>
+
+    <p>発熱は「局所的（コネクター1か所だけ）」か「広範囲（テープ全体や複数箇所）」かで原因の見当が変わります。冷めた後、変色・溶け・焦げの位置を記録しておくと原因の切り分けに役立ちます。</p>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="label">危険サイン</div>
+        <div class="value">変色・異臭</div>
+        <div class="note">樹脂の茶変・焦げ臭は即停止</div>
+      </div>
+      <div class="spec-card">
+        <div class="label">負荷率の目安</div>
+        <div class="value">80%以内</div>
+        <div class="note">コネクター定格に対し余裕を持つ</div>
+      </div>
+      <div class="spec-card">
+        <div class="label">触れないほど熱い</div>
+        <div class="value">要対処</div>
+        <div class="note">恒常的に高温は異常</div>
+      </div>
+      <div class="spec-card">
+        <div class="label">焦げた部品</div>
+        <div class="value">再使用不可</div>
+        <div class="note">必ず新品交換＋原因除去</div>
+      </div>
+    </div>
+
+    <!-- ===== 2. 原因 ===== -->
+    <h2 id="causes">2. 発熱の2大原因（接触抵抗・過電流）</h2>
+
+    <p>接続部で熱が発生するのは、その部分で電力が消費されているからです。発熱量はおおよそ「電流の2乗 × 接触抵抗（P＝I²R）」で増えます。つまり<strong>抵抗が高い接続</strong>か<strong>電流が大きい接続</strong>のどちらかが発熱の正体です。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>原因</th><th>具体的な状態</th><th>発熱の特徴</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>接触抵抗の増大</td><td>半差し・銅箔の酸化や汚れ・端子のばねへたり・ゆるみ</td><td class="bad">そのコネクター1か所が局所的に発熱</td></tr>
+          <tr><td>過電流（容量オーバー）</td><td>許容電流を超える長さのテープを1本に接続</td><td class="bad">端子全体・給電線も含めて広く発熱</td></tr>
+          <tr><td>カットずれ・パッド不足</td><td>銅箔パッドが半分しか当たっていない</td><td class="mid">接触面積不足で抵抗増→発熱</td></tr>
+          <tr><td>線径不足</td><td>給電線が細く許容電流不足</td><td class="mid">配線自体が温まる</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-orange">
+      <p><strong>切り分けの初動:</strong> 「1か所のコネクターだけ熱い」なら接触抵抗を疑い（差し直し・端子清掃・はんだ化）、「広い範囲が熱い・給電線も熱い」なら過電流を疑い（接続長と許容電流の確認・分割給電）ます。まずこの2方向で当たりをつけます。</p>
+    </div>
+
+    <!-- ===== 3. 許容電流 ===== -->
+    <h2 id="capacity">3. コネクター許容電流の考え方</h2>
+
+    <p>コネクターには定格電流があり、流せる電流の上限が決まっています。テープの消費電流が定格を超えると、端子が発熱します。テープの電流は次式で計算します。</p>
+
+    <div class="box-green">
+      <p><strong>電流 I（A）＝ テープのW/m × 接続長（m）÷ 電源電圧（V）</strong><br>
+      例: 14.4W/m × 5m ÷ 24V ＝ 3.0A → このテープ区間には3A流れる。</p>
+    </div>
+
+    <p>この3Aが、使うコネクターの定格電流に対して余裕（負荷率80%以内が目安）があるかを確認します。定格5Aのコネクターなら3Aは80%（4A）以内に収まり概ね問題なし、定格3Aなら超過気味で発熱リスクがあります。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>判定</th><th>状況</th><th>対応</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="good">余裕あり</td><td>電流がコネクター定格の80%以内</td><td>そのまま使用可（接続品質は要確認）</td></tr>
+          <tr><td class="mid">要注意</td><td>定格の80〜100%に近い</td><td>接続長を短縮／高電流コネクター／給電点追加</td></tr>
+          <tr><td class="bad">超過</td><td>定格を超える電流を1本に集中</td><td>はんだ付け化／給電を分割／テープを複数系統に</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-orange">
+      <p><strong>1接続点に電流を集中させない:</strong> 長いテープを片端のコネクター1か所だけで給電すると、その1点に全電流が集中して発熱します。給電点を複数に分ける（両端給電・パワーインジェクション）と1点あたりの電流が下がり、発熱と電圧降下の両方に効きます。</p>
+    </div>
+
+    <!-- ===== 4. 診断 ===== -->
+    <h2 id="diagnose">4. テスターでの切り分け手順</h2>
+
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>電源を切り、目視で変色・溶け・焦げ位置を確認する</strong>
+          局所的か広範囲かで原因の方向を判断します。焦げた部品はこの後交換前提です。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>テープの接続長から消費電流を計算する</strong>
+          W/m×接続長÷電圧で電流を出し、コネクター定格と比較。超えていれば過電流が原因です。
+          <p class="tip">過電流が確定したら、部品交換だけでなく給電分割・はんだ化など設計面の対策が必須です。</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>過電流でなければ接触抵抗を疑い、接続を点検する</strong>
+          半差し・銅箔の酸化や汚れ・端子のゆるみを確認。差し直し、端子を清掃（必要なら#400程度で軽く磨く）して再接続します。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>テスターで導通・電圧を確認する</strong>
+          接続前後の電圧差が大きい箇所は抵抗が高い証拠です。健全な接続と比較して異常箇所を特定します。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>短時間通電し、再発熱しないか温度を確認する</strong>
+          対策後に短時間通電して接続部が異常に熱くならないかを確認してから本固定します。
+          <p class="tip">改善しない・再発する場合はコネクターをはんだ付けに切り替えるのが確実です。</p>
+        </div>
+      </li>
+    </ul>
+
+    <!-- ===== 5. 交換 ===== -->
+    <h2 id="fix">5. 焦げたコネクターの正しい交換方法</h2>
+
+    <div class="method-cards">
+      <div class="method-card recommended">
+        <span class="badge pro">必須手順</span>
+        <h4>部品交換＋原因除去をセットで</h4>
+        <p class="verdict">部品だけ替えても原因が残れば再発する。</p>
+        <ul>
+          <li>焦げたコネクターは必ず新品交換</li>
+          <li>テープの焦げた銅箔パッドはカット除去</li>
+          <li>健全な位置で接続し直す</li>
+          <li>過電流なら給電分割・はんだ化で原因除去</li>
+        </ul>
+      </div>
+      <div class="method-card">
+        <span class="badge easy">高信頼の選択</span>
+        <h4>高電流箇所ははんだ付け</h4>
+        <p class="verdict">電流が大きい接続は端子より確実。</p>
+        <ul>
+          <li>はんだ付けは接触抵抗が低く発熱しにくい</li>
+          <li>振動・引っ張りに強い</li>
+          <li>絶縁（熱収縮チューブ）で保護</li>
+          <li>施工後フラックスを洗浄</li>
+        </ul>
+      </div>
+      <div class="method-card">
+        <span class="badge temp">部材選定</span>
+        <h4>容量に合うコネクターを選ぶ</h4>
+        <p class="verdict">定格・幅・芯数・COB/SMDを合わせる。</p>
+        <ul>
+          <li>定格電流に余裕（80%以内）</li>
+          <li>テープ幅・芯数に適合</li>
+          <li>COBテープは専用コネクター</li>
+          <li>高電流対応品を選ぶ</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>テープ側の焦げも要チェック:</strong> 焦げたのはコネクターだけと思っても、テープ側の銅箔パッドが炭化・変色していることがあります。炭化した銅箔は抵抗が高く再発の原因になるため、健全な（カット可能位置の）パッドまで切り戻して接続し直してください。</p>
+    </div>
+
+    <!-- ===== 6. 予防 ===== -->
+    <h2 id="prevent">6. 再発を防ぐ設計・施工のポイント</h2>
+
+    <ul class="trouble-list">
+      <li>
+        <span class="t-icon">📏</span>
+        <div class="t-body">
+          <strong>1接続点に流す電流を許容内に抑える</strong>
+          <span>長いテープは片端給電をやめ、両端給電・給電点分割で1点あたりの電流を下げる。コネクター定格の80%以内を目安に。</span>
+        </div>
+      </li>
+      <li>
+        <span class="t-icon">🔩</span>
+        <div class="t-body">
+          <strong>接続は奥まで・抜けないかを必ず確認</strong>
+          <span>半差しは接触抵抗増→発熱の最多原因。差し込み後に軽く引っ張り、点灯テストと温度確認をしてから本固定する。</span>
+        </div>
+      </li>
+      <li>
+        <span class="t-icon">🌡️</span>
+        <div class="t-body">
+          <strong>放熱を妨げない納まりにする</strong>
+          <span>接続部を断熱材で密閉・密集させると熱がこもる。放熱クリアランスを確保し、点検できる位置に接続部を配置する。</span>
+        </div>
+      </li>
+      <li>
+        <span class="t-icon">🔧</span>
+        <div class="t-body">
+          <strong>高電流・振動環境ははんだ付けを選ぶ</strong>
+          <span>大電流や振動のある場所はワンタッチより、はんだ付けで接触抵抗を最小化する。屋外・車載・高負荷区間に有効。</span>
+        </div>
+      </li>
+    </ul>
+
+    <!-- ===== CTA ===== -->
+    <div class="cta-section">
+      <h2>高電流対応コネクター・LEDテープ・電源を探す</h2>
+      <p>定格に余裕のあるコネクター・各幅/芯数対応・COB専用品・LEDテープ・電源をプロ価格でご提供。<br>発熱トラブルの再発防止に適した部材を在庫から即納。</p>
+      <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+    </div>
+
+    <!-- ===== 7. チェックリスト ===== -->
+    <h2 id="checklist">7. 発熱トラブル対処チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>発熱・変色・異臭を確認したらまず電源を切った</li>
+      <li>発熱が局所的（1か所）か広範囲かを記録した</li>
+      <li>テープの消費電流（W/m×長さ÷電圧）を計算した</li>
+      <li>コネクター定格に対し電流が80%以内か確認した</li>
+      <li>過電流なら給電分割・はんだ化で原因を除去した</li>
+      <li>接触抵抗なら差し直し・端子清掃・カット位置を点検した</li>
+      <li>焦げたコネクターとテープ側の炭化パッドを交換・切り戻した</li>
+      <li>対策後に短時間通電し再発熱しないか温度確認した</li>
+    </ul>
+
+    <!-- ===== 8. FAQ ===== -->
+    <h2 id="faq">8. よくある質問</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">LEDテープのコネクター接続部が熱くなるのはなぜですか？</div>
+      <div class="faq-a">接続部の発熱は『接触抵抗の増大』か『過電流（容量オーバー）』のどちらかが原因です。接触抵抗は半差し・銅箔の酸化や汚れ・端子のゆるみで増え、その部分で電力が熱に変わって発熱します。過電流はコネクターの許容電流を超えるテープ長を1本に接続している場合に起き、端子全体が発熱します。どちらも放置すると樹脂の変色・焦げ・焼損・断線、最悪は発火に至るため、変色や焦げ臭を確認したら通電を止めて原因を切り分けてください。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">ワンタッチコネクターの許容電流はどれくらいですか？</div>
+      <div class="faq-a">製品により異なりますが、一般的なLEDテープ用ワンタッチコネクターは数A程度（例: 〜5A前後）が目安で、必ず製品仕様の定格電流を確認します。テープの消費電流は『W/m×接続長÷電源電圧』で計算でき、例えば14.4W/mを5m・24Vで点灯すると3Aです。これがコネクター定格に対し余裕（80%以内が目安）があるか確認し、超える場合ははんだ付け・高電流対応コネクター・給電点の分割で対応します。高電流を1つの接続部に集中させない設計が基本です。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">焦げたコネクターは交換すれば再使用できますか？</div>
+      <div class="faq-a">焦げた・変色したコネクターは再使用せず必ず新品に交換してください。一度過熱した端子はばね性の低下・酸化・炭化で接触抵抗がさらに悪化し、再発・焼損リスクが高まります。交換時はコネクターだけでなく、テープ側の焦げた銅箔パッド部分もカットして健全な位置で接続し直し、原因（過電流なら接続長を短くするか給電分割、接触抵抗ならはんだ付けへ変更）を取り除いてから通電テストを行います。原因を直さず部品だけ替えると同じ場所がまた焦げます。</div>
+    </div>
+
+  </div><!-- /.article-body -->
+</div><!-- /.container -->
+
+<footer class="site-footer">
+  <p><a href="/">LED PRO SHOP</a> — プロ仕様LED専門店 &copy; 2026</p>
+</footer>
+
+</body>
+</html>
