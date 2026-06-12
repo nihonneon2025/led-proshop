@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LED電源（スイッチング電源）の寿命と故障｜原因・交換時期の目安と劣化の見分け方 | LED PRO SHOP</title>
+  <meta name="description" content="LEDは点くのに電源だけ先に壊れて不点灯になる現場の原因は、電源内部の電解コンデンサの劣化です。LED電源（スイッチング電源）の寿命の計算式、周囲温度別の期待寿命、故障の症状と原因、テスターでの切り分け手順、交換時期の目安を施工業者向けに整理しました。">
+  <meta name="keywords" content="led電源 寿命,スイッチング電源 寿命,led電源 故障 原因,ledテープ 電源 交換,led電源 すぐ壊れる,電解コンデンサ 劣化,led電源 交換時期,LEDドライバー 寿命">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-power-supply-lifespan-failure-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-power-supply-lifespan-failure-guide">
+  <meta property="og:title" content="LED電源（スイッチング電源）の寿命と故障｜原因・交換時期の目安と劣化の見分け方 | LED PRO SHOP">
+  <meta property="og:description" content="LEDは点くのに電源だけ先に壊れる原因は電解コンデンサの劣化。LED電源の寿命の計算式、周囲温度別の期待寿命、故障症状と原因、テスターでの切り分け手順、交換時期の目安を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-power-supply-lifespan-failure-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LED電源（スイッチング電源）の寿命と故障｜原因・交換時期の目安と劣化の見分け方 | LED PRO SHOP">
+  <meta name="twitter:description" content="LEDは点くのに電源だけ先に壊れる原因は電解コンデンサの劣化。寿命の計算式・周囲温度別の期待寿命・故障症状・テスターでの切り分け手順・交換目安を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-power-supply-lifespan-failure-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LED電源（スイッチング電源）の寿命と故障｜原因・交換時期の目安と劣化の見分け方",
+    "description": "LED電源（スイッチング電源）が本体より先に壊れる理由を電解コンデンサの寿命律速から解説。寿命の計算式、周囲温度別の期待寿命、故障の症状と原因、テスターでの切り分け手順、寿命を延ばす設計と交換目安を施工業者向けに整理。",
+    "image": "https://led-proshop.com/articles/images/led-power-supply-lifespan-failure-guide-hero.webp",
+    "datePublished": "2026-06-13",
+    "dateModified": "2026-06-13",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-power-supply-lifespan-failure-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LED電源の寿命と故障ガイド", "item": "https://led-proshop.com/articles/led-power-supply-lifespan-failure-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQ ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LED電源（スイッチング電源）の寿命は何年くらいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "周囲温度と負荷率で大きく変わります。屋内常温（25〜30℃）で負荷率80%以下なら5〜10年が目安です。一方、天井裏や厨房上部など高温環境、または容量ギリギリで使うと2〜3年で故障することもあります。電源内部の電解コンデンサは温度が10℃上がるごとに寿命がおよそ半分になるため、設置場所の温度管理が寿命を決める最大の要因です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "LEDテープは点くのに電源だけ先に壊れるのはなぜですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "LEDチップ自体の寿命は4万時間前後ありますが、電源内部の電解コンデンサは熱で電解液が少しずつ蒸発し容量が抜けていく消耗部品です。このコンデンサの劣化が電源全体の寿命を律速するため、LEDより電源のほうが先に寿命を迎えるのが一般的です。電源は『いつか必ず交換が必要な部品』として計画しておくと安全です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "電源が故障したのか、テープ・配線側の不具合か、現場で切り分けるには？",
+        "acceptedAnswer": { "@type": "Answer", "text": "テスターで電源の出力端子電圧を測ります。DC24V品で出力が0Vや不安定なら電源故障の可能性が高く、24V前後の正常電圧が出ているのに点灯しない場合はテープや配線側の不具合です。さらにLEDテープを外して無負荷で出力電圧を測ると確実に切り分けられます（無負荷で正常電圧→負荷側、無負荷でも異常→電源）。" }
+      },
+      {
+        "@type": "Question",
+        "name": "LED電源の寿命を延ばすにはどうすればよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "①負荷率80%以下で使う（余裕率20%以上）②密閉ボックスを避け放熱・通気を確保する③天井裏・直射日光・厨房上部など高温環境を避ける④105℃定格コンデンサ・MTBF表記のある品質電源を選ぶ⑤大容量1台より中容量を分散配置して1台あたりの発熱を下げる、の5点が有効です。特に設置場所の温度管理が最も効果的です。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --main:#0e5563;--main-pale:#e3f1f3;--amber:#d98000;--amber-pale:#fff4e3;
+      --bg:#fff;--bg-gray:#f4f6f6;--text:#1a1a1a;--text-sub:#4a5658;--text-muted:#869295;--border:#cfd9da;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.75}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--main);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:860px;margin:0 auto;padding:0 20px}
+    header.site-header{background:var(--main);padding:14px 20px;display:flex;align-items:center;gap:12px}
+    header.site-header a{color:#fff;font-size:18px;font-weight:700;letter-spacing:.03em}
+    header.site-header span{color:rgba(255,255,255,.6);font-size:12px}
+
+    .hero{background:linear-gradient(135deg,#0a3d47 0%,#5a3500 100%);padding:48px 20px 40px;text-align:center;color:#fff}
+    .hero .cat-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:11px;letter-spacing:.08em;margin-bottom:16px}
+    .hero h1{font-size:clamp(18px,3.5vw,26px);font-weight:900;line-height:1.45;margin-bottom:14px}
+    .hero .hero-meta{font-size:12px;color:rgba(255,255,255,.7);display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+
+    .breadcrumb{font-size:11px;color:var(--text-muted);padding:10px 0;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+    .breadcrumb a{color:var(--text-muted)}
+
+    .toc{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:28px 0}
+    .toc h2{font-size:13px;font-weight:700;color:var(--text-sub);margin-bottom:10px;letter-spacing:.06em}
+    .toc ol{padding-left:18px}
+    .toc li{font-size:13px;margin-bottom:6px}
+    .toc a{color:var(--main)}
+
+    .article-body{padding:32px 0 48px}
+    .article-body h2{font-size:20px;font-weight:900;color:var(--main);border-left:4px solid var(--main);padding-left:12px;margin:40px 0 16px}
+    .article-body h3{font-size:16px;font-weight:700;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:6px;margin:28px 0 12px}
+    .article-body p{margin-bottom:14px}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:14px}
+    .article-body li{margin-bottom:6px}
+
+    .box-blue{background:var(--main-pale);border-left:4px solid var(--main);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-orange{background:var(--amber-pale);border-left:4px solid var(--amber);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-blue p,.box-orange p{margin-bottom:0}
+
+    .formula{background:#10242a;color:#dff3f7;font-family:monospace;font-size:15px;border-radius:8px;padding:16px 20px;margin:16px 0;line-height:1.6}
+    .formula .comment{color:#7ec8e3}
+
+    .data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .data-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .data-card .num{font-size:26px;font-weight:900;color:var(--main);line-height:1}
+    .data-card .unit{font-size:12px;color:var(--text-sub);margin-top:2px}
+    .data-card .label{font-size:11px;color:var(--text-muted);margin-top:6px}
+
+    .tbl-wrap{overflow-x:auto;margin:16px 0}
+    table{width:100%;border-collapse:collapse;font-size:13px;min-width:480px}
+    th{background:var(--main);color:#fff;padding:9px 10px;text-align:left;font-weight:700}
+    td{padding:8px 10px;border-bottom:1px solid #e7eced;vertical-align:top}
+    tr:nth-child(even) td{background:#f7f9f9}
+    .good{color:#1a7a3c;font-weight:700}
+    .bad{color:#b91c1c;font-weight:700}
+    .mid{color:#92400e;font-weight:700}
+
+    .step-list{list-style:none;padding:0;margin:16px 0;counter-reset:step}
+    .step-list li{counter-increment:step;display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #e7eced}
+    .step-list li:last-child{border-bottom:none}
+    .step-list li::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:28px;height:28px;min-width:28px;background:var(--main);color:#fff;border-radius:50%;font-size:13px;font-weight:700}
+    .step-body{flex:1}
+    .step-body strong{display:block;margin-bottom:4px}
+
+    .checklist{list-style:none;padding:0;margin:16px 0}
+    .checklist li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #e7eced;font-size:14px}
+    .checklist li:last-child{border-bottom:none}
+    .checklist li::before{content:"☐";font-size:18px;color:var(--main);flex-shrink:0;line-height:1.3}
+
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--main)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+
+    .related{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:22px 26px;margin:36px 0}
+    .related h2{font-size:14px;font-weight:700;color:var(--text-sub);border:none;padding:0;margin:0 0 14px}
+    .related ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
+    .related li{margin:0}
+    .related a{display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid var(--border);border-radius:6px;color:var(--text);background:#fff}
+    .related a:hover{text-decoration:none;border-color:var(--main)}
+    .related a::before{content:"→";color:var(--amber);flex-shrink:0}
+
+    .cta-section{background:linear-gradient(135deg,#0a3d47,#5a3500);border-radius:16px;padding:36px 24px;text-align:center;margin:40px 0;color:#fff}
+    .cta-section h2{font-size:18px;font-weight:900;margin-bottom:8px;color:#fff;border:none;padding:0}
+    .cta-section p{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:20px}
+    .cta-btn{display:inline-block;background:#f0a500;color:#1a1a1a;font-weight:900;font-size:15px;padding:14px 36px;border-radius:50px;transition:opacity .2s}
+    .cta-btn:hover{opacity:.88;text-decoration:none}
+
+    footer.site-footer{background:#1a1a1a;color:#888;font-size:12px;text-align:center;padding:20px}
+    footer.site-footer a{color:#aaa}
+
+    @media(max-width:600px){
+      .hero{padding:32px 16px 28px}
+      .hero h1{font-size:17px}
+      .data-grid{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/">LED PRO SHOP</a>
+  <span>プロ仕様LED専門店</span>
+</header>
+
+<div class="hero">
+  <div class="cat-badge">電源・メンテナンス解説</div>
+  <h1>LED電源（スイッチング電源）の寿命と故障｜原因・交換時期の目安と劣化の見分け方</h1>
+  <div class="hero-meta">
+    <span>公開: 2026-06-13</span>
+    <span>対象: 電気工事業者・看板施工業者・内装施工業者・設備保全担当者</span>
+  </div>
+</div>
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/">LED PRO SHOP</a><span>›</span>
+    <a href="/articles/">コラム</a><span>›</span>
+    <span>LED電源の寿命と故障ガイド</span>
+  </nav>
+
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#why">なぜLED電源は本体より先に壊れるのか</a></li>
+      <li><a href="#lifespan">電源寿命の計算（温度で半減する仕組み）</a></li>
+      <li><a href="#symptom">故障の症状・原因・現場での対処</a></li>
+      <li><a href="#sign">交換時期の目安と劣化のサイン</a></li>
+      <li><a href="#extend">寿命を延ばす設計・施工のコツ</a></li>
+      <li><a href="#diagnose">故障時の切り分け手順（テスター）</a></li>
+      <li><a href="#checklist">電源選定・保守チェックリスト</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ol>
+  </nav>
+
+  <div class="article-body">
+
+    <p>「LEDテープはまだ点くはずなのに、ある日突然まったく光らなくなった」——その原因の多くは、LEDチップではなく<strong>電源（スイッチング電源／LEDドライバー）の寿命切れ</strong>です。LEDチップの寿命が4万時間前後あるのに対し、電源は内部の電解コンデンサが先に劣化する「消耗部品」です。このページでは、LED電源がなぜ先に壊れるのか、寿命がどう決まるのか、故障の切り分けと交換時期の目安を施工業者向けに整理します。</p>
+
+    <!-- ===== 1. なぜ ===== -->
+    <h2 id="why">1. なぜLED電源は本体より先に壊れるのか</h2>
+
+    <p>スイッチング電源の内部には、出力電圧を平滑するための<strong>電解コンデンサ</strong>が使われています。電解コンデンサは内部の電解液が熱で少しずつ蒸発し、容量が抜けていく構造的な消耗部品です。容量が抜けると出力電圧の平滑が効かなくなり、リプル（電圧の揺らぎ）が増大して、最終的に出力停止やLEDのちらつきを引き起こします。</p>
+
+    <div class="box-blue">
+      <p><strong>寿命を律速するのは電解コンデンサ:</strong> LEDチップ・基板・トランスはまだ生きていても、コンデンサ1点の劣化で電源全体が機能停止します。つまり「電源は必ず先に寿命が来る部品」として、施工時から交換を前提に計画するのが現場の鉄則です。</p>
+    </div>
+
+    <h3>主な劣化・故障の引き金</h3>
+    <ul>
+      <li><strong>熱</strong>：周囲温度＋自己発熱でコンデンサ温度が上がるほど寿命は指数的に短くなる（最大要因）</li>
+      <li><strong>過負荷</strong>：定格容量ギリギリの常時フル稼働は発熱を増やし寿命を縮める</li>
+      <li><strong>湿気・結露</strong>：屋外や高湿環境での基板腐食・絶縁劣化</li>
+      <li><strong>突入電流・サージ</strong>：頻繁なON/OFFや落雷誘導サージによる部品ストレス</li>
+    </ul>
+
+    <!-- ===== 2. 寿命計算 ===== -->
+    <h2 id="lifespan">2. 電源寿命の計算（温度で半減する仕組み）</h2>
+
+    <p>電解コンデンサの寿命は「<strong>10℃の温度上昇で寿命が約半分になる</strong>」というアレニウスの法則（10℃半減則）に従います。電源の寿命は、内部の電解コンデンサ温度を基準に次の式で概算できます。</p>
+
+    <div class="formula">
+      期待寿命 L（h）= L0 × 2^((T0 − T) / <span style="color:#ffd700">10</span>)<br>
+      <span class="comment">// L0=コンデンサ定格寿命, T0=定格温度(例105℃), T=実際のコンデンサ温度</span>
+    </div>
+
+    <p>下表は「105℃／10,000時間」定格の電解コンデンサを使った電源を例にした、コンデンサ実温度ごとの期待寿命です。コンデンサ温度は「設置場所の周囲温度＋電源内部の自己発熱（一般に15〜25℃）」で決まる点に注意してください。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>コンデンサ実温度</th><th>期待寿命の目安</th><th>連続稼働換算</th><th>評価</th></tr></thead>
+        <tbody>
+          <tr><td>65℃</td><td class="good">約160,000時間</td><td>約18年</td><td class="good">余裕</td></tr>
+          <tr><td>75℃</td><td class="good">約80,000時間</td><td>約9年</td><td class="good">良好</td></tr>
+          <tr><td>85℃</td><td>約40,000時間</td><td>約4.6年</td><td class="mid">標準</td></tr>
+          <tr><td>95℃</td><td>約20,000時間</td><td>約2.3年</td><td class="mid">短命</td></tr>
+          <tr><td>105℃</td><td class="bad">約10,000時間</td><td>約1.1年</td><td class="bad">危険</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-orange">
+      <p><strong>温度を10℃下げれば寿命は2倍:</strong> 同じ電源でも、密閉ボックスから通気のよい場所へ移すだけで内部温度が10〜20℃下がり、寿命が2〜4倍に延びることがあります。電源の寿命対策は「温度を下げること」がほぼ全てと言っても過言ではありません。</p>
+    </div>
+
+    <!-- ===== 3. 症状 ===== -->
+    <h2 id="symptom">3. 故障の症状・原因・現場での対処</h2>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>症状</th><th>主な原因</th><th>現場での対処</th></tr></thead>
+        <tbody>
+          <tr><td>全消灯（無出力）</td><td>コンデンサ容量抜け・ヒューズ断・基板焼け</td><td>出力電圧をテスターで測定。0Vなら電源交換</td></tr>
+          <tr><td>ちらつき・明滅</td><td>コンデンサ劣化でリプル増大</td><td>寿命末期のサイン。早めに電源交換</td></tr>
+          <tr><td>起動が遅い／数分後に点灯</td><td>コンデンサ劣化・低温始動不良</td><td>劣化進行中。計画的に交換</td></tr>
+          <tr><td>一部だけ暗い・色ムラ</td><td class="mid">電圧降下（多くは電源故障ではない）</td><td>配線長・電線太さ・終端電圧を確認</td></tr>
+          <tr><td>異常発熱・焦げ臭</td><td class="bad">過負荷・放熱不良・絶縁劣化</td><td>即停止。負荷率と設置環境を是正し交換</td></tr>
+          <tr><td>「ジー」といううなり音</td><td>コンデンサ劣化・調光器との相性</td><td>電源・調光方式の組合せを見直す</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>「暗い」と「点かない」は切り分ける:</strong> 一部だけ暗い・端だけ暗いのは多くが配線の電圧降下で、電源は正常なことが多い。逆に全消灯・ちらつき・うなり音は電源（コンデンサ）劣化を疑います。症状で当たりをつけてから測定すると早く原因に届きます。</p>
+    </div>
+
+    <!-- ===== 4. サイン ===== -->
+    <h2 id="sign">4. 交換時期の目安と劣化のサイン</h2>
+
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="num">10<span style="font-size:16px">℃</span></div>
+        <div class="unit">上昇で寿命1/2</div>
+        <div class="label">10℃半減則</div>
+      </div>
+      <div class="data-card">
+        <div class="num">80<span style="font-size:16px">%</span></div>
+        <div class="unit">以下の負荷率</div>
+        <div class="label">推奨運用（余裕率20%）</div>
+      </div>
+      <div class="data-card">
+        <div class="num">5<span style="font-size:16px">万h</span></div>
+        <div class="unit">前後のMTBF</div>
+        <div class="label">品質電源の目安</div>
+      </div>
+      <div class="data-card">
+        <div class="num">5<span style="font-size:16px">〜7年</span></div>
+        <div class="unit">屋内常用</div>
+        <div class="label">計画交換の目安</div>
+      </div>
+    </div>
+
+    <h3>交換を検討すべき劣化のサイン</h3>
+    <ul>
+      <li>点灯直後にわずかにちらつく、または明るさが安定するまで時間がかかる</li>
+      <li>以前より起動が遅い（スイッチONから点灯まで間が空く）</li>
+      <li>電源の筐体が以前より熱い・触れないほど発熱している</li>
+      <li>「ジー」「キーン」といううなり音が出始めた</li>
+      <li>電源を開けてコンデンサの頭（防爆弁）が膨らんでいる・液漏れ跡がある</li>
+      <li>設置から5〜7年（高温環境なら3年）が経過している</li>
+    </ul>
+
+    <div class="box-orange">
+      <p><strong>店舗・施設は「壊れる前」に計画交換:</strong> 看板・店舗の常時点灯用途は、不点灯が即クレーム・機会損失につながります。屋内常用で5〜7年を目安に、繁忙期前のメンテナンス時にまとめて予防交換するとトラブルを避けられます。</p>
+    </div>
+
+    <!-- ===== 5. 延ばす ===== -->
+    <h2 id="extend">5. 寿命を延ばす設計・施工のコツ</h2>
+
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>負荷率は80%以下（余裕率20%以上）に</strong>
+          総消費W数 × 1.2 以上の容量を選ぶ。定格ギリギリの常時フル稼働は発熱が増え寿命を縮めます。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>放熱・通気を確保する</strong>
+          密閉ボックスに押し込まない。電源の周囲に空間を空け、可能なら金属面に密着させて放熱させる。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>高温環境を避ける</strong>
+          天井裏・直射日光・厨房や什器の発熱源近くは避ける。温度を10℃下げれば寿命は2倍になります。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>品質電源を選ぶ</strong>
+          105℃定格の電解コンデンサ・MTBF（平均故障間隔）表記・過電流/過電圧/短絡保護付きの製品を選定する。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>大容量1台より分散配置</strong>
+          中容量を複数台に分けると1台あたりの発熱が下がり、故障時の影響範囲も局所化できます。
+        </div>
+      </li>
+    </ul>
+
+    <!-- ===== related ===== -->
+    <div class="related">
+      <h2>関連する電源・配線の解説</h2>
+      <ul>
+        <li><a href="/articles/dc24v-led-power-supply-guide">DC24V 電源の選び方｜必要容量(W)とIP規格・チラつき対策</a></li>
+        <li><a href="/articles/led-psu-capacity-guide">LEDテープ 電源（PSU）容量計算 早見表｜ワット数・配線長から即計算</a></li>
+        <li><a href="/articles/led-tape-voltage-drop-guide">LEDテープの電圧降下｜「端が暗い」の原因と対処・配線設計</a></li>
+      </ul>
+    </div>
+
+    <!-- ===== CTA ===== -->
+    <div class="cta-section">
+      <h2>長寿命なLED電源・スイッチング電源を探す</h2>
+      <p>105℃定格コンデンサ・PF0.95以上・過電流/過電圧/短絡保護付きのDC24V/12V電源を在庫から即納。<br>30W〜600Wまで各容量をプロ価格でご提供しています。</p>
+      <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+    </div>
+
+    <!-- ===== 6. 切り分け ===== -->
+    <h2 id="diagnose">6. 故障時の切り分け手順（テスター）</h2>
+
+    <p>「点かない」原因が電源か、テープ・配線側かを、テスター1本で順に切り分けます。感電防止のため、配線作業は必ず一次側（AC）を遮断してから行ってください。</p>
+
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>入力（一次側）に電圧が来ているか</strong>
+          電源のAC入力端子にAC100Vが来ているかをテスター/検電器で確認。来ていなければブレーカー・スイッチ・元配線側の問題。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>出力（二次側）のDC電圧を測る</strong>
+          出力端子の電圧を測定。DC24V品なら22〜25Vが正常。0V・極端に低い・ふらつくなら電源故障の可能性大。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>無負荷で出力を確認する</strong>
+          LEDテープを外して無負荷で測定。無負荷で正常電圧が出る→負荷（テープ・配線）側、無負荷でも異常→電源本体の故障。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>ヒューズ・端子・コンデンサを目視</strong>
+          内蔵ヒューズの断線、端子の焼け・変色、電解コンデンサの膨らみ・液漏れを確認。膨らみがあれば寿命確定。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>リプル（揺らぎ）を確認する</strong>
+          テスターのACレンジでDC出力を測ると、わずかな交流分（リプル）が読める。値が大きい・ちらつきを伴うならコンデンサ劣化のサイン。
+        </div>
+      </li>
+    </ul>
+
+    <!-- ===== 7. チェックリスト ===== -->
+    <h2 id="checklist">7. 電源選定・保守チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>総消費W数 × 1.2 以上の容量で、負荷率80%以下になっているか</li>
+      <li>設置場所の周囲温度・通気が確保され、高温源の近くを避けているか</li>
+      <li>105℃定格コンデンサ・MTBF表記・3点保護（過電流/過電圧/短絡）付きの品質電源か</li>
+      <li>屋外・高湿環境はIP65以上の金属筐体電源を選んでいるか</li>
+      <li>屋内常用は5〜7年（高温環境は3年）を目安に計画交換の対象に入れているか</li>
+      <li>常時点灯の店舗・看板用途は、同型番の予備電源を1台ストックしているか</li>
+      <li>故障時の切り分け手順（入力→出力→無負荷）を現場で共有しているか</li>
+      <li>大容量1台ではなく中容量の分散配置で発熱を抑えているか</li>
+    </ul>
+
+    <!-- ===== 8. FAQ ===== -->
+    <h2 id="faq">8. よくある質問</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">LED電源（スイッチング電源）の寿命は何年くらいですか？</div>
+      <div class="faq-a">周囲温度と負荷率で大きく変わります。屋内常温（25〜30℃）で負荷率80%以下なら5〜10年が目安です。天井裏や厨房上部など高温環境、または容量ギリギリで使うと2〜3年で故障することもあります。電解コンデンサは温度が10℃上がるごとに寿命がおよそ半分になるため、設置場所の温度管理が寿命を決める最大の要因です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">LEDテープは点くのに電源だけ先に壊れるのはなぜですか？</div>
+      <div class="faq-a">LEDチップ自体の寿命は4万時間前後ありますが、電源内部の電解コンデンサは熱で電解液が少しずつ蒸発し容量が抜けていく消耗部品です。このコンデンサの劣化が電源全体の寿命を律速するため、LEDより電源のほうが先に寿命を迎えるのが一般的です。電源は「いつか必ず交換が必要な部品」として計画しておくと安全です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">電源故障か、テープ・配線側か、現場で切り分けるには？</div>
+      <div class="faq-a">テスターで電源の出力端子電圧を測ります。DC24V品で出力が0Vや不安定なら電源故障の可能性が高く、24V前後の正常電圧が出ているのに点灯しない場合はテープや配線側の不具合です。さらにLEDテープを外して無負荷で出力電圧を測ると確実に切り分けられます（無負荷で正常電圧→負荷側、無負荷でも異常→電源）。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">LED電源の寿命を延ばすにはどうすればよいですか？</div>
+      <div class="faq-a">①負荷率80%以下で使う（余裕率20%以上）②密閉ボックスを避け放熱・通気を確保する③天井裏・直射日光・厨房上部など高温環境を避ける④105℃定格コンデンサ・MTBF表記のある品質電源を選ぶ⑤大容量1台より中容量を分散配置して1台あたりの発熱を下げる、の5点が有効です。特に設置場所の温度管理が最も効果的です。</div>
+    </div>
+
+  </div><!-- /article-body -->
+</div><!-- /container -->
+
+<footer class="site-footer">
+  <p>© 2024 LED PRO SHOP ／ <a href="/tokushoho.html">特定商取引法に基づく表示</a></p>
+</footer>
+
+</body>
+</html>
