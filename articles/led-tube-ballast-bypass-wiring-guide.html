@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>直管LED 安定器バイパス工事の配線方法｜片側給電・両側給電の違いと施工手順【電気工事士向け】 | LED PRO SHOP</title>
+  <meta name="description" content="蛍光灯器具に直管LEDを付けたら点灯しない・ちらつく——多くは安定器バイパス工事の給電方式ミスが原因です。片側給電と両側給電の配線の違い、安定器の切り離し手順、誤接続・蛍光灯の誤挿入を防ぐ表示まで、第二種電気工事士の施工現場向けに整理しました。">
+  <meta name="keywords" content="直管LED 安定器 バイパス 工事,安定器 バイパス 配線方法,直管LED 配線,蛍光灯 LED 直結 配線,片側給電 両側給電 違い,直管LED 点灯しない,LED直管 工事必要,GX16t-5 口金">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tube-ballast-bypass-wiring-guide">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tube-ballast-bypass-wiring-guide">
+  <meta property="og:title" content="直管LED 安定器バイパス工事の配線方法｜片側給電・両側給電の違いと施工手順【電気工事士向け】 | LED PRO SHOP">
+  <meta property="og:description" content="蛍光灯器具に直管LEDを付けたら点灯しない・ちらつくのは、安定器バイパス工事の給電方式ミスが原因のことがほとんどです。片側給電と両側給電の配線の違い・安定器の切り離し手順・蛍光灯の誤挿入を防ぐ表示を電気工事士向けに整理。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tube-ballast-bypass-wiring-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="直管LED 安定器バイパス工事の配線方法｜片側給電・両側給電の違いと施工手順【電気工事士向け】 | LED PRO SHOP">
+  <meta name="twitter:description" content="直管LEDが点灯しない・ちらつく原因の多くは給電方式の配線ミス。片側給電と両側給電の違い・安定器の切り離し手順・蛍光灯の誤挿入を防ぐ表示を電気工事士向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tube-ballast-bypass-wiring-guide-hero.webp">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "直管LED 安定器バイパス工事の配線方法｜片側給電・両側給電の違いと施工手順",
+    "description": "蛍光灯器具に直管LEDを取り付ける安定器バイパス工事の配線方法を電気工事士向けに解説。片側給電・両側給電の違い、安定器の切り離し手順、絶縁処理、蛍光灯の誤挿入を防ぐ表示までを整理。",
+    "image": "https://led-proshop.com/articles/images/led-tube-ballast-bypass-wiring-guide-hero.webp",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP 編集部"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
+    },
+    "datePublished": "2026-06-14",
+    "dateModified": "2026-06-14",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tube-ballast-bypass-wiring-guide"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/"},
+      {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "直管LED 安定器バイパス工事の配線方法", "item": "https://led-proshop.com/articles/led-tube-ballast-bypass-wiring-guide"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "安定器バイパス工事は資格がなくてもできますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "できません。安定器のバイパス工事はAC100V/200Vの屋内配線を変更する作業で、電気工事士法上の「電気工事」に該当します。低圧（600V以下）の工事には第二種電気工事士以上の資格が必要です。無資格での施工は法令違反であると同時に、感電・短絡・火災の重大なリスクがあります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "直管LEDを付けたのに点灯しません。原因は何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "最も多い原因は、ランプの給電方式（片側給電／両側給電）と器具側の配線が一致していないことです。両側給電仕様のランプを片側配線の器具に付けても点灯しません。次に多いのが安定器を撤去せずに直結配線してしまうケースや、L/N（電源とソケットピン）の結線ミスです。ランプの仕様書で給電方式を確認し、器具の配線と一致させてください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "バイパス工事後の器具に普通の蛍光灯を挿しても大丈夫ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "絶対に挿さないでください。安定器を撤去・バイパスした器具のソケットには商用電源が直接かかっているため、従来の蛍光灯を挿すと短絡・破裂・感電・火災の危険があります。工事後は器具に「LED専用・蛍光灯使用禁止」の表示ラベルを必ず貼付してください。GX16t-5口金など蛍光灯が物理的に挿せない工事専用ランプを選ぶとより安全です。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Noto Sans JP',sans-serif;background:#0d1117;color:#e6edf3;line-height:1.7;font-size:15px}
+    a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+    .wrap{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+    /* breadcrumb */
+    .bc{font-size:12px;color:#8b949e;margin-bottom:24px}
+    .bc a{color:#8b949e}
+    /* hero */
+    .hero{background:linear-gradient(135deg,#2a1c08 0%,#0d1117 100%);border:1px solid #3d3320;border-radius:12px;padding:32px 28px 28px;margin-bottom:32px}
+    .hero-tag{display:inline-block;background:#db6d28;color:#0d1117;font-size:11px;font-weight:700;padding:2px 10px;border-radius:4px;margin-bottom:12px;letter-spacing:.05em}
+    .hero h1{font-size:clamp(18px,4vw,26px);font-weight:900;line-height:1.35;margin-bottom:16px;color:#f0f6fc}
+    .hero-meta{font-size:12px;color:#8b949e;margin-bottom:20px}
+    .hero-summary{background:#21262d;border-radius:8px;padding:16px 20px}
+    .hero-summary p{font-size:13px;color:#cdd9e5;line-height:1.7}
+    /* danger box */
+    .danger{background:#2d0d0d;border:1px solid #f85149;border-radius:8px;padding:16px 20px;margin:24px 0}
+    .danger .alert-head{color:#ff7b72;font-weight:700;font-size:14px;margin-bottom:8px}
+    .danger p{font-size:13px;color:#f0c0bd;line-height:1.6;margin:0}
+    /* section */
+    h2{font-size:18px;font-weight:700;color:#f0a868;border-left:3px solid #db6d28;padding-left:12px;margin:36px 0 16px}
+    h3{font-size:15px;font-weight:700;color:#e6edf3;margin:24px 0 10px}
+    p{margin-bottom:14px;color:#cdd9e5;font-size:14px}
+    /* table */
+    .tbl-wrap{overflow-x:auto;margin:16px 0 24px}
+    table{width:100%;border-collapse:collapse;font-size:13px;background:#161b22;border-radius:8px;overflow:hidden}
+    th{background:#21262d;color:#8b949e;padding:9px 12px;text-align:left;font-weight:600;white-space:nowrap}
+    td{padding:8px 12px;border-bottom:1px solid #21262d;color:#cdd9e5}
+    tr:last-child td{border-bottom:none}
+    .green{color:#3fb950;font-weight:700}
+    .yellow{color:#d29922;font-weight:700}
+    .red{color:#f85149;font-weight:700}
+    /* step */
+    .step-list{list-style:none;margin:16px 0 24px}
+    .step-list li{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+    .step-num{flex-shrink:0;width:28px;height:28px;background:#db6d28;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#0d1117}
+    .step-body{flex:1}
+    .step-body strong{display:block;font-size:14px;color:#e6edf3;margin-bottom:4px}
+    .step-body p{font-size:13px;color:#8b949e;margin:0}
+    /* faq */
+    .faq-item{border:1px solid #30363d;border-radius:8px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:#21262d;padding:14px 16px;font-size:14px;font-weight:700;color:#e6edf3}
+    .faq-q::before{content:"Q. ";color:#f0a868}
+    .faq-a{padding:14px 16px;font-size:13px;color:#cdd9e5;line-height:1.7}
+    .faq-a::before{content:"A. ";color:#3fb950;font-weight:700}
+    /* related */
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin:16px 0}
+    .related-card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 16px;transition:border-color .2s}
+    .related-card:hover{border-color:#db6d28}
+    .related-card .rc-tag{font-size:10px;color:#8b949e;margin-bottom:6px}
+    .related-card .rc-title{font-size:13px;font-weight:700;color:#e6edf3;line-height:1.4}
+    /* cta */
+    .cta-block{background:linear-gradient(135deg,#162032,#1a2a1a);border:1px solid #238636;border-radius:12px;padding:24px 20px;text-align:center;margin:32px 0}
+    .cta-block p{color:#cdd9e5;font-size:14px;margin-bottom:16px}
+    .cta-btn{display:inline-block;background:#238636;color:#fff;font-weight:700;font-size:15px;padding:12px 32px;border-radius:8px;text-decoration:none}
+    .cta-btn:hover{background:#2ea043;text-decoration:none}
+    /* highlight */
+    .hl-box{background:#161b22;border-left:3px solid #db6d28;border-radius:0 8px 8px 0;padding:14px 18px;margin:16px 0}
+    .hl-box p{margin:0;font-size:13px}
+    @media(max-width:600px){.hero{padding:20px 16px}.hero h1{font-size:17px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- breadcrumb -->
+  <nav class="bc" aria-label="パンくず">
+    <a href="/">LED PRO SHOP</a> &rsaquo;
+    <a href="/articles/">コラム</a> &rsaquo;
+    直管LED 安定器バイパス工事の配線方法
+  </nav>
+
+  <!-- hero -->
+  <div class="hero">
+    <span class="hero-tag">電気工事業者向け 配線ガイド</span>
+    <h1>直管LED 安定器バイパス工事の配線方法<br>片側給電・両側給電の違いと施工手順</h1>
+    <p class="hero-meta">更新日: 2026年6月14日｜LED PRO SHOP 編集部</p>
+    <div class="hero-summary">
+      <p>蛍光灯器具を流用して直管LEDに換える「安定器バイパス工事」は、2027年の蛍光灯生産終了を前に依頼が急増している施工です。ところが現場では「付けたのに点灯しない」「ちらつく」「数本だけ点かない」というトラブルが後を絶ちません。原因のほとんどは<strong>給電方式（片側給電／両側給電）と配線の不一致</strong>です。この記事では給電方式の違い・安定器の切り離し手順・絶縁処理・誤挿入対策までを電気工事士の現場目線で整理します。</p>
+    </div>
+  </div>
+
+  <!-- 資格・安全警告 -->
+  <div class="danger">
+    <div class="alert-head">⚠ この工事は第二種電気工事士以上の資格が必須です</div>
+    <p>安定器のバイパス工事はAC100V/200Vの屋内配線を変更する作業で、電気工事士法上の「電気工事」に該当します。無資格での施工は法令違反であり、感電・短絡・火災の重大事故につながります。本記事は有資格者の作業手順の確認を目的とした技術情報であり、無資格者の施工を推奨するものではありません。</p>
+  </div>
+
+  <h2>1. 直管LEDの「工事不要型」と「工事必要型（バイパス型）」</h2>
+  <p>直管LEDは器具への取り付け方式で大きく2系統に分かれます。発注前にどちらの方式なのかを必ず確認しないと、「工事不要と思って買ったのにバイパス工事が必要だった」「逆に工事したのに安定器対応型だった」というミスマッチが起こります。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>タイプ</th><th>安定器の扱い</th><th>工事</th><th>必要資格</th><th>省エネ・寿命</th><th>主なリスク</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>工事不要型<br>（安定器対応型）</strong></td>
+          <td>既存の安定器をそのまま利用</td>
+          <td>不要（ランプ差替えのみ）</td>
+          <td>不要</td>
+          <td class="yellow">省エネ△ / 寿命△</td>
+          <td>安定器の電力ロス・劣化、品番非対応で不点灯</td>
+        </tr>
+        <tr>
+          <td><strong>工事必要型<br>（バイパス型・電源直結）</strong></td>
+          <td>安定器を回路から切り離す</td>
+          <td>必要</td>
+          <td class="red">第二種電気工事士以上</td>
+          <td class="green">省エネ◎ / 寿命◎</td>
+          <td>給電方式の誤配線・蛍光灯の誤挿入</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>バイパス型は安定器を経由しないため電力ロスがなく、安定器の経年劣化による不点灯・発熱のリスクも消えます。本記事で扱うのはこの<strong>工事必要型（バイパス工事）</strong>です。</p>
+
+  <h2>2. 片側給電と両側給電の違い（最重要）</h2>
+  <p>バイパス工事の成否を分ける最大のポイントが「給電方式」です。直管LEDランプには電源（L/N）の受け方が2方式あり、<strong>ランプの方式と器具の配線が一致していないと点灯しません</strong>。発注したランプがどちらかを仕様書で必ず確認します。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>給電方式</th><th>結線（L/N）</th><th>反対側ソケット</th><th>特徴</th><th>誤接続時</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>片側給電</strong><br>（片側配線）</td>
+          <td>片側ソケットの2ピンにLとNを接続</td>
+          <td>非給電（機械的支持のみ）</td>
+          <td class="green">非給電側が充電部にならず比較的安全。結線が片側で完結</td>
+          <td>L/N逆や両側配線だと不点灯</td>
+        </tr>
+        <tr>
+          <td><strong>両側給電</strong><br>（両側配線）</td>
+          <td>一方のソケットにL、他方のソケットにN</td>
+          <td>給電あり（N側）</td>
+          <td class="yellow">両端ソケットに電圧。海外製・旧型に多い</td>
+          <td>片側配線だと不点灯。両端が充電部になり感電注意</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="hl-box">
+    <p><strong>判定のコツ：</strong>「数本だけ点灯しない」「全部点かない」というクレームの大半は、ランプの給電方式と器具配線の不一致です。納入ロットでランプの方式が混在していないか、器具側の配線が全灯具で統一されているかを最初に疑ってください。安全面では、施工統一が容易で非給電側が充電部にならない<strong>片側給電方式での統一</strong>が扱いやすい選択肢です。</p>
+  </div>
+
+  <h2>3. 安定器バイパス工事の配線手順</h2>
+  <p>ここでは片側給電タイプを例に、グロースタータ式・ラピッドスタート式器具を流用する場合の基本手順を示します。器具やランプメーカーの施工説明書が最優先です。必ず説明書の結線図に従ってください。</p>
+
+  <ul class="step-list">
+    <li>
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>電源遮断・検電</strong>
+        <p>該当回路のブレーカーを必ず遮断し、検電器で無電圧を確認。複数回路が同一器具に来ていないかも確認します。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>安定器・グロー・力率改善コンデンサの切り離し</strong>
+        <p>安定器を撤去するか、入力・出力線を切り離して回路から完全に外します。グロースタータ（点灯管）・力率改善コンデンサも撤去します。安定器を残したまま直結すると発熱・電力ロス・故障の原因になります。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>ソケットへ電源を直結（片側給電）</strong>
+        <p>器具の電源線L・Nを、給電側ソケットの2ピンへ結線します。反対側ソケットは非給電とします。両側給電タイプの場合はL・Nを左右のソケットに振り分けます。ランプ仕様書の結線図どおりに行うことが絶対条件です。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>絶縁処理・結線の固定</strong>
+        <p>切り離した安定器側の線端は絶縁キャップ等で確実に絶縁。差込形コネクタや圧着で結線し、端子の緩み・芯線露出がないか確認します。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>絶縁抵抗・導通の測定</strong>
+        <p>ランプを外した状態で絶縁抵抗計（メガー）により対地絶縁を確認（低圧回路は0.1〜0.2MΩ以上が目安）。L/Nの極性と導通もテスターで確認します。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <strong>ランプ装着・試験点灯</strong>
+        <p>給電方式の合ったランプを装着し通電。点灯・ちらつきの有無を確認します。点灯しない場合は給電方式と結線を再確認します。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">7</div>
+      <div class="step-body">
+        <strong>「LED専用・蛍光灯使用禁止」表示の貼付</strong>
+        <p>器具に表示ラベルを貼付し、後日のメンテで蛍光灯が誤挿入されない措置を取ります。これは安全上の必須工程です。</p>
+      </div>
+    </li>
+  </ul>
+
+  <h2>4. よくある失敗とトラブル</h2>
+
+  <h3>失敗①：給電方式の不一致で点灯しない</h3>
+  <p>両側給電仕様のランプを片側配線の器具に付けると点灯しません。逆もしかりです。発注時にランプの給電方式を指定し、現場の配線方式と統一してください。</p>
+
+  <h3>失敗②：安定器を残したまま直結した</h3>
+  <p>バイパス型ランプは安定器を通さない前提です。安定器を残すと発熱・電力ロス・異音が発生し、ランプ・安定器の双方を傷めます。安定器は必ず回路から切り離します。</p>
+
+  <h3>失敗③：両側給電器具に蛍光灯が挿せる状態で放置</h3>
+  <p>G13口金は従来の蛍光灯と互換のため、バイパス工事後に蛍光灯を誤挿入すると短絡・破裂・感電の危険があります。表示ラベルの貼付に加え、可能であれば蛍光灯が物理的に挿せない<strong>GX16t-5口金（L形ピン）の工事専用ランプ</strong>を選定すると安全です。</p>
+
+  <h3>失敗④：絶縁処理の不備で漏電</h3>
+  <p>切り離した安定器側の線端を絶縁せず放置すると、充電部の露出・漏電・地絡の原因になります。線端は確実に絶縁し、施工後にメガーで絶縁抵抗を確認してください。</p>
+
+  <h2>5. 安全・法令上の注意点</h2>
+  <p>直管LEDの安定器バイパス工事を行う際は、次の点を必ず守ってください。</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>項目</th><th>内容</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>資格</td><td class="red">第二種電気工事士以上が必須（電気工事士法）</td></tr>
+        <tr><td>ランプ規格</td><td>一般照明用直管LEDランプはJIS C 8159系の規格・PSE（電気用品安全法）適合品を選定</td></tr>
+        <tr><td>給電方式の統一</td><td>器具配線とランプの片側／両側給電を必ず一致・統一させる</td></tr>
+        <tr><td>誤挿入対策</td><td>「LED専用・蛍光灯使用禁止」表示の貼付。可能ならGX16t-5口金の工事専用品</td></tr>
+        <tr><td>施工後検査</td><td>絶縁抵抗測定・極性確認・点灯確認を実施し記録を残す</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>6. FAQ</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">安定器バイパス工事は資格がなくてもできますか？</div>
+    <div class="faq-a">できません。安定器のバイパス工事はAC100V/200Vの屋内配線を変更する作業で、電気工事士法上の「電気工事」に該当します。低圧（600V以下）の工事には第二種電気工事士以上の資格が必要です。無資格での施工は法令違反であると同時に、感電・短絡・火災の重大なリスクがあります。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">直管LEDを付けたのに点灯しません。原因は何ですか？</div>
+    <div class="faq-a">最も多い原因は、ランプの給電方式（片側給電／両側給電）と器具側の配線が一致していないことです。両側給電仕様のランプを片側配線の器具に付けても点灯しません。次に多いのが安定器を撤去せずに直結してしまうケースや、L/N（電源とソケットピン）の結線ミスです。ランプの仕様書で給電方式を確認し、器具の配線と一致させてください。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">バイパス工事後の器具に普通の蛍光灯を挿しても大丈夫ですか？</div>
+    <div class="faq-a">絶対に挿さないでください。安定器を撤去・バイパスした器具のソケットには商用電源が直接かかっているため、従来の蛍光灯を挿すと短絡・破裂・感電・火災の危険があります。工事後は器具に「LED専用・蛍光灯使用禁止」の表示ラベルを必ず貼付してください。GX16t-5口金など蛍光灯が物理的に挿せない工事専用ランプを選ぶとより安全です。</div>
+  </div>
+
+  <h2>関連ガイド</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/articles/fluorescent-led-replacement-2027-guide">
+      <div class="rc-tag">移行ガイド</div>
+      <div class="rc-title">蛍光灯からLED照明への交換ガイド｜2027年生産終了前の移行手順・費用・補助金</div>
+    </a>
+    <a class="related-card" href="/articles/led-insulation-resistance-megger-guide">
+      <div class="rc-tag">技術ガイド</div>
+      <div class="rc-title">LED照明の絶縁抵抗測定（メガー）ガイド｜判定基準値と測定手順</div>
+    </a>
+    <a class="related-card" href="/articles/led-power-supply-pse-compliance-guide">
+      <div class="rc-tag">技術ガイド</div>
+      <div class="rc-title">LED電源のPSE適合ガイド｜電気用品安全法の対象範囲と確認方法</div>
+    </a>
+    <a class="related-card" href="/articles/led-lighting-lux-calculation-guide">
+      <div class="rc-tag">技術ガイド</div>
+      <div class="rc-title">照度計算のやり方｜必要照度(ルクス)と器具台数の出し方 JIS Z 9110早見表</div>
+    </a>
+    <a class="related-card" href="/articles/office-lighting-jis-guide">
+      <div class="rc-tag">選び方ガイド</div>
+      <div class="rc-title">オフィス照明のJIS基準ガイド｜事務所の必要照度・色温度・グレア対策</div>
+    </a>
+    <a class="related-card" href="/articles/led-tape-cri-ra-value-guide">
+      <div class="rc-tag">技術ガイド</div>
+      <div class="rc-title">CRIとRaの違いは？実は同じ演色性指標｜Ra80・Ra90・Ra95の選び方を業種別に解説</div>
+    </a>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <p>業務用LED照明・直管LED・電源・配線部材はLED PRO SHOPで。<br>PSE適合・高演色品からIP65防水まで400点超を即日出荷。</p>
+    <a class="cta-btn" href="/">商品ラインナップを見る</a>
+  </div>
+
+</div>
+</body>
+</html>
