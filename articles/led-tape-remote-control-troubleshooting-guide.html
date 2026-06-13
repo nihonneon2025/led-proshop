@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープのリモコン・コントローラーが効かない原因と対処法｜IR・RF・Wi-Fi別の切り分け | LED PRO SHOP</title>
+  <meta name="description" content="施工後にLEDテープの調光リモコンやRGBコントローラーが効かない・反応しない・一部だけ動かない——原因はリモコン方式（IR赤外線／RF無線／Wi-Fi）ごとに異なります。電池・ペアリング・受光部の向き・電波干渉・電源容量不足・配線極性など、現場での切り分け手順と対処法を施工業者向けに整理しました。">
+  <meta name="keywords" content="ledテープ リモコン 効かない,led コントローラー 反応しない,rgb リモコン 動かない,led 調光器 効かない,赤外線リモコン 反応しない,led wifi コントローラー つながらない,led リモコン ペアリング,led リモコン 距離">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-remote-control-troubleshooting-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-remote-control-troubleshooting-guide">
+  <meta property="og:title" content="LEDテープのリモコン・コントローラーが効かない原因と対処法｜IR・RF・Wi-Fi別の切り分け | LED PRO SHOP">
+  <meta property="og:description" content="調光リモコンやRGBコントローラーが効かない原因は方式（IR／RF／Wi-Fi）で異なる。電池・ペアリング・受光部・電波干渉・電源容量・極性など、現場での切り分け手順と対処を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-remote-control-troubleshooting-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープのリモコン・コントローラーが効かない原因と対処法｜IR・RF・Wi-Fi別の切り分け | LED PRO SHOP">
+  <meta name="twitter:description" content="リモコンが効かない原因は方式（IR／RF／Wi-Fi）で異なる。電池・ペアリング・受光部・電波干渉・電源容量・極性など現場での切り分けと対処を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-remote-control-troubleshooting-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDテープのリモコン・コントローラーが効かない原因と対処法｜IR・RF・Wi-Fi別の切り分け",
+    "description": "LEDテープの調光リモコン・RGBコントローラーが効かない・反応しない・一部だけ動かない原因を、リモコン方式（IR赤外線／RF無線／Wi-Fi）ごとに整理。電池・ペアリング・受光部・電波干渉・電源容量不足・極性など、現場での切り分け手順と対処法を施工業者向けに解説。",
+    "image": "https://led-proshop.com/articles/images/led-tape-remote-control-troubleshooting-guide-hero.webp",
+    "datePublished": "2026-06-14",
+    "dateModified": "2026-06-14",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-remote-control-troubleshooting-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDリモコン・コントローラーが効かない対処ガイド", "item": "https://led-proshop.com/articles/led-tape-remote-control-troubleshooting-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQ ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "リモコンが急に効かなくなりました。最初に確認すべきことは？",
+        "acceptedAnswer": { "@type": "Answer", "text": "まずリモコンの電池を新品に交換してください。ボタン電池（CR2025など）は電圧が下がると、近距離では効くのに距離が離れると効かなくなる症状が出ます。次に、スマホのカメラ越しにリモコンの先端を見ながらボタンを押し、赤外線（IR）リモコンならLEDが光って見えるかを確認します。光れば送信はできているので、受光部側（コントローラー）や電源・配線を疑う流れになります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "コントローラーのランプは点くのにLEDテープが光りません。原因は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "コントローラーが動作している（受信ランプが反応する）のにテープが光らない場合は、リモコンではなく出力側の問題です。コントローラーの出力定格（A・W）に対してLEDテープの消費電力が超過していないか、配線の極性（＋−）やRGBの色配線（R・G・B・V）が正しいか、コネクタの接触不良がないかを確認します。特に長尺接続では電圧降下や出力容量オーバーで末端が点かないことがあります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "RF（無線）リモコンの反応が悪い・届く距離が短いのはなぜですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "RFリモコンは壁裏や金属什器の中、金属製のボックス内に受信機（コントローラー）を埋め込むと、電波が遮蔽されて到達距離が短くなります。受信機は金属で囲わず、できるだけ開けた位置に設置してください。また、Wi-Fiルーターや電子機器が近いと2.4GHz帯の電波干渉で反応が鈍ることがあります。それでも改善しない場合はペアリング（学習）のやり直し、受信機への給電電圧の確認を行います。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --main:#6d3a8e;--main-pale:#f2e9f7;--amber:#c2701a;--amber-pale:#faf0e2;
+      --bg:#fff;--bg-gray:#f6f4f7;--text:#1a1a1a;--text-sub:#4f4658;--text-muted:#8a828f;--border:#d6cdda;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.75}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--main);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:860px;margin:0 auto;padding:0 20px}
+    header.site-header{background:var(--main);padding:14px 20px;display:flex;align-items:center;gap:12px}
+    header.site-header a{color:#fff;font-size:18px;font-weight:700;letter-spacing:.03em}
+    header.site-header span{color:rgba(255,255,255,.6);font-size:12px}
+
+    .hero{background:linear-gradient(135deg,#3c1f54 0%,#5a3500 100%);padding:48px 20px 40px;text-align:center;color:#fff}
+    .hero .cat-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:11px;letter-spacing:.08em;margin-bottom:16px}
+    .hero h1{font-size:clamp(18px,3.5vw,26px);font-weight:900;line-height:1.45;margin-bottom:14px}
+    .hero .hero-meta{font-size:12px;color:rgba(255,255,255,.7);display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+
+    .breadcrumb{font-size:11px;color:var(--text-muted);padding:10px 0;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+    .breadcrumb a{color:var(--text-muted)}
+
+    .toc{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:28px 0}
+    .toc h2{font-size:13px;font-weight:700;color:var(--text-sub);margin-bottom:10px;letter-spacing:.06em}
+    .toc ol{padding-left:18px}
+    .toc li{font-size:13px;margin-bottom:6px}
+    .toc a{color:var(--main)}
+
+    .article-body{padding:32px 0 48px}
+    .article-body h2{font-size:20px;font-weight:900;color:var(--main);border-left:4px solid var(--main);padding-left:12px;margin:40px 0 16px}
+    .article-body h3{font-size:16px;font-weight:700;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:6px;margin:28px 0 12px}
+    .article-body p{margin-bottom:14px}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:14px}
+    .article-body li{margin-bottom:6px}
+
+    .box-blue{background:var(--main-pale);border-left:4px solid var(--main);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-orange{background:var(--amber-pale);border-left:4px solid var(--amber);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-blue p,.box-orange p{margin-bottom:0}
+
+    .formula{background:#221830;color:#efe2f7;font-family:monospace;font-size:15px;border-radius:8px;padding:16px 20px;margin:16px 0;line-height:1.6}
+    .formula .comment{color:#c79ee3}
+
+    .data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .data-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .data-card .num{font-size:26px;font-weight:900;color:var(--main);line-height:1}
+    .data-card .unit{font-size:12px;color:var(--text-sub);margin-top:2px}
+    .data-card .label{font-size:11px;color:var(--text-muted);margin-top:6px}
+
+    .tbl-wrap{overflow-x:auto;margin:16px 0}
+    table{width:100%;border-collapse:collapse;font-size:13px;min-width:480px}
+    th{background:var(--main);color:#fff;padding:9px 10px;text-align:left;font-weight:700}
+    td{padding:8px 10px;border-bottom:1px solid #e9e4ec;vertical-align:top}
+    tr:nth-child(even) td{background:#f9f7fa}
+    .good{color:#1a7a3c;font-weight:700}
+    .bad{color:#b91c1c;font-weight:700}
+    .mid{color:#92400e;font-weight:700}
+
+    .step-list{list-style:none;padding:0;margin:16px 0;counter-reset:step}
+    .step-list li{counter-increment:step;display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #e9e4ec}
+    .step-list li:last-child{border-bottom:none}
+    .step-list li::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:28px;height:28px;min-width:28px;background:var(--main);color:#fff;border-radius:50%;font-size:13px;font-weight:700}
+    .step-body{flex:1}
+    .step-body strong{display:block;margin-bottom:4px}
+
+    .checklist{list-style:none;padding:0;margin:16px 0}
+    .checklist li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #e9e4ec;font-size:14px}
+    .checklist li:last-child{border-bottom:none}
+    .checklist li::before{content:"☐";font-size:18px;color:var(--main);flex-shrink:0;line-height:1.3}
+
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--main)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+
+    .related{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:22px 26px;margin:36px 0}
+    .related h2{font-size:14px;font-weight:700;color:var(--text-sub);border:none;padding:0;margin:0 0 14px}
+    .related ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
+    .related li{margin:0}
+    .related a{display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid var(--border);border-radius:6px;color:var(--text);background:#fff}
+    .related a:hover{text-decoration:none;border-color:var(--main)}
+    .related a::before{content:"→";color:var(--amber);flex-shrink:0}
+
+    .cta-section{background:linear-gradient(135deg,#3c1f54,#5a3500);border-radius:16px;padding:36px 24px;text-align:center;margin:40px 0;color:#fff}
+    .cta-section h2{font-size:18px;font-weight:900;margin-bottom:8px;color:#fff;border:none;padding:0}
+    .cta-section p{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:20px}
+    .cta-btn{display:inline-block;background:#f0a500;color:#1a1a1a;font-weight:900;font-size:15px;padding:14px 36px;border-radius:50px;transition:opacity .2s}
+    .cta-btn:hover{opacity:.88;text-decoration:none}
+
+    footer.site-footer{background:#1a1a1a;color:#888;font-size:12px;text-align:center;padding:20px}
+    footer.site-footer a{color:#aaa}
+
+    @media(max-width:600px){
+      .hero{padding:32px 16px 28px}
+      .hero h1{font-size:17px}
+      .data-grid{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/">LED PRO SHOP</a>
+  <span>プロ仕様LED専門店</span>
+</header>
+
+<div class="hero">
+  <div class="cat-badge">トラブル対処ガイド</div>
+  <h1>LEDテープのリモコン・コントローラーが効かない原因と対処法｜IR・RF・Wi-Fi別の切り分け</h1>
+  <div class="hero-meta">
+    <span>公開: 2026-06-14</span>
+    <span>対象: 電気工事業者・看板施工業者・内装施工業者・設備保全担当者</span>
+  </div>
+</div>
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/">LED PRO SHOP</a><span>›</span>
+    <a href="/articles/">コラム</a><span>›</span>
+    <span>LEDリモコン・コントローラーが効かない対処ガイド</span>
+  </nav>
+
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#types">まずリモコン方式を見分ける（IR／RF／Wi-Fi）</a></li>
+      <li><a href="#quick">最初に確認する3点（電池・送信・受信）</a></li>
+      <li><a href="#causes">症状別の原因と対処一覧</a></li>
+      <li><a href="#ir">IR（赤外線）リモコンが効かないとき</a></li>
+      <li><a href="#rf">RF（無線）リモコンが効かないとき</a></li>
+      <li><a href="#wifi">Wi-Fi／アプリ制御がつながらないとき</a></li>
+      <li><a href="#flow">現場での切り分け手順</a></li>
+      <li><a href="#checklist">トラブル切り分けチェックリスト</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ol>
+  </nav>
+
+  <div class="article-body">
+
+    <p>「施工が終わって調光リモコンを押しても反応しない」「RGBコントローラーが急に効かなくなった」——LEDテープのリモコントラブルは、原因がリモコン方式（IR／RF／Wi-Fi）ごとに大きく異なります。送信側（リモコン）・受信側（コントローラー）・電源・配線のどこに問題があるかを順に切り分ければ、ほとんどの不具合は現場で原因を特定できます。このページでは、施工業者が現場で迷わないよう、方式別の原因と対処、切り分け手順を整理します。</p>
+
+    <!-- ===== 1. 方式 ===== -->
+    <h2 id="types">1. まずリモコン方式を見分ける（IR／RF／Wi-Fi）</h2>
+
+    <p>原因の切り分けは「どの方式のリモコンか」を特定するところから始まります。方式ごとに弱点が違うため、ここを間違えると見当違いの対処に時間を取られます。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>方式</th><th>見分け方</th><th>特性</th><th>弱点（効かない主因）</th></tr></thead>
+        <tbody>
+          <tr><td>IR（赤外線）</td><td>受信部に黒い受光窓。リモコンを向けて使う</td><td>安価。指向性が強い</td><td>受光部が見えない位置・障害物・直射日光・電池</td></tr>
+          <tr><td>RF（無線2.4GHz）</td><td>受信機にアンテナ線。向けなくても効く</td><td>壁裏でも届く。距離が長い</td><td>金属の遮蔽・電波干渉・ペアリング外れ</td></tr>
+          <tr><td>Wi-Fi／アプリ</td><td>スマホアプリで操作。ルーター必須</td><td>遠隔・スケジュール制御可</td><td>2.4GHz未対応ルーター・接続設定・通信切れ</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>方式の混在に注意:</strong> RGBコントローラーには「IRとRFの両対応」「Wi-Fi＋RFリモコン同梱」など複合タイプがあります。付属リモコンと受信機の方式が合っていないと永遠に反応しません。まずセットの型番・方式の一致を確認してください。</p>
+    </div>
+
+    <!-- ===== 2. 最初の3点 ===== -->
+    <h2 id="quick">2. 最初に確認する3点（電池・送信・受信）</h2>
+
+    <p>方式を問わず、まず次の3点を順に確認すると原因の当たりがつきます。</p>
+
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>リモコンの電池を新品に交換する</strong>
+          ボタン電池（CR2025等）は電圧低下で「近づければ効くが離れると効かない」症状を出す。最も多い原因なので最初に交換する。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>送信できているかスマホカメラで確認する</strong>
+          IRリモコンは肉眼では見えないが、スマホのカメラ越しに先端を見てボタンを押すと、送信時にLEDが白〜紫に光って見える。光れば送信はOK。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>受信側（コントローラー）に給電されているか確認する</strong>
+          コントローラーに正しい電圧（DC12V/24V）が来ているかテスターで確認。受信機が起動していなければリモコンに反応しない。
+        </div>
+      </li>
+    </ul>
+
+    <!-- ===== 3. 症状別 ===== -->
+    <h2 id="causes">3. 症状別の原因と対処一覧</h2>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>症状</th><th>主な原因</th><th>現場での対処</th></tr></thead>
+        <tbody>
+          <tr><td>まったく反応しない</td><td>電池切れ・方式不一致・受信機未給電</td><td>電池交換→方式確認→コントローラーの電圧確認</td></tr>
+          <tr><td>近くなら効くが離れると効かない</td><td class="mid">電池電圧低下・受光部の遮蔽</td><td>新品電池に交換。受光部を遮るものを除く</td></tr>
+          <tr><td>反応が遅い・取りこぼす</td><td>電波干渉・受光部への直射日光</td><td>干渉源を遠ざける。受光部を日光から外す</td></tr>
+          <tr><td>一部の色だけ変わらない（RGB）</td><td class="bad">色配線（R/G/B）の断線・接触不良</td><td>該当色の配線・コネクタ・はんだを点検</td></tr>
+          <tr><td>コントローラーは反応するがテープが光らない</td><td class="bad">出力容量オーバー・極性逆・配線不良</td><td>出力定格とテープ消費電力、＋−極性を確認</td></tr>
+          <tr><td>設定が勝手に戻る・記憶しない</td><td>瞬断・電源容量不足での再起動</td><td>電源容量に余裕を持たせ、配線接触を点検</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-orange">
+      <p><strong>「リモコンの故障」と決めつけない:</strong> 現場で多いのは、リモコン本体ではなく<strong>電池・受信機の給電・配線側</strong>の問題です。リモコンを新品に交換しても直らないケースの大半は受信機・電源・配線が原因です。送信→受信→出力の順で機械的に切り分けると、無駄な部材交換を避けられます。</p>
+    </div>
+
+    <!-- ===== 4. IR ===== -->
+    <h2 id="ir">4. IR（赤外線）リモコンが効かないとき</h2>
+
+    <p>IRリモコンは光（赤外線）で通信するため、受光部とリモコンの間に「見通し」が必要です。施工時に受信部を見えない位置へ隠してしまうのが、効かなくなる最大の原因です。</p>
+
+    <ul>
+      <li><strong>受光部が隠れていないか</strong>：アルミフレーム内・什器裏・天井裏に受信部を埋め込むと赤外線が届かない。受光窓を露出させる</li>
+      <li><strong>角度・距離</strong>：IRは指向性が強い。受光部の正面から、一般に5〜8m以内・左右30度程度の範囲で使う</li>
+      <li><strong>直射日光・強い照明</strong>：太陽光やハロゲンの赤外線成分が受光部を飽和させ反応しなくなる。受光部を日光から外す</li>
+      <li><strong>受光窓の汚れ・養生テープ</strong>：施工時の保護フィルムや塗料の付着で感度が落ちる。窓を清掃する</li>
+    </ul>
+
+    <!-- ===== CTA ===== -->
+    <div class="cta-section">
+      <h2>相性の確かなコントローラー・調光器を探す</h2>
+      <p>IR／RF／Wi-Fi対応のRGB・RGBWコントローラー、PWM調光器、対応リモコンを在庫から即納。<br>出力容量・対応電圧を明記し、施工に必要なスペックで選べます。</p>
+      <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+    </div>
+
+    <!-- ===== 5. RF ===== -->
+    <h2 id="rf">5. RF（無線）リモコンが効かないとき</h2>
+
+    <p>RF（多くは2.4GHz帯）は壁裏や障害物越しでも届くのが利点ですが、金属による電波遮蔽と干渉に弱いという特性があります。</p>
+
+    <ul>
+      <li><strong>金属で囲わない</strong>：受信機を金属ボックスや金属什器の中に入れると電波が遮蔽される。樹脂カバーや開けた位置へ移す</li>
+      <li><strong>アンテナ線を丸めない・挟まない</strong>：受信機のアンテナ線を金属に密着・束ねると感度が落ちる。まっすぐ伸ばす</li>
+      <li><strong>電波干渉を避ける</strong>：Wi-Fiルーター・電子レンジ・他の無線機器が近いと2.4GHz帯が混雑する。距離を取る</li>
+      <li><strong>ペアリング（学習）のやり直し</strong>：受信機側の学習ボタンでリモコンを再登録する。複数台を1リモコンで同期させる場合は手順どおり全台を登録する</li>
+    </ul>
+
+    <div class="box-blue">
+      <p><strong>複数台を1リモコンで操作する現場:</strong> 長尺を複数の受信機に分けた現場では、全ての受信機を同じリモコンにペアリングして初めて一斉制御できます。1台だけ反応しない場合は、その受信機のペアリング漏れか給電不足を疑ってください。</p>
+    </div>
+
+    <!-- ===== 6. Wi-Fi ===== -->
+    <h2 id="wifi">6. Wi-Fi／アプリ制御がつながらないとき</h2>
+
+    <p>Wi-Fiコントローラーは遠隔・スケジュール制御ができる反面、ネットワーク設定でつまずきやすい方式です。</p>
+
+    <ul>
+      <li><strong>2.4GHz帯のWi-Fiに接続する</strong>：多くのLEDコントローラーは2.4GHz専用。5GHz帯にしか接続しようとすると設定が完了しない。ルーターのSSIDを確認する</li>
+      <li><strong>初期ペアリングはコントローラーの近くで</strong>：初回登録はスマホと機器を近づけて行う。設定完了後に遠隔操作へ移る</li>
+      <li><strong>給電が安定しているか</strong>：通信途切れや再起動ループは電源容量不足・瞬断が原因のことがある。電源に余裕を持たせる</li>
+      <li><strong>ルーター更新・停電後</strong>：SSIDやパスワード変更、停電復帰後に再設定が必要な場合がある</li>
+    </ul>
+
+    <!-- ===== 7. 切り分け ===== -->
+    <h2 id="flow">7. 現場での切り分け手順</h2>
+
+    <p>送信側から出力側へ、上流から順に切り分けるのが最短ルートです。</p>
+
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>送信を確認</strong>
+          電池交換 → スマホカメラでIR送信を目視（RF/Wi-Fiは次へ）。送信できていなければリモコン側の問題。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>受信機の給電を確認</strong>
+          コントローラーの入力電圧をテスターで測定。DC12V/24Vが来ていなければ電源・配線を先に直す。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>受信機を直接操作で確認</strong>
+          受信機にボタンがあれば押して動作を見る。手動で動けば受信（リモコン通信）側、動かなければ出力側の問題。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>出力とテープを確認</strong>
+          出力端子の電圧、テープの極性（＋−）・RGB色配線、出力容量とテープ消費電力の関係、コネクタ接触を点検する。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>ペアリング・設定をやり直す</strong>
+          受信側は正常で通信だけ通らない場合、RFは再ペアリング、Wi-Fiは2.4GHzで再設定する。
+        </div>
+      </li>
+    </ul>
+
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="num">1<span style="font-size:16px">番</span></div>
+        <div class="unit">電池交換から</div>
+        <div class="label">最多の原因</div>
+      </div>
+      <div class="data-card">
+        <div class="num">2.4<span style="font-size:16px">GHz</span></div>
+        <div class="unit">RF/Wi-Fi帯</div>
+        <div class="label">干渉・5GHz非対応に注意</div>
+      </div>
+      <div class="data-card">
+        <div class="num">5<span style="font-size:16px">〜8m</span></div>
+        <div class="unit">IR到達の目安</div>
+        <div class="label">受光部の見通しが前提</div>
+      </div>
+      <div class="data-card">
+        <div class="num">＋−</div>
+        <div class="unit">極性・色配線</div>
+        <div class="label">出力側の定番ミス</div>
+      </div>
+    </div>
+
+    <!-- ===== related ===== -->
+    <div class="related">
+      <h2>関連する制御・配線の解説</h2>
+      <ul>
+        <li><a href="/articles/led-tape-controller-dimmer-guide">LEDテープのコントローラー・調光器の選び方と接続</a></li>
+        <li><a href="/articles/led-tape-rgb-color-troubleshooting-guide">RGB LEDテープの色がおかしい・出ない原因と対処</a></li>
+        <li><a href="/articles/led-tape-dimming-methods-guide">LEDテープの調光方式（PWM/CCR/DALI）の違いと選び方</a></li>
+      </ul>
+    </div>
+
+    <!-- ===== 8. チェックリスト ===== -->
+    <h2 id="checklist">8. トラブル切り分けチェックリスト</h2>
+
+    <ul class="checklist">
+      <li>リモコンの電池を新品に交換したか（最初に行う）</li>
+      <li>リモコンと受信機の方式（IR／RF／Wi-Fi）が一致しているか確認したか</li>
+      <li>スマホカメラでIR送信が出ているか目視確認したか</li>
+      <li>コントローラーに正しい電圧（DC12V/24V）が給電されているか測ったか</li>
+      <li>IRは受光部が見える位置にあり、直射日光・障害物がないか確認したか</li>
+      <li>RFは受信機を金属で囲っていないか、アンテナを伸ばしているか確認したか</li>
+      <li>Wi-Fiは2.4GHz帯で設定し、初回登録を機器の近くで行ったか</li>
+      <li>出力側の極性（＋−）・RGB色配線・出力容量・コネクタ接触を点検したか</li>
+      <li>RF複数台は全受信機をペアリング済みか確認したか</li>
+    </ul>
+
+    <!-- ===== 9. FAQ ===== -->
+    <h2 id="faq">9. よくある質問</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">リモコンが急に効かなくなりました。最初に確認すべきことは？</div>
+      <div class="faq-a">まずリモコンの電池を新品に交換してください。ボタン電池（CR2025など）は電圧が下がると、近距離では効くのに距離が離れると効かなくなる症状が出ます。次に、スマホのカメラ越しにリモコンの先端を見ながらボタンを押し、赤外線（IR）リモコンならLEDが光って見えるかを確認します。光れば送信はできているので、受光部側（コントローラー）や電源・配線を疑う流れになります。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">コントローラーのランプは点くのにLEDテープが光りません。原因は？</div>
+      <div class="faq-a">コントローラーが動作している（受信ランプが反応する）のにテープが光らない場合は、リモコンではなく出力側の問題です。コントローラーの出力定格（A・W）に対してLEDテープの消費電力が超過していないか、配線の極性（＋−）やRGBの色配線（R・G・B・V）が正しいか、コネクタの接触不良がないかを確認します。特に長尺接続では電圧降下や出力容量オーバーで末端が点かないことがあります。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">RF（無線）リモコンの反応が悪い・届く距離が短いのはなぜですか？</div>
+      <div class="faq-a">RFリモコンは壁裏や金属什器の中、金属製のボックス内に受信機（コントローラー）を埋め込むと、電波が遮蔽されて到達距離が短くなります。受信機は金属で囲わず、できるだけ開けた位置に設置してください。また、Wi-Fiルーターや電子機器が近いと2.4GHz帯の電波干渉で反応が鈍ることがあります。それでも改善しない場合はペアリング（学習）のやり直し、受信機への給電電圧の確認を行います。</div>
+    </div>
+
+  </div><!-- /article-body -->
+</div><!-- /container -->
+
+<footer class="site-footer">
+  <p>© 2024 LED PRO SHOP ／ <a href="/tokushoho.html">特定商取引法に基づく表示</a></p>
+</footer>
+
+</body>
+</html>

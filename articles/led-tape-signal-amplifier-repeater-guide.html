@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープの信号増幅器（リピーター/アンプ）の使い方と接続方法｜RGBが長距離で色ずれする時の対策 | LED PRO SHOP</title>
+  <meta name="description" content="RGB・RGBWテープを長距離つなぐと「末端が暗い」「色がずれる」「途中から白っぽくなる」——原因は信号と電圧の減衰です。信号増幅器（リピーター/アンプ）の役割、アナログRGB用とアドレサブル（SPI）用の違い、IN/OUT/別電源の接続方法、設置間隔と必要台数の計算を施工業者向けに整理しました。">
+  <meta name="keywords" content="ledテープ 信号増幅器,led アンプ リピーター,rgb 長距離 色ずれ,ledテープ 末端 暗い,rgb アンプ 接続,アドレサブル リピーター,ledテープ 信号 減衰,rgbw アンプ 使い方">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-signal-amplifier-repeater-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-signal-amplifier-repeater-guide">
+  <meta property="og:title" content="LEDテープの信号増幅器（リピーター/アンプ）の使い方と接続方法｜RGBが長距離で色ずれする時の対策 | LED PRO SHOP">
+  <meta property="og:description" content="RGB・RGBWテープが長距離で末端暗化・色ずれする原因は信号と電圧の減衰。信号増幅器（リピーター/アンプ）の役割、アナログ用とSPI用の違い、IN/OUT/別電源の接続、設置間隔と台数計算を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-signal-amplifier-repeater-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープの信号増幅器（リピーター/アンプ）の使い方と接続方法｜RGBが長距離で色ずれする時の対策 | LED PRO SHOP">
+  <meta name="twitter:description" content="RGB・RGBWが長距離で末端暗化・色ずれする原因は信号と電圧の減衰。リピーター/アンプの役割、アナログ用とSPI用の違い、IN/OUT/別電源の接続、台数計算を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-signal-amplifier-repeater-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDテープの信号増幅器（リピーター/アンプ）の使い方と接続方法｜RGBが長距離で色ずれする時の対策",
+    "description": "RGB・RGBWテープが長距離で末端暗化・色ずれする原因（信号と電圧の減衰）を解説。信号増幅器（リピーター/アンプ）の役割、アナログRGB用とアドレサブル（SPI）用の違い、IN/OUT/別電源の接続方法、設置間隔と必要台数の計算を施工業者向けに整理。",
+    "image": "https://led-proshop.com/articles/images/led-tape-signal-amplifier-repeater-guide-hero.webp",
+    "datePublished": "2026-06-14",
+    "dateModified": "2026-06-14",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-signal-amplifier-repeater-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープ信号増幅器（リピーター/アンプ）ガイド", "item": "https://led-proshop.com/articles/led-tape-signal-amplifier-repeater-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQ ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "RGBテープを長くつないだら末端が暗く・色がずれます。アンプで直りますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "症状の原因が「電圧降下」か「信号減衰」かで対処が変わります。末端全体が均一に暗いのは電圧降下が主因で、信号増幅器（アンプ）は新しい電源から再給電するため改善します。色だけがずれる・特定色が弱くなるのは信号（R/G/Bの制御信号）の減衰で、これもアンプで信号を再生成すれば改善します。アンプはコントローラーの信号を読み取り、別途用意した電源から増幅した同じ信号を出力する機器なので、長距離RGB配線の定番対策です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "信号増幅器（アンプ）はどこに、どんな配線でつなげばよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "アンプは「色がずれ始める手前」または「テープの分割点」に入れます。配線は、前段（コントローラーやテープ）の信号線をアンプのIN（入力）へ、アンプには専用の電源（DC12V/24V）を別に接続し、アンプのOUT（出力）から次のテープへつなぎます。重要なのは、アンプの電源は前段と共用せず新しく給電すること。これで電圧と信号の両方がリフレッシュされ、長距離でも末端まで明るさと色が保てます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "アナログRGB用のアンプと、アドレサブル（SPI）用のリピーターは同じものですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "別物なので混用できません。アナログRGB（全粒一斉に同じ色）用のアンプは、R/G/B各色のPWM電力信号をそのまま増幅します。一方アドレサブル（SPI・WS2812等、粒ごとに制御）用のリピーターは、データ信号（DATA/CLK）を解析して再送信するデジタル機器です。テープの種類に合った機器を選ばないと動作しません。注文時は『アナログRGB用』か『アドレサブル（SPI/ICチップ）用』かを必ず確認してください。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --main:#0f6b5c;--main-pale:#e2f1ee;--amber:#c2861a;--amber-pale:#faf3e1;
+      --bg:#fff;--bg-gray:#f3f7f6;--text:#1a1a1a;--text-sub:#42554f;--text-muted:#7e8d88;--border:#c9d8d3;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.75}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--main);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:860px;margin:0 auto;padding:0 20px}
+    header.site-header{background:var(--main);padding:14px 20px;display:flex;align-items:center;gap:12px}
+    header.site-header a{color:#fff;font-size:18px;font-weight:700;letter-spacing:.03em}
+    header.site-header span{color:rgba(255,255,255,.6);font-size:12px}
+
+    .hero{background:linear-gradient(135deg,#073f37 0%,#5a3500 100%);padding:48px 20px 40px;text-align:center;color:#fff}
+    .hero .cat-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:11px;letter-spacing:.08em;margin-bottom:16px}
+    .hero h1{font-size:clamp(18px,3.5vw,26px);font-weight:900;line-height:1.45;margin-bottom:14px}
+    .hero .hero-meta{font-size:12px;color:rgba(255,255,255,.7);display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+
+    .breadcrumb{font-size:11px;color:var(--text-muted);padding:10px 0;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+    .breadcrumb a{color:var(--text-muted)}
+
+    .toc{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:28px 0}
+    .toc h2{font-size:13px;font-weight:700;color:var(--text-sub);margin-bottom:10px;letter-spacing:.06em}
+    .toc ol{padding-left:18px}
+    .toc li{font-size:13px;margin-bottom:6px}
+    .toc a{color:var(--main)}
+
+    .article-body{padding:32px 0 48px}
+    .article-body h2{font-size:20px;font-weight:900;color:var(--main);border-left:4px solid var(--main);padding-left:12px;margin:40px 0 16px}
+    .article-body h3{font-size:16px;font-weight:700;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:6px;margin:28px 0 12px}
+    .article-body p{margin-bottom:14px}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:14px}
+    .article-body li{margin-bottom:6px}
+
+    .box-blue{background:var(--main-pale);border-left:4px solid var(--main);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-orange{background:var(--amber-pale);border-left:4px solid var(--amber);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-blue p,.box-orange p{margin-bottom:0}
+
+    .formula{background:#0c2521;color:#dcf3ee;font-family:monospace;font-size:15px;border-radius:8px;padding:16px 20px;margin:16px 0;line-height:1.6}
+    .formula .comment{color:#7fd6c4}
+
+    .data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .data-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .data-card .num{font-size:26px;font-weight:900;color:var(--main);line-height:1}
+    .data-card .unit{font-size:12px;color:var(--text-sub);margin-top:2px}
+    .data-card .label{font-size:11px;color:var(--text-muted);margin-top:6px}
+
+    .tbl-wrap{overflow-x:auto;margin:16px 0}
+    table{width:100%;border-collapse:collapse;font-size:13px;min-width:480px}
+    th{background:var(--main);color:#fff;padding:9px 10px;text-align:left;font-weight:700}
+    td{padding:8px 10px;border-bottom:1px solid #e4ecea;vertical-align:top}
+    tr:nth-child(even) td{background:#f6faf9}
+    .good{color:#1a7a3c;font-weight:700}
+    .bad{color:#b91c1c;font-weight:700}
+    .mid{color:#92400e;font-weight:700}
+
+    .step-list{list-style:none;padding:0;margin:16px 0;counter-reset:step}
+    .step-list li{counter-increment:step;display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #e4ecea}
+    .step-list li:last-child{border-bottom:none}
+    .step-list li::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:28px;height:28px;min-width:28px;background:var(--main);color:#fff;border-radius:50%;font-size:13px;font-weight:700}
+    .step-body{flex:1}
+    .step-body strong{display:block;margin-bottom:4px}
+
+    .checklist{list-style:none;padding:0;margin:16px 0}
+    .checklist li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #e4ecea;font-size:14px}
+    .checklist li:last-child{border-bottom:none}
+    .checklist li::before{content:"☐";font-size:18px;color:var(--main);flex-shrink:0;line-height:1.3}
+
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--main)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+
+    .related{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:22px 26px;margin:36px 0}
+    .related h2{font-size:14px;font-weight:700;color:var(--text-sub);border:none;padding:0;margin:0 0 14px}
+    .related ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
+    .related li{margin:0}
+    .related a{display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid var(--border);border-radius:6px;color:var(--text);background:#fff}
+    .related a:hover{text-decoration:none;border-color:var(--main)}
+    .related a::before{content:"→";color:var(--amber);flex-shrink:0}
+
+    .cta-section{background:linear-gradient(135deg,#073f37,#5a3500);border-radius:16px;padding:36px 24px;text-align:center;margin:40px 0;color:#fff}
+    .cta-section h2{font-size:18px;font-weight:900;margin-bottom:8px;color:#fff;border:none;padding:0}
+    .cta-section p{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:20px}
+    .cta-btn{display:inline-block;background:#f0a500;color:#1a1a1a;font-weight:900;font-size:15px;padding:14px 36px;border-radius:50px;transition:opacity .2s}
+    .cta-btn:hover{opacity:.88;text-decoration:none}
+
+    footer.site-footer{background:#1a1a1a;color:#888;font-size:12px;text-align:center;padding:20px}
+    footer.site-footer a{color:#aaa}
+
+    @media(max-width:600px){
+      .hero{padding:32px 16px 28px}
+      .hero h1{font-size:17px}
+      .data-grid{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/">LED PRO SHOP</a>
+  <span>プロ仕様LED専門店</span>
+</header>
+
+<div class="hero">
+  <div class="cat-badge">製品活用ガイド</div>
+  <h1>LEDテープの信号増幅器（リピーター/アンプ）の使い方と接続方法｜RGBが長距離で色ずれする時の対策</h1>
+  <div class="hero-meta">
+    <span>公開: 2026-06-14</span>
+    <span>対象: 電気工事業者・看板施工業者・内装施工業者・舞台/演出設備担当者</span>
+  </div>
+</div>
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/">LED PRO SHOP</a><span>›</span>
+    <a href="/articles/">コラム</a><span>›</span>
+    <span>LEDテープ信号増幅器（リピーター/アンプ）ガイド</span>
+  </nav>
+
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#why">なぜ長距離RGBは末端で暗く・色ずれするのか</a></li>
+      <li><a href="#what">信号増幅器（リピーター/アンプ）の役割</a></li>
+      <li><a href="#types">アナログRGB用とアドレサブル（SPI）用の違い</a></li>
+      <li><a href="#wiring">IN／OUT／別電源の接続方法</a></li>
+      <li><a href="#interval">設置間隔と必要台数の計算</a></li>
+      <li><a href="#steps">接続手順</a></li>
+      <li><a href="#checklist">選定・接続チェックリスト</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ol>
+  </nav>
+
+  <div class="article-body">
+
+    <p>RGB・RGBWテープを長くつないだ現場で、「末端が暗い」「途中から色がずれる」「赤だけ弱くなる」といった症状が出ることがあります。原因は<strong>電圧の降下</strong>と<strong>制御信号の減衰</strong>です。これを解決するのが<strong>信号増幅器（リピーター／アンプ）</strong>で、別の電源から電圧と信号の両方をリフレッシュして末端まで届けます。このページでは、信号増幅器の役割、テープ種別ごとの選び方、IN/OUT/別電源の接続方法、設置間隔と必要台数の計算を施工業者向けに整理します。</p>
+
+    <!-- ===== 1. なぜ ===== -->
+    <h2 id="why">1. なぜ長距離RGBは末端で暗く・色ずれするのか</h2>
+
+    <p>長尺のRGB配線で起きる不具合は、原因が2つに分かれます。どちらが主因かで対処が変わるため、まず切り分けが重要です。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>症状</th><th>主な原因</th><th>本質</th></tr></thead>
+        <tbody>
+          <tr><td>末端全体が均一に暗い</td><td class="mid">電圧降下</td><td>配線抵抗でDC電圧が下がり、末端のLEDに十分な電圧が届かない</td></tr>
+          <tr><td>特定の色が弱い・色が傾く</td><td class="bad">信号減衰</td><td>R/G/Bの制御信号が距離とともに鈍り、PWMのデューティが崩れる</td></tr>
+          <tr><td>末端で点滅が遅れる・乱れる（SPI）</td><td class="bad">データ信号の劣化</td><td>アドレサブルのDATA波形がなまり、粒ごとの制御が破綻する</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>「暗い」と「色ずれ」は別問題:</strong> 末端が一様に暗いのは電圧降下、色が傾く・特定色が出ないのは信号減衰が主因です。電源の再給電（電圧）と信号の再生成（リピート）を1台でまとめて行えるのが信号増幅器で、長距離RGB配線の定番対策になります。</p>
+    </div>
+
+    <!-- ===== 2. 役割 ===== -->
+    <h2 id="what">2. 信号増幅器（リピーター/アンプ）の役割</h2>
+
+    <p>信号増幅器は、前段から来た弱った制御信号を読み取り、<strong>別途接続した電源から、増幅した同じ信号を新たに出力</strong>する機器です。つまり「信号のコピー機＋電源の中継点」と考えると分かりやすいです。</p>
+
+    <ul>
+      <li><strong>電圧をリフレッシュ</strong>：アンプに新しい電源を給電するため、末端側のテープが満電圧で点灯する</li>
+      <li><strong>信号をリフレッシュ</strong>：なまった制御信号を元の波形で作り直し、色ずれ・点滅乱れを解消する</li>
+      <li><strong>1台で両方を解決</strong>：電源の追加（パワーインジェクション）と信号中継を同時に行える</li>
+    </ul>
+
+    <div class="box-orange">
+      <p><strong>コントローラーの増設とは別物:</strong> アンプはコントローラーが作った信号を「そのまま増幅して中継」する機器で、独自に色を作り出すわけではありません。前段のコントローラーが出した色・パターンを末端まで忠実に延長するための機器です。</p>
+    </div>
+
+    <!-- ===== 3. 種類 ===== -->
+    <h2 id="types">3. アナログRGB用とアドレサブル（SPI）用の違い</h2>
+
+    <p>テープの方式に合った増幅器を選ばないと動作しません。注文・手配の前に、必ずテープの種別を確認してください。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>項目</th><th>アナログRGB／RGBW用アンプ</th><th>アドレサブル（SPI）用リピーター</th></tr></thead>
+        <tbody>
+          <tr><td>対象テープ</td><td>全粒が一斉に同じ色（5050 RGB等）</td><td>粒ごとに制御（WS2812／SK6812等のICチップ入り）</td></tr>
+          <tr><td>増幅する信号</td><td>R/G/B/(W)各色のPWM電力信号</td><td>DATA（必要によりCLK）のデジタルデータ信号</td></tr>
+          <tr><td>配線本数の目安</td><td>RGBは4線（V+/R/G/B）、RGBWは5線</td><td>DATA系（V+/GND/DATA、機種によりCLK）</td></tr>
+          <tr><td>選定の注意</td><td>テープのVと色順に合わせる</td><td>IC種別・データ方向（→印）・電圧を合わせる</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>アドレサブルは「向き」がある:</strong> SPI（アドレサブル）テープはデータの流れる方向（テープ上の矢印）が決まっています。リピーターのIN/OUTを矢印の向きに合わせないと、増幅以前にそもそも点灯しません。アナログRGBには向きの概念はありませんが、色順（R/G/B）を合わせる必要があります。</p>
+    </div>
+
+    <!-- ===== CTA ===== -->
+    <div class="cta-section">
+      <h2>RGB・アドレサブル用の信号増幅器を探す</h2>
+      <p>アナログRGB／RGBW用アンプ、アドレサブル（SPI）用リピーター、対応コントローラー・電源を在庫から即納。<br>対応電圧・出力定格・チャンネル数を明記し、現場仕様で選べます。</p>
+      <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+    </div>
+
+    <!-- ===== 4. 配線 ===== -->
+    <h2 id="wiring">4. IN／OUT／別電源の接続方法</h2>
+
+    <p>信号増幅器の配線は「3つの口」を押さえれば迷いません。前段からの信号をINへ、新しい電源を電源端子へ、次のテープをOUTへつなぎます。</p>
+
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>IN（入力）＝前段の信号を受ける</strong>
+          コントローラーまたは前のテープの出力（R/G/B/V または DATA系）をアンプのIN側へ接続する。ここは「弱った信号」を受ける口。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>電源端子＝新しい電源を給電する</strong>
+          アンプ専用にDC12V/24Vの電源を別に接続する。前段と電源を共用しないのが要点。ここで電圧がリフレッシュされる。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>OUT（出力）＝次のテープへ送る</strong>
+          アンプのOUTから後段のテープへ接続する。ここから「増幅された信号＋満電圧」が供給される。
+        </div>
+      </li>
+    </ul>
+
+    <div class="box-orange">
+      <p><strong>GND（マイナス）は必ず共通に:</strong> アンプに別電源を使う場合でも、前段とアンプの<strong>信号のGND（マイナス基準）は共通に接続</strong>します。GNDが分断されていると信号の基準がずれて正しく増幅できません。「電源のプラスは分ける／GNDはつなぐ」が原則です。</p>
+    </div>
+
+    <!-- ===== 5. 間隔 ===== -->
+    <h2 id="interval">5. 設置間隔と必要台数の計算</h2>
+
+    <p>アンプを入れる位置は「色がずれ始める手前」または「電圧降下で末端が暗くなる手前」です。テープのW/m・電圧・配線条件で変わるため一律ではありませんが、考え方は次のとおりです。</p>
+
+    <div class="formula">
+      必要なアンプ台数 ≒ ( テープ総延長 ÷ 1区間の限界長 ) − 1<br>
+      <span class="comment">// 1区間の限界長 = 電圧降下／信号減衰のどちらか短い方</span><br>
+      <span class="comment">// 24Vは12Vより限界長が伸びる（同じW/mなら約2倍が目安）</span>
+    </div>
+
+    <p>下表は、アンプ（再給電＋信号中継）を入れる判断の目安です。テープのW/mが大きいほど、電圧降下が早く来るため区間は短くなります。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>条件</th><th>電圧降下の出やすさ</th><th>アンプ／再給電の目安</th></tr></thead>
+        <tbody>
+          <tr><td>12V・高W/m（14W/m超）</td><td class="bad">早い</td><td>区間が短い。早めに再給電＋信号中継を入れる</td></tr>
+          <tr><td>24V・標準W/m</td><td class="good">遅い</td><td>区間を長く取れる。色ずれが出る手前で1台</td></tr>
+          <tr><td>アドレサブル（SPI）長尺</td><td class="mid">データ劣化が支配的</td><td>電圧より先にデータがなまる。区切りでリピーターを挿入</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="num">2<span style="font-size:16px">in1</span></div>
+        <div class="unit">電圧＋信号</div>
+        <div class="label">アンプ1台で両方再生</div>
+      </div>
+      <div class="data-card">
+        <div class="num">GND</div>
+        <div class="unit">共通必須</div>
+        <div class="label">プラスは分けてよい</div>
+      </div>
+      <div class="data-card">
+        <div class="num">×2</div>
+        <div class="unit">24Vの限界長</div>
+        <div class="label">12V比の目安</div>
+      </div>
+      <div class="data-card">
+        <div class="num">→</div>
+        <div class="unit">SPIは向き厳守</div>
+        <div class="label">IN/OUTを矢印に合わせる</div>
+      </div>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>「アンプ1台＝電源1台」が基本構成:</strong> アンプは新しい電源とセットで効果を発揮します。アンプだけ足して電源を増やさないと、電圧降下は解決しません。区間ごとに「アンプ＋専用電源」を配置するのが長距離RGB配線の標準的な組み方です。</p>
+    </div>
+
+    <!-- ===== 6. 接続手順 ===== -->
+    <h2 id="steps">6. 接続手順</h2>
+
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>テープ種別を確定する</strong>
+          アナログRGB／RGBWか、アドレサブル（SPI・ICチップ入り）かを確認し、対応する増幅器を用意する。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>挿入位置を決める</strong>
+          色ずれ・末端暗化が出る手前、またはテープの分割点をアンプの設置位置にする。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>IN・電源・OUTを配線する</strong>
+          前段信号→IN、専用電源→電源端子、後段テープ→OUT。SPIはデータの向き（矢印）をIN→OUTに合わせる。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>GNDを共通化する</strong>
+          別電源でも信号GND（マイナス）は前段と必ずつなぐ。プラスは区間ごとに分けてよい。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>通電して全区間を確認する</strong>
+          末端まで明るさ・色・点滅が揃うか確認。まだ暗い・ずれるなら、区間を短くするか電源容量を見直す。
+        </div>
+      </li>
+    </ul>
+
+    <!-- ===== related ===== -->
+    <div class="related">
+      <h2>関連する制御・配線の解説</h2>
+      <ul>
+        <li><a href="/articles/led-tape-power-injection-guide">LEDテープのパワーインジェクション（再給電）で末端の暗さを解消</a></li>
+        <li><a href="/articles/led-tape-addressable-vs-analog-guide">アドレサブルLEDとアナログRGBの違いと選び方</a></li>
+        <li><a href="/articles/led-tape-voltage-drop-guide">LEDテープの電圧降下｜「端が暗い」の原因と対処・配線設計</a></li>
+      </ul>
+    </div>
+
+    <!-- ===== 7. チェックリスト ===== -->
+    <h2 id="checklist">7. 選定・接続チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>テープ種別（アナログRGB／RGBW か アドレサブルSPI）を確定したか</li>
+      <li>その種別に対応した増幅器（アンプ／リピーター）を選んだか</li>
+      <li>アンプ専用の電源を別に用意したか（前段と共用していないか）</li>
+      <li>IN＝前段信号、OUT＝後段テープへ正しくつないだか</li>
+      <li>信号GND（マイナス）を前段と共通に接続したか</li>
+      <li>アドレサブルはデータの向き（矢印）にIN→OUTを合わせたか</li>
+      <li>挿入位置を「色ずれ・末端暗化の手前」に設定したか</li>
+      <li>通電後、末端まで明るさ・色・点滅が揃うことを確認したか</li>
+    </ul>
+
+    <!-- ===== 8. FAQ ===== -->
+    <h2 id="faq">8. よくある質問</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">RGBテープを長くつないだら末端が暗く・色がずれます。アンプで直りますか？</div>
+      <div class="faq-a">症状の原因が「電圧降下」か「信号減衰」かで対処が変わります。末端全体が均一に暗いのは電圧降下が主因で、信号増幅器（アンプ）は新しい電源から再給電するため改善します。色だけがずれる・特定色が弱くなるのは信号（R/G/Bの制御信号）の減衰で、これもアンプで信号を再生成すれば改善します。アンプはコントローラーの信号を読み取り、別途用意した電源から増幅した同じ信号を出力する機器なので、長距離RGB配線の定番対策です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">信号増幅器（アンプ）はどこに、どんな配線でつなげばよいですか？</div>
+      <div class="faq-a">アンプは「色がずれ始める手前」または「テープの分割点」に入れます。配線は、前段（コントローラーやテープ）の信号線をアンプのIN（入力）へ、アンプには専用の電源（DC12V/24V）を別に接続し、アンプのOUT（出力）から次のテープへつなぎます。重要なのは、アンプの電源は前段と共用せず新しく給電すること。これで電圧と信号の両方がリフレッシュされ、長距離でも末端まで明るさと色が保てます。なお、別電源でも信号GND（マイナス）は前段と共通につなぎます。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">アナログRGB用のアンプと、アドレサブル（SPI）用のリピーターは同じものですか？</div>
+      <div class="faq-a">別物なので混用できません。アナログRGB（全粒一斉に同じ色）用のアンプは、R/G/B各色のPWM電力信号をそのまま増幅します。一方アドレサブル（SPI・WS2812等、粒ごとに制御）用のリピーターは、データ信号（DATA/CLK）を解析して再送信するデジタル機器です。テープの種類に合った機器を選ばないと動作しません。注文時は「アナログRGB用」か「アドレサブル（SPI/ICチップ）用」かを必ず確認してください。</div>
+    </div>
+
+  </div><!-- /article-body -->
+</div><!-- /container -->
+
+<footer class="site-footer">
+  <p>© 2024 LED PRO SHOP ／ <a href="/tokushoho.html">特定商取引法に基づく表示</a></p>
+</footer>
+
+</body>
+</html>

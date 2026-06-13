@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープ電源の力率（PF）とは？PFC有無の違いと選び方｜ブレーカー容量・入力電流の計算 | LED PRO SHOP</title>
+  <meta name="description" content="力率の低いLED電源は、同じW数でも入力電流（A）が大きくなり、1回路に複数台つなぐとブレーカーが落ちます。力率（PF）の意味、入力電流の計算式、力率別の電流早見表、アクティブPFC／パッシブPFC／PFCなしの違い、規模別の選定基準を施工業者向けに整理しました。">
+  <meta name="keywords" content="ledテープ 電源 力率,led電源 pfc,力率 とは 計算,led電源 入力電流,ブレーカー 容量 led,力率改善 電源,アクティブpfc パッシブpfc,led電源 選び方 電流">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-power-factor-pfc-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-power-factor-pfc-guide">
+  <meta property="og:title" content="LEDテープ電源の力率（PF）とは？PFC有無の違いと選び方｜ブレーカー容量・入力電流の計算 | LED PRO SHOP">
+  <meta property="og:description" content="力率の低いLED電源は同じW数でも入力電流が大きくなり、複数台で回路がパンクします。力率の意味、入力電流の計算式、力率別の電流早見表、PFCの有無と選定基準を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-power-factor-pfc-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ電源の力率（PF）とは？PFC有無の違いと選び方｜ブレーカー容量・入力電流の計算 | LED PRO SHOP">
+  <meta name="twitter:description" content="力率が低い電源は同じW数でも入力電流が増え、複数台で回路がパンク。力率の意味・入力電流の計算式・力率別早見表・PFCの有無と選定基準を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-power-factor-pfc-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDテープ電源の力率（PF）とは？PFC有無の違いと選び方｜ブレーカー容量・入力電流の計算",
+    "description": "力率（PF）の意味と計算式、入力電流が力率で変わる理由、力率別の入力電流早見表、アクティブPFC／パッシブPFC／PFCなしの違い、1回路あたりの接続台数とブレーカー容量の考え方を施工業者向けに整理。",
+    "image": "https://led-proshop.com/articles/images/led-tape-power-factor-pfc-guide-hero.webp",
+    "datePublished": "2026-06-14",
+    "dateModified": "2026-06-14",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-power-factor-pfc-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LED電源の力率（PF）・PFC選定ガイド", "item": "https://led-proshop.com/articles/led-tape-power-factor-pfc-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQ ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LED電源の力率（PF）が低いと施工上どんな問題がありますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "力率が低いと、同じ消費電力（W）でも入力電流（A）が大きくなります。入力電流は『電力 ÷（電圧 × 力率）』で決まるため、力率0.5の電源は力率1.0の2倍の電流を引き込みます。1回路に複数台の電源をまとめて接続すると、合計電流がブレーカー定格を超えて落ちたり、幹線や配線が過熱したりします。大規模物件や多灯設置では、力率を考慮して回路あたりの台数を決める必要があります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "PFC（力率改善回路）あり・なしはどう見分けて選べばよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "仕様書の『力率（Power Factor / PF）』の値で判断します。PF0.9以上はアクティブPFC内蔵、PF0.7前後はパッシブPFC、PF0.5前後はPFCなしと考えてよいでしょう。100W以上の電源や、1回路に複数台まとめる現場、消費電力の大きい大型サインではアクティブPFC（PF0.9以上）を選ぶと入力電流が小さく回路設計が楽になります。小容量1〜2台だけならPFCなしでも実用上問題ない場合があります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "1つの回路（ブレーカー）にLED電源は何台までつなげますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "回路の許容電流の80%以内に、各電源の入力電流の合計を収めるのが目安です。例えば20Aブレーカーなら安全側で約16Aまで。各電源の入力電流は『W ÷（100V × 力率）』で計算し、その合計が16Aを超えないようにします。力率0.95のアクティブPFC電源なら100W品で約1.05A、力率0.5の電源なら約2.1Aと2倍違うため、PFCの有無で接続できる台数が大きく変わります。突入電流（インラッシュ）も別途考慮してください。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --main:#15527a;--main-pale:#e6eef5;--amber:#c8881d;--amber-pale:#fbf3e2;
+      --bg:#fff;--bg-gray:#f4f6f7;--text:#1a1a1a;--text-sub:#465058;--text-muted:#828c93;--border:#cdd6dd;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.75}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--main);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:860px;margin:0 auto;padding:0 20px}
+    header.site-header{background:var(--main);padding:14px 20px;display:flex;align-items:center;gap:12px}
+    header.site-header a{color:#fff;font-size:18px;font-weight:700;letter-spacing:.03em}
+    header.site-header span{color:rgba(255,255,255,.6);font-size:12px}
+
+    .hero{background:linear-gradient(135deg,#0c3a5a 0%,#5a3500 100%);padding:48px 20px 40px;text-align:center;color:#fff}
+    .hero .cat-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:11px;letter-spacing:.08em;margin-bottom:16px}
+    .hero h1{font-size:clamp(18px,3.5vw,26px);font-weight:900;line-height:1.45;margin-bottom:14px}
+    .hero .hero-meta{font-size:12px;color:rgba(255,255,255,.7);display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+
+    .breadcrumb{font-size:11px;color:var(--text-muted);padding:10px 0;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+    .breadcrumb a{color:var(--text-muted)}
+
+    .toc{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:28px 0}
+    .toc h2{font-size:13px;font-weight:700;color:var(--text-sub);margin-bottom:10px;letter-spacing:.06em}
+    .toc ol{padding-left:18px}
+    .toc li{font-size:13px;margin-bottom:6px}
+    .toc a{color:var(--main)}
+
+    .article-body{padding:32px 0 48px}
+    .article-body h2{font-size:20px;font-weight:900;color:var(--main);border-left:4px solid var(--main);padding-left:12px;margin:40px 0 16px}
+    .article-body h3{font-size:16px;font-weight:700;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:6px;margin:28px 0 12px}
+    .article-body p{margin-bottom:14px}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:14px}
+    .article-body li{margin-bottom:6px}
+
+    .box-blue{background:var(--main-pale);border-left:4px solid var(--main);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-orange{background:var(--amber-pale);border-left:4px solid var(--amber);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-blue p,.box-orange p{margin-bottom:0}
+
+    .formula{background:#10242a;color:#dff3f7;font-family:monospace;font-size:15px;border-radius:8px;padding:16px 20px;margin:16px 0;line-height:1.6}
+    .formula .comment{color:#7ec8e3}
+
+    .data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .data-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .data-card .num{font-size:26px;font-weight:900;color:var(--main);line-height:1}
+    .data-card .unit{font-size:12px;color:var(--text-sub);margin-top:2px}
+    .data-card .label{font-size:11px;color:var(--text-muted);margin-top:6px}
+
+    .tbl-wrap{overflow-x:auto;margin:16px 0}
+    table{width:100%;border-collapse:collapse;font-size:13px;min-width:480px}
+    th{background:var(--main);color:#fff;padding:9px 10px;text-align:left;font-weight:700}
+    td{padding:8px 10px;border-bottom:1px solid #e7eced;vertical-align:top}
+    tr:nth-child(even) td{background:#f7f9f9}
+    .good{color:#1a7a3c;font-weight:700}
+    .bad{color:#b91c1c;font-weight:700}
+    .mid{color:#92400e;font-weight:700}
+
+    .step-list{list-style:none;padding:0;margin:16px 0;counter-reset:step}
+    .step-list li{counter-increment:step;display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #e7eced}
+    .step-list li:last-child{border-bottom:none}
+    .step-list li::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:28px;height:28px;min-width:28px;background:var(--main);color:#fff;border-radius:50%;font-size:13px;font-weight:700}
+    .step-body{flex:1}
+    .step-body strong{display:block;margin-bottom:4px}
+
+    .checklist{list-style:none;padding:0;margin:16px 0}
+    .checklist li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #e7eced;font-size:14px}
+    .checklist li:last-child{border-bottom:none}
+    .checklist li::before{content:"☐";font-size:18px;color:var(--main);flex-shrink:0;line-height:1.3}
+
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--main)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+
+    .related{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:22px 26px;margin:36px 0}
+    .related h2{font-size:14px;font-weight:700;color:var(--text-sub);border:none;padding:0;margin:0 0 14px}
+    .related ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
+    .related li{margin:0}
+    .related a{display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid var(--border);border-radius:6px;color:var(--text);background:#fff}
+    .related a:hover{text-decoration:none;border-color:var(--main)}
+    .related a::before{content:"→";color:var(--amber);flex-shrink:0}
+
+    .cta-section{background:linear-gradient(135deg,#0c3a5a,#5a3500);border-radius:16px;padding:36px 24px;text-align:center;margin:40px 0;color:#fff}
+    .cta-section h2{font-size:18px;font-weight:900;margin-bottom:8px;color:#fff;border:none;padding:0}
+    .cta-section p{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:20px}
+    .cta-btn{display:inline-block;background:#f0a500;color:#1a1a1a;font-weight:900;font-size:15px;padding:14px 36px;border-radius:50px;transition:opacity .2s}
+    .cta-btn:hover{opacity:.88;text-decoration:none}
+
+    footer.site-footer{background:#1a1a1a;color:#888;font-size:12px;text-align:center;padding:20px}
+    footer.site-footer a{color:#aaa}
+
+    @media(max-width:600px){
+      .hero{padding:32px 16px 28px}
+      .hero h1{font-size:17px}
+      .data-grid{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/">LED PRO SHOP</a>
+  <span>プロ仕様LED専門店</span>
+</header>
+
+<div class="hero">
+  <div class="cat-badge">電源・仕様選定ガイド</div>
+  <h1>LEDテープ電源の力率（PF）とは？PFC有無の違いと選び方｜ブレーカー容量・入力電流の計算</h1>
+  <div class="hero-meta">
+    <span>公開: 2026-06-14</span>
+    <span>対象: 電気工事業者・看板施工業者・内装施工業者・設備設計担当者</span>
+  </div>
+</div>
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/">LED PRO SHOP</a><span>›</span>
+    <a href="/articles/">コラム</a><span>›</span>
+    <span>LED電源の力率（PF）・PFC選定ガイド</span>
+  </nav>
+
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#what">力率（PF）とは何か</a></li>
+      <li><a href="#why">なぜ施工業者に力率が関係するのか</a></li>
+      <li><a href="#calc">入力電流の計算式と力率別早見表</a></li>
+      <li><a href="#pfc">PFCあり・なしの違い（アクティブ／パッシブ）</a></li>
+      <li><a href="#circuit">1回路あたりの接続台数の決め方</a></li>
+      <li><a href="#select">規模別の力率・PFC選定基準</a></li>
+      <li><a href="#checklist">電源選定チェックリスト</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ol>
+  </nav>
+
+  <div class="article-body">
+
+    <p>LED電源を選ぶとき、容量（W）とDC電圧（12V/24V）は誰でも確認しますが、見落とされがちなのが<strong>力率（PF：Power Factor）</strong>です。力率の低い電源は、同じW数でも一次側（AC100V側）に流れる<strong>入力電流が大きく</strong>なります。1回路に複数台の電源をまとめて接続する大規模物件や多灯サインでは、力率を無視すると合計電流がブレーカー定格を超え、「電源は容量内なのにブレーカーが落ちる」という現象が起きます。このページでは、力率の意味、入力電流の計算式、PFCの有無による違い、回路あたりの接続台数の決め方を施工業者向けに整理します。</p>
+
+    <!-- ===== 1. 力率とは ===== -->
+    <h2 id="what">1. 力率（PF）とは何か</h2>
+
+    <p>力率とは、電源が交流（AC）から受け取る電力のうち、どれだけが実際の仕事（有効電力）に使われているかを表す比率です。0〜1の値で示され、1に近いほど効率よく電流を使えていることになります。</p>
+
+    <div class="formula">
+      力率 PF = 有効電力 P（W） / 皮相電力 S（VA）<br>
+      <span class="comment">// PF=1.0 … 理想（電流のムダなし）</span><br>
+      <span class="comment">// PF=0.5 … 同じWでも電流が2倍必要になる</span>
+    </div>
+
+    <p>スイッチング電源は内部で交流を直流に変換する際、入力電流の波形が歪み、電圧と電流のタイミングがずれます。このずれによって、実際に消費するW数以上の電流（皮相電力）を引き込んでしまうのが、力率が1未満になる理由です。</p>
+
+    <div class="box-blue">
+      <p><strong>力率は「電気代」ではなく「電流の太さ」の話:</strong> 一般家庭の電気料金は有効電力（W・kWh）で課金されるため、力率が低くても電気代が直接増えるわけではありません。施工業者にとって力率が重要なのは、<strong>同じW数でも入力電流（A）が変わり、ブレーカー・幹線・配線の設計に直結する</strong>からです。</p>
+    </div>
+
+    <!-- ===== 2. なぜ関係する ===== -->
+    <h2 id="why">2. なぜ施工業者に力率が関係するのか</h2>
+
+    <p>現場で力率が効いてくる典型的な場面は次の3つです。</p>
+
+    <ul>
+      <li><strong>多灯・大規模物件</strong>：間接照明や大型サインで電源を1回路にまとめると、入力電流の合計がブレーカー定格に迫る</li>
+      <li><strong>既設回路への増設</strong>：すでに他の負荷が乗っている回路に追加するとき、入力電流の余裕が読めないと過電流トリップする</li>
+      <li><strong>幹線・分電盤の容量計算</strong>：設計段階で力率を見込まないと、電流計算が過小評価になり配線サイズを誤る</li>
+    </ul>
+
+    <div class="box-orange">
+      <p><strong>「W数は足りているのに落ちる」の正体:</strong> ブレーカーは電流（A）で動作します。電源の容量（W）が回路の許容範囲内でも、力率が低くて入力電流が大きいと、電流ベースではオーバーしてトリップします。容量計算を「W」だけで済ませず、「A」に換算して確認するのが鉄則です。</p>
+    </div>
+
+    <!-- ===== 3. 計算 ===== -->
+    <h2 id="calc">3. 入力電流の計算式と力率別早見表</h2>
+
+    <p>AC100Vでの入力電流は、次の式で概算できます。電源自体の変換効率（一般に85〜92%）も厳密には影響しますが、現場の見積もりでは下式で十分です。</p>
+
+    <div class="formula">
+      入力電流 I（A）= 消費電力 P（W） / ( 電圧 V（AC） × 力率 PF )<br>
+      <span class="comment">// 例：100W / (100V × 0.95) ≒ 1.05A</span><br>
+      <span class="comment">// 例：100W / (100V × 0.50) ≒ 2.00A（同じ100Wでも約2倍）</span>
+    </div>
+
+    <p>下表は、AC100Vで使う各容量の電源について、力率ごとの入力電流の目安です。同じW数でも、力率が下がると入力電流が跳ね上がるのが分かります。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>電源容量</th><th>PF 0.95（アクティブPFC）</th><th>PF 0.70（パッシブPFC）</th><th>PF 0.50（PFCなし）</th></tr></thead>
+        <tbody>
+          <tr><td>60W</td><td class="good">約0.63A</td><td>約0.86A</td><td class="bad">約1.20A</td></tr>
+          <tr><td>100W</td><td class="good">約1.05A</td><td>約1.43A</td><td class="bad">約2.00A</td></tr>
+          <tr><td>150W</td><td class="good">約1.58A</td><td>約2.14A</td><td class="bad">約3.00A</td></tr>
+          <tr><td>200W</td><td class="good">約2.11A</td><td>約2.86A</td><td class="bad">約4.00A</td></tr>
+          <tr><td>300W</td><td class="good">約3.16A</td><td>約4.29A</td><td class="bad">約6.00A</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="num">2<span style="font-size:16px">倍</span></div>
+        <div class="unit">PF0.5の入力電流</div>
+        <div class="label">PF1.0比（同W数）</div>
+      </div>
+      <div class="data-card">
+        <div class="num">0.9<span style="font-size:16px">↑</span></div>
+        <div class="unit">アクティブPFC</div>
+        <div class="label">推奨される力率</div>
+      </div>
+      <div class="data-card">
+        <div class="num">80<span style="font-size:16px">%</span></div>
+        <div class="unit">回路電流の上限</div>
+        <div class="label">安全側の設計目安</div>
+      </div>
+      <div class="data-card">
+        <div class="num">100<span style="font-size:16px">W〜</span></div>
+        <div class="unit">PFC推奨ライン</div>
+        <div class="label">大容量・多灯設置</div>
+      </div>
+    </div>
+
+    <!-- ===== 4. PFC ===== -->
+    <h2 id="pfc">4. PFCあり・なしの違い（アクティブ／パッシブ）</h2>
+
+    <p>PFC（Power Factor Correction＝力率改善回路）は、入力電流の波形を整えて力率を1に近づける回路です。実装方式により力率の到達値が変わります。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>種類</th><th>力率の目安</th><th>特徴</th><th>向く用途</th></tr></thead>
+        <tbody>
+          <tr><td>アクティブPFC</td><td class="good">0.90〜0.99</td><td>能動回路で波形を補正。入力電流が小さく安定。やや高価</td><td>大容量・多灯・大型サイン・分電盤に余裕のない現場</td></tr>
+          <tr><td>パッシブPFC</td><td class="mid">0.65〜0.75</td><td>コイル等で簡易補正。中間的なコストと性能</td><td>中容量・台数が中程度の一般設置</td></tr>
+          <tr><td>PFCなし</td><td class="bad">0.45〜0.60</td><td>補正回路なし。安価だが入力電流が大きい</td><td>小容量を1〜2台だけ単独設置する場合</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>仕様書の見方:</strong> メーカーの仕様書（データシート）に「力率（Power Factor / PF）」が記載されています。PF0.9以上ならアクティブPFC内蔵、0.7前後ならパッシブ、0.5前後または記載なしはPFCなしと判断してよいでしょう。多灯・大規模では必ずこの数値を確認してください。</p>
+    </div>
+
+    <!-- ===== CTA ===== -->
+    <div class="cta-section">
+      <h2>アクティブPFC内蔵のLED電源を探す</h2>
+      <p>力率0.95以上・過電流／過電圧／短絡保護付きのDC24V/12Vスイッチング電源を在庫から即納。<br>60W〜600Wまで各容量をプロ価格でご提供しています。</p>
+      <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+    </div>
+
+    <!-- ===== 5. 回路台数 ===== -->
+    <h2 id="circuit">5. 1回路あたりの接続台数の決め方</h2>
+
+    <p>1つの分岐回路（ブレーカー）にまとめられる電源の台数は、次の手順で計算します。突入電流（インラッシュ）は別途考慮が必要なため、ここでは定常時の入力電流をベースにした目安です。</p>
+
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>回路の安全許容電流を出す</strong>
+          ブレーカー定格 × 0.8 で安全側の上限電流を求める。例：20A × 0.8 ＝ 16A。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>各電源の入力電流を計算する</strong>
+          「W ÷（100V × 力率）」で1台あたりの入力電流を算出。力率は仕様書の値を使う。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>合計が安全許容内か確認する</strong>
+          接続予定の全電源の入力電流を合計し、手順1の上限以内に収める。超えるなら回路を分ける。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>突入電流の重なりを避ける</strong>
+          多数の電源が同時に立ち上がると瞬間的に大きな突入電流が流れる。台数が多い場合は突入電流対策品の採用や回路分割を検討する。
+        </div>
+      </li>
+    </ul>
+
+    <p>具体例として、20A回路（安全側16A）に100Wの電源を接続する場合の目安台数は下表のとおりです。力率の違いで接続できる台数が大きく変わります。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>電源（100W）の力率</th><th>1台あたり入力電流</th><th>16A以内の接続目安</th></tr></thead>
+        <tbody>
+          <tr><td>PF 0.95（アクティブPFC）</td><td class="good">約1.05A</td><td class="good">約15台</td></tr>
+          <tr><td>PF 0.70（パッシブPFC）</td><td>約1.43A</td><td class="mid">約11台</td></tr>
+          <tr><td>PF 0.50（PFCなし）</td><td class="bad">約2.00A</td><td class="bad">約8台</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-orange">
+      <p><strong>突入電流は必ず別枠で:</strong> 上表は定常電流の目安です。スイッチング電源は起動時に定格の数倍〜数十倍の突入電流が瞬間的に流れ、台数が増えるほど重なります。多灯設置では突入電流でブレーカーが瞬時遮断することがあるため、台数が多い回路では突入電流対策や回路分割を前提に設計してください。</p>
+    </div>
+
+    <!-- ===== 6. 選定基準 ===== -->
+    <h2 id="select">6. 規模別の力率・PFC選定基準</h2>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>設置規模・用途</th><th>推奨する力率</th><th>選定の考え方</th></tr></thead>
+        <tbody>
+          <tr><td>小容量1〜2台（棚下・什器の部分照明）</td><td>0.5〜（PFC不問）</td><td>入力電流の合計が小さいためPFCなしでも実用上問題が出にくい</td></tr>
+          <tr><td>中容量・複数台（店舗の間接照明）</td><td class="mid">0.7以上</td><td>回路電流に余裕を持たせたい。パッシブPFC以上が無難</td></tr>
+          <tr><td>大容量・多灯（大型サイン・施設全体）</td><td class="good">0.9以上</td><td>アクティブPFCで入力電流を最小化し、回路設計・幹線負担を軽減</td></tr>
+          <tr><td>分電盤・回路に余裕がない既設増設</td><td class="good">0.9以上</td><td>少ない電流で増設できるアクティブPFCが有利</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>迷ったらアクティブPFC（PF0.9以上）:</strong> 力率の高い電源は入力電流が小さく、回路あたりの接続台数を増やせるうえ、幹線・配線への負担も軽くなります。コスト差はありますが、多灯・大規模では設計と施工の自由度が上がるため、迷う場面ではアクティブPFCを基準に選ぶと失敗しにくいです。</p>
+    </div>
+
+    <!-- ===== related ===== -->
+    <div class="related">
+      <h2>関連する電源・配線の解説</h2>
+      <ul>
+        <li><a href="/articles/led-psu-capacity-guide">LEDテープ 電源（PSU）容量計算 早見表｜ワット数・配線長から即計算</a></li>
+        <li><a href="/articles/led-power-inrush-current-breaker-trip-guide">LED電源の突入電流でブレーカーが落ちる原因と対策</a></li>
+        <li><a href="/articles/led-power-supply-lifespan-failure-guide">LED電源（スイッチング電源）の寿命と故障｜原因・交換時期の目安</a></li>
+      </ul>
+    </div>
+
+    <!-- ===== 7. チェックリスト ===== -->
+    <h2 id="checklist">7. 電源選定チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>仕様書で力率（PF）の値を確認したか（記載なしはPFCなしと想定する）</li>
+      <li>「W」だけでなく「入力電流（A）」に換算して回路設計を確認したか</li>
+      <li>1回路の入力電流合計を、ブレーカー定格 × 0.8 以内に収めているか</li>
+      <li>多灯・大規模・分電盤に余裕がない現場ではPF0.9以上を選んだか</li>
+      <li>多数台を同一回路にまとめる場合、突入電流の重なりを別途考慮したか</li>
+      <li>既設回路へ増設する際、既存負荷を含めた合計電流を確認したか</li>
+      <li>幹線・配線サイズが入力電流（力率込み）に対して妥当か確認したか</li>
+    </ul>
+
+    <!-- ===== 8. FAQ ===== -->
+    <h2 id="faq">8. よくある質問</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">LED電源の力率（PF）が低いと施工上どんな問題がありますか？</div>
+      <div class="faq-a">力率が低いと、同じ消費電力（W）でも入力電流（A）が大きくなります。入力電流は「電力 ÷（電圧 × 力率）」で決まるため、力率0.5の電源は力率1.0の2倍の電流を引き込みます。1回路に複数台の電源をまとめて接続すると、合計電流がブレーカー定格を超えて落ちたり、幹線や配線が過熱したりします。大規模物件や多灯設置では、力率を考慮して回路あたりの台数を決める必要があります。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">PFC（力率改善回路）あり・なしはどう見分けて選べばよいですか？</div>
+      <div class="faq-a">仕様書の「力率（Power Factor / PF）」の値で判断します。PF0.9以上はアクティブPFC内蔵、PF0.7前後はパッシブPFC、PF0.5前後はPFCなしと考えてよいでしょう。100W以上の電源や、1回路に複数台まとめる現場、消費電力の大きい大型サインではアクティブPFC（PF0.9以上）を選ぶと入力電流が小さく回路設計が楽になります。小容量1〜2台だけならPFCなしでも実用上問題ない場合があります。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">1つの回路（ブレーカー）にLED電源は何台までつなげますか？</div>
+      <div class="faq-a">回路の許容電流の80%以内に、各電源の入力電流の合計を収めるのが目安です。例えば20Aブレーカーなら安全側で約16Aまで。各電源の入力電流は「W ÷（100V × 力率）」で計算し、その合計が16Aを超えないようにします。力率0.95のアクティブPFC電源なら100W品で約1.05A、力率0.5の電源なら約2.1Aと2倍違うため、PFCの有無で接続できる台数が大きく変わります。突入電流（インラッシュ）も別途考慮してください。</div>
+    </div>
+
+  </div><!-- /article-body -->
+</div><!-- /container -->
+
+<footer class="site-footer">
+  <p>© 2024 LED PRO SHOP ／ <a href="/tokushoho.html">特定商取引法に基づく表示</a></p>
+</footer>
+
+</body>
+</html>
