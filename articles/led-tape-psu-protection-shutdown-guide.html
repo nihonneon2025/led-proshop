@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LEDテープの電源が保護機能で止まる｜過負荷・過電圧・過熱の見分け方と復帰手順【施工業者向け】 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープの電源を入れた瞬間だけ点いてすぐ消える・数分で落ちて本体が熱い——多くはスイッチング電源の保護回路（OLP/OVP/OTP/SCP）が働いています。症状からどの保護が動作しているかを切り分け、安全に復帰させる手順と容量・配線の是正方法を施工業者向けに整理しました。">
+  <meta name="keywords" content="LEDテープ 電源 保護 停止,LED電源 点いてすぐ消える,スイッチング電源 過負荷保護,LED電源 シャットダウン 復帰,過電圧保護 OVP,過熱保護 OTP,LED電源 容量不足,LED電源 落ちる 原因">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-psu-protection-shutdown-guide">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-psu-protection-shutdown-guide">
+  <meta property="og:title" content="LEDテープの電源が保護機能で止まる｜過負荷・過電圧・過熱の見分け方と復帰手順【施工業者向け】 | LED PRO SHOP">
+  <meta property="og:description" content="電源を入れた瞬間だけ点灯しすぐ消える・数分で落ちて熱い——スイッチング電源の保護回路（OLP/OVP/OTP/SCP）の見分け方と、安全な復帰手順・容量と配線の是正方法を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-psu-protection-shutdown-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープの電源が保護機能で止まる｜過負荷・過電圧・過熱の見分け方と復帰手順【施工業者向け】 | LED PRO SHOP">
+  <meta name="twitter:description" content="LED電源が点いてすぐ消える・数分で落ちて熱い原因はOLP/OVP/OTP/SCPの保護動作。症状からの切り分けと安全な復帰手順を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-psu-protection-shutdown-guide-hero.webp">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープの電源が保護機能で止まる｜過負荷・過電圧・過熱の見分け方と復帰手順",
+    "description": "LEDテープ用スイッチング電源の保護回路（OLP過負荷・OVP過電圧・OTP過熱・SCP短絡）の見分け方と、症状からの切り分け・安全な復帰手順・容量と配線の是正方法を施工業者向けに解説。",
+    "image": "https://led-proshop.com/articles/images/led-tape-psu-protection-shutdown-guide-hero.webp",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP 編集部"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
+    },
+    "datePublished": "2026-06-15",
+    "dateModified": "2026-06-15",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-psu-protection-shutdown-guide"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/"},
+      {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "LEDテープの電源が保護機能で止まる原因と復帰手順", "item": "https://led-proshop.com/articles/led-tape-psu-protection-shutdown-guide"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "電源を入れた瞬間だけ点灯してすぐ消えるのはなぜですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "過負荷保護（OLP）のヒカップ動作か、過電圧保護（OVP）が最有力です。テープの接続長や本数が電源容量を超えている、または突入電流で一時的に過負荷になっていると、保護回路が出力を間欠的に停止させます。接続長を減らすか容量の大きい電源に替え、負荷率を定格の80%以下に収めてください。出力側の短絡（被覆の噛み込み・極性逆）がないかも併せて確認します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "電源が数分で落ちて本体が熱くなります。故障ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "多くは過熱保護（OTP）です。密閉ボックス内・周囲高温・負荷率が高いと内部温度が上がり、保護のため出力を停止します。冷却後に再投入して復帰するなら電源故障ではなく、ディレーティング（温度に応じた出力低減）の不足が原因です。容量に余裕を持たせ、通風・放熱を確保してください。常温でも即停止する・焦げ臭がある場合は電源本体の故障を疑います。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "保護が働いた電源は、原因を直せばそのまま使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ヒカップ式・自動復帰式の保護なら、負荷や配線を正常化すれば再び使えます。ただし過負荷や過熱を繰り返した電源は内部の電解コンデンサ等が劣化している可能性があり、寿命が縮みます。長時間ラッチ停止していた、焦げ臭がする、ケースが膨らんでいる、出力電圧が安定しないといった場合は交換してください。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Noto Sans JP',sans-serif;background:#0d1117;color:#e6edf3;line-height:1.7;font-size:15px}
+    a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+    .wrap{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+    /* breadcrumb */
+    .bc{font-size:12px;color:#8b949e;margin-bottom:24px}
+    .bc a{color:#8b949e}
+    /* hero */
+    .hero{background:linear-gradient(135deg,#2d0d0d 0%,#0d1117 100%);border:1px solid #4d2424;border-radius:12px;padding:32px 28px 28px;margin-bottom:32px}
+    .hero-tag{display:inline-block;background:#e5534b;color:#0d1117;font-size:11px;font-weight:700;padding:2px 10px;border-radius:4px;margin-bottom:12px;letter-spacing:.05em}
+    .hero h1{font-size:clamp(18px,4vw,26px);font-weight:900;line-height:1.35;margin-bottom:16px;color:#f0f6fc}
+    .hero-meta{font-size:12px;color:#8b949e;margin-bottom:20px}
+    .hero-summary{background:#21262d;border-radius:8px;padding:16px 20px}
+    .hero-summary p{font-size:13px;color:#cdd9e5;line-height:1.7}
+    /* danger box */
+    .danger{background:#2d0d0d;border:1px solid #f85149;border-radius:8px;padding:16px 20px;margin:24px 0}
+    .danger .alert-head{color:#ff7b72;font-weight:700;font-size:14px;margin-bottom:8px}
+    .danger p{font-size:13px;color:#f0c0bd;line-height:1.6;margin:0}
+    /* section */
+    h2{font-size:18px;font-weight:700;color:#ff7b72;border-left:3px solid #e5534b;padding-left:12px;margin:36px 0 16px}
+    h3{font-size:15px;font-weight:700;color:#e6edf3;margin:24px 0 10px}
+    p{margin-bottom:14px;color:#cdd9e5;font-size:14px}
+    /* table */
+    .tbl-wrap{overflow-x:auto;margin:16px 0 24px}
+    table{width:100%;border-collapse:collapse;font-size:13px;background:#161b22;border-radius:8px;overflow:hidden}
+    th{background:#21262d;color:#8b949e;padding:9px 12px;text-align:left;font-weight:600;white-space:nowrap}
+    td{padding:8px 12px;border-bottom:1px solid #21262d;color:#cdd9e5}
+    tr:last-child td{border-bottom:none}
+    .green{color:#3fb950;font-weight:700}
+    .yellow{color:#d29922;font-weight:700}
+    .red{color:#f85149;font-weight:700}
+    /* formula */
+    .formula{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px 18px;margin:16px 0;font-size:14px;color:#e6edf3}
+    .formula code{color:#ff9d92;font-weight:700;font-size:14px}
+    /* spec grid */
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0 24px}
+    .spec-card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px}
+    .spec-card .sc-label{font-size:11px;color:#8b949e;margin-bottom:6px}
+    .spec-card .sc-value{font-size:20px;font-weight:900;color:#ff7b72;line-height:1.2}
+    .spec-card .sc-note{font-size:11px;color:#8b949e;margin-top:6px;line-height:1.5}
+    /* checklist */
+    .checklist{list-style:none;margin:16px 0 24px;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:18px 20px}
+    .checklist li{position:relative;padding-left:28px;margin-bottom:12px;font-size:13px;color:#cdd9e5;line-height:1.6}
+    .checklist li:last-child{margin-bottom:0}
+    .checklist li::before{content:"✓";position:absolute;left:0;top:0;color:#3fb950;font-weight:700;font-size:15px}
+    /* step */
+    .step-list{list-style:none;margin:16px 0 24px}
+    .step-list li{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+    .step-num{flex-shrink:0;width:28px;height:28px;background:#e5534b;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#0d1117}
+    .step-body{flex:1}
+    .step-body strong{display:block;font-size:14px;color:#e6edf3;margin-bottom:4px}
+    .step-body p{font-size:13px;color:#8b949e;margin:0}
+    /* faq */
+    .faq-item{border:1px solid #30363d;border-radius:8px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:#21262d;padding:14px 16px;font-size:14px;font-weight:700;color:#e6edf3}
+    .faq-q::before{content:"Q. ";color:#ff7b72}
+    .faq-a{padding:14px 16px;font-size:13px;color:#cdd9e5;line-height:1.7}
+    .faq-a::before{content:"A. ";color:#3fb950;font-weight:700}
+    /* related */
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin:16px 0}
+    .related-card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 16px;transition:border-color .2s}
+    .related-card:hover{border-color:#e5534b}
+    .related-card .rc-tag{font-size:10px;color:#8b949e;margin-bottom:6px}
+    .related-card .rc-title{font-size:13px;font-weight:700;color:#e6edf3;line-height:1.4}
+    /* cta */
+    .cta-block{background:linear-gradient(135deg,#162032,#1a2a1a);border:1px solid #238636;border-radius:12px;padding:24px 20px;text-align:center;margin:32px 0}
+    .cta-block p{color:#cdd9e5;font-size:14px;margin-bottom:16px}
+    .cta-btn{display:inline-block;background:#238636;color:#fff;font-weight:700;font-size:15px;padding:12px 32px;border-radius:8px;text-decoration:none}
+    .cta-btn:hover{background:#2ea043;text-decoration:none}
+    /* highlight */
+    .hl-box{background:#161b22;border-left:3px solid #e5534b;border-radius:0 8px 8px 0;padding:14px 18px;margin:16px 0}
+    .hl-box p{margin:0;font-size:13px}
+    @media(max-width:600px){.hero{padding:20px 16px}.hero h1{font-size:17px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- breadcrumb -->
+  <nav class="bc" aria-label="パンくず">
+    <a href="/">LED PRO SHOP</a> &rsaquo;
+    <a href="/articles/">コラム</a> &rsaquo;
+    LEDテープの電源が保護機能で止まる原因と復帰手順
+  </nav>
+
+  <!-- hero -->
+  <div class="hero">
+    <span class="hero-tag">電源トラブル診断ガイド</span>
+    <h1>LEDテープの電源が保護機能で止まる<br>過負荷・過電圧・過熱の見分け方と復帰手順</h1>
+    <p class="hero-meta">更新日: 2026年6月15日｜LED PRO SHOP 編集部</p>
+    <div class="hero-summary">
+      <p>「電源を入れた瞬間だけ点いてすぐ消える」「数分で落ちて本体が触れないほど熱い」「全く点かず本体からジー音がする」——これらはLEDテープ用スイッチング電源（PSU）の<strong>保護回路が働いているサイン</strong>です。やみくもに電源を交換する前に、症状からどの保護が動作しているかを切り分ければ、原因は<strong>OLP（過負荷）・OVP（過電圧）・OTP（過熱）・SCP（短絡）</strong>の4系統に絞れます。本記事は症状による切り分けと、安全な復帰手順・容量と配線の是正方法を施工業者の現場目線で整理します。</p>
+    </div>
+  </div>
+
+  <!-- 安全警告 -->
+  <div class="danger">
+    <div class="alert-head">⚠ 通電状態での点検・再投入は感電・短絡の危険があります</div>
+    <p>保護動作の点検や配線の是正を行う際は、必ず1次側（AC100V/200V）のブレーカーを遮断し、無電圧を確認してから作業してください。出力短絡が残ったまま再投入を繰り返すと、電源・配線の発熱や焼損につながります。1次側の配線変更を伴う作業は第二種電気工事士以上の有資格者が行ってください。</p>
+  </div>
+
+  <h2>1. まず知る：保護回路の4モード</h2>
+  <p>LEDテープ用のスイッチング電源には、電源・負荷・配線を守るための保護回路が標準で組み込まれています。どの保護が働いているかが分かれば、原因の当たりがつきます。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>略号</th><th>保護名</th><th>動作のしくみ</th><th>代表的な症状</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="red">OLP</td><td>過負荷保護<br>(Over Load)</td><td>出力電流が定格を超えると電流を制限・間欠停止</td><td>点いてすぐ暗くなる・点滅して落ちる</td></tr>
+        <tr><td class="red">OVP</td><td>過電圧保護<br>(Over Voltage)</td><td>出力電圧が異常上昇すると出力を停止・保持</td><td>全消灯／再投入で一瞬だけ点く</td></tr>
+        <tr><td class="red">OTP</td><td>過熱保護<br>(Over Temp.)</td><td>ケース内部温度が閾値を超えると出力停止</td><td>数十秒〜数分で落ちる・本体が熱い</td></tr>
+        <tr><td class="red">SCP</td><td>短絡保護<br>(Short Circuit)</td><td>出力が短絡すると即時停止</td><td>全く点かない・本体からジー音</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>2. 症状からの切り分け表</h2>
+  <p>現場では「どの症状か」を起点に原因へ近づくのが最短です。次の対応表で当たりをつけてから個別の対処に進みます。</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>症状</th><th>最も疑う保護</th><th>主な原因</th><th>現場での確認方法</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>点けた瞬間だけ点灯しすぐ消える</td>
+          <td class="red">OLP / OVP</td>
+          <td>容量不足・テープの繋ぎすぎ・突入電流</td>
+          <td>接続長(本数)を減らして再投入し点くか確認</td>
+        </tr>
+        <tr>
+          <td>数十秒〜数分で落ち、本体が熱い</td>
+          <td class="red">OTP</td>
+          <td>密閉設置・周囲高温・負荷率が高い</td>
+          <td>冷却後の再投入で復帰するかを確認</td>
+        </tr>
+        <tr>
+          <td>全く点かない・本体からジー/カチカチ音</td>
+          <td class="red">SCP / OLP</td>
+          <td>出力短絡・極性逆・被覆の噛み込み</td>
+          <td>出力端子を外し電源単体で起動するか確認</td>
+        </tr>
+        <tr>
+          <td>点くが末端だけ暗い・色がずれる</td>
+          <td class="yellow">電圧降下（保護ではない）</td>
+          <td>配線が細い・長い・給電が片側のみ</td>
+          <td>末端のテープ電圧をテスターで実測</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="hl-box">
+    <p><strong>切り分けの基本動作：</strong>まず<strong>「出力端子を外して電源単体で立ち上がるか」</strong>を見ます。単体で正常起動するなら原因は負荷側（テープ・配線・コネクタ）、単体でも停止するなら電源本体の故障か出力配線の短絡残存です。この一手で「電源 vs 負荷」の切り分けが一気に進みます。</p>
+  </div>
+
+  <h2>3. OLP（過負荷）：容量と負荷率80%ルール</h2>
+  <p>最も多いのが容量不足による過負荷です。スイッチング電源は<strong>定格の80%以下</strong>で使うのが現場の鉄則で、連続点灯時の発熱・寿命・突入余裕を確保できます。必要容量は次式で求めます。</p>
+
+  <div class="formula">
+    <code>必要な電源容量(W) ＝ テープ消費電力(W/m) × 接続長(m) ÷ 0.8</code>
+    <p style="margin-top:10px;margin-bottom:0;color:#8b949e;font-size:13px">例：14.4W/m のテープを 5m → 14.4 × 5 ＝ 72W。72 ÷ 0.8 ＝ 90W。よって <strong style="color:#3fb950">100W クラスの電源</strong>を選定します（72W ぴったりの電源では負荷率100%で保護が働きやすい）。</p>
+  </div>
+
+  <div class="spec-grid">
+    <div class="spec-card"><div class="sc-label">推奨負荷率</div><div class="sc-value">≤ 80%</div><div class="sc-note">定格に対する常用上限の目安</div></div>
+    <div class="spec-card"><div class="sc-label">突入電流</div><div class="sc-value">定格の数倍</div><div class="sc-note">投入時に一瞬流れる。容量に余裕を</div></div>
+    <div class="spec-card"><div class="sc-label">ヒカップ式</div><div class="sc-value">自動復帰</div><div class="sc-note">負荷が正常化すると再点灯</div></div>
+    <div class="spec-card"><div class="sc-label">ラッチ式</div><div class="sc-value">再投入要</div><div class="sc-note">電源OFF→ONで初めて復帰</div></div>
+  </div>
+
+  <p>過負荷保護の「動き方」は製品により3タイプあり、復帰のしかたが異なります。</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>方式</th><th>動作</th><th>復帰</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>定電流リミット</td><td>電流を頭打ちに制限し電圧が下がる（暗くなる）</td><td>負荷を戻せば自動</td></tr>
+        <tr><td>ヒカップ（間欠）</td><td>短い周期で起動と停止を繰り返す（点滅）</td><td>負荷正常化で自動</td></tr>
+        <tr><td>シャットダウン（ラッチ）</td><td>完全停止し状態を保持</td><td>電源OFF→ONが必要</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>4. OVP（過電圧）：定電圧電源とサージ</h2>
+  <p>過電圧保護は、出力電圧が異常に高くなったときに働きます。LEDテープ用の定電圧電源で多いのは次の3パターンです。</p>
+  <ul style="margin:0 0 16px 20px;color:#cdd9e5;font-size:14px;line-height:1.8">
+    <li>定格電圧の異なる電源（例：24V品に12V用テープ）を誤って組み合わせた</li>
+    <li>1次側に位相制御の白熱灯用調光器を入れ、サージで出力が暴れた</li>
+    <li>長い配線の開閉サージ・落雷誘導でOVPが瞬時に動作した</li>
+  </ul>
+  <p>OVPの動作閾値は製品により異なり、概ね定格電圧の115〜135%程度で動作する製品が多いものの、<strong>必ずデータシートで確認</strong>してください。調光はLED電源対応の方式（電源2次側のPWM調光器・0-10V/DALI対応電源など）を選び、白熱灯用の位相制御調光器を電源の1次側に挟まないのが鉄則です。サージが想定される屋外・大規模配線ではサージ保護素子（SPD）の併用も検討します。</p>
+
+  <h2>5. OTP（過熱）：周囲温度とディレーティング</h2>
+  <p>本体が熱くなって数分で落ちるのは過熱保護です。スイッチング電源は周囲温度が高いほど取り出せる出力が下がる（ディレーティング）特性があり、密閉ボックス内・天井裏・直射日光下では特に注意が必要です。</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>周囲温度の目安</th><th>取り出せる出力の傾向</th><th>現場対応</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>〜40℃</td><td class="green">定格100%まで使えることが多い</td><td>通常設置</td></tr>
+        <tr><td>40〜50℃</td><td class="yellow">80%程度まで逓減する製品が多い</td><td>容量に余裕・通風確保</td></tr>
+        <tr><td>50〜60℃</td><td class="red">50%前後まで逓減する製品も</td><td>放熱板・設置場所の見直し</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>※具体的な逓減率は製品ごとに異なります。メーカーのディレーティング曲線を確認してください。密閉ボックスに収める場合は、容量を2〜3割増しで選び、通風スリットや放熱面を確保すると過熱停止を避けられます。</p>
+
+  <h2>6. 安全に復帰させる手順</h2>
+  <p>保護が働いた電源は、原因を残したまま再投入を繰り返すと劣化が進みます。次の順で原因を取り除いてから復帰させます。</p>
+
+  <ul class="step-list">
+    <li>
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>1次側を遮断する</strong>
+        <p>再投入や点検の前に必ずブレーカー／元電源をOFFにし、無電圧を確認します。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>電源を単体で起動して切り分ける</strong>
+        <p>出力端子から負荷を外し、電源だけで正常に立ち上がるか確認。単体OKなら負荷側、単体NGなら電源故障か出力短絡の残存です。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>負荷側を点検する</strong>
+        <p>接続長・本数・極性（+/-）・被覆の噛み込み・コネクタ内部の短絡を確認。テスターで出力端の短絡有無も見ます。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>過熱なら十分に冷却する</strong>
+        <p>OTP動作後はケースが常温に戻るまで待ってから再投入。すぐ再投入すると再び保護が働きます。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>容量・配線を是正する</strong>
+        <p>負荷率80%以下に収める／太い配線へ／給電を分割（両端給電・電源分散）して根本原因を取り除きます。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <strong>再投入し連続点灯試験</strong>
+        <p>10〜30分通電して温度上昇・再停止がないか確認。安定したら完了です。</p>
+      </div>
+    </li>
+  </ul>
+
+  <h2>7. 発注・施工前チェックリスト</h2>
+  <p>そもそも保護を働かせないために、設計・発注段階で次を確認します。</p>
+  <ul class="checklist">
+    <li>電源容量は「テープ合計W ÷ 0.8（＝1.25倍）」以上を確保したか</li>
+    <li>1台に繋ぐテープが、そのテープの最大接続長を超えていないか</li>
+    <li>出力の極性（+/−）を全系統で揃えて確認したか</li>
+    <li>設置場所の周囲温度・密閉度を確認し、ディレーティングを織り込んだか</li>
+    <li>調光は電源対応方式（2次側PWM・0-10V/DALI対応電源など）か</li>
+    <li>出力短絡・被覆の噛み込みがないか、テスター／メガーで確認したか</li>
+  </ul>
+
+  <h2>8. FAQ</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">電源を入れた瞬間だけ点灯してすぐ消えるのはなぜですか？</div>
+    <div class="faq-a">過負荷保護（OLP）のヒカップ動作か、過電圧保護（OVP）が最有力です。テープの接続長や本数が電源容量を超えている、または突入電流で一時的に過負荷になっていると、保護回路が出力を間欠的に停止させます。接続長を減らすか容量の大きい電源に替え、負荷率を定格の80%以下に収めてください。出力側の短絡（被覆の噛み込み・極性逆）がないかも併せて確認します。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">電源が数分で落ちて本体が熱くなります。故障ですか？</div>
+    <div class="faq-a">多くは過熱保護（OTP）です。密閉ボックス内・周囲高温・負荷率が高いと内部温度が上がり、保護のため出力を停止します。冷却後に再投入して復帰するなら電源故障ではなく、ディレーティング（温度に応じた出力低減）の不足が原因です。容量に余裕を持たせ、通風・放熱を確保してください。常温でも即停止する・焦げ臭がある場合は電源本体の故障を疑います。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">保護が働いた電源は、原因を直せばそのまま使えますか？</div>
+    <div class="faq-a">ヒカップ式・自動復帰式の保護なら、負荷や配線を正常化すれば再び使えます。ただし過負荷や過熱を繰り返した電源は内部の電解コンデンサ等が劣化している可能性があり、寿命が縮みます。長時間ラッチ停止していた、焦げ臭がする、ケースが膨らんでいる、出力電圧が安定しないといった場合は交換してください。</div>
+  </div>
+
+  <h2>関連ガイド</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/articles/led-psu-capacity-guide">
+      <div class="rc-tag">技術ガイド</div>
+      <div class="rc-title">LED電源（PSU）容量の選び方｜定格・負荷率・余裕の取り方</div>
+    </a>
+    <a class="related-card" href="/articles/led-power-supply-lifespan-failure-guide">
+      <div class="rc-tag">トラブル対処</div>
+      <div class="rc-title">LED電源の寿命と故障原因｜電解コンデンサ劣化と交換の目安</div>
+    </a>
+    <a class="related-card" href="/articles/led-tape-derating-guide">
+      <div class="rc-tag">技術ガイド</div>
+      <div class="rc-title">LEDテープのディレーティング｜温度に応じた出力低減の考え方</div>
+    </a>
+    <a class="related-card" href="/articles/led-tape-voltage-drop-guide">
+      <div class="rc-tag">技術ガイド</div>
+      <div class="rc-title">LEDテープの電圧降下｜末端が暗くなる原因と配線・給電対策</div>
+    </a>
+    <a class="related-card" href="/articles/led-power-inrush-current-breaker-trip-guide">
+      <div class="rc-tag">トラブル対処</div>
+      <div class="rc-title">LED電源の突入電流でブレーカーが落ちる原因と対策</div>
+    </a>
+    <a class="related-card" href="/articles/led-tape-connector-overheating-guide">
+      <div class="rc-tag">トラブル対処</div>
+      <div class="rc-title">LEDテープのコネクタが過熱する原因と対策</div>
+    </a>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <p>業務用LEDテープ・スイッチング電源・配線部材はLED PRO SHOPで。<br>PSE適合・容量別の定電圧電源からIP防水品まで400点超を即日出荷。</p>
+    <a class="cta-btn" href="/">商品ラインナップを見る</a>
+  </div>
+
+</div>
+</body>
+</html>
