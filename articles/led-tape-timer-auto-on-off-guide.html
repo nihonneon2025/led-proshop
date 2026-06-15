@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LEDテープを自動で点灯・消灯させる方法｜タイマー/自動点滅器の配線と接点容量の選び方 | LED PRO SHOP</title>
+  <meta name="description" content="看板やLED間接照明の消し忘れ・点け忘れを自動化したい施工業者の方へ。タイマー・自動点滅器(光センサー)・人感センサー・スマートコントローラの違いと配線位置(AC一次側/DC二次側)、突入電流に対する接点容量の選び方を数値例つきで解説します。">
+  <meta name="keywords" content="LEDテープ タイマー,LEDテープ 自動点灯 配線,看板 自動点灯 タイマー,店舗照明 自動点消灯,LEDテープ スケジュール 点灯,自動点滅器 LED,LED 突入電流 タイマー,LEDテープ 消し忘れ 対策">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-timer-auto-on-off-guide">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-timer-auto-on-off-guide">
+  <meta property="og:title" content="LEDテープを自動で点灯・消灯させる方法｜タイマー/自動点滅器の配線と接点容量の選び方 | LED PRO SHOP">
+  <meta property="og:description" content="看板・LED間接照明の自動点消灯を施工する方へ。タイマー・自動点滅器・人感センサー・スマートコントローラの違いと配線位置、突入電流に対する接点容量の選び方を数値例つきで解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-timer-auto-on-off-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープを自動で点灯・消灯させる方法｜タイマー/自動点滅器の配線と接点容量の選び方 | LED PRO SHOP">
+  <meta name="twitter:description" content="看板・LED間接照明の自動点消灯。タイマー・自動点滅器・人感センサー・スマートコントローラの違いと配線位置、突入電流に対する接点容量の選び方を施工業者向けに数値で解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-timer-auto-on-off-guide-hero.webp">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープを自動で点灯・消灯させる方法｜タイマー/自動点滅器の配線と接点容量の選び方",
+    "description": "LEDテープの自動点消灯を実現するタイマー・自動点滅器・人感センサー・スマートコントローラの違いと、AC一次側/DC二次側の配線位置、突入電流に対する接点容量の選び方を施工業者向けに解説。",
+    "image": "https://led-proshop.com/articles/images/led-tape-timer-auto-on-off-guide-hero.webp",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP 編集部"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
+    },
+    "datePublished": "2026-06-16",
+    "dateModified": "2026-06-16",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-timer-auto-on-off-guide"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/"},
+      {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "LEDテープの自動点消灯ガイド", "item": "https://led-proshop.com/articles/led-tape-timer-auto-on-off-guide"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープのタイマーは電源(ACアダプタ)の前と後ろ、どちらに入れますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "原則はAC一次側、つまりLED電源(ACアダプタ・LEDドライバ)よりコンセント側にタイマーを入れます。コンセントとアダプタの間にプラグインタイマーをはさむ、または分電盤・スイッチボックスでAC100Vを時刻制御する方法です。電源ごと切るので確実で、配線もシンプルです。DC二次側(電源とテープの間)で切る方式は、タイマーの定格電圧・電流がDC出力(例:DC24V)に合っている必要があり、スマートコントローラのようにDC対応・スケジュール機能を持つ機器を使う場合に限ります。なお、AC100Vを壁内で固定配線してタイマースイッチを組み込む工事は電気工事士の資格が必要です(コンセント差込のプラグインタイマーは資格不要)。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "タイマーや自動点滅器の接点容量はどう選べばいいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "定常電流ではなく『突入電流(インラッシュ)』を基準に余裕を見て選びます。スイッチング式のLED電源は投入の瞬間、定格入力電流の数倍～数十倍の突入電流が一瞬流れます。複数台の電源を1つのタイマーでまとめて入れると突入電流が合算され、接点が溶着したり寿命が極端に縮みます。対策は、(1)機器の接点容量を突入に対して十分大きく取る、(2)電源を複数回路に分けて投入を分散する、(3)突入電流抑制回路(NTCサーミスタやインラッシュリミッタ)内蔵の電源を使う、(4)ゼロクロス式のソリッドステートリレー(SSR)を併用する、のいずれかです。電源のデータシートにある『Inrush current(突入電流)』値と接続台数を必ず確認してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "屋外看板を日没で自動点灯させたいのですが、何を使えばいいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "日没・日の出で自動的に点いて消したい屋外サイン・袖看板には、周囲の明るさで動作する自動点滅器(光センサー・EEスイッチ)が定番です。点灯は日没連動で確実になりますが、深夜も点きっぱなしになるため、閉店時刻に確実に消したい場合はタイマー(時刻制御)と併用し『日没で点灯・指定時刻で消灯』の組み合わせにします。週間式タイマーやスマートコントローラなら、曜日ごとに営業時間が違う店舗にも対応できます。光センサーは受光部に他の照明や日中の反射光が当たると誤動作するため、設置場所(北向き・直射や他光源を避ける)に注意します。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Noto Sans JP',sans-serif;background:#0d1117;color:#e6edf3;line-height:1.7;font-size:15px}
+    a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+    .wrap{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+    /* breadcrumb */
+    .bc{font-size:12px;color:#8b949e;margin-bottom:24px}
+    .bc a{color:#8b949e}
+    /* hero */
+    .hero{background:linear-gradient(135deg,#0c2b2e 0%,#0d1117 100%);border:1px solid #155e63;border-radius:12px;padding:32px 28px 28px;margin-bottom:32px}
+    .hero-tag{display:inline-block;background:#2dd4bf;color:#0d1117;font-size:11px;font-weight:700;padding:2px 10px;border-radius:4px;margin-bottom:12px;letter-spacing:.05em}
+    .hero h1{font-size:clamp(18px,4vw,26px);font-weight:900;line-height:1.35;margin-bottom:16px;color:#f0f6fc}
+    .hero-meta{font-size:12px;color:#8b949e;margin-bottom:20px}
+    .hero-summary{background:#21262d;border-radius:8px;padding:16px 20px}
+    .hero-summary p{font-size:13px;color:#cdd9e5;line-height:1.7}
+    /* info box */
+    .info{background:#0c2b2e;border:1px solid #2dd4bf;border-radius:8px;padding:16px 20px;margin:24px 0}
+    .info .alert-head{color:#5eead4;font-weight:700;font-size:14px;margin-bottom:8px}
+    .info p{font-size:13px;color:#b9f2ea;line-height:1.6;margin:0}
+    /* section */
+    h2{font-size:18px;font-weight:700;color:#5eead4;border-left:3px solid #2dd4bf;padding-left:12px;margin:36px 0 16px}
+    h3{font-size:15px;font-weight:700;color:#e6edf3;margin:24px 0 10px}
+    p{margin-bottom:14px;color:#cdd9e5;font-size:14px}
+    /* table */
+    .tbl-wrap{overflow-x:auto;margin:16px 0 24px}
+    table{width:100%;border-collapse:collapse;font-size:13px;background:#161b22;border-radius:8px;overflow:hidden}
+    th{background:#21262d;color:#8b949e;padding:9px 12px;text-align:left;font-weight:600;white-space:nowrap}
+    td{padding:8px 12px;border-bottom:1px solid #21262d;color:#cdd9e5}
+    tr:last-child td{border-bottom:none}
+    .green{color:#3fb950;font-weight:700}
+    .yellow{color:#d29922;font-weight:700}
+    .red{color:#f85149;font-weight:700}
+    /* spec grid */
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0 24px}
+    .spec-card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px}
+    .spec-card .sc-label{font-size:11px;color:#8b949e;margin-bottom:6px}
+    .spec-card .sc-value{font-size:20px;font-weight:900;color:#5eead4;line-height:1.2}
+    .spec-card .sc-note{font-size:11px;color:#8b949e;margin-top:6px;line-height:1.5}
+    /* checklist */
+    .checklist{list-style:none;margin:16px 0 24px;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:18px 20px}
+    .checklist li{position:relative;padding-left:28px;margin-bottom:12px;font-size:13px;color:#cdd9e5;line-height:1.6}
+    .checklist li:last-child{margin-bottom:0}
+    .checklist li::before{content:"✓";position:absolute;left:0;top:0;color:#3fb950;font-weight:700;font-size:15px}
+    /* step */
+    .step-list{list-style:none;margin:16px 0 24px}
+    .step-list li{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+    .step-num{flex-shrink:0;width:28px;height:28px;background:#2dd4bf;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#0d1117}
+    .step-body{flex:1}
+    .step-body strong{display:block;font-size:14px;color:#e6edf3;margin-bottom:4px}
+    .step-body p{font-size:13px;color:#8b949e;margin:0}
+    /* faq */
+    .faq-item{border:1px solid #30363d;border-radius:8px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:#21262d;padding:14px 16px;font-size:14px;font-weight:700;color:#e6edf3}
+    .faq-q::before{content:"Q. ";color:#5eead4}
+    .faq-a{padding:14px 16px;font-size:13px;color:#cdd9e5;line-height:1.7}
+    .faq-a::before{content:"A. ";color:#3fb950;font-weight:700}
+    /* related */
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin:16px 0}
+    .related-card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 16px;transition:border-color .2s}
+    .related-card:hover{border-color:#2dd4bf}
+    .related-card .rc-tag{font-size:10px;color:#8b949e;margin-bottom:6px}
+    .related-card .rc-title{font-size:13px;font-weight:700;color:#e6edf3;line-height:1.4}
+    /* cta */
+    .cta-block{background:linear-gradient(135deg,#162032,#0c2b2e);border:1px solid #238636;border-radius:12px;padding:24px 20px;text-align:center;margin:32px 0}
+    .cta-block p{color:#cdd9e5;font-size:14px;margin-bottom:16px}
+    .cta-btn{display:inline-block;background:#238636;color:#fff;font-weight:700;font-size:15px;padding:12px 32px;border-radius:8px;text-decoration:none}
+    .cta-btn:hover{background:#2ea043;text-decoration:none}
+    /* highlight */
+    .hl-box{background:#161b22;border-left:3px solid #2dd4bf;border-radius:0 8px 8px 0;padding:14px 18px;margin:16px 0}
+    .hl-box p{margin:0;font-size:13px}
+    @media(max-width:600px){.hero{padding:20px 16px}.hero h1{font-size:17px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- breadcrumb -->
+  <nav class="bc" aria-label="パンくず">
+    <a href="/">LED PRO SHOP</a> &rsaquo;
+    <a href="/articles/">コラム</a> &rsaquo;
+    LEDテープの自動点消灯ガイド
+  </nav>
+
+  <!-- hero -->
+  <div class="hero">
+    <span class="hero-tag">配線・制御ガイド</span>
+    <h1>LEDテープを自動で点灯・消灯させる方法<br>タイマー/自動点滅器の配線と接点容量の選び方</h1>
+    <p class="hero-meta">更新日: 2026年6月16日｜LED PRO SHOP 編集部</p>
+    <div class="hero-summary">
+      <p>看板やLED間接照明の<strong>「消し忘れ・点け忘れ」</strong>は、電気代の無駄だけでなく施主からのクレームにもつながります。自動点消灯は<strong>タイマー・自動点滅器(光センサー)・人感センサー・スマートコントローラ</strong>の4方式があり、用途と配線位置(AC一次側／DC二次側)を間違えると正しく動きません。本記事は4方式の違い・配線位置・突入電流に対する接点容量の選び方を、施工業者の現場目線で数値とともに整理します。</p>
+    </div>
+  </div>
+
+  <!-- info -->
+  <div class="info">
+    <div class="alert-head">▶ 結論から</div>
+    <p>基本はLED電源(ACアダプタ／ドライバ)の<strong>AC一次側</strong>でタイマー制御します。機器の接点容量は定常電流ではなく<strong>突入電流(インラッシュ)</strong>を基準に余裕を取り、複数台をまとめて入れる場合は溶着に注意。屋外サインは「自動点滅器で点灯＋タイマーで消灯」、曜日で営業時間が変わる店舗は週間式タイマーかスマートコントローラが向きます。</p>
+  </div>
+
+  <h2>1. 自動点消灯の4方式と向く用途</h2>
+  <p>「自動で点けて消す」と一口に言っても、何をトリガーにするかで方式が分かれます。まずは4方式の特徴を押さえます。制御の決め手(時刻なのか・明るさなのか・人なのか)と、どこに機器を入れるか(AC一次側／DC二次側)が選定の軸です。</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>方式</th><th>制御の決め手</th><th>配線位置</th><th>向く用途</th><th>主な注意点</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>プログラムタイマー<br>(24時間式／週間式)</td><td>時刻</td><td class="green">AC一次側</td><td>営業時間が固定の看板・間接照明</td><td>停電時刻ズレ(電池バックアップ有無)・接点容量</td></tr>
+        <tr><td>自動点滅器<br>(光センサー／EEスイッチ)</td><td>周囲の明るさ</td><td class="green">AC一次側</td><td>屋外看板・サイン(日没点灯)</td><td>受光部の設置場所・他光源での誤動作</td></tr>
+        <tr><td>人感センサー</td><td>人の動き</td><td>AC一次／DC二次</td><td>通路・トイレ・倉庫の常時消灯</td><td>検知範囲・点灯保持時間の設定</td></tr>
+        <tr><td>スマート／Wi-Fi<br>コントローラ</td><td>アプリ／スケジュール／音声</td><td class="yellow">DC二次側</td><td>調光・シーン・遠隔も欲しい店舗</td><td>通信障害・停電復帰動作・電源容量</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="hl-box">
+    <p><strong>ポイント：</strong>タイマー・自動点滅器はAC100Vをそのまま入切するため<strong>電源ごと(電源＋テープ全体)を制御</strong>します。一方スマートコントローラはDC側でPWM調光しながらスケジュール点灯するため、<strong>調光・演出と自動化を同時に</strong>やりたいときに使い分けます。</p>
+  </div>
+
+  <h2>2. タイマーは「電源の前」か「電源の後ろ」か</h2>
+  <p>もっとも迷うのが、タイマーをLED電源(ACアダプタ／LEDドライバ)の<strong>一次側(コンセント側)</strong>に入れるか、<strong>二次側(電源とテープの間のDC配線)</strong>に入れるかです。基本は一次側です。</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>配線位置</th><th>制御するもの</th><th>使う機器</th><th>向き／注意</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="green">AC一次側<br>(コンセント〜電源の前)</td><td>AC100V(電源ごと入切)</td><td>プラグインタイマー／自動点滅器／タイマースイッチ</td><td>確実・配線がシンプル。固定配線への組込は電気工事士が必要</td></tr>
+        <tr><td class="yellow">DC二次側<br>(電源〜テープの間)</td><td>DC出力(例:DC24V)</td><td>DC対応スマートコントローラ／RFコントローラ</td><td>機器の定格電圧・電流がDC出力に合うこと。調光と併用向き</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>DC二次側に汎用のAC用タイマーを入れるのは誤りです。DC回路に入れる機器は<strong>DC対応・出力電圧(12V/24V等)・許容電流</strong>がテープの消費電流以上であることを必ず確認してください。スマートコントローラの多くはDC入力でスケジュール・調光・調色までこなせるため、二次側制御はこのタイプが中心になります。</p>
+
+  <h2>3. 接点容量は「突入電流」で選ぶ（計算例）</h2>
+  <p>タイマーや自動点滅器が早期に壊れる最大の原因が<strong>突入電流(インラッシュカレント)</strong>です。スイッチング式のLED電源は、電源投入の一瞬だけ定格入力電流の数倍〜数十倍の電流が流れます。定常電流だけ見て接点容量を選ぶと、投入のたびに接点が傷み、やがて溶着(くっついて切れない)・接触不良を起こします。</p>
+  <h3>定常電流の目安(AC100V側)</h3>
+  <div class="spec-grid">
+    <div class="spec-card"><div class="sc-label">60W電源 1台</div><div class="sc-value">約0.7A</div><div class="sc-note">100W÷100V÷力率の概算</div></div>
+    <div class="spec-card"><div class="sc-label">100W電源 1台</div><div class="sc-value">約1.1A</div><div class="sc-note">力率0.9で概算</div></div>
+    <div class="spec-card"><div class="sc-label">100W×5台</div><div class="sc-value">約5.5A</div><div class="sc-note">定常はまだ余裕に見えるが…</div></div>
+    <div class="spec-card"><div class="sc-label">突入電流</div><div class="sc-value">定格の数十倍</div><div class="sc-note">投入の一瞬・台数分が合算</div></div>
+  </div>
+  <p>定常で5.5A程度でも、5台を1つのタイマーで同時投入すると突入電流は各台の合算となり、瞬間的に数十Aに達することがあります。これが15A定格の接点を溶着させる典型パターンです。</p>
+  <div class="hl-box">
+    <p><strong>突入電流への対策(いずれか・併用)：</strong><br>① 接点容量を突入に対して十分大きく取る(余裕率を見る)<br>② 電源を複数回路・複数タイマーに分けて投入を分散する<br>③ 突入電流抑制(NTCサーミスタ／インラッシュリミッタ)内蔵の電源を選ぶ<br>④ ゼロクロス式ソリッドステートリレー(SSR)を併用する</p>
+  </div>
+  <p>電源のデータシートには「Inrush current(突入電流)」が記載されています。<strong>その値 × 同時投入する台数</strong>を見積もり、機器の接点容量・ブレーカー定格に余裕があるか必ず確認してください。突入電流でブレーカーが落ちる症状の詳しい対処は、関連ガイドも参照してください。</p>
+
+  <h2>4. 用途別・おすすめの自動化方式（早見表）</h2>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>用途・状況</th><th>おすすめ方式</th><th>ねらい</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>営業時間が毎日固定の袖看板・店内サイン</td><td class="green">24時間式タイマー</td><td>確実・低コストで時刻通りに入切</td></tr>
+        <tr><td>日没で点け・閉店時刻で消す屋外サイン</td><td>自動点滅器(点灯)＋タイマー(消灯)</td><td>季節で変わる日没に追従しつつ確実に消灯</td></tr>
+        <tr><td>曜日で営業時間が違う店舗</td><td>週間式タイマー／スマートコントローラ</td><td>曜日別スケジュールに対応</td></tr>
+        <tr><td>調光・演出(色替え)も自動化したい</td><td class="yellow">スマート(Wi-Fi/BLE)コントローラ</td><td>スケジュール＋調光・シーンを1台で</td></tr>
+        <tr><td>人がいる時だけ点灯(通路・倉庫・トイレ)</td><td>人感センサー</td><td>無人時の常時消灯で省エネ</td></tr>
+        <tr><td>遠隔で店舗外から入切・確認したい</td><td>Wi-Fiコントローラ(クラウド連携)</td><td>スマホで遠隔操作・状態確認</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>5. 自動点消灯の施工手順</h2>
+  <ul class="step-list">
+    <li>
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>制御の決め手と方式を決める</strong>
+        <p>時刻／明るさ／人／アプリのどれで制御するかを用途から選定。早見表で方式を確定します。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>制御位置(AC一次側／DC二次側)を決める</strong>
+        <p>タイマー・自動点滅器は一次側、調光併用のスマート制御は二次側。機器の定格を回路に合わせます。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>突入電流と接点容量を試算する</strong>
+        <p>電源の突入電流×同時投入台数を見積もり、接点容量・ブレーカーに余裕があるか確認。必要なら回路を分散します。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>受光部・センサーの設置場所を決める</strong>
+        <p>自動点滅器の受光部は他光源・直射・反射を避ける。人感センサーは検知範囲と点灯保持時間を現場で調整します。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>配線・結線(固定配線は有資格者)</strong>
+        <p>AC100Vの固定配線・スイッチ組込は電気工事士が施工。プラグインタイマーは差込のみで対応します。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <strong>動作・停電復帰を試験する</strong>
+        <p>設定時刻・日没相当(受光部を遮光)で入切を確認。停電後の復帰動作(点灯／消灯／前回状態)も検証します。</p>
+      </div>
+    </li>
+  </ul>
+
+  <h2>6. 施工チェックリスト</h2>
+  <ul class="checklist">
+    <li>制御の決め手(時刻／明るさ／人／アプリ)と方式が用途に合っているか</li>
+    <li>タイマー・自動点滅器をAC一次側に入れたか(DC側にはDC対応機のみ)</li>
+    <li>電源の突入電流×同時投入台数を試算し、接点容量・ブレーカーに余裕があるか</li>
+    <li>複数台を1つで入切する場合、回路分散や突入抑制電源を検討したか</li>
+    <li>自動点滅器の受光部が他光源・直射・反射を受けない位置か</li>
+    <li>AC100Vの固定配線は電気工事士が施工したか</li>
+    <li>停電復帰時の動作(点灯／消灯／前回状態)を確認したか</li>
+  </ul>
+
+  <h2>7. よくある質問（FAQ）</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">LEDテープのタイマーは電源(ACアダプタ)の前と後ろ、どちらに入れますか？</div>
+    <div class="faq-a">原則はAC一次側、つまりLED電源(ACアダプタ・LEDドライバ)よりコンセント側にタイマーを入れます。コンセントとアダプタの間にプラグインタイマーをはさむ、または分電盤・スイッチボックスでAC100Vを時刻制御する方法です。電源ごと切るので確実で、配線もシンプルです。DC二次側(電源とテープの間)で切る方式は、タイマーの定格電圧・電流がDC出力(例:DC24V)に合っている必要があり、スマートコントローラのようにDC対応・スケジュール機能を持つ機器を使う場合に限ります。なお、AC100Vを壁内で固定配線してタイマースイッチを組み込む工事は電気工事士の資格が必要です(コンセント差込のプラグインタイマーは資格不要)。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">タイマーや自動点滅器の接点容量はどう選べばいいですか？</div>
+    <div class="faq-a">定常電流ではなく「突入電流(インラッシュ)」を基準に余裕を見て選びます。スイッチング式のLED電源は投入の瞬間、定格入力電流の数倍〜数十倍の突入電流が一瞬流れます。複数台の電源を1つのタイマーでまとめて入れると突入電流が合算され、接点が溶着したり寿命が極端に縮みます。対策は、(1)機器の接点容量を突入に対して十分大きく取る、(2)電源を複数回路に分けて投入を分散する、(3)突入電流抑制回路(NTCサーミスタやインラッシュリミッタ)内蔵の電源を使う、(4)ゼロクロス式のソリッドステートリレー(SSR)を併用する、のいずれかです。電源のデータシートにある「Inrush current(突入電流)」値と接続台数を必ず確認してください。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">屋外看板を日没で自動点灯させたいのですが、何を使えばいいですか？</div>
+    <div class="faq-a">日没・日の出で自動的に点いて消したい屋外サイン・袖看板には、周囲の明るさで動作する自動点滅器(光センサー・EEスイッチ)が定番です。点灯は日没連動で確実になりますが、深夜も点きっぱなしになるため、閉店時刻に確実に消したい場合はタイマー(時刻制御)と併用し「日没で点灯・指定時刻で消灯」の組み合わせにします。週間式タイマーやスマートコントローラなら、曜日ごとに営業時間が違う店舗にも対応できます。光センサーは受光部に他の照明や日中の反射光が当たると誤動作するため、設置場所(北向き・直射や他光源を避ける)に注意します。</div>
+  </div>
+
+  <h2>関連ガイド</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/articles/led-power-inrush-current-breaker-trip-guide">
+      <div class="rc-tag">技術ガイド</div>
+      <div class="rc-title">LED突入電流でブレーカーが落ちる原因と対策｜接点容量・分散投入</div>
+    </a>
+    <a class="related-card" href="/articles/led-tape-controller-dimmer-guide">
+      <div class="rc-tag">配線ガイド</div>
+      <div class="rc-title">LEDテープのコントローラ・調光器の選び方と配線</div>
+    </a>
+    <a class="related-card" href="/articles/led-motion-sensor-lighting-guide">
+      <div class="rc-tag">活用ガイド</div>
+      <div class="rc-title">人感センサーLEDの選び方｜検知範囲・点灯保持時間の設定</div>
+    </a>
+    <a class="related-card" href="/articles/led-tape-electrician-license-guide">
+      <div class="rc-tag">施工ガイド</div>
+      <div class="rc-title">LEDテープ施工に電気工事士資格は必要？固定配線の線引き</div>
+    </a>
+    <a class="related-card" href="/articles/led-tape-psu-wiring-guide">
+      <div class="rc-tag">配線ガイド</div>
+      <div class="rc-title">LEDテープの電源(電源ユニット)の配線方法と容量選定</div>
+    </a>
+    <a class="related-card" href="/articles/led-tape-outdoor-sign-guide">
+      <div class="rc-tag">用途ガイド</div>
+      <div class="rc-title">屋外看板・サイン向けLEDテープの選び方と防水施工</div>
+    </a>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <p>自動点消灯に対応するDC12V/24V電源・スマートコントローラ・調光器、屋外対応の防水LEDテープはLED PRO SHOPで。<br>看板・間接照明向けの部材を400点超から即日出荷。</p>
+    <a class="cta-btn" href="/">商品ラインナップを見る</a>
+  </div>
+
+</div>
+</body>
+</html>
