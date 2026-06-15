@@ -5,24 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ===== SEO BASIC ===== -->
-  <title>DC24V 電源の選び方｜LEDテープに必要な容量(W)とIP規格・チラつき対策 | LED PRO SHOP</title>
-  <meta name="description" content="DC24V 電源を容量ギリギリで選ぶと、施工後にチラつき・発熱・基板焼けが起きて再訪問になります。必要W数の出し方、屋外IP65/屋内IP20の選び分け、フリッカーフリーの見分け方、購入前チェックリストを施工業者向けに整理しました。">
+  <title>DC24V電源の選び方｜容量計算(W/A換算)とIP規格・チラつき対策【施工業者向け】 | LED PRO SHOP</title>
+  <meta name="description" content="DC24V電源の選び方を施工業者向けに解説。必要容量の計算とW/A換算、屋外IP65/屋内IP20の選び分け、フリッカーフリーの見分け方、購入前チェックリストまで。容量ギリギリで選ぶと施工後にチラつき・発熱・基板焼けで再訪問になります。">
   <meta name="keywords" content="dc24v 電源,PSU 24v,LED電源 選び方,LEDドライバー,24V電源 容量計算,LED電源 IP65,フリッカーフリー電源,LEDテープ 電源">
   <link rel="canonical" href="https://led-proshop.com/articles/dc24v-led-power-supply-guide">
 
   <!-- ===== OGP ===== -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://led-proshop.com/articles/dc24v-led-power-supply-guide">
-  <meta property="og:title" content="DC24V 電源の選び方｜LEDテープに必要な容量(W)とIP規格・チラつき対策 | LED PRO SHOP">
-  <meta property="og:description" content="DC24V 電源を容量ギリギリで選ぶと、施工後にチラつき・発熱・基板焼けが起きて再訪問になります。必要W数の出し方、屋外IP65/屋内IP20の選び分け、フリッカーフリーの見分け方、購入前チェックリストを施工業者向けに整理しました。">
+  <meta property="og:title" content="DC24V電源の選び方｜容量計算(W/A換算)とIP規格・チラつき対策【施工業者向け】 | LED PRO SHOP">
+  <meta property="og:description" content="DC24V電源の選び方を施工業者向けに解説。必要容量の計算とW/A換算、屋外IP65/屋内IP20の選び分け、フリッカーフリーの見分け方、購入前チェックリストまで。容量ギリギリで選ぶと施工後にチラつき・発熱・基板焼けで再訪問になります。">
   <meta property="og:image" content="https://led-proshop.com/articles/images/dc24v-led-power-supply-guide-hero.webp">
   <meta property="og:site_name" content="LED PRO SHOP">
   <meta property="og:locale" content="ja_JP">
 
   <!-- ===== Twitter Card ===== -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DC24V 電源の選び方｜LEDテープに必要な容量(W)とIP規格・チラつき対策 | LED PRO SHOP">
-  <meta name="twitter:description" content="DC24V 電源を容量ギリギリで選ぶと、施工後にチラつき・発熱・基板焼けが起きて再訪問になります。必要W数の出し方、IP規格の選び分け、フリッカーフリーの見分け方、購入前チェックリストを施工業者向けに整理しました。">
+  <meta name="twitter:title" content="DC24V電源の選び方｜容量計算(W/A換算)とIP規格・チラつき対策【施工業者向け】 | LED PRO SHOP">
+  <meta name="twitter:description" content="DC24V電源の選び方を施工業者向けに解説。必要容量の計算とW/A換算、IP規格の選び分け、フリッカーフリーの見分け方、購入前チェックリストまで。容量ギリギリで選ぶと施工後にチラつき・発熱・基板焼けで再訪問になります。">
   <meta name="twitter:image" content="https://led-proshop.com/articles/images/dc24v-led-power-supply-guide-hero.webp">
 
   <!-- ===== JSON-LD: Article ===== -->
@@ -201,7 +201,7 @@
 
 <div class="hero">
   <div class="cat-badge">電源・コントローラー解説</div>
-  <h1>DC24V 電源の選び方｜LEDテープに必要な容量(W)とIP規格・チラつき対策</h1>
+  <h1>DC24V電源の選び方｜LEDテープに必要な容量(W/A換算)とIP規格・チラつき対策</h1>
   <div class="hero-meta">
     <span>公開: 2026-05-18</span>
     <span>対象: 電気工事業者・内装施工業者・LED照明設計担当者</span>
@@ -259,6 +259,32 @@
 
     <div class="box-orange">
       <p><strong>余裕率20%は必須:</strong> 定格容量の80%以下で運用することで電源の発熱を抑え、寿命が大幅に延びます。100W電源に100Wを接続すると常時フル稼働となり、数ヶ月で故障するケースがあります。</p>
+    </div>
+
+    <h3>DC24V電源の容量計算（W/A換算）</h3>
+
+    <p>電源の定格はW（ワット）表記とA（アンペア）表記の両方が使われます。DC24V電源の容量は、電力（W）＝電圧（V）×電流（A）という基本式で相互に換算できます。電圧が24Vで一定なので、次のように計算します。</p>
+
+    <div class="formula">
+      電流（A）= 電力（W）÷ 24V<br>
+      電力（W）= 電流（A）× 24V<br>
+      <span class="comment">// DC24Vの場合。W表記とA表記はこの式で相互換算できる</span>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>電源容量（W）</th><th>DC24Vでの電流（A）</th></tr></thead>
+        <tbody>
+          <tr><td>120W</td><td>5.0A</td></tr>
+          <tr><td>200W</td><td>約8.3A</td></tr>
+          <tr><td>300W</td><td>12.5A</td></tr>
+          <tr><td>600W</td><td>25.0A</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>A表記の電源を選ぶときも考え方は同じ:</strong> A表記の電源は「A値 × 24V」で対応Wを求め、前項の<a href="#capacity">必要容量（総消費W × 1.2）</a>を満たすかで判断します。配線材・端子の許容電流（A）も、この電流値を基準に選定してください。</p>
     </div>
 
     <!-- ===== 2. 12V vs 24V ===== -->
@@ -403,6 +429,7 @@
       <li><a href="/articles/led-psu-capacity-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープ DC24V/12V 電源（PSU）容量計算 早見表｜ワット数・配線長から即計算</a></li>
       <li><a href="/articles/led-tape-dimmer-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープ 調光器 選び方ガイド｜PWM・TRIAC・0-10V の違いとフリッカー対策</a></li>
       <li><a href="/articles/capsule-hotel-led-case" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>カプセルホテル LED照明施工事例｜睡眠環境2700K調光・IP65浴室・44%省エネ・年間18万円削減</a></li>
+      <li><a href="/articles/cob-vs-smd-led-tape-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>COBテープとSMDテープの違い｜均一発光が必要な現場で選ぶべきLED</a></li>
     </ul>
   </div>
 </div>
