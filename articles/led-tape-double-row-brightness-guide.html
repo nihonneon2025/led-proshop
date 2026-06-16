@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LEDテープを2列・多列で貼って明るさを上げる方法｜照度の目安・電源容量・放熱の注意 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープ1列では明るさが足りない時に、2列・多列で並べて照度を上げる方法を施工業者向けに解説。列数で明るさ(lm)がほぼ比例で増える考え方、必要列数の逆算、電源(電源ユニット)容量が列数分増える計算、密着貼りで温度が上がる放熱の注意、ドット感・むら対策まで数値でまとめます。">
+  <meta name="keywords" content="LEDテープ 2列,LEDテープ 明るさ 足りない,LEDテープ 多列,LEDテープ 明るくする,LEDテープ 二重貼り,LEDテープ 照度 上げる,LEDテープ 並べる 放熱,LEDテープ 列数 電源容量">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-double-row-brightness-guide">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-double-row-brightness-guide">
+  <meta property="og:title" content="LEDテープを2列・多列で貼って明るさを上げる方法｜照度の目安・電源容量・放熱の注意 | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープ1列で足りない明るさを2列・多列で上げる方法。列数と明るさ(lm)の関係、必要列数の逆算、電源容量が列数分増える計算、密着貼りの放熱注意を施工業者向けに数値で解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-double-row-brightness-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープを2列・多列で貼って明るさを上げる方法｜照度の目安・電源容量・放熱の注意 | LED PRO SHOP">
+  <meta name="twitter:description" content="LEDテープ1列で足りない明るさを2列・多列で上げる方法。列数と明るさの関係、必要列数の逆算、電源容量、密着貼りの放熱注意を施工業者向けに数値で解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-double-row-brightness-guide-hero.webp">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープを2列・多列で貼って明るさを上げる方法｜照度の目安・電源容量・放熱の注意",
+    "description": "LEDテープ1列では明るさが足りない時に2列・多列で照度を上げる方法。列数と明るさ(lm)の関係、必要列数の逆算、電源容量が列数分増える計算、密着貼りの放熱注意、ドット感対策を施工業者向けに数値で解説。",
+    "image": "https://led-proshop.com/articles/images/led-tape-double-row-brightness-guide-hero.webp",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP 編集部"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
+    },
+    "datePublished": "2026-06-17",
+    "dateModified": "2026-06-17",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-double-row-brightness-guide"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/"},
+      {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "LEDテープを2列・多列で明るさを上げる方法", "item": "https://led-proshop.com/articles/led-tape-double-row-brightness-guide"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープを2列にすると明るさは2倍になりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "光束(lm)の合計はほぼ2倍になります。同じテープを2列並べれば発光するLEDの数が2倍になるため、出る光の総量(lm)はおおむね列数に比例します。ただし、面の明るさ(照度lx)が体感で2倍に感じるかは別問題です。照度は対象までの距離・拡散板・反射の条件で変わり、人の目は明るさを対数的に感じるため、2倍の光量でも体感は『はっきり明るくなった』程度のことがあります。狙った照度に届かせるには、まず必要lx→必要lm/mを計算し、テープ1列のlm/mで割って必要な列数を逆算するのが確実です。なお、列数を増やせば消費電力と発熱も列数分増えるので、電源容量と放熱もあわせて見直してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "LEDテープを2列、隙間なく密着させて貼っても大丈夫ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "放熱の観点では密着貼りは不利です。2列を隙間なく並べると発熱が中央に集中し、放熱面積が増えないまま熱だけが倍になるため、テープの温度が上がって輝度低下・色ずれ・寿命短縮を招きやすくなります。対策は、(1)列の間に数mm以上の隙間をあける、(2)アルミフレーム(プロファイル)や十分な面積のアルミ板に貼って放熱経路を確保する、(3)W/mの低い(発熱の少ない)テープを多列にして1列あたりの熱を下げる、のいずれかです。木材・樹脂・密閉空間への直貼り多列はとくに温度が上がりやすいので、連続点灯後に手で触れて確認し、熱ければ放熱を強化してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "LEDテープを2列・多列にしたら電源(電源ユニット)はどう選びますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "消費電力は列数分そのまま増えるので、電源容量も列数分で見直します。計算は『1列のW/m × テープ長(m) × 列数』で総消費電力を出し、これに2〜3割の余裕(ディレーティング)を上乗せした容量の電源を選びます。例えば10W/mのテープを5mで2列なら、10×5×2=100W、余裕を見て120〜150W級の電源が目安です。1台で足りなければ電源を複数に分け、回路ごとに配線します。さらに、電流が増えると末端の電圧降下も大きくなるため、配線を太くする・送り長さを短くする・両端給電やパワーインジェクションを併用するなど、電圧降下対策も同時に検討してください。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Noto Sans JP',sans-serif;background:#0d1117;color:#e6edf3;line-height:1.7;font-size:15px}
+    a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+    .wrap{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+    .bc{font-size:12px;color:#8b949e;margin-bottom:24px}
+    .bc a{color:#8b949e}
+    .hero{background:linear-gradient(135deg,#2b1f08 0%,#0d1117 100%);border:1px solid #b45309;border-radius:12px;padding:32px 28px 28px;margin-bottom:32px}
+    .hero-tag{display:inline-block;background:#fbbf24;color:#0d1117;font-size:11px;font-weight:700;padding:2px 10px;border-radius:4px;margin-bottom:12px;letter-spacing:.05em}
+    .hero h1{font-size:clamp(18px,4vw,26px);font-weight:900;line-height:1.35;margin-bottom:16px;color:#f0f6fc}
+    .hero-meta{font-size:12px;color:#8b949e;margin-bottom:20px}
+    .hero-summary{background:#21262d;border-radius:8px;padding:16px 20px}
+    .hero-summary p{font-size:13px;color:#cdd9e5;line-height:1.7}
+    .info{background:#2b1f08;border:1px solid #f59e0b;border-radius:8px;padding:16px 20px;margin:24px 0}
+    .info .alert-head{color:#fcd34d;font-weight:700;font-size:14px;margin-bottom:8px}
+    .info p{font-size:13px;color:#fde68a;line-height:1.6;margin:0}
+    h2{font-size:18px;font-weight:700;color:#fcd34d;border-left:3px solid #f59e0b;padding-left:12px;margin:36px 0 16px}
+    h3{font-size:15px;font-weight:700;color:#e6edf3;margin:24px 0 10px}
+    p{margin-bottom:14px;color:#cdd9e5;font-size:14px}
+    .tbl-wrap{overflow-x:auto;margin:16px 0 24px}
+    table{width:100%;border-collapse:collapse;font-size:13px;background:#161b22;border-radius:8px;overflow:hidden}
+    th{background:#21262d;color:#8b949e;padding:9px 12px;text-align:left;font-weight:600;white-space:nowrap}
+    td{padding:8px 12px;border-bottom:1px solid #21262d;color:#cdd9e5}
+    tr:last-child td{border-bottom:none}
+    .green{color:#3fb950;font-weight:700}
+    .yellow{color:#d29922;font-weight:700}
+    .red{color:#f85149;font-weight:700}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0 24px}
+    .spec-card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px}
+    .spec-card .sc-label{font-size:11px;color:#8b949e;margin-bottom:6px}
+    .spec-card .sc-value{font-size:20px;font-weight:900;color:#fcd34d;line-height:1.2}
+    .spec-card .sc-note{font-size:11px;color:#8b949e;margin-top:6px;line-height:1.5}
+    .checklist{list-style:none;margin:16px 0 24px;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:18px 20px}
+    .checklist li{position:relative;padding-left:28px;margin-bottom:12px;font-size:13px;color:#cdd9e5;line-height:1.6}
+    .checklist li:last-child{margin-bottom:0}
+    .checklist li::before{content:"✓";position:absolute;left:0;top:0;color:#3fb950;font-weight:700;font-size:15px}
+    .step-list{list-style:none;margin:16px 0 24px}
+    .step-list li{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+    .step-num{flex-shrink:0;width:28px;height:28px;background:#f59e0b;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#0d1117}
+    .step-body{flex:1}
+    .step-body strong{display:block;font-size:14px;color:#e6edf3;margin-bottom:4px}
+    .step-body p{font-size:13px;color:#8b949e;margin:0}
+    .faq-item{border:1px solid #30363d;border-radius:8px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:#21262d;padding:14px 16px;font-size:14px;font-weight:700;color:#e6edf3}
+    .faq-q::before{content:"Q. ";color:#fcd34d}
+    .faq-a{padding:14px 16px;font-size:13px;color:#cdd9e5;line-height:1.7}
+    .faq-a::before{content:"A. ";color:#3fb950;font-weight:700}
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin:16px 0}
+    .related-card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 16px;transition:border-color .2s}
+    .related-card:hover{border-color:#f59e0b}
+    .related-card .rc-tag{font-size:10px;color:#8b949e;margin-bottom:6px}
+    .related-card .rc-title{font-size:13px;font-weight:700;color:#e6edf3;line-height:1.4}
+    .cta-block{background:linear-gradient(135deg,#162032,#2b1f08);border:1px solid #238636;border-radius:12px;padding:24px 20px;text-align:center;margin:32px 0}
+    .cta-block p{color:#cdd9e5;font-size:14px;margin-bottom:16px}
+    .cta-btn{display:inline-block;background:#238636;color:#fff;font-weight:700;font-size:15px;padding:12px 32px;border-radius:8px;text-decoration:none}
+    .cta-btn:hover{background:#2ea043;text-decoration:none}
+    .hl-box{background:#161b22;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:14px 18px;margin:16px 0}
+    .hl-box p{margin:0;font-size:13px}
+    @media(max-width:600px){.hero{padding:20px 16px}.hero h1{font-size:17px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- breadcrumb -->
+  <nav class="bc" aria-label="パンくず">
+    <a href="/">LED PRO SHOP</a> &rsaquo;
+    <a href="/articles/">コラム</a> &rsaquo;
+    LEDテープを2列・多列で明るさを上げる方法
+  </nav>
+
+  <!-- hero -->
+  <div class="hero">
+    <span class="hero-tag">製品活用ガイド</span>
+    <h1>LEDテープを2列・多列で貼って明るさを上げる方法<br>照度の目安・電源容量・放熱の注意</h1>
+    <p class="hero-meta">更新日: 2026年6月17日｜LED PRO SHOP 編集部</p>
+    <div class="hero-summary">
+      <p>「1列貼ったが思ったより暗い」――そんな時の現実的な解決策が<strong>LEDテープの2列・多列配置</strong>です。光の総量(lm)はおおむね列数に比例して増えますが、同時に<strong>消費電力・発熱・電圧降下も列数分</strong>増えます。本記事は、必要列数の逆算・電源容量の計算・密着貼りの放熱トラブル回避・ドット感やむらの対策を、施工業者の現場目線で数値とともに整理します。</p>
+    </div>
+  </div>
+
+  <!-- info -->
+  <div class="info">
+    <div class="alert-head">▶ 結論から</div>
+    <p>明るさ(lm)は<strong>ほぼ列数倍</strong>。ただし体感の照度(lx)は距離・拡散で変わるため、<strong>必要lx→必要lm/m→必要列数</strong>で逆算します。列を増やすと<strong>消費電力・発熱・電圧降下も列数分</strong>増えるので、電源容量は「W/m×長さ×列数＋2〜3割余裕」で選定。密着貼りは熱が集中するため、<strong>列間に隙間＋アルミフレーム</strong>で放熱を確保します。</p>
+  </div>
+
+  <h2>1. 列を増やすと「明るさ」と「電力・熱」はどう変わるか</h2>
+  <p>同じLEDテープを並列に並べると、発光するLEDの数が列数分だけ増えます。したがって光の総量(lm)も、消費電力(W)も、発熱(熱量)も、ほぼ列数に比例して増えるのが基本です。「明るくなる」ぶんだけ「電気を食い」「熱を出す」――この当たり前を最初に押さえると設計を外しません。</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>項目</th><th>1列</th><th>2列</th><th>3列</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>光束(lm)合計</td><td>×1</td><td class="green">×約2</td><td class="green">×約3</td></tr>
+        <tr><td>消費電力(W)</td><td>×1</td><td class="yellow">×2</td><td class="yellow">×3</td></tr>
+        <tr><td>発熱量</td><td>×1</td><td class="red">×2</td><td class="red">×3</td></tr>
+        <tr><td>電流(末端電圧降下に影響)</td><td>×1</td><td class="yellow">×2</td><td class="yellow">×3</td></tr>
+        <tr><td>体感の明るさ(lx)</td><td>基準</td><td>距離・拡散で変動</td><td>距離・拡散で変動</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="hl-box">
+    <p><strong>注意：</strong>人の目は明るさを対数的に感じるため、光量が2倍でも体感は「2倍まぶしい」とはなりません。逆に言えば、わずかな増し貼りでは体感が変わりにくい場面もあります。狙いがはっきりしている時は、感覚ではなく<strong>必要照度から列数を逆算</strong>するのが確実です。</p>
+  </div>
+
+  <h2>2. 必要な列数を逆算する(計算例)</h2>
+  <p>「とりあえず2列」ではなく、狙う照度から必要なlm/mを出し、テープ1列のlm/mで割って列数を求めます。手順はシンプルです。</p>
+  <ul class="step-list">
+    <li>
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>狙う照度(lx)と対象を決める</strong>
+        <p>例:棚面で500lx欲しい、間接照明で壁面をふんわり、など用途から目標lxを置きます。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>必要なlm/mの当たりをつける</strong>
+        <p>距離・拡散板・反射率で効率が変わるため、1列の実測lxを基準に「あと何倍要るか」で考えると現場では速いです。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>1列の不足倍率＝必要列数</strong>
+        <p>1列で目標の半分の照度しか出ないなら2列、1/3なら3列が出発点。端数は拡散・配置で詰めます。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>高W/m 1列 と 低W/m 多列 を比較</strong>
+        <p>同じ明るさでも、低W/mを多列にすると1列あたりの発熱が下がり放熱が楽になります。設置面の放熱条件で選びます。</p>
+      </div>
+    </li>
+  </ul>
+  <div class="spec-grid">
+    <div class="spec-card"><div class="sc-label">1列で不足</div><div class="sc-value">目標の1/2</div><div class="sc-note">→ 2列が目安</div></div>
+    <div class="spec-card"><div class="sc-label">1列で不足</div><div class="sc-value">目標の1/3</div><div class="sc-note">→ 3列が目安</div></div>
+    <div class="spec-card"><div class="sc-label">体感の感じ方</div><div class="sc-value">対数的</div><div class="sc-note">lmの増分=体感増分ではない</div></div>
+    <div class="spec-card"><div class="sc-label">放熱で有利</div><div class="sc-value">低W/m多列</div><div class="sc-note">1列あたりの熱が下がる</div></div>
+  </div>
+
+  <h2>3. 電源容量は「列数分」で見直す(計算例)</h2>
+  <p>列を増やしたら、消費電力もそのまま列数倍です。総消費電力＝<strong>1列のW/m × テープ長(m) × 列数</strong>。これに2〜3割の余裕を足した容量の電源を選びます。</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>条件</th><th>総消費電力</th><th>推奨電源容量(余裕込み)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>10W/m × 5m × 1列</td><td>50W</td><td>60〜75W級</td></tr>
+        <tr><td>10W/m × 5m × 2列</td><td class="yellow">100W</td><td>120〜150W級</td></tr>
+        <tr><td>10W/m × 5m × 3列</td><td class="red">150W</td><td>180〜225W級</td></tr>
+        <tr><td>14.4W/m × 5m × 2列</td><td class="red">144W</td><td>180W級以上 or 電源2分割</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>1台で容量が足りない場合は電源を複数に分け、回路ごとに配線します。さらに電流が列数倍になることで<strong>末端の電圧降下</strong>も大きくなります。配線を太くする・送り長さを短くする・両端給電やパワーインジェクションを併用するなど、電圧降下対策も同時に検討してください。</p>
+
+  <h2>4. 密着貼りはNG ― 多列の放熱対策</h2>
+  <p>多列化で最も多い失敗が<strong>密着貼りによる温度上昇</strong>です。2列・3列を隙間なく並べると、放熱面積は増えないのに発熱だけ列数分になり、熱が中央に集中します。結果、輝度低下・色ずれ・寿命短縮を招きます。</p>
+  <div class="hl-box">
+    <p><strong>多列の放熱対策(いずれか・併用)：</strong><br>① 列の間に数mm以上の隙間をあけ、熱を逃がす<br>② アルミフレーム(プロファイル)や十分な面積のアルミ板に貼る<br>③ W/mの低いテープを多列にして1列あたりの発熱を下げる<br>④ 木材・樹脂・密閉空間への直貼り多列は避け、放熱経路を確保する</p>
+  </div>
+  <p>連続点灯後に手で触れて熱すぎないかを必ず確認します。触れ続けられないほど熱い場合は、放熱強化か列数・W/mの見直しが必要です。</p>
+
+  <h2>5. ドット感・明るさむらを抑える配置</h2>
+  <p>明るくしたいからと列を増やすと、今度は<strong>粒(ドット)感や列ごとの線</strong>が目立つことがあります。とくに間接照明や拡散板越しの用途では、明るさだけでなく見え方も詰めます。</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>気になる症状</th><th>原因</th><th>対策</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>粒々(ドット)が見える</td><td>LED間隔・発光点が見える距離</td><td>高密度テープ/COBテープ・拡散カバーを併用</td></tr>
+        <tr><td>列ごとの線が見える</td><td>列の間隔が広い/拡散不足</td><td>列間を詰めすぎず拡散板で均す</td></tr>
+        <tr><td>中央だけ明るい</td><td>列が寄りすぎ</td><td>照らす幅に合わせ列を等間隔に振る</td></tr>
+        <tr><td>端だけ暗い</td><td>電圧降下</td><td>配線強化・両端給電・電源分割</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>6. 多列化チェックリスト</h2>
+  <ul class="checklist">
+    <li>狙う照度から必要列数を逆算したか(感覚ではなく必要lm/mで)</li>
+    <li>総消費電力=W/m×長さ×列数を計算し、2〜3割余裕の電源を選んだか</li>
+    <li>1台で足りなければ電源を分割し、回路ごとに配線したか</li>
+    <li>電流が列数倍になることで増える電圧降下の対策を見込んだか</li>
+    <li>列の間に隙間をあけ、アルミフレーム等で放熱経路を確保したか</li>
+    <li>連続点灯後に手で触れて温度を確認したか</li>
+    <li>ドット感・列の線・むらを拡散カバーや等間隔配置で抑えたか</li>
+  </ul>
+
+  <h2>7. よくある質問(FAQ)</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">LEDテープを2列にすると明るさは2倍になりますか？</div>
+    <div class="faq-a">光束(lm)の合計はほぼ2倍になります。同じテープを2列並べれば発光するLEDの数が2倍になるため、出る光の総量(lm)はおおむね列数に比例します。ただし、面の明るさ(照度lx)が体感で2倍に感じるかは別問題です。照度は対象までの距離・拡散板・反射の条件で変わり、人の目は明るさを対数的に感じるため、2倍の光量でも体感は「はっきり明るくなった」程度のことがあります。狙った照度に届かせるには、まず必要lx→必要lm/mを計算し、テープ1列のlm/mで割って必要な列数を逆算するのが確実です。なお、列数を増やせば消費電力と発熱も列数分増えるので、電源容量と放熱もあわせて見直してください。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">LEDテープを2列、隙間なく密着させて貼っても大丈夫ですか？</div>
+    <div class="faq-a">放熱の観点では密着貼りは不利です。2列を隙間なく並べると発熱が中央に集中し、放熱面積が増えないまま熱だけが倍になるため、テープの温度が上がって輝度低下・色ずれ・寿命短縮を招きやすくなります。対策は、(1)列の間に数mm以上の隙間をあける、(2)アルミフレーム(プロファイル)や十分な面積のアルミ板に貼って放熱経路を確保する、(3)W/mの低い(発熱の少ない)テープを多列にして1列あたりの熱を下げる、のいずれかです。木材・樹脂・密閉空間への直貼り多列はとくに温度が上がりやすいので、連続点灯後に手で触れて確認し、熱ければ放熱を強化してください。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">LEDテープを2列・多列にしたら電源(電源ユニット)はどう選びますか？</div>
+    <div class="faq-a">消費電力は列数分そのまま増えるので、電源容量も列数分で見直します。計算は「1列のW/m × テープ長(m) × 列数」で総消費電力を出し、これに2〜3割の余裕(ディレーティング)を上乗せした容量の電源を選びます。例えば10W/mのテープを5mで2列なら、10×5×2=100W、余裕を見て120〜150W級の電源が目安です。1台で足りなければ電源を複数に分け、回路ごとに配線します。さらに、電流が増えると末端の電圧降下も大きくなるため、配線を太くする・送り長さを短くする・両端給電やパワーインジェクションを併用するなど、電圧降下対策も同時に検討してください。</div>
+  </div>
+
+  <h2>関連ガイド</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/articles/led-tape-brightness-lumen-guide">
+      <div class="rc-tag">仕様ガイド</div>
+      <div class="rc-title">LEDテープの明るさ(ルーメン)の選び方と体感換算</div>
+    </a>
+    <a class="related-card" href="/articles/led-lighting-lux-calculation-guide">
+      <div class="rc-tag">設計ガイド</div>
+      <div class="rc-title">LED照明の照度(ルクス)計算と必要光量の出し方</div>
+    </a>
+    <a class="related-card" href="/articles/led-tape-watt-per-meter-guide">
+      <div class="rc-tag">仕様ガイド</div>
+      <div class="rc-title">LEDテープのW/m(ワット密度)の選び方</div>
+    </a>
+    <a class="related-card" href="/articles/led-tape-heat-management-guide">
+      <div class="rc-tag">技術ガイド</div>
+      <div class="rc-title">LEDテープの放熱設計と温度対策</div>
+    </a>
+    <a class="related-card" href="/articles/led-psu-capacity-guide">
+      <div class="rc-tag">電源ガイド</div>
+      <div class="rc-title">LEDテープの電源容量の選び方と余裕率</div>
+    </a>
+    <a class="related-card" href="/articles/led-tape-voltage-drop-guide">
+      <div class="rc-tag">配線ガイド</div>
+      <div class="rc-title">LEDテープの電圧降下の計算と対策</div>
+    </a>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <p>多列配置に対応するLEDテープ・低W/mから高W/m品・アルミフレーム・拡散カバー・容量に余裕のあるDC12V/24V電源はLED PRO SHOPで。<br>明るさ設計に必要な部材を400点超から即日出荷。</p>
+    <a class="cta-btn" href="/">商品ラインナップを見る</a>
+  </div>
+
+</div>
+</body>
+</html>

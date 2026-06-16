@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LEDテープの電圧が高い・低い時の影響と対処｜DC24V電源の入力電圧許容範囲とリップル対策 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープが暗い・チラつく・すぐ壊れる原因が「電圧降下」ではなく電源そのものの電圧ズレやリップルだった――そんな施工業者の方へ。DC12V/24Vの入力電圧許容範囲(±何%)、電圧が高い/低い時に起きる症状、電源の電圧調整(トリマ)、リップル(脈流)の影響と測り方を数値で解説します。">
+  <meta name="keywords" content="LEDテープ 電圧 高い,LEDテープ 電圧 低い,DC24V 許容範囲,LEDテープ 入力電圧,LED電源 電圧 調整,LEDテープ リップル,LEDテープ 電圧 何ボルトまで,LED 電圧 暗い チラつき">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-input-voltage-tolerance-guide">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-input-voltage-tolerance-guide">
+  <meta property="og:title" content="LEDテープの電圧が高い・低い時の影響と対処｜DC24V電源の入力電圧許容範囲とリップル対策 | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープが暗い・チラつく・すぐ壊れる原因が電圧降下ではなく電源の電圧ズレやリップルのことも。DC12V/24Vの許容範囲、電圧が高い/低い時の症状、電圧調整・リップル測定を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-input-voltage-tolerance-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープの電圧が高い・低い時の影響と対処｜DC24V電源の入力電圧許容範囲とリップル対策 | LED PRO SHOP">
+  <meta name="twitter:description" content="LEDテープが暗い・チラつく・すぐ壊れる原因が電圧降下ではなく電源の電圧ズレやリップルのことも。DC12V/24Vの許容範囲・電圧調整・リップル測定を施工業者向けに数値で解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-input-voltage-tolerance-guide-hero.webp">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープの電圧が高い・低い時の影響と対処｜DC24V電源の入力電圧許容範囲とリップル対策",
+    "description": "LEDテープの暗さ・チラつき・早期故障の原因が電圧降下ではなく電源側の電圧ズレやリップルのことがある。DC12V/24Vの入力電圧許容範囲(±何%)、電圧が高い/低い時の症状、電源の電圧調整(トリマ)、リップル(脈流)の影響と測り方を施工業者向けに数値で解説。",
+    "image": "https://led-proshop.com/articles/images/led-tape-input-voltage-tolerance-guide-hero.webp",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP 編集部"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
+    },
+    "datePublished": "2026-06-17",
+    "dateModified": "2026-06-17",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-input-voltage-tolerance-guide"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/"},
+      {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "LEDテープの入力電圧許容範囲とリップル対策", "item": "https://led-proshop.com/articles/led-tape-input-voltage-tolerance-guide"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "DC24VのLEDテープは何ボルトまで許容しますか？電圧が25Vだと壊れますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "多くの定電圧LEDテープは定格±5〜10%程度を入力電圧の許容範囲として設計されています。DC24V品ならおおむね22〜26V程度が目安で、25V程度なら直ちに壊れることはありませんが、定格より高い電圧を常用すると電流が増えて発熱が増し、寿命を縮めます。逆に低すぎると暗くなり、RGB品では色バランスも崩れます。正確な許容範囲は製品の仕様書(データシート)に記載があるため必ず確認してください。電源の出力電圧が定格から外れている場合は、電源側の電圧調整(トリマ)で合わせるか、電圧の合った電源に交換します。なお、定格と違う電圧の電源(24V品に12V、12V品に24V)を使うのは厳禁で、12V品に24Vを入れると即座に焼損します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "電源の出力電圧をテスターで測ったら表示とずれていました。調整できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "スイッチング電源(ユニット型)の多くは、基板上に出力電圧の微調整トリマ(V-ADJ / VOLTAGE ADJUST)を備えており、無負荷時で数%の範囲で出力電圧を調整できます。テスターを直流電圧レンジにして電源の出力端子を測り、定格(例:24.0V)に合わせます。調整は負荷をつないだ状態の電圧も確認しながら、定格を大きく超えないようにします。ACアダプタ型(密閉型)はトリマがなく調整できないため、電圧がずれている・不安定な場合は交換します。測定値が定格から大きく外れる、負荷をつなぐと極端に下がる、といった場合は電源の容量不足や劣化(電解コンデンサの寿命)が疑われるので、容量に余裕のある電源への交換を検討してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "電圧は足りているのにLEDテープがチラつきます。リップルが原因ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "電圧の平均値は足りているのにチラつく場合、出力に重畳するリップル(脈流＝電圧の細かな波)が大きいことが原因の一つです。リップルは安価・劣化した電源や、容量に対して負荷が大きすぎる時に増えます。目視ではわからなくても、スマホのカメラ越しに縞が出る・動画でちらつくといった形で現れます。テスターのAC電圧レンジやオシロでリップルを確認し、大きい場合は、(1)容量に余裕のある良質な電源に替える、(2)劣化した電源を交換する、(3)定電流(定電圧でない)方式や、リップルの小さい安定化電源を使う、で改善します。なお、チラつきは調光器との相性やPWM周波数が原因のこともあるため、電源を疑う前に調光経路も切り分けてください。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Noto Sans JP',sans-serif;background:#0d1117;color:#e6edf3;line-height:1.7;font-size:15px}
+    a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
+    .wrap{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+    .bc{font-size:12px;color:#8b949e;margin-bottom:24px}
+    .bc a{color:#8b949e}
+    .hero{background:linear-gradient(135deg,#1d0f33 0%,#0d1117 100%);border:1px solid #7e22ce;border-radius:12px;padding:32px 28px 28px;margin-bottom:32px}
+    .hero-tag{display:inline-block;background:#c084fc;color:#0d1117;font-size:11px;font-weight:700;padding:2px 10px;border-radius:4px;margin-bottom:12px;letter-spacing:.05em}
+    .hero h1{font-size:clamp(18px,4vw,26px);font-weight:900;line-height:1.35;margin-bottom:16px;color:#f0f6fc}
+    .hero-meta{font-size:12px;color:#8b949e;margin-bottom:20px}
+    .hero-summary{background:#21262d;border-radius:8px;padding:16px 20px}
+    .hero-summary p{font-size:13px;color:#cdd9e5;line-height:1.7}
+    .info{background:#1d0f33;border:1px solid #a855f7;border-radius:8px;padding:16px 20px;margin:24px 0}
+    .info .alert-head{color:#d8b4fe;font-weight:700;font-size:14px;margin-bottom:8px}
+    .info p{font-size:13px;color:#e9d5ff;line-height:1.6;margin:0}
+    h2{font-size:18px;font-weight:700;color:#d8b4fe;border-left:3px solid #a855f7;padding-left:12px;margin:36px 0 16px}
+    h3{font-size:15px;font-weight:700;color:#e6edf3;margin:24px 0 10px}
+    p{margin-bottom:14px;color:#cdd9e5;font-size:14px}
+    .tbl-wrap{overflow-x:auto;margin:16px 0 24px}
+    table{width:100%;border-collapse:collapse;font-size:13px;background:#161b22;border-radius:8px;overflow:hidden}
+    th{background:#21262d;color:#8b949e;padding:9px 12px;text-align:left;font-weight:600;white-space:nowrap}
+    td{padding:8px 12px;border-bottom:1px solid #21262d;color:#cdd9e5}
+    tr:last-child td{border-bottom:none}
+    .green{color:#3fb950;font-weight:700}
+    .yellow{color:#d29922;font-weight:700}
+    .red{color:#f85149;font-weight:700}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0 24px}
+    .spec-card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px}
+    .spec-card .sc-label{font-size:11px;color:#8b949e;margin-bottom:6px}
+    .spec-card .sc-value{font-size:20px;font-weight:900;color:#d8b4fe;line-height:1.2}
+    .spec-card .sc-note{font-size:11px;color:#8b949e;margin-top:6px;line-height:1.5}
+    .checklist{list-style:none;margin:16px 0 24px;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:18px 20px}
+    .checklist li{position:relative;padding-left:28px;margin-bottom:12px;font-size:13px;color:#cdd9e5;line-height:1.6}
+    .checklist li:last-child{margin-bottom:0}
+    .checklist li::before{content:"✓";position:absolute;left:0;top:0;color:#3fb950;font-weight:700;font-size:15px}
+    .step-list{list-style:none;margin:16px 0 24px}
+    .step-list li{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+    .step-num{flex-shrink:0;width:28px;height:28px;background:#a855f7;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff}
+    .step-body{flex:1}
+    .step-body strong{display:block;font-size:14px;color:#e6edf3;margin-bottom:4px}
+    .step-body p{font-size:13px;color:#8b949e;margin:0}
+    .faq-item{border:1px solid #30363d;border-radius:8px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:#21262d;padding:14px 16px;font-size:14px;font-weight:700;color:#e6edf3}
+    .faq-q::before{content:"Q. ";color:#d8b4fe}
+    .faq-a{padding:14px 16px;font-size:13px;color:#cdd9e5;line-height:1.7}
+    .faq-a::before{content:"A. ";color:#3fb950;font-weight:700}
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin:16px 0}
+    .related-card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 16px;transition:border-color .2s}
+    .related-card:hover{border-color:#a855f7}
+    .related-card .rc-tag{font-size:10px;color:#8b949e;margin-bottom:6px}
+    .related-card .rc-title{font-size:13px;font-weight:700;color:#e6edf3;line-height:1.4}
+    .cta-block{background:linear-gradient(135deg,#162032,#1d0f33);border:1px solid #238636;border-radius:12px;padding:24px 20px;text-align:center;margin:32px 0}
+    .cta-block p{color:#cdd9e5;font-size:14px;margin-bottom:16px}
+    .cta-btn{display:inline-block;background:#238636;color:#fff;font-weight:700;font-size:15px;padding:12px 32px;border-radius:8px;text-decoration:none}
+    .cta-btn:hover{background:#2ea043;text-decoration:none}
+    .hl-box{background:#161b22;border-left:3px solid #a855f7;border-radius:0 8px 8px 0;padding:14px 18px;margin:16px 0}
+    .hl-box p{margin:0;font-size:13px}
+    @media(max-width:600px){.hero{padding:20px 16px}.hero h1{font-size:17px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- breadcrumb -->
+  <nav class="bc" aria-label="パンくず">
+    <a href="/">LED PRO SHOP</a> &rsaquo;
+    <a href="/articles/">コラム</a> &rsaquo;
+    LEDテープの入力電圧許容範囲とリップル対策
+  </nav>
+
+  <!-- hero -->
+  <div class="hero">
+    <span class="hero-tag">トラブル対処ガイド</span>
+    <h1>LEDテープの電圧が高い・低い時の影響と対処<br>DC24V電源の入力電圧許容範囲とリップル対策</h1>
+    <p class="hero-meta">更新日: 2026年6月17日｜LED PRO SHOP 編集部</p>
+    <div class="hero-summary">
+      <p>「配線も短いのに暗い」「チラつく」「すぐ壊れる」――その原因は<strong>電圧降下ではなく、電源そのものの電圧ズレやリップル(脈流)</strong>かもしれません。LEDテープは入力電圧に許容範囲があり、定格より高ければ発熱・短命化、低ければ暗くなり色も崩れます。本記事は、DC12V/24Vの<strong>入力電圧許容範囲・電圧が高い/低い時の症状・電源の電圧調整・リップルの測り方</strong>を、施工業者の現場目線で数値とともに整理します。</p>
+    </div>
+  </div>
+
+  <!-- info -->
+  <div class="info">
+    <div class="alert-head">▶ 結論から</div>
+    <p>定電圧LEDテープの入力許容はおおむね<strong>定格±5〜10%</strong>(DC24Vなら約22〜26V)。<strong>高すぎ=発熱・短命化</strong>、<strong>低すぎ=暗い・色崩れ</strong>。電源の出力電圧はテスターで実測し、ユニット型なら<strong>電圧調整トリマ</strong>で定格に合わせます。電圧が足りるのにチラつくなら<strong>リップル(脈流)</strong>を疑い、容量に余裕のある良質な電源へ。<strong>12V品に24Vは即焼損</strong>、定格電圧は絶対に守ること。</p>
+  </div>
+
+  <h2>1. 「電圧降下」と「電源の電圧ズレ」は別の問題</h2>
+  <p>まず切り分けです。同じ「電圧が足りない」でも、原因は2系統あります。一方を直しても、もう一方が原因なら直りません。</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>原因の系統</th><th>どこの電圧</th><th>典型症状</th><th>主な対処</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>電圧降下(配線ロス)</td><td>テープの末端ほど下がる</td><td class="yellow">末端だけ暗い・色がずれる</td><td>配線強化・両端給電・電源分散</td></tr>
+        <tr><td>電源の電圧ズレ</td><td>電源の出力そのものがズレ</td><td class="red">全体が暗い/全体が熱い・短命</td><td>電圧調整(トリマ)・電源交換</td></tr>
+        <tr><td>リップル(脈流)</td><td>出力に重畳する電圧の波</td><td class="red">電圧は足りるのにチラつく</td><td>良質・余裕容量の電源へ交換</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="hl-box">
+    <p><strong>見分け方：</strong>「末端だけ暗い」なら電圧降下、「全体が均一に暗い/全体が熱い」なら電源の出力電圧、「電圧は出ているのにチラつく」ならリップル。テスターで<strong>電源出力端</strong>と<strong>テープ末端</strong>の両方を測ると一発で切り分けられます。電圧降下の詳しい対策は関連ガイドを参照してください。</p>
+  </div>
+
+  <h2>2. 入力電圧の許容範囲(DC12V/24V)</h2>
+  <p>定電圧LEDテープは定格電圧で最適に光るよう設計されており、許容範囲はおおむね定格±5〜10%です。範囲外で使うと不具合や故障につながります。</p>
+  <div class="spec-grid">
+    <div class="spec-card"><div class="sc-label">DC12V品の目安</div><div class="sc-value">約11〜13V</div><div class="sc-note">定格±約5〜10%</div></div>
+    <div class="spec-card"><div class="sc-label">DC24V品の目安</div><div class="sc-value">約22〜26V</div><div class="sc-note">定格±約5〜10%</div></div>
+    <div class="spec-card"><div class="sc-label">高すぎると</div><div class="sc-value">発熱・短命</div><div class="sc-note">電流増で寿命低下</div></div>
+    <div class="spec-card"><div class="sc-label">低すぎると</div><div class="sc-value">暗い・色崩れ</div><div class="sc-note">RGBは色バランス崩壊</div></div>
+  </div>
+  <p>正確な許容範囲は製品の仕様書(データシート)に記載があります。必ず確認してください。なお、<strong>定格の違う電圧(12V品に24V、24V品に12V)</strong>を使うのは厳禁です。とくに12V品に24Vを入れると一瞬で焼損します。誤接続防止のため、電源・テープの電圧表示を結線前に必ず突き合わせます。</p>
+
+  <h2>3. 電圧が高い時・低い時に起きること</h2>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>状態</th><th>起きる症状</th><th>放置するとどうなるか</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="red">電圧が高い(定格超)</td><td>明るすぎる・テープが熱い</td><td>発熱増で輝度低下・色ずれ・寿命短縮・最悪は焼損</td></tr>
+        <tr><td class="yellow">電圧が低い(定格未満)</td><td>全体が暗い・RGBの色が偏る</td><td>明るさ不足・白が黄ばむ等の色再現低下</td></tr>
+        <tr><td class="red">電圧が不安定/脈動</td><td>ちらつき・明滅</td><td>見栄え低下・撮影で縞・体感的な疲れ</td></tr>
+        <tr><td class="green">定格どおり</td><td>仕様どおりの明るさ・色</td><td>設計寿命を発揮</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>「明るいほど良い」と電圧を上げるのは逆効果です。定格を超えた電圧は電流増→発熱増→寿命短縮に直結します。明るさが足りない時は電圧ではなく、W/mの高いテープ・多列配置・拡散や反射の見直しで対応してください。</p>
+
+  <h2>4. 電源の出力電圧を測って合わせる手順</h2>
+  <ul class="step-list">
+    <li>
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>テスターを直流電圧レンジにする</strong>
+        <p>DC電圧(V⎓)レンジに設定。極性(＋/−)を確認し、電源の出力端子に当てます。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>無負荷と負荷時の両方を測る</strong>
+        <p>テープをつないだ状態と外した状態で測定。負荷時に電圧が大きく下がるなら容量不足・劣化を疑います。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>トリマ(V-ADJ)で定格に合わせる</strong>
+        <p>ユニット型は基板上の電圧調整トリマで微調整可。定格(例:24.0V)に合わせ、定格を大きく超えないようにします。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>調整不可なら交換を判断</strong>
+        <p>密閉ACアダプタ型はトリマが無く調整不可。電圧がずれる・不安定なら電圧の合った電源へ交換します。</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>リップルを確認する</strong>
+        <p>テスターのACレンジやオシロで脈動を確認。大きい場合は良質・余裕容量の電源へ替えます。</p>
+      </div>
+    </li>
+  </ul>
+
+  <h2>5. 原因別の対処(早見表)</h2>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>症状</th><th>疑う原因</th><th>対処</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>全体が均一に暗い</td><td>電源出力が定格より低い</td><td>トリマで調整/電圧の合う電源へ交換</td></tr>
+        <tr><td>全体が熱い・早期に劣化</td><td>電源出力が定格より高い</td><td>トリマで下げる/定格電源へ交換</td></tr>
+        <tr><td>負荷をつなぐと電圧が急落</td><td>電源の容量不足・劣化</td><td>容量に余裕のある電源へ交換</td></tr>
+        <tr><td>電圧は足りるのにチラつく</td><td>リップル(脈流)が大きい</td><td>良質・安定化電源へ交換</td></tr>
+        <tr><td>末端だけ暗い</td><td>電圧降下(配線ロス)</td><td>配線強化・両端給電・電源分散</td></tr>
+        <tr><td>つないだ瞬間に焼損</td><td>定格違いの電圧(12V品に24V等)</td><td>電圧表示を突き合わせ正しい電源に</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>6. 電圧トラブル診断チェックリスト</h2>
+  <ul class="checklist">
+    <li>テープと電源の定格電圧(12V/24V)が一致しているか結線前に確認したか</li>
+    <li>電源の出力電圧をテスターで実測し、定格±5〜10%の範囲か</li>
+    <li>無負荷と負荷時で電圧を比較し、負荷時の急落がないか</li>
+    <li>「末端だけ暗い(電圧降下)」か「全体が暗い(電源)」かを切り分けたか</li>
+    <li>ユニット型はトリマ調整、密閉型は交換、と方針を分けたか</li>
+    <li>電圧は足りるのにチラつく場合、リップル(脈流)を確認したか</li>
+    <li>明るさ不足を電圧アップで解決しようとしていないか(発熱・短命の原因)</li>
+  </ul>
+
+  <h2>7. よくある質問(FAQ)</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">DC24VのLEDテープは何ボルトまで許容しますか？電圧が25Vだと壊れますか？</div>
+    <div class="faq-a">多くの定電圧LEDテープは定格±5〜10%程度を入力電圧の許容範囲として設計されています。DC24V品ならおおむね22〜26V程度が目安で、25V程度なら直ちに壊れることはありませんが、定格より高い電圧を常用すると電流が増えて発熱が増し、寿命を縮めます。逆に低すぎると暗くなり、RGB品では色バランスも崩れます。正確な許容範囲は製品の仕様書(データシート)に記載があるため必ず確認してください。電源の出力電圧が定格から外れている場合は、電源側の電圧調整(トリマ)で合わせるか、電圧の合った電源に交換します。なお、定格と違う電圧の電源(24V品に12V、12V品に24V)を使うのは厳禁で、12V品に24Vを入れると即座に焼損します。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">電源の出力電圧をテスターで測ったら表示とずれていました。調整できますか？</div>
+    <div class="faq-a">スイッチング電源(ユニット型)の多くは、基板上に出力電圧の微調整トリマ(V-ADJ / VOLTAGE ADJUST)を備えており、無負荷時で数%の範囲で出力電圧を調整できます。テスターを直流電圧レンジにして電源の出力端子を測り、定格(例:24.0V)に合わせます。調整は負荷をつないだ状態の電圧も確認しながら、定格を大きく超えないようにします。ACアダプタ型(密閉型)はトリマがなく調整できないため、電圧がずれている・不安定な場合は交換します。測定値が定格から大きく外れる、負荷をつなぐと極端に下がる、といった場合は電源の容量不足や劣化(電解コンデンサの寿命)が疑われるので、容量に余裕のある電源への交換を検討してください。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">電圧は足りているのにLEDテープがチラつきます。リップルが原因ですか？</div>
+    <div class="faq-a">電圧の平均値は足りているのにチラつく場合、出力に重畳するリップル(脈流＝電圧の細かな波)が大きいことが原因の一つです。リップルは安価・劣化した電源や、容量に対して負荷が大きすぎる時に増えます。目視ではわからなくても、スマホのカメラ越しに縞が出る・動画でちらつくといった形で現れます。テスターのAC電圧レンジやオシロでリップルを確認し、大きい場合は、(1)容量に余裕のある良質な電源に替える、(2)劣化した電源を交換する、(3)定電流(定電圧でない)方式や、リップルの小さい安定化電源を使う、で改善します。なお、チラつきは調光器との相性やPWM周波数が原因のこともあるため、電源を疑う前に調光経路も切り分けてください。</div>
+  </div>
+
+  <h2>関連ガイド</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/articles/led-tape-voltage-drop-guide">
+      <div class="rc-tag">配線ガイド</div>
+      <div class="rc-title">LEDテープの電圧降下の計算と対策</div>
+    </a>
+    <a class="related-card" href="/articles/dc24v-led-power-supply-guide">
+      <div class="rc-tag">電源ガイド</div>
+      <div class="rc-title">DC24V LED電源の選び方と容量・効率</div>
+    </a>
+    <a class="related-card" href="/articles/led-tape-constant-voltage-vs-constant-current-guide">
+      <div class="rc-tag">仕様ガイド</div>
+      <div class="rc-title">定電圧と定電流LEDテープの違いと選び方</div>
+    </a>
+    <a class="related-card" href="/articles/led-flickerfree-guide">
+      <div class="rc-tag">技術ガイド</div>
+      <div class="rc-title">LEDテープのチラつき・フリッカー原因と対策</div>
+    </a>
+    <a class="related-card" href="/articles/led-power-supply-lifespan-failure-guide">
+      <div class="rc-tag">電源ガイド</div>
+      <div class="rc-title">LED電源の寿命・故障の原因と見分け方</div>
+    </a>
+    <a class="related-card" href="/articles/led-tape-multimeter-testing-guide">
+      <div class="rc-tag">点検ガイド</div>
+      <div class="rc-title">テスター(マルチメーター)でLEDテープを点検する方法</div>
+    </a>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <p>電圧調整トリマ付きの安定化DC12V/24V電源・リップルの少ない良質な電源・定電圧/定電流ドライバはLED PRO SHOPで。<br>電圧トラブルを防ぐ電源・部材を400点超から即日出荷。</p>
+    <a class="cta-btn" href="/">商品ラインナップを見る</a>
+  </div>
+
+</div>
+</body>
+</html>
