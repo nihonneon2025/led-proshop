@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LED電源 ファン付きとファンレスの違い・選び方｜静音環境とW数で選ぶスイッチング電源【施工業者向け】 | LED PRO SHOP</title>
+  <meta name="description" content="LED電源にファン付きを選ぶと客室・病室・図書館でファン音の苦情に、高出力なのにファンレスを選ぶと熱で寿命が縮みます。ファン付き／ファンレスの違いと、静音環境かW数かで選び分ける判断基準・放熱設計・ファン故障対策を施工業者向けに解説します。">
+  <meta name="keywords" content="led電源 ファンレス,led電源 ファン付き,スイッチング電源 静音,led電源 ファン うるさい,led電源 静音 選び方,ファンレス 電源 何wまで,led電源 放熱,温度連動ファン 電源">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-power-supply-fan-vs-fanless-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-power-supply-fan-vs-fanless-guide">
+  <meta property="og:title" content="LED電源 ファン付きとファンレスの違い・選び方｜静音環境とW数で選ぶスイッチング電源【施工業者向け】 | LED PRO SHOP">
+  <meta property="og:description" content="LED電源にファン付きを選ぶと客室・病室・図書館でファン音の苦情に、高出力なのにファンレスを選ぶと熱で寿命が縮みます。静音環境かW数かで選び分ける判断基準・放熱設計・ファン故障対策を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-power-supply-fan-vs-fanless-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LED電源 ファン付きとファンレスの違い・選び方｜静音環境とW数で選ぶ【施工業者向け】 | LED PRO SHOP">
+  <meta name="twitter:description" content="客室・病室・図書館にファン付き電源を入れると音の苦情に。高出力なのにファンレスは熱で短命に。静音環境かW数かで選び分ける判断基準・放熱設計・ファン故障対策を解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-power-supply-fan-vs-fanless-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LED電源 ファン付きとファンレスの違い・選び方｜静音環境とW数で選ぶスイッチング電源",
+    "description": "LEDテープ用スイッチング電源（PSU）のファン付き・ファンレスの違いを施工業者向けに解説。静音が必要な環境とファン冷却が必要なW数の判断基準、ファンレス電源の放熱設計、ファン故障対策まで整理します。",
+    "image": "https://led-proshop.com/articles/images/led-power-supply-fan-vs-fanless-guide-hero.webp",
+    "datePublished": "2026-06-17",
+    "dateModified": "2026-06-17",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-power-supply-fan-vs-fanless-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LED電源 ファン付き／ファンレスの選び方", "item": "https://led-proshop.com/articles/led-power-supply-fan-vs-fanless-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== FAQ JSON-LD ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ファンレスのLED電源は何Wまで選べますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "自然放熱（ファンレス）の定電圧スイッチング電源は、一般的に100W前後までが流通の中心で、放熱筐体（アルミ）タイプなら150W程度までラインアップがあります。150Wを超える容量はファン付きが現実的です。静音環境で大出力が必要な場合は、100W級のファンレス電源を複数台に分散配置すると、ファン音なしで総容量を確保できます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "ホテル客室や病室、図書館にはファン付きとファンレスのどちらが適切ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "ファンレスを選んでください。就寝・静養・集中を要する環境では、ファンの動作音（一般に25〜40dB(A)程度）が「ジー」「サー」というノイズとして気になり、苦情につながります。温度連動で低負荷時に停止するファン付き電源でも、高負荷時には回転するため確実ではありません。静音が最優先の現場は最初からファンレスを選定し、容量に余裕を持たせて発熱を抑えるのが安全です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "ファン付き電源のファンがうるさい・止まらない原因と対策は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "主な原因は3つです。①容量ギリギリで使い高負荷が続き温度連動ファンが常時回転している ②ホコリの詰まりで放熱が落ち回転数が上がっている ③長期使用でファン軸受（ベアリング）が摩耗し異音が出ている。対策は、電源容量を総消費W×1.5程度に余裕を持たせる、定期的にフィルタ・ファンを清掃する、ファン交換が可能な機種を選ぶことです。可動部であるファンは電源本体より先に寿命を迎えるため、交換性も選定時に確認してください。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --blue:#0d6b66;--blue-pale:#e3f4f2;--orange:#c2410c;--orange-pale:#fff2ea;
+      --bg:#fff;--bg-gray:#f4f7f6;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;
+      --surface:#fff;--accent2:#0d6b66;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.75}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:860px;margin:0 auto;padding:0 20px}
+    header.site-header{background:var(--blue);padding:14px 20px;display:flex;align-items:center;gap:12px}
+    header.site-header a{color:#fff;font-size:18px;font-weight:700;letter-spacing:.03em}
+    header.site-header span{color:rgba(255,255,255,.6);font-size:12px}
+
+    .hero{background:linear-gradient(135deg,#0a3d3a 0%,#16213a 100%);padding:48px 20px 40px;text-align:center;color:#fff}
+    .hero .cat-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:11px;letter-spacing:.08em;margin-bottom:16px}
+    .hero h1{font-size:clamp(18px,3.5vw,26px);font-weight:900;line-height:1.45;margin-bottom:14px}
+    .hero .hero-meta{font-size:12px;color:rgba(255,255,255,.7);display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+    .hero-img{width:100%;max-height:380px;object-fit:cover;display:block}
+
+    .breadcrumb{font-size:11px;color:var(--text-muted);padding:10px 0;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+    .breadcrumb a{color:var(--text-muted)}
+
+    .toc{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:28px 0}
+    .toc h2{font-size:13px;font-weight:700;color:var(--text-sub);margin-bottom:10px;letter-spacing:.06em}
+    .toc ol{padding-left:18px}
+    .toc li{font-size:13px;margin-bottom:6px}
+    .toc a{color:var(--blue)}
+
+    .article-body{padding:32px 0 48px}
+    .article-body h2{font-size:20px;font-weight:900;color:var(--blue);border-left:4px solid var(--blue);padding-left:12px;margin:40px 0 16px}
+    .article-body h3{font-size:16px;font-weight:700;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:6px;margin:28px 0 12px}
+    .article-body p{margin-bottom:14px}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:14px}
+    .article-body li{margin-bottom:6px}
+
+    .box-blue{background:var(--blue-pale);border-left:4px solid var(--blue);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-orange{background:var(--orange-pale);border-left:4px solid var(--orange);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-blue p,.box-orange p{margin-bottom:0}
+
+    .formula{background:#11242e;color:#d8f3ef;font-family:monospace;font-size:15px;border-radius:8px;padding:16px 20px;margin:16px 0;line-height:1.6}
+    .formula .comment{color:#7ec8c0}
+
+    .data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .data-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .data-card .num{font-size:26px;font-weight:900;color:var(--blue);line-height:1}
+    .data-card .unit{font-size:12px;color:var(--text-sub);margin-top:2px}
+    .data-card .label{font-size:11px;color:var(--text-muted);margin-top:6px}
+
+    .tbl-wrap{overflow-x:auto;margin:16px 0}
+    table{width:100%;border-collapse:collapse;font-size:13px;min-width:480px}
+    th{background:var(--blue);color:#fff;padding:9px 10px;text-align:left;font-weight:700}
+    td{padding:8px 10px;border-bottom:1px solid #eaecf0;vertical-align:top}
+    tr:nth-child(even) td{background:#f8f9fb}
+    .good{color:#1a7a3c;font-weight:700}
+    .bad{color:#b91c1c;font-weight:700}
+    .mid{color:#92400e;font-weight:700}
+
+    .step-list{list-style:none;padding:0;margin:16px 0;counter-reset:step}
+    .step-list li{counter-increment:step;display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #eaecf0}
+    .step-list li:last-child{border-bottom:none}
+    .step-list li::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:28px;height:28px;min-width:28px;background:var(--blue);color:#fff;border-radius:50%;font-size:13px;font-weight:700}
+    .step-body{flex:1}
+    .step-body strong{display:block;margin-bottom:4px}
+
+    .checklist{list-style:none;padding:0;margin:16px 0}
+    .checklist li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #eaecf0;font-size:14px}
+    .checklist li:last-child{border-bottom:none}
+    .checklist li::before{content:"☐";font-size:18px;color:var(--blue);flex-shrink:0;line-height:1.3}
+
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--blue)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+
+    .cta-section{background:linear-gradient(135deg,#0a3d3a,#16213a);border-radius:16px;padding:36px 24px;text-align:center;margin:40px 0;color:#fff}
+    .cta-section h2{font-size:18px;font-weight:900;margin-bottom:8px;color:#fff;border:none;padding:0}
+    .cta-section p{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:20px}
+    .cta-btn{display:inline-block;background:#f0a500;color:#1a1a1a;font-weight:900;font-size:15px;padding:14px 36px;border-radius:50px;transition:opacity .2s}
+    .cta-btn:hover{opacity:.88;text-decoration:none}
+
+    footer.site-footer{background:#1a1a1a;color:#888;font-size:12px;text-align:center;padding:20px}
+    footer.site-footer a{color:#aaa}
+
+    @media(max-width:600px){
+      .hero{padding:32px 16px 28px}
+      .hero h1{font-size:17px}
+      .data-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/">LED PRO SHOP</a>
+  <span>プロ仕様LED専門店</span>
+</header>
+
+<div class="hero">
+  <div class="cat-badge">電源・コントローラー解説</div>
+  <h1>LED電源 ファン付きとファンレスの違い・選び方｜静音環境とW数で選ぶスイッチング電源</h1>
+  <div class="hero-meta">
+    <span>公開: 2026-06-17</span>
+    <span>対象: 電気工事業者・内装施工業者・LED照明設計担当者</span>
+  </div>
+</div>
+
+<img src="/articles/images/led-power-supply-fan-vs-fanless-guide-hero.webp" alt="LED電源 ファン付きとファンレスの選び方ガイド" class="hero-img" width="860" height="430" loading="eager">
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/">LED PRO SHOP</a><span>›</span>
+    <a href="/articles/">コラム</a><span>›</span>
+    <span>LED電源 ファン付き／ファンレスの選び方</span>
+  </nav>
+
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#diff">ファン付きとファンレスの違い（基本比較）</a></li>
+      <li><a href="#env">静音が必要な環境 vs ファン冷却が必要な環境</a></li>
+      <li><a href="#watt">W数・出力での選定基準（ファンレスの上限目安）</a></li>
+      <li><a href="#cooling">ファンレス電源の放熱設計（設置の注意点）</a></li>
+      <li><a href="#fan-life">ファン付き電源の騒音対策と寿命</a></li>
+      <li><a href="#checklist">選定チェックリスト</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ol>
+  </nav>
+
+  <div class="article-body">
+
+    <p>LEDテープ用のスイッチング電源（PSU）には、内蔵ファンで強制冷却する「ファン付き」と、放熱筐体だけで自然冷却する「ファンレス」の2タイプがあります。選び間違いで多いのは、ホテル客室や病室など静かな現場にファン付きを入れて「動作音がうるさい」と苦情になるケースと、高出力なのにファンレスを選んで熱がこもり寿命が縮むケースです。このページでは「静音環境かどうか」と「必要W数」の2軸で、どちらを選ぶべきかを判断する手順を解説します。</p>
+
+    <!-- ===== 1. 違い ===== -->
+    <h2 id="diff">1. ファン付きとファンレスの違い（基本比較）</h2>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>比較項目</th><th>ファン付き電源</th><th>ファンレス電源</th></tr></thead>
+        <tbody>
+          <tr><td>冷却方式</td><td>内蔵ファンで強制空冷</td><td class="good">放熱筐体で自然冷却（無音）</td></tr>
+          <tr><td>動作音</td><td class="bad">25〜40dB(A)程度のファン音</td><td class="good">無音</td></tr>
+          <tr><td>対応容量の中心</td><td class="good">150W〜大出力まで豊富</td><td>〜100W前後が中心（放熱筐体型で〜150W）</td></tr>
+          <tr><td>サイズ・重量</td><td class="good">同容量で小型・軽量</td><td>放熱面積が要るため大型・重め</td></tr>
+          <tr><td>可動部（故障要因）</td><td class="bad">ファンが先に摩耗・停止する</td><td class="good">可動部なし・故障要因が少ない</td></tr>
+          <tr><td>ホコリの影響</td><td class="bad">吸気で内部に堆積・要清掃</td><td class="good">影響が小さい</td></tr>
+          <tr><td>向く現場</td><td>高出力・屋外サイン・工場・機械室</td><td class="good">客室・病室・住宅・静音空間</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>判断の起点はこの2つだけ:</strong> ①その電源の設置場所は「人が静けさを感じる空間」か、②必要なW数はファンレスで賄える範囲か。①がYesなら原則ファンレス、②がファンレスの上限を超えるなら分散配置かファン付きを検討します。</p>
+    </div>
+
+    <!-- ===== 2. 環境 ===== -->
+    <h2 id="env">2. 静音が必要な環境 vs ファン冷却が必要な環境</h2>
+
+    <p>同じLEDテープでも、電源の設置場所によって最適なタイプは変わります。電源は天井裏・什器内・壁内など人の近くに隠蔽することが多く、ファン音は「どこかで小さく鳴り続ける異音」として気づかれます。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>設置環境</th><th>推奨タイプ</th><th>理由</th></tr></thead>
+        <tbody>
+          <tr><td>ホテル客室・旅館・カプセルホテル</td><td class="good">ファンレス</td><td>就寝環境。ファン音が苦情・低評価に直結</td></tr>
+          <tr><td>病院病室・クリニック診察室</td><td class="good">ファンレス</td><td>静養・夜間。微小なノイズも気になりやすい</td></tr>
+          <tr><td>図書館・自習室・学習塾</td><td class="good">ファンレス</td><td>静寂が価値。集中を妨げない</td></tr>
+          <tr><td>録音スタジオ・音楽教室・楽器店</td><td class="good">ファンレス</td><td>暗騒音を上げられない。録音に混入する</td></tr>
+          <tr><td>住宅 寝室・リビングの間接照明</td><td class="good">ファンレス</td><td>夜間の静けさ。施主満足に直結</td></tr>
+          <tr><td>店舗売場・什器内（〜100W）</td><td class="good">ファンレス優先</td><td>容量が収まれば無音が安心</td></tr>
+          <tr><td>独立した電気室・機械室（人がいない）</td><td>どちらも可</td><td>騒音制約がなければW数とコストで選ぶ</td></tr>
+          <tr><td>屋外大型サイン・ファサード（高出力）</td><td class="mid">ファン付き</td><td>大容量・金属筐体。放熱を優先</td></tr>
+          <tr><td>工場・倉庫・駐車場（暗騒音が大きい）</td><td class="mid">ファン付き可</td><td>環境騒音が大きくファン音が埋もれる</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-orange">
+      <p><strong>よくある失敗:</strong> ホテル客室の間接照明に、容量に余裕がないファン付き300W電源を1台で施工 → 夜間にファンが回り続け「機械音がする」とクレーム。客室・病室・住宅は、最初からファンレスを選定し、100W級を複数台に分散するのが定石です。</p>
+    </div>
+
+    <!-- ===== 3. W数 ===== -->
+    <h2 id="watt">3. W数・出力での選定基準（ファンレスの上限目安）</h2>
+
+    <p>ファンレス電源は自然放熱に頼るため、容量が大きくなるほど放熱が追いつかず、ファン付きより容量上限が低くなります。目安は次のとおりです（製品により幅があります）。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>必要W数（負荷側）</th><th>ファンレスの可否</th><th>選定の考え方</th></tr></thead>
+        <tbody>
+          <tr><td>〜60W</td><td class="good">容易にファンレス</td><td>樹脂・小型筐体で選択肢が豊富</td></tr>
+          <tr><td>60〜100W</td><td class="good">ファンレス可</td><td>放熱筐体（アルミ）型を選ぶ</td></tr>
+          <tr><td>100〜150W</td><td class="mid">ファンレス機種あり</td><td>放熱条件を厳守。分散も検討</td></tr>
+          <tr><td>150W超</td><td class="bad">ファンレスは限定的</td><td>静音重視なら100W級を分散、または温度連動ファン付き</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>静音のまま大容量を確保する「分散配置」</h3>
+    <p>静音環境で総出力が大きい場合は、1台の大容量ファン付きではなく、ファンレス電源を複数台に分けて配置します。台数の目安は次式で求めます。</p>
+
+    <div class="formula">
+      ファンレス電源の台数 = 総消費W数 × <span style="color:#ffd700">1.3</span> ÷ 1台あたりの容量（例:100W）<br>
+      <span class="comment">// 余裕率30%を見込み、1台100W級のファンレスで分散する場合</span>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>総消費W数</th><th>余裕込み（×1.3）</th><th>100W級ファンレスの台数</th></tr></thead>
+        <tbody>
+          <tr><td>120W</td><td>156W</td><td class="good">2台</td></tr>
+          <tr><td>240W</td><td>312W</td><td class="good">4台</td></tr>
+          <tr><td>360W</td><td>468W</td><td class="good">5台</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>分散配置は静音以外のメリットも:</strong> 1台故障時の影響範囲が局所化し、長距離配線の電圧降下も各区間で抑えられます。ファンレス＋分散は、静音環境の業務施工で最もトラブルの少ない構成です。配線・容量計算は<a href="/articles/dc24v-led-power-supply-guide">DC24V電源の選び方</a>も併せて確認してください。</p>
+    </div>
+
+    <!-- ===== 4. 放熱設計 ===== -->
+    <h2 id="cooling">4. ファンレス電源の放熱設計（設置の注意点）</h2>
+
+    <p>ファンレスは「自然対流で熱を逃がす」前提の設計です。放熱を妨げる設置をすると、容量に余裕があっても内部温度が上がり、出力低下・寿命短縮・保護停止が起きます。</p>
+
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>上下に通気クリアランスを確保する</strong>
+          放熱フィン・筐体の上下は最低5cm以上空ける。熱は上に抜けるため、上方向の空間を塞がない。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>密閉ボックスに入れない</strong>
+          完全密閉の点検口や什器内に押し込むと熱がこもる。通気口のある収納か、放熱の取れる金属面に固定する。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>取付向きを守る</strong>
+          メーカー指定の取付姿勢（多くはフィンを縦・端子を下向き）に従う。横倒しや逆さは対流が乱れ放熱が落ちる。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>周囲温度でディレーティングする</strong>
+          周囲温度が高い場所（天井裏・厨房近傍）は定格の70〜80%で運用。仕様書の温度ディレーティング曲線を確認する。
+        </div>
+      </li>
+    </ul>
+
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="num">5<span style="font-size:16px">cm</span></div>
+        <div class="unit">上下クリアランス</div>
+        <div class="label">自然対流を妨げない最低空間</div>
+      </div>
+      <div class="data-card">
+        <div class="num">80<span style="font-size:16px">%</span></div>
+        <div class="unit">以下で運用</div>
+        <div class="label">高温環境の出力ディレーティング</div>
+      </div>
+      <div class="data-card">
+        <div class="num">×1.3</div>
+        <div class="unit">余裕率</div>
+        <div class="label">ファンレスは発熱を抑え長寿命化</div>
+      </div>
+      <div class="data-card">
+        <div class="num">0<span style="font-size:16px">dB</span></div>
+        <div class="unit">動作音</div>
+        <div class="label">可動部なしで無音</div>
+      </div>
+    </div>
+
+    <!-- ===== 5. ファン寿命 ===== -->
+    <h2 id="fan-life">5. ファン付き電源の騒音対策と寿命</h2>
+
+    <p>高出力でファン付きを選ぶ場合は、騒音と「ファンが先に壊れる」問題への対策が要ります。ファンは電源内で唯一の可動部で、軸受（ベアリング）の摩耗やホコリ詰まりにより、電源本体より先に寿命を迎えるのが一般的です。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>課題</th><th>原因</th><th>対策</th></tr></thead>
+        <tbody>
+          <tr><td>ファンがうるさい</td><td>容量ギリギリで高負荷が続き常時回転</td><td class="good">容量を総消費W×1.5に余裕を持たせる</td></tr>
+          <tr><td>だんだん音が大きくなる</td><td>ホコリ堆積で放熱低下→回転数上昇</td><td class="good">定期的にフィルタ・ファンを清掃</td></tr>
+          <tr><td>異音・ファン停止</td><td>軸受摩耗でファン自体が寿命</td><td class="good">ファン交換が可能な機種を選ぶ</td></tr>
+          <tr><td>夜間だけ気になる</td><td>暗騒音が下がりファン音が目立つ</td><td class="good">温度連動（低負荷停止）ファン付きを選ぶ</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-orange">
+      <p><strong>温度連動ファンも万能ではない:</strong> 低負荷時にファンが止まる機種でも、高負荷・高温時には回ります。「夜は止まるはず」と静音環境に入れると、繁忙期や夏場に回って苦情になることがあります。静音が絶対条件の現場は、温度連動に頼らずファンレスを選んでください。</p>
+    </div>
+
+
+<!-- related-articles -->
+<div style="max-width:900px;margin:0 auto 40px;padding:0 20px">
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px">
+    <h3 style="font-size:1rem;font-weight:700;color:var(--text-muted);margin-bottom:16px">関連する電源・コントローラー解説</h3>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+      <li><a href="/articles/dc24v-led-power-supply-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(13,107,102,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>DC24V電源の選び方｜容量計算(W/A換算)とIP規格・チラつき対策</a></li>
+      <li><a href="/articles/led-psu-capacity-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(13,107,102,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープ 電源（PSU）容量計算 早見表｜ワット数・配線長から即計算</a></li>
+      <li><a href="/articles/led-power-supply-lifespan-failure-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(13,107,102,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LED電源の寿命と故障原因｜発熱・電解コンデンサ劣化を防ぐ選び方</a></li>
+      <li><a href="/articles/led-tape-centralized-vs-distributed-power-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(13,107,102,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>集中電源と分散電源の違い｜大容量1台と小容量複数台の使い分け</a></li>
+    </ul>
+  </div>
+</div>
+
+    <!-- ===== CTA ===== -->
+    <div class="cta-section">
+      <h2>静音ファンレス電源・大容量ファン付き電源を探す</h2>
+      <p>客室・病室・住宅向けの無音ファンレスから、屋外サイン向けの高出力ファン付きまで。<br>容量・IP規格・静音性で選べるDC24V/12V電源をプロ価格でご提供しています。</p>
+      <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+    </div>
+
+    <!-- ===== 6. チェックリスト ===== -->
+    <h2 id="checklist">6. 選定チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>電源の設置場所が「人が静けさを感じる空間（客室・病室・住宅・図書館等）」かを確認したか</li>
+      <li>静音環境なら、温度連動ファンに頼らずファンレスを第一候補にしたか</li>
+      <li>必要W数がファンレスの上限（放熱筐体型で〜150W目安）に収まるか確認したか</li>
+      <li>収まらない場合、100W級ファンレスを複数台に分散する設計を検討したか</li>
+      <li>ファンレスの上下に5cm以上の通気クリアランスを確保し、密閉ボックスを避けたか</li>
+      <li>メーカー指定の取付向き・周囲温度ディレーティング（高温時80%以下）を守ったか</li>
+      <li>ファン付きを使う場合、容量を総消費W×1.5に余裕を持たせ、ファン交換可能な機種を選んだか</li>
+      <li>屋外・高出力でファン付きを選ぶ場合、IP65以上・金属筐体の放熱性能を確認したか</li>
+    </ul>
+
+    <!-- ===== 7. FAQ ===== -->
+    <h2 id="faq">7. よくある質問</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">ファンレスのLED電源は何Wまで選べますか？</div>
+      <div class="faq-a">自然放熱（ファンレス）の定電圧スイッチング電源は、一般的に100W前後までが流通の中心で、放熱筐体（アルミ）タイプなら150W程度までラインアップがあります。150Wを超える容量はファン付きが現実的です。静音環境で大出力が必要な場合は、100W級のファンレス電源を複数台に分散配置すると、ファン音なしで総容量を確保できます。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">ホテル客室や病室、図書館にはファン付きとファンレスのどちらが適切ですか？</div>
+      <div class="faq-a">ファンレスを選んでください。就寝・静養・集中を要する環境では、ファンの動作音（一般に25〜40dB(A)程度）が「ジー」「サー」というノイズとして気になり、苦情につながります。温度連動で低負荷時に停止するファン付き電源でも、高負荷時には回転するため確実ではありません。静音が最優先の現場は最初からファンレスを選定し、容量に余裕を持たせて発熱を抑えるのが安全です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">ファン付き電源のファンがうるさい・止まらない原因と対策は？</div>
+      <div class="faq-a">主な原因は3つです。①容量ギリギリで使い高負荷が続き温度連動ファンが常時回転している ②ホコリの詰まりで放熱が落ち回転数が上がっている ③長期使用でファン軸受（ベアリング）が摩耗し異音が出ている。対策は、電源容量を総消費W×1.5程度に余裕を持たせる、定期的にフィルタ・ファンを清掃する、ファン交換が可能な機種を選ぶことです。可動部であるファンは電源本体より先に寿命を迎えるため、交換性も選定時に確認してください。</div>
+    </div>
+
+  </div><!-- /article-body -->
+</div><!-- /container -->
+
+<footer class="site-footer">
+  <p>© 2024 LED PRO SHOP ／ <a href="/tokushoho.html">特定商取引法に基づく表示</a></p>
+</footer>
+
+</body>
+</html>
