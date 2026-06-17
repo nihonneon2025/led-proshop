@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープ配線は単線？より線（撚線）？施工業者向け電線の選び方と使い分け｜断面積・許容電流・端末処理 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープの配線にVVFの単線とより線（撚線）どちらを使うべきか——隠蔽固定配線は単線、可動部・什器内・コネクタ接続はより線が基本です。単線とより線の違い、0.5〜2.0sqの許容電流早見表、より線の棒端子(フェルール)処理、端子台へのはんだ上げ禁止の理由まで、施工業者向けに電線選定を解説します。">
+  <meta name="keywords" content="led テープ 配線 電線,単線 より線 違い,撚線 led 配線,電線 sq 許容電流,フェルール 棒端子 led,より線 端子台 はんだ,led 配線 太さ 選び方,vvf より線 使い分け">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-solid-vs-stranded-wire-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-solid-vs-stranded-wire-guide">
+  <meta property="og:title" content="LEDテープ配線は単線？より線（撚線）？施工業者向け電線の選び方と使い分け｜断面積・許容電流・端末処理 | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープ配線は単線とより線どちらを使うべきか。隠蔽固定は単線、可動部・什器内・コネクタはより線が基本。0.5〜2.0sqの許容電流早見表、フェルール処理、はんだ上げ禁止の理由を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-solid-vs-stranded-wire-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ配線は単線？より線（撚線）？電線の選び方と使い分け【施工業者向け】 | LED PRO SHOP">
+  <meta name="twitter:description" content="隠蔽固定は単線、可動部・什器内・コネクタはより線が基本。0.5〜2.0sqの許容電流早見表、フェルール処理、端子台へのはんだ上げ禁止の理由を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-solid-vs-stranded-wire-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープ配線は単線？より線（撚線）？施工業者向け電線の選び方と使い分け",
+    "description": "LEDテープの配線材として単線とより線（撚線）のどちらを選ぶかを施工業者向けに解説。隠蔽固定・可動部・コネクタ接続での使い分け、断面積(sq)別の許容電流早見表、より線の棒端子処理、端子台へのはんだ上げを避ける理由まで整理します。",
+    "image": "https://led-proshop.com/articles/images/led-tape-solid-vs-stranded-wire-guide-hero.webp",
+    "datePublished": "2026-06-18",
+    "dateModified": "2026-06-18",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-solid-vs-stranded-wire-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープ配線の単線・より線の選び方", "item": "https://led-proshop.com/articles/led-tape-solid-vs-stranded-wire-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== FAQ JSON-LD ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープの配線に単線とより線（撚線）どちらを使うべきですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "天井裏や壁内で固定したまま動かさない隠蔽配線（幹線側）はVVFなどの単線が扱いやすく、振動の少ない据え置き配線に向きます。一方、什器内・可動部・扉まわり、コネクタや端子台に挿す末端側、テープへ直接はんだ付けする箇所は、繰り返しの曲げに強いより線（撚線・KIVやAWG相当の機器配線用）が適します。判断の軸は『動くか・曲げるか』『何に接続するか』の2つです。" }
+      },
+      {
+        "@type": "Question",
+        "name": "より線を端子台やコネクタに使うとき、先端をはんだで固めてもよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "ねじ式端子台・差込式端子へより線を入れる場合、先端のはんだ上げ（予備はんだで固める処理）は避けてください。はんだは時間とともにクリープ（塑性変形）し、ねじの締め付け圧が抜けて接触不良・発熱の原因になります。正しくは絶縁被覆付きの棒端子（フェルール）を専用圧着工具で圧着し、素線のばらけと緩みを防ぎます。テープへ直接はんだ付けする箇所は別で、こちらは予備はんだ＋本付けが適切です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "LEDテープの配線で電線の太さ（sq）はどう選びますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "負荷の合計電流（A）＝合計ワット数÷電源電圧（24Vなら÷24、12Vなら÷12）を求め、その電流に許容電流が余裕をもって収まる断面積を選びます。機器配線用ビニルコードの目安として、0.5sqで約5A・0.75sqで約7A・1.25sqで約12A・2.0sqで約17A前後が一般的な目安です。さらに低圧（12/24V）は電圧降下が起きやすいため、長距離は許容電流に余裕があっても1ランク太くするか、より線で配線抵抗を抑えるのが安全です。具体値は使用するケーブルの仕様を必ず確認してください。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --blue:#1d4ed8;--blue-pale:#e7effd;--orange:#c2410c;--orange-pale:#fff2ea;
+      --bg:#fff;--bg-gray:#f3f5f9;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;
+      --surface:#fff;--accent2:#1d4ed8;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.75}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:860px;margin:0 auto;padding:0 20px}
+    header.site-header{background:var(--blue);padding:14px 20px;display:flex;align-items:center;gap:12px}
+    header.site-header a{color:#fff;font-size:18px;font-weight:700;letter-spacing:.03em}
+    header.site-header span{color:rgba(255,255,255,.6);font-size:12px}
+
+    .hero{background:linear-gradient(135deg,#0f2d6b 0%,#13182e 100%);padding:48px 20px 40px;text-align:center;color:#fff}
+    .hero .cat-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:11px;letter-spacing:.08em;margin-bottom:16px}
+    .hero h1{font-size:clamp(18px,3.5vw,26px);font-weight:900;line-height:1.45;margin-bottom:14px}
+    .hero .hero-meta{font-size:12px;color:rgba(255,255,255,.7);display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+    .hero-img{width:100%;max-height:380px;object-fit:cover;display:block}
+
+    .breadcrumb{font-size:11px;color:var(--text-muted);padding:10px 0;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+    .breadcrumb a{color:var(--text-muted)}
+
+    .toc{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:28px 0}
+    .toc h2{font-size:13px;font-weight:700;color:var(--text-sub);margin-bottom:10px;letter-spacing:.06em}
+    .toc ol{padding-left:18px}
+    .toc li{font-size:13px;margin-bottom:6px}
+    .toc a{color:var(--blue)}
+
+    .article-body{padding:32px 0 48px}
+    .article-body h2{font-size:20px;font-weight:900;color:var(--blue);border-left:4px solid var(--blue);padding-left:12px;margin:40px 0 16px}
+    .article-body h3{font-size:16px;font-weight:700;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:6px;margin:28px 0 12px}
+    .article-body p{margin-bottom:14px}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:14px}
+    .article-body li{margin-bottom:6px}
+
+    .box-blue{background:var(--blue-pale);border-left:4px solid var(--blue);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-orange{background:var(--orange-pale);border-left:4px solid var(--orange);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-blue p,.box-orange p{margin-bottom:0}
+
+    .formula{background:#11203e;color:#dbe6fb;font-family:monospace;font-size:15px;border-radius:8px;padding:16px 20px;margin:16px 0;line-height:1.6}
+    .formula .comment{color:#8fb0e6}
+
+    .data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .data-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .data-card .num{font-size:26px;font-weight:900;color:var(--blue);line-height:1}
+    .data-card .unit{font-size:12px;color:var(--text-sub);margin-top:2px}
+    .data-card .label{font-size:11px;color:var(--text-muted);margin-top:6px}
+
+    .tbl-wrap{overflow-x:auto;margin:16px 0}
+    table{width:100%;border-collapse:collapse;font-size:13px;min-width:480px}
+    th{background:var(--blue);color:#fff;padding:9px 10px;text-align:left;font-weight:700}
+    td{padding:8px 10px;border-bottom:1px solid #eaecf0;vertical-align:top}
+    tr:nth-child(even) td{background:#f8f9fb}
+    .good{color:#1a7a3c;font-weight:700}
+    .bad{color:#b91c1c;font-weight:700}
+    .mid{color:#92400e;font-weight:700}
+
+    .step-list{list-style:none;padding:0;margin:16px 0;counter-reset:step}
+    .step-list li{counter-increment:step;display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #eaecf0}
+    .step-list li:last-child{border-bottom:none}
+    .step-list li::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:28px;height:28px;min-width:28px;background:var(--blue);color:#fff;border-radius:50%;font-size:13px;font-weight:700}
+    .step-body{flex:1}
+    .step-body strong{display:block;margin-bottom:4px}
+
+    .checklist{list-style:none;padding:0;margin:16px 0}
+    .checklist li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #eaecf0;font-size:14px}
+    .checklist li:last-child{border-bottom:none}
+    .checklist li::before{content:"☐";font-size:18px;color:var(--blue);flex-shrink:0;line-height:1.3}
+
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--blue)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+
+    .cta-section{background:linear-gradient(135deg,#0f2d6b,#13182e);border-radius:16px;padding:36px 24px;text-align:center;margin:40px 0;color:#fff}
+    .cta-section h2{font-size:18px;font-weight:900;margin-bottom:8px;color:#fff;border:none;padding:0}
+    .cta-section p{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:20px}
+    .cta-btn{display:inline-block;background:#f0a500;color:#1a1a1a;font-weight:900;font-size:15px;padding:14px 36px;border-radius:50px;transition:opacity .2s}
+    .cta-btn:hover{opacity:.88;text-decoration:none}
+
+    footer.site-footer{background:#1a1a1a;color:#888;font-size:12px;text-align:center;padding:20px}
+    footer.site-footer a{color:#aaa}
+
+    @media(max-width:600px){
+      .hero{padding:32px 16px 28px}
+      .hero h1{font-size:17px}
+      .data-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/">LED PRO SHOP</a>
+  <span>プロ仕様LED専門店</span>
+</header>
+
+<div class="hero">
+  <div class="cat-badge">仕様選定ガイド</div>
+  <h1>LEDテープ配線は単線？より線（撚線）？施工業者向け電線の選び方と使い分け</h1>
+  <div class="hero-meta">
+    <span>公開: 2026-06-18</span>
+    <span>対象: 電気工事業者・内装施工業者・LEDサイン施工担当者</span>
+  </div>
+</div>
+
+<img src="/articles/images/led-tape-solid-vs-stranded-wire-guide-hero.webp" alt="LEDテープ配線の単線とより線（撚線）の使い分けと電線選定ガイド" class="hero-img" width="860" height="430" loading="eager">
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/">LED PRO SHOP</a><span>›</span>
+    <a href="/articles/">コラム</a><span>›</span>
+    <span>LEDテープ配線の単線・より線の選び方</span>
+  </nav>
+
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#diff">単線とより線（撚線）の違い（基本比較）</a></li>
+      <li><a href="#usecase">LEDテープ配線でどちらを使う？（用途別の使い分け）</a></li>
+      <li><a href="#current">断面積（sq）と許容電流の早見表</a></li>
+      <li><a href="#calc">電流の求め方と太さ選定（計算）</a></li>
+      <li><a href="#terminal">より線の正しい端末処理（棒端子・はんだ上げ禁止）</a></li>
+      <li><a href="#checklist">電線選定チェックリスト</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ol>
+  </nav>
+
+  <div class="article-body">
+
+    <p>LEDテープの施工で意外と判断が分かれるのが「配線に単線を使うか、より線（撚線）を使うか」です。家庭用VVFの単線をそのまま末端まで引っ張ってコネクタに挿し、緩みや断線でトラブルになる例は少なくありません。単線とより線はそれぞれ向き不向きがはっきりしており、配線箇所ごとに正しく選べば、接触不良・断線・発熱を確実に減らせます。このページでは両者の違い、用途別の使い分け、断面積（sq）別の許容電流早見表、より線の端末処理まで施工業者の目線で整理します。</p>
+
+    <!-- ===== 1. 違い ===== -->
+    <h2 id="diff">1. 単線とより線（撚線）の違い（基本比較）</h2>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>比較項目</th><th>単線（ソリッド）</th><th>より線（撚線・ストランド）</th></tr></thead>
+        <tbody>
+          <tr><td>構造</td><td>1本の太い銅線</td><td>細い素線を多数より合わせ</td></tr>
+          <tr><td>代表例</td><td>VVF・IV単線</td><td>KIV・機器配線用ビニルコード・VCTF</td></tr>
+          <tr><td>柔軟性・取り回し</td><td class="bad">硬く曲げにくい</td><td class="good">柔らかく狭所・曲げに強い</td></tr>
+          <tr><td>繰り返し曲げ耐性</td><td class="bad">折り曲げ反復で金属疲労・断線</td><td class="good">可動部に強い</td></tr>
+          <tr><td>固定配線の納まり</td><td class="good">形が保持され直線が出る</td><td>たわむため固定にひと手間</td></tr>
+          <tr><td>差込端子への適性</td><td class="good">差し込み式に挿しやすい</td><td>素線がばらけやすく要処理（棒端子）</td></tr>
+          <tr><td>はんだ付け（テープ端）</td><td>可だが硬く扱いにくい</td><td class="good">なじみやすく好適</td></tr>
+          <tr><td>向く箇所</td><td>天井裏・壁内の隠蔽固定（幹線）</td><td>什器内・可動部・末端・コネクタ/テープ接続</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>判断の起点はこの2つ:</strong> ①その配線は「固定して動かさない」か「曲げる・動く」か。②先端は「何に接続する」か（差込端子・端子台・コネクタ・テープへ直はんだ）。動く/曲げる・末端側はより線、据え置きの幹線は単線が基本です。</p>
+    </div>
+
+    <!-- ===== 2. 用途別 ===== -->
+    <h2 id="usecase">2. LEDテープ配線でどちらを使う？（用途別の使い分け）</h2>
+
+    <p>1本の系統でも、幹線側と末端側で電線を使い分けるのが実務的です。電源から器具近くまでは単線で引き、最終のテープ・コネクタ接続はより線でなじませる、という構成が扱いやすく信頼性も高くなります。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>配線箇所</th><th>推奨</th><th>理由</th></tr></thead>
+        <tbody>
+          <tr><td>天井裏・壁内の隠蔽幹線（固定）</td><td class="good">単線</td><td>形が保持され納まりが良い。動かさないため断線リスク低</td></tr>
+          <tr><td>什器・棚・カウンター内の取り回し</td><td class="good">より線</td><td>狭所で何度も曲げる。柔軟性が必要</td></tr>
+          <tr><td>扉・引き出し・可動間仕切りの渡り</td><td class="good">より線</td><td>開閉で繰り返し屈曲。単線は金属疲労で断線</td></tr>
+          <tr><td>LEDテープへの直接はんだ付け</td><td class="good">より線</td><td>ランドになじみやすく、根元が曲げに強い</td></tr>
+          <tr><td>差込コネクタ・中継コネクタへの挿入</td><td class="mid">より線＋棒端子</td><td>素線のばらけ防止に棒端子。単線も可だが太さ適合に注意</td></tr>
+          <tr><td>ねじ式端子台・WAGO等への接続</td><td class="mid">どちらも可（より線は棒端子）</td><td>より線ははんだ上げせず棒端子で。<a href="/articles/led-tape-terminal-block-wago-guide">端子台・WAGO接続の解説</a>参照</td></tr>
+          <tr><td>屋外サイン内・振動のある箇所</td><td class="good">より線</td><td>風・振動の繰り返し応力に強い</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-orange">
+      <p><strong>よくある失敗:</strong> 什器の扉に渡す配線にVVF単線を使い、開閉の繰り返しで根元が金属疲労 → 数か月後に断線して片側が消灯。可動部・繰り返し曲げの箇所は必ずより線を使い、屈曲点には余長（サービスループ）を取って応力を逃がします。</p>
+    </div>
+
+    <!-- ===== 3. 許容電流早見表 ===== -->
+    <h2 id="current">3. 断面積（sq）と許容電流の早見表</h2>
+
+    <p>電線の太さは「断面積（sq＝mm²）」で表します。下表は機器配線用ビニル電線の一般的な許容電流の目安です（製品・敷設条件で変わるため、必ず使用ケーブルの仕様値で確認してください）。LEDテープは低圧（12/24V）で電流が大きくなりがちなので、余裕を見て選びます。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>断面積</th><th>AWG目安</th><th>許容電流の目安</th><th>LEDでの主な用途</th></tr></thead>
+        <tbody>
+          <tr><td>0.3sq</td><td>AWG22</td><td>約3A</td><td>短い末端の渡り・小容量テープ</td></tr>
+          <tr><td>0.5sq</td><td>AWG20</td><td>約5A</td><td>什器内の末端配線</td></tr>
+          <tr><td>0.75sq</td><td>AWG18</td><td>約7A</td><td>一般的な分岐・中継</td></tr>
+          <tr><td>1.25sq</td><td>AWG16</td><td>約12A</td><td>幹線・複数テープの送り</td></tr>
+          <tr><td>2.0sq</td><td>AWG14</td><td>約17A</td><td>大容量幹線・長距離給電</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>低圧は「許容電流」だけで決めない:</strong> 12V/24Vは同じワットでも電流が大きく、長距離では<a href="/articles/led-tape-voltage-drop-guide">電圧降下</a>で末端が暗くなります。許容電流に余裕があっても、距離が長いときは1ランク太くするか両端給電を検討してください。許容電流＝発熱の上限、電圧降下＝明るさ低下、の二つを別々に満たす必要があります。</p>
+    </div>
+
+    <!-- ===== 4. 計算 ===== -->
+    <h2 id="calc">4. 電流の求め方と太さ選定（計算）</h2>
+
+    <p>まず系統に流れる電流（A）を求め、その電流に対し許容電流が余裕をもって上回る太さを選びます。</p>
+
+    <div class="formula">
+      電流(A) = 合計ワット数(W) ÷ 電源電圧(V)<br>
+      <span class="comment">// 例: 24V・96W（4.8W/m × 20m）の場合</span><br>
+      電流 = 96W ÷ 24V = 4.0A → 余裕を見て 0.75sq（約7A）以上を選ぶ<br><br>
+      <span class="comment">// 同じ96Wでも12Vなら…</span><br>
+      電流 = 96W ÷ 12V = 8.0A → 1.25sq（約12A）以上が安全
+    </div>
+
+    <p>同じワット数でも電圧が低いほど電流が倍増する点に注意してください。12Vは24Vの2倍の電流が流れるため、必要な電線も太くなり、電圧降下も大きくなります。電圧選定の考え方は<a href="/articles/led-tape-cable-gauge-guide">配線ケーブルの太さの選び方</a>も併せて確認してください。</p>
+
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="num">÷V</div>
+        <div class="unit">電流の求め方</div>
+        <div class="label">合計W÷電圧＝電流(A)</div>
+      </div>
+      <div class="data-card">
+        <div class="num">×1.5</div>
+        <div class="unit">許容電流の余裕</div>
+        <div class="label">流れる電流の1.5倍を目安に選ぶ</div>
+      </div>
+      <div class="data-card">
+        <div class="num">2<span style="font-size:16px">倍</span></div>
+        <div class="unit">12Vは24Vの電流</div>
+        <div class="label">同W数で電流が倍・要太線</div>
+      </div>
+      <div class="data-card">
+        <div class="num">0.75<span style="font-size:16px">sq</span></div>
+        <div class="unit">迷ったら</div>
+        <div class="label">一般的な分岐・中継の標準</div>
+      </div>
+    </div>
+
+    <!-- ===== CTA ===== -->
+    <div class="cta-section">
+      <h2>LEDテープ・対応コネクタ・配線部材を探す</h2>
+      <p>低圧配線に適した各種LEDテープ、防水コネクタ、端子台、棒端子対応の中継部材まで。<br>電圧・容量に合わせて選べるプロ仕様部材をご用意しています。</p>
+      <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+    </div>
+
+    <!-- ===== 5. 端末処理 ===== -->
+    <h2 id="terminal">5. より線の正しい端末処理（棒端子・はんだ上げ禁止）</h2>
+
+    <p>より線はそのまま端子に挿すと素線がばらけ、1〜2本が外れて接触面積が減り発熱します。正しい端末処理で確実に締結します。</p>
+
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>差込端子・端子台には棒端子（フェルール）を圧着</strong>
+          より線の先端に絶縁スリーブ付き棒端子を専用工具で圧着。素線のばらけと抜けを防ぎ、締め付けが安定する。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>ねじ式端子へ「はんだ上げ」した先端を入れない</strong>
+          予備はんだで固めた先端はクリープ（時間変形）でねじ圧が抜け、緩み・接触不良・発熱の原因に。端子台には棒端子を使う。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>テープへの直はんだは予備はんだ＋本付け</strong>
+          ランドとより線の双方に予備はんだをのせてから素早く本付け。<a href="/articles/led-tape-soldering-guide">はんだ付けの基礎</a>の手順に従い、根元はより線で曲げに備える。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>屈曲点に余長と固定を設ける</strong>
+          可動部・根元はサービスループで応力を逃がし、結束で固定。引っ張り・繰り返し曲げが端子や半田に直接かからないようにする。
+        </div>
+      </li>
+    </ul>
+
+    <div class="box-orange">
+      <p><strong>「はんだ上げ＝丁寧」ではない:</strong> より線をねじ端子に入れる前にはんだで固める処理は、一見きれいでも長期的にはクリープで緩みます。圧着の棒端子が正解です。一方でテープへの直接はんだ付けは適切な接続方法——「どこに・何で接続するか」で正解が変わる点を押さえてください。</p>
+    </div>
+
+    <!-- related-articles -->
+    <div style="max-width:900px;margin:0 auto 40px;padding:0 20px">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px">
+        <h3 style="font-size:1rem;font-weight:700;color:var(--text-muted);margin-bottom:16px">関連する配線・施工ガイド</h3>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+          <li><a href="/articles/led-tape-cable-gauge-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(29,78,216,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープ 配線ケーブルの太さ（sq）の選び方｜許容電流と電圧降下</a></li>
+          <li><a href="/articles/led-tape-voltage-drop-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(29,78,216,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープの電圧降下｜末端が暗くなる原因と計算・対策</a></li>
+          <li><a href="/articles/led-tape-terminal-block-wago-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(29,78,216,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープの端子台・WAGO接続｜結線方法と緩み・発熱対策</a></li>
+          <li><a href="/articles/led-tape-extension-cable-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(29,78,216,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープの延長配線｜延長ケーブルの選び方と注意点</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== 6. チェックリスト ===== -->
+    <h2 id="checklist">6. 電線選定チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>その配線が「固定して動かさない幹線」か「曲げる・動く末端」かを区別したか</li>
+      <li>可動部・扉・繰り返し曲げの箇所はより線を選び、屈曲点に余長を取ったか</li>
+      <li>幹線は単線で納まりを出し、末端のテープ・コネクタはより線でなじませたか</li>
+      <li>合計ワット÷電圧で電流を求め、許容電流に1.5倍程度の余裕を持たせて太さを選んだか</li>
+      <li>12V系は24V系の2倍の電流になることを踏まえ、太さと電圧降下を確認したか</li>
+      <li>より線を差込端子・端子台に使う箇所に、棒端子（フェルール）を圧着したか</li>
+      <li>ねじ式端子へ「はんだ上げした先端」を入れていないか（クリープ緩み対策）</li>
+      <li>テープへの直接はんだは予備はんだ＋本付けで行い、根元をより線にしたか</li>
+    </ul>
+
+    <!-- ===== 7. FAQ ===== -->
+    <h2 id="faq">7. よくある質問</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">LEDテープの配線に単線とより線（撚線）どちらを使うべきですか？</div>
+      <div class="faq-a">天井裏や壁内で固定したまま動かさない隠蔽配線（幹線側）はVVFなどの単線が扱いやすく、振動の少ない据え置き配線に向きます。一方、什器内・可動部・扉まわり、コネクタや端子台に挿す末端側、テープへ直接はんだ付けする箇所は、繰り返しの曲げに強いより線（撚線・KIVやAWG相当の機器配線用）が適します。判断の軸は『動くか・曲げるか』『何に接続するか』の2つです。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">より線を端子台やコネクタに使うとき、先端をはんだで固めてもよいですか？</div>
+      <div class="faq-a">ねじ式端子台・差込式端子へより線を入れる場合、先端のはんだ上げ（予備はんだで固める処理）は避けてください。はんだは時間とともにクリープ（塑性変形）し、ねじの締め付け圧が抜けて接触不良・発熱の原因になります。正しくは絶縁被覆付きの棒端子（フェルール）を専用圧着工具で圧着し、素線のばらけと緩みを防ぎます。テープへ直接はんだ付けする箇所は別で、こちらは予備はんだ＋本付けが適切です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">LEDテープの配線で電線の太さ（sq）はどう選びますか？</div>
+      <div class="faq-a">負荷の合計電流（A）＝合計ワット数÷電源電圧（24Vなら÷24、12Vなら÷12）を求め、その電流に許容電流が余裕をもって収まる断面積を選びます。機器配線用ビニルコードの目安として、0.5sqで約5A・0.75sqで約7A・1.25sqで約12A・2.0sqで約17A前後が一般的な目安です。さらに低圧（12/24V）は電圧降下が起きやすいため、長距離は許容電流に余裕があっても1ランク太くするか、より線で配線抵抗を抑えるのが安全です。具体値は使用するケーブルの仕様を必ず確認してください。</div>
+    </div>
+
+  </div><!-- /article-body -->
+</div><!-- /container -->
+
+<footer class="site-footer">
+  <p>© 2024 LED PRO SHOP ／ <a href="/tokushoho.html">特定商取引法に基づく表示</a></p>
+</footer>
+
+</body>
+</html>

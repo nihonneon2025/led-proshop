@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープを動画・カメラで撮ると横縞・チラつきが出る原因と対策｜PWM周波数とシャッタースピード【施工業者向け】 | LED PRO SHOP</title>
+  <meta name="description" content="目では見えないのにスマホやカメラでLED間接照明を撮ると横縞（フリッカーバンディング）が出る——原因はPWM調光の点滅周波数とカメラのシャッター・フレームレートの干渉です。何Hz以上なら安全か、スロー撮影で縞を消すPWM周波数の計算、フリッカーフリー電源・高周波調光の選び方を施工業者向けに解説します。">
+  <meta name="keywords" content="led 撮影 横縞,led 動画 ちらつき,pwm周波数 フリッカー,led 縞 消す,フリッカーフリー led テープ,シャッタースピード led ちらつき,led 間接照明 撮影 縞,高周波調光 led">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-camera-flicker-pwm-frequency-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-camera-flicker-pwm-frequency-guide">
+  <meta property="og:title" content="LEDテープを動画・カメラで撮ると横縞・チラつきが出る原因と対策｜PWM周波数とシャッタースピード【施工業者向け】 | LED PRO SHOP">
+  <meta property="og:description" content="目では見えないのにカメラで撮ると横縞が出るのはPWM調光の周波数とシャッターの干渉。何Hz以上で安全か、スロー撮影で縞を消すPWM周波数の計算、フリッカーフリー電源の選び方を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-camera-flicker-pwm-frequency-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープを撮ると横縞・チラつきが出る原因と対策｜PWM周波数とシャッター【施工業者向け】 | LED PRO SHOP">
+  <meta name="twitter:description" content="目では無点滅でもカメラで撮ると横縞が出る原因はPWM周波数とシャッターの干渉。何Hz以上で安全か、スロー撮影で縞を消す計算、フリッカーフリー電源の選び方を解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-camera-flicker-pwm-frequency-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープを動画・カメラで撮ると横縞・チラつきが出る原因と対策｜PWM周波数とシャッタースピード",
+    "description": "LED間接照明を撮影すると出る横縞（フリッカーバンディング）の原因を、PWM調光周波数とカメラのシャッター・フレームレートの干渉として施工業者向けに解説。安全なPWM周波数の目安、スロー撮影で縞を消す計算、フリッカーフリー電源・高周波調光の選定までを整理します。",
+    "image": "https://led-proshop.com/articles/images/led-tape-camera-flicker-pwm-frequency-guide-hero.webp",
+    "datePublished": "2026-06-18",
+    "dateModified": "2026-06-18",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-camera-flicker-pwm-frequency-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープの撮影フリッカー（横縞）対策", "item": "https://led-proshop.com/articles/led-tape-camera-flicker-pwm-frequency-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== FAQ JSON-LD ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "目では見えないのに、なぜスマホで撮るとLED照明に横縞が出るのですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "LEDテープの多くはPWM（パルス幅変調）で明るさを制御しており、目に見えない速さで点滅しています。人の目は残像でなめらかに見えますが、カメラのCMOSセンサーは画面を上から下へ一行ずつ読み取る「ローリングシャッター」方式のため、行ごとに点灯・消灯のタイミングがずれて記録され、明暗の横縞（フリッカーバンディング）として写ります。点滅周波数が低いほど、またシャッター速度が速いほど縞が目立ちます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "撮影しても縞が出ないLEDテープにするには、PWM周波数は何Hz以上を選べばよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "通常の写真・30fps動画なら1kHz以上、できれば3kHz以上を目安にすると実用上ほぼ縞が出ません。スローモーション撮影（120〜240fps）や1/1000秒級の高速シャッターを使う撮影スタジオ・配信現場では、露光時間が短く1周期に満たないため、20〜25kHz以上の高周波PWM、または点滅しないフリッカーフリー（リニア/定電流）電源を選んでください。納入先に撮影用途があるかを事前に確認するのが安全です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "施工後に横縞が出ると言われました。テープを張り替えずに直せますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "縞は多くの場合テープ本体ではなく電源・調光器側のPWM周波数が原因です。まず調光器を100%（全点灯・無調光）にして縞が消えるか確認します。消えるなら調光器のPWMが原因なので、高周波PWMタイプやフリッカーフリー対応の調光器・電源に交換すれば、テープを張り替えずに改善できます。100%でも縞が残る場合は、フリッカーフリー（リップルの少ない）定電圧電源に交換します。撮影側で対処するなら、シャッター速度を電源周波数に合わせて1/50秒（西日本は1/60秒）に設定する方法もあります。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --blue:#6d28d9;--blue-pale:#f1ebfb;--orange:#c2410c;--orange-pale:#fff2ea;
+      --bg:#fff;--bg-gray:#f5f4f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;
+      --surface:#fff;--accent2:#6d28d9;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.75}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:860px;margin:0 auto;padding:0 20px}
+    header.site-header{background:var(--blue);padding:14px 20px;display:flex;align-items:center;gap:12px}
+    header.site-header a{color:#fff;font-size:18px;font-weight:700;letter-spacing:.03em}
+    header.site-header span{color:rgba(255,255,255,.6);font-size:12px}
+
+    .hero{background:linear-gradient(135deg,#3b1773 0%,#1e1b3a 100%);padding:48px 20px 40px;text-align:center;color:#fff}
+    .hero .cat-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:11px;letter-spacing:.08em;margin-bottom:16px}
+    .hero h1{font-size:clamp(18px,3.5vw,26px);font-weight:900;line-height:1.45;margin-bottom:14px}
+    .hero .hero-meta{font-size:12px;color:rgba(255,255,255,.7);display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+    .hero-img{width:100%;max-height:380px;object-fit:cover;display:block}
+
+    .breadcrumb{font-size:11px;color:var(--text-muted);padding:10px 0;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+    .breadcrumb a{color:var(--text-muted)}
+
+    .toc{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:28px 0}
+    .toc h2{font-size:13px;font-weight:700;color:var(--text-sub);margin-bottom:10px;letter-spacing:.06em}
+    .toc ol{padding-left:18px}
+    .toc li{font-size:13px;margin-bottom:6px}
+    .toc a{color:var(--blue)}
+
+    .article-body{padding:32px 0 48px}
+    .article-body h2{font-size:20px;font-weight:900;color:var(--blue);border-left:4px solid var(--blue);padding-left:12px;margin:40px 0 16px}
+    .article-body h3{font-size:16px;font-weight:700;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:6px;margin:28px 0 12px}
+    .article-body p{margin-bottom:14px}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:14px}
+    .article-body li{margin-bottom:6px}
+
+    .box-blue{background:var(--blue-pale);border-left:4px solid var(--blue);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-orange{background:var(--orange-pale);border-left:4px solid var(--orange);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-blue p,.box-orange p{margin-bottom:0}
+
+    .formula{background:#1d1730;color:#e7ddfa;font-family:monospace;font-size:15px;border-radius:8px;padding:16px 20px;margin:16px 0;line-height:1.6}
+    .formula .comment{color:#b69be6}
+
+    .data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .data-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .data-card .num{font-size:26px;font-weight:900;color:var(--blue);line-height:1}
+    .data-card .unit{font-size:12px;color:var(--text-sub);margin-top:2px}
+    .data-card .label{font-size:11px;color:var(--text-muted);margin-top:6px}
+
+    .tbl-wrap{overflow-x:auto;margin:16px 0}
+    table{width:100%;border-collapse:collapse;font-size:13px;min-width:480px}
+    th{background:var(--blue);color:#fff;padding:9px 10px;text-align:left;font-weight:700}
+    td{padding:8px 10px;border-bottom:1px solid #eaecf0;vertical-align:top}
+    tr:nth-child(even) td{background:#f8f9fb}
+    .good{color:#1a7a3c;font-weight:700}
+    .bad{color:#b91c1c;font-weight:700}
+    .mid{color:#92400e;font-weight:700}
+
+    .step-list{list-style:none;padding:0;margin:16px 0;counter-reset:step}
+    .step-list li{counter-increment:step;display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #eaecf0}
+    .step-list li:last-child{border-bottom:none}
+    .step-list li::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:28px;height:28px;min-width:28px;background:var(--blue);color:#fff;border-radius:50%;font-size:13px;font-weight:700}
+    .step-body{flex:1}
+    .step-body strong{display:block;margin-bottom:4px}
+
+    .checklist{list-style:none;padding:0;margin:16px 0}
+    .checklist li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #eaecf0;font-size:14px}
+    .checklist li:last-child{border-bottom:none}
+    .checklist li::before{content:"☐";font-size:18px;color:var(--blue);flex-shrink:0;line-height:1.3}
+
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--blue)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+
+    .cta-section{background:linear-gradient(135deg,#3b1773,#1e1b3a);border-radius:16px;padding:36px 24px;text-align:center;margin:40px 0;color:#fff}
+    .cta-section h2{font-size:18px;font-weight:900;margin-bottom:8px;color:#fff;border:none;padding:0}
+    .cta-section p{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:20px}
+    .cta-btn{display:inline-block;background:#f0a500;color:#1a1a1a;font-weight:900;font-size:15px;padding:14px 36px;border-radius:50px;transition:opacity .2s}
+    .cta-btn:hover{opacity:.88;text-decoration:none}
+
+    footer.site-footer{background:#1a1a1a;color:#888;font-size:12px;text-align:center;padding:20px}
+    footer.site-footer a{color:#aaa}
+
+    @media(max-width:600px){
+      .hero{padding:32px 16px 28px}
+      .hero h1{font-size:17px}
+      .data-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/">LED PRO SHOP</a>
+  <span>プロ仕様LED専門店</span>
+</header>
+
+<div class="hero">
+  <div class="cat-badge">トラブル対処ガイド</div>
+  <h1>LEDテープを動画・カメラで撮ると横縞・チラつきが出る原因と対策｜PWM周波数とシャッタースピード</h1>
+  <div class="hero-meta">
+    <span>公開: 2026-06-18</span>
+    <span>対象: 電気工事業者・内装施工業者・撮影/配信スタジオ施工担当者</span>
+  </div>
+</div>
+
+<img src="/articles/images/led-tape-camera-flicker-pwm-frequency-guide-hero.webp" alt="LEDテープを撮影すると出る横縞（フリッカーバンディング）とPWM周波数の対策ガイド" class="hero-img" width="860" height="430" loading="eager">
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/">LED PRO SHOP</a><span>›</span>
+    <a href="/articles/">コラム</a><span>›</span>
+    <span>LEDテープの撮影フリッカー（横縞）対策</span>
+  </nav>
+
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#why">なぜ撮影すると横縞が出るのか（PWM＋ローリングシャッター）</a></li>
+      <li><a href="#eye-vs-cam">目視フリッカーとカメラフリッカーの違い</a></li>
+      <li><a href="#freq">安全なPWM周波数の目安（用途別早見表）</a></li>
+      <li><a href="#calc">シャッター・フレームレートとの関係（計算）</a></li>
+      <li><a href="#fix">施工後に縞が出たときの切り分け手順</a></li>
+      <li><a href="#select">フリッカーフリー電源・高周波調光の選定</a></li>
+      <li><a href="#checklist">選定・確認チェックリスト</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ol>
+  </nav>
+
+  <div class="article-body">
+
+    <p>納品したLED間接照明を施主や撮影スタッフがスマホ・一眼・配信カメラで撮ると、肉眼では見えない「横縞（フリッカーバンディング）」や「ちらつき」が映り込む——美容室・物販店・スタジオ・配信ブースなどで増えているクレームです。原因はLEDテープのPWM（パルス幅変調）調光による点滅と、カメラのシャッター・フレームレートの干渉にあります。このページでは、なぜ縞が出るのかを仕組みから整理し、安全なPWM周波数の目安、現場での切り分け手順、フリッカーフリー電源・高周波調光の選び方を施工業者の目線で解説します。</p>
+
+    <!-- ===== 1. なぜ ===== -->
+    <h2 id="why">1. なぜ撮影すると横縞が出るのか（PWM＋ローリングシャッター）</h2>
+
+    <p>LEDテープの明るさは、多くの製品で<strong>PWM調光</strong>＝高速のON/OFF点滅の「点灯している時間の割合（デューティ比）」で制御しています。たとえば1kHzのPWMなら1秒間に1,000回点滅しており、人の目には残像でなめらかに見えます。</p>
+
+    <p>一方、スマホや一般的なミラーレス/一眼の動画は<strong>ローリングシャッター</strong>方式で、センサーの画素を上の行から下の行へ「順番に」読み取ります。露光のタイミングが行ごとにずれるため、LEDが点灯している瞬間に読まれた行は明るく、消灯中に読まれた行は暗く記録され、画面に明暗の横帯（バンディング）として現れます。</p>
+
+    <div class="box-blue">
+      <p><strong>3つの条件が重なると縞が出ます:</strong> ①LED側がPWMで点滅している ②カメラがローリングシャッターで行ごとに読み取る ③点滅周期と露光（シャッター）周期が整数比で揃っていない。点滅周波数を上げて1回の露光に多くの点滅を含めるほど、明暗が平均化されて縞が消えます。</p>
+    </div>
+
+    <!-- ===== 2. 目視 vs カメラ ===== -->
+    <h2 id="eye-vs-cam">2. 目視フリッカーとカメラフリッカーの違い</h2>
+
+    <p>「目でちらつかない＝撮影でも大丈夫」ではありません。両者は判定基準が違います。目視フリッカーは概ね数百Hzで気にならなくなりますが、カメラはシャッターが速いほど低い点滅も拾うため、より高い周波数が必要です。一般的な<a href="/articles/led-flickerfree-guide">目視のフリッカーフリー対策</a>とは別軸で考えてください。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>観点</th><th>目視フリッカー</th><th>カメラフリッカー（撮影縞）</th></tr></thead>
+        <tbody>
+          <tr><td>感じる主体</td><td>人の目（残像で平均化）</td><td>センサー（行ごとに瞬間を記録）</td></tr>
+          <tr><td>問題になりにくい周波数</td><td class="good">概ね数百Hz以上で軽減</td><td>用途次第で1k〜25kHz以上が必要</td></tr>
+          <tr><td>悪化させる要因</td><td>低周波・深い調光（低デューティ）</td><td class="bad">速いシャッター・スロー撮影・低周波PWM</td></tr>
+          <tr><td>症状</td><td>長時間で目の疲れ・頭痛</td><td>写真/動画に横縞・明滅・色ズレ</td></tr>
+          <tr><td>現れ方</td><td>環境を問わず常時</td><td>撮影したときだけ顕在化（事後クレーム化）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== 3. 周波数早見表 ===== -->
+    <h2 id="freq">3. 安全なPWM周波数の目安（用途別早見表）</h2>
+
+    <p>納入先で「どこまで本格的に撮るか」によって必要な周波数が変わります。用途を確認してから電源・調光器を選定してください。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>撮影の想定用途</th><th>必要なPWM周波数の目安</th><th>備考</th></tr></thead>
+        <tbody>
+          <tr><td>撮影を想定しない一般照明</td><td>200〜500Hz</td><td>目視優先。ただしSNS撮影で縞リスクは残る</td></tr>
+          <tr><td>スマホ・SNS用の静止画／30fps動画</td><td class="mid">1kHz以上</td><td>店舗・美容室・飲食の「映え」用途の最低ライン</td></tr>
+          <tr><td>商品撮影・物撮り・一眼動画</td><td class="good">3kHz以上</td><td>1/250秒程度の速いシャッターでも安定</td></tr>
+          <tr><td>ライブ配信・スタジオ・テレビ</td><td class="good">10kHz以上</td><td>放送・配信での縞混入を回避</td></tr>
+          <tr><td>スローモーション（120〜240fps）</td><td class="good">20〜25kHz以上 または 無点滅</td><td>露光が極端に短い。フリッカーフリー電源推奨</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-orange">
+      <p><strong>見落としがちな確認:</strong> 美容室・アパレル・飲食・ジム・スタジオは「お客様や運営がリール動画を撮る」前提の現場が増えています。設計時に撮影用途のヒアリングがないと、納品後にSNS動画で縞が判明し、電源総取り替えになりがちです。撮影が絡む現場は最初から<strong>1kHz以上（できれば3kHz以上）</strong>を標準にしておくと安全です。</p>
+    </div>
+
+    <!-- ===== 4. 計算 ===== -->
+    <h2 id="calc">4. シャッター・フレームレートとの関係（計算）</h2>
+
+    <p>縞が出るかどうかは「1回の露光（シャッターが開いている時間）に、PWMの点滅が何周期分含まれるか」で大まかに判断できます。含まれる周期数が多いほど明暗が平均化され、縞は目立たなくなります。</p>
+
+    <div class="formula">
+      1露光あたりのPWM周期数 = PWM周波数(Hz) × シャッター開放時間(秒)<br>
+      <span class="comment">// 例: 1000Hz × (1/100秒) = 10周期 → 平均化されて縞は出にくい</span><br>
+      <span class="comment">// 例: 1000Hz × (1/2000秒) = 0.5周期 → 1周期に満たず縞が強く出る</span>
+    </div>
+
+    <p>目安として、<strong>1露光あたり概ね10周期以上</strong>含められれば実用上ほぼ縞は気になりません。シャッターが速い（=開放時間が短い）ほど多くの周期を確保するために高い周波数が必要、という関係です。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>シャッター速度</th><th>1kHzでの周期数</th><th>3kHzでの周期数</th><th>25kHzでの周期数</th></tr></thead>
+        <tbody>
+          <tr><td>1/50秒（通常動画）</td><td class="good">20周期</td><td class="good">60周期</td><td class="good">500周期</td></tr>
+          <tr><td>1/250秒（明るい屋内）</td><td>4周期</td><td class="good">12周期</td><td class="good">100周期</td></tr>
+          <tr><td>1/1000秒（高速）</td><td class="bad">1周期</td><td class="mid">3周期</td><td class="good">25周期</td></tr>
+          <tr><td>1/4000秒（スロー寄り）</td><td class="bad">0.25周期</td><td class="bad">0.75周期</td><td class="good">6.25周期</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>撮影側で逃げる場合の設定</h3>
+    <p>電源を替えられない応急対応では、撮影側のシャッターを商用電源の周波数（東日本50Hz／西日本60Hz）の整数倍に合わせると、蛍光灯由来や一部のLED点滅と同期して縞が軽減することがあります。具体的には<strong>東日本=1/50秒・1/100秒、西日本=1/60秒・1/120秒</strong>を試します。ただしPWM周波数が商用周波数と無関係な機種では効かないため、根本対策は電源・調光器側の高周波化です。</p>
+
+    <!-- ===== 5. 切り分け ===== -->
+    <h2 id="fix">5. 施工後に縞が出たときの切り分け手順</h2>
+
+    <p>「撮ると縞が出る」と連絡が来たら、テープを疑う前に電源・調光経路を切り分けます。多くはテープ本体ではなく、調光器または電源のPWM／リップルが原因です。</p>
+
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>調光器を100%（全点灯）にして撮影する</strong>
+          縞が消えれば原因は調光器のPWM。残るなら電源のリップル（脈流）や別経路を疑う。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>スマホのスロー（240fps）で撮って増幅確認する</strong>
+          肉眼や通常動画で微妙でも、スロー撮影なら点滅が明暗の流れとして可視化でき、点滅の有無を判定できる。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>調光経路を外し電源直結で点灯する</strong>
+          調光器をバイパスして縞が消えるなら、高周波PWMまたはフリッカーフリー対応の調光器へ交換で解決する。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>電源直結でも残るなら電源を交換する</strong>
+          安価な定電圧電源は整流リップルが残り100/120Hzの脈流が出る。リップルの小さいフリッカーフリー電源に替える。
+        </div>
+      </li>
+    </ul>
+
+    <div class="box-blue">
+      <p><strong>テープを張り替える前に電源・調光を疑う:</strong> 縞の原因の大半は「点滅させている側」＝調光器か電源です。テープは点いている間そのまま光るだけなので、張り替えても点滅源が同じなら縞は再発します。切り分けの順序を守れば、内装を壊さずに電源・調光器の交換だけで直せるケースがほとんどです。</p>
+    </div>
+
+    <!-- ===== CTA ===== -->
+    <div class="cta-section">
+      <h2>撮影対応の高周波・フリッカーフリーLEDテープ／電源を探す</h2>
+      <p>SNS撮影から放送・スロー撮影まで、縞の出にくい高周波PWM・フリッカーフリー対応のLEDテープ・電源・調光器をプロ価格でご用意しています。<br>用途に合った周波数・調光方式で選べます。</p>
+      <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+    </div>
+
+    <!-- ===== 6. 選定 ===== -->
+    <h2 id="select">6. フリッカーフリー電源・高周波調光の選定</h2>
+
+    <p>撮影が絡む現場は、調光方式と電源のリップルの両方を押さえます。調光方式は<a href="/articles/led-tape-dimming-methods-guide">PWM/CCR(定電流)などの違い</a>を理解した上で、撮影用途には高周波PWMまたは定電流（リニア）系を選ぶのが基本です。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>方式・部材</th><th>撮影適性</th><th>選定のポイント</th></tr></thead>
+        <tbody>
+          <tr><td>高周波PWM調光器（数kHz〜25kHz）</td><td class="good">良好</td><td>仕様に「フリッカーフリー」「高周波PWM」「○kHz」の記載があるものを選ぶ</td></tr>
+          <tr><td>定電流（CCR/リニア）調光</td><td class="good">最良</td><td>点滅させず電流を絞るため原理的に縞が出にくい。スロー撮影向き</td></tr>
+          <tr><td>低周波PWM調光器（〜数百Hz）</td><td class="bad">不可</td><td>安価だが撮影現場には不向き。SNS動画でも縞が出やすい</td></tr>
+          <tr><td>フリッカーフリー定電圧電源</td><td class="good">良好</td><td>整流リップルが小さい設計（リップル率の低い製品）を選ぶ</td></tr>
+          <tr><td>安価な汎用定電圧電源</td><td class="mid">注意</td><td>100/120Hzのリップルが残り、無調光でも縞の原因になることがある</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="num">1<span style="font-size:16px">kHz</span></div>
+        <div class="unit">SNS撮影の最低ライン</div>
+        <div class="label">静止画・30fps動画の目安</div>
+      </div>
+      <div class="data-card">
+        <div class="num">3<span style="font-size:16px">kHz</span></div>
+        <div class="unit">物撮り・一眼動画</div>
+        <div class="label">速いシャッターでも安定</div>
+      </div>
+      <div class="data-card">
+        <div class="num">25<span style="font-size:16px">kHz</span></div>
+        <div class="unit">スロー撮影／放送</div>
+        <div class="label">これ以上 or 無点滅推奨</div>
+      </div>
+      <div class="data-card">
+        <div class="num">10<span style="font-size:16px">周期</span></div>
+        <div class="unit">1露光あたり目安</div>
+        <div class="label">含めれば縞はほぼ消える</div>
+      </div>
+    </div>
+
+    <!-- related-articles -->
+    <div style="max-width:900px;margin:0 auto 40px;padding:0 20px">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px">
+        <h3 style="font-size:1rem;font-weight:700;color:var(--text-muted);margin-bottom:16px">関連するトラブル対処・選定ガイド</h3>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+          <li><a href="/articles/led-flickerfree-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(109,40,217,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDのフリッカー（ちらつき）対策ガイド｜目視フリッカーの原因と対処</a></li>
+          <li><a href="/articles/led-tape-dimming-methods-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(109,40,217,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープの調光方式の違い｜PWM/CCR/DALIの仕組みと選び方</a></li>
+          <li><a href="/articles/led-tape-controller-dimmer-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(109,40,217,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープのコントローラー・調光器の選び方</a></li>
+          <li><a href="/articles/led-color-temperature-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(109,40,217,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDの色温度ガイド｜2700K〜6500Kの使い分けと撮影の色味</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== 7. チェックリスト ===== -->
+    <h2 id="checklist">7. 選定・確認チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>納入先に「動画・写真撮影（SNS/物撮り/配信/スロー）」の用途があるかをヒアリングしたか</li>
+      <li>撮影用途があるなら、PWM周波数1kHz以上（物撮り・配信は3k〜10kHz以上）を満たす電源・調光器を選んだか</li>
+      <li>スロー撮影・放送が絡む現場は、25kHz以上の高周波PWMまたは定電流（無点滅）方式にしたか</li>
+      <li>調光器の仕様に「フリッカーフリー」「高周波PWM」「○kHz」の明記があるか確認したか</li>
+      <li>電源は整流リップルの小さいフリッカーフリータイプを選んだか（無調光でも縞が出ないか）</li>
+      <li>納品前にスマホのスロー（240fps）撮影で縞・点滅が出ないか実機確認したか</li>
+      <li>調光器を100%／50%／最小に変えて、各段で縞が出ないか確認したか</li>
+      <li>不具合連絡時の切り分け順（調光100%→スロー確認→調光バイパス→電源交換）を共有したか</li>
+    </ul>
+
+    <!-- ===== 8. FAQ ===== -->
+    <h2 id="faq">8. よくある質問</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">目では見えないのに、なぜスマホで撮るとLED照明に横縞が出るのですか？</div>
+      <div class="faq-a">LEDテープの多くはPWM（パルス幅変調）で明るさを制御しており、目に見えない速さで点滅しています。人の目は残像でなめらかに見えますが、カメラのCMOSセンサーは画面を上から下へ一行ずつ読み取る「ローリングシャッター」方式のため、行ごとに点灯・消灯のタイミングがずれて記録され、明暗の横縞（フリッカーバンディング）として写ります。点滅周波数が低いほど、またシャッター速度が速いほど縞が目立ちます。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">撮影しても縞が出ないLEDテープにするには、PWM周波数は何Hz以上を選べばよいですか？</div>
+      <div class="faq-a">通常の写真・30fps動画なら1kHz以上、できれば3kHz以上を目安にすると実用上ほぼ縞が出ません。スローモーション撮影（120〜240fps）や1/1000秒級の高速シャッターを使う撮影スタジオ・配信現場では、露光時間が短く1周期に満たないため、20〜25kHz以上の高周波PWM、または点滅しないフリッカーフリー（リニア/定電流）電源を選んでください。納入先に撮影用途があるかを事前に確認するのが安全です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">施工後に横縞が出ると言われました。テープを張り替えずに直せますか？</div>
+      <div class="faq-a">縞は多くの場合テープ本体ではなく電源・調光器側のPWM周波数が原因です。まず調光器を100%（全点灯・無調光）にして縞が消えるか確認します。消えるなら調光器のPWMが原因なので、高周波PWMタイプやフリッカーフリー対応の調光器・電源に交換すれば、テープを張り替えずに改善できます。100%でも縞が残る場合は、フリッカーフリー（リップルの少ない）定電圧電源に交換します。撮影側で対処するなら、シャッター速度を電源周波数に合わせて1/50秒（西日本は1/60秒）に設定する方法もあります。</div>
+    </div>
+
+  </div><!-- /article-body -->
+</div><!-- /container -->
+
+<footer class="site-footer">
+  <p>© 2024 LED PRO SHOP ／ <a href="/tokushoho.html">特定商取引法に基づく表示</a></p>
+</footer>
+
+</body>
+</html>
