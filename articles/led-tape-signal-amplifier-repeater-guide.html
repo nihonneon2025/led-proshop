@@ -186,6 +186,7 @@
       .hero h1{font-size:17px}
       .data-grid{grid-template-columns:repeat(2,1fr)}
     }
+      .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
   </style>
 </head>
 <body>
@@ -203,7 +204,7 @@
     <span>対象: 電気工事業者・看板施工業者・内装施工業者・舞台/演出設備担当者</span>
   </div>
 </div>
-
+<img src="/articles/images/led-tape-signal-amplifier-repeater-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
 <div class="container">
   <nav class="breadcrumb" aria-label="パンくずリスト">
     <a href="/">LED PRO SHOP</a><span>›</span>
@@ -286,7 +287,19 @@
     </div>
 
     <!-- ===== CTA ===== -->
-    <div class="cta-section">
+    
+<!-- related-articles -->
+<div style="max-width:900px;margin:0 auto 40px;padding:0 20px">
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px">
+    <h3 style="font-size:1rem;font-weight:700;color:var(--text-muted);margin-bottom:16px">関連するLED選び方ガイド</h3>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+      <li><a href="/articles/led-tape-rgb-color-troubleshooting-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>RGB LEDテープの色が正しく出ない原因と対処法｜赤しか光らない・色が逆・末端で色ずれを診断</a></li>
+      <li><a href="/articles/nursing-home-led-lighting-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>介護施設・老人ホームのLED照明ガイド｜転倒防止照度・昼夜照明切替・認知症ケア対応設計</a></li>
+      <li><a href="/articles/tunable-white-led-tape-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>チューナブルホワイト LEDテープ 選び方ガイド｜色温度可変（2700K〜6500K）の仕組み・配線・コントローラー選定</a></li>
+    </ul>
+  </div>
+</div>
+<div class="cta-section">
       <h2>RGB・アドレサブル用の信号増幅器を探す</h2>
       <p>アナログRGB／RGBW用アンプ、アドレサブル（SPI）用リピーター、対応コントローラー・電源を在庫から即納。<br>対応電圧・出力定格・チャンネル数を明記し、現場仕様で選べます。</p>
       <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
