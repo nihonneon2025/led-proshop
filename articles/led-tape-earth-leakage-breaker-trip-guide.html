@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープの電源を増やしたら漏電ブレーカーが落ちる原因と対策｜対地漏れ電流の合算とELB対応【施工業者向け】 | LED PRO SHOP</title>
+  <meta name="description" content="LED電源（スイッチング電源）を複数台に増設したら漏電ブレーカー（ELB）が落ちるようになった——多くは絶縁不良ではなく、電源内部のノイズ対策コンデンサ（Yコンデンサ）による『対地漏れ電流』の合算が原因です。1台あたりの漏れ電流の目安、定格感度電流30mAに対する合算計算、クランプ式漏れ電流計での切り分け、回路分割・低漏洩電源での対策を施工業者向けに解説します。">
+  <meta name="keywords" content="led 漏電ブレーカー 落ちる,led電源 漏れ電流,対地漏れ電流 合算,スイッチング電源 漏電,elb 不要動作,led 漏電遮断器 トリップ,yコンデンサ 漏れ電流,led 絶縁不良 切り分け">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-earth-leakage-breaker-trip-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-earth-leakage-breaker-trip-guide">
+  <meta property="og:title" content="LEDテープの電源を増やしたら漏電ブレーカーが落ちる原因と対策｜対地漏れ電流の合算とELB対応【施工業者向け】 | LED PRO SHOP">
+  <meta property="og:description" content="LED電源を複数台にしたら漏電ブレーカーが落ちる原因の多くは、電源内部のYコンデンサによる対地漏れ電流の合算。1台あたりの目安、30mAに対する計算、クランプ漏れ電流計での切り分け、回路分割・低漏洩電源での対策を解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-earth-leakage-breaker-trip-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LED電源を増やすと漏電ブレーカーが落ちる原因と対策｜対地漏れ電流の合算【施工業者向け】 | LED PRO SHOP">
+  <meta name="twitter:description" content="原因の多くは絶縁不良ではなくYコンデンサの対地漏れ電流の合算。1台あたりの目安、30mAに対する計算、クランプ漏れ電流計での切り分け、回路分割の対策を解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-earth-leakage-breaker-trip-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープの電源を増やしたら漏電ブレーカーが落ちる原因と対策｜対地漏れ電流の合算とELB対応",
+    "description": "LED電源を複数台に増設すると漏電ブレーカーが落ちる原因を、電源内部のYコンデンサによる対地漏れ電流の合算として施工業者向けに解説。1台あたりの漏れ電流の目安、定格感度電流30mAに対する合算計算、クランプ式漏れ電流計での切り分け、回路分割・低漏洩電源での対策までを整理します。",
+    "image": "https://led-proshop.com/articles/images/led-tape-earth-leakage-breaker-trip-guide-hero.webp",
+    "datePublished": "2026-06-19",
+    "dateModified": "2026-06-19",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-earth-leakage-breaker-trip-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LED電源の漏電ブレーカー不要動作の対策", "item": "https://led-proshop.com/articles/led-tape-earth-leakage-breaker-trip-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== FAQ JSON-LD ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LED電源を増設したら漏電ブレーカーが落ちるようになりました。絶縁不良ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "必ずしも絶縁不良とは限りません。スイッチング電源の内部には、ノイズを大地へ逃がすためのコンデンサ（Yコンデンサ）が入っており、正常な状態でも対地に微小な漏れ電流（1台あたりおおむね0.25〜1mA程度、製品により異なる）が常時流れます。これが複数台ぶん合算され、漏電ブレーカーの定格感度電流（多くは30mA、住宅分電盤では15mAも）に近づくと、絶縁が正常でもブレーカーが動作します。まずは1台ずつ切り分け、クランプ式漏れ電流計で実測してから絶縁不良かどうかを判定してください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "漏電ブレーカーが落ちないようにするには、何台までLED電源をぶら下げてよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "一概に台数では決められず、各電源の対地漏れ電流の実測値と漏電ブレーカーの定格感度電流で判断します。目安として、1回路あたりの漏れ電流合計を定格感度電流の3分の1以下（30mAなら約10mA以下）に抑えると不要動作を避けやすくなります。1台1mAの電源なら計算上10台前後が目安ですが、実機はばらつくため、必ずクランプ式漏れ電流計で実測してください。台数が多い現場は回路を複数に分け、回路ごとに別系統の漏電ブレーカーへ振り分けるのが確実です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "雨や結露で本当に漏電している場合と、正常な漏れ電流の合算はどう見分けますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "本物の絶縁不良は、絶縁抵抗計（メガー）でDC側・筐体・配線の対地抵抗が低下している（数百kΩ以下など）、特定の1台・1区間を外すと一気に漏れ電流が下がる、雨天・散水・結露時だけ動作する、といった特徴があります。一方Yコンデンサ由来の合算は、各台がほぼ均等に少しずつ漏れ、台数に比例して増え、乾湿に関係なく一定です。切り分けは、電源を1台ずつ外しながらクランプ漏れ電流計で変化量を見るのが基本で、ある1台で突出して下がれば、その電源か負荷側の絶縁不良を疑います。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --blue:#dc2626;--blue-pale:#fdeaea;--orange:#b45309;--orange-pale:#fff5e8;
+      --bg:#fff;--bg-gray:#f6f4f4;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;
+      --surface:#fff;--accent2:#dc2626;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.75}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:860px;margin:0 auto;padding:0 20px}
+    header.site-header{background:var(--blue);padding:14px 20px;display:flex;align-items:center;gap:12px}
+    header.site-header a{color:#fff;font-size:18px;font-weight:700;letter-spacing:.03em}
+    header.site-header span{color:rgba(255,255,255,.6);font-size:12px}
+
+    .hero{background:linear-gradient(135deg,#7f1d1d 0%,#2a1212 100%);padding:48px 20px 40px;text-align:center;color:#fff}
+    .hero .cat-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:11px;letter-spacing:.08em;margin-bottom:16px}
+    .hero h1{font-size:clamp(18px,3.5vw,26px);font-weight:900;line-height:1.45;margin-bottom:14px}
+    .hero .hero-meta{font-size:12px;color:rgba(255,255,255,.7);display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+    .hero-img{width:100%;max-height:380px;object-fit:cover;display:block}
+
+    .breadcrumb{font-size:11px;color:var(--text-muted);padding:10px 0;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+    .breadcrumb a{color:var(--text-muted)}
+
+    .toc{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:28px 0}
+    .toc h2{font-size:13px;font-weight:700;color:var(--text-sub);margin-bottom:10px;letter-spacing:.06em}
+    .toc ol{padding-left:18px}
+    .toc li{font-size:13px;margin-bottom:6px}
+    .toc a{color:var(--blue)}
+
+    .article-body{padding:32px 0 48px}
+    .article-body h2{font-size:20px;font-weight:900;color:var(--blue);border-left:4px solid var(--blue);padding-left:12px;margin:40px 0 16px}
+    .article-body h3{font-size:16px;font-weight:700;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:6px;margin:28px 0 12px}
+    .article-body p{margin-bottom:14px}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:14px}
+    .article-body li{margin-bottom:6px}
+
+    .box-blue{background:var(--blue-pale);border-left:4px solid var(--blue);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-orange{background:var(--orange-pale);border-left:4px solid var(--orange);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-blue p,.box-orange p{margin-bottom:0}
+
+    .formula{background:#2a1212;color:#fbd5d5;font-family:monospace;font-size:15px;border-radius:8px;padding:16px 20px;margin:16px 0;line-height:1.6}
+    .formula .comment{color:#f0a0a0}
+
+    .data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .data-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .data-card .num{font-size:26px;font-weight:900;color:var(--blue);line-height:1}
+    .data-card .unit{font-size:12px;color:var(--text-sub);margin-top:2px}
+    .data-card .label{font-size:11px;color:var(--text-muted);margin-top:6px}
+
+    .tbl-wrap{overflow-x:auto;margin:16px 0}
+    table{width:100%;border-collapse:collapse;font-size:13px;min-width:480px}
+    th{background:var(--blue);color:#fff;padding:9px 10px;text-align:left;font-weight:700}
+    td{padding:8px 10px;border-bottom:1px solid #eaecf0;vertical-align:top}
+    tr:nth-child(even) td{background:#f8f9fb}
+    .good{color:#1a7a3c;font-weight:700}
+    .bad{color:#b91c1c;font-weight:700}
+    .mid{color:#92400e;font-weight:700}
+
+    .step-list{list-style:none;padding:0;margin:16px 0;counter-reset:step}
+    .step-list li{counter-increment:step;display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #eaecf0}
+    .step-list li:last-child{border-bottom:none}
+    .step-list li::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:28px;height:28px;min-width:28px;background:var(--blue);color:#fff;border-radius:50%;font-size:13px;font-weight:700}
+    .step-body{flex:1}
+    .step-body strong{display:block;margin-bottom:4px}
+
+    .checklist{list-style:none;padding:0;margin:16px 0}
+    .checklist li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #eaecf0;font-size:14px}
+    .checklist li:last-child{border-bottom:none}
+    .checklist li::before{content:"☐";font-size:18px;color:var(--blue);flex-shrink:0;line-height:1.3}
+
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--blue)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+
+    .cta-section{background:linear-gradient(135deg,#7f1d1d,#2a1212);border-radius:16px;padding:36px 24px;text-align:center;margin:40px 0;color:#fff}
+    .cta-section h2{font-size:18px;font-weight:900;margin-bottom:8px;color:#fff;border:none;padding:0}
+    .cta-section p{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:20px}
+    .cta-btn{display:inline-block;background:#f0a500;color:#1a1a1a;font-weight:900;font-size:15px;padding:14px 36px;border-radius:50px;transition:opacity .2s}
+    .cta-btn:hover{opacity:.88;text-decoration:none}
+
+    footer.site-footer{background:#1a1a1a;color:#888;font-size:12px;text-align:center;padding:20px}
+    footer.site-footer a{color:#aaa}
+
+    @media(max-width:600px){
+      .hero{padding:32px 16px 28px}
+      .hero h1{font-size:17px}
+      .data-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/">LED PRO SHOP</a>
+  <span>プロ仕様LED専門店</span>
+</header>
+
+<div class="hero">
+  <div class="cat-badge">トラブル対処ガイド</div>
+  <h1>LEDテープの電源を増やしたら漏電ブレーカーが落ちる原因と対策｜対地漏れ電流の合算とELB対応</h1>
+  <div class="hero-meta">
+    <span>公開: 2026-06-19</span>
+    <span>対象: 電気工事業者・看板施工業者・内装施工業者</span>
+  </div>
+</div>
+
+<img src="/articles/images/led-tape-earth-leakage-breaker-trip-guide-hero.webp" alt="LED電源を複数台にすると漏電ブレーカーが落ちる原因（対地漏れ電流の合算）と対策ガイド" class="hero-img" width="860" height="430" loading="eager">
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/">LED PRO SHOP</a><span>›</span>
+    <a href="/articles/">コラム</a><span>›</span>
+    <span>LED電源の漏電ブレーカー不要動作の対策</span>
+  </nav>
+
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#two-causes">漏電ブレーカーが落ちる2系統の原因（本物の漏電 vs 漏れ電流の合算）</a></li>
+      <li><a href="#why">なぜLED電源は正常でも漏れ電流が出るのか（Yコンデンサ）</a></li>
+      <li><a href="#calc">漏れ電流の合算と定格感度電流の関係（計算・早見表）</a></li>
+      <li><a href="#diagnose">原因の切り分け手順（クランプ漏れ電流計・メガー）</a></li>
+      <li><a href="#fix">対策（回路分割・台数分散・低漏洩電源・接地）</a></li>
+      <li><a href="#real-fault">本物の絶縁不良（対地短絡・浸水）の見分け方</a></li>
+      <li><a href="#checklist">切り分け・対策チェックリスト</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ol>
+  </nav>
+
+  <div class="article-body">
+
+    <p>「これまで問題なかったのに、LEDテープの電源（スイッチング電源）を何台か増設したら、漏電ブレーカー（ELB／漏電遮断器）が落ちるようになった」——LED間接照明や看板を多数施工する現場で増えているトラブルです。多くの場合、原因は配線や機器の絶縁不良ではなく、スイッチング電源が正常でも常時流す「<strong>対地漏れ電流</strong>」が、台数ぶん合算されて漏電ブレーカーの定格感度電流に近づくことにあります。このページでは、本物の漏電と正常な漏れ電流の合算をどう見分け、クランプ式漏れ電流計でどう切り分け、回路分割や低漏洩電源でどう対策するかを施工業者の目線で整理します。</p>
+
+    <div class="box-orange">
+      <p><strong>はじめに（安全と資格）:</strong> 漏電ブレーカーは感電・火災から人と建物を守る安全装置です。「よく落ちるから」と安易に感度を下げたり、漏電ブレーカーを配線用遮断器（漏電検出なし）に交換したりするのは絶対に行わないでください。AC100V/200V一次側の分電盤・回路工事は電気工事士の有資格者の作業です（<a href="/articles/led-tape-electrician-license-guide">LEDテープ施工と電気工事士資格</a>を参照）。</p>
+    </div>
+
+    <!-- ===== 1. 2系統の原因 ===== -->
+    <h2 id="two-causes">1. 漏電ブレーカーが落ちる2系統の原因（本物の漏電 vs 漏れ電流の合算）</h2>
+
+    <p>漏電ブレーカーは、行き（非接地側）と帰り（接地側）の電流差＝大地へ漏れている電流を検出して動作します。LED電源回りでこの差電流が増える原因は、大きく2系統に分かれます。切り分けの第一歩は「どちらなのか」を見極めることです。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>区分</th><th>本物の絶縁不良（危険）</th><th>正常な漏れ電流の合算（不要動作）</th></tr></thead>
+        <tbody>
+          <tr><td>原因</td><td class="bad">配線・端子・テープの対地絶縁低下、浸水、被覆損傷</td><td>各電源内部のYコンデンサ・EMIフィルタの正常な漏れ</td></tr>
+          <tr><td>漏れ電流の出方</td><td>特定の1台・1区間で突出</td><td>全台がほぼ均等に少しずつ・台数に比例</td></tr>
+          <tr><td>環境依存</td><td class="bad">雨天・散水・結露時に悪化</td><td>乾湿に関係なくほぼ一定</td></tr>
+          <tr><td>絶縁抵抗（メガー）</td><td class="bad">低下（基準値未満）</td><td class="good">正常（基準値以上）</td></tr>
+          <tr><td>対応</td><td>該当箇所の修理・絶縁回復が必須</td><td>回路分割・台数分散・低漏洩電源で平準化</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>順序を間違えない:</strong> 「増設してから落ちるようになった」「乾燥した晴天でも落ちる」「全台を少しずつ減らすと落ちなくなる」なら合算（不要動作）の可能性が高く、「特定の1系統を外すと一気に直る」「雨の日だけ落ちる」なら本物の絶縁不良を強く疑います。まず実測で系統を判定してから、対策を選びます。</p>
+    </div>
+
+    <!-- ===== 2. なぜ漏れる ===== -->
+    <h2 id="why">2. なぜLED電源は正常でも漏れ電流が出るのか（Yコンデンサ）</h2>
+
+    <p>LEDテープに使うスイッチング電源（ACアダプタ・据置電源）は、高速スイッチングで生じるノイズ（EMI）を抑えるため、入力側に<strong>ノイズフィルタ用コンデンサ（通称Yコンデンサ）</strong>を内蔵しています。このコンデンサは、ライン（L/N）と筐体・接地（FG）の間に接続され、ノイズ成分を大地へ逃がす役割を持ちます。</p>
+
+    <p>このYコンデンサを通じて、商用周波数（50/60Hz）の微小な電流が常時、大地（接地）へ流れます。これが「正常な対地漏れ電流」です。1台あたりはごくわずかですが、ゼロにはできません。電源の台数が増えれば、この漏れ電流は単純に足し算で増えていきます。</p>
+
+    <div class="box-blue">
+      <p><strong>製品で大きく変わる:</strong> 漏れ電流の大きさは電源の設計（Yコンデンサの容量・接地の有無・クラスI/クラスIIの別）で変わります。一般に3Pプラグ（接地極付き）でしっかり接地する電源ほど漏れ電流は実測されやすく、2P・二重絶縁（クラスII）タイプは設計上漏れ電流を抑えている製品もあります。実際の値は製品のデータシートに「漏れ電流（Leakage Current）」として記載されているので、台数の多い現場では選定時に必ず確認してください。</p>
+    </div>
+
+    <!-- ===== 3. 計算 ===== -->
+    <h2 id="calc">3. 漏れ電流の合算と定格感度電流の関係（計算・早見表）</h2>
+
+    <p>漏電ブレーカーには<strong>定格感度電流</strong>があり、一般的な分電盤では30mA、住宅の特定回路では15mAが使われます。漏電ブレーカーは定格感度電流の50〜100%の範囲で動作する仕様のため、合算漏れ電流が定格の半分に近づくと不要動作のリスクが出てきます。</p>
+
+    <div class="formula">
+      合計漏れ電流 = Σ（各電源の対地漏れ電流）＋ 配線・負荷側の漏れ<br>
+      <span class="comment">// 目安: 合計漏れ電流 ≦ 定格感度電流 × 1/3 に収める（30mAなら約10mA以下）</span><br>
+      <span class="comment">// 例: 1台あたり1mAの電源 × 12台 = 12mA → 30mAでも不要動作のリスク域</span>
+    </div>
+
+    <p>下表は、1台あたりの対地漏れ電流ごとに「定格感度電流の1/3（=安全目安）」に達するおおよその台数です。あくまで概算で、実機はばらつくため、必ずクランプ式漏れ電流計で実測してください。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>1台あたりの漏れ電流（目安）</th><th>30mA ELBで1/3（≒10mA）に達する台数</th><th>15mA ELBで1/3（≒5mA）に達する台数</th></tr></thead>
+        <tbody>
+          <tr><td>0.25mA/台（低漏洩タイプ）</td><td class="good">約40台</td><td class="good">約20台</td></tr>
+          <tr><td>0.5mA/台</td><td class="good">約20台</td><td>約10台</td></tr>
+          <tr><td>1.0mA/台</td><td>約10台</td><td class="mid">約5台</td></tr>
+          <tr><td>2.0mA/台（接地・大容量）</td><td class="mid">約5台</td><td class="bad">約2〜3台</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-orange">
+      <p><strong>見落としがちな盲点:</strong> 漏電ブレーカーは「合計」を見ます。LED電源以外に同じ回路へぶら下がっている機器（パソコン・厨房機器・他の電源類）にもそれぞれ漏れ電流があり、合算に乗ってきます。LEDだけで計算して台数に収めたつもりでも、既設機器ぶんで定格に達することがあります。実測は<strong>その回路の全負荷を通電した状態</strong>で行ってください。</p>
+    </div>
+
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="num">30<span style="font-size:16px">mA</span></div>
+        <div class="unit">一般的な定格感度電流</div>
+        <div class="label">住宅特定回路では15mAも</div>
+      </div>
+      <div class="data-card">
+        <div class="num">1/3<span style="font-size:16px"></span></div>
+        <div class="unit">合算の安全目安</div>
+        <div class="label">30mAなら約10mA以下に</div>
+      </div>
+      <div class="data-card">
+        <div class="num">0.25–1<span style="font-size:16px">mA</span></div>
+        <div class="unit">1台あたりの漏れ目安</div>
+        <div class="label">製品データシートで確認</div>
+      </div>
+      <div class="data-card">
+        <div class="num">50<span style="font-size:16px">%</span></div>
+        <div class="unit">動作し始める下限</div>
+        <div class="label">定格感度電流の50〜100%で動作</div>
+      </div>
+    </div>
+
+    <!-- ===== 4. 切り分け ===== -->
+    <h2 id="diagnose">4. 原因の切り分け手順（クランプ漏れ電流計・メガー）</h2>
+
+    <p>「落ちる＝即・絶縁不良」と決めつけず、実測で合算か本物かを判定します。主役の測定器は<strong>クランプ式漏れ電流計（リーククランプ）</strong>です。通電したまま、電線の往復（L＋N）をまとめて挟むと、差分＝漏れ電流が読めます。</p>
+
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>回路全体の漏れ電流を実測する</strong>
+          分電盤の該当回路で、往復線をまとめてリーククランプで挟み、全負荷通電時の漏れ電流を読む。定格感度電流に対しどの程度かを把握する。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>LED電源を1台ずつ外して変化量を見る</strong>
+          1台外すごとに漏れ電流がほぼ均等に下がるなら合算（不要動作）。ある1台で突出して下がるなら、その電源か負荷側の絶縁不良を疑う。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>疑わしい系統を絶縁抵抗計（メガー）で測る</strong>
+          通電を止め、DC側配線・テープ・筐体の対地絶縁抵抗を測定。基準値を下回れば本物の絶縁不良。浸水・被覆損傷・端子の結露を点検する。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>環境条件を変えて再現性を確認する</strong>
+          屋外・水回りの現場は、散水・降雨・夜間結露の条件で漏れ電流が増えないか確認。環境で増えるなら防水・絶縁処理の不良を疑う。
+        </div>
+      </li>
+    </ul>
+
+    <div class="box-blue">
+      <p><strong>メガーの注意:</strong> 絶縁抵抗計（メガー）はDC高電圧を印加するため、<strong>LED電源・コントローラー・調光器を接続したまま測定すると内部素子を破損する</strong>おそれがあります。メガーで測るのは電源を切り離した配線・テープ側だけにし、電子機器は外してから測定してください。詳しくは<a href="/articles/led-insulation-resistance-megger-guide">LED回路の絶縁抵抗（メガー）測定ガイド</a>を参照。</p>
+    </div>
+
+    <!-- ===== CTA ===== -->
+    <div class="cta-section">
+      <h2>低漏洩・大容量のLED電源を探す</h2>
+      <p>多台数・大規模なLED間接照明や看板でも漏電ブレーカーを誤動作させにくい、漏れ電流の小さい電源・回路分割しやすい電源をプロ価格でご用意しています。<br>容量・台数・設置環境に合わせて選べます。</p>
+      <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+    </div>
+
+    <!-- ===== 5. 対策 ===== -->
+    <h2 id="fix">5. 対策（回路分割・台数分散・低漏洩電源・接地）</h2>
+
+    <p>合算（不要動作）と判定できたら、漏電ブレーカーの感度を落とすのではなく、漏れ電流を平準化・分散して定格に余裕を持たせる方向で対策します。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>対策</th><th>効果</th><th>施工のポイント</th></tr></thead>
+        <tbody>
+          <tr><td>回路を複数に分割する</td><td class="good">最も確実</td><td>1回路あたりの電源台数を減らし、別系統の漏電ブレーカーへ振り分ける</td></tr>
+          <tr><td>1回路あたりの台数を抑える</td><td class="good">高い</td><td>合計漏れ電流を定格感度電流の1/3以下に収める設計にする</td></tr>
+          <tr><td>低漏洩タイプの電源を選ぶ</td><td class="good">高い</td><td>データシートの漏れ電流が小さい製品・二重絶縁（クラスII）系を選定</td></tr>
+          <tr><td>大容量1台に集約し台数を減らす</td><td class="mid">条件付き</td><td>台数（＝漏れ電流の積み上げ）は減るが、電圧降下と1台故障の影響範囲に注意</td></tr>
+          <tr><td>接地を確実にする</td><td class="mid">前提条件</td><td>感電・火災対策として接地は必須。接地を外して漏れを減らすのは厳禁</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-orange">
+      <p><strong>やってはいけない対策:</strong> ①漏電ブレーカーの定格感度電流を上げる／高感度を低感度に変える（感電保護の低下）、②漏電ブレーカーを配線用遮断器（漏電検出なし）に交換する（漏電保護の喪失）、③電源の接地（アース）を外す（感電・火災リスク）。いずれも安全装置の無効化にあたり、絶対に行わないでください。落ちる根本原因は「漏れ電流を分散・低減」で解決します。</p>
+    </div>
+
+    <!-- ===== 6. 本物の絶縁不良 ===== -->
+    <h2 id="real-fault">6. 本物の絶縁不良（対地短絡・浸水）の見分け方</h2>
+
+    <p>合算ではなく本物の絶縁不良の場合は、放置すると感電・発煙・火災につながるため、必ず原因箇所を直します。屋外看板・水回り・床面付近のLED施工で特に多いパターンです。</p>
+
+    <ul>
+      <li><strong>浸水・結露:</strong> 防水不良のコネクタ・端子・電源筐体に水が入り、対地絶縁が低下。雨天・夜間結露時だけ落ちるのが典型。<a href="/articles/led-tape-waterproof-treatment-guide">防水処理</a>と<a href="/articles/led-tape-condensation-guide">結露対策</a>を点検。</li>
+      <li><strong>被覆損傷・噛み込み:</strong> アルミフレームの端部やビス、金属什器の角で配線被覆が傷つき、金属（接地体）に接触。<a href="/articles/led-tape-metal-surface-insulation-guide">金属面への絶縁施工</a>を確認。</li>
+      <li><strong>はんだ・端子の経年劣化:</strong> 端子台・はんだ部の腐食や緩みで対地リークが発生。該当区間を外すと一気に漏れ電流が下がるのが特徴。</li>
+      <li><strong>テープ自体の損傷:</strong> 切断面・折り曲げ部からの浸水・銅箔露出。区間を分けて測ると不良区間を特定できる。</li>
+    </ul>
+
+    <div class="box-blue">
+      <p><strong>修理の原則:</strong> 本物の絶縁不良は「感度を下げる」「回路を分ける」では解決しません（むしろ危険を隠すだけ）。該当箇所を特定し、防水・絶縁を回復させてから、絶縁抵抗計で基準値以上に戻ったことを確認して引き渡してください。</p>
+    </div>
+
+    <!-- related-articles -->
+    <div style="max-width:900px;margin:0 auto 40px;padding:0 20px">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px">
+        <h3 style="font-size:1rem;font-weight:700;color:var(--text-muted);margin-bottom:16px">関連するトラブル対処・施工ガイド</h3>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+          <li><a href="/articles/led-power-inrush-current-breaker-trip-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(220,38,38,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LED電源の突入電流でブレーカーが落ちる原因と対策（過電流側）</a></li>
+          <li><a href="/articles/led-insulation-resistance-megger-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(220,38,38,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LED回路の絶縁抵抗（メガー）測定ガイド｜電子機器を壊さない手順</a></li>
+          <li><a href="/articles/led-tape-grounding-earthing-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(220,38,38,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープ・電源の接地（アース）の取り方</a></li>
+          <li><a href="/articles/led-tape-waterproof-treatment-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(220,38,38,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープの防水処理ガイド｜浸水による絶縁低下を防ぐ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== 7. チェックリスト ===== -->
+    <h2 id="checklist">7. 切り分け・対策チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>クランプ式漏れ電流計で、全負荷通電時の回路の漏れ電流を実測したか</li>
+      <li>LED電源を1台ずつ外し、均等に下がる（合算）か突出して下がる（不良）かを確認したか</li>
+      <li>晴天・乾燥時にも落ちるか、雨天・結露時だけ落ちるかを切り分けたか</li>
+      <li>電子機器を外したうえで、配線・テープ側の絶縁抵抗をメガーで測定したか</li>
+      <li>同一回路にLED以外の機器がないか、合算に乗る漏れ電流を見落としていないか</li>
+      <li>合算なら、1回路の合計漏れ電流を定格感度電流の1/3以下に収める設計にしたか</li>
+      <li>多台数の現場で、回路分割・別系統への振り分け・低漏洩電源を検討したか</li>
+      <li>感度を下げる・接地を外す・漏電検出なしへ交換、の禁止対策を行っていないか</li>
+      <li>本物の絶縁不良は修理後、絶縁抵抗が基準値以上に戻ったことを確認したか</li>
+    </ul>
+
+    <!-- ===== 8. FAQ ===== -->
+    <h2 id="faq">8. よくある質問</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">LED電源を増設したら漏電ブレーカーが落ちるようになりました。絶縁不良ですか？</div>
+      <div class="faq-a">必ずしも絶縁不良とは限りません。スイッチング電源の内部には、ノイズを大地へ逃がすためのコンデンサ（Yコンデンサ）が入っており、正常な状態でも対地に微小な漏れ電流（1台あたりおおむね0.25〜1mA程度、製品により異なる）が常時流れます。これが複数台ぶん合算され、漏電ブレーカーの定格感度電流（多くは30mA、住宅分電盤では15mAも）に近づくと、絶縁が正常でもブレーカーが動作します。まずは1台ずつ切り分け、クランプ式漏れ電流計で実測してから絶縁不良かどうかを判定してください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">漏電ブレーカーが落ちないようにするには、何台までLED電源をぶら下げてよいですか？</div>
+      <div class="faq-a">一概に台数では決められず、各電源の対地漏れ電流の実測値と漏電ブレーカーの定格感度電流で判断します。目安として、1回路あたりの漏れ電流合計を定格感度電流の3分の1以下（30mAなら約10mA以下）に抑えると不要動作を避けやすくなります。1台1mAの電源なら計算上10台前後が目安ですが、実機はばらつくため、必ずクランプ式漏れ電流計で実測してください。台数が多い現場は回路を複数に分け、回路ごとに別系統の漏電ブレーカーへ振り分けるのが確実です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">雨や結露で本当に漏電している場合と、正常な漏れ電流の合算はどう見分けますか？</div>
+      <div class="faq-a">本物の絶縁不良は、絶縁抵抗計（メガー）でDC側・筐体・配線の対地抵抗が低下している（数百kΩ以下など）、特定の1台・1区間を外すと一気に漏れ電流が下がる、雨天・散水・結露時だけ動作する、といった特徴があります。一方Yコンデンサ由来の合算は、各台がほぼ均等に少しずつ漏れ、台数に比例して増え、乾湿に関係なく一定です。切り分けは、電源を1台ずつ外しながらクランプ漏れ電流計で変化量を見るのが基本で、ある1台で突出して下がれば、その電源か負荷側の絶縁不良を疑います。</div>
+    </div>
+
+  </div><!-- /article-body -->
+</div><!-- /container -->
+
+<footer class="site-footer">
+  <p>© 2024 LED PRO SHOP ／ <a href="/tokushoho.html">特定商取引法に基づく表示</a></p>
+</footer>
+
+</body>
+</html>
