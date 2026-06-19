@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープ照明の分電盤・専用回路の取り方｜ブレーカー容量と回路分けの決め方 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープ照明を分電盤から取る際の専用回路の要否・ブレーカー容量・回路分けの決め方を、1次側入力電流の計算式と連続負荷80%ルール、突入電流による電源台数制限まで施工業者向けに解説。W/m×長さ別の入力電流早見表付き。">
+  <meta name="keywords" content="LEDテープ 専用回路,LED照明 ブレーカー 容量,LEDテープ 分電盤 取り方,LED 回路 分け方,照明 連続負荷 80%,LED電源 突入電流 ブレーカー,LED照明 回路数 計算,間接照明 配線 ブレーカー">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-branch-circuit-breaker-sizing-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-branch-circuit-breaker-sizing-guide">
+  <meta property="og:title" content="LEDテープ照明の分電盤・専用回路の取り方｜ブレーカー容量と回路分けの決め方 | LED PRO SHOP">
+  <meta property="og:description" content="専用回路の要否・ブレーカー容量・回路分けを、1次側入力電流の計算式と連続負荷80%ルール、突入電流による電源台数制限から施工業者向けに解説。入力電流早見表付き。">
+  <meta property="og:image" content="https://led-proshop.com/images/hero-scenes/blue_desk.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ照明の分電盤・専用回路の取り方｜ブレーカー容量と回路分けの決め方 | LED PRO SHOP">
+  <meta name="twitter:description" content="専用回路の要否・ブレーカー容量・回路分けを、入力電流の計算式と連続負荷80%ルール・突入電流の台数制限から施工業者向けに解説。早見表付き。">
+  <meta name="twitter:image" content="https://led-proshop.com/images/hero-scenes/blue_desk.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープ照明の分電盤・専用回路の取り方｜ブレーカー容量と回路分けの決め方",
+    "description": "専用回路の要否・ブレーカー容量・回路分けを、1次側入力電流の計算式と連続負荷80%ルール、突入電流による電源台数制限から施工業者向けに解説。W/m×長さ別の入力電流早見表付き。",
+    "image": "https://led-proshop.com/images/hero-scenes/blue_desk.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP 編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://led-proshop.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-06-20",
+    "dateModified": "2026-06-20",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-branch-circuit-breaker-sizing-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "LED PRO SHOP",
+        "item": "https://led-proshop.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "コラム",
+        "item": "https://led-proshop.com/articles/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "LEDテープ照明の分電盤・専用回路の取り方",
+        "item": "https://led-proshop.com/articles/led-tape-branch-circuit-breaker-sizing-guide"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープ照明に専用回路は必要ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "規模と用途によります。少数のテープを既設のコンセント回路に挿す程度なら専用回路は必須ではありませんが、複数の電源（ACアダプタ・スイッチング電源）を同一回路に集約する場合、投入時の突入電流が合算してブレーカーが落ちたり、他負荷の起動でちらつくことがあります。電源台数が多い・調光制御を入れる・店舗や施設の常時点灯照明である場合は、専用回路で分けるのが安全です。判断は連続負荷80%ルールと突入電流の合算で行います。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "20AのブレーカーでLEDテープは何mまで、電源は何台まで取れますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "連続点灯の照明は連続負荷扱いとなり、ブレーカー定格の80%以内で使うのが原則です。20A回路なら連続16A、AC100Vで約1,600VAが上限です。電源効率85%・力率0.9とすると、14.4W/mのテープ5mで1次側入力は約0.9A。理論上は連続容量だけなら十数本入りますが、実際は同時投入時の突入電流の合算が先に上限となるため、突入電流抑制機能のない電源では1回路あたり数台〜十数台に分散するのが現実的です。総容量と突入の両面で台数を決めてください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ブレーカーが落ちるなら容量の大きいブレーカーに替えれば解決しますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "原則として替えてはいけません。ブレーカーは後ろの電線を保護するための装置で、容量は電線の許容電流に合わせて決まっています。電線はそのままにブレーカーだけ大きくすると、過電流時に電線が先に発熱して非常に危険です。突入電流でのトリップは、容量を上げるのではなく、突入電流抑制機能付き電源を選ぶ・電源台数を複数回路に分散する・遅延形（時延形）の遮断器特性を使う、で対応します。回路の増設・変更は電気工事士の有資格作業です。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --blue:#1e4fa3;--blue-pale:#e9eef9;--bg:#fff;--bg-gray:#f5f6f8;
+      --text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #10264f}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+
+    .article-hero{background:linear-gradient(135deg,#10264f 0%,#1e4fa3 50%,#16336b 100%);padding:40px 16px 32px;border-bottom:3px solid #10264f}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-hero h1 em{font-style:normal;color:#7fa8e6}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){
+      .article-layout{grid-template-columns:1fr;padding:24px 16px 40px}
+      .article-sidebar{order:2}
+    }
+
+    .article-main{}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--blue);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--blue);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--blue);padding:6px 10px;background:var(--blue-pale);border-left:3px solid var(--blue);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,
+    .article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body em{font-style:italic;color:var(--text-sub)}
+    .article-body a{color:var(--blue);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--blue);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--blue-pale)}
+
+    .article-body code{background:#f0f2f5;color:#1d3f7a;padding:1px 5px;border-radius:2px;font-size:12px;font-family:monospace}
+
+    .article-callout{border-left:4px solid var(--blue);background:var(--blue-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--blue)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:20px 0 26px}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:4px;padding:14px 16px}
+    .spec-card .sc-w{font-size:16px;font-weight:900;color:var(--blue);line-height:1.3}
+    .spec-card .sc-name{font-size:12px;font-weight:700;color:var(--text);margin:4px 0 8px}
+    .spec-card .sc-desc{font-size:11px;color:var(--text-sub);line-height:1.65}
+
+    .checklist{list-style:none;padding:0;margin:18px 0 24px}
+    .checklist li{position:relative;padding:8px 8px 8px 30px;border-bottom:1px solid var(--border);font-size:13px}
+    .checklist li::before{content:"☑";position:absolute;left:6px;color:var(--blue);font-weight:700}
+
+    .article-faq{margin-top:24px}
+    .faq-item{border:1px solid var(--border);border-radius:4px;margin-bottom:10px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:12px 16px;font-weight:700;font-size:13px;color:var(--text)}
+    .faq-q::before{content:"Q. ";color:var(--blue)}
+    .faq-a{padding:12px 16px;font-size:13px;color:var(--text-sub);line-height:1.8}
+    .faq-a::before{content:"A. ";color:var(--red);font-weight:700}
+
+    .article-cta{background:var(--blue);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--blue);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#dbe4f6}
+
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--blue)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--blue)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--blue);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+
+    .article-sidebar{}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--blue)}
+    .sidebar-cta{background:var(--blue);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--blue);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#dbe4f6}
+
+    @media(max-width:768px){
+      .navbar .nav-links{display:none}
+      .article-hero h1{font-size:18px}
+      .article-body{font-size:13px}
+      .article-body h2{font-size:16px}
+      .article-body h3{font-size:13px}
+      .related-articles-list{grid-template-columns:1fr}
+    }
+    @media(max-width:480px){
+      .article-hero{padding:28px 16px 24px}
+      .article-hero h1{font-size:16px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .related-article-card{transition:none}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo" style="text-decoration:none">
+        <div class="logo-main">LED PRO SHOP<small>日本ネオン株式会社</small></div>
+        <div class="logo-tag">
+          <span class="logo-badge">PROFESSIONAL SUPPLY</span>
+          <span class="logo-catch">全国のLED施工業者が選ぶ / 工場直送 × 業界最安値</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+        <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+        <li><a href="/category/psu/" class="nav-link">電源</a></li>
+        <li><a href="/category/controller/" class="nav-link">制御機器</a></li>
+        <li><a href="/articles/" class="nav-link active">コラム</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== BREADCRUMB ===== -->
+  <nav class="article-breadcrumb" aria-label="パンくず">
+    <div class="container">
+      <a href="/">LED PRO SHOP</a>
+      <span class="sep">›</span>
+      <a href="/articles/">コラム</a>
+      <span class="sep">›</span>
+      <span>LEDテープ照明の分電盤・専用回路の取り方</span>
+    </div>
+  </nav>
+
+  <!-- ===== ARTICLE HERO ===== -->
+  <header class="article-hero">
+    <div class="container">
+      <span class="article-category-badge">施工方法ガイド</span>
+      <h1>LEDテープ照明の分電盤・専用回路の取り方｜<em>ブレーカー容量と回路分け</em>の決め方</h1>
+      <div class="article-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-20</span>
+        <span>更新日: 2026-06-20</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== ARTICLE LAYOUT ===== -->
+  <div class="article-layout">
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="article-main">
+
+      <img
+        src="/images/hero-scenes/blue_desk.webp"
+        alt="LEDテープ照明の分電盤・専用回路とブレーカー容量設計"
+        class="article-hero-img"
+        width="840"
+        height="400"
+        loading="lazy"
+      >
+
+      <nav class="article-toc" aria-label="目次" id="article-toc">
+        <h2>目次</h2>
+        <ol id="toc-list"></ol>
+      </nav>
+
+      <article class="article-body" id="article-body">
+
+        <p>店舗の間接照明や什器照明、サインの内照などでLEDテープを多数並べる現場では、<strong>「どの回路から取るか」「ブレーカーは何Aにするか」「専用回路に分けるか」</strong>の判断が施工品質と安全を左右します。容量計算を飛ばして既設のコンセント回路に電源をぶら下げると、<strong>投入時に突入電流でブレーカーが落ちる</strong>・<strong>他負荷の起動でちらつく</strong>といったトラブルになります。本記事では、LEDテープ照明の1次側（AC側）の負荷電流の計算式、連続負荷80%ルール、突入電流による電源台数制限、そして回路分けの判断基準を施工業者向けに整理します。</p>
+
+        <div class="article-callout warn">
+          <p><strong>現場あるある</strong>: 「テープと電源は容量どおりなのに、朝の点灯で漏電・配線用遮断器が落ちる」。原因の多くは1次側の容量不足ではなく、複数電源の<strong>突入電流の合算</strong>です。DC側のW計算だけで回路を決めると見落とします。</p>
+        </div>
+
+        <h2 id="why-circuit">なぜ専用回路・容量設計が必要か</h2>
+
+        <p>LEDテープ自体はDC12V/24Vの低電圧ですが、それを動かすスイッチング電源（ドライバ）は<strong>AC100V/200Vの分電盤側</strong>につながります。設計の対象は、このAC側の回路です。容量を考えずに既設回路へ集約すると、次の3つが起こります。</p>
+
+        <ul>
+          <li><strong>突入電流でのトリップ</strong>: スイッチング電源は投入の瞬間、定常電流の数十倍に達する突入電流（インラッシュ）が流れます。複数台を同時投入するとこれが合算し、配線用遮断器の瞬時引き外し域や漏電遮断器を叩いて落ちます。</li>
+          <li><strong>電圧変動によるちらつき</strong>: 同一回路にエアコンや厨房機器などの大きな起動負荷があると、起動時の電圧降下でLEDが一瞬暗くなる・明滅することがあります。</li>
+          <li><strong>過負荷・発熱</strong>: 連続点灯の照明は「連続負荷」です。回路容量ぎりぎりまで詰めると、電線・端子が温まり続け、劣化やトリップの原因になります。</li>
+        </ul>
+
+        <div class="article-callout">
+          <p><strong>前提</strong>: 分電盤からの回路増設・変更、専用回路の新設は<strong>電気工事士の有資格作業</strong>です。本記事は容量設計の考え方の解説で、実際の結線は資格者が内線規程・電気設備技術基準に従って行ってください。資格区分は<a href="/articles/led-tape-electrician-license-guide">LEDテープ施工に必要な電気工事士資格</a>を参照。</p>
+        </div>
+
+        <h2 id="calc">1次側（AC側）入力電流の計算式</h2>
+
+        <p>回路に何をどれだけ載せられるかは、テープのDC消費電力ではなく<strong>電源の1次側（AC側）入力電流</strong>で判断します。手順は「DC負荷W → 入力W → 入力電流A」の順です。</p>
+
+        <h4>① DC負荷電力を拾い出す</h4>
+        <p>テープの<code>W/m × 総延長</code>がDC側の消費電力です。<a href="/articles/led-tape-watt-per-meter-guide">W/m（ワット密度）の選び方</a>のとおり、密度・色で大きく変わります。</p>
+
+        <h4>② 電源効率で入力電力に換算する</h4>
+        <p>スイッチング電源には変換ロスがあり、<strong>効率η（おおむね0.85前後）</strong>で割って1次側入力電力を求めます。</p>
+        <div class="article-callout">
+          <p><code>入力電力[W] = DC負荷[W] ÷ 電源効率η（≈0.85）</code></p>
+        </div>
+
+        <h4>③ 電圧と力率で入力電流に換算する</h4>
+        <p>力率PFは、PFC（力率改善回路）付きで0.9以上、なしの小型アダプタで0.5〜0.6程度です。</p>
+        <div class="article-callout">
+          <p><code>入力電流[A] = 入力電力[W] ÷ ( AC電圧[V] × 力率PF )</code></p>
+        </div>
+
+        <div class="article-callout tip">
+          <p><strong>計算例</strong>: 24V・14.4W/mのテープを5m×4本（DC計288W）動かす場合。<br>入力電力 = <code>288 ÷ 0.85 ≈ 339W</code>。AC100V・力率0.9なら入力電流 = <code>339 ÷ (100×0.9) ≈ 3.8A</code>。連続容量だけ見れば20A回路にも余裕で載りますが、台数は後述の突入電流で決まります。力率の詳細は<a href="/articles/led-tape-power-factor-pfc-guide">力率（PFC）ガイド</a>を参照。</p>
+        </div>
+
+        <h2 id="80rule">連続負荷80%ルールとブレーカー容量</h2>
+
+        <p>照明は長時間連続して点灯する<strong>連続負荷</strong>です。連続負荷は<strong>ブレーカー（および電線）の定格の80%以内</strong>で使うのが設計の原則。ブレーカー容量から実用上限を逆算すると次のとおりです。</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>分岐ブレーカー</th>
+              <th>連続使用の上限電流(80%)</th>
+              <th>AC100V時の上限</th>
+              <th>AC200V時の上限</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>15A</td>
+              <td>12A</td>
+              <td>約1,200VA</td>
+              <td>約2,400VA</td>
+            </tr>
+            <tr>
+              <td>20A</td>
+              <td>16A</td>
+              <td>約1,600VA</td>
+              <td>約3,200VA</td>
+            </tr>
+            <tr>
+              <td>30A</td>
+              <td>24A</td>
+              <td>約2,400VA</td>
+              <td>約4,800VA</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size:11px;color:var(--text-muted)">※VAは皮相電力の目安。実際の許容は電線の太さ・こう長による電圧降下も含めて決めます。配線サイズは<a href="/articles/led-tape-cable-gauge-guide">電線の太さ（sq）選定</a>を参照。</p>
+
+        <div class="article-callout warn">
+          <p><strong>ブレーカーだけ大きくしない</strong>: 落ちるからと容量の大きいブレーカーに替えるのは厳禁です。ブレーカーは後ろの<strong>電線を保護する</strong>装置で、容量は電線の許容電流に合わせて決まっています。電線そのままで容量を上げると、過電流時に電線が先に発熱して危険です。</p>
+        </div>
+
+        <h2 id="inrush">突入電流で電源台数を制限する</h2>
+
+        <p>連続容量に余裕があっても、回路に載せられる電源台数は<strong>突入電流の合算</strong>で頭打ちになります。スイッチング電源は投入時に入力コンデンサを充電するため、数十A・数百μs〜数msの突入電流が流れます。これが複数台同時に重なると、配線用遮断器の瞬時引き外しや漏電遮断器を作動させます。対策は次のとおりです。</p>
+
+        <ul>
+          <li><strong>突入電流抑制機能付きの電源を選ぶ</strong>: NTCサーミスタやアクティブ抑制回路で突入を低減した電源を選定する。</li>
+          <li><strong>台数を複数回路に分散する</strong>: 1回路に集約せず、系統を分けて同時投入の合算を下げる。</li>
+          <li><strong>遅延形（時延形）の遮断特性を使う</strong>: 突入のような短時間の大電流では落ちにくい特性の機器を、保護協調を崩さない範囲で選定する。</li>
+          <li><strong>投入タイミングをずらす</strong>: タイマー・リレーで系統ごとに時間差点灯にし、突入のピークを重ねない。</li>
+        </ul>
+
+        <div class="article-callout">
+          <p><strong>関連トラブル</strong>: すでに落ちている場合の切り分けは<a href="/articles/led-power-inrush-current-breaker-trip-guide">突入電流でブレーカーが落ちる原因と対策</a>、漏電側は<a href="/articles/led-tape-earth-leakage-breaker-trip-guide">漏電ブレーカーが落ちる原因</a>を参照してください。</p>
+        </div>
+
+        <h2 id="ref-table">W/m×長さ別 1次側入力電流の早見表</h2>
+
+        <p>AC100V・電源効率0.85・力率0.9で換算した、テープ1本（5m）あたりの目安入力電流です。回路の連続容量（20A回路＝16A）に対する積み上げの目安に使えます。</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>テープ密度の目安</th>
+              <th>DC負荷(5m)</th>
+              <th>入力電力(÷0.85)</th>
+              <th>入力電流(100V)</th>
+              <th>16A回路への目安本数*</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>4.8W/m（弱め間接）</td>
+              <td>24W</td>
+              <td>約28W</td>
+              <td>約0.31A</td>
+              <td>容量上は多数／突入で制限</td>
+            </tr>
+            <tr>
+              <td>9.6W/m（標準間接）</td>
+              <td>48W</td>
+              <td>約56W</td>
+              <td>約0.63A</td>
+              <td>容量上は多数／突入で制限</td>
+            </tr>
+            <tr>
+              <td>14.4W/m（明るめ）</td>
+              <td>72W</td>
+              <td>約85W</td>
+              <td>約0.94A</td>
+              <td>連続では十数本可／突入で制限</td>
+            </tr>
+            <tr>
+              <td>19.2W/m（高出力）</td>
+              <td>96W</td>
+              <td>約113W</td>
+              <td>約1.25A</td>
+              <td>連続で約12本／突入で制限</td>
+            </tr>
+            <tr>
+              <td>24W/m（高密度・看板内照）</td>
+              <td>120W</td>
+              <td>約141W</td>
+              <td>約1.57A</td>
+              <td>連続で約10本／突入で制限</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size:11px;color:var(--text-muted)">*連続容量（16A）のみで割った理論値。実際は突入電流の合算が先に上限となるため、突入抑制のない電源では1回路あたり数台〜十数台に分散します。電源効率・力率は製品で異なるため、必ず採用品の仕様値で再計算してください。</p>
+
+        <h2 id="judge">回路分け（専用回路）の判断基準</h2>
+
+        <div class="spec-grid">
+          <div class="spec-card">
+            <div class="sc-w">≦2台</div>
+            <div class="sc-name">少数・小規模</div>
+            <div class="sc-desc">突入抑制付き電源なら既設回路に余裕があれば併用可。他負荷の起動負荷が大きい回路は避ける。</div>
+          </div>
+          <div class="spec-card">
+            <div class="sc-w">3〜複数台</div>
+            <div class="sc-name">中規模・店舗</div>
+            <div class="sc-desc">専用回路で分けるのが安全。総入力電流を80%以内に収め、突入で台数を制限。</div>
+          </div>
+          <div class="spec-card">
+            <div class="sc-w">調光あり</div>
+            <div class="sc-name">制御系統</div>
+            <div class="sc-desc">調光・演出制御は専用回路化を推奨。ノイズ・電圧変動の相互影響を切り離す。</div>
+          </div>
+          <div class="spec-card">
+            <div class="sc-w">常時点灯</div>
+            <div class="sc-name">施設・サイン</div>
+            <div class="sc-desc">24時間系は連続負荷の余裕を厚く。系統分け＋時間差投入で突入を分散。</div>
+          </div>
+        </div>
+
+        <h2 id="steps">専用回路・容量設計の手順</h2>
+
+        <h3 id="step1">手順① DC負荷を拾い出す</h3>
+        <ol>
+          <li>系統ごとに <code>W/m × 総延長</code> でDC消費電力を集計する。</li>
+          <li>同時に点灯する範囲（調光グループ）を把握し、最大同時負荷を求める。</li>
+        </ol>
+
+        <h3 id="step2">手順② 入力電流に換算する</h3>
+        <ol>
+          <li>採用電源の効率ηと力率PFを仕様書で確認する。</li>
+          <li><code>入力電流 = (DC負荷 ÷ η) ÷ (AC電圧 × PF)</code> で系統ごとに算出する。</li>
+        </ol>
+
+        <h3 id="step3">手順③ 80%ルールでブレーカーを選ぶ</h3>
+        <ol>
+          <li>合計入力電流が分岐ブレーカー定格の80%以内に収まる容量を選ぶ。</li>
+          <li>電線の許容電流とこう長による電圧降下も合わせて確認する（<a href="/articles/led-tape-cable-gauge-guide">電線太さガイド</a>）。</li>
+        </ol>
+
+        <h3 id="step4">手順④ 突入電流で台数・系統を決める</h3>
+        <ol>
+          <li>突入電流抑制機能の有無を確認し、1回路あたりの同時投入台数を制限する。</li>
+          <li>必要に応じて系統を複数回路に分け、時間差投入で突入を分散する。</li>
+        </ol>
+
+        <h3 id="step5">手順⑤ 専用回路化と保護協調</h3>
+        <ol>
+          <li>規模・調光・常時点灯の条件に該当する系統は専用回路で分ける。</li>
+          <li>漏電遮断器の感度・配線用遮断器の特性を保護協調が崩れない範囲で選定する（資格者作業）。</li>
+        </ol>
+
+        <h2 id="checklist">回路設計チェックリスト</h2>
+        <ul class="checklist">
+          <li>系統ごとにDC負荷（W/m×延長）を拾い出した</li>
+          <li>採用電源の効率η・力率PFを仕様書で確認した</li>
+          <li>入力電流を「÷η ÷(V×PF)」で算出した</li>
+          <li>合計入力電流をブレーカー定格の80%以内に収めた</li>
+          <li>電線の許容電流・こう長の電圧降下を確認した</li>
+          <li>電源の突入電流抑制機能の有無を確認した</li>
+          <li>1回路の同時投入台数を突入電流で制限した</li>
+          <li>中規模以上・調光・常時点灯系は専用回路に分けた</li>
+          <li>ブレーカー容量だけを安易に上げていない</li>
+          <li>回路の増設・変更を有資格者が行う計画になっている</li>
+        </ul>
+
+        <h2 id="summary">まとめ — 容量と突入の両面で決める</h2>
+        <ol>
+          <li><strong>判断はAC側の入力電流で</strong>: DCのWを効率と力率で1次側に換算し、ブレーカー定格の80%以内に収める。</li>
+          <li><strong>台数は突入電流で頭打ち</strong>: 連続容量に余裕があっても、同時投入の突入合算で1回路の台数は制限される。抑制付き電源・系統分散・時間差投入で対応。</li>
+          <li><strong>規模・調光・常時点灯は専用回路</strong>: 相互影響と過負荷を避け、回路の増設・変更は必ず有資格者が行う。</li>
+        </ol>
+
+        <h4>関連商品</h4>
+        <ul>
+          <li><a href="/category/psu/">スイッチング電源（PFC・突入抑制対応）カテゴリ</a></li>
+          <li><a href="/category/controller/">タイマー・リレー・制御機器カテゴリ</a></li>
+          <li><a href="/category/cob-tape/">LEDテープライトカテゴリ</a></li>
+        </ul>
+
+        <!-- ===== FAQ ===== -->
+        <h2 id="faq">よくある質問（施工業者向けFAQ）</h2>
+        <div class="article-faq">
+          <div class="faq-item">
+            <div class="faq-q">LEDテープ照明に専用回路は必要ですか？</div>
+            <div class="faq-a">規模と用途によります。少数のテープを既設のコンセント回路に挿す程度なら専用回路は必須ではありませんが、複数の電源を同一回路に集約すると、投入時の突入電流が合算してブレーカーが落ちたり、他負荷の起動でちらつくことがあります。電源台数が多い・調光制御を入れる・店舗や施設の常時点灯照明である場合は、専用回路で分けるのが安全です。判断は連続負荷80%ルールと突入電流の合算で行います。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">20AのブレーカーでLEDテープは何mまで、電源は何台まで取れますか？</div>
+            <div class="faq-a">連続点灯の照明は連続負荷扱いとなり、ブレーカー定格の80%以内で使うのが原則です。20A回路なら連続16A、AC100Vで約1,600VAが上限です。電源効率85%・力率0.9とすると、14.4W/mのテープ5mで1次側入力は約0.9A。理論上は連続容量だけなら十数本入りますが、実際は同時投入時の突入電流の合算が先に上限となるため、突入電流抑制機能のない電源では1回路あたり数台〜十数台に分散するのが現実的です。総容量と突入の両面で台数を決めてください。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">ブレーカーが落ちるなら容量の大きいブレーカーに替えれば解決しますか？</div>
+            <div class="faq-a">原則として替えてはいけません。ブレーカーは後ろの電線を保護するための装置で、容量は電線の許容電流に合わせて決まっています。電線はそのままにブレーカーだけ大きくすると、過電流時に電線が先に発熱して非常に危険です。突入電流でのトリップは、容量を上げるのではなく、突入電流抑制機能付き電源を選ぶ・電源台数を複数回路に分散する・遅延形（時延形）の遮断器特性を使う、で対応します。回路の増設・変更は電気工事士の有資格作業です。</div>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ARTICLE FOOTER META -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-20</span>
+        <span>更新日: 2026-06-20</span>
+      </div>
+
+      <!-- ===== RELATED ARTICLES ===== -->
+      <section class="related-articles" aria-label="関連記事">
+        <h2>関連コラム記事</h2>
+        <div class="related-articles-list">
+          <article class="related-article-card">
+            <a href="/articles/led-power-inrush-current-breaker-trip-guide">
+              <img src="/images/hero-scenes/blue_kitchen.webp" alt="突入電流でブレーカーが落ちる" class="rac-img" loading="lazy">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <span class="rac-title">突入電流でブレーカーが落ちる原因と対策｜電源投入時のラッシュ</span>
+                <span class="rac-date">2026-06-18</span>
+              </div>
+            </a>
+          </article>
+          <article class="related-article-card">
+            <a href="/articles/led-psu-capacity-guide">
+              <img src="/images/hero-scenes/blue_desk.webp" alt="LED電源の容量計算" class="rac-img" loading="lazy">
+              <div class="rac-body">
+                <span class="rac-tag">施工方法ガイド</span>
+                <span class="rac-title">LED電源（PSU）の容量計算｜余裕率の取り方と選定手順</span>
+                <span class="rac-date">2026-06-10</span>
+              </div>
+            </a>
+          </article>
+          <article class="related-article-card">
+            <a href="/articles/led-tape-cable-gauge-guide">
+              <img src="/images/hero-scenes/lightblue_desk.webp" alt="LEDテープの電線太さ選定" class="rac-img" loading="lazy">
+              <div class="rac-body">
+                <span class="rac-tag">施工方法ガイド</span>
+                <span class="rac-title">LEDテープ配線の電線太さ（sq）選定｜電流とこう長で決める</span>
+                <span class="rac-date">2026-06-08</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== CTA ===== -->
+      <aside class="article-cta" aria-label="商品ラインナップ">
+        <h2>PFC・突入抑制対応の電源とLEDテープはこちら</h2>
+        <p>力率改善・突入電流抑制に対応したスイッチング電源、タイマー・リレー、各種LEDテープをまとめてお選びいただけます。</p>
+        <a href="/" class="article-cta-btn">商品ラインナップを見る</a>
+      </aside>
+
+    </main><!-- /article-main -->
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="article-sidebar" aria-label="サイドバー">
+
+      <div class="sidebar-cta">
+        <p>業務用LED資材は LED PRO SHOP でお選びいただけます。</p>
+        <a href="/">商品ラインナップを見る</a>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3>カテゴリ</h3>
+        <ul>
+          <li><a href="/articles/?cat=guide">仕様選定ガイド</a></li>
+          <li><a href="/articles/?cat=install">施工方法ガイド</a></li>
+          <li><a href="/articles/?cat=trouble">トラブル対処ガイド</a></li>
+          <li><a href="/articles/?cat=product">製品活用ガイド</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3>新着記事</h3>
+        <ul>
+          <li><a href="/articles/led-tape-branch-circuit-breaker-sizing-guide">分電盤・専用回路の取り方とブレーカー容量</a></li>
+          <li><a href="/articles/led-power-inrush-current-breaker-trip-guide">突入電流でブレーカーが落ちる</a></li>
+          <li><a href="/articles/led-tape-earth-leakage-breaker-trip-guide">漏電ブレーカーが落ちる原因</a></li>
+          <li><a href="/articles/led-psu-capacity-guide">LED電源の容量計算</a></li>
+          <li><a href="/articles/led-tape-electrician-license-guide">施工に必要な電気工事士資格</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3>商品カタログ</h3>
+        <ul>
+          <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+          <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+          <li><a href="/category/psu/">電源装置</a></li>
+          <li><a href="/category/controller/">コントローラー</a></li>
+        </ul>
+      </div>
+
+    </aside><!-- /article-sidebar -->
+
+  </div><!-- /article-layout -->
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div style="margin-bottom:8px;font-size:12px;font-weight:700;color:#ccc">LED PRO SHOP</div>
+    <div style="margin-bottom:4px">
+      <a href="/privacy-policy.html" style="color:#aaa;text-decoration:none">プライバシーポリシー</a>
+      &nbsp;|&nbsp;
+      <a href="/tokushoho.html" style="color:#aaa;text-decoration:none">特定商取引法に基づく表記</a>
+    </div>
+    <div>&copy; 2025 LED PRO SHOP All Rights Reserved.</div>
+  </footer>
+
+  <!-- ===== TOC 自動生成 JS ===== -->
+  <script>
+  (function() {
+    var body = document.getElementById('article-body');
+    var tocList = document.getElementById('toc-list');
+    if (!body || !tocList) return;
+    var headings = body.querySelectorAll('h2, h3');
+    if (headings.length === 0) {
+      var toc = document.getElementById('article-toc');
+      if (toc) toc.style.display = 'none';
+      return;
+    }
+    var counter = 0;
+    var fragment = document.createDocumentFragment();
+    headings.forEach(function(h) {
+      if (!h.id) { h.id = 'section-' + (counter++); }
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent;
+      li.appendChild(a);
+      if (h.tagName === 'H3') {
+        li.style.paddingLeft = '1em';
+        li.style.fontSize = '11px';
+        li.style.color = 'var(--text-muted)';
+      }
+      fragment.appendChild(li);
+    });
+    tocList.appendChild(fragment);
+  })();
+  </script>
+
+</body>
+</html>
