@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープを複数電源で一括ON/OFFする配線｜電磁接触器(コンタクタ)・リレーで多回路を一斉点灯する方法 | LED PRO SHOP</title>
+  <meta name="description" content="壁スイッチ1個でLED電源を何台も直結すると突入電流で接点が溶着します。電磁接触器(コンタクタ)・パワーリレー・SSRで多回路を一括ON/OFFする操作回路と主回路の分け方、接点容量の選定計算、時差投入による突入対策を施工業者向けに解説します。">
+  <meta name="keywords" content="LEDテープ 一括点灯 配線,LED 電源 複数 一括 ON/OFF,LED 電磁接触器 コンタクタ,LED 多回路 一斉点灯,LED 突入電流 接点 溶着,LED リレー SSR 配線,LED 大規模 施工 スイッチ">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-magnetic-contactor-bulk-switching-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-magnetic-contactor-bulk-switching-guide">
+  <meta property="og:title" content="LEDテープを複数電源で一括ON/OFFする配線｜電磁接触器(コンタクタ)・リレーで多回路を一斉点灯する方法 | LED PRO SHOP">
+  <meta property="og:description" content="壁スイッチ直結では突入電流で接点が溶着。電磁接触器・リレー・SSRで多回路を一括ON/OFFする操作回路と主回路の分け方、接点容量の選定、時差投入による突入対策を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/images/hero-scenes/blue_desk.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープを複数電源で一括ON/OFFする配線｜電磁接触器・リレーで多回路を一斉点灯 | LED PRO SHOP">
+  <meta name="twitter:description" content="壁スイッチ直結の溶着事故を防ぐ、電磁接触器(コンタクタ)・リレー・SSRによる多回路一括ON/OFF配線の作り方を施工業者向けに解説。接点容量の計算・時差投入の突入対策つき。">
+  <meta name="twitter:image" content="https://led-proshop.com/images/hero-scenes/blue_desk.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープを複数電源で一括ON/OFFする配線｜電磁接触器(コンタクタ)・リレーで多回路を一斉点灯する方法",
+    "description": "壁スイッチ直結による接点溶着を防ぐ、電磁接触器(コンタクタ)・パワーリレー・SSRを使った多回路一括ON/OFF配線の作り方。操作回路と主回路の分離、接点容量の選定計算、時差投入による突入電流対策を施工業者向けに解説します。",
+    "image": "https://led-proshop.com/images/hero-scenes/blue_desk.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP 編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://led-proshop.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-06-22",
+    "dateModified": "2026-06-22",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-magnetic-contactor-bulk-switching-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープを複数電源で一括ON/OFFする配線", "item": "https://led-proshop.com/articles/led-tape-magnetic-contactor-bulk-switching-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LED電源を何台までなら壁スイッチに直結してよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "明確な台数の上限はありませんが、目安として「全電源の突入電流の合計が壁スイッチの接点が一度に耐えられる範囲に収まること」が条件です。一般的な埋込スイッチの連続定格は15A前後でも、スイッチング電源の突入電流は1台あたり定格入力電流の10〜60倍・数十A級が一瞬流れ、複数台を同時投入するとこれが合算されます。実務では小型電源（〜60W級）でも3〜5台を超えるあたりから接点アーク・溶着のリスクが上がるため、それ以上は電磁接触器やリレーを介した一括制御に切り替えるのが安全です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "電磁接触器(コンタクタ)とパワーリレー、SSRはどう使い分けますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "目安は負荷の大きさと開閉頻度です。総入力電流が小さく(数A程度)台数も少なければパワーリレーで十分、店舗・倉庫・看板など総容量が大きい(十数A〜)場合や信頼性を重視する場合は電磁接触器(コンタクタ)が定番です。1日に何百回も入切する・突入電流が大きく接点溶着が心配・無音が必要、といった条件ではゼロクロスタイプのSSR(ソリッドステートリレー)が有利ですが、発熱対策のヒートシンクと微小な漏れ電流に注意します。いずれも『連続電流＋突入電流』の両方で余裕を持って選ぶのが鉄則です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "一斉投入でブレーカーが落ちます。接触器を入れても突入電流は減らないのでは？",
+        "acceptedAnswer": { "@type": "Answer", "text": "その通りで、接触器やリレーは『弱い壁スイッチの代わりに大きな接点で開閉する』部品であり、それ自体が突入電流を小さくするわけではありません。突入そのものを抑えるには別の対策が必要です。代表的なのは、各電源にインラッシュ電流制限器(NTCサーミスタや突入抑制回路)を入れる方法、電源を2〜3グループに分けてオンディレイタイマーで数百ミリ秒〜数秒ずらして投入する『時差投入』、そしてゼロクロスSSRで電圧ゼロ点投入する方法です。接触器による一括制御と、これら突入対策を組み合わせて初めて、ブレーカーが落ちず接点も傷まない安定した一斉点灯になります。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#15355f;--blue-pale:#e8f1fb;--bg:#fff;--bg-gray:#f4f6f9;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;--accent:#2f6fb3;--accent-pale:#e8f1fb;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #0e2647}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px;text-decoration:none}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--accent);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#102544 0%,#2f6fb3 55%,#15355f 100%);padding:40px 16px 32px;border-bottom:3px solid #15355f}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:4px;padding:14px}
+    .spec-card .spec-label{font-size:10px;font-weight:700;color:var(--text-muted);letter-spacing:1px;display:block;margin-bottom:5px}
+    .spec-card .spec-value{font-size:17px;font-weight:900;color:var(--accent);line-height:1.25}
+    .spec-card .spec-note{font-size:11px;color:var(--text-sub);margin-top:6px;line-height:1.5}
+    .checklist{list-style:none!important;padding:0!important;margin:16px 0}
+    .checklist li{position:relative;padding:9px 8px 9px 32px;border-bottom:1px solid var(--border);font-size:13px;line-height:1.6}
+    .checklist li::before{content:"✓";position:absolute;left:8px;top:9px;color:var(--accent);font-weight:900}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#e8f1fb}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#e8f1fb}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>LEDテープの一括ON/OFF配線（電磁接触器・リレー）</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">配線・電気工事ガイド</div>
+    <h1>LEDテープを複数電源で一括ON/OFFする配線<br>電磁接触器(コンタクタ)・リレーで多回路を一斉点灯する方法</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-06-22</span>
+      <span>更新日: 2026-06-22</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/blue_desk.webp"
+      alt="LEDテープの複数電源を電磁接触器(コンタクタ)で一括ON/OFFする制御盤配線のイメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>店舗の間接照明をフロア一斉に、倉庫の通路LEDを一括で、看板のLEDを開店と同時に——。<strong>複数台のLED電源を1つのスイッチでまとめてON/OFFしたい</strong>という要望は、規模の大きい現場ほど必ず出てきます。ところが、安易に壁スイッチへ電源を何台も直結すると、点灯のたびに<strong>突入電流（インラッシュ）で接点が溶着</strong>し、ある日スイッチを切っても消えなくなる——という事故が起こります。本記事では、<strong>電磁接触器（マグネットコンタクタ）・パワーリレー・SSR</strong>を使い、多回路のLED電源を安全に一括ON/OFFする配線の組み方を、接点容量の選定計算と突入対策まで含めて施工業者向けに整理します。</p>
+
+      <div class="article-callout warn">
+        <p><strong>先に結論:</strong> 多数のLED電源を1スイッチで操作するなら、「小さな信号で操作する操作回路」と「電源へ電力を送る主回路」を分け、主回路の開閉は<strong>余裕のある接点容量を持つ電磁接触器やリレーに任せる</strong>のが基本です。接触器自体は突入電流を減らさないため、<strong>時差投入やインラッシュ抑制と必ずセット</strong>で設計します。</p>
+      </div>
+
+      <h2 id="sec-why">なぜ壁スイッチに電源を直結してはいけないのか</h2>
+      <p>LEDテープを駆動するスイッチング電源（PSU）は、投入の瞬間に内部の平滑コンデンサを一気に充電するため、<strong>定格入力電流の10〜60倍にもなる突入電流</strong>が1〜数ミリ秒だけ流れます。1台では一瞬でも、複数台を同じスイッチで同時に投入すると、この突入電流が<strong>合算</strong>されて接点に集中します。</p>
+      <ul>
+        <li><strong>接点アーク・溶着</strong>：一般的な埋込壁スイッチの定格は15A前後ですが、これは連続通電の値で、繰り返しの大きな突入には弱く、開閉のたびに接点がアークで荒れ、やがて溶着して「切っても消えない」状態になります。</li>
+        <li><strong>ブレーカートリップ</strong>：突入電流の合計が分岐ブレーカーの瞬時遮断レベルを超えると、点けた瞬間に落ちます（詳しくは<a href="/articles/led-power-inrush-current-breaker-trip-guide">LED電源の突入電流とブレーカー対策</a>を参照）。</li>
+        <li><strong>寿命の偏り</strong>：壁スイッチは本来こんな大電流の開閉を想定していないため、見た目は問題なくても内部接点だけが急速に劣化していきます。</li>
+      </ul>
+      <p>これを避けるための定石が、<strong>「操作回路」と「主回路」を分離し、電力の入切は専用の開閉器に肩代わりさせる</strong>という考え方です。</p>
+
+      <h2 id="sec-structure">基本構成：操作回路と主回路を分ける</h2>
+      <p>一括点灯の回路は、役割の違う2つの回路で構成します。この分離が、安全と保守性の両方を生みます。</p>
+      <ul>
+        <li><strong>操作回路（弱い信号側）</strong>：人が触る小型スイッチ・タイムスイッチ・人感センサー・PLCやコントローラーの接点など。ここには電磁接触器の<strong>コイル</strong>を駆動するだけのわずかな電流しか流れません。</li>
+        <li><strong>主回路（電力側）</strong>：電磁接触器・リレーの大きな<strong>主接点</strong>を通して、各LED電源（PSU）の1次側AC100/200Vへ電力を分配します。実際の大電流・突入電流はすべてこの主接点が受け持ちます。</li>
+      </ul>
+      <p>こうすると、操作する側は小容量の安価なスイッチで済み、突入電流に耐える役目は接点容量に余裕のある開閉器に集約できます。タイマーやセンサーへの置き換え・増設も操作回路だけで完結し、主回路を触らずに改修できるのも利点です。</p>
+
+      <div class="article-callout tip">
+        <p><strong>ワンポイント:</strong> 操作回路のコイル電圧（AC100V / AC200V / DC24V など）は、現場で用意できる制御電源に合わせて接触器を選びます。人感センサーやタイムスイッチと組み合わせるなら、それらの接点定格でコイルが駆動できるかも必ず確認します。</p>
+      </div>
+
+      <h2 id="sec-compare">電磁接触器・リレー・SSRの使い分け</h2>
+      <p>開閉器には大きく3種類あります。負荷の総容量・開閉頻度・静音性・予算で選び分けます。</p>
+
+      <table>
+        <thead>
+          <tr><th>開閉器</th><th>得意な規模</th><th>突入・溶着耐性</th><th>静音性</th><th>向く現場</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>パワーリレー</td><td>小（総数A程度）</td><td>中（機械接点）</td><td>カチッと小音</td><td>電源数台の小規模・コスト最優先</td></tr>
+          <tr><td>電磁接触器（コンタクタ）</td><td>中〜大（十数A〜）</td><td>高（大接点・交換可）</td><td>動作音あり</td><td>店舗フロア・倉庫・看板の定番</td></tr>
+          <tr><td>SSR（ソリッドステートリレー）</td><td>小〜中</td><td>非常に高（無接点）</td><td>無音</td><td>高頻度開閉・溶着厳禁・静音要求</td></tr>
+        </tbody>
+      </table>
+
+      <h3>電磁接触器（マグネットコンタクタ）</h3>
+      <p>制御盤の定番。接点容量が大きく、消耗したら接点だけ交換できる機種も多いため、<strong>総容量が大きい現場の本命</strong>です。LED電源のような容量性・突入の大きい負荷は、抵抗負荷向けの使用負荷種別（AC-1相当）で<strong>余裕を持って</strong>選定し、後述の突入対策と併用します。</p>
+      <h3>パワーリレー</h3>
+      <p>電源が数台で総入力電流が小さいなら、安価なパワーリレーで十分です。接点定格（例：抵抗負荷16A など）と突入定格を確認し、連続・突入の両方で余裕を取ります。</p>
+      <h3>SSR（ソリッドステートリレー）</h3>
+      <p>機械接点が無いため<strong>溶着せず無音</strong>で、ゼロクロスタイプなら電圧ゼロ点で投入して突入を抑えられます。一方で<strong>発熱するためヒートシンクが必須</strong>、OFF時もわずかな漏れ電流がある点に注意します。1日に何百回も入切する・調光連動で頻繁に開閉する用途で威力を発揮します。</p>
+
+      <h2 id="sec-sizing">接点容量の選び方（計算式と数値）</h2>
+      <p>選定は「連続電流」と「突入電流」を別々に確認します。どちらか一方だけで選ぶと失敗します。</p>
+
+      <div class="spec-grid">
+        <div class="spec-card">
+          <span class="spec-label">連続電流の必要値</span>
+          <span class="spec-value">合計 × 1.25</span>
+          <span class="spec-note">全電源の最大入力電流の合計に、安全率1.25以上を掛けた値以上の接点定格を選ぶ。</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">突入電流の目安</span>
+          <span class="spec-value">定格の10〜60倍</span>
+          <span class="spec-note">スイッチング電源1台あたり。同時投入では台数分が合算される。</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">電源1次電流の概算</span>
+          <span class="spec-value">W ÷ V ÷ 0.9</span>
+          <span class="spec-note">力率0.9で概算。例:200W/AC100V≒2.2A。台数分を合計する。</span>
+        </div>
+      </div>
+
+      <p>例として、<strong>200WのLED電源を10台</strong>、AC100Vで一括制御する場合を考えます。</p>
+      <ul>
+        <li><strong>連続電流</strong>：1台あたり 200W ÷ 100V ÷ 0.9 ≒ 2.2A。10台で約22A。安全率1.25を掛けて<strong>約28A以上</strong>の接点定格が必要 → 連続定格に余裕のある電磁接触器を選定。</li>
+        <li><strong>突入電流</strong>：1台で数十A級が瞬間的に流れ、10台同時なら合計が数百Aに達することも。接点定格だけでは追いつかないため、<strong>突入対策（次章）</strong>が前提になります。</li>
+      </ul>
+
+      <table>
+        <thead>
+          <tr><th>制御したいLED電源の規模(合計連続)</th><th>推奨開閉器</th><th>接点定格の目安</th><th>突入対策</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>〜5A（小型数台）</td><td>パワーリレー</td><td>10〜16A級</td><td>原則必要、台数が少なければ簡略可</td></tr>
+          <tr><td>5〜20A（フロア1系統）</td><td>電磁接触器</td><td>連続20〜25A級</td><td>インラッシュ抑制 or 2分割時差投入</td></tr>
+          <tr><td>20A超（複数フロア・倉庫）</td><td>電磁接触器を複数</td><td>系統ごとに余裕選定</td><td>2〜3グループに分け時差投入を強く推奨</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="sec-inrush">突入電流対策（接触器とセットで必須）</h2>
+      <p>繰り返しになりますが、<strong>接触器やリレーは突入電流を減らしません</strong>。「弱い壁スイッチを丈夫な大接点に置き換える」部品です。突入そのものを抑えるには、次のいずれか（または併用）を組み合わせます。</p>
+      <ul>
+        <li><strong>インラッシュ電流制限器</strong>：各電源の1次側にNTCサーミスタや突入抑制回路を挿入し、投入時のピークを抑える。電源によっては内蔵品もある。</li>
+        <li><strong>時差投入（オンディレイ）</strong>：電源を2〜3グループに分け、各グループを別々の接触器で受け、オンディレイタイマーで数百ミリ秒〜数秒ずらして順に投入する。突入のピークが時間的に分散され、ブレーカーも落ちにくい。</li>
+        <li><strong>ゼロクロスSSR</strong>：交流電圧がゼロになる瞬間に投入することで、突入を構造的に小さくする。無音・無接点で溶着もしない。</li>
+        <li><strong>開閉サージ対策</strong>：コイルや接点にサージキラー（バリスタ・スナバ）を入れ、開放時のサージで他機器（センサー・無線等）にノイズが乗るのを防ぐ。</li>
+      </ul>
+
+      <div class="article-callout warn">
+        <p><strong>注意:</strong> 主回路は1次側AC100/200Vの活線工事になります。電磁接触器・分電盤まわりの結線は<strong>電気工事士の有資格者</strong>が施工してください。容量計算・グループ分けの設計と、実際の結線・絶縁確認はセットで行います。</p>
+      </div>
+
+      <h2 id="sec-checklist">施工チェックリスト</h2>
+      <ul class="checklist">
+        <li>全LED電源の最大入力電流を合計し、安全率1.25以上で接点定格を決めた</li>
+        <li>突入電流の合算を見積もり、対策（インラッシュ抑制／時差投入／SSR）を選定した</li>
+        <li>操作回路（スイッチ・タイマー・センサー）と主回路（電源への電力）を分離した</li>
+        <li>接触器のコイル電圧を現場の制御電源（AC100/200V・DC24V等）に合わせた</li>
+        <li>台数が多い場合は2〜3グループに分け、オンディレイで時差投入する構成にした</li>
+        <li>コイル・接点にサージ対策を入れ、近接機器へのノイズ対策を確認した</li>
+        <li>主回路の結線は電気工事士が施工し、絶縁抵抗を測定した</li>
+      </ul>
+
+      <h2 id="sec-faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">LED電源を何台までなら壁スイッチに直結してよいですか？</div>
+        <div class="faq-a">明確な台数の上限はありませんが、目安は「全電源の突入電流の合計が壁スイッチの接点が一度に耐えられる範囲に収まること」です。埋込スイッチの連続定格は15A前後でも、スイッチング電源の突入電流は1台で定格入力電流の10〜60倍・数十A級が一瞬流れ、複数台同時投入で合算されます。実務では小型電源でも3〜5台を超えるあたりから接点アーク・溶着のリスクが上がるため、それ以上は電磁接触器やリレーを介した一括制御に切り替えるのが安全です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">電磁接触器(コンタクタ)とパワーリレー、SSRはどう使い分けますか？</div>
+        <div class="faq-a">目安は負荷の大きさと開閉頻度です。総入力電流が数A程度で台数も少なければパワーリレーで十分、店舗・倉庫・看板など総容量が十数A以上になる場合や信頼性重視なら電磁接触器が定番です。1日に何百回も入切する・溶着が心配・無音が必要、という条件ではゼロクロスSSRが有利ですが、放熱用ヒートシンクと微小な漏れ電流に注意します。いずれも「連続電流＋突入電流」の両方で余裕を持って選ぶのが鉄則です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">一斉投入でブレーカーが落ちます。接触器を入れても突入電流は減らないのでは？</div>
+        <div class="faq-a">その通りで、接触器やリレーは「弱い壁スイッチの代わりに大きな接点で開閉する」部品で、それ自体が突入電流を小さくするわけではありません。突入を抑えるには別対策が必要です。代表的なのは、各電源にインラッシュ電流制限器(NTCサーミスタ等)を入れる方法、電源を2〜3グループに分けオンディレイタイマーで数百ミリ秒〜数秒ずらす「時差投入」、そしてゼロクロスSSRで電圧ゼロ点投入する方法です。接触器による一括制御とこれら突入対策を組み合わせて、初めてブレーカーが落ちず接点も傷まない一斉点灯になります。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-power-inrush-current-breaker-trip-guide">
+              <img src="/images/hero-scenes/blue_kitchen.webp" alt="LED電源の突入電流とブレーカー対策" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <div class="rac-title">LED電源を増やしたらブレーカーが落ちる｜突入電流の原因と対策</div>
+                <span class="rac-date">2026-06-09</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-timer-auto-on-off-guide">
+              <img src="/images/hero-scenes/lightblue_desk.webp" alt="LEDテープのタイマー自動点灯・消灯配線" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">配線・電気工事ガイド</span>
+                <div class="rac-title">LEDテープのタイマー自動ON/OFF配線｜タイムスイッチで点灯時間を制御</div>
+                <span class="rac-date">2026-06-11</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-power-supply-layout-guide">
+              <img src="/images/hero-scenes/blue_desk.webp" alt="LEDテープ電源の配置・給電計画" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">配線・電気工事ガイド</span>
+                <div class="rac-title">LEDテープ電源の配置・給電計画｜何台に分けてどこに置くか</div>
+                <span class="rac-date">2026-06-05</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>多回路の一括制御に使える業務用LED電源をプロ価格で</h2>
+        <p>容量に余裕のある24V定電圧PSU・調光対応コントローラー・高密度COBテープを取り揃えています。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">LED PRO SHOP を見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-22</span>
+        <span>更新日: 2026-06-22</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源装置の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-power-inrush-current-breaker-trip-guide">突入電流とブレーカー対策</a></li>
+        <li><a href="/articles/led-tape-timer-auto-on-off-guide">タイマー自動ON/OFF配線</a></li>
+        <li><a href="/articles/led-tape-emi-radio-noise-guide">LEDテープのノイズ対策</a></li>
+        <li><a href="/articles/led-tape-power-supply-layout-guide">電源の配置・給電計画</a></li>
+        <li><a href="/articles/led-tape-multimeter-testing-guide">LEDテープの通電チェック手順</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/psu/">業務用定電圧PSU（24V）</a></li>
+        <li><a href="/category/controller/">調光器・コントローラー</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム各種</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>
