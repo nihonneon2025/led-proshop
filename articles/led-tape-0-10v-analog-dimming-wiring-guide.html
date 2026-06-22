@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープの0-10V/1-10V調光 配線方法｜信号線の極性・対応電源・接続台数の上限 | LED PRO SHOP</title>
+  <meta name="description" content="店舗や施設のLEDを一斉に明るさ調整したい施工業者向け。0-10V/1-10V調光の仕組み、調光対応電源の選び方、信号線の極性と配線、1台の調光器に何台つなげるか(シンク電流の上限)、DALI・PWMとの違いを現場目線で解説します。">
+  <meta name="keywords" content="LEDテープ 0-10V 調光,1-10V調光 配線,0-10V 調光 配線方法,LED 調光 信号線 極性,アナログ調光 LED,0-10V 調光 電源,調光 シンク型 ソース型,LED 一斉調光 配線">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-0-10v-analog-dimming-wiring-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-0-10v-analog-dimming-wiring-guide">
+  <meta property="og:title" content="LEDテープの0-10V/1-10V調光 配線方法｜信号線の極性・対応電源・接続台数の上限 | LED PRO SHOP">
+  <meta property="og:description" content="0-10V/1-10V調光の仕組み、調光対応電源の選び方、信号線の極性と配線、1台の調光器に何台つなげるか(シンク電流の上限)、DALI・PWMとの違いを施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/images/hero-scenes/blue_desk.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープの0-10V/1-10V調光 配線方法｜極性・対応電源・接続台数の上限 | LED PRO SHOP">
+  <meta name="twitter:description" content="0-10V/1-10Vアナログ調光の仕組み・調光対応電源の選び方・信号線の極性と配線・1台で何台つなげるか・DALI/PWMとの違いを施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/images/hero-scenes/blue_desk.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープの0-10V/1-10V調光 配線方法｜信号線の極性・対応電源・接続台数の上限",
+    "description": "LEDテープを0-10V/1-10Vのアナログ電圧信号で一斉調光する配線方法を施工業者向けに解説。調光対応電源の選び方、信号線の極性、シンク型/ソース型の違い、1台の調光器に接続できる台数(シンク電流の上限)、DALI・PWMとの違い、立ち消え・全光固定などのトラブル対処を整理します。",
+    "image": "https://led-proshop.com/images/hero-scenes/blue_desk.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP 編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://led-proshop.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-06-23",
+    "dateModified": "2026-06-23",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-0-10v-analog-dimming-wiring-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープの0-10V/1-10V調光 配線方法", "item": "https://led-proshop.com/articles/led-tape-0-10v-analog-dimming-wiring-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープに0-10Vの線を直接つなげば調光できますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "できません。LEDテープは12V/24Vの定電圧(CV)で動作するため、0-10Vのアナログ信号を直接テープに接続しても点灯や調光はできず、誤接続は故障の原因になります。0-10V/1-10Vで調光するには、0-10V調光入力を備えた『調光対応の定電圧電源(dimmable CVドライバー)』、または『0-10V入力→PWM出力のLEDテープ用コントローラー』を介します。これらが0-10V信号を受けて、テープへの出力をPWMで絞ります。電源・コントローラー・テープの3点が同じ調光方式で適合しているかを必ず確認してください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "0-10V調光と1-10V調光は何が違いますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "下限(0V付近)での挙動が違います。1-10V(IEC 60929)は1Vで最小の明るさを保ち、0V付近でも最小をキープするため、完全消灯には別途スイッチやリレーで主電源を切る必要があります。一方0-10Vは0Vで消灯まで落とせる仕様の機器もあります。さらに『シンク型』と『ソース型』の区別が重要で、照明業界で一般的な1-10Vシンク型は電源側が信号線に微小電流を流し、調光器がそれを吸い込んで(シンクして)電圧を決めます。この型は信号線が断線・未接続になると全光(最大点灯)になる挙動が多い点に注意します。劇場系で使われる0-10Vソース型は調光器が電圧を出力する方式で、両者は互換性がないため必ず型を合わせます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "1台の0-10V調光器に電源(ドライバー)を何台までつなげますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "調光器がシンク(吸い込み)できる電流の合計で決まります。1-10Vシンク型では各電源が信号線へ流し込む電流(1台あたり概ね0.数〜数mA)の合計を、調光器のシンク電流定格(例:50mA)以内に収める必要があります。例えば電源1台2mAで調光器が50mAなら計算上25台程度ですが、実際はメーカーが指定する『接続可能台数』に従ってください。上限を超えると下限まで絞れない・調光が効かないといった不具合が出ます。複数台は信号線(DIM+同士・DIM−同士)を並列に渡して一斉制御し、長距離では信号線の電圧降下で下限がばらつくため撚り線やシールド線を使います。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#0f3b5c;--blue-pale:#e8f1f8;--bg:#fff;--bg-gray:#f3f8fb;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;--accent:#0e7aa8;--accent-pale:#e6f4fb;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #0a2a42}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px;text-decoration:none}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--accent);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#0a2e47 0%,#1d6f9c 55%,#0e5273 100%);padding:40px 16px 32px;border-bottom:3px solid #0e5273}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:4px;padding:14px}
+    .spec-card .spec-label{font-size:10px;font-weight:700;color:var(--text-muted);letter-spacing:1px;display:block;margin-bottom:5px}
+    .spec-card .spec-value{font-size:17px;font-weight:900;color:var(--accent);line-height:1.25}
+    .spec-card .spec-note{font-size:11px;color:var(--text-sub);margin-top:6px;line-height:1.5}
+    .checklist{list-style:none!important;padding:0!important;margin:16px 0}
+    .checklist li{position:relative;padding:9px 8px 9px 32px;border-bottom:1px solid var(--border);font-size:13px;line-height:1.6}
+    .checklist li::before{content:"✓";position:absolute;left:8px;top:9px;color:var(--accent);font-weight:900}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:var(--accent-pale)}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:var(--accent-pale)}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>LEDテープの0-10V/1-10V調光 配線方法</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">配線・電気工事ガイド</div>
+    <h1>LEDテープの0-10V/1-10V調光 配線方法<br>信号線の極性・対応電源・接続台数の上限【施工業者向け】</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-06-23</span>
+      <span>更新日: 2026-06-23</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/blue_desk.webp"
+      alt="0-10V調光でLEDテープを一斉に明るさ調整する配線のイメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>店舗や施設で「壁スイッチのつまみ1つでフロアのLEDをまとめて明るさ調整したい」という要望に、よく使われるのが<strong>0-10V(1-10V)調光</strong>です。2本の信号線で一斉に調光でき、配線がシンプルで電気工事士が扱いやすいのが利点です。ただしLEDテープは12V/24Vの定電圧(CV)で動くため、<strong>0-10Vの線をテープに直接つないでも調光できません</strong>。さらに「信号線の極性」「シンク型/ソース型」「1台の調光器に何台つなげるか」を外すと、絞れない・全光のまま・立ち消えといったトラブルになります。本記事では、0-10V/1-10V調光でLEDテープを動かす配線方法を施工業者向けに整理します。</p>
+
+      <div class="article-callout warn">
+        <p><strong>先に結論:</strong> 0-10V/1-10V調光は<strong>「制御信号」</strong>であり、テープではなく<strong>0-10V調光入力付きの電源(またはコントローラー)</strong>に入れます。配線で外せないのは、<strong>(1)信号線の極性(DIM+/DIM−)</strong>、<strong>(2)調光器と電源のシンク型/ソース型・0-10V/1-10Vを合わせる</strong>、<strong>(3)1台の調光器に対する接続台数(シンク電流)の上限</strong>の3点です。</p>
+      </div>
+
+      <h2 id="sec-basic">0-10V/1-10V調光とは — テープに直結しない「制御信号」</h2>
+      <p><strong>0-10V調光</strong>は、0〜10Vのアナログ直流電圧で明るさを指示する方式です。おおむね<strong>10V=全光、0V(または1V)=最小</strong>に対応します。重要なのは、この電圧は<strong>明るさを「指示」する信号</strong>であって、LEDを光らせる電力ではないという点です。</p>
+      <p>LEDテープは定電圧(12V/24V)で動くため、0-10V信号を直接テープに接続しても点灯も調光もしません。0-10Vで調光するには、次のどちらかを介します。</p>
+      <ul>
+        <li><strong>0-10V調光入力付きの定電圧電源(dimmable CVドライバー)</strong>: 0-10V信号を受け、テープへのCV出力を内部PWMで絞る。</li>
+        <li><strong>0-10V入力→PWM出力のLEDテープ用コントローラー</strong>: 既存の非調光電源の後段に入れ、0-10V信号でPWM調光する。</li>
+      </ul>
+      <p>調光方式そのものの全体像(PWM・位相・DALIなど)は<a href="/articles/led-tape-dimming-methods-guide">LEDテープの調光方式(PWM・CCR・位相・DALI)ガイド</a>を、配線全般は<a href="/articles/led-tape-controller-dimmer-guide">LEDテープのコントローラー・調光器配線ガイド</a>も参考にしてください。</p>
+
+      <h2 id="sec-diff">0-10Vと1-10V・シンク型とソース型の違い</h2>
+      <p>「0-10V」とひとくくりにされがちですが、現場では下限の挙動と電流の向きで型が分かれます。<strong>互換性のない型を混ぜると正しく調光できない</strong>ため、最初に確認します。</p>
+      <table>
+        <thead>
+          <tr><th>区分</th><th>下限(0V付近)の挙動</th><th>電流の向き</th><th>主な用途</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1-10V(IEC 60929/シンク型)</td><td>1Vで最小をキープ。完全消灯は別途主電源OFFが必要</td><td>電源側が信号線へ微小電流を流し、調光器が吸い込む(シンク)</td><td>店舗・施設の一般照明で最も普及</td></tr>
+          <tr><td>0-10V(ソース型/エンタメ系)</td><td>0Vで消灯まで落とせる仕様もある</td><td>調光器が電圧を出力(ソース)し、電源が受ける</td><td>劇場・舞台などの調光卓制御</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout warn">
+        <p><strong>要注意:</strong> 照明業界で一般的な<strong>1-10Vシンク型は、信号線が断線・未接続になると「全光(最大点灯)」になる</strong>挙動が多いです。「絞れない・常に全光」のトラブルは、まず信号線の断線・極性逆・型違いを疑います。調光器のカタログで「シンク(吸い込み)○○mA」「IEC 60929準拠」などの表記を必ず確認してください。</p>
+      </div>
+
+      <h2 id="sec-wiring">配線方法 — 信号線の極性・太さ・引き回し</h2>
+      <p>0-10V/1-10Vの信号線は2本で、<strong>極性があります</strong>。電源・コントローラー側の端子表記(DIM+/DIM−、または「1-10V +/−」「⊕/⊖」)に合わせて接続します。</p>
+      <h3 id="sec-step">基本の配線手順</h3>
+      <ol>
+        <li>電源(またはコントローラー)が<strong>0-10V/1-10V調光入力に対応</strong>していることを確認する。</li>
+        <li>電源のCV出力(12V/24V)をLEDテープに正しい極性で接続する(<a href="/articles/led-tape-wiring-diagram-guide">配線図ガイド</a>参照)。</li>
+        <li>調光器の信号端子と電源のDIM端子を、<strong>DIM+→+、DIM−→−</strong>で接続する(極性を合わせる)。</li>
+        <li>信号線は<strong>電源線・動力線(AC100V/200V)とは分けて</strong>引き回す(ノイズ誘導によるちらつき防止)。</li>
+        <li>長距離・ノイズ環境では信号線に<strong>撚り線やシールド線</strong>を使い、シールドは片端接地とする。</li>
+        <li>通電し、つまみを全閉〜全開させて、最小〜全光まで滑らかに変化するか確認する。</li>
+      </ol>
+      <div class="spec-grid">
+        <div class="spec-card">
+          <span class="spec-label">信号電圧</span>
+          <span class="spec-value">0–10V DC</span>
+          <span class="spec-note">10V=全光、0V(または1V)=最小。電力ではなく制御信号。</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">信号線の極性</span>
+          <span class="spec-value">あり</span>
+          <span class="spec-note">DIM+/DIM−を端子表記どおりに。逆接続で全光固定や最小固定になる。</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">信号線の太さ</span>
+          <span class="spec-value">0.5–0.75sq</span>
+          <span class="spec-note">電流は微小で細くて可。ただし長距離は電圧降下で下限がばらつく。</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">最小調光率の目安</span>
+          <span class="spec-value">約1–10%</span>
+          <span class="spec-note">アナログは下限で止まりやすい。深く絞るなら高分解能の機器を選ぶ。</span>
+        </div>
+      </div>
+      <p class="article-callout tip" style="font-size:13px"><strong>ワンポイント:</strong> 信号線は電力をほとんど運ばないので細線で足りますが、<strong>長距離で何台もぶら下げると、信号線自体の電圧降下で「奥の照明だけ下限が違う」</strong>といったムラが出ます。長い系統は撚り線・シールド線にし、必要なら系統を分けます。</p>
+
+      <h2 id="sec-multi">1台の調光器に複数電源をつなぐ(接続台数の上限)</h2>
+      <p>0-10V/1-10Vは<strong>一斉調光(ブロードキャスト)</strong>が基本で、複数の電源を1台の調光器でまとめて絞れます。配線は<strong>各電源のDIM+同士・DIM−同士を並列(渡り)に接続</strong>します。</p>
+      <p>ただし台数には上限があります。1-10Vシンク型では、各電源が信号線へ流し込む電流(1台あたり概ね0.数〜数mA)の<strong>合計</strong>を、調光器がシンクできる<strong>電流定格</strong>に収める必要があります。</p>
+      <table>
+        <thead>
+          <tr><th>項目</th><th>考え方・目安</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>調光器のシンク電流定格</td><td>例: 50mA(カタログに記載)。これがシンクできる上限。</td></tr>
+          <tr><td>電源1台あたりの電流</td><td>例: 約2mA/台(機種で異なる。データシート確認)。</td></tr>
+          <tr><td>接続できる台数(目安)</td><td>50mA ÷ 2mA ≒ 25台。実際は<strong>メーカー指定の接続可能台数</strong>に従う。</td></tr>
+          <tr><td>上限超過時の症状</td><td>下限まで絞れない・調光が効かない・反応が鈍い。</td></tr>
+        </tbody>
+      </table>
+      <p>台数が多い・面積が広い場合は、調光器を複数に分ける、または信号を分配・増幅する機器を入れて系統を分割します。シーンや回路を個別に制御したい場合は、アドレス制御の<a href="/articles/led-dali-dimming-wiring-guide">DALI調光</a>のほうが向くこともあります。</p>
+
+      <h2 id="sec-compare">0-10V/1-10V・DALI・PWMの比較</h2>
+      <p>どの制御方式を選ぶかで、配線も柔軟性も変わります。一斉に絞れれば十分な現場なら0-10V/1-10Vが手軽です。</p>
+      <table>
+        <thead>
+          <tr><th>項目</th><th>0-10V/1-10V(アナログ)</th><th>DALI(デジタル)</th><th>PWM(直接)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>制御の単位</td><td>一斉(ブロードキャスト)</td><td>個別アドレス・グループ・シーン</td><td>一斉</td></tr>
+          <tr><td>信号線</td><td>2線・<strong>極性あり</strong></td><td>2線・極性レス</td><td>電源出力をPWMで送る</td></tr>
+          <tr><td>完全消灯</td><td>1-10Vは別途主電源OFFが必要</td><td>コマンドで0%/消灯可</td><td>0%まで可</td></tr>
+          <tr><td>長距離特性</td><td>信号線の電圧降下で下限がばらつく</td><td>デジタルで安定</td><td>距離で波形がなまりやすい</td></tr>
+          <tr><td>導入コスト/難易度</td><td>安い・電気工事士向き</td><td>高い・アドレス設定が必要</td><td>中・テープ近接向き</td></tr>
+          <tr><td>向く現場</td><td>店舗・施設の一斉調光</td><td>多シーン・多回路・細かな制御</td><td>テープと電源が近い小規模</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="sec-trouble">よくあるトラブルと対処</h2>
+      <table>
+        <thead>
+          <tr><th>症状</th><th>主な原因</th><th>対処</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>つまみを絞っても全光のまま</td><td>信号線の極性逆/断線・未接続(シンク型は断線で全光)・型違い</td><td>DIM+/DIM−の極性と結線を確認、断線点検、調光器と電源の型(1-10Vシンク等)を合わせる</td></tr>
+          <tr><td>最小から明るくならない</td><td>信号線のショート・極性逆・0V固定</td><td>結線とショートを点検、極性を正す、調光器の出力を確認</td></tr>
+          <tr><td>奥の照明だけ下限がばらつく</td><td>信号線が長く電圧降下/接続台数オーバー</td><td>撚り線・シールド線に変更、系統を分割、接続台数を上限内に</td></tr>
+          <tr><td>0%にしても薄く光る(残光)</td><td>1-10V仕様で完全消灯不可・調光器OFF時の微小電流</td><td>主電源OFF用のスイッチ/リレーを併用(<a href="/articles/led-tape-dimmer-residual-glow-guide">残光対処ガイド</a>参照)</td></tr>
+          <tr><td>暗い側でちらつく</td><td>電源のPWM周波数・分解能不足、機種混在</td><td>高周波・高分解能の調光電源に統一(<a href="/articles/led-tape-deep-dimming-curve-guide">深調光ガイド</a>参照)</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="sec-checklist">0-10V/1-10V調光 配線チェックリスト</h2>
+      <ul class="checklist">
+        <li>0-10V/1-10V調光入力付きの電源(またはコントローラー)を使っている</li>
+        <li>調光器と電源の型(シンク型/ソース型・0-10V/1-10V)を合わせた</li>
+        <li>信号線の極性(DIM+/DIM−)を端子表記どおりに接続した</li>
+        <li>信号線を電源線・動力線と分離し、長距離は撚り線/シールド線にした</li>
+        <li>1台の調光器への接続台数(シンク電流の合計)がメーカー指定の上限以内</li>
+        <li>1-10Vで完全消灯が要るなら主電源OFF用のスイッチ/リレーを設けた</li>
+        <li>全閉〜全開で最小〜全光まで滑らかに変化することを通電確認した</li>
+      </ul>
+
+      <h2 id="sec-faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">LEDテープに0-10Vの線を直接つなげば調光できますか？</div>
+        <div class="faq-a">できません。LEDテープは12V/24Vの定電圧(CV)で動作するため、0-10Vのアナログ信号を直接テープに接続しても点灯・調光はできず、誤接続は故障の原因になります。0-10V/1-10Vで調光するには、0-10V調光入力を備えた「調光対応の定電圧電源(dimmable CVドライバー)」、または「0-10V入力→PWM出力のLEDテープ用コントローラー」を介します。これらが0-10V信号を受けて、テープへの出力をPWMで絞ります。電源・コントローラー・テープの3点が同じ調光方式で適合しているかを必ず確認してください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">0-10V調光と1-10V調光は何が違いますか？</div>
+        <div class="faq-a">下限(0V付近)での挙動が違います。1-10V(IEC 60929)は1Vで最小の明るさを保ち、0V付近でも最小をキープするため、完全消灯には別途スイッチやリレーで主電源を切る必要があります。一方0-10Vは0Vで消灯まで落とせる仕様の機器もあります。さらに「シンク型」と「ソース型」の区別が重要で、照明業界で一般的な1-10Vシンク型は電源側が信号線に微小電流を流し、調光器がそれを吸い込んで(シンクして)電圧を決めます。この型は信号線が断線・未接続になると全光になる挙動が多い点に注意します。劇場系で使われる0-10Vソース型は調光器が電圧を出力する方式で、両者は互換性がないため必ず型を合わせます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">1台の0-10V調光器に電源(ドライバー)を何台までつなげますか？</div>
+        <div class="faq-a">調光器がシンク(吸い込み)できる電流の合計で決まります。1-10Vシンク型では各電源が信号線へ流し込む電流(1台あたり概ね0.数〜数mA)の合計を、調光器のシンク電流定格(例:50mA)以内に収める必要があります。例えば電源1台2mAで調光器が50mAなら計算上25台程度ですが、実際はメーカーが指定する「接続可能台数」に従ってください。上限を超えると下限まで絞れない・調光が効かないといった不具合が出ます。複数台は信号線(DIM+同士・DIM−同士)を並列に渡して一斉制御し、長距離では信号線の電圧降下で下限がばらつくため撚り線やシールド線を使います。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-tape-dimming-methods-guide">
+              <img src="/images/hero-scenes/lightblue_desk.webp" alt="LEDテープの調光方式ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">製品活用ガイド</span>
+                <div class="rac-title">LEDテープの調光方式(PWM・CCR・位相・DALI)の違いと選び方</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-dali-dimming-wiring-guide">
+              <img src="/images/hero-scenes/blue_desk.webp" alt="DALI調光の配線ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">配線・電気工事ガイド</span>
+                <div class="rac-title">LEDテープのDALI調光配線｜アドレス制御のつなぎ方と選び方</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-controller-dimmer-guide">
+              <img src="/images/hero-scenes/purple_desk.webp" alt="LEDテープのコントローラー・調光器配線" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">配線・電気工事ガイド</span>
+                <div class="rac-title">LEDテープのコントローラー・調光器配線｜つなぎ方と選び方</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-deep-dimming-curve-guide">
+              <img src="/images/hero-scenes/bar_lounge.webp" alt="LEDテープの深調光と調光カーブ" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">製品活用・調光ガイド</span>
+                <div class="rac-title">LEDテープの深調光(1%調光)と調光カーブ｜最小調光率の選び方</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>0-10V/1-10V調光に対応するLED電源・コントローラーをプロ価格で</h2>
+        <p>0-10V調光入力付きの定電圧電源、0-10V→PWMコントローラー、調光対応COBテープを取り揃えています。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">商品ラインナップを見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-23</span>
+        <span>更新日: 2026-06-23</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源装置の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-tape-dimming-methods-guide">調光方式(PWM・CCR・DALI)の違い</a></li>
+        <li><a href="/articles/led-dali-dimming-wiring-guide">DALI調光の配線</a></li>
+        <li><a href="/articles/led-tape-controller-dimmer-guide">コントローラー・調光器配線</a></li>
+        <li><a href="/articles/led-tape-deep-dimming-curve-guide">深調光(1%調光)と調光カーブ</a></li>
+        <li><a href="/articles/led-tape-dimmer-residual-glow-guide">調光器OFFでも薄く光る対処</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/psu/">調光対応 業務用PSU（24V）</a></li>
+        <li><a href="/category/controller/">調光器・コントローラー</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム各種</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>
