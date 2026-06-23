@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープの接触不良の原因と直し方｜点いたり消えたり・触ると点く現象の特定と修理【施工業者向け】 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープが点いたり消えたり、触ると点く・振動で消える——接触不良の典型症状です。コネクタの差し込み不足、FPC端子の酸化、はんだクラック、端子台の緩みなど原因の切り分けから、テスターでの特定、再はんだ・端子清掃・コネクタ交換といった修理手順までを施工業者向けに解説します。">
+  <meta name="keywords" content="LEDテープ 接触不良,LEDテープ 点いたり消えたり,LEDテープ 触ると点く,LEDテープ ちらつき 接触,LEDテープ コネクタ 接触不良,LEDテープ はんだ クラック,LEDテープ 端子 酸化,LEDテープ 修理">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-loose-connection-repair-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-loose-connection-repair-guide">
+  <meta property="og:title" content="LEDテープの接触不良の原因と直し方｜点いたり消えたり・触ると点く現象の特定と修理【施工業者向け】 | LED PRO SHOP">
+  <meta property="og:description" content="コネクタの差し込み不足・FPC端子の酸化・はんだクラック・端子台の緩みなど接触不良の原因切り分け、テスターでの特定、再はんだ・清掃・交換の修理手順を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/images/hero-scenes/red_shop.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープの接触不良の原因と直し方｜点いたり消えたり・触ると点く現象の特定と修理 | LED PRO SHOP">
+  <meta name="twitter:description" content="点いたり消えたり・触ると点く接触不良の原因切り分けとテスター特定、再はんだ・清掃・コネクタ交換の修理手順を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/images/hero-scenes/red_shop.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープの接触不良の原因と直し方｜点いたり消えたり・触ると点く現象の特定と修理",
+    "description": "LEDテープの接触不良(点いたり消えたり・触ると点く・振動で消える)の原因を、コネクタの差し込み不足・FPC端子の酸化・はんだクラック・端子台の緩みなどに切り分け、テスターでの特定方法と、再はんだ・端子清掃・コネクタ交換といった修理手順、恒久対策までを施工業者向けに整理します。",
+    "image": "https://led-proshop.com/images/hero-scenes/red_shop.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP 編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://led-proshop.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-06-24",
+    "dateModified": "2026-06-24",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-loose-connection-repair-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープの接触不良の原因と直し方", "item": "https://led-proshop.com/articles/led-tape-loose-connection-repair-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープが点いたり消えたり、触ると点くのですが原因は何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "断続点灯・触れると点灯/消灯が変わる・振動で消えるといった症状は、ほぼ『接触不良(導通が不安定)』です。主な発生箇所と原因は、(1)差し込み式コネクタの差し込み不足・カットマークずれで端子に当たっていない、(2)FPC(テープ基板)端子の酸化・汚れ・防水シリコンの付着で接触抵抗が増大、(3)はんだ付け部のクラック(冷えはんだ・振動疲労)、(4)端子台やワンタッチコネクタの締め付け不足・被覆噛み込み、(5)送り線の半断線です。特定は、まず通電状態で配線やコネクタを軽く揺すって症状が再現する箇所を探し、次にテスターで区間ごとの電圧・導通を測って『どこで電圧が落ちるか』を切り分けます。揺すって症状が変わる箇所が見つかれば、そこが接触不良点です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "接触不良の場所をテスターで特定するにはどう測りますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "通電したまま、電源出力→コネクタ入口→テープ給電点→テープ末端、と順に直流電圧を測っていき、『直前まで正常電圧なのに、ある接点を越えると電圧が落ちる/ふらつく』箇所を探します。例えば24V系で電源出力が24V前後あるのに、あるコネクタを越えると電圧が大きく下がったり、揺すると数値が乱高下するなら、そのコネクタが接触不良です。消灯状態なら、電源を切ってから導通(抵抗)モードで、その接点をまたいで抵抗を測り、揺すって値が安定しない・無限大に飛ぶなら接触不良と判断します。あわせて差し込み式コネクタは爪・金属端子の当たり、はんだ部はルーペでクラックの有無を目視します。テスターの使い方の基本は別途の測定ガイドも参照してください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "接触不良を直しても再発します。恒久的に直す方法はありますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "再発する接触不良は、応急の挿し直しではなく接続方法そのものを見直すのが確実です。差し込み式コネクタは振動・熱・経年で接触圧が落ちやすいため、重要箇所や振動・屋外環境では『はんだ付け＋絶縁・防水処理』に切り替えると安定します。FPC端子が酸化・変色している場合は無水アルコールで清掃し、それでも当たりが甘いコネクタは新品へ交換します。はんだクラックは、いったん古いはんだを除去してから適温で確実に再はんだします。端子台・ワンタッチコネクタは規定どおりに被覆を剥き、芯線を噛み込ませず確実に固定し、増し締めします。送り線の半断線は、その区間をカットして健全部で作り直します。コネクタとはんだの使い分けや防水処理の考え方は関連記事も参照してください。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#0f3b5c;--blue-pale:#e8f1f8;--bg:#fff;--bg-gray:#fbf3f2;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#ddccca;--red:#c0392b;--accent:#c0392b;--accent-pale:#fdeceb;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #0a2a42}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px;text-decoration:none}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--accent);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#4a120c 0%,#c0392b 55%,#7e1f16 100%);padding:40px 16px 32px;border-bottom:3px solid #7e1f16}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:4px;padding:14px}
+    .spec-card .spec-label{font-size:10px;font-weight:700;color:var(--text-muted);letter-spacing:1px;display:block;margin-bottom:5px}
+    .spec-card .spec-value{font-size:17px;font-weight:900;color:var(--accent);line-height:1.25}
+    .spec-card .spec-note{font-size:11px;color:var(--text-sub);margin-top:6px;line-height:1.5}
+    .checklist{list-style:none!important;padding:0!important;margin:16px 0}
+    .checklist li{position:relative;padding:9px 8px 9px 32px;border-bottom:1px solid var(--border);font-size:13px;line-height:1.6}
+    .checklist li::before{content:"✓";position:absolute;left:8px;top:9px;color:var(--accent);font-weight:900}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:var(--accent-pale)}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:var(--accent-pale)}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>LEDテープの接触不良の原因と直し方</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">トラブル対処ガイド</div>
+    <h1>LEDテープの接触不良の原因と直し方<br>点いたり消えたり・触ると点く現象の特定と修理【施工業者向け】</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-06-24</span>
+      <span>更新日: 2026-06-24</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/red_shop.webp"
+      alt="LEDテープの接触不良を特定して修理する施工のイメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>「LEDテープが点いたり消えたりする」「コネクタを触ると点く」「ドアの開閉や振動で消える」——こうした不安定な点灯は、玉切れや電源故障ではなく、ほとんどが<strong>接触不良(導通が不安定になっている)</strong>です。完全に消えるのではなく<strong>状態が変わる</strong>のが特徴で、原因の接点を見つけて確実に直さないと再発します。本記事では、接触不良が起きやすい箇所、症状からの原因切り分け、<strong>テスターを使った特定方法</strong>、そして再はんだ・端子清掃・コネクタ交換といった<strong>修理手順と恒久対策</strong>を、施工業者の現場目線で整理します。</p>
+
+      <div class="article-callout warn">
+        <p><strong>先に結論:</strong> 接触不良の特定は<strong>「揺すって症状が変わる箇所を探す → テスターで電圧が落ちる接点を切り分ける」</strong>の2手で進めます。直し方は接点しだいで、<strong>挿し直し・清掃で済むもの</strong>と、<strong>はんだ付けやコネクタ交換に切り替えるべきもの</strong>があります。重要箇所・振動環境は最初から<strong>はんだ付け＋絶縁</strong>が確実です。作業前に必ず通電を切れる準備をしてください。</p>
+      </div>
+
+      <h2 id="sec-where">接触不良が起きやすい箇所</h2>
+      <p>LEDテープの回路で導通が不安定になりやすいのは「接点」です。まず候補を押さえます。</p>
+      <ul>
+        <li><strong>差し込み式コネクタ</strong>: 差し込み不足、カットマークずれで端子に当たっていない、爪・金属端子の劣化。</li>
+        <li><strong>FPC(テープ基板)の端子</strong>: 酸化・変色・汚れ、防水テープのシリコンが端子面に付着して絶縁。</li>
+        <li><strong>はんだ付け部</strong>: クラック(冷えはんだ・加熱不足・振動疲労)、芋はんだ。</li>
+        <li><strong>端子台・ワンタッチコネクタ</strong>: 締め付け不足、被覆の噛み込み、芯線のばらけ。</li>
+        <li><strong>送り線・延長ケーブル</strong>: 屈曲部の半断線、圧着不良。</li>
+      </ul>
+
+      <h2 id="sec-symptom">症状から原因を切り分ける</h2>
+      <p>不安定な点灯のしかたで、原因の当たりがつきます。</p>
+      <table>
+        <thead>
+          <tr><th>症状</th><th>考えられる原因</th><th>まず確認すること</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>触る・揺らすと点いたり消えたり</td><td>コネクタの差し込み不足/端子の当たり不良/はんだクラック</td><td>その接点を軽く動かして再現するか</td></tr>
+          <tr><td>ある接点から先だけ点滅・チラつく</td><td>コネクタ接触不良/FPC端子酸化/半断線</td><td>接点前後の電圧差(後述のテスター測定)</td></tr>
+          <tr><td>振動・ドア開閉で消える</td><td>はんだクラック/端子台の緩み/屈曲部の半断線</td><td>はんだ部のルーペ目視・端子の増し締め</td></tr>
+          <tr><td>暖まると消える/冷えると点く(逆も)</td><td>はんだクラック(熱膨張で開く)/接触圧不足</td><td>クラック目視・再はんだ要否</td></tr>
+          <tr><td>差し込み式だけ不安定</td><td>カットマークずれ・端子に未接触・爪劣化</td><td>差し直し→改善なければはんだへ切替</td></tr>
+        </tbody>
+      </table>
+      <p>「一部の区間が完全に点かない」場合は接触不良だけでなく区間故障の可能性もあるため、<a href="/articles/led-tape-partial-section-failure-guide">部分的に点かないトラブルの切り分け</a>もあわせて確認してください。全体が点かないときは<a href="/articles/led-tape-troubleshooting-guide">点灯しない原因の総合診断</a>が起点になります。</p>
+
+      <h2 id="sec-find">テスターで接触不良点を特定する</h2>
+      <p>接点を1つずつ潰していくのが確実です。<strong>通電状態の電圧測定</strong>と<strong>消灯状態の導通測定</strong>を組み合わせます。</p>
+      <h3 id="sec-step">特定の手順</h3>
+      <ol>
+        <li><strong>揺すりテスト</strong>: 通電状態で、配線・各コネクタ・はんだ部を順に軽く動かし、点灯状態が変わる箇所を探す。</li>
+        <li><strong>区間電圧の測定</strong>: 電源出力 → コネクタ入口 → テープ給電点 → 末端、と直流電圧を順に測る。直前まで正常電圧なのに、<strong>ある接点を越えると電圧が落ちる/ふらつく</strong>箇所が接触不良点。</li>
+        <li><strong>導通(抵抗)の確認</strong>: 電源を切り、疑わしい接点をまたいで抵抗を測る。揺すって値が乱高下・無限大に飛ぶなら接触不良。</li>
+        <li><strong>目視</strong>: 差し込み式は端子の当たりと爪、はんだ部はルーペでクラック、FPC端子は酸化・シリコン付着を確認。</li>
+      </ol>
+      <p>テスターの基本操作・測定モードは<a href="/articles/led-tape-multimeter-testing-guide">テスターでの点検ガイド</a>を参照してください。</p>
+      <div class="spec-grid">
+        <div class="spec-card">
+          <span class="spec-label">特定の起点</span>
+          <span class="spec-value">揺すり</span>
+          <span class="spec-note">通電状態で動かし、症状が変わる接点を絞り込む。</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">測る量</span>
+          <span class="spec-value">区間電圧</span>
+          <span class="spec-note">接点をまたいで電圧が落ちる所が不良点。</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">消灯時</span>
+          <span class="spec-value">導通</span>
+          <span class="spec-note">抵抗が安定せず飛ぶなら接触不良と判断。</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">作業前提</span>
+          <span class="spec-value">通電遮断</span>
+          <span class="spec-note">修理は必ず電源を切ってから。再はんだは適温で。</span>
+        </div>
+      </div>
+
+      <h2 id="sec-fix">原因別の修理手順</h2>
+      <p>特定した接点に応じて、直し方を選びます。応急で挿し直すだけでは再発しやすいため、環境に合わせて確実な方法へ切り替えます。</p>
+      <table>
+        <thead>
+          <tr><th>不良箇所</th><th>修理手順</th><th>恒久対策</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>差し込み式コネクタ</td><td>一度抜き、カットマーク位置まで確実に差し込む。爪・端子が劣化していれば新品に交換</td><td>重要・振動箇所は<a href="/articles/led-tape-connector-vs-soldering-guide">はんだ付け</a>へ切替</td></tr>
+          <tr><td>FPC端子の酸化・汚れ</td><td>無水アルコールで清掃。付着したシリコンを除去し、当たり面を露出</td><td>清掃後も甘いコネクタは交換/はんだ化</td></tr>
+          <tr><td>はんだクラック</td><td>古いはんだを除去し、適温で確実に再はんだ。芋はんだは付け直す</td><td><a href="/articles/led-tape-soldering-guide">適切な温度・時間</a>で施工し過熱を避ける</td></tr>
+          <tr><td>端子台・ワンタッチ</td><td>規定長で被覆を剥き直し、芯線をばらけさせず確実に固定・増し締め</td><td>被覆噛み込みをなくす。<a href="/articles/led-tape-terminal-block-wago-guide">端子台/Wago</a>の正しい使い方</td></tr>
+          <tr><td>送り線の半断線</td><td>屈曲部の不良区間をカットし、健全部で結線し直す</td><td>屈曲箇所に余長・固定を設ける</td></tr>
+        </tbody>
+      </table>
+      <p class="article-callout tip" style="font-size:13px"><strong>ワンポイント:</strong> 屋外・水回り・厨房など環境が厳しい場所の接点は、清掃や挿し直しだけだと再発します。<strong>はんだ付け後に絶縁・防水処理</strong>まで行うと長持ちします。防水のやり方は<a href="/articles/led-tape-waterproof-treatment-guide">防水処理ガイド</a>を参照してください。</p>
+
+      <h2 id="sec-prevent">接触不良を出さない施工のコツ</h2>
+      <ul>
+        <li>差し込み式コネクタは<strong>カットマークの位置で真っ直ぐ切り</strong>、端子に確実に当たるまで差し込む。</li>
+        <li>FPC端子に<strong>シリコンや指脂を付けない</strong>。防水処理は端子の当たり面を避ける。</li>
+        <li>はんだは<strong>適温・短時間</strong>で。FPCの加熱しすぎはランド剥離・後のクラックの原因。</li>
+        <li>配線の<strong>屈曲部に余長・固定</strong>を設け、接点に繰り返し応力をかけない。</li>
+        <li>振動・屋外・重要回路は<strong>最初からはんだ＋絶縁</strong>を選ぶ。</li>
+      </ul>
+
+      <h2 id="sec-checklist">接触不良 点検・修理チェックリスト</h2>
+      <ul class="checklist">
+        <li>通電状態で揺すり、症状が変わる接点を特定した</li>
+        <li>区間電圧を測り、電圧が落ちる接点を切り分けた</li>
+        <li>消灯時に導通を測り、抵抗が不安定な接点を確認した</li>
+        <li>差し込み式はカットマーク位置まで確実に差し直す/交換した</li>
+        <li>FPC端子の酸化・シリコン付着を清掃した</li>
+        <li>はんだクラックは古いはんだを除去して適温で再はんだした</li>
+        <li>端子台・ワンタッチは被覆噛み込みをなくし増し締めした</li>
+        <li>振動・屋外箇所ははんだ付け＋絶縁・防水に切り替えた</li>
+      </ul>
+
+      <h2 id="sec-faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">LEDテープが点いたり消えたり、触ると点くのですが原因は何ですか？</div>
+        <div class="faq-a">断続点灯・触れると点灯/消灯が変わる・振動で消えるといった症状は、ほぼ「接触不良(導通が不安定)」です。主な発生箇所と原因は、(1)差し込み式コネクタの差し込み不足・カットマークずれで端子に当たっていない、(2)FPC(テープ基板)端子の酸化・汚れ・防水シリコンの付着で接触抵抗が増大、(3)はんだ付け部のクラック(冷えはんだ・振動疲労)、(4)端子台やワンタッチコネクタの締め付け不足・被覆噛み込み、(5)送り線の半断線です。特定は、まず通電状態で配線やコネクタを軽く揺すって症状が再現する箇所を探し、次にテスターで区間ごとの電圧・導通を測って「どこで電圧が落ちるか」を切り分けます。揺すって症状が変わる箇所が見つかれば、そこが接触不良点です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">接触不良の場所をテスターで特定するにはどう測りますか？</div>
+        <div class="faq-a">通電したまま、電源出力→コネクタ入口→テープ給電点→テープ末端、と順に直流電圧を測っていき、「直前まで正常電圧なのに、ある接点を越えると電圧が落ちる/ふらつく」箇所を探します。例えば24V系で電源出力が24V前後あるのに、あるコネクタを越えると電圧が大きく下がったり、揺すると数値が乱高下するなら、そのコネクタが接触不良です。消灯状態なら、電源を切ってから導通(抵抗)モードで、その接点をまたいで抵抗を測り、揺すって値が安定しない・無限大に飛ぶなら接触不良と判断します。あわせて差し込み式コネクタは爪・金属端子の当たり、はんだ部はルーペでクラックの有無を目視します。テスターの使い方の基本は別途の測定ガイドも参照してください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">接触不良を直しても再発します。恒久的に直す方法はありますか？</div>
+        <div class="faq-a">再発する接触不良は、応急の挿し直しではなく接続方法そのものを見直すのが確実です。差し込み式コネクタは振動・熱・経年で接触圧が落ちやすいため、重要箇所や振動・屋外環境では「はんだ付け＋絶縁・防水処理」に切り替えると安定します。FPC端子が酸化・変色している場合は無水アルコールで清掃し、それでも当たりが甘いコネクタは新品へ交換します。はんだクラックは、いったん古いはんだを除去してから適温で確実に再はんだします。端子台・ワンタッチコネクタは規定どおりに被覆を剥き、芯線を噛み込ませず確実に固定し、増し締めします。送り線の半断線は、その区間をカットして健全部で作り直します。コネクタとはんだの使い分けや防水処理の考え方は関連記事も参照してください。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-tape-connector-vs-soldering-guide">
+              <img src="/images/hero-scenes/red_shop.webp" alt="コネクタとはんだ付けの比較" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工方法ガイド</span>
+                <div class="rac-title">LEDテープのコネクタ接続とはんだ付け｜信頼性の違いと使い分け</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-partial-section-failure-guide">
+              <img src="/images/hero-scenes/red_livingroom.webp" alt="部分的に点かないトラブル" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <div class="rac-title">LEDテープが部分的に点かない｜区間故障の切り分けと対処</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-multimeter-testing-guide">
+              <img src="/images/hero-scenes/orange_livingroom.webp" alt="テスターでの点検ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <div class="rac-title">LEDテープのテスター点検｜電圧・導通の測り方</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-connector-overheating-guide">
+              <img src="/images/hero-scenes/pink_shop.webp" alt="コネクタの過熱トラブル" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <div class="rac-title">LEDテープのコネクタが過熱する｜原因と対策</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>信頼性の高いコネクタ・はんだ資材・テープをプロ価格で</h2>
+        <p>確実に固定できるコネクタ、端子台、はんだ・絶縁防水資材、交換用COB/SMDテープを取り揃えています。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">商品ラインナップを見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-24</span>
+        <span>更新日: 2026-06-24</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源装置の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-tape-connector-vs-soldering-guide">コネクタとはんだの使い分け</a></li>
+        <li><a href="/articles/led-tape-partial-section-failure-guide">部分的に点かない切り分け</a></li>
+        <li><a href="/articles/led-tape-multimeter-testing-guide">テスター点検の基本</a></li>
+        <li><a href="/articles/led-tape-connector-overheating-guide">コネクタの過熱対策</a></li>
+        <li><a href="/articles/led-tape-troubleshooting-guide">点灯しない総合診断</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/controller/">コネクタ・接続部材</a></li>
+        <li><a href="/category/psu/">業務用PSU（24V）</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム各種</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>

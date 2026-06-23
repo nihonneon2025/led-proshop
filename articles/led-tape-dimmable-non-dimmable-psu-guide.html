@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープが調光できない原因No.1｜調光対応電源と非調光電源の違い・見分け方【施工業者向け】 | LED PRO SHOP</title>
+  <meta name="description" content="調光器をつないでも明るさが変わらない・ちらつく・電源が壊れた——その原因の多くは『非調光電源』を使っていることです。調光対応電源(dimmable driver)と非調光電源の違い、銘板・型番での見分け方、位相(トライアック)/0-10V/DALI/PWMの適合確認、既設壁調光器の流用判断を施工業者向けに解説します。">
+  <meta name="keywords" content="LEDテープ 調光できない,調光対応電源 見分け方,調光対応 ドライバー,非調光 電源,トライアック調光 LED 電源,0-10V 調光 電源,位相調光 対応電源,LED 調光 適合表">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-dimmable-non-dimmable-psu-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-dimmable-non-dimmable-psu-guide">
+  <meta property="og:title" content="LEDテープが調光できない原因No.1｜調光対応電源と非調光電源の違い・見分け方【施工業者向け】 | LED PRO SHOP">
+  <meta property="og:description" content="調光対応電源と非調光電源の違い、銘板・型番での見分け方、位相/0-10V/DALI/PWMの適合確認、既設壁調光器の流用判断を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/images/hero-scenes/blue_desk.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープが調光できない原因No.1｜調光対応電源と非調光電源の違い・見分け方 | LED PRO SHOP">
+  <meta name="twitter:description" content="調光器をつないでも明るさが変わらない原因は『非調光電源』。調光対応電源の見分け方・適合確認・既設調光器の流用判断を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/images/hero-scenes/blue_desk.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープが調光できない原因No.1｜調光対応電源と非調光電源の違い・見分け方",
+    "description": "LEDテープの調光は電源(ドライバー)が担うため、非調光電源では調光器をつないでも明るさが変わらず故障の原因にもなります。調光対応電源(dimmable driver)と非調光電源の違い、銘板・型番での見分け方、位相(トライアック)/0-10V/DALI/PWMの適合確認、既設壁調光器の流用判断を施工業者向けに整理します。",
+    "image": "https://led-proshop.com/images/hero-scenes/blue_desk.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP 編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://led-proshop.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-06-24",
+    "dateModified": "2026-06-24",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-dimmable-non-dimmable-psu-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "調光対応電源と非調光電源の違い・見分け方", "item": "https://led-proshop.com/articles/led-tape-dimmable-non-dimmable-psu-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "電源が調光対応か非調光かは、どこを見れば分かりますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "まず電源の銘板(ラベル)と型番、次にデータシートを確認します。調光対応電源には『Dimmable』『調光可』の表記や、対応方式を示す『TRIAC』『ELV/MLV』『PHASE(位相)』『0-10V/1-10V』『DALI』『PWM』といった文字があります。さらに本体に調光信号を受ける専用端子(DIM+/DIM−、0-10V端子、DA/DA端子など)があれば調光対応です。これらの表記や信号端子が一切なく『定電圧スイッチング電源』『CV』とだけ書かれている機種は、原則として非調光です。非調光電源に壁の調光器をつないでも明るさは変わらず、無理に位相調光器を接続すると電源側が壊れることがあります。型番でメーカーサイトを検索し、対応調光方式を必ず一次情報で確認してください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "リフォームで既設の壁の調光スイッチをそのまま使ってLEDテープを調光できますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "既設の壁調光器が『位相調光(トライアック/順位相 または 逆位相ELV)』の場合、その方式に対応した『位相調光対応のLED電源』を選べば流用できる可能性があります。ただし3点の確認が必要です。(1)既設調光器が順位相(トライアック)か逆位相(ELV)か、(2)その調光器の適合表にLED負荷・対応ワット数(最小負荷)が載っているか、(3)LED電源側がその位相方式に対応しているか。最小負荷を下回るとちらつき・うなり・最小付近での立ち消えが起きます。確実なのは、調光器とLED電源を同じシリーズ・同じ方式でそろえるか、調光器を不問にできる0-10V/DALI/PWMコントローラー方式へ切り替えることです。既設流用は『動くこともある』程度に考え、適合表で裏取りしてから採用してください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "非調光電源でも、後付けのコントローラーを足せば調光できますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "できます。LEDテープは定電圧(12V/24V)で動くため、非調光電源の後段(電源とテープの間)に『PWM調光コントローラー』を入れれば、電源を替えずに調光できます。この方式は電源の出力をコントローラーがPWMでオン・オフして明るさを絞るため、電源自体は常時フル出力のままで構いません。リモコン(RF/Bluetooth)式、つまみ式、0-10V入力式、DALI入力式などがあり、現場の操作方法に合わせて選べます。注意点は、コントローラーの定格電流(A)を負荷(テープの合計W÷電圧)以上にすること、テープの色種別(単色/CCT/RGB/RGBW)に合ったチャンネル数のコントローラーを選ぶことです。壁スイッチで操作したい場合は0-10V入力式やトライアック入力式のコントローラーを選びます。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#0f3b5c;--blue-pale:#e8f1f8;--bg:#fff;--bg-gray:#f3f8fb;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;--accent:#0e7aa8;--accent-pale:#e6f4fb;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #0a2a42}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px;text-decoration:none}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--accent);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#0a2e47 0%,#1d6f9c 55%,#0e5273 100%);padding:40px 16px 32px;border-bottom:3px solid #0e5273}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:4px;padding:14px}
+    .spec-card .spec-label{font-size:10px;font-weight:700;color:var(--text-muted);letter-spacing:1px;display:block;margin-bottom:5px}
+    .spec-card .spec-value{font-size:17px;font-weight:900;color:var(--accent);line-height:1.25}
+    .spec-card .spec-note{font-size:11px;color:var(--text-sub);margin-top:6px;line-height:1.5}
+    .checklist{list-style:none!important;padding:0!important;margin:16px 0}
+    .checklist li{position:relative;padding:9px 8px 9px 32px;border-bottom:1px solid var(--border);font-size:13px;line-height:1.6}
+    .checklist li::before{content:"✓";position:absolute;left:8px;top:9px;color:var(--accent);font-weight:900}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:var(--accent-pale)}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:var(--accent-pale)}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>調光対応電源と非調光電源の違い・見分け方</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">仕様選定ガイド</div>
+    <h1>LEDテープが調光できない原因No.1<br>調光対応電源と非調光電源の違い・見分け方【施工業者向け】</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-06-24</span>
+      <span>更新日: 2026-06-24</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/blue_desk.webp"
+      alt="調光対応電源と非調光電源を見分けてLEDテープを調光する施工のイメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>「壁の調光器をつないだのに明るさが変わらない」「絞るとちらつく・うなる」「調光しようとしたら電源が壊れた」——LEDテープの調光トラブルで最も多い原因は、<strong>使っている電源(ドライバー)が『非調光』だった</strong>というものです。LEDテープ自体には調光機能がなく、<strong>明るさを絞るのは電源か、電源後段のコントローラーの役目</strong>です。ここを外すと、どんな調光器を選んでも調光できません。本記事では、調光対応電源と非調光電源の違い、銘板・型番での見分け方、位相(トライアック)/0-10V/DALI/PWMの適合確認、そして既設の壁調光器を流用してよいかの判断基準を、施工業者の現場目線で整理します。</p>
+
+      <div class="article-callout warn">
+        <p><strong>先に結論:</strong> 調光できるかどうかは<strong>「電源が調光対応か」</strong>でほぼ決まります。確認は<strong>(1)電源の銘板・型番に調光方式(TRIAC/0-10V/DALI/PWM等)の表記があるか</strong>、<strong>(2)調光信号を受ける専用端子(DIM等)があるか</strong>、<strong>(3)調光器・電源・テープの3点で調光方式が一致しているか</strong>の3点。表記が一切なく「定電圧スイッチング電源」とだけある機種は非調光です。</p>
+      </div>
+
+      <h2 id="sec-who">調光するのは「テープ」ではなく「電源」</h2>
+      <p>LEDテープは12V/24Vの<strong>定電圧(CV)</strong>で点灯するだけの部品で、調光回路は持っていません。明るさを変えるのは次のどちらかです。</p>
+      <ul>
+        <li><strong>調光対応電源(dimmable driver)</strong>: 入力した調光信号(位相・0-10V・DALI等)を受けて、テープへのCV出力を内部のPWMで絞る。</li>
+        <li><strong>電源後段のPWMコントローラー</strong>: 非調光電源とテープの間に入れ、電源の出力をPWMでオン・オフして絞る。電源は替えなくてよい。</li>
+      </ul>
+      <p>つまり「調光できない」現場は、ほぼ<strong>非調光電源を使っている</strong>か、<strong>電源・調光器・テープの調光方式が噛み合っていない</strong>かのどちらかです。調光方式そのものの全体像は<a href="/articles/led-tape-dimming-methods-guide">LEDテープの調光方式(PWM・CCR・位相・DALI)ガイド</a>を、配線は<a href="/articles/led-tape-controller-dimmer-guide">コントローラー・調光器配線ガイド</a>も参照してください。</p>
+
+      <h2 id="sec-diff">調光対応電源と非調光電源の違い</h2>
+      <p>外観が似ていても、内部回路と入力端子が違います。発注前・施工前に取り違えないよう、要点を押さえます。</p>
+      <table>
+        <thead>
+          <tr><th>項目</th><th>調光対応電源(dimmable)</th><th>非調光電源(non-dim)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>銘板の表記</td><td>Dimmable/調光可/TRIAC/ELV/MLV/0-10V/DALI/PWM 等</td><td>表記なし。「定電圧」「CV」「Switching Power Supply」のみ</td></tr>
+          <tr><td>調光信号端子</td><td>あり(DIM+/DIM−、0-10V、DA/DA など)</td><td>なし(入力AC・出力DCの端子のみ)</td></tr>
+          <tr><td>壁調光器の接続</td><td>対応方式が一致すれば可</td><td>不可。明るさは変わらない/故障の恐れ</td></tr>
+          <tr><td>調光の担い手</td><td>電源本体</td><td>後段にコントローラーを足して初めて可</td></tr>
+          <tr><td>価格傾向</td><td>やや高い</td><td>安い</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout warn">
+        <p><strong>やってはいけない:</strong> 非調光のスイッチング電源の<strong>一次側(AC100V側)に位相調光器(トライアック)を入れる</strong>のは厳禁です。突入電流や波形の問題で電源が破損したり、調光器が過熱します。非調光電源で調光したいなら、<strong>後段にPWMコントローラーを足す</strong>のが正解です。</p>
+      </div>
+
+      <h2 id="sec-methods">調光方式別・必要な電源と確認ポイント</h2>
+      <p>「調光対応」とひとくくりにできません。方式が違えば必要な電源も配線も変わります。現場の操作方法(壁スイッチか、リモコンか、調光卓か)から逆算して選びます。</p>
+      <table>
+        <thead>
+          <tr><th>調光方式</th><th>必要な電源/機器</th><th>信号線</th><th>向く現場</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>位相調光(順位相/トライアック)</td><td>TRIAC対応 調光電源</td><td>AC一次側に既設の壁調光器</td><td>既設の白熱用調光器を流用するリフォーム</td></tr>
+          <tr><td>位相調光(逆位相/ELV)</td><td>ELV(逆位相)対応 調光電源</td><td>AC一次側に逆位相調光器</td><td>ちらつき・うなりを抑えたい位相調光</td></tr>
+          <tr><td>0-10V/1-10V</td><td>0-10V入力付き調光電源/コントローラー</td><td>2線・極性あり(DIM+/−)</td><td>店舗・施設の一斉調光(電気工事士向き)</td></tr>
+          <tr><td>DALI</td><td>DALI対応電源</td><td>2線・極性レス(DA/DA)</td><td>多回路・シーン・個別アドレス制御</td></tr>
+          <tr><td>PWM(後付け)</td><td>非調光電源+PWMコントローラー</td><td>電源出力をPWMで送る</td><td>電源を替えずに調光したい/リモコン操作</td></tr>
+        </tbody>
+      </table>
+      <p>0-10V調光の配線詳細は<a href="/articles/led-tape-0-10v-analog-dimming-wiring-guide">0-10V/1-10V調光 配線方法</a>、DALIは<a href="/articles/led-dali-dimming-wiring-guide">DALI調光配線ガイド</a>を参照してください。</p>
+
+      <h2 id="sec-identify">電源の見分け方 — 銘板・型番・端子で確認する手順</h2>
+      <p>現場や倉庫にある電源が調光対応かを確かめる手順です。<strong>推測せず、必ず一次情報(銘板・データシート)で裏取り</strong>します。</p>
+      <ol>
+        <li><strong>銘板を読む</strong>: 「Dimmable」「調光」「TRIAC」「ELV/MLV」「0-10V」「DALI」「PWM」の表記を探す。</li>
+        <li><strong>端子を見る</strong>: AC入力・DC出力以外に「DIM+/DIM−」「0-10V」「DA/DA」などの<strong>信号端子</strong>があれば調光対応。</li>
+        <li><strong>型番でデータシート確認</strong>: 型番をメーカーサイトで検索し、対応調光方式・最小負荷・最小調光率を確認する。</li>
+        <li><strong>3点一致を確認</strong>: 調光器の方式=電源の対応方式であること、テープの色種別(単色/CCT/RGB)に合うことを確認する。</li>
+        <li><strong>容量を確認</strong>: 電源容量はテープ合計W×1.2以上(<a href="/articles/led-psu-capacity-guide">電源容量の計算</a>参照)。</li>
+      </ol>
+      <div class="spec-grid">
+        <div class="spec-card">
+          <span class="spec-label">調光信号端子</span>
+          <span class="spec-value">有=対応</span>
+          <span class="spec-note">DIM/0-10V/DA端子があれば調光対応。AC・DC端子だけなら非調光。</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">銘板の方式表記</span>
+          <span class="spec-value">要確認</span>
+          <span class="spec-note">TRIAC/ELV/0-10V/DALI/PWMのどれかを必ず特定する。</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">最小負荷(位相)</span>
+          <span class="spec-value">下回ると不調</span>
+          <span class="spec-note">位相調光器の適合表に記載。下回るとちらつき・うなり。</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">最小調光率</span>
+          <span class="spec-value">約1–10%</span>
+          <span class="spec-note">深く絞るなら高分解能の調光電源を選ぶ。</span>
+        </div>
+      </div>
+
+      <h2 id="sec-retrofit">既設の壁調光器を流用してよいか</h2>
+      <p>リフォーム現場で多いのが「既設の白熱灯用調光スイッチをそのまま使いたい」というケースです。流用可否は次の表で判断します。</p>
+      <table>
+        <thead>
+          <tr><th>確認項目</th><th>判断基準</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>既設調光器の方式</td><td>順位相(トライアック)か逆位相(ELV)かを特定。型番で確認。</td></tr>
+          <tr><td>適合負荷の表記</td><td>調光器の適合表に「LED対応」「最小負荷○W」があるか。白熱専用は不可の場合あり。</td></tr>
+          <tr><td>LED電源の対応</td><td>選ぶ電源がその位相方式(順位相/逆位相)に対応しているか。</td></tr>
+          <tr><td>最小負荷の充足</td><td>テープ合計Wが調光器の最小負荷以上か。少なすぎるとちらつく。</td></tr>
+          <tr><td>同シリーズ推奨</td><td>確実性を取るなら調光器とLED電源を同一メーカー・同一方式でそろえる。</td></tr>
+        </tbody>
+      </table>
+      <p class="article-callout tip" style="font-size:13px"><strong>ワンポイント:</strong> 既設流用で読み切れない場合は、<strong>壁スイッチの先を0-10VやPWMコントローラー方式に切り替える</strong>と、調光器の相性問題から解放されます。調光器を不問にできるのが後付けコントローラー方式の強みです。</p>
+
+      <h2 id="sec-trouble">「調光できない」ときの切り分け</h2>
+      <table>
+        <thead>
+          <tr><th>症状</th><th>主な原因</th><th>対処</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>調光器を回しても明るさが変わらない</td><td>電源が非調光/調光器と方式が不一致</td><td>電源の銘板で調光対応か確認。非調光なら後段にPWMコントローラーを追加</td></tr>
+          <tr><td>絞るとちらつく・うなる</td><td>最小負荷不足/位相方式が逆/分解能不足</td><td>最小負荷を満たす、順位相⇔逆位相を合わせる、高分解能の調光電源に変更(<a href="/articles/led-tape-dimmer-buzzing-noise-guide">うなり対処</a>)</td></tr>
+          <tr><td>最小付近で立ち消えする</td><td>位相調光の下限が合わない/最小負荷割れ</td><td>負荷を増やす、最小調光率の高い電源へ、0-10V方式へ切替</td></tr>
+          <tr><td>調光しようとして電源が壊れた</td><td>非調光電源の一次側に位相調光器を接続</td><td>非調光電源では一次側に調光器を入れない。後段PWM方式に変更</td></tr>
+          <tr><td>RGB/CCTで色が変えられない</td><td>単色用コントローラーを使用/チャンネル数不足</td><td>テープの色種別に合うチャンネル数のコントローラーを選ぶ</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="sec-checklist">調光対応電源 選定チェックリスト</h2>
+      <ul class="checklist">
+        <li>電源の銘板・型番で対応調光方式(TRIAC/ELV/0-10V/DALI/PWM)を特定した</li>
+        <li>調光器・電源・テープの3点で調光方式が一致している</li>
+        <li>調光信号を受ける端子(DIM/0-10V/DA)の有無を実機で確認した</li>
+        <li>位相調光なら最小負荷を満たし、順位相/逆位相を合わせた</li>
+        <li>非調光電源で調光する場合は後段にPWMコントローラーを足す構成にした</li>
+        <li>RGB/CCTはテープの色種別に合うチャンネル数のコントローラーを選んだ</li>
+        <li>電源容量がテープ合計W×1.2以上ある</li>
+      </ul>
+
+      <h2 id="sec-faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">電源が調光対応か非調光かは、どこを見れば分かりますか？</div>
+        <div class="faq-a">まず電源の銘板(ラベル)と型番、次にデータシートを確認します。調光対応電源には「Dimmable」「調光可」の表記や、対応方式を示す「TRIAC」「ELV/MLV」「PHASE(位相)」「0-10V/1-10V」「DALI」「PWM」といった文字があります。さらに本体に調光信号を受ける専用端子(DIM+/DIM−、0-10V端子、DA/DA端子など)があれば調光対応です。これらの表記や信号端子が一切なく「定電圧スイッチング電源」「CV」とだけ書かれている機種は、原則として非調光です。非調光電源に壁の調光器をつないでも明るさは変わらず、無理に位相調光器を接続すると電源側が壊れることがあります。型番でメーカーサイトを検索し、対応調光方式を必ず一次情報で確認してください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">リフォームで既設の壁の調光スイッチをそのまま使ってLEDテープを調光できますか？</div>
+        <div class="faq-a">既設の壁調光器が「位相調光(トライアック/順位相 または 逆位相ELV)」の場合、その方式に対応した「位相調光対応のLED電源」を選べば流用できる可能性があります。ただし3点の確認が必要です。(1)既設調光器が順位相(トライアック)か逆位相(ELV)か、(2)その調光器の適合表にLED負荷・対応ワット数(最小負荷)が載っているか、(3)LED電源側がその位相方式に対応しているか。最小負荷を下回るとちらつき・うなり・最小付近での立ち消えが起きます。確実なのは、調光器とLED電源を同じシリーズ・同じ方式でそろえるか、調光器を不問にできる0-10V/DALI/PWMコントローラー方式へ切り替えることです。既設流用は「動くこともある」程度に考え、適合表で裏取りしてから採用してください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">非調光電源でも、後付けのコントローラーを足せば調光できますか？</div>
+        <div class="faq-a">できます。LEDテープは定電圧(12V/24V)で動くため、非調光電源の後段(電源とテープの間)に「PWM調光コントローラー」を入れれば、電源を替えずに調光できます。この方式は電源の出力をコントローラーがPWMでオン・オフして明るさを絞るため、電源自体は常時フル出力のままで構いません。リモコン(RF/Bluetooth)式、つまみ式、0-10V入力式、DALI入力式などがあり、現場の操作方法に合わせて選べます。注意点は、コントローラーの定格電流(A)を負荷(テープの合計W÷電圧)以上にすること、テープの色種別(単色/CCT/RGB/RGBW)に合ったチャンネル数のコントローラーを選ぶことです。壁スイッチで操作したい場合は0-10V入力式やトライアック入力式のコントローラーを選びます。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-tape-dimming-methods-guide">
+              <img src="/images/hero-scenes/lightblue_desk.webp" alt="LEDテープの調光方式ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">製品活用ガイド</span>
+                <div class="rac-title">LEDテープの調光方式(PWM・CCR・位相・DALI)の違いと選び方</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-controller-dimmer-guide">
+              <img src="/images/hero-scenes/purple_desk.webp" alt="LEDテープのコントローラー・調光器配線" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">配線・電気工事ガイド</span>
+                <div class="rac-title">LEDテープのコントローラー・調光器配線｜つなぎ方と選び方</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-0-10v-analog-dimming-wiring-guide">
+              <img src="/images/hero-scenes/blue_desk.webp" alt="0-10V/1-10V調光の配線方法" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">配線・電気工事ガイド</span>
+                <div class="rac-title">LEDテープの0-10V/1-10V調光 配線方法｜極性・対応電源・接続台数</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-psu-capacity-guide">
+              <img src="/images/hero-scenes/lightblue_kitchen.webp" alt="LED電源容量の計算" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工方法ガイド</span>
+                <div class="rac-title">LEDテープの電源(PSU)容量の計算｜W数と安全率の決め方</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>調光対応のLED電源・コントローラーをプロ価格で</h2>
+        <p>位相(TRIAC/ELV)・0-10V・DALI・PWM対応の調光電源、後付けPWMコントローラー、調光対応COBテープを取り揃えています。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">商品ラインナップを見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-24</span>
+        <span>更新日: 2026-06-24</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源装置の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-tape-dimming-methods-guide">調光方式(PWM・CCR・DALI)の違い</a></li>
+        <li><a href="/articles/led-tape-0-10v-analog-dimming-wiring-guide">0-10V/1-10V調光の配線</a></li>
+        <li><a href="/articles/led-tape-controller-dimmer-guide">コントローラー・調光器配線</a></li>
+        <li><a href="/articles/led-tape-dimmer-buzzing-noise-guide">調光時のうなり音対処</a></li>
+        <li><a href="/articles/led-psu-capacity-guide">電源容量の計算</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/psu/">調光対応 業務用PSU（24V）</a></li>
+        <li><a href="/category/controller/">調光器・コントローラー</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム各種</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>
