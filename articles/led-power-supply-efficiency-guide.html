@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LED電源の変換効率(η)とは？80%・85%・90%の違いと選び方｜施工業者向け | LED PRO SHOP</title>
+  <meta name="description" content="LED電源(ドライバ)の変換効率は発熱・入力電流・電気代に直結します。効率80%・85%・90%で損失（発熱）が何W変わるか、入力電流の計算、負荷率と効率の関係、過剰容量がなぜ非効率かを計算式付きで解説。電源選定で失敗しないための施工業者向けガイドです。">
+  <meta name="keywords" content="LED電源 効率,LEDドライバ 変換効率,電源 発熱 計算,LED電源 入力電流,LED電源 選び方,スイッチング電源 効率,LED 電気代 電源,電源 損失 計算">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-power-supply-efficiency-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-power-supply-efficiency-guide">
+  <meta property="og:title" content="LED電源の変換効率(η)とは？80%・85%・90%の違いと選び方｜施工業者向け | LED PRO SHOP">
+  <meta property="og:description" content="LED電源の変換効率は発熱・入力電流・電気代に直結。効率80/85/90%で損失が何W変わるか、入力電流の計算、負荷率と効率の関係、過剰容量がなぜ非効率かを計算式付きで施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-power-supply-efficiency-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LED電源の変換効率(η)とは？80/85/90%の違いと選び方 | LED PRO SHOP">
+  <meta name="twitter:description" content="効率は発熱・入力電流・電気代に直結。80/85/90%で損失が何W変わるか、入力電流の計算、負荷率と効率の関係を計算式付きで施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-power-supply-efficiency-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LED電源の変換効率(η)とは？80%・85%・90%の違いと選び方｜施工業者向け",
+    "description": "LED電源(ドライバ)の変換効率が発熱・入力電流・電気代に与える影響を、効率80/85/90%の損失比較・入力電流の計算式・負荷率と効率の関係・過剰容量の弊害とともに施工業者向けに解説します。",
+    "image": "https://led-proshop.com/articles/images/led-power-supply-efficiency-guide-hero.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP 編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://led-proshop.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-06-25",
+    "dateModified": "2026-06-25",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-power-supply-efficiency-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LED電源の変換効率(η)の違いと選び方", "item": "https://led-proshop.com/articles/led-power-supply-efficiency-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "変換効率が高い電源を選ぶと施工上どんなメリットがありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "効率が高いほど、同じ出力でも電源内部の損失（発熱）が小さくなります。たとえば出力100Wの負荷を動かすとき、効率85%なら入力は約117.6Wで損失17.6Wが熱になりますが、効率90%なら入力111.1Wで損失11.1Wに減ります。発熱が小さいと電源の温度上昇が抑えられて寿命が延び、天井裏など放熱の悪い場所でも安定します。さらに入力電流が小さくなるため、分岐回路に多くの電源をぶら下げられ、電気代もわずかに下がります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "電源の効率は負荷率によって変わりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "変わります。スイッチング電源は負荷率20%以下の軽負荷で効率が大きく落ち、おおむね負荷率50〜100%で最も高効率になります。カタログの効率値はだいたい定格（フル負荷）付近での値です。つまり300Wの電源にLEDを50W（負荷率17%）しかつながないと、効率が悪い領域で使うことになり、発熱も相対的に増えます。容量は余らせすぎず、定格の70〜90%程度で使うのが効率の面でも理想です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "効率90%の電源なら放熱対策は不要ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不要にはなりません。効率90%でも残りの10%は必ず熱になります。出力100Wなら約11Wが電源内部で発熱するため、密閉ボックスや断熱材に埋めると温度が上がり、保護回路が働いて消灯したり寿命が縮みます。効率が高いと発熱量は減りますが、ゼロではないので、放熱スペースの確保・上面/側面のクリアランス・密閉回避といった基本の放熱対策は効率に関わらず必要です。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --steel:#33495a;--steel-light:#e3f1ea;--steel-pale:#f2faf6;
+      --teal:#0f7a55;--teal-mid:#10b981;--copper:#c2710c;
+      --bg:#fff;--bg-gray:#f4f8f6;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;
+      --border:#cbd5d0;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.75}
+
+    /* ===== NAVBAR ===== */
+    .navbar{background:#003C82;padding:10px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+    .nav-container{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;flex-direction:column;gap:2px;cursor:pointer}
+    .logo-main{font-size:17px;font-weight:900;color:#fff;letter-spacing:.04em}
+    .logo-main small{font-size:10px;font-weight:400;color:#90caf9;margin-left:6px}
+    .logo-tag{display:flex;align-items:center;gap:8px}
+    .logo-badge{font-size:9px;font-weight:700;background:#FFD600;color:#003C82;padding:2px 6px;border-radius:3px;letter-spacing:.05em}
+    .logo-catch{font-size:10px;color:#90caf9}
+    .nav-links{display:flex;gap:4px;list-style:none}
+    .nav-link{display:block;padding:6px 10px;font-size:12px;font-weight:500;color:#cce;text-decoration:none;border-radius:4px;transition:background .15s}
+    .nav-link:hover,.nav-link.active{background:rgba(255,255,255,.15);color:#fff}
+    @media(max-width:680px){.nav-links{display:none}.logo-catch{display:none}}
+
+    /* ===== BREADCRUMB ===== */
+    .breadcrumb{background:var(--steel-pale);border-bottom:1px solid var(--border);padding:8px 0;font-size:12px;color:var(--text-muted)}
+    .breadcrumb .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .breadcrumb a{color:var(--teal);text-decoration:none}
+    .breadcrumb a:hover{text-decoration:underline}
+    .breadcrumb .sep{margin:0 6px;color:#aaa}
+
+    /* ===== HERO ===== */
+    .article-hero{
+      background:linear-gradient(135deg,#0f2a22 0%,#14392f 40%,#0f6e4f 75%,#149c6f 100%);
+      padding:56px 20px 48px;color:#fff;text-align:center;position:relative;overflow:hidden
+    }
+    .article-hero::before{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse at 30% 50%,rgba(255,255,255,.07) 0%,transparent 60%),
+                radial-gradient(ellipse at 75% 25%,rgba(20,156,111,.35) 0%,transparent 50%);
+    }
+    .article-hero .inner{position:relative;max-width:820px;margin:0 auto}
+    .hero-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:.08em;margin-bottom:16px}
+    .article-hero h1{font-size:clamp(20px,3vw,30px);font-weight:900;line-height:1.35;letter-spacing:.02em;margin-bottom:16px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+    .hero-meta{display:flex;align-items:center;justify-content:center;gap:16px;font-size:12px;color:rgba(255,255,255,.75)}
+    .hero-note{display:inline-block;background:#FFD600;color:#16242e;font-size:12px;font-weight:700;padding:6px 16px;border-radius:6px;margin-top:16px}
+
+    /* ===== LAYOUT ===== */
+    .container{max-width:860px;margin:0 auto;padding:0 20px}
+    .article-body{padding:40px 0 60px}
+
+    /* ===== TYPOGRAPHY ===== */
+    h2{font-size:20px;font-weight:800;color:var(--teal);border-left:4px solid var(--teal);padding-left:12px;margin:40px 0 16px}
+    h3{font-size:16px;font-weight:700;color:var(--text);margin:24px 0 10px;padding-left:8px;border-left:3px solid var(--steel)}
+    p{margin-bottom:14px;font-size:15px;line-height:1.8}
+    ul,ol{padding-left:22px;margin-bottom:14px}
+    li{font-size:15px;line-height:1.8;margin-bottom:4px}
+    strong{font-weight:700;color:var(--text)}
+
+    /* ===== LEAD BOX ===== */
+    .lead-box{background:var(--steel-light);border-left:4px solid var(--teal);border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0;font-size:15px;line-height:1.85}
+
+    /* ===== FORMULA ===== */
+    .formula{background:#0f2a22;color:#bdf5dd;border-radius:10px;padding:18px 22px;margin:20px 0;font-size:15px;line-height:1.9;text-align:center;letter-spacing:.02em}
+    .formula b{color:#fff}
+
+    /* ===== SPEC GRID ===== */
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:24px 0}
+    .spec-card{background:var(--bg-gray);border:2px solid var(--border);border-radius:10px;padding:18px 18px;text-align:center}
+    .spec-card .val{font-size:26px;font-weight:900;color:var(--teal);line-height:1.2}
+    .spec-card .lbl{font-size:13px;font-weight:700;color:var(--text);margin:6px 0 4px}
+    .spec-card .desc{font-size:12px;color:var(--text-sub);line-height:1.7}
+
+    /* ===== TABLE ===== */
+    .tbl-wrap{overflow-x:auto;margin:20px 0}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    th{background:var(--steel);color:#fff;padding:10px 12px;text-align:left;font-weight:700;white-space:nowrap}
+    td{padding:9px 12px;border-bottom:1px solid #e2e8f0;vertical-align:top}
+    tr:nth-child(even) td{background:var(--steel-pale)}
+    .ok{color:#15803d;font-weight:700}
+    .ng{color:#b91c1c;font-weight:700}
+
+    /* ===== INFO / WARN BOX ===== */
+    .info-box{background:#fff8e1;border:1px solid #f0c040;border-radius:8px;padding:18px 20px;margin:20px 0;font-size:14px;line-height:1.8}
+    .info-box .ttl{font-weight:700;color:#8a6800;margin-bottom:6px;font-size:15px}
+    .warn-box{background:#fef2f2;border:1px solid #fca5a5;border-radius:8px;padding:18px 20px;margin:20px 0;font-size:14px;line-height:1.8}
+    .warn-box .ttl{font-weight:700;color:#991b1b;margin-bottom:6px;font-size:15px}
+    .tip-box{background:var(--steel-light);border:1px solid var(--border);border-radius:8px;padding:18px 20px;margin:20px 0;font-size:14px;line-height:1.8}
+    .tip-box .ttl{font-weight:700;color:var(--teal);margin-bottom:6px;font-size:15px}
+
+    /* ===== STEP LIST ===== */
+    .step-list{counter-reset:step;margin:20px 0}
+    .step-item{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start}
+    .step-item::before{counter-increment:step;content:counter(step);background:var(--teal);color:#fff;font-size:13px;font-weight:700;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .step-body{font-size:14px;line-height:1.8}
+    .step-body strong{display:block;font-weight:700;margin-bottom:2px}
+
+    /* ===== FAQ ===== */
+    .faq-list{margin:20px 0}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--steel-light);padding:14px 18px;font-size:15px;font-weight:700;color:var(--steel);display:flex;gap:10px;align-items:flex-start}
+    .faq-q::before{content:'Q';background:var(--steel);color:#fff;font-size:12px;font-weight:700;padding:2px 7px;border-radius:4px;flex-shrink:0;margin-top:2px}
+    .faq-a{padding:14px 18px;font-size:14px;line-height:1.8;color:var(--text-sub);display:flex;gap:10px;align-items:flex-start}
+    .faq-a::before{content:'A';background:var(--teal-mid);color:#fff;font-size:12px;font-weight:700;padding:2px 7px;border-radius:4px;flex-shrink:0;margin-top:2px}
+
+    /* ===== CTA ===== */
+    .cta-box{background:linear-gradient(135deg,#0f6e4f 0%,#149c6f 100%);border-radius:14px;padding:32px 28px;text-align:center;color:#fff;margin:40px 0}
+    .cta-box h3{font-size:18px;font-weight:800;margin-bottom:10px;color:#fff;border:none;padding:0}
+    .cta-box p{font-size:14px;color:rgba(255,255,255,.85);margin-bottom:20px}
+    .cta-btn{display:inline-block;background:#FFD600;color:#0f6e4f;font-size:15px;font-weight:800;padding:14px 36px;border-radius:30px;text-decoration:none;letter-spacing:.04em;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:transform .15s,box-shadow .15s}
+    .cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.28)}
+
+    /* ===== FOOTER ===== */
+    .footer{background:#1a1a2e;color:#aaa;font-size:12px;text-align:center;padding:24px 20px}
+    .footer a{color:#7ab;text-decoration:none}
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo" style="text-decoration:none">
+        <div class="logo-main">LED専門プロショップ<small>日本ネオン株式会社</small></div>
+        <div class="logo-tag">
+          <span class="logo-badge">PROFESSIONAL SUPPLY</span>
+          <span class="logo-catch">全国のLED施工業者が選ぶ / 工場直送 × 業界最安値</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+        <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+        <li><a href="/category/psu/" class="nav-link">電源</a></li>
+        <li><a href="/category/controller/" class="nav-link">制御機器</a></li>
+        <li><a href="/articles/" class="nav-link active">コラム</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== BREADCRUMB ===== -->
+  <nav class="breadcrumb" aria-label="パンくず">
+    <div class="container">
+      <a href="/">LED PRO SHOP</a>
+      <span class="sep">›</span>
+      <a href="/articles/">コラム</a>
+      <span class="sep">›</span>
+      <span>LED電源の変換効率(η)の違いと選び方</span>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="article-hero">
+    <div class="inner">
+      <div class="hero-tag">電源・電気設計ガイド / 変換効率</div>
+      <h1>LED電源の変換効率(η)とは？<br>80%・85%・90%の違いと選び方</h1>
+      <div class="hero-meta">
+        <span>2026-06-25</span>
+        <span>|</span>
+        <span>LED PRO SHOP 技術編集部</span>
+      </div>
+      <div class="hero-note">⚡ 効率の差は「発熱・入力電流・電気代」に直結します</div>
+    </div>
+  </header>
+
+  <!-- ===== BODY ===== -->
+  <div class="article-body">
+    <div class="container">
+
+      <div class="lead-box">
+        LED電源（ドライバ）のカタログにある<strong>変換効率（η／efficiency）</strong>は、入れた電力のうち何%をLED側へ届けられるかを表します。残りはすべて<strong>電源内部の熱</strong>になります。効率が5%違うだけで、同じ100W出力でも損失（発熱）が17.6Wと11.1Wに変わり、天井裏での温度上昇・電源寿命・分岐回路に載せられる台数・電気代まで影響します。本記事では効率の意味と計算式、80/85/90%の実差、負荷率との関係、過剰容量がなぜ非効率かを施工業者向けに整理します。
+      </div>
+
+      <!-- ===== 1 ===== -->
+      <h2>1. 変換効率(η)とは何か</h2>
+      <p>変換効率は、電源が<strong>入力電力(Pin)のうち出力電力(Pout)として取り出せた割合</strong>です。式は次のとおりです。</p>
+      <div class="formula">
+        η（効率）＝ <b>出力電力 Pout ÷ 入力電力 Pin</b><br>
+        入力電力 Pin ＝ <b>Pout ÷ η</b>　／　損失（発熱）＝ <b>Pin − Pout ＝ Pout ×（1/η − 1）</b>
+      </div>
+      <p>たとえばLED負荷が100Wで効率85%なら、入力は <strong>100 ÷ 0.85 ＝ 約117.6W</strong>。差の <strong>17.6W が電源内部で熱</strong>になります。効率が高いほど「同じ明るさを出すのに食う電気が少なく、発熱も少ない」ことになります。LEDテープに使うAC100V入力のスイッチング電源（定電圧24V等）で、効率は実用上おおむね <strong>80〜92%</strong> の範囲です。</p>
+
+      <!-- ===== 2 ===== -->
+      <h2>2. 効率80% / 85% / 90% の実差（損失と入力電流）</h2>
+      <p>出力100Wの負荷を例に、効率別の入力電力・発熱・入力電流（AC100V・力率0.9と仮定）を比較します。施工の現場で効く差は「発熱」と「入力電流」です。</p>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>効率η</th>
+              <th>入力電力 Pin</th>
+              <th>損失＝発熱</th>
+              <th>入力電流(目安)</th>
+              <th>評価</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>80%</strong></td>
+              <td>125.0W</td>
+              <td class="ng">25.0W</td>
+              <td>約1.39A</td>
+              <td>発熱大・低価格帯に多い</td>
+            </tr>
+            <tr>
+              <td><strong>85%</strong></td>
+              <td>117.6W</td>
+              <td>17.6W</td>
+              <td>約1.31A</td>
+              <td>標準的なグレード</td>
+            </tr>
+            <tr>
+              <td><strong>90%</strong></td>
+              <td>111.1W</td>
+              <td class="ok">11.1W</td>
+              <td>約1.23A</td>
+              <td>高効率・低発熱で有利</td>
+            </tr>
+            <tr>
+              <td><strong>92%</strong></td>
+              <td>108.7W</td>
+              <td class="ok">8.7W</td>
+              <td>約1.21A</td>
+              <td>高効率モデル</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>効率80%と90%では、同じ100W出力でも<strong>発熱が25W→11W</strong>と半分以下になります。10台並べれば差は140W分の熱。天井裏・什器内・密閉ボックスでは、この発熱差がそのまま温度上昇・寿命・保護シャットダウンの差になります。</p>
+      <div class="info-box">
+        <div class="ttl">入力電流が小さい＝分岐回路に多く載る</div>
+        効率が高いほど入力電力＝入力電流が小さくなります。1分岐（たとえば20Aコンセント回路）にぶら下げられる電源の台数は入力電流で決まるため、高効率電源のほうが同じ回路に多く接続できます。多系統の現場ほど効きます。
+      </div>
+
+      <!-- ===== 3 ===== -->
+      <h2>3. 効率は「負荷率」で変わる（過剰容量はむしろ非効率）</h2>
+      <p>見落としやすいのが、<strong>効率は負荷率（定格に対してどれだけ使っているか）で変動する</strong>点です。スイッチング電源は軽負荷で効率が落ち、おおむね<strong>負荷率50〜100%でいちばん高効率</strong>になります。カタログ効率値は通常フル負荷付近の値です。</p>
+      <div class="spec-grid">
+        <div class="spec-card">
+          <div class="val">〜20%</div>
+          <div class="lbl">軽負荷</div>
+          <div class="desc">効率が大きく低下。容量を余らせすぎた状態</div>
+        </div>
+        <div class="spec-card">
+          <div class="val">50〜90%</div>
+          <div class="lbl">最適域</div>
+          <div class="desc">最も高効率。狙うべき負荷率</div>
+        </div>
+        <div class="spec-card">
+          <div class="val">100%</div>
+          <div class="lbl">フル負荷</div>
+          <div class="desc">高効率だが余裕ゼロ。連続使用は不可</div>
+        </div>
+      </div>
+      <p>つまり、容量ぴったり（負荷率100%）で使うのは余裕がなく危険ですが、逆に200W負荷に<strong>600Wの電源を使うと負荷率33%</strong>となり、効率の悪い領域で動かすことになります。容量は「余裕は必要だが過剰はムダ」。下記の考え方でバランスします。</p>
+      <div class="formula">
+        推奨電源容量 ＝ <b>テープ総消費電力 ×（1.2〜1.3）</b><br>
+        → 負荷率にすると約 <b>77〜83%</b> で運転（効率の良い域 ＆ 連続使用の余裕を両立）
+      </div>
+      <div class="warn-box">
+        <div class="ttl">⚠ 容量の余らせすぎ・盛りすぎ両方が損</div>
+        余裕ゼロ（負荷率100%）は発熱・寿命で危険、余らせすぎ（負荷率20%以下）は効率が落ちて無駄に発熱します。<strong>定格の70〜90%で使う</strong>のが、効率・発熱・寿命のすべてで最もおいしい運転点です。
+      </div>
+
+      <!-- ===== 4 ===== -->
+      <h2>4. 効率と電気代（ランニングコスト）</h2>
+      <p>効率は電気代にも効きます。出力100Wを<strong>1日12時間・年365日</strong>点灯する場合、効率85%と90%の入力電力差は 117.6W − 111.1W ＝ <strong>6.5W</strong>。年間では次のとおりです。</p>
+      <div class="formula">
+        年間の電力差 ＝ 6.5W × 12h × 365日 ÷ 1000 ＝ <b>約28.5 kWh／年</b>（1台あたり）
+      </div>
+      <p>1台では小さく見えますが、テープを多用する商業施設・看板・什器照明では電源台数がかさみます。50台なら<strong>年1,425 kWh</strong>の差。これに各現場の電気料金単価（¥/kWh）を掛ければ年間コスト差が出ます。※電気料金単価は契約・地域で異なるため、必ず実際の単価で試算してください。長時間点灯・多台数ほど高効率電源の元が取れます。</p>
+
+      <!-- ===== 5 ===== -->
+      <h2>5. 電源選定の手順（効率を含めた現場判断）</h2>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-body">
+            <strong>テープの総消費電力を出す</strong>
+            「W/m × 総延長(m)」で負荷を算出。例：14.4W/m × 10m ＝ 144W。
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-body">
+            <strong>1.2〜1.3倍で容量を決める</strong>
+            144W × 1.25 ＝ 180W → 200W級の電源を選定。負荷率は約72%で効率の良い域に入る。
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-body">
+            <strong>効率(η)を仕様で確認する</strong>
+            同容量なら効率の高いモデルを優先。密閉設置・高温環境・多台数・長時間点灯では特に効率を重視。
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-body">
+            <strong>発熱量を算出し放熱を確保</strong>
+            損失＝Pout×(1/η−1)で発熱W数を把握。発熱分の放熱スペース・クリアランスを確保し、密閉や断熱材埋設を避ける。
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-body">
+            <strong>入力電流で回路を確認</strong>
+            入力電流＝Pin÷(入力電圧×力率)。同一分岐に載せる台数の合計電流がブレーカ容量に収まるか確認する。
+          </div>
+        </div>
+      </div>
+      <div class="tip-box">
+        <div class="ttl">電源選定チェックリスト</div>
+        □ テープ総消費電力（W/m×延長）を算出したか<br>
+        □ 容量は1.2〜1.3倍（負荷率70〜90%）に収まっているか<br>
+        □ 効率(η)を仕様で確認したか（密閉・高温は高効率優先）<br>
+        □ 発熱W数＝Pout×(1/η−1)を出し放熱を確保したか<br>
+        □ 入力電流の合計が分岐ブレーカ容量内か<br>
+        □ 過剰容量で負荷率20%以下になっていないか
+      </div>
+
+      <!-- ===== FAQ ===== -->
+      <h2>よくある質問</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">変換効率が高い電源を選ぶと施工上どんなメリットがありますか？</div>
+          <div class="faq-a">効率が高いほど、同じ出力でも電源内部の損失（発熱）が小さくなります。たとえば出力100Wの負荷を動かすとき、効率85%なら入力は約117.6Wで損失17.6Wが熱になりますが、効率90%なら入力111.1Wで損失11.1Wに減ります。発熱が小さいと電源の温度上昇が抑えられて寿命が延び、天井裏など放熱の悪い場所でも安定します。さらに入力電流が小さくなるため、分岐回路に多くの電源をぶら下げられ、電気代もわずかに下がります。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">電源の効率は負荷率によって変わりますか？</div>
+          <div class="faq-a">変わります。スイッチング電源は負荷率20%以下の軽負荷で効率が大きく落ち、おおむね負荷率50〜100%で最も高効率になります。カタログの効率値はだいたい定格（フル負荷）付近での値です。つまり300Wの電源にLEDを50W（負荷率17%）しかつながないと、効率が悪い領域で使うことになり、発熱も相対的に増えます。容量は余らせすぎず、定格の70〜90%程度で使うのが効率の面でも理想です。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">効率90%の電源なら放熱対策は不要ですか？</div>
+          <div class="faq-a">不要にはなりません。効率90%でも残りの10%は必ず熱になります。出力100Wなら約11Wが電源内部で発熱するため、密閉ボックスや断熱材に埋めると温度が上がり、保護回路が働いて消灯したり寿命が縮みます。効率が高いと発熱量は減りますが、ゼロではないので、放熱スペースの確保・上面/側面のクリアランス・密閉回避といった基本の放熱対策は効率に関わらず必要です。</div>
+        </div>
+      </div>
+
+      <!-- ===== CTA ===== -->
+      <div class="cta-box">
+        <h3>高効率・低発熱のLED電源をプロ価格で</h3>
+        <p>定電圧24V電源・防水ドライバ・調光対応電源を容量別にラインナップ。LEDテープ・アルミフレーム・配線部材まで一括で揃います。</p>
+        <a href="/" class="cta-btn">商品ラインナップを見る →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2024 LED PRO SHOP / 日本ネオン株式会社 |
+      <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+    </p>
+  </footer>
+
+</body>
+</html>
