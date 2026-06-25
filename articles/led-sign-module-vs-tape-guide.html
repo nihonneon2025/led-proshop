@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>看板用LEDモジュールとLEDテープの違い・使い分け｜内照看板・チャンネル文字の選び方と配線 | LED PRO SHOP</title>
+  <meta name="description" content="内照看板やチャンネル文字の光源にLEDモジュールとLEDテープのどちらを使うべきか迷う看板屋向け。文字の奥行き・サイズ別の選定基準、定電圧モジュールとテープの配線・電源容量計算・取り付けの違い、点ムラ・防水の注意点を一覧表で解説します。">
+  <meta name="keywords" content="看板 LEDモジュール,LEDモジュール LEDテープ 違い,内照看板 LED,チャンネル文字 LED,看板 LED 選び方,箱文字 LED 配線,看板用LED 電源 計算">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-sign-module-vs-tape-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-sign-module-vs-tape-guide">
+  <meta property="og:title" content="看板用LEDモジュールとLEDテープの違い・使い分け｜内照看板・チャンネル文字の選び方と配線 | LED PRO SHOP">
+  <meta property="og:description" content="チャンネル文字・内照看板の光源選びで迷う看板屋向け。文字の奥行き・サイズ別にLEDモジュールとLEDテープの使い分けを整理。配線方式・電源容量計算・取り付け・点ムラ・防水の注意点を具体数値で解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-sign-module-vs-tape-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="看板用LEDモジュールとLEDテープの違い・使い分け｜内照看板・チャンネル文字の選び方と配線 | LED PRO SHOP">
+  <meta name="twitter:description" content="チャンネル文字・内照看板の光源選びで迷う看板屋向け。文字の奥行き・サイズ別にLEDモジュールとLEDテープの使い分けを整理。配線・電源容量計算・取り付け・点ムラ・防水の注意点を具体数値で解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-sign-module-vs-tape-guide-hero.webp">
+
+  <!-- ===== STRUCTURED DATA ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "看板用LEDモジュールとLEDテープライトの違い・使い分け｜内照看板・チャンネル文字の選び方と配線",
+    "description": "看板施工業者向けに、LEDモジュールとLEDテープライトの構造の違い、文字の奥行き・サイズ別の選定基準、配線・電源容量計算・取り付けの違い、点ムラと防水の注意点を解説します。",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP"},
+    "publisher": {"@type": "Organization", "name": "LED PRO SHOP", "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}},
+    "datePublished": "2026-06-26",
+    "dateModified": "2026-06-26",
+    "url": "https://led-proshop.com/articles/led-sign-module-vs-tape-guide",
+    "image": "https://led-proshop.com/articles/images/led-sign-module-vs-tape-guide-hero.webp"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/"},
+      {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "看板用LEDモジュールとLEDテープの違い・使い分け", "item": "https://led-proshop.com/articles/led-sign-module-vs-tape-guide"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "看板用LEDモジュールはDC12VとDC24Vのどちらが主流ですか？",
+        "acceptedAnswer": {"@type": "Answer", "text": "看板用LEDモジュールは文字内部で短距離・分岐配線になるためDC12Vが主流です。多くの製品が内部に定電流ICを内蔵し、DC12Vの定電圧電源に並列で接続します。大型ボックス看板など配線が長くなり電圧降下が問題になる場合は、DC24V対応モジュールやLEDテープを選ぶと幹線を細くでき電圧降下を抑えられます。"}
+      },
+      {
+        "@type": "Question",
+        "name": "チャンネル文字の奥行きが浅い（25mm程度）場合、モジュールとテープのどちらが良いですか？",
+        "acceptedAnswer": {"@type": "Answer", "text": "奥行き25mm程度の浅い文字はモジュールの点光源が表面に透けて『粒（点ムラ）』に見えやすいため、高密度SMD（160球/m以上）またはCOBテープライトに乳半アクリルや拡散板を合わせて均一に仕上げるのが安全です。奥行き40mm以上を確保できる文字であれば、点光源が内部で拡散するためLEDモジュールが有利になります。"}
+      },
+      {
+        "@type": "Question",
+        "name": "1つの看板でLEDモジュールとLEDテープを混在させても問題ありませんか？",
+        "acceptedAnswer": {"@type": "Answer", "text": "電源電圧（12V/24V）と極性をそろえ、両者の消費電力を合算して電源容量の80%以下に収めれば混在は可能です。ただし色温度（K）と演色性が違うと文字ごとに色味が変わって見えるため、同一品番・同一ロットで色をそろえてください。混在配線では電圧降下が大きくなりやすいので、給電点を分けるか幹線を太くする対策も検討します。"}
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#003C82;--blue-pale:#e8f0fe;--accent:#e8820c;--accent-pale:#fff3e0;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px;text-decoration:none}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .breadcrumb .container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .breadcrumb a{color:var(--blue);text-decoration:none}
+    .breadcrumb a:hover{text-decoration:underline}
+    .breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#001a40 0%,#003C82 55%,#7a4500 100%);padding:40px 16px 32px;border-bottom:3px solid #002a5c}
+    .article-hero .container{max-width:840px;margin:0 auto}
+    .article-hero .article-cat{display:inline-block;font-size:10px;font-weight:700;color:#fff;background:var(--accent);padding:3px 10px;border-radius:2px;letter-spacing:1px;margin-bottom:12px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-hero .article-meta{font-size:11px;color:rgba(255,255,255,.6);display:flex;gap:16px;flex-wrap:wrap}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:40px;padding:40px 16px 60px;max-width:1200px;margin:0 auto}
+    .article-body{font-size:14px;line-height:1.85;color:var(--text)}
+    .article-body h2{font-size:18px;font-weight:900;color:var(--blue);border-left:4px solid var(--accent);padding-left:12px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--text);margin:28px 0 12px;padding-bottom:4px;border-bottom:1px solid var(--border)}
+    .article-body p{margin-bottom:16px}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:16px}
+    .article-body li{margin-bottom:6px}
+    .article-body table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px}
+    .article-body th{background:var(--blue);color:#fff;padding:8px 12px;text-align:left;font-weight:700}
+    .article-body td{padding:8px 12px;border:1px solid var(--border)}
+    .article-body tr:nth-child(even) td{background:var(--bg-gray)}
+    .article-sidebar{font-size:13px}
+    .sidebar-box{background:var(--bg-gray);border:1px solid var(--border);border-radius:6px;padding:16px;margin-bottom:16px}
+    .sidebar-box h3{font-size:13px;font-weight:700;color:var(--blue);margin-bottom:10px}
+    .sidebar-box ul{list-style:none;padding:0}
+    .sidebar-box li{border-bottom:1px solid var(--border);padding:6px 0;font-size:12px}
+    .sidebar-box li:last-child{border-bottom:none}
+    .sidebar-box a{color:var(--blue);text-decoration:none}
+    .sidebar-box a:hover{text-decoration:underline}
+    .cta-box{background:var(--blue);color:#fff;padding:24px;border-radius:6px;text-align:center;margin:32px 0}
+    .cta-box p{margin-bottom:12px;font-size:14px;line-height:1.6}
+    .cta-btn{display:inline-block;background:#fff;color:var(--blue);font-weight:700;padding:12px 28px;border-radius:3px;text-decoration:none;font-size:14px;transition:opacity .2s}
+    .cta-btn:hover{opacity:.85}
+    .callout{background:var(--accent-pale);border:1px solid var(--accent);border-radius:6px;padding:14px 18px;margin:20px 0;font-size:13px}
+    .callout strong{color:#b5650a}
+    .faq-section{margin:36px 0}
+    .faq-item{border:1px solid var(--border);border-radius:6px;margin-bottom:10px;overflow:hidden}
+    .faq-q{background:var(--blue-pale);padding:12px 16px;font-weight:700;font-size:14px;color:var(--blue)}
+    .faq-a{padding:12px 16px;font-size:14px;line-height:1.7}
+    @media(max-width:768px){.article-layout{grid-template-columns:1fr}.article-sidebar{display:none}.article-hero h1{font-size:18px}}
+    .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo">
+      <span class="logo-main">LED PRO SHOP <small>by 日本ネオン㈱</small></span>
+      <span class="logo-tag">
+        <span class="logo-badge">PRO</span>
+        <span class="logo-catch">業務用LEDの専門通販</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-link">商品一覧</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>看板用LEDモジュールとLEDテープの違い・使い分け</span>
+  </div>
+</div>
+
+<div class="article-hero">
+  <div class="container">
+    <span class="article-cat">看板施工ガイド</span>
+    <h1>看板用LEDモジュールとLEDテープの違い・使い分け｜内照看板・チャンネル文字の選び方と配線</h1>
+    <div class="article-meta">
+      <span>公開: 2026-06-26</span>
+      <span>LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-layout">
+  <article class="article-body">
+
+    <p>内照看板やチャンネル文字（箱文字）の光源を選ぶとき、「LEDモジュール」と「LEDテープライト」のどちらを使うべきか迷う場面は多いはずです。文字の奥行きや幅、看板のサイズを無視して選ぶと、点ムラ（粒が見える）・端の暗がり・電源容量オーバーといった施工後の手戻りにつながります。この記事では看板施工業者向けに、両者の構造的な違い、文字サイズ・奥行き別の選定基準、配線・電源容量計算・取り付けの違い、点ムラと防水の注意点を、具体的な数値とともに整理します。</p>
+
+    <h2>LEDモジュールとLEDテープの基本的な違い</h2>
+    <p>まず両者の構造と電気的な特性を押さえます。看板用LEDモジュールは「点光源を一定間隔に置いて面で光らせる」、LEDテープは「線で連続して光らせる」のが本質的な違いです。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>看板用LEDモジュール</th>
+          <th>LEDテープライト</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>発光形態</td><td>点光源（1〜3球ユニットを等間隔配置）</td><td>連続発光（SMD/COBを基板に連続実装）</td></tr>
+        <tr><td>駆動電圧</td><td>DC12Vが主流（定電流IC内蔵が一般的）</td><td>DC12V／DC24V 定電圧</td></tr>
+        <tr><td>接続方式</td><td>連結コネクタで並列接続（分岐配線）</td><td>リールからカット・連結（直列ライン）</td></tr>
+        <tr><td>消費電力の目安</td><td>0.24〜0.96W/個</td><td>4.8〜19.2W/m</td></tr>
+        <tr><td>輝度の調整</td><td>配置間隔（ピッチ）と球数で調整</td><td>テープの密度（球/m）とW/mで調整</td></tr>
+        <tr><td>得意な形状</td><td>面・広い文字・大型ボックス</td><td>線・細い文字・縁取り・曲線</td></tr>
+      </tbody>
+    </table>
+    <div class="callout"><strong>ポイント：</strong>看板用LEDモジュールの多くはモジュール内部に定電流ICを内蔵しているため、外部はDC12Vの定電圧電源を使います。「定電流モジュール」と呼ばれても、電源側は定電圧で扱う点に注意してください。</div>
+
+    <h2>どちらを選ぶ？文字の奥行き・用途別の判断基準</h2>
+    <p>選定の最大のポイントは「文字（または看板）の奥行き」です。奥行きが浅いほど点光源が表面に透けて粒に見えるため、テープや拡散が有利になります。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>用途・条件</th>
+          <th>推奨光源</th>
+          <th>理由</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>チャンネル文字（奥行き40mm以上）</td><td>LEDモジュール</td><td>点光源が奥行きで拡散して均一に光る。ピッチで輝度を調整できる</td></tr>
+        <tr><td>浅い箱文字・薄型サイン（奥行き30mm未満）</td><td>高密度LEDテープ／COB</td><td>モジュールだと粒（点ムラ）が表面に出やすい</td></tr>
+        <tr><td>細いライン文字・縁取り・曲線ロゴ</td><td>LEDネオンフレックス／テープ</td><td>連続光源で線が途切れずつながる</td></tr>
+        <tr><td>大型内照ボックス看板（乳半アクリル）</td><td>LEDモジュール</td><td>バックライトとして奥行きで均一化。広範囲を少ない配線でカバー</td></tr>
+        <tr><td>小型・薄型内照ボックス（奥行き50mm未満）</td><td>高密度テープ＋拡散板</td><td>奥行き不足でモジュールの点が透ける</td></tr>
+        <tr><td>アクセント発光・極細ロゴ</td><td>COBテープ</td><td>粒感ゼロで連続した発光ラインになる</td></tr>
+      </tbody>
+    </table>
+    <p>迷ったときは「<strong>奥行き40mmが分かれ目</strong>」と覚えておくと判断が早くなります。40mm以上ならモジュール、それ未満なら高密度テープ＋拡散を基本に検討してください。</p>
+
+    <h2>配線方式と電源容量の計算</h2>
+    <h3>LEDモジュール：並列配線と電源容量</h3>
+    <p>モジュールはDC12V電源から連結コネクタで並列に分岐します。必要な電源容量は次の式で求めます。</p>
+    <div class="callout"><strong>必要電源容量(W) ＝ モジュール総数 × モジュール単体W ÷ 0.8（余裕率20%）</strong></div>
+    <p>例：単体0.72Wのモジュールを80個使う場合 → 0.72W × 80個 ÷ 0.8 ＝ <strong>72W</strong>。よって定格100WのDC12V電源を選定します（定格の約72%で運用）。電源は常に定格の80%以下で使うのが発熱・寿命の観点で安全です。</p>
+
+    <h3>LEDテープ：連続配線と電圧降下</h3>
+    <p>テープは「W/m × 総m」で総消費電力を計算します。注意すべきは電圧降下で、長く伸ばすほど末端が暗くなり色も変わります。</p>
+    <table>
+      <thead>
+        <tr>
+          <th>電圧</th>
+          <th>片側給電の目安上限</th>
+          <th>主な対策</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>DC12V</td><td>約5m以内</td><td>両端給電・中間給電・24V化</td></tr>
+        <tr><td>DC24V</td><td>約10m以内</td><td>両端給電・幹線（電源〜テープ間）を太線化</td></tr>
+      </tbody>
+    </table>
+    <p>大型看板で長い距離を引く場合は、DC12Vモジュールよりも電圧降下に強いDC24Vのテープ・モジュールを選ぶと幹線を細くでき、電源台数も減らせます。</p>
+
+    <h2>取り付け方法の違い</h2>
+    <ul>
+      <li><strong>LEDモジュール：</strong>裏面の両面テープに加え、タッピングビスで文字底面に固定します。30〜50mmピッチを目安に等間隔配置し、コネクタ連結で配線を最短化。屋外は固定部とコネクタを必ず防水処理します。</li>
+      <li><strong>LEDテープ：</strong>放熱のためアルミ基板・アルミフレームへ貼付するのが基本です。曲線部はネオンフレックス、直角部は対応コーナー部品を使うと仕上がりが安定します。粘着が弱い下地は脱脂・プライマー処理を行います。</li>
+      <li><strong>共通（屋外）：</strong>モジュール・テープともIP65以上を選び、コネクタ部はシリコーンコーキングで止水。電源はIP65以上の防水ボックスに収納します。</li>
+    </ul>
+
+    <h2>点ムラ・輝度・防水でよくある失敗と対策</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>失敗例</th>
+          <th>主な原因</th>
+          <th>対策</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>文字表面に粒（点）が見える</td><td>浅い文字にモジュール／配置ピッチが広すぎ</td><td>奥行き40mm以上を確保、または高密度テープ＋拡散板に変更</td></tr>
+        <tr><td>端が暗い・色が変わる</td><td>テープの電圧降下</td><td>両端給電・中間給電・24V化・幹線を太線化</td></tr>
+        <tr><td>点灯後しばらくで暗くなる／早期故障</td><td>電源容量ギリギリ・防水不良</td><td>定格80%以下で運用・IP65電源・止水処理</td></tr>
+        <tr><td>一部だけ点灯しない</td><td>コネクタの接触不良・浸水</td><td>防水コネクタ＋コーキング、半田＋熱収縮で確実に接続</td></tr>
+      </tbody>
+    </table>
+
+    <h2>よくある質問</h2>
+    <div class="faq-section">
+      <div class="faq-item">
+        <div class="faq-q">Q. 看板用LEDモジュールはDC12VとDC24Vのどちらが主流ですか？</div>
+        <div class="faq-a">A. 看板用LEDモジュールは文字内部で短距離・分岐配線になるためDC12Vが主流です。多くの製品が内部に定電流ICを内蔵し、DC12Vの定電圧電源に並列で接続します。大型ボックス看板など配線が長くなり電圧降下が問題になる場合は、DC24V対応モジュールやLEDテープを選ぶと幹線を細くでき電圧降下を抑えられます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Q. チャンネル文字の奥行きが浅い（25mm程度）場合、モジュールとテープのどちらが良いですか？</div>
+        <div class="faq-a">A. 奥行き25mm程度の浅い文字はモジュールの点光源が表面に透けて「粒（点ムラ）」に見えやすいため、高密度SMD（160球/m以上）またはCOBテープライトに乳半アクリルや拡散板を合わせて均一に仕上げるのが安全です。奥行き40mm以上を確保できる文字であれば、点光源が内部で拡散するためLEDモジュールが有利になります。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Q. 1つの看板でLEDモジュールとLEDテープを混在させても問題ありませんか？</div>
+        <div class="faq-a">A. 電源電圧（12V/24V）と極性をそろえ、両者の消費電力を合算して電源容量の80%以下に収めれば混在は可能です。ただし色温度（K）と演色性が違うと文字ごとに色味が変わって見えるため、同一品番・同一ロットで色をそろえてください。混在配線では電圧降下が大きくなりやすいので、給電点を分けるか幹線を太くする対策も検討します。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <p>看板用LEDモジュール・LEDテープ・防水電源は商品ページで仕様をご確認いただけます。</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </article>
+
+  <aside class="article-sidebar">
+    <div class="sidebar-box">
+      <h3>関連コラム</h3>
+      <ul>
+        <li><a href="/articles/channel-letter-backlit-sign-led">チャンネル文字・バックライト看板のLED</a></li>
+        <li><a href="/articles/led-tape-outdoor-sign-guide">屋外看板用LEDテープの選び方</a></li>
+        <li><a href="/articles/led-signage-lighting-guide">サイン・看板照明のLED基礎</a></li>
+        <li><a href="/articles/led-neon-flex-guide">LEDネオンフレックス完全ガイド</a></li>
+        <li><a href="/articles/led-tape-voltage-drop-guide">LEDテープの電圧降下と対策</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-box">
+      <h3>あわせて読みたい</h3>
+      <ul>
+        <li><a href="/articles/led-tape-constant-voltage-vs-constant-current-guide">定電圧 vs 定電流 電源の違い</a></li>
+        <li><a href="/articles/led-outdoor-power-supply-enclosure-guide">屋外用LED電源・防水ボックス</a></li>
+        <li><a href="/articles/led-tape-ip-waterproof-guide">LEDテープの防水規格（IP65/IP68）</a></li>
+        <li><a href="/articles/led-psu-capacity-guide">LED電源の容量（W）の選び方</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<footer class="footer">
+  <p>LED PRO SHOP（日本ネオン株式会社）｜業務用LEDテープライト専門通販</p>
+  <p style="margin-top:6px"><a href="/" style="color:#aaa">商品一覧</a> | <a href="/articles/" style="color:#aaa">コラム</a> | <a href="/tokushoho.html" style="color:#aaa">特定商取引法</a> | <a href="/privacy-policy.html" style="color:#aaa">プライバシーポリシー</a></p>
+  <p style="margin-top:8px">© 2024 日本ネオン株式会社 All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
