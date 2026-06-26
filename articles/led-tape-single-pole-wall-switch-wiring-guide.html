@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープを壁の片切スイッチでON/OFFする配線方法｜ほたる・パイロットスイッチの注意と電源一次側で切る基本【施工業者向け】 | LED PRO SHOP</title>
+  <meta name="description" content="壁の普通のスイッチでLEDテープを入切したい——基本は電源（PSU）のAC一次側に片切スイッチを入れます。ほたるスイッチで消灯後もうっすら光る・チラつく・カチカチ鳴る原因と対処、パイロットスイッチの注意、DC二次側で切る場合の接点容量まで施工業者向けに解説します。">
+  <meta name="keywords" content="LEDテープ スイッチ 配線,LEDテープ 壁スイッチ,LEDテープ 片切スイッチ,ほたるスイッチ LED 消えない,ほたるスイッチ LED うっすら光る,パイロットスイッチ LED,LED電源 スイッチ 一次側,LEDテープ ON OFF スイッチ">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-single-pole-wall-switch-wiring-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-single-pole-wall-switch-wiring-guide">
+  <meta property="og:title" content="LEDテープを壁の片切スイッチでON/OFFする配線方法｜ほたる・パイロットスイッチの注意と電源一次側で切る基本【施工業者向け】 | LED PRO SHOP">
+  <meta property="og:description" content="壁の普通のスイッチでLEDテープを入切する基本は、電源のAC一次側に片切スイッチを入れること。ほたるスイッチで消灯後もうっすら光る・チラつく原因と対処、DC二次側で切る場合の注意を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-single-pole-wall-switch-wiring-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープを壁の片切スイッチでON/OFFする配線方法｜ほたる・パイロットスイッチの注意【施工業者向け】 | LED PRO SHOP">
+  <meta name="twitter:description" content="基本は電源のAC一次側に片切スイッチ。ほたるスイッチで消灯後うっすら光る・チラつく原因と対処、DC二次側で切る場合の接点容量を解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-single-pole-wall-switch-wiring-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープを壁の片切スイッチでON/OFFする配線方法｜ほたる・パイロットスイッチの注意と電源一次側で切る基本",
+    "description": "壁の普通の片切スイッチでLEDテープを入切する配線を、電源（PSU）のAC一次側に入れる基本から、ほたるスイッチで消灯後もうっすら光る・チラつく原因と対処、DC二次側で切る場合の接点容量・突入電流まで施工業者向けに解説します。",
+    "image": "https://led-proshop.com/articles/images/led-tape-single-pole-wall-switch-wiring-guide-hero.webp",
+    "datePublished": "2026-06-27",
+    "dateModified": "2026-06-27",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-single-pole-wall-switch-wiring-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープを壁の片切スイッチでON/OFFする配線", "item": "https://led-proshop.com/articles/led-tape-single-pole-wall-switch-wiring-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== FAQ JSON-LD ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープを壁の普通のスイッチで入切したいとき、スイッチは電源の前と後ろどちらに入れますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "基本は電源（PSU）の手前、AC100Vの一次側に片切スイッチを入れます。市販のAC用片切スイッチがそのまま使え、消灯時は電源ごと切れるため待機電力もありません。DC二次側（電源とテープの間）でも切れますが、DC低圧は電流が大きく、AC定格しかないスイッチではアークで接点が傷みやすいうえ、配線が伸びて電圧降下が増えます。特別な理由がなければAC一次側で切るのが標準です。注意点は、入切のたびに電源へ突入電流が流れ、点灯がコンマ数秒遅れることくらいです。" }
+      },
+      {
+        "@type": "Question",
+        "name": "ほたるスイッチ（位置表示灯付き）でLEDテープを切ったら、消灯後もうっすら光ったりチラついたりします。なぜですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "ほたるスイッチはOFF時に表示灯を光らせるため、負荷（この場合はLED電源）を通して1mA前後の微小電流が流れ続けます。白熱灯では問題になりませんが、LED電源は入力のコンデンサがこの微小電流で充電され、残光・チラつき・内部リレーのカチカチ音の原因になります。対処は、(1)普通の片切スイッチに替える、(2)ほたる回路を負荷と別経路にできる3線式対応の器具・結線にする、(3)負荷と並列にバイパス用のコンデンサや抵抗（ダミー負荷）を入れて微小電流を逃がす、のいずれかです。確実なのは(1)です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "DC24VのLEDテープを電源の二次側のスイッチで切りたい場合、スイッチはどう選びますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "まず負荷電流を『合計W ÷ 電圧V』で求めます。DC24Vで96Wなら4Aです。スイッチは『DC対応』で、接点定格が負荷電流の1.5〜2倍以上（この例で6〜8A以上）のものを選びます。AC定格しかないスイッチをDCで使うと、開く瞬間のアーク（火花）が消えにくく接点が早期に劣化・溶着します。数A以上を切るなら、手元スイッチで直接切らず、小電流の信号でリレーやLEDコントローラーを駆動し主電流はそちらで断続させると安全・長寿命です。" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --blue:#1d4ed8;--blue-pale:#e8edfd;--orange:#b45309;--orange-pale:#fff5e8;
+      --bg:#fff;--bg-gray:#f3f5fb;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;
+      --surface:#fff;--accent2:#1d4ed8;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.75}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:860px;margin:0 auto;padding:0 20px}
+    header.site-header{background:var(--blue);padding:14px 20px;display:flex;align-items:center;gap:12px}
+    header.site-header a{color:#fff;font-size:18px;font-weight:700;letter-spacing:.03em}
+    header.site-header span{color:rgba(255,255,255,.6);font-size:12px}
+
+    .hero{background:linear-gradient(135deg,#15307a 0%,#0c1838 100%);padding:48px 20px 40px;text-align:center;color:#fff}
+    .hero .cat-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:11px;letter-spacing:.08em;margin-bottom:16px}
+    .hero h1{font-size:clamp(18px,3.5vw,26px);font-weight:900;line-height:1.45;margin-bottom:14px}
+    .hero .hero-meta{font-size:12px;color:rgba(255,255,255,.7);display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+    .hero-img{width:100%;max-height:380px;object-fit:cover;display:block}
+
+    .breadcrumb{font-size:11px;color:var(--text-muted);padding:10px 0;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+    .breadcrumb a{color:var(--text-muted)}
+
+    .toc{background:var(--bg-gray);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:28px 0}
+    .toc h2{font-size:13px;font-weight:700;color:var(--text-sub);margin-bottom:10px;letter-spacing:.06em}
+    .toc ol{padding-left:18px}
+    .toc li{font-size:13px;margin-bottom:6px}
+    .toc a{color:var(--blue)}
+
+    .article-body{padding:32px 0 48px}
+    .article-body h2{font-size:20px;font-weight:900;color:var(--blue);border-left:4px solid var(--blue);padding-left:12px;margin:40px 0 16px}
+    .article-body h3{font-size:16px;font-weight:700;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:6px;margin:28px 0 12px}
+    .article-body p{margin-bottom:14px}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:14px}
+    .article-body li{margin-bottom:6px}
+
+    .box-blue{background:var(--blue-pale);border-left:4px solid var(--blue);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-orange{background:var(--orange-pale);border-left:4px solid var(--orange);border-radius:6px;padding:16px 18px;margin:20px 0}
+    .box-blue p,.box-orange p{margin-bottom:0}
+
+    .formula{background:#0c1838;color:#cdd9f7;font-family:monospace;font-size:15px;border-radius:8px;padding:16px 20px;margin:16px 0;line-height:1.6}
+    .formula .comment{color:#8fa8e6}
+
+    .data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .data-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+    .data-card .num{font-size:26px;font-weight:900;color:var(--blue);line-height:1}
+    .data-card .unit{font-size:12px;color:var(--text-sub);margin-top:2px}
+    .data-card .label{font-size:11px;color:var(--text-muted);margin-top:6px}
+
+    .tbl-wrap{overflow-x:auto;margin:16px 0}
+    table{width:100%;border-collapse:collapse;font-size:13px;min-width:480px}
+    th{background:var(--blue);color:#fff;padding:9px 10px;text-align:left;font-weight:700}
+    td{padding:8px 10px;border-bottom:1px solid #eaecf0;vertical-align:top}
+    tr:nth-child(even) td{background:#f8f9fb}
+    .good{color:#1a7a3c;font-weight:700}
+    .bad{color:#b91c1c;font-weight:700}
+    .mid{color:#92400e;font-weight:700}
+
+    .step-list{list-style:none;padding:0;margin:16px 0;counter-reset:step}
+    .step-list li{counter-increment:step;display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #eaecf0}
+    .step-list li:last-child{border-bottom:none}
+    .step-list li::before{content:counter(step);display:flex;align-items:center;justify-content:center;width:28px;height:28px;min-width:28px;background:var(--blue);color:#fff;border-radius:50%;font-size:13px;font-weight:700}
+    .step-body{flex:1}
+    .step-body strong{display:block;margin-bottom:4px}
+
+    .checklist{list-style:none;padding:0;margin:16px 0}
+    .checklist li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #eaecf0;font-size:14px}
+    .checklist li:last-child{border-bottom:none}
+    .checklist li::before{content:"☐";font-size:18px;color:var(--blue);flex-shrink:0;line-height:1.3}
+
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--blue)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+
+    .cta-section{background:linear-gradient(135deg,#15307a,#0c1838);border-radius:16px;padding:36px 24px;text-align:center;margin:40px 0;color:#fff}
+    .cta-section h2{font-size:18px;font-weight:900;margin-bottom:8px;color:#fff;border:none;padding:0}
+    .cta-section p{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:20px}
+    .cta-btn{display:inline-block;background:#f0a500;color:#1a1a1a;font-weight:900;font-size:15px;padding:14px 36px;border-radius:50px;transition:opacity .2s}
+    .cta-btn:hover{opacity:.88;text-decoration:none}
+
+    footer.site-footer{background:#1a1a1a;color:#888;font-size:12px;text-align:center;padding:20px}
+    footer.site-footer a{color:#aaa}
+
+    @media(max-width:600px){
+      .hero{padding:32px 16px 28px}
+      .hero h1{font-size:17px}
+      .data-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/">LED PRO SHOP</a>
+  <span>プロ仕様LED専門店</span>
+</header>
+
+<div class="hero">
+  <div class="cat-badge">施工方法ガイド</div>
+  <h1>LEDテープを壁の片切スイッチでON/OFFする配線方法｜ほたる・パイロットスイッチの注意と電源一次側で切る基本</h1>
+  <div class="hero-meta">
+    <span>公開: 2026-06-27</span>
+    <span>対象: 電気工事業者・内装施工業者・看板施工業者</span>
+  </div>
+</div>
+
+<img src="/articles/images/led-tape-single-pole-wall-switch-wiring-guide-hero.webp" alt="LEDテープを壁の片切スイッチでON/OFFする配線とほたる・パイロットスイッチの注意点ガイド" class="hero-img" width="860" height="430" loading="eager">
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="/">LED PRO SHOP</a><span>›</span>
+    <a href="/articles/">コラム</a><span>›</span>
+    <span>LEDテープを壁の片切スイッチでON/OFFする配線</span>
+  </nav>
+
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#basic">基本は「電源のAC一次側」で切る</a></li>
+      <li><a href="#wiring">片切スイッチの基本配線</a></li>
+      <li><a href="#hotaru">ほたる・パイロットスイッチの罠（残光・チラつき・カチカチ音）</a></li>
+      <li><a href="#dc-side">DC二次側でスイッチを切りたい場合</a></li>
+      <li><a href="#inrush">複数台の電源・突入電流の注意</a></li>
+      <li><a href="#procedure">施工手順</a></li>
+      <li><a href="#checklist">配線・選定チェックリスト</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ol>
+  </nav>
+
+  <div class="article-body">
+
+    <p>「24VのLEDテープを、壁の普通のスイッチで入切できるようにしたい」——内装・看板の現場でいちばん多い要望です。ところがLEDテープは<strong>電源（PSU）でAC100VをDC低圧に変換して点灯する</strong>ため、照明器具をそのまま壁スイッチにつなぐのとは少し勝手が違います。スイッチを電源の手前（AC一次側）に入れるか後ろ（DC二次側）に入れるかで配線が変わり、さらに<strong>ほたるスイッチ（位置表示灯付き）を使うと消灯後もうっすら光る・チラつく</strong>という、白熱灯では起きないトラブルが頻発します。このページでは、片切スイッチでLEDテープを入切する基本配線と、現場で実際に起きる不具合の原因・対処を施工業者の目線で整理します。</p>
+
+    <div class="box-orange">
+      <p><strong>はじめに（資格の確認）:</strong> AC100V/200Vの一次側配線・壁スイッチの結線は電気工事士の有資格者の作業です。本記事は配線方式の考え方を整理するものです。実際の結線・施工は資格と現地条件に従って行ってください（<a href="/articles/led-tape-electrician-license-guide">LEDテープ施工と電気工事士資格</a>を参照）。</p>
+    </div>
+
+    <!-- ===== 1. 基本 ===== -->
+    <h2 id="basic">1. 基本は「電源のAC一次側」で切る</h2>
+
+    <p>1か所の壁スイッチでLEDテープを入切するなら、スイッチは<strong>電源（PSU）の手前のAC100V側</strong>に入れます。つまり「壁スイッチ → LED電源 → DCテープ」という並びにして、スイッチで電源そのものをON/OFFします。照明器具を電源（PSU）に置き換えただけ、と考えれば普通の片切スイッチ配線と同じです。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>観点</th><th>① AC一次側で切る（電源ごと）</th><th>② DC二次側で切る（テープを直接）</th></tr></thead>
+        <tbody>
+          <tr><td>使えるスイッチ</td><td class="good">市販のAC用片切スイッチでOK</td><td>DC対応・接点容量に余裕のあるもの</td></tr>
+          <tr><td>スイッチの電流</td><td class="good">小さい（電源の入力電流）</td><td class="bad">大きい（DC低圧＝大電流になりやすい）</td></tr>
+          <tr><td>待機電力</td><td class="good">消灯時は電源も切れてゼロ</td><td>消灯時も電源は通電（待機電力が残る）</td></tr>
+          <tr><td>点灯の応答</td><td class="mid">電源起動ぶん遅れる（コンマ数秒）</td><td class="good">即時にON/OFF</td></tr>
+          <tr><td>電圧降下</td><td class="good">DC配線はテープまで最短にできる</td><td class="bad">スイッチ経由でDC配線が伸び増えやすい</td></tr>
+          <tr><td>向く現場</td><td>ほぼすべての一般的な1か所入切</td><td>電源常時通電のまま即時入切したい小規模</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>原則はAC一次側:</strong> 特別な理由がなければ、片切スイッチは電源のAC一次側に入れます。市販の壁スイッチがそのまま使え、DC側の大電流・電圧降下・接点劣化を気にする必要がありません。唯一の弱点は、入切のたびに電源が起動し直すため点灯がコンマ数秒遅れることだけです。2か所以上から入切したい場合は<a href="/articles/led-tape-3way-switch-wiring-guide">3路・4路スイッチの配線方法</a>を参照してください。</p>
+    </div>
+
+    <!-- ===== 2. 片切配線 ===== -->
+    <h2 id="wiring">2. 片切スイッチの基本配線</h2>
+
+    <p>片切スイッチは「入／切」の2状態で、来た電源の片側（非接地側＝黒線）を断続するだけのシンプルな部品です。LEDテープでも、切る対象が「器具」から「LED電源の入力」に変わるだけで考え方は同じです。</p>
+
+    <div class="formula">
+      AC100V(L/黒) ─ 片切スイッチ ─ LED電源(PSU)のAC入力(L)<br>
+      AC100V(N/白) ───────────── LED電源(PSU)のAC入力(N)<br>
+      LED電源(PSU)のDC出力(+/−) ── DCテープ<br>
+      <span class="comment">// スイッチは非接地側（L/黒）に入れる。電源以降のDC配線は常時どおり</span>
+    </div>
+
+    <ul>
+      <li><strong>スイッチは非接地側（L・黒線）に入れる：</strong> 接地側（N・白線）を切る配線は、消灯していても器具側に電圧が残り感電・点検時の危険につながるため避けます。</li>
+      <li><strong>電源の極性・容量を確認：</strong> 電源のAC入力端子（L/N）を正しく結線し、テープの合計Wに対して電源容量に余裕（おおむね合計負荷の1.2倍以上）を持たせます。</li>
+      <li><strong>DC側はいつもどおり：</strong> 電源の後ろのDC配線・テープ接続・極性（＋/−）は通常の施工と同じです。</li>
+    </ul>
+
+    <div class="box-blue">
+      <p><strong>調光もしたいなら位置に注意:</strong> 壁の調光器（位相制御）でLEDテープを暗くしたい場合は、AC一次側に入れるのは「調光対応の電源（トライアック調光対応PSU）＋専用調光器」の組み合わせが必要です。一般の電源に位相制御調光器を入れるとうなり・ちらつき・故障の原因になります。詳しくは<a href="/articles/led-tape-dimming-methods-guide">LEDテープの調光方式</a>を参照してください。</p>
+    </div>
+
+    <!-- ===== 3. ほたる ===== -->
+    <h2 id="hotaru">3. ほたる・パイロットスイッチの罠（残光・チラつき・カチカチ音）</h2>
+
+    <p>住宅・店舗で多用される<strong>ほたるスイッチ（位置表示灯付き＝OFF時に光って位置がわかる）</strong>を、そのままLED電源に使うと、白熱灯では起きなかった不具合が出ます。最も多いのが「<strong>スイッチを切ったのにLEDテープがうっすら光り続ける／数秒おきにチラっと光る／電源からカチカチ音がする</strong>」という症状です。</p>
+
+    <h3>なぜ起きるのか</h3>
+    <p>ほたるスイッチはOFF時に表示灯（ネオン管やLED）を光らせるため、<strong>OFFでも負荷（＝LED電源）を通して1mA前後の微小電流を流し続けます</strong>。白熱灯ではこの程度の電流ではフィラメントは光りませんが、LED電源は入力のコンデンサがこの微小電流で少しずつ充電され、ある電圧でテープが一瞬光って放電→また充電…を繰り返します。これが残光・周期的なチラつき・内部リレーのカチカチ音の正体です。</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>スイッチの種類</th><th>OFF時の挙動</th><th>LED電源での問題</th><th>対処</th></tr></thead>
+        <tbody>
+          <tr><td>普通の片切スイッチ</td><td>表示灯なし・電流ゼロ</td><td class="good">問題なし（推奨）</td><td>—</td></tr>
+          <tr><td>ほたるスイッチ（位置表示灯）</td><td>OFF時に微小電流が負荷を通る</td><td class="bad">消灯後の残光・チラつき・カチカチ音</td><td>普通スイッチに交換／3線式結線／バイパス素子</td></tr>
+          <tr><td>パイロットスイッチ（確認表示灯）</td><td>ON時のみ表示灯が点灯</td><td class="mid">残光は出にくいが3線式結線が必要な製品あり</td><td>表示灯回路を負荷と別経路で結線</td></tr>
+          <tr><td>ほたる／パイロット兼用</td><td>OFF時・ON時とも表示灯</td><td class="bad">OFF時に同じ残光トラブル</td><td>普通スイッチに交換が確実</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>3つの対処法</h3>
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>普通の片切スイッチに交換する（最も確実）</strong>
+          位置表示が不要なら、表示灯のない普通の片切スイッチに替えるだけで微小電流が無くなり、残光・チラつきは確実に解消します。まず検討すべき対処です。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>表示灯回路を負荷と別経路にする（3線式結線）</strong>
+          表示灯を残したい場合は、表示灯の戻り電流が負荷（LED電源）を通らないよう、中性線を別に取る「3線式（同時点滅・別配線）」に対応した器具・結線にします。スイッチ・器具の仕様に従って施工します。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>バイパス素子（コンデンサ／ダミー負荷）を入れる</strong>
+          LED電源の入力と並列に、微小電流を逃がすコンデンサや抵抗（ダミー負荷）を入れて残光を止める方法です。発熱・スペースの管理が必要で、確実性は交換に劣るため、表示灯をどうしても残す場合の次善策です。
+        </div>
+      </li>
+    </ul>
+
+    <div class="box-orange">
+      <p><strong>現場での見分け方:</strong> 「スイッチOFFなのにテープがうっすら光る・周期的に点滅する」「電源からカチカチ音がする」場合は、まずスイッチがほたる（位置表示灯付き）かどうかを確認します。プレートを外さなくても、消灯時にスイッチ自体がオレンジ／緑に光っていればほたるスイッチです。LED電源・テープの故障と早合点する前に、スイッチ種類を疑うのが近道です。</p>
+    </div>
+
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="num">1<span style="font-size:16px">mA前後</span></div>
+        <div class="unit">ほたる表示灯の微小電流</div>
+        <div class="label">これがLED電源を残光させる</div>
+      </div>
+      <div class="data-card">
+        <div class="num">L側<span style="font-size:16px"></span></div>
+        <div class="unit">スイッチを入れる線</div>
+        <div class="label">非接地側（黒）を切る</div>
+      </div>
+      <div class="data-card">
+        <div class="num">×1.2<span style="font-size:16px">倍↑</span></div>
+        <div class="unit">電源容量の余裕</div>
+        <div class="label">合計負荷Wに対して</div>
+      </div>
+      <div class="data-card">
+        <div class="num">交換<span style="font-size:16px"></span></div>
+        <div class="unit">残光の最短解決</div>
+        <div class="label">普通スイッチへ替える</div>
+      </div>
+    </div>
+
+    <!-- ===== CTA ===== -->
+    <div class="cta-section">
+      <h2>壁スイッチ入切に使えるLEDテープ用電源・部材を探す</h2>
+      <p>突入電流の小さい電源、調光対応の電源、DC側入切に使える部材まで、施工方式に合わせたLEDテープ用部材をプロ向けにご用意しています。</p>
+      <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+    </div>
+
+    <!-- ===== 4. DC側 ===== -->
+    <h2 id="dc-side">4. DC二次側でスイッチを切りたい場合</h2>
+
+    <p>「電源は常時通電のままテープだけを即時に入切したい」「既設の二次側に手元スイッチを付けたい」場合は、電源とテープの間（DC側）にスイッチを入れます。応答は速い一方、DC低圧は電流が大きくなるため、スイッチ選定に注意が必要です。</p>
+
+    <div class="formula">
+      負荷電流(A) = 負荷の合計電力(W) ÷ 電源電圧(V)<br>
+      <span class="comment">// 例: DC24V・96W → 96 ÷ 24 = 4A</span><br>
+      <span class="comment">// 例: DC12V・96W → 96 ÷ 12 = 8A（同じW数でも12Vは電流が倍）</span><br>
+      スイッチ接点定格 ≧ 負荷電流 × 1.5〜2（突入・余裕を見込む）
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>注意点</th><th>内容</th><th>対策</th></tr></thead>
+        <tbody>
+          <tr><td>接点容量（電流）</td><td>DC低圧は大電流。AC定格しかないスイッチは不向き</td><td class="good">DC対応・負荷電流の1.5〜2倍以上の接点定格</td></tr>
+          <tr><td>DCのアーク</td><td>DCは開く瞬間の火花が消えにくく接点が劣化・溶着しやすい</td><td>DC定格のスイッチ／リレーを使う</td></tr>
+          <tr><td>電圧降下</td><td>スイッチ経由でDC配線が伸び、末端が暗くなる</td><td class="mid">電線を太く・距離を抑える（<a href="/articles/led-tape-voltage-drop-guide">電圧降下計算</a>）</td></tr>
+          <tr><td>大電流の入切</td><td>数A以上を手元スイッチで直接切るのは危険・短寿命</td><td>リレー／コントローラーを介し小電流の信号でON/OFF</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box-blue">
+      <p><strong>大電流ならリレー／コントローラー経由:</strong> DC二次側で数A以上を入切するなら、手元スイッチで直接切らず、スイッチは小電流の信号としてリレーやLEDコントローラーを駆動し、主電流はそちらで断続させるのが安全・長寿命です。RGBや単色テープのコントローラーには手元スイッチ・リモコンを併用できる製品もあります。</p>
+    </div>
+
+    <!-- ===== 5. 突入 ===== -->
+    <h2 id="inrush">5. 複数台の電源・突入電流の注意</h2>
+
+    <p>AC一次側で切る場合、スイッチを入れた瞬間に電源の入力コンデンサへ大きな<strong>突入電流</strong>が流れます。1個の壁スイッチで多数の電源をまとめて入切すると、突入電流が重なってブレーカーが落ちることがあります。台数が多い現場では回路・スイッチを分けるか、突入電流の小さい電源を選びます。詳しくは<a href="/articles/led-power-inrush-current-breaker-trip-guide">LED電源の突入電流とブレーカー対策</a>を参照してください。</p>
+
+    <div class="box-orange">
+      <p><strong>頻繁な入切は電源寿命にも影響:</strong> AC一次側方式では入切のたびに突入電流が流れるため、人感センサーなどで短い間隔の入切を繰り返す用途では電源の負担が増えます。短周期の自動入切が前提なら、DC側をリレー／コントローラーで断続し電源は常時通電にする構成を検討します（<a href="/articles/led-motion-sensor-lighting-guide">人感センサー連動</a>）。</p>
+    </div>
+
+    <!-- ===== 6. 施工手順 ===== -->
+    <h2 id="procedure">6. 施工手順</h2>
+
+    <ul class="step-list">
+      <li>
+        <div class="step-body">
+          <strong>切る位置を決める（原則AC一次側）</strong>
+          1か所入切なら電源のAC一次側に片切スイッチ。常時通電のまま即時入切したい小規模ならDC二次側。2か所以上なら3路・4路へ。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>スイッチの種類を選ぶ（ほたるに注意）</strong>
+          LED電源にはほたる（位置表示灯付き）スイッチを避け、普通の片切スイッチを選ぶ。表示灯を残すなら3線式対応の結線にする。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>負荷と電源容量を確定する</strong>
+          テープの合計W／mと長さから消費電力を出し、余裕（1.2倍以上）を見て電源容量を決める。DC側で切るなら負荷電流から接点容量を選ぶ。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>非接地側（L・黒）にスイッチを入れて結線</strong>
+          AC一次側方式は黒線（L）に片切スイッチを入れ、共通端子の先に電源のAC入力を接続。DC側方式はDC対応スイッチ／リレーを電源とテープの間に入れる。
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <strong>動作確認（残光・チラつき・突入をチェック）</strong>
+          ON/OFFが正しく動くか、消灯後にうっすら光らないか、点灯遅れ・末端の暗さ・ブレーカー落ち・接点や端子の発熱がないかを実機で確認する。
+        </div>
+      </li>
+    </ul>
+
+    <!-- related-articles -->
+    <div style="max-width:900px;margin:0 auto 40px;padding:0 20px">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px">
+        <h3 style="font-size:1rem;font-weight:700;color:var(--text-muted);margin-bottom:16px">関連する施工・選定ガイド</h3>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+          <li><a href="/articles/led-tape-3way-switch-wiring-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(29,78,216,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープを2か所以上から入切する配線方法｜3路・4路スイッチ</a></li>
+          <li><a href="/articles/led-power-inrush-current-breaker-trip-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(29,78,216,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LED電源の突入電流でブレーカーが落ちる原因と対策</a></li>
+          <li><a href="/articles/led-tape-dimming-methods-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(29,78,216,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープの調光方式の選び方（PWM・位相制御ほか）</a></li>
+          <li><a href="/articles/led-tape-electrician-license-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(29,78,216,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープ施工と電気工事士資格｜どこから資格が必要か</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== 7. チェックリスト ===== -->
+    <h2 id="checklist">7. 配線・選定チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>切る位置をAC一次側／DC二次側のどちらにするか決めたか（原則AC一次側）</li>
+      <li>スイッチがほたる（位置表示灯付き）でないか確認したか／LED電源には普通の片切スイッチを選んだか</li>
+      <li>表示灯を残す場合、3線式など負荷を通さない結線にしたか</li>
+      <li>スイッチを非接地側（L・黒線）に入れたか</li>
+      <li>テープの合計Wに対し電源容量に余裕（1.2倍以上）を持たせたか</li>
+      <li>DC二次側で切る場合、負荷電流（W÷V）を計算し接点定格1.5〜2倍以上のDC対応スイッチを選んだか</li>
+      <li>複数台の電源を1スイッチで一括入切する場合、突入電流でブレーカーが落ちないか確認したか</li>
+      <li>消灯後の残光・チラつき・カチカチ音・末端の暗さ・発熱がないか実機確認したか</li>
+      <li>AC一次側の結線が電気工事士の有資格者によって行われているか</li>
+    </ul>
+
+    <!-- ===== 8. FAQ ===== -->
+    <h2 id="faq">8. よくある質問</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">LEDテープを壁の普通のスイッチで入切したいとき、スイッチは電源の前と後ろどちらに入れますか？</div>
+      <div class="faq-a">基本は電源（PSU）の手前、AC100Vの一次側に片切スイッチを入れます。市販のAC用片切スイッチがそのまま使え、消灯時は電源ごと切れるため待機電力もありません。DC二次側（電源とテープの間）でも切れますが、DC低圧は電流が大きく、AC定格しかないスイッチではアークで接点が傷みやすいうえ、配線が伸びて電圧降下が増えます。特別な理由がなければAC一次側で切るのが標準です。注意点は、入切のたびに電源へ突入電流が流れ、点灯がコンマ数秒遅れることくらいです。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">ほたるスイッチ（位置表示灯付き）でLEDテープを切ったら、消灯後もうっすら光ったりチラついたりします。なぜですか？</div>
+      <div class="faq-a">ほたるスイッチはOFF時に表示灯を光らせるため、負荷（この場合はLED電源）を通して1mA前後の微小電流が流れ続けます。白熱灯では問題になりませんが、LED電源は入力のコンデンサがこの微小電流で充電され、残光・チラつき・内部リレーのカチカチ音の原因になります。対処は、(1)普通の片切スイッチに替える、(2)ほたる回路を負荷と別経路にできる3線式対応の器具・結線にする、(3)負荷と並列にバイパス用のコンデンサや抵抗（ダミー負荷）を入れて微小電流を逃がす、のいずれかです。確実なのは(1)です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">DC24VのLEDテープを電源の二次側のスイッチで切りたい場合、スイッチはどう選びますか？</div>
+      <div class="faq-a">まず負荷電流を「合計W ÷ 電圧V」で求めます。DC24Vで96Wなら4Aです。スイッチは「DC対応」で、接点定格が負荷電流の1.5〜2倍以上（この例で6〜8A以上）のものを選びます。AC定格しかないスイッチをDCで使うと、開く瞬間のアーク（火花）が消えにくく接点が早期に劣化・溶着します。数A以上を切るなら、手元スイッチで直接切らず、小電流の信号でリレーやLEDコントローラーを駆動し主電流はそちらで断続させると安全・長寿命です。</div>
+    </div>
+
+  </div><!-- /article-body -->
+</div><!-- /container -->
+
+<footer class="site-footer">
+  <p>© 2024 LED PRO SHOP ／ <a href="/tokushoho.html">特定商取引法に基づく表示</a></p>
+</footer>
+
+</body>
+</html>
