@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDに抵抗を入れると発熱する理由と正しい選び方｜減光・電圧調整に抵抗を使う前に【施工業者向け】 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープの明るさを落とそう・24Vを12Vに下げようと直列抵抗を入れると、捨てた電圧がそのまま熱になり抵抗が焼けます。なぜLEDの抵抗が発熱するのか、発熱量P=V×Iの計算式と早見表、抵抗ワット数の選び方、そして抵抗を使わない正しい減光・電圧調整の方法を施工業者向けに解説します。">
+  <meta name="keywords" content="led 抵抗 発熱,led 抵抗 計算,led テープ 抵抗,led 減光 抵抗,led 電圧 下げる 抵抗,電流制限抵抗 発熱,led 抵抗 w数,led 抵抗 焼ける">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-series-resistor-heat-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-series-resistor-heat-guide">
+  <meta property="og:title" content="LEDに抵抗を入れると発熱する理由と正しい選び方｜減光・電圧調整に抵抗を使う前に【施工業者向け】 | LED PRO SHOP">
+  <meta property="og:description" content="直列抵抗で捨てた電圧はそのまま熱になり抵抗が焼けます。LEDの抵抗が発熱する理由、発熱量の計算式と早見表、抵抗W数の選び方、抵抗を使わない正しい減光・電圧調整の方法を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-series-resistor-heat-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDに抵抗を入れると発熱する理由と正しい選び方【施工業者向け】 | LED PRO SHOP">
+  <meta name="twitter:description" content="直列抵抗で捨てた電圧はそのまま熱になります。LEDの抵抗が発熱する理由・計算式・W数の選び方・抵抗を使わない減光/電圧調整の正しい方法を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-series-resistor-heat-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDに抵抗を入れると発熱する理由と正しい選び方｜減光・電圧調整に抵抗を使う前に",
+    "description": "LEDに直列抵抗を入れると発熱する仕組み、発熱量P=V×Iの計算式と早見表、抵抗ワット数とディレーティングの考え方、抵抗を使わない正しい減光・電圧調整の方法を施工業者向けに整理。",
+    "image": "https://led-proshop.com/articles/images/led-series-resistor-heat-guide-hero.webp",
+    "datePublished": "2026-06-28",
+    "dateModified": "2026-06-28",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP 編集部" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-series-resistor-heat-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDに抵抗を入れると発熱する理由", "item": "https://led-proshop.com/articles/led-series-resistor-heat-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープが明るすぎるので、直列に抵抗を入れて暗くしてもいいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "おすすめしません。直列抵抗で電流を絞れば確かに暗くなりますが、絞った分の電圧がそのまま抵抗の熱（P=電圧降下×電流）に変わるため、抵抗が高温になり樹脂や粘着材を傷めます。さらにLEDテープは複数のカット単位が並列につながっているため、1本の抵抗で全長を均一に減光できず、抵抗から遠い区間ほど明るさがばらつきます。減光はPWM調光器または調光対応電源で行うのが正解です。これなら発熱はほぼ増えず、色温度のずれも抑えられます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "24V電源しか手元にありません。抵抗で12Vに落として12Vテープを使えますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "実用的ではありません。12Vテープが1A流れる場合、24Vから12Vを抵抗で捨てると12V×1A＝12Wがまるごと熱になります。これは小型の半田ごてに近い発熱で、必要な抵抗のワット数も20W以上と大型になり、施工部に熱源を仕込むことになります。正しくは12V対応テープには12V電源を用意するか、効率の高いDC-DCコンバータ（降圧モジュール）で12Vを作ります。コンバータは電圧差を熱でなくスイッチングで処理するため発熱が桁違いに小さく済みます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "看板用のLEDモジュールには抵抗が付いています。これは大丈夫ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "モジュールに内蔵された電流制限抵抗は、その電圧（一般に12Vや24V）で適正に発熱・放熱するよう設計されているため、定格電圧で正しく使う限り問題ありません。注意が必要なのは、定格より高い電圧をかけたり、複数モジュールを想定外の本数で直列につないだりした場合です。電圧が上がると抵抗とLEDの両方で発熱が増え、寿命低下や焼損につながります。モジュールは必ず指定電圧の定電圧電源で、メーカー指定の接続本数の範囲内で使ってください。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#003C82;--blue-pale:#e8f0fe;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;--accent:#c2410c;--accent-pale:#fdeee5;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px;text-decoration:none}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#5c220a 0%,#c2410c 55%,#7c2d12 100%);padding:40px 16px 32px;border-bottom:3px solid #7c2d12}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:4px;padding:14px}
+    .spec-card .spec-label{font-size:10px;font-weight:700;color:var(--text-muted);letter-spacing:1px;display:block;margin-bottom:5px}
+    .spec-card .spec-value{font-size:17px;font-weight:900;color:var(--accent);line-height:1.25}
+    .spec-card .spec-note{font-size:11px;color:var(--text-sub);margin-top:6px;line-height:1.5}
+    .checklist{list-style:none!important;padding:0!important;margin:16px 0}
+    .checklist li{position:relative;padding:9px 8px 9px 32px;border-bottom:1px solid var(--border);font-size:13px;line-height:1.6}
+    .checklist li::before{content:"✓";position:absolute;left:8px;top:9px;color:var(--accent);font-weight:900}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#fdeee5}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#fdeee5}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>LEDに抵抗を入れると発熱する理由</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">トラブル対処ガイド</div>
+    <h1>LEDに抵抗を入れると発熱する理由と正しい選び方<br>減光・電圧調整に抵抗を使う前に</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-06-28</span>
+      <span>更新日: 2026-06-28</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/orange_shop.webp"
+      alt="LEDの直列抵抗が発熱する仕組みを確認する電気工事の作業イメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>「LEDテープが明るすぎるから抵抗で少し暗くしたい」「24V電源しかないので抵抗で12Vに落として使いたい」——現場でよく出る発想ですが、<strong>直列抵抗で電圧を捨てる方法は、捨てた電圧がそっくり熱に変わる</strong>ため、抵抗が高温になり樹脂・粘着材・周囲の内装材を傷めます。最悪の場合は焦げ・発煙に至ります。本記事では、なぜLEDに抵抗を入れると発熱するのかを仕組みから説明し、発熱量の計算式と早見表、抵抗のワット数の選び方、そして<strong>抵抗を使わずに減光・電圧調整を行う正しい方法</strong>までを施工業者向けに整理します。</p>
+
+      <div class="article-callout warn">
+        <p><strong>結論から:</strong> LEDテープの減光・電圧調整に直列抵抗を使うのは原則「不正解」です。抵抗は電力を熱として捨てるだけで効率が悪く、テープのように複数回路が並列につながる負荷では明るさも揃いません。減光はPWM、電圧変換はDC-DCコンバータか適正電圧の電源を使います。</p>
+      </div>
+
+      <h2 id="sec-why">なぜLEDに直列抵抗を入れると発熱するのか</h2>
+      <p>抵抗の発熱は、オームの法則と電力の式だけで説明できます。抵抗にかかる電圧（電圧降下）を V、流れる電流を I とすると、抵抗が消費する電力は<strong>P = V × I</strong>（＝I²×R）で、この電力が<strong>すべて熱</strong>になります。LEDは光に変換しますが、直列に入れた抵抗は光を出さないため、降下させた電圧×電流がまるごと無駄な発熱になるのです。</p>
+      <p>たとえば12Vの電源で順方向電圧（Vf）合計9VのLED列を0.3Aで点けるとき、残り3Vを抵抗で受け持ちます。このとき抵抗値は R = 3V ÷ 0.3A = 10Ω、発熱は P = 3V × 0.3A = 0.9W です。1個のLED回路ならこの程度ですが、<strong>電圧差が大きいほど・電流が大きいほど発熱は急増</strong>します。</p>
+
+      <div class="spec-grid">
+        <div class="spec-card">
+          <span class="spec-label">発熱の式</span>
+          <span class="spec-value">P = V × I</span>
+          <p class="spec-note">V=抵抗にかかる電圧降下、I=電流。単位はW（ワット）</p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">抵抗値の式</span>
+          <span class="spec-value">R = V ÷ I</span>
+          <p class="spec-note">必要な電圧降下を電流で割る。単位はΩ（オーム）</p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">熱の行き先</span>
+          <span class="spec-value">100%が熱</span>
+          <p class="spec-note">抵抗は光らない。降下分はすべて発熱に変わる</p>
+        </div>
+      </div>
+
+      <h2 id="sec-calc">発熱量の早見表（電圧降下×電流）</h2>
+      <p>下表は、抵抗で受け持つ電圧降下と電流から、必要な抵抗値・発熱量・推奨する抵抗ワット数を計算したものです。推奨ワット数は<strong>発熱の2倍以上（ディレーティング50%）</strong>を目安にしています。電圧差が大きいケースほど、抵抗が現実離れした大きさ・発熱になることが分かります。</p>
+      <table>
+        <thead>
+          <tr><th>電圧降下 V</th><th>電流 I</th><th>抵抗値 R=V/I</th><th>発熱 P=V×I</th><th>推奨抵抗W数（2倍）</th><th>実用性</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>3V</td><td>0.15A</td><td>20Ω</td><td>0.45W</td><td>1W</td><td>小規模なら可</td></tr>
+          <tr><td>3V</td><td>0.3A</td><td>10Ω</td><td>0.9W</td><td>2W</td><td>発熱を要放熱</td></tr>
+          <tr><td>6V</td><td>0.3A</td><td>20Ω</td><td>1.8W</td><td>5W</td><td>熱対策が必須</td></tr>
+          <tr><td>12V</td><td>0.5A</td><td>24Ω</td><td>6.0W</td><td>15W級</td><td>非現実的</td></tr>
+          <tr><td>12V</td><td>1.0A</td><td>12Ω</td><td>12W</td><td>25W級</td><td>不可（焼損リスク）</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout">
+        <p><strong>12W＝小型はんだごて並み:</strong> 24Vを抵抗で12Vに落として1Aを流すと、抵抗1個から12Wの熱が出ます。これは小型の半田ごてに匹敵する発熱で、内装の天井裏や什器の中に仕込めば確実に温度トラブルになります。電圧差が大きい用途で抵抗を使ってはいけない理由がこの数字です。</p>
+      </div>
+
+      <h2 id="sec-watt">抵抗のワット数（W）とディレーティングの選び方</h2>
+      <p>抵抗には抵抗値（Ω）とは別に「定格電力（W）」があります。実際の発熱が定格に近いほど抵抗自身が高温になり、寿命低下・変色・焼損を招きます。そのため<strong>計算した発熱に対して2倍以上の定格</strong>を選ぶのが基本です（密閉空間や高温環境ではさらに余裕を取る）。</p>
+      <ul>
+        <li><strong>発熱0.9Wなら2W品以上</strong>を選ぶ（1W品では定格ぎりぎりで高温になる）。</li>
+        <li><strong>放熱を妨げない設置</strong>：抵抗を樹脂や粘着材に密着させない、配線を束ねた中に埋めない。</li>
+        <li><strong>周囲温度を加味</strong>：天井裏・什器内は外気より高温。カタログのディレーティング曲線で許容を下げる。</li>
+      </ul>
+      <p>ただし、ここまで気を遣っても「電圧降下分の電力をひたすら熱で捨てている」事実は変わりません。<strong>大きな電圧差・大きな電流では、抵抗は容量を上げるほど大型・高温になるだけで根本解決になりません。</strong>次章の正しい方法に切り替えるのが、施工品質でも安全でも有利です。</p>
+
+      <h2 id="sec-correct">抵抗を使わない正しい減光・電圧調整</h2>
+      <p>「明るさを落とす」「電圧を下げる」という目的別に、抵抗を使う方法と正しい方法を比較します。いずれも<strong>無駄な発熱をほぼ出さず、LEDテープの並列回路でも均一</strong>に効くのが利点です。</p>
+      <table>
+        <thead>
+          <tr><th>目的</th><th>✕ 抵抗を使う方法</th><th>◯ 正しい方法</th><th>理由</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>明るさを落とす（減光）</td><td>直列抵抗で電流を絞る</td><td>PWM調光器／調光対応電源</td><td>PWMは電圧を熱にせず点滅比率で調光。発熱増なし・色ずれ小</td></tr>
+          <tr><td>24Vを12Vにしたい</td><td>抵抗で12V分を熱に捨てる</td><td>12V対応テープ＋12V電源、またはDC-DCコンバータ</td><td>コンバータはスイッチングで降圧、損失が桁違いに小さい</td></tr>
+          <tr><td>色温度・明るさの微調整</td><td>抵抗では不可・ばらつく</td><td>適正電圧の定電圧電源＋調光</td><td>テープは定電圧設計。指定電圧で使うのが前提</td></tr>
+          <tr><td>突入電流・チラつき対策</td><td>抵抗では解決しない</td><td>適正容量の電源・PWM周波数選定</td><td>原因は電源容量や調光方式。抵抗は無関係</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout tip">
+        <p><strong>覚え方:</strong> 「電圧を熱で捨てる＝抵抗」「電圧を効率よく変える＝コンバータ」「明るさを変える＝PWM」。LEDテープは定電圧で使う前提の製品なので、抵抗で電圧を作るのではなく、最初から目的の電圧の電源を選ぶのが最短です。</p>
+      </div>
+
+      <h3>例外：看板用LEDモジュールの内蔵抵抗</h3>
+      <p>チャンネル文字などに使う<strong>LEDモジュール（注入成形タイプ）には電流制限抵抗が内蔵</strong>されており、これは指定電圧（12V/24V）で適正に発熱・放熱するよう設計されています。定格電圧・指定接続本数で使う限り問題ありません。逆に、定格より高い電圧をかけたり接続本数を増やしすぎると、内蔵抵抗とLEDの両方で発熱が増え焼損リスクが上がります。モジュールは必ず指定電圧の定電圧電源で使ってください。</p>
+
+      <h2 id="sec-checklist">現場チェックリスト</h2>
+      <ul class="checklist">
+        <li>「明るさを落とす」目的で直列抵抗を入れようとしていないか（→PWMに変更）</li>
+        <li>電圧を下げる目的で抵抗を使っていないか（→適正電圧の電源かDC-DCコンバータ）</li>
+        <li>抵抗を使う場合、発熱P=V×Iを計算し、定格はその2倍以上を選んだか</li>
+        <li>抵抗を樹脂・粘着材・配線束に密着させていないか（放熱を確保）</li>
+        <li>LEDモジュールは指定電圧・指定本数の範囲で使っているか</li>
+        <li>降下電圧が大きい・電流が大きい構成で抵抗に頼っていないか（→方式の見直し）</li>
+      </ul>
+      <p>LEDテープや照明の「減光」「電圧調整」は、抵抗で電力を熱に捨てる時代の発想から、PWM・コンバータ・適正電源の選定へ置き換えるだけで、発熱トラブルの大半は消えます。電圧差を熱で処理しないこと——これが安全で長持ちする施工の基本です。</p>
+
+      <!-- FAQ -->
+      <h2 id="faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">LEDテープが明るすぎるので、直列に抵抗を入れて暗くしてもいいですか？</div>
+        <div class="faq-a">おすすめしません。直列抵抗で電流を絞れば暗くはなりますが、絞った分の電圧がそのまま抵抗の熱（P=電圧降下×電流）に変わるため抵抗が高温になり、樹脂や粘着材を傷めます。さらにLEDテープは複数のカット単位が並列につながっているため、1本の抵抗で全長を均一に減光できず、抵抗から遠い区間ほど明るさがばらつきます。減光はPWM調光器または調光対応電源で行えば、発熱はほぼ増えず色温度のずれも抑えられます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">24V電源しか手元にありません。抵抗で12Vに落として12Vテープを使えますか？</div>
+        <div class="faq-a">実用的ではありません。12Vテープが1A流れる場合、24Vから12Vを抵抗で捨てると12V×1A＝12Wがまるごと熱になります。これは小型の半田ごてに近い発熱で、必要な抵抗のワット数も20W以上と大型になります。正しくは12V対応テープには12V電源を用意するか、効率の高いDC-DCコンバータ（降圧モジュール）で12Vを作ります。コンバータは電圧差を熱でなくスイッチングで処理するため発熱が桁違いに小さく済みます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">看板用のLEDモジュールには抵抗が付いています。これは大丈夫ですか？</div>
+        <div class="faq-a">モジュールに内蔵された電流制限抵抗は、その電圧（一般に12Vや24V）で適正に発熱・放熱するよう設計されているため、定格電圧で正しく使う限り問題ありません。注意が必要なのは、定格より高い電圧をかけたり、複数モジュールを想定外の本数で直列につないだ場合です。電圧が上がると抵抗とLEDの両方で発熱が増え、寿命低下や焼損につながります。モジュールは必ず指定電圧の定電圧電源で、メーカー指定の接続本数の範囲内で使ってください。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-tape-dimming-methods-guide">
+              <img src="/images/hero-scenes/purple_desk.webp" alt="LEDテープの調光方式" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">LED施工方法ガイド</span>
+                <div class="rac-title">LEDテープの調光方式ガイド｜PWM・位相・0-10Vの違いと選び方</div>
+                <span class="rac-date">2026-05-22</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-12v-vs-24v-guide">
+              <img src="/images/hero-scenes/blue_desk.webp" alt="12Vと24Vの違い" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">LED選び方ガイド</span>
+                <div class="rac-title">LEDテープ12Vと24Vの違いを徹底比較｜電圧降下・対応距離・COB</div>
+                <span class="rac-date">2026-05-01</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-voltage-drop-guide">
+              <img src="/images/hero-scenes/green_shop.webp" alt="LEDテープの電圧降下" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">LED施工方法ガイド</span>
+                <div class="rac-title">LEDテープの電圧降下対策｜先端が暗くなる原因と補助給電の方法</div>
+                <span class="rac-date">2026-05-12</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>適正電圧の電源・調光器をプロ価格で</h2>
+        <p>定電圧PSU・PWM調光器・LEDテープを必要な分だけ。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">LED PRO SHOP を見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-28</span>
+        <span>更新日: 2026-06-28</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源・調光器の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-tape-dimming-methods-guide">LEDテープの調光方式ガイド</a></li>
+        <li><a href="/articles/led-tape-12v-vs-24v-guide">12Vと24Vの違いを徹底比較</a></li>
+        <li><a href="/articles/led-tape-voltage-drop-guide">LEDテープの電圧降下対策</a></li>
+        <li><a href="/articles/led-tape-heat-management-guide">LEDテープの放熱・熱対策</a></li>
+        <li><a href="/articles/led-psu-capacity-guide">電源容量（W数）の選び方</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/controller/">PWM調光器・コントローラ</a></li>
+        <li><a href="/category/psu/">業務用定電圧PSU（12V/24V）</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム各種</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>
