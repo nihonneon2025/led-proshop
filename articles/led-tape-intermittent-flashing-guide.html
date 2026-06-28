@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープが点いたり消えたり（断続点滅）する原因と対処法｜電源の保護動作・容量不足・接触不良を診断【施工業者向け】 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープが数秒〜数分おきに点いたり消えたりを繰り返す「断続点滅」の原因を施工業者向けに診断。高速なチラつき（フリッカー）とは別物で、多くは電源の過負荷・過熱保護のリセット繰り返し、容量不足、接触不良、調光器の相性が原因です。症状別の切り分けフロー・負荷率の計算・対処法・チェックリストをまとめました。">
+  <meta name="keywords" content="led テープ 点いたり消えたり,led 点滅 原因,led 断続点灯,led 電源 保護 点滅,led 容量不足 点滅,led テープ 明滅,led 電源 落ちる 繰り返し,led 点滅 対処">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-intermittent-flashing-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-intermittent-flashing-guide">
+  <meta property="og:title" content="LEDテープが点いたり消えたり（断続点滅）する原因と対処法【施工業者向け】 | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープが数秒〜数分おきに点滅を繰り返す断続点滅の原因を診断。電源の過負荷・過熱保護のリセット、容量不足、接触不良、調光器の相性を症状別に切り分け、負荷率の計算と対処法を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-intermittent-flashing-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープが点いたり消えたり（断続点滅）する原因と対処法【施工業者向け】 | LED PRO SHOP">
+  <meta name="twitter:description" content="数秒〜数分おきの断続点滅は多くが電源の過負荷・過熱保護の繰り返し。容量不足・接触不良・調光器の相性を症状別に切り分ける診断フローと対処法を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-intermittent-flashing-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDテープが点いたり消えたり（断続点滅）する原因と対処法｜電源の保護動作・容量不足・接触不良を診断",
+    "description": "LEDテープが数秒〜数分おきに点滅を繰り返す断続点滅の原因を、電源の過負荷・過熱保護のリセット繰り返し、容量不足、接触不良、調光器の相性に切り分け、負荷率の計算と対処法を施工業者向けに整理。",
+    "image": "https://led-proshop.com/articles/images/led-tape-intermittent-flashing-guide-hero.webp",
+    "datePublished": "2026-06-29",
+    "dateModified": "2026-06-29",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP 編集部" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-intermittent-flashing-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープが点いたり消えたりする原因と対処法", "item": "https://led-proshop.com/articles/led-tape-intermittent-flashing-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LEDテープが数秒おきに全体で点いたり消えたりします。原因は何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "数秒〜数分の周期で全体がON/OFFを繰り返す場合、最も多いのは電源（PSU）の保護動作が作動とリセットを繰り返している状態です。電源の容量に対して負荷が大きすぎる（過負荷保護）か、電源が放熱不足で熱くなりすぎている（過熱保護）と、電源は自分を守るために出力を止め、温度や負荷が下がると再び出力する——これが点滅として見えます。まず電源を触って異常に熱くないか、テープの合計W数が電源容量の80%以内に収まっているかを確認してください。容量不足なら一回り大きな電源に替える、放熱の悪い場所に密閉していれば風通しを確保するのが対処です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "高速でチラチラするフリッカーと、点いたり消えたりする断続点滅は違うものですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "別の現象です。フリッカーは人の目では追えないほど速い明滅で、カメラに横縞が出たり長時間で目が疲れたりするもので、原因は調光方式やPWM周波数、リップルにあります。一方この記事で扱う断続点滅は、数秒〜数分の周期で全体がはっきりON/OFFする遅い点滅で、原因は電源の保護動作・容量不足・接触不良・調光器の相性です。周期が肉眼で数えられる速さなら断続点滅として、電源と配線を中心に切り分けます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "特定の場所を触ると点いたり、配線を動かすと点滅が止まったりします。",
+        "acceptedAnswer": { "@type": "Answer", "text": "それは接触不良のサインです。コネクタの差し込み不良、はんだ付け不良、端子台のネジ緩み、テープのカット部の断線が疑われます。触ったり動かしたりで症状が変わる箇所が、不良の発生点です。電源を切ってから、その区間のコネクタを差し直す・端子のネジを増し締めする・はんだをやり直すなどで対処します。テープ自体のカット部が断線している場合は、その部分を新しいコネクタや配線でつなぎ直します。屋外や湿気の多い場所では、端子の腐食や浸水も間欠不良の原因になるため、防水処理も合わせて確認してください。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#003C82;--blue-pale:#e8f0fe;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;--accent:#be123c;--accent-pale:#fde7ec;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px;text-decoration:none}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#590818 0%,#be123c 55%,#7c1228 100%);padding:40px 16px 32px;border-bottom:3px solid #7c1228}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:4px;padding:14px}
+    .spec-card .spec-label{font-size:10px;font-weight:700;color:var(--text-muted);letter-spacing:1px;display:block;margin-bottom:5px}
+    .spec-card .spec-value{font-size:17px;font-weight:900;color:var(--accent);line-height:1.25}
+    .spec-card .spec-note{font-size:11px;color:var(--text-sub);margin-top:6px;line-height:1.5}
+    .checklist{list-style:none!important;padding:0!important;margin:16px 0}
+    .checklist li{position:relative;padding:9px 8px 9px 32px;border-bottom:1px solid var(--border);font-size:13px;line-height:1.6}
+    .checklist li::before{content:"✓";position:absolute;left:8px;top:9px;color:var(--accent);font-weight:900}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#fde7ec}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#fde7ec}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>LEDテープが点いたり消えたりする原因と対処法</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">トラブル対処ガイド</div>
+    <h1>LEDテープが点いたり消えたり（断続点滅）する原因と対処法<br>電源の保護動作・容量不足・接触不良を診断</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-06-29</span>
+      <span>更新日: 2026-06-29</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/red_shop.webp"
+      alt="点いたり消えたりを繰り返すLEDテープの断続点滅を診断する作業イメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>「LEDテープが数秒おきに点いたり消えたりを繰り返す」「しばらく点いていると急に消えて、また点く」——この<strong>断続点滅</strong>は、高速でチラつく<strong>フリッカー</strong>とは原因がまったく違います。断続点滅の多くは、<strong>電源（PSU）が自分を守るために出力を止めては再開する「保護動作の繰り返し」</strong>か、<strong>容量不足・接触不良・調光器の相性</strong>が原因です。本記事では、まず「速い点滅か遅い点滅か」で切り分け、症状別の診断フロー・負荷率の計算・現場での対処法を施工業者向けに整理します。</p>
+
+      <div class="article-callout warn">
+        <p><strong>まず切り分け:</strong> 肉眼で「点いた／消えた」と数えられる遅い周期なら断続点滅（電源・配線が主因）。目で追えないほど速くカメラに横縞が出るならフリッカー（調光・PWM周波数が主因）です。本記事は前者の遅い断続点滅を扱います。</p>
+      </div>
+
+      <h2 id="sec-flicker-vs">断続点滅とフリッカーは別物</h2>
+      <p>同じ「点滅」でも、対処する場所が正反対です。まず下表で自分の現場がどちらかを判定してください。</p>
+      <table>
+        <thead>
+          <tr><th>項目</th><th>断続点滅（この記事）</th><th>フリッカー（別記事）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>速さ</td><td>数秒〜数分の遅い周期</td><td>目で追えない高速</td></tr>
+          <tr><td>見え方</td><td>全体がはっきりON/OFF</td><td>チラつき・カメラに横縞</td></tr>
+          <tr><td>主な原因</td><td>電源の保護動作・容量不足・接触不良・調光器</td><td>PWM周波数・リップル・調光方式</td></tr>
+          <tr><td>調べる場所</td><td>電源・配線・接続部</td><td>調光器・電源のリップル特性</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="sec-causes">断続点滅の主な原因と仕組み</h2>
+
+      <h3>① 電源の過負荷・過熱保護のリセット繰り返し（最多）</h3>
+      <p>スイッチング電源には<strong>過負荷保護（OLP）</strong>と<strong>過熱保護（OTP）</strong>が入っています。電源容量に対してテープのW数が大きすぎたり、電源が放熱できず熱くなりすぎたりすると、電源は出力を止めて自分を守ります。負荷や温度が下がると再び出力する——これが<strong>「出力ON→保護でOFF→冷えてON」</strong>のサイクルとなり、数秒〜数十秒周期の点滅に見えます。電源を触ると熱い、容量ギリギリ、というケースはほぼこれです。</p>
+
+      <h3>② 容量不足・突入で立ち上がれない</h3>
+      <p>容量が足りない電源は、点灯の瞬間に流れる<strong>突入電流</strong>や定常負荷に耐えられず、電圧が落ちて保護が働き、また立ち上がろうとして落ちる、を繰り返します。点灯直後だけ点滅して落ち着く／ずっと点滅する、いずれも容量不足を疑います。</p>
+
+      <h3>③ 接触不良・断線（触ると変わる）</h3>
+      <p>コネクタの差し込み不良、はんだ不良、端子台のネジ緩み、テープのカット部断線があると、間欠的に回路が切れて点滅します。<strong>配線を動かす・特定箇所を触ると症状が変わる</strong>のが見分け方です。屋外・水回りでは端子の腐食や浸水も間欠不良を起こします。</p>
+
+      <h3>④ 調光器・コントローラーの相性／最低負荷割れ</h3>
+      <p>調光器やコントローラーには<strong>最低負荷（最小ワット数）</strong>があり、これを下回ると動作が不安定になって点滅することがあります。位相調光器とLED電源の相性、コントローラーの過電流保護の誤作動も原因です。調光を全開にすると直る／特定の調光位置で点滅する場合はここを疑います。</p>
+
+      <h3>⑤ 電源の寿命・故障</h3>
+      <p>電解コンデンサの劣化など電源自体の経年故障でも、出力が不安定になり点滅します。数年使った電源で、容量にも配線にも問題がないのに点滅する場合は、電源の交換で切り分けます。</p>
+
+      <h2 id="sec-loadratio">負荷率の計算（容量不足・過熱の見極め）</h2>
+      <p>断続点滅で最初に確認すべきは<strong>電源の負荷率</strong>です。電源は連続使用で<strong>容量の80%以内</strong>に収めるのが基本。100%ギリギリで使うと発熱が増え、過熱・過負荷保護が働きやすくなります。負荷率は次の式で出します。</p>
+
+      <div class="spec-grid">
+        <div class="spec-card">
+          <span class="spec-label">負荷率</span>
+          <span class="spec-value">負荷W ÷ 容量W</span>
+          <p class="spec-note">テープ合計W ÷ 電源定格W。80%以内が目安</p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">テープ合計W</span>
+          <span class="spec-value">W/m × 長さ</span>
+          <p class="spec-note">例: 14.4W/m × 5m = 72W</p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">推奨容量</span>
+          <span class="spec-value">負荷 ÷ 0.8</span>
+          <p class="spec-note">必要なら一回り大きい電源へ。72W÷0.8=90W→100W級</p>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr><th>テープ負荷</th><th>電源容量</th><th>負荷率</th><th>判定</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>72W</td><td>100W</td><td>72%</td><td>◯ 余裕あり</td></tr>
+          <tr><td>72W</td><td>75W</td><td>96%</td><td>△ 発熱・保護が出やすい</td></tr>
+          <tr><td>90W</td><td>75W</td><td>120%</td><td>✕ 過負荷・点滅の典型</td></tr>
+          <tr><td>180W</td><td>200W</td><td>90%</td><td>△ 放熱次第で保護作動</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout">
+        <p><strong>計算のコツ:</strong> テープのW/mはカタログ値で見積もり、コネクタや延長による損失も考えて少し多めに見ます。負荷率が80%を超えていたら、まず電源を一回り大きい容量に替えるのが最短の対処です。電源を増設して負荷を分散する手もあります。</p>
+      </div>
+
+      <h2 id="sec-diagnosis">症状別 診断フロー</h2>
+      <p>点滅の「出方」から原因を絞り込みます。上から順に確認してください。</p>
+      <table>
+        <thead>
+          <tr><th>症状の出方</th><th>疑う原因</th><th>確認方法</th><th>対処</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>全体が周期的にON/OFF＋電源が熱い</td><td>過熱・過負荷保護</td><td>電源温度・負荷率を確認</td><td>容量UP／放熱確保／負荷分散</td></tr>
+          <tr><td>点灯直後だけ点滅し落ち着く</td><td>容量不足・突入</td><td>負荷率・突入対策の有無</td><td>容量UP／突入抑制つき電源</td></tr>
+          <tr><td>触る・配線を動かすと変わる</td><td>接触不良・断線</td><td>コネクタ・端子・カット部を点検</td><td>差し直し・増し締め・はんだ直し</td></tr>
+          <tr><td>調光中だけ／特定の明るさで点滅</td><td>調光器の相性・最低負荷割れ</td><td>全開で消えるか／最低負荷を確認</td><td>適合調光器へ／負荷を満たす</td></tr>
+          <tr><td>原因が無いのに数年使用後に発生</td><td>電源の寿命・故障</td><td>別電源に差し替えて切り分け</td><td>電源交換</td></tr>
+          <tr><td>屋外・水回りで間欠的に発生</td><td>端子の腐食・浸水</td><td>端子の状態・防水の有無</td><td>端子交換・防水処理</td></tr>
+        </tbody>
+      </table>
+
+      <div class="article-callout tip">
+        <p><strong>切り分けの基本:</strong> 「電源が熱いか」「触ると変わるか」「調光中だけか」の3つを最初に確認すれば、保護動作・接触不良・調光器の3大原因にほぼ振り分けられます。原因が読めないときは、別の正常な電源・短いテープに差し替えて、どこで点滅が消えるかを見ると確実です。</p>
+      </div>
+
+      <h2 id="sec-checklist">現場チェックリスト</h2>
+      <ul class="checklist">
+        <li>点滅は遅い周期か（断続点滅）／高速か（フリッカー）を判定したか</li>
+        <li>電源を触って異常に熱くないか確認したか（→過熱保護）</li>
+        <li>負荷率＝テープ合計W÷電源容量Wが80%以内に収まっているか</li>
+        <li>配線を動かす・特定箇所を触ると症状が変わらないか（→接触不良）</li>
+        <li>コネクタ・端子台・はんだ・カット部に緩みや断線がないか</li>
+        <li>調光中だけ点滅しないか／調光器の最低負荷を満たしているか</li>
+        <li>屋外・水回りで端子の腐食・浸水がないか（→防水処理）</li>
+        <li>別の正常な電源に差し替えて点滅が消えるか（電源故障の切り分け）</li>
+      </ul>
+      <p>断続点滅は「電源が悲鳴を上げている」サインであることが大半です。容量に余裕を持たせ、放熱を確保し、接続部を確実にする——この3点で大多数は解決します。原因を1つずつ消していけば、点滅の出る現場は必ず突き止められます。</p>
+
+      <!-- FAQ -->
+      <h2 id="faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">LEDテープが数秒おきに全体で点いたり消えたりします。原因は何ですか？</div>
+        <div class="faq-a">最も多いのは電源（PSU）の保護動作が作動とリセットを繰り返している状態です。電源容量に対して負荷が大きすぎる（過負荷保護）か、電源が放熱不足で熱くなりすぎている（過熱保護）と、電源は出力を止め、温度や負荷が下がると再び出力する——これが点滅に見えます。まず電源を触って異常に熱くないか、テープ合計W数が電源容量の80%以内かを確認してください。容量不足なら一回り大きな電源に替える、放熱の悪い場所に密閉していれば風通しを確保するのが対処です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">高速でチラチラするフリッカーと、点いたり消えたりする断続点滅は違うものですか？</div>
+        <div class="faq-a">別の現象です。フリッカーは人の目では追えないほど速い明滅で、カメラに横縞が出たり目が疲れたりし、原因は調光方式やPWM周波数、リップルにあります。一方この記事の断続点滅は、数秒〜数分の周期で全体がはっきりON/OFFする遅い点滅で、原因は電源の保護動作・容量不足・接触不良・調光器の相性です。周期が肉眼で数えられる速さなら断続点滅として、電源と配線を中心に切り分けます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">特定の場所を触ると点いたり、配線を動かすと点滅が止まったりします。</div>
+        <div class="faq-a">接触不良のサインです。コネクタの差し込み不良、はんだ付け不良、端子台のネジ緩み、テープのカット部断線が疑われます。触ったり動かしたりで症状が変わる箇所が不良の発生点です。電源を切ってから、その区間のコネクタを差し直す・端子のネジを増し締めする・はんだをやり直すなどで対処します。テープのカット部が断線している場合は新しいコネクタや配線でつなぎ直します。屋外や湿気の多い場所では端子の腐食や浸水も間欠不良の原因になるため、防水処理も確認してください。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-tape-psu-protection-shutdown-guide">
+              <img src="/images/hero-scenes/red_livingroom.webp" alt="LED電源の保護シャットダウン" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <div class="rac-title">LED電源の保護動作（過負荷・過熱・過電圧）で落ちる原因と対処</div>
+                <span class="rac-date">2026-06-08</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-loose-connection-repair-guide">
+              <img src="/images/hero-scenes/orange_shop.webp" alt="LEDテープの接触不良の修理" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <div class="rac-title">LEDテープの接触不良の特定と修理｜コネクタ・端子・カット部の点検</div>
+                <span class="rac-date">2026-06-02</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-power-supply-lifespan-failure-guide">
+              <img src="/images/hero-scenes/purple_desk.webp" alt="LED電源の寿命と故障" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <div class="rac-title">LED電源の寿命と故障の見分け方｜電解コンデンサ劣化と交換目安</div>
+                <span class="rac-date">2026-05-28</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>余裕のある容量の電源・適合調光器をプロ価格で</h2>
+        <p>定電圧PSU・LED対応調光器・コネクタを必要な分だけ。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">LED PRO SHOP を見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-29</span>
+        <span>更新日: 2026-06-29</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源・調光器の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-tape-psu-protection-shutdown-guide">電源の保護動作で落ちる原因</a></li>
+        <li><a href="/articles/led-tape-troubleshooting-guide">LEDテープ トラブル総合診断</a></li>
+        <li><a href="/articles/led-tape-heat-management-guide">LEDテープの放熱・熱対策</a></li>
+        <li><a href="/articles/led-flickerfree-guide">フリッカーフリーの基礎</a></li>
+        <li><a href="/articles/led-psu-capacity-guide">電源容量（W数）の選び方</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/psu/">業務用定電圧PSU（12V/24V）</a></li>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/controller/">PWM調光器・コントローラ</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム各種</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>

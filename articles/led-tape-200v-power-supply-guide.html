@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープ電源をAC200Vで使う方法と選び方｜単相200V・三相200V現場の電源装置選定【施工業者向け】 | LED PRO SHOP</title>
+  <meta name="description" content="工場・店舗・倉庫など200Vが来ている現場でLEDテープ用電源（PSU）を使うときの選び方を施工業者向けに解説。AC100-240Vワイド入力の見分け方、単相200V・三相200Vの結線、200V化で幹線電流が半減する理由とブレーカー・電線の選定、注意点とチェックリストをまとめました。">
+  <meta name="keywords" content="led 電源 200v,led テープ 200v,ac200v led 電源,三相200v led,単相200v led 電源,led 電源 入力電圧,led psu 200v,led 電源 ワイド入力">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-200v-power-supply-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-200v-power-supply-guide">
+  <meta property="og:title" content="LEDテープ電源をAC200Vで使う方法と選び方｜単相200V・三相200V現場の電源装置選定【施工業者向け】 | LED PRO SHOP">
+  <meta property="og:description" content="200Vが来ている現場でLEDテープ用電源を使う方法。AC100-240Vワイド入力の見分け方、単相200V・三相200Vの結線、200V化で幹線電流が半減する理由とブレーカー・電線選定を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-200v-power-supply-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ電源をAC200Vで使う方法と選び方【施工業者向け】 | LED PRO SHOP">
+  <meta name="twitter:description" content="200V現場でLEDテープ電源を使う方法。ワイド入力の見分け方・単相/三相200Vの結線・幹線電流半減のメリット・ブレーカー選定を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-200v-power-supply-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDテープ電源をAC200Vで使う方法と選び方｜単相200V・三相200V現場の電源装置選定",
+    "description": "200Vが来ている現場でLEDテープ用電源（PSU）を使う方法。AC100-240Vワイド入力の見分け方、単相200V・三相200Vの結線、200V化で幹線電流が半減する理由とブレーカー・電線の選定を施工業者向けに整理。",
+    "image": "https://led-proshop.com/articles/images/led-tape-200v-power-supply-guide-hero.webp",
+    "datePublished": "2026-06-29",
+    "dateModified": "2026-06-29",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP 編集部" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-200v-power-supply-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープ電源をAC200Vで使う方法と選び方", "item": "https://led-proshop.com/articles/led-tape-200v-power-supply-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "100V用に売られているLED電源を、現場の200Vにそのままつないでよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "電源（PSU）の銘板（ラベル）の入力電圧表記を必ず確認してください。「AC100-240V」「INPUT 100-240V～」と書かれたワイド入力タイプなら200Vでもそのまま使えます。一方「AC100V」「INPUT 100V」のみの100V専用機に200Vを入れると、過電圧で即座に故障・発煙する危険があります。表記が読み取れない、または100V専用の場合は200Vに接続してはいけません。ワイド入力機を選ぶか、200V対応の電源に交換してください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "200Vで使うと何かメリットがありますか？電気代は安くなりますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "電気代（消費電力）はほぼ変わりません。電力は電圧×電流なので、同じW数なら200Vにすると幹線に流れる電流が約半分になります。メリットはこの電流半減による施工面で、同じ容量でも細い電線・小さいブレーカーで済み、1回路にまとめられる電源台数を増やせます。電圧降下も抑えられるため、大規模な間接照明や工場・倉庫のように電源台数が多い現場ほど、200V給電のほうが幹線設計が有利になります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "三相200Vが来ている工場では、LED電源をどう接続すればよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "LED用スイッチング電源はほとんどが単相入力の機器です。三相200V（R・S・T）が来ている場合は、三相のうち任意の2線間（R-S、S-T、T-Rのいずれか）に接続します。相間電圧は200Vなので単相200Vとして扱えます。電源が複数台ある場合は、3つの相にできるだけ均等に振り分けて相間の負荷バランスを取り、中性線やアース、漏電遮断器の施工は第二種以上の電気工事士が法令に従って行ってください。三相専用の動力回路の扱いになるため、契約種別・ブレーカー容量も合わせて確認します。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#003C82;--blue-pale:#e8f0fe;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;--accent:#1e40af;--accent-pale:#e7edfb;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px;text-decoration:none}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#0a1f44 0%,#1e40af 55%,#0a2a6b 100%);padding:40px 16px 32px;border-bottom:3px solid #0a2a6b}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:4px;padding:14px}
+    .spec-card .spec-label{font-size:10px;font-weight:700;color:var(--text-muted);letter-spacing:1px;display:block;margin-bottom:5px}
+    .spec-card .spec-value{font-size:17px;font-weight:900;color:var(--accent);line-height:1.25}
+    .spec-card .spec-note{font-size:11px;color:var(--text-sub);margin-top:6px;line-height:1.5}
+    .checklist{list-style:none!important;padding:0!important;margin:16px 0}
+    .checklist li{position:relative;padding:9px 8px 9px 32px;border-bottom:1px solid var(--border);font-size:13px;line-height:1.6}
+    .checklist li::before{content:"✓";position:absolute;left:8px;top:9px;color:var(--accent);font-weight:900}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#e7edfb}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#e7edfb}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>LEDテープ電源をAC200Vで使う方法と選び方</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">仕様選定ガイド</div>
+    <h1>LEDテープ電源をAC200Vで使う方法と選び方<br>単相200V・三相200V現場の電源装置選定</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-06-29</span>
+      <span>更新日: 2026-06-29</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/blue_desk.webp"
+      alt="AC200V現場でLEDテープ用電源装置を選定する電気工事のイメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>工場・倉庫・大型店舗・看板現場では、コンセントの100Vだけでなく<strong>単相200Vや三相200Vが来ている</strong>ことがよくあります。LEDテープを大量に流すと電源（PSU）の台数が増え、100Vのままでは幹線電流が大きくなりすぎて回路がパンクしがちです。そこで使えるのが<strong>200V給電</strong>。同じW数でも電流が約半分になり、細い電線・小さいブレーカーで施工できます。本記事では、LEDテープ用電源を200Vで使うための<strong>入力電圧表記の見分け方・単相200V/三相200Vの結線・幹線電流が半減する理由・ブレーカーと電線の選定</strong>を施工業者向けに整理します。</p>
+
+      <div class="article-callout warn">
+        <p><strong>最初に確認:</strong> すべての判断は電源の銘板（ラベル）の入力電圧表記から始まります。「AC100-240V」のワイド入力なら200Vでそのまま使え、「AC100V」専用機は200Vに絶対つないではいけません。型番だけで判断せず、必ず実機の銘板を読んでください。</p>
+      </div>
+
+      <h2 id="sec-why200v">なぜ200Vで使うのか（電流半減のメリット）</h2>
+      <p>電力は<strong>P（W）＝電圧V×電流A</strong>で決まります。消費電力（電気代）は電圧を変えてもほぼ同じですが、<strong>電圧を上げると同じW数を送るのに必要な電流が下がる</strong>のがポイントです。100Vを200Vにすれば、幹線に流れる電流は理論上ちょうど半分になります。電流が半分になると、電線サイズ・ブレーカー容量・電圧降下のすべてが軽くなり、1回路にまとめられる電源台数も増えます。</p>
+
+      <div class="spec-grid">
+        <div class="spec-card">
+          <span class="spec-label">基本式</span>
+          <span class="spec-value">A = W ÷ V</span>
+          <p class="spec-note">同じW数なら電圧2倍で電流は半分。200V化の効果はここ</p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">電気代</span>
+          <span class="spec-value">ほぼ不変</span>
+          <p class="spec-note">消費電力(W)は同じ。200Vにしても省エネにはならない</p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">効くのは</span>
+          <span class="spec-value">幹線設計</span>
+          <p class="spec-note">電線・ブレーカー・電圧降下が軽くなる＝大規模ほど有利</p>
+        </div>
+      </div>
+
+      <h3>同じ負荷を100V／200Vで送ったときの幹線電流</h3>
+      <p>下表は、LEDテープ＋電源の合計負荷を100Vと200Vで給電したときに、幹線に流れるおおよその電流を比較したものです（力率はLED電源の実用値を考慮した概算）。台数が増えるほど、200V化で電流に大きな差が出ます。</p>
+      <table>
+        <thead>
+          <tr><th>合計負荷</th><th>100V時の電流（概算）</th><th>200V時の電流（概算）</th><th>幹線の目安</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>500W</td><td>約5.5A</td><td>約2.8A</td><td>200Vなら余裕</td></tr>
+          <tr><td>1,000W</td><td>約11A</td><td>約5.5A</td><td>100Vは20A回路が手狭</td></tr>
+          <tr><td>2,000W</td><td>約22A</td><td>約11A</td><td>100Vは回路分割が必要</td></tr>
+          <tr><td>3,000W</td><td>約33A</td><td>約16.5A</td><td>200Vで1回路に集約可</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout">
+        <p><strong>読み方:</strong> 100Vで2,000Wを送ると約22A＝20Aブレーカーを超えるため回路を分けるしかありませんが、200Vなら約11Aで1回路に収まります。電源が10台、20台と並ぶ大規模間接照明や工場の棚下照明では、この差が幹線の本数・ブレーカー数・盤のスペースをそのまま左右します。</p>
+      </div>
+
+      <h2 id="sec-input">入力電圧表記の見分け方（ワイド入力かどうか）</h2>
+      <p>200Vで使えるかどうかは、電源の銘板に書かれた<strong>入力電圧（INPUT / AC INPUT）の表記</strong>で決まります。LED PRO SHOP で扱うような業務用スイッチング電源の多くは「AC100-240V」のワイド入力ですが、安価な機種や一部の専用機は100V専用です。下表の表記を必ず確認してください。</p>
+      <table>
+        <thead>
+          <tr><th>銘板の入力表記</th><th>200Vでの使用</th><th>判断</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>AC100-240V（100-240V～）</td><td>○ 使える</td><td>ワイド入力。100V/200V兼用</td></tr>
+          <tr><td>AC100-277V</td><td>○ 使える</td><td>業務用でよくある広範囲入力</td></tr>
+          <tr><td>AC200-240V</td><td>○ 200V専用</td><td>100Vでは動かない点に注意</td></tr>
+          <tr><td>AC100V（100V～のみ）</td><td>✕ 不可</td><td>200Vを入れると過電圧で故障・発煙</td></tr>
+          <tr><td>表記が読めない／不明</td><td>✕ 接続禁止</td><td>確認できるまで200Vにつながない</td></tr>
+        </tbody>
+      </table>
+      <p>あわせて<strong>周波数（50/60Hz）</strong>と<strong>入力電圧の許容範囲</strong>も確認します。多くのワイド入力機は50/60Hz共用ですが、入力電圧が大きく変動する現場では、許容範囲に余裕のある機種を選んでおくと安定します（入力電圧の許容については別記事で詳しく解説しています）。</p>
+
+      <h2 id="sec-wiring">単相200Vと三相200Vの結線</h2>
+      <p>LED用スイッチング電源は<strong>ほとんどが単相入力の機器</strong>です。「200V」と言っても現場の供給方式は単相と三相があり、結線の考え方が変わります。実際の結線・接地・遮断器の施工は<strong>第二種以上の電気工事士</strong>が法令に従って行う前提です。</p>
+
+      <h3>単相3線式（100V/200V）の場合</h3>
+      <p>住宅・小規模店舗で一般的な単相3線式では、2本の電圧線（L1・L2）と中性線（N）が来ています。<strong>L1-N／L2-N が100V、L1-L2 が200V</strong>です。電源をL1-L2の200Vにつなげば単相200Vとして使えます。負荷を片寄せせず、100V系・200V系のバランスを取って中性線電流を抑えるのが基本です。</p>
+
+      <h3>三相200V（動力）の場合</h3>
+      <p>工場・倉庫の動力に来ている三相200V（R・S・T）では、<strong>3線のうち任意の2線間（R-S／S-T／T-R）に接続</strong>します。相間電圧は200Vなので、単相入力のLED電源を「単相200V」として接続できます。電源が複数台あるときは、3つの相にできるだけ均等に振り分けて相間バランスを取ります。三相回路の扱いになるため、契約種別・幹線・遮断器も動力側で確認してください。</p>
+
+      <table>
+        <thead>
+          <tr><th>供給方式</th><th>接続する線</th><th>電源側の扱い</th><th>注意点</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>単相3線式</td><td>L1-L2（電圧線2本）</td><td>単相200V</td><td>中性線につながない／100V系と負荷バランス</td></tr>
+          <tr><td>三相200V</td><td>R-S・S-T・T-R のいずれか</td><td>単相200V扱い</td><td>複数台は3相に均等振り分け</td></tr>
+          <tr><td>単相100V</td><td>L-N</td><td>100V</td><td>ワイド入力なら100Vでもそのまま可</td></tr>
+        </tbody>
+      </table>
+
+      <div class="article-callout warn">
+        <p><strong>資格と接地:</strong> 200V回路の結線・分岐・接地は電気工事士の作業です。アース（接地）、漏電遮断器、ブレーカー容量、電線太さは法令・内線規程に従って選定します。100V専用機に200Vを入れる、相を取り違える、といったミスは一発で電源を壊すため、結線前に必ず銘板とテスターで相間電圧を実測してください。</p>
+      </div>
+
+      <h2 id="sec-breaker">ブレーカー・電線・突入電流の選定</h2>
+      <p>200V化で電流が下がっても、<strong>突入電流（電源投入時に瞬間的に流れる大電流）</strong>はスイッチング電源特有の注意点として残ります。電源を複数台まとめて1つのブレーカーに乗せると、投入時の突入が合算されてブレーカーが落ちることがあります。定常電流だけでなく突入を見込んでブレーカーを選ぶのが施工のコツです。</p>
+      <ul>
+        <li><strong>定常電流は余裕を持つ</strong>：幹線・ブレーカーは連続使用で容量の80%以内を目安に。3,000W／200V（約16.5A）なら20Aではなく回路設計に余裕を見る。</li>
+        <li><strong>突入電流を見込む</strong>：電源が多い現場は突入対策（突入電流抑制つき電源、投入を分ける、適切な遮断特性のブレーカー選定）を行う。</li>
+        <li><strong>電線サイズは電流＋電圧降下で決める</strong>：200Vは電流が小さい分、同じ距離なら電圧降下も有利。ただし長距離は電線太さで補正する。</li>
+        <li><strong>力率（PF）も確認</strong>：大規模設置では力率の低い電源を多数並べると幹線電流が増える。力率改善（PFC）付きの電源が有利。</li>
+      </ul>
+      <p>突入電流・ブレーカー選定・力率の詳細は、それぞれの専門記事で計算式とともに解説しています。200V現場ではまず「ワイド入力機を選ぶ」「相を間違えない」「突入を見込む」の3点を押さえれば、幹線設計はぐっと楽になります。</p>
+
+      <h2 id="sec-checklist">200V給電 選定チェックリスト</h2>
+      <ul class="checklist">
+        <li>電源の銘板で入力表記を確認したか（AC100-240V等のワイド入力か）</li>
+        <li>100V専用機（AC100Vのみ）を200Vにつなごうとしていないか</li>
+        <li>供給方式は単相3線式か三相200Vか、相間電圧をテスターで実測したか</li>
+        <li>三相の場合、複数台を3相へ均等に振り分けたか</li>
+        <li>定常電流（W÷200V）に加えて突入電流を見込んでブレーカーを選んだか</li>
+        <li>幹線サイズを電流と電圧降下の両面で確認したか</li>
+        <li>接地・漏電遮断器・資格者施工など法令要件を満たしているか</li>
+      </ul>
+      <p>200V給電は「省エネ」ではなく「幹線をスリムにする」ための選択です。電源台数が多い大規模なLEDテープ施工ほど効果が大きく、回路の本数・盤のサイズ・電圧降下を同時に軽くできます。鍵になるのは、最初に<strong>ワイド入力対応の電源を選んでおく</strong>こと。これさえ守れば、100V現場にも200V現場にも同じ在庫で対応できます。</p>
+
+      <!-- FAQ -->
+      <h2 id="faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">100V用に売られているLED電源を、現場の200Vにそのままつないでよいですか？</div>
+        <div class="faq-a">電源（PSU）の銘板の入力電圧表記を必ず確認してください。「AC100-240V」「INPUT 100-240V～」と書かれたワイド入力タイプなら200Vでもそのまま使えます。一方「AC100V」のみの100V専用機に200Vを入れると、過電圧で即座に故障・発煙する危険があります。表記が読み取れない、または100V専用の場合は200Vに接続せず、ワイド入力機か200V対応の電源に交換してください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">200Vで使うと何かメリットがありますか？電気代は安くなりますか？</div>
+        <div class="faq-a">電気代（消費電力）はほぼ変わりません。電力は電圧×電流なので、同じW数なら200Vにすると幹線に流れる電流が約半分になります。メリットはこの電流半減による施工面で、細い電線・小さいブレーカーで済み、1回路にまとめられる電源台数を増やせます。電圧降下も抑えられるため、電源台数が多い大規模現場ほど200V給電のほうが幹線設計が有利です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">三相200Vが来ている工場では、LED電源をどう接続すればよいですか？</div>
+        <div class="faq-a">LED用スイッチング電源はほとんどが単相入力です。三相200V（R・S・T）が来ている場合は、任意の2線間（R-S、S-T、T-Rのいずれか）に接続します。相間電圧は200Vなので単相200Vとして扱えます。電源が複数台あるときは3つの相にできるだけ均等に振り分けてバランスを取り、中性線・アース・漏電遮断器の施工は第二種以上の電気工事士が法令に従って行ってください。三相動力回路の扱いになるため、契約種別やブレーカー容量も確認します。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-psu-capacity-guide">
+              <img src="/images/hero-scenes/blue_kitchen.webp" alt="LED電源容量の選び方" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">仕様選定ガイド</span>
+                <div class="rac-title">LED電源（PSU）容量の選び方｜W数の計算と余裕率の取り方</div>
+                <span class="rac-date">2026-05-09</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-input-voltage-tolerance-guide">
+              <img src="/images/hero-scenes/lightblue_desk.webp" alt="LEDテープの入力電圧許容範囲" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">仕様選定ガイド</span>
+                <div class="rac-title">LEDテープの入力電圧許容範囲｜電圧変動と電源のマージンの考え方</div>
+                <span class="rac-date">2026-06-05</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-branch-circuit-breaker-sizing-guide">
+              <img src="/images/hero-scenes/white_shop.webp" alt="LEDテープの分岐回路ブレーカー選定" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工方法ガイド</span>
+                <div class="rac-title">LEDテープの分岐回路・ブレーカー容量の選び方｜W÷Vで考える回路設計</div>
+                <span class="rac-date">2026-06-11</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>ワイド入力対応の業務用電源をプロ価格で</h2>
+        <p>AC100-240V対応の定電圧PSU・LEDテープ・調光器を必要な分だけ。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">LED PRO SHOP を見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-29</span>
+        <span>更新日: 2026-06-29</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源・調光器の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-psu-capacity-guide">LED電源容量（W数）の選び方</a></li>
+        <li><a href="/articles/led-tape-input-voltage-tolerance-guide">入力電圧の許容範囲</a></li>
+        <li><a href="/articles/led-power-supply-efficiency-guide">電源の効率・待機電力</a></li>
+        <li><a href="/articles/led-tape-power-factor-pfc-guide">力率（PF）とPFC</a></li>
+        <li><a href="/articles/led-tape-centralized-vs-distributed-power-guide">集中電源と分散電源</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/psu/">業務用定電圧PSU（AC100-240V対応）</a></li>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/controller/">PWM調光器・コントローラ</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム各種</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>

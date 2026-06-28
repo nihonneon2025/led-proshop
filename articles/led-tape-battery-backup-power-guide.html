@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>停電時もLEDテープを点灯させるバッテリーバックアップ電源の選び方｜UPS・DC無停電電源・容量計算【施工業者向け】 | LED PRO SHOP</title>
+  <meta name="description" content="停電・災害時もLEDテープやサインを点灯させ続けたい——そんな現場向けに、バッテリーバックアップ電源（UPS・DC無停電電源）の選び方を施工業者向けに解説。必要バッテリー容量Wh=負荷W×時間÷効率の計算式と早見表、AC給電とDC給電の違い、切替時間・正弦波の注意点、そして建築基準法の非常用照明とは別物である点まで整理しました。">
+  <meta name="keywords" content="led テープ 停電 点灯,led バッテリー バックアップ,led 非常用 電源,led ups,led 無停電電源,led 停電対策,dc ups led,led 蓄電池 容量計算">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-battery-backup-power-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-battery-backup-power-guide">
+  <meta property="og:title" content="停電時もLEDテープを点灯させるバッテリーバックアップ電源の選び方【施工業者向け】 | LED PRO SHOP">
+  <meta property="og:description" content="停電・災害時もLEDテープやサインを点灯させ続ける電源の選び方。必要バッテリー容量の計算式と早見表、AC給電とDC給電の違い、切替時間・正弦波の注意点、建築基準法の非常用照明との違いを施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-battery-backup-power-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="停電時もLEDテープを点灯させるバッテリーバックアップ電源の選び方【施工業者向け】 | LED PRO SHOP">
+  <meta name="twitter:description" content="停電中もLEDを点け続ける電源の選び方。容量計算Wh=負荷W×時間÷効率、AC/DC給電の違い、切替時間・正弦波の注意点、非常用照明との違いを施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-battery-backup-power-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "停電時もLEDテープを点灯させるバッテリーバックアップ電源の選び方｜UPS・DC無停電電源・容量計算",
+    "description": "停電・災害時もLEDテープやサインを点灯させ続ける電源（UPS・DC無停電電源）の選び方。必要バッテリー容量の計算式と早見表、AC給電とDC給電の違い、切替時間・正弦波の注意点、建築基準法の非常用照明との違いを施工業者向けに整理。",
+    "image": "https://led-proshop.com/articles/images/led-tape-battery-backup-power-guide-hero.webp",
+    "datePublished": "2026-06-29",
+    "dateModified": "2026-06-29",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP 編集部" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-battery-backup-power-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "停電時もLEDテープを点灯させるバッテリーバックアップ電源の選び方", "item": "https://led-proshop.com/articles/led-tape-battery-backup-power-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "停電時に何時間点灯させるには、どのくらいのバッテリー容量が必要ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "必要なバッテリー容量（Wh）は「負荷W×点灯時間h÷使える割合（DOD）÷変換効率」で求めます。たとえば50WのLEDを2時間点けたい場合、リチウム電池（DOD80%）でAC変換効率を85%とすると、50×2÷0.8÷0.85≒147Whが必要です。12V系なら147Wh÷12V≒12.3Ah以上の容量が目安になります。鉛電池はDODを50%程度に抑える必要があるため、同じ条件で約2倍の容量が要ります。実際は余裕を見て1.2〜1.5倍の容量を選ぶと、電池の劣化後も時間を確保できます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "パソコン用のUPSにLED電源をつないで停電対策にできますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "短時間なら可能ですが、注意点があります。第一に、安価なUPSの多くは出力波形が矩形波（疑似正弦波）で、LED電源によっては相性が悪く異音や効率低下、最悪は誤動作を起こすことがあります。正弦波出力のUPSを選ぶのが安全です。第二に、パソコン用UPSはあくまで数分の電源断をしのいで安全に停止させる用途で、バックアップ時間が短いものが大半です。長時間点灯したい場合はバッテリー容量の大きい機種、または24V系をそのままバッテリーで保持するDC無停電電源（DC-UPS）を検討してください。DC給電方式は交流への変換ロスがない分、効率と持続時間で有利です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "汎用LEDテープとバッテリーで非常用照明や誘導灯の代わりにできますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "代わりにはできません。建築基準法の非常用照明や消防法の誘導灯は、点灯時間・照度・耐熱などの基準を満たした認定器具を使うことが法律で義務付けられており、汎用のLEDテープとバッテリーで置き換えることは認められていません。本記事で扱うバッテリーバックアップは、あくまで法定の非常用照明とは別に、停電中もサイン・常夜灯・防犯灯・店舗演出などを点け続けたいというBCP・利便目的のものです。法定の非常用照明・誘導灯が必要な場合は、必ず認定器具を使い、有資格者・専門業者が法令に従って設計・施工してください。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#003C82;--blue-pale:#e8f0fe;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;--accent:#0f766e;--accent-pale:#e3f3f0;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px;text-decoration:none}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#0a3a35 0%,#0f766e 55%,#0c4a44 100%);padding:40px 16px 32px;border-bottom:3px solid #0c4a44}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:4px;padding:14px}
+    .spec-card .spec-label{font-size:10px;font-weight:700;color:var(--text-muted);letter-spacing:1px;display:block;margin-bottom:5px}
+    .spec-card .spec-value{font-size:17px;font-weight:900;color:var(--accent);line-height:1.25}
+    .spec-card .spec-note{font-size:11px;color:var(--text-sub);margin-top:6px;line-height:1.5}
+    .checklist{list-style:none!important;padding:0!important;margin:16px 0}
+    .checklist li{position:relative;padding:9px 8px 9px 32px;border-bottom:1px solid var(--border);font-size:13px;line-height:1.6}
+    .checklist li::before{content:"✓";position:absolute;left:8px;top:9px;color:var(--accent);font-weight:900}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#e3f3f0}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#e3f3f0}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>停電時もLEDテープを点灯させるバッテリーバックアップ電源の選び方</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">製品活用ガイド</div>
+    <h1>停電時もLEDテープを点灯させるバッテリーバックアップ電源の選び方<br>UPS・DC無停電電源・容量計算</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-06-29</span>
+      <span>更新日: 2026-06-29</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/green_shop.webp"
+      alt="停電時もLEDテープを点灯させるバッテリーバックアップ電源の選定イメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>「停電になってもサインを消したくない」「災害時に通路の常夜灯を点け続けたい」「防犯のため夜間は最低限のLEDを維持したい」——こうした要望に応えるのが<strong>バッテリーバックアップ電源</strong>です。LEDテープは消費電力が小さく、少ないバッテリーでも比較的長く点灯できるため、停電対策・BCPの照明として相性が良い負荷です。本記事では、<strong>必要なバッテリー容量の計算式と早見表・AC給電とDC給電の違い・切替時間や正弦波の注意点</strong>を施工業者向けにまとめます。あわせて、<strong>建築基準法の「非常用照明」とは別物</strong>である点も最初に押さえておきます。</p>
+
+      <div class="article-callout warn">
+        <p><strong>大前提（法令）:</strong> 建築基準法の非常用照明・消防法の誘導灯は、点灯時間・照度などの基準を満たした<strong>認定器具</strong>が法律で義務付けられており、汎用LEDテープ＋バッテリーで代替してはいけません。本記事のバックアップは、法定の非常用照明とは別に、サイン・常夜灯・防犯灯・店舗演出などを停電中も点け続けたいという利便・BCP目的のものです。</p>
+      </div>
+
+      <h2 id="sec-methods">停電中もLEDを点ける3つの方式</h2>
+      <p>給電のしかたで主に3方式があります。負荷の電圧・必要時間・設置環境で選びます。</p>
+      <table>
+        <thead>
+          <tr><th>方式</th><th>仕組み</th><th>向いている用途</th><th>特徴</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>AC UPS（無停電電源装置）</td><td>停電時にバッテリー→インバーターでAC100Vを供給。既存のAC電源＋LED電源をそのまま延命</td><td>既設をいじらず短時間バックアップ</td><td>導入が簡単／変換ロスあり／時間は短め</td></tr>
+          <tr><td>DC無停電電源（DC-UPS）</td><td>24V等のDC系をバッテリーで保持。LEDテープに直流のまま給電</td><td>新設・24V系を長く点けたい</td><td>変換ロスが少なく効率的／DC配線の設計が必要</td></tr>
+          <tr><td>蓄電池＋ソーラー</td><td>太陽光で充電した蓄電池から給電</td><td>屋外サイン・電源を引けない場所</td><td>商用電源不要／天候・容量設計が要</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout tip">
+        <p><strong>効率で選ぶなら:</strong> LEDテープは元々DC（12V/24V）で動く負荷です。AC UPSは「DC→AC→またDC」と二重変換になりロスが出ますが、DC無停電電源なら直流のまま給電できるため、同じバッテリーでも持続時間で有利になります。新設で長時間を狙うならDC給電方式が第一候補です。</p>
+      </div>
+
+      <h2 id="sec-calc">必要バッテリー容量の計算式</h2>
+      <p>「何WのLEDを何時間点けたいか」が決まれば、必要なバッテリー容量（Wh）は次の式で計算できます。バッテリーは全容量を使い切れない（使える割合＝DOD）こと、変換にロスがあることを必ず織り込みます。</p>
+
+      <div class="spec-grid">
+        <div class="spec-card">
+          <span class="spec-label">必要容量</span>
+          <span class="spec-value">Wh = W×h÷DOD÷効率</span>
+          <p class="spec-note">負荷W・点灯時間h・使える割合・変換効率から算出</p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">DOD（使える割合）</span>
+          <span class="spec-value">鉛50% / Li 80%</span>
+          <p class="spec-note">鉛電池は深放電に弱く半分目安。リチウムは深く使える</p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">Ah換算</span>
+          <span class="spec-value">Ah = Wh ÷ V</span>
+          <p class="spec-note">12V系で147Wh→約12.3Ah。電池の表示Ahと照合</p>
+        </div>
+      </div>
+
+      <h3>計算例（50WのLEDを2時間）</h3>
+      <p>負荷50W・点灯時間2時間で、リチウム電池（DOD80%）・AC変換効率85%の場合：</p>
+      <ul>
+        <li><strong>必要容量</strong> ＝ 50W × 2h ÷ 0.8 ÷ 0.85 ≒ <strong>147Wh</strong></li>
+        <li><strong>12V系のAh換算</strong> ＝ 147Wh ÷ 12V ≒ <strong>12.3Ah以上</strong></li>
+        <li>鉛電池（DOD50%）なら同条件で約235Wh＝約2倍の容量が必要</li>
+      </ul>
+      <p>さらに、電池は使ううちに容量が落ちるため、<strong>劣化を見込んで計算値の1.2〜1.5倍</strong>を選ぶのが実務的です。下表は負荷と必要時間ごとの目安（リチウム・DOD80%・効率85%換算）です。</p>
+      <table>
+        <thead>
+          <tr><th>負荷</th><th>1時間</th><th>3時間</th><th>8時間</th><th>備考</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>20W</td><td>約29Wh</td><td>約88Wh</td><td>約235Wh</td><td>小型サイン・常夜灯</td></tr>
+          <tr><td>50W</td><td>約74Wh</td><td>約221Wh</td><td>約588Wh</td><td>中型サイン・通路</td></tr>
+          <tr><td>100W</td><td>約147Wh</td><td>約441Wh</td><td>約1,176Wh</td><td>店舗の最低限照明</td></tr>
+          <tr><td>200W</td><td>約294Wh</td><td>約882Wh</td><td>約2,353Wh</td><td>大規模・要大型蓄電池</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout">
+        <p><strong>持続時間を伸ばすコツ:</strong> 停電中は「全部を通常の明るさで」点ける必要はありません。バックアップ回路だけ調光して明るさを落とす、点灯範囲を絞る、と消費Wが下がり同じバッテリーで何倍も持ちます。停電時用に別回路・別電源を組み、最低限の範囲だけバックアップする設計が現実的です。</p>
+      </div>
+
+      <h2 id="sec-points">選定の注意点（切替時間・波形・寿命）</h2>
+      <p>容量が足りても、次の点を外すと「停電時に一瞬消える」「LED電源と相性が悪い」といったトラブルになります。</p>
+      <ul>
+        <li><strong>切替時間</strong>：常時インバーター（オンライン）方式は瞬断ゼロ、ラインインタラクティブ方式は数ミリ秒の切替があります。演出・サインは多少の瞬断でも実害は小さいですが、瞬断を避けたいならオンライン方式かDC給電を選びます。</li>
+        <li><strong>出力波形（AC UPSの場合）</strong>：安価な矩形波（疑似正弦波）はLED電源と相性が悪く、異音・効率低下・誤動作の原因になります。<strong>正弦波出力</strong>を選ぶのが安全です。</li>
+        <li><strong>バッテリーの種類と寿命</strong>：鉛は安価だが寿命が短め・重い・深放電に弱い。リチウム（LiFePO4等）は高価だが長寿命・軽量・深く使えます。交換サイクル（2〜5年程度）を見込んで保守計画を立てます。</li>
+        <li><strong>充電・自己消費</strong>：常時待機する機器は平常時にもわずかに電力を消費します。設置場所の温度（バッテリーは高温で劣化が早い）も寿命に影響します。</li>
+      </ul>
+
+      <h2 id="sec-checklist">バックアップ電源 選定チェックリスト</h2>
+      <ul class="checklist">
+        <li>法定の非常用照明・誘導灯が必要な箇所ではないか（必要なら認定器具を別途）</li>
+        <li>バックアップしたい負荷のW数と、必要な点灯時間を決めたか</li>
+        <li>必要容量Wh＝W×時間÷DOD÷効率で計算し、劣化分1.2〜1.5倍を見たか</li>
+        <li>AC給電（UPS）かDC給電（DC-UPS）か、効率と設置で選んだか</li>
+        <li>AC UPSの場合、出力は正弦波か（矩形波はLED電源と相性に注意）</li>
+        <li>切替時間（瞬断の許容）が用途に合っているか</li>
+        <li>停電時は調光・範囲限定で消費Wを下げる設計にしたか</li>
+        <li>バッテリーの寿命・交換サイクル・設置温度を保守計画に入れたか</li>
+      </ul>
+      <p>LEDテープは小電力で点くため、バッテリーバックアップと組み合わせれば、停電中もサイン・常夜灯・防犯灯を比較的長く維持できます。鍵は「<strong>本当に必要な範囲だけ・必要な明るさで</strong>」バックアップすること。負荷を絞れば容量も費用も抑えられ、現実的なBCP照明になります。法定の非常用照明とは役割が違う点だけ、施主にも明確に説明しておきましょう。</p>
+
+      <!-- FAQ -->
+      <h2 id="faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">停電時に何時間点灯させるには、どのくらいのバッテリー容量が必要ですか？</div>
+        <div class="faq-a">必要なバッテリー容量（Wh）は「負荷W×点灯時間h÷使える割合（DOD）÷変換効率」で求めます。たとえば50WのLEDを2時間点けたい場合、リチウム電池（DOD80%）でAC変換効率85%とすると、50×2÷0.8÷0.85≒147Whが必要です。12V系なら147Wh÷12V≒12.3Ah以上が目安。鉛電池はDODを50%程度に抑えるため同条件で約2倍要ります。実際は余裕を見て計算値の1.2〜1.5倍を選ぶと、電池の劣化後も時間を確保できます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">パソコン用のUPSにLED電源をつないで停電対策にできますか？</div>
+        <div class="faq-a">短時間なら可能ですが注意点があります。第一に、安価なUPSの多くは出力波形が矩形波（疑似正弦波）で、LED電源と相性が悪く異音・効率低下・誤動作を起こすことがあります。正弦波出力のUPSが安全です。第二に、パソコン用UPSは数分の電源断をしのいで安全に停止させる用途で、バックアップ時間が短いものが大半です。長時間点灯したいなら容量の大きい機種、または24V系をそのままバッテリーで保持するDC無停電電源（DC-UPS）を検討してください。DC給電は交流への変換ロスがない分、効率と持続時間で有利です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">汎用LEDテープとバッテリーで非常用照明や誘導灯の代わりにできますか？</div>
+        <div class="faq-a">代わりにはできません。建築基準法の非常用照明や消防法の誘導灯は、点灯時間・照度・耐熱などの基準を満たした認定器具を使うことが法律で義務付けられており、汎用のLEDテープとバッテリーで置き換えることは認められていません。本記事のバックアップは、法定の非常用照明とは別に、停電中もサイン・常夜灯・防犯灯・店舗演出などを点け続けたいというBCP・利便目的のものです。法定の非常用照明・誘導灯が必要な場合は、必ず認定器具を使い、有資格者・専門業者が法令に従って設計・施工してください。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-psu-capacity-guide">
+              <img src="/images/hero-scenes/green_stairs.webp" alt="LED電源容量の選び方" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">仕様選定ガイド</span>
+                <div class="rac-title">LED電源（PSU）容量の選び方｜W数の計算と余裕率の取り方</div>
+                <span class="rac-date">2026-05-09</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/dc24v-led-power-supply-guide">
+              <img src="/images/hero-scenes/blue_desk.webp" alt="DC24V LED電源の基礎" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">仕様選定ガイド</span>
+                <div class="rac-title">DC24V LED電源の基礎｜直流給電の仕組みと電源の選び方</div>
+                <span class="rac-date">2026-04-26</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-centralized-vs-distributed-power-guide">
+              <img src="/images/hero-scenes/white_shop.webp" alt="集中電源と分散電源" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工方法ガイド</span>
+                <div class="rac-title">LEDテープの集中電源と分散電源｜大規模設置の電源レイアウト</div>
+                <span class="rac-date">2026-06-14</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>低消費電力のLEDテープ・DC電源をプロ価格で</h2>
+        <p>12V/24V定電圧PSU・高効率COBテープ・調光器を必要な分だけ。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">LED PRO SHOP を見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-29</span>
+        <span>更新日: 2026-06-29</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源・調光器の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-psu-capacity-guide">電源容量（W数）の選び方</a></li>
+        <li><a href="/articles/dc24v-led-power-supply-guide">DC24V LED電源の基礎</a></li>
+        <li><a href="/articles/led-tape-centralized-vs-distributed-power-guide">集中電源と分散電源</a></li>
+        <li><a href="/articles/led-power-supply-efficiency-guide">電源の効率・待機電力</a></li>
+        <li><a href="/articles/led-electricity-savings-guide">LEDの省エネ・電気代</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/psu/">業務用定電圧PSU（12V/24V）</a></li>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高効率COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/controller/">PWM調光器・コントローラ</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム各種</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>
