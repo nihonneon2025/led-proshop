@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>スマートコントローラー（WiFi/Bluetooth）が繋がらない原因と対処法｜LEDテープのアプリ・ペアリング不具合を診断【施工業者向け】 | LED PRO SHOP</title>
+  <meta name="description" content="LEDテープのWiFi/Bluetoothスマートコントローラーがアプリに繋がらない・ペアリングできない・すぐ切れる——その原因と現場での切り分け手順を施工業者向けに解説。多くの製品が2.4GHz専用である点、SSID/パスワードの落とし穴、APモードとEZモード、電波強度、同時接続数、施主スマホでの共有設定、ファーム更新まで、症状別の診断フローで整理しました。">
+  <meta name="keywords" content="ledテープ wifi 繋がらない,スマートコントローラー ペアリング できない,led アプリ 繋がらない,led 2.4ghz 接続,bluetooth led 繋がらない,led コントローラー 設定,tuya smartlife led 接続">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-smart-controller-wifi-troubleshooting-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-smart-controller-wifi-troubleshooting-guide">
+  <meta property="og:title" content="スマートコントローラー（WiFi/Bluetooth）が繋がらない原因と対処法｜LEDテープのアプリ・ペアリング不具合を診断【施工業者向け】 | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープのWiFi/Bluetoothスマートコントローラーが繋がらない・ペアリングできない・すぐ切れる原因と切り分け手順。2.4GHz専用の落とし穴、SSID/パスワード、APモード、電波強度、共有設定を症状別に解説。">
+  <meta property="og:image" content="https://led-proshop.com/images/hero-scenes/red_shop.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="スマートコントローラー（WiFi/Bluetooth）が繋がらない原因と対処法｜LEDテープのアプリ・ペアリング不具合を診断【施工業者向け】 | LED PRO SHOP">
+  <meta name="twitter:description" content="LEDテープのWiFi/Bluetoothスマートコントローラーが繋がらない原因と切り分け手順。2.4GHz専用の落とし穴、SSID/パスワード、APモード、電波強度、共有設定を症状別に解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/images/hero-scenes/red_shop.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "スマートコントローラー（WiFi/Bluetooth）が繋がらない原因と対処法｜LEDテープのアプリ・ペアリング不具合を診断",
+    "description": "LEDテープのWiFi/Bluetoothスマートコントローラーが繋がらない・ペアリングできない・すぐ切れる原因と現場での切り分け手順を施工業者向けに整理。2.4GHz専用の落とし穴、SSID/パスワード、APモード、電波強度、共有設定、ファーム更新を症状別に解説。",
+    "image": "https://led-proshop.com/images/hero-scenes/red_shop.webp",
+    "datePublished": "2026-06-30",
+    "dateModified": "2026-06-30",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP 編集部" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-smart-controller-wifi-troubleshooting-guide" }
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "スマートコントローラー（WiFi/Bluetooth）が繋がらない原因と対処法", "item": "https://led-proshop.com/articles/led-tape-smart-controller-wifi-troubleshooting-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "コントローラーがWiFiに繋がりません。まず何を確認すべきですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "最初に確認すべきは『接続先が2.4GHz帯のWiFiか』です。LEDテープ用のスマートコントローラーの多くは2.4GHz専用で、5GHz帯のSSIDには接続できません。最近のルーターは2.4GHzと5GHzを同じSSIDで自動切替する『バンドステアリング』が有効なことが多く、これが接続失敗の最大原因です。ペアリング中はスマホ側も2.4GHzのSSIDに繋いだうえで、可能なら一時的に5GHzをオフにするかゲスト用に2.4GHz単独のSSIDを用意します。あわせて、SSID・パスワードの入力ミス、パスワードに含まれる特殊文字、ステルスSSID、MACアドレスフィルタ、ゲストネットワークの機器間分離も接続を妨げる要因なので順に確認してください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "自分のスマホでは操作できるのに、施主（お客様）のスマホでは操作できません。なぜですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "接続方式で原因が分かれます。Bluetooth直結タイプは原則『1台のスマホが占有』する設計が多く、先に繋いだ端末を切断しないと別の端末からは繋がりません。複数人で使うなら、いったんペアリングを解除して施主の端末で登録し直します。WiFi＋クラウドタイプは、施工時に作ったアカウントに機器が紐づいているため、施主の端末からは『家族共有・デバイス共有（招待）』の機能で権限を渡すか、最初から施主のアカウントで登録するのが確実です。引き渡し後に操作できないクレームを防ぐため、誰のアカウントで登録するか・共有方法を事前に決めておくことをおすすめします。" }
+      },
+      {
+        "@type": "Question",
+        "name": "通電していてテープは光るのに、アプリでデバイスが見つかりません。どうすればよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "テープが光る＝電源と結線は正常で、問題は『無線・ペアリング側』に絞り込めます。まずコントローラーがペアリングモードに入っているかを確認します。多くの製品は電源を数回入切するか専用ボタン長押しで、内蔵LEDが速い点滅（ペアリング待ち）になります。点滅していなければリセット手順をやり直します。それでも見つからない場合は、ルーターの電波が届いているか（設置位置・金属什器・距離）、2.4GHz帯か、同時接続台数の上限、ファームウェア更新の有無を確認します。スマホのBluetoothとWiFiの両方をオン（ペアリングにBluetoothを使う製品があるため）にし、アプリの位置情報・ローカルネットワーク権限も許可してください。ここまでで見つからなければ、別のスマホで試して端末固有かを切り分け、最後にコントローラー自体の故障を疑います。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#003C82;--blue-pale:#e8f0fe;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;--accent:#be123c;--accent-pale:#fde7ec;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px;text-decoration:none}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#590818 0%,#be123c 55%,#7c1228 100%);padding:40px 16px 32px;border-bottom:3px solid #7c1228}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:4px;padding:14px}
+    .spec-card .spec-label{font-size:10px;font-weight:700;color:var(--text-muted);letter-spacing:1px;display:block;margin-bottom:5px}
+    .spec-card .spec-value{font-size:17px;font-weight:900;color:var(--accent);line-height:1.25}
+    .spec-card .spec-note{font-size:11px;color:var(--text-sub);margin-top:6px;line-height:1.5}
+    .checklist{list-style:none!important;padding:0!important;margin:16px 0}
+    .checklist li{position:relative;padding:9px 8px 9px 32px;border-bottom:1px solid var(--border);font-size:13px;line-height:1.6}
+    .checklist li::before{content:"✓";position:absolute;left:8px;top:9px;color:var(--accent);font-weight:900}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#fde7ec}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#fde7ec}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>スマートコントローラー（WiFi/Bluetooth）が繋がらない原因と対処法</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">トラブル対処ガイド</div>
+    <h1>スマートコントローラー（WiFi/Bluetooth）が繋がらない原因と対処法<br>LEDテープのアプリ・ペアリング不具合を診断</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-06-30</span>
+      <span>更新日: 2026-06-30</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/red_shop.webp"
+      alt="LEDテープのWiFi/Bluetoothスマートコントローラーをスマホアプリで設定する施工イメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>スマホアプリや音声で操作できるWiFi/BluetoothのスマートコントローラーはLEDテープの定番になりましたが、現場で「アプリに繋がらない」「ペアリングできない」「繋がってもすぐ切れる」というトラブルは少なくありません。配線は完璧でテープも光っているのに無線でつまずくと、引き渡し直前に時間を取られます。多くは<strong>2.4GHz帯の問題・SSIDやパスワードの落とし穴・ペアリングモードの入れ違い・電波強度・アプリ権限</strong>といった定番の原因です。本記事では、症状からの切り分け順と現場での具体対処を施工業者向けに整理します。</p>
+
+      <div class="article-callout">
+        <p><strong>切り分けの大原則:</strong> 「テープが手動（リモコンや電源入切）で光るか」をまず確認します。光るなら<strong>電源・結線は正常</strong>で、問題は無線・アプリ側に絞り込めます。光らないなら電源や結線の問題なので、<a href="/articles/led-tape-troubleshooting-guide">点灯しない場合の診断</a>を先に。赤外線・電波（RF）リモコン側の不具合は<a href="/articles/led-tape-remote-control-troubleshooting-guide">リモコンが効かない場合</a>を参照してください。</p>
+      </div>
+
+      <h2 id="sec-symptom">症状から原因を絞る早見表</h2>
+      <p>スマートコントローラーの不具合は症状でおおよその原因が読めます。まず当てはまる行から確認します。</p>
+      <table>
+        <thead>
+          <tr><th>症状</th><th>考えられる主因</th><th>最初に見る所</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>アプリでデバイスが見つからない</td><td>ペアリングモード未突入／2.4GHz不一致</td><td>内蔵LEDの点滅・接続先の周波数帯</td></tr>
+          <tr><td>WiFi設定の途中で失敗する</td><td>SSID/パスワード誤り・5GHz・特殊文字</td><td>2.4GHz単独SSID・パスワード再入力</td></tr>
+          <tr><td>繋がるがすぐ切れる</td><td>電波が弱い・ルーター混雑・電源不安定</td><td>設置位置・電波強度・PSU容量</td></tr>
+          <tr><td>反応が遅い・たまに効かない</td><td>電波干渉・同時接続過多・クラウド遅延</td><td>2.4GHz混雑・接続台数・回線状況</td></tr>
+          <tr><td>施主のスマホでだけ操作できない</td><td>Bluetooth占有／アカウント共有未設定</td><td>共有・招待設定・先行接続端末</td></tr>
+          <tr><td>色・調光がアプリ表示とズレる</td><td>結線（RGB順）・テープ種別の設定違い</td><td>配線色順・コントローラ種別設定</td></tr>
+        </tbody>
+      </table>
+      <p>色や調光の挙動そのものがおかしい場合は無線ではなく結線・設定が原因のことが多いので、<a href="/articles/led-tape-rgb-color-troubleshooting-guide">RGBの色がおかしい場合</a>や<a href="/articles/led-tape-rgb-rgbw-guide">RGB/RGBWの仕組み</a>も合わせて確認してください。</p>
+
+      <h2 id="sec-flow">切り分けの手順（電源→無線→アプリの順）</h2>
+      <p>原因を上流から順に潰すと、最短で解決できます。</p>
+      <ol>
+        <li><strong>電源・結線</strong>：テープが手動で光るか、電源容量・極性は正常か（<a href="/articles/led-tape-psu-wiring-guide">電源配線</a>）。光らなければ無線以前の問題。</li>
+        <li><strong>コントローラー本体</strong>：内蔵LEDが点灯・点滅しているか。ペアリングモード（速い点滅）に入っているか。</li>
+        <li><strong>無線（WiFi/BT）</strong>：2.4GHz帯か、電波が届いているか、ルーターの設定（ステルス・MACフィルタ・機器間分離）に阻まれていないか。</li>
+        <li><strong>アプリ・クラウド</strong>：アプリの権限（位置情報・ローカルネットワーク・Bluetooth）、アカウント、ファームウェア更新、サーバー側の障害。</li>
+        <li><strong>端末</strong>：別のスマホで試し、特定端末固有の問題か切り分け。</li>
+      </ol>
+
+      <h2 id="sec-wifi">WiFiタイプ特有の注意点</h2>
+      <p>WiFiコントローラーのトラブルは、ほとんどが「2.4GHz」と「ルーター設定」に集約されます。</p>
+      <table>
+        <thead>
+          <tr><th>項目</th><th>注意点・対処</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>周波数帯</td><td>多くが2.4GHz専用。5GHzには繋がらない。ペアリング時はスマホも2.4GHzへ</td></tr>
+          <tr><td>バンドステアリング</td><td>2.4/5GHzを同一SSIDで自動切替する機能はペアリングを妨げる。一時的に分離/無効化</td></tr>
+          <tr><td>SSID・パスワード</td><td>入力ミス・全角/半角・特殊記号に注意。ステルスSSIDは検出されにくい</td></tr>
+          <tr><td>ルーターの制限</td><td>MACアドレスフィルタ・ゲストネットの機器間分離・接続台数上限を確認</td></tr>
+          <tr><td>ペアリング方式</td><td>EZ（スマートコンフィグ）で失敗するならAP（アクセスポイント）モードに切替</td></tr>
+          <tr><td>電波強度</td><td>金属什器・分電盤・厚壁の裏は弱い。中継器や設置位置変更で改善</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout warn">
+        <p><strong>最頻出の原因は「5GHzに繋ごうとしている」:</strong> 施主宅・店舗のルーターは2.4GHzと5GHzが同じSSIDで自動切替になっていることが多く、スマホが5GHzに繋がった状態でペアリングすると失敗します。<strong>ペアリングの間だけスマホを2.4GHzのSSIDに固定</strong>するのが、現場で最も効く一手です。業務用の複雑なネットワーク（認証付き・VLAN分離）では、専用の2.4GHz SSIDを1つ用意してもらうのが確実です。</p>
+      </div>
+
+      <h2 id="sec-bt">Bluetoothタイプ特有の注意点</h2>
+      <p>Bluetooth直結タイプはルーター不要で手軽な反面、別のクセがあります。</p>
+      <ul>
+        <li><strong>1台占有</strong>：多くは先に接続した1台が占有し、他端末からは繋がりません。使う端末を変えるときはペアリングを解除して登録し直します。</li>
+        <li><strong>到達距離</strong>：Bluetoothは数〜十数m程度で壁に弱く、離れると切れます。遠隔・宅外操作はできません（宅外操作が要件ならWiFi＋クラウド型を選定）。</li>
+        <li><strong>スマホ側設定</strong>：BluetoothとWiFiの両方をオン、アプリの位置情報・近くのデバイス権限を許可。OS更新後に権限がリセットされることもあります。</li>
+        <li><strong>キャッシュ</strong>：過去のペアリング情報が残っていると競合します。スマホ側でデバイスを「削除」してから再ペアリング。</li>
+      </ul>
+
+      <h2 id="sec-fix">現場でやる具体的な対処手順</h2>
+      <ol>
+        <li><strong>リセット</strong>：コントローラーを電源数回入切、または専用ボタン長押しで初期化。内蔵LEDが速い点滅＝ペアリング待ちになるのを確認。</li>
+        <li><strong>2.4GHzに固定</strong>：スマホを2.4GHzのSSIDに接続。可能なら5GHzを一時オフ、または2.4GHz単独SSIDを使用。</li>
+        <li><strong>権限を許可</strong>：アプリに位置情報・ローカルネットワーク・Bluetoothの権限を付与。</li>
+        <li><strong>モード切替</strong>：EZモードで失敗したらAPモードで再試行（アプリ内で切替）。</li>
+        <li><strong>ファーム更新</strong>：接続後にファームウェア更新があれば適用（更新前は不安定なことがある）。</li>
+        <li><strong>設置位置の見直し</strong>：金属什器・分電盤の裏など電波が弱い位置を避け、必要なら中継器を追加。EMIノイズ源から離す（<a href="/articles/led-tape-emi-radio-noise-guide">電磁ノイズ対策</a>）。</li>
+        <li><strong>端末・故障切り分け</strong>：別スマホで再現するか確認し、再現しなければ端末側、再現すればコントローラー側を疑う。</li>
+      </ol>
+
+      <div class="spec-grid">
+        <div class="spec-card">
+          <span class="spec-label">対応周波数</span>
+          <span class="spec-value">多くが 2.4GHz 専用</span>
+          <p class="spec-note">5GHzに繋ぐと失敗。ペアリング時はスマホも2.4GHzへ</p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">Bluetooth到達</span>
+          <span class="spec-value">数〜十数m・壁に弱い</span>
+          <p class="spec-note">宅外操作が要件ならWiFi＋クラウド型を選ぶ</p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">引き渡し前に決める</span>
+          <span class="spec-value">登録アカウント・共有</span>
+          <p class="spec-note">施主が操作できないクレームを未然に防ぐ</p>
+        </div>
+      </div>
+
+      <h2 id="sec-check">スマートコントローラー 接続トラブル チェックリスト</h2>
+      <ul class="checklist">
+        <li>テープが手動で光るか確認し、無線側の問題に絞り込んだか</li>
+        <li>接続先が2.4GHz帯か（5GHzに繋ごうとしていないか）確認したか</li>
+        <li>ペアリング時にスマホを2.4GHz SSIDに固定したか</li>
+        <li>SSID・パスワード（特殊文字・全半角）を再確認したか</li>
+        <li>内蔵LEDがペアリングモード（速い点滅）になっているか確認したか</li>
+        <li>アプリの位置情報・ローカルネットワーク・Bluetooth権限を許可したか</li>
+        <li>EZモードで失敗したらAPモードを試したか</li>
+        <li>MACフィルタ・ゲストネット分離・接続台数上限を確認したか</li>
+        <li>電波の弱い設置位置（金属什器・分電盤裏）を避けたか</li>
+        <li>引き渡し前に登録アカウント・共有（招待）方法を施主と決めたか</li>
+      </ul>
+      <p>スマートコントローラーの接続トラブルは、原因が定番に偏ります。<strong>まず2.4GHz・ペアリングモード・アプリ権限の3点</strong>を押さえれば多くは解決します。あわせて、宅外操作の要否でWiFi型かBluetooth型かを選定段階で見極め、引き渡し前に「誰のアカウントで登録し、どう共有するか」まで決めておくと、後からの操作不可クレームを防げます。無線がどうしても安定しない現場では、有線制御（<a href="/articles/led-tape-dmx512-vs-spi-control-guide">DMX/SPI</a>や<a href="/articles/led-tape-controller-dimmer-guide">調光コントローラ</a>）も選択肢に入れてください。</p>
+
+      <!-- FAQ -->
+      <h2 id="faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">コントローラーがWiFiに繋がりません。まず何を確認すべきですか？</div>
+        <div class="faq-a">最初に確認すべきは「接続先が2.4GHz帯のWiFiか」です。LEDテープ用のスマートコントローラーの多くは2.4GHz専用で、5GHz帯のSSIDには接続できません。最近のルーターは2.4GHzと5GHzを同じSSIDで自動切替する「バンドステアリング」が有効なことが多く、これが接続失敗の最大原因です。ペアリング中はスマホ側も2.4GHzのSSIDに繋いだうえで、可能なら一時的に5GHzをオフにするかゲスト用に2.4GHz単独のSSIDを用意します。あわせて、SSID・パスワードの入力ミス、パスワードに含まれる特殊文字、ステルスSSID、MACアドレスフィルタ、ゲストネットワークの機器間分離も接続を妨げる要因なので順に確認してください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">自分のスマホでは操作できるのに、施主（お客様）のスマホでは操作できません。なぜですか？</div>
+        <div class="faq-a">接続方式で原因が分かれます。Bluetooth直結タイプは原則「1台のスマホが占有」する設計が多く、先に繋いだ端末を切断しないと別の端末からは繋がりません。複数人で使うなら、いったんペアリングを解除して施主の端末で登録し直します。WiFi＋クラウドタイプは、施工時に作ったアカウントに機器が紐づいているため、施主の端末からは「家族共有・デバイス共有（招待）」の機能で権限を渡すか、最初から施主のアカウントで登録するのが確実です。引き渡し後に操作できないクレームを防ぐため、誰のアカウントで登録するか・共有方法を事前に決めておくことをおすすめします。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">通電していてテープは光るのに、アプリでデバイスが見つかりません。どうすればよいですか？</div>
+        <div class="faq-a">テープが光る＝電源と結線は正常で、問題は「無線・ペアリング側」に絞り込めます。まずコントローラーがペアリングモードに入っているかを確認します。多くの製品は電源を数回入切するか専用ボタン長押しで、内蔵LEDが速い点滅（ペアリング待ち）になります。点滅していなければリセット手順をやり直します。それでも見つからない場合は、ルーターの電波が届いているか（設置位置・金属什器・距離）、2.4GHz帯か、同時接続台数の上限、ファームウェア更新の有無を確認します。スマホのBluetoothとWiFiの両方をオン（ペアリングにBluetoothを使う製品があるため）にし、アプリの位置情報・ローカルネットワーク権限も許可してください。ここまでで見つからなければ、別のスマホで試して端末固有かを切り分け、最後にコントローラー自体の故障を疑います。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-tape-remote-control-troubleshooting-guide">
+              <img src="/images/hero-scenes/red_shop.webp" alt="リモコンが効かない" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <div class="rac-title">LEDテープのリモコンが効かない原因と対処｜赤外線・RFの診断</div>
+                <span class="rac-date">2026-06-16</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-rgb-color-troubleshooting-guide">
+              <img src="/images/hero-scenes/red_livingroom.webp" alt="RGBの色がおかしい" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <div class="rac-title">RGB/RGBWテープの色がおかしい原因と対処｜結線・設定を診断</div>
+                <span class="rac-date">2026-06-14</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-controller-dimmer-guide">
+              <img src="/images/hero-scenes/red_shop.webp" alt="コントローラ・調光器の選び方" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">製品活用ガイド</span>
+                <div class="rac-title">LEDテープのコントローラ・調光器の種類と選び方</div>
+                <span class="rac-date">2026-05-28</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>WiFi/Bluetooth対応コントローラー・LEDテープをプロ価格で</h2>
+        <p>スマート調光・RGB/RGBWコントローラー・COB/SMDテープ・電源を必要な分だけ。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">LED PRO SHOP を見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-06-30</span>
+        <span>更新日: 2026-06-30</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・コントローラー・電源の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-tape-remote-control-troubleshooting-guide">リモコンが効かない</a></li>
+        <li><a href="/articles/led-tape-rgb-color-troubleshooting-guide">RGBの色がおかしい</a></li>
+        <li><a href="/articles/led-tape-controller-dimmer-guide">コントローラ・調光器の選び方</a></li>
+        <li><a href="/articles/led-tape-troubleshooting-guide">点灯しない場合の診断</a></li>
+        <li><a href="/articles/led-tape-emi-radio-noise-guide">電磁ノイズ対策</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/controller/">WiFi/Bluetoothコントローラー</a></li>
+        <li><a href="/category/controller/">RGB/RGBWコントローラー</a></li>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高効率COBテープ）</a></li>
+        <li><a href="/category/psu/">業務用定電圧PSU（12V/24V）</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム各種</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>
