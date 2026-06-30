@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープ施工の材料拾い｜テープ長・電源台数・コネクタ・アルミフレーム本数の数え方と計算 | LED PRO SHOP</title>
+<meta name="description" content="LEDテープ施工の材料拾い（数量の出し方）を品目別に解説。テープ必要長は施工長＋余長10%、電源台数は合計W÷容量80%、アルミフレームは2m/本でロスを見込む計算式と、12mのコーブ間接照明の拾い出し例で手順を施工業者向けに紹介します。">
+<meta property="og:title" content="LEDテープ施工の材料拾い｜テープ長・電源台数・コネクタ・アルミフレーム本数の数え方と計算 | LED PRO SHOP">
+<meta property="og:description" content="テープ長・電源台数・コネクタ・アルミフレーム本数の拾い出し計算式と、12mコーブ間接照明の実例で材料数量の出し方を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-material-takeoff-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-material-takeoff-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープ施工の材料拾い｜テープ長・電源台数・コネクタ・アルミフレーム本数の数え方と計算 | LED PRO SHOP">
+<meta name="twitter:description" content="テープ長・電源台数・コネクタ・アルミフレーム本数の拾い出し計算式と実例を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-material-takeoff-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-material-takeoff-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #0a0f1e; color: #e2e8f0; line-height: 1.7; font-size: 15px; }
+  a { color: #4ade80; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #0a2e1a 0%, #0f4428 50%, #0a3a20 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #1e5f3a; }
+  .hero-badge { display: inline-block; background: #16a34a; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f1f5f9; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #8ac89a; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #5ea876; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f1f5f9; border-left: 4px solid #22c55e; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #86efac; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #cbd5e1; }
+
+  .alert-box { background: #1c1010; border: 1px solid #7f1d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #08220f; border: 1px solid #1e5f3a; border-left: 4px solid #22c55e; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #bbf7d0; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #08220f; border-radius: 10px; overflow: hidden; }
+  thead th { background: #0e4a28; color: #86efac; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #122a1a; color: #cbd5e1; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #0a2412; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #08220f; border: 1px solid #15803d; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #4ade80; margin-top: 0; }
+  .calc-formula { background: #041208; border: 1px solid #166534; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #86efac; margin: 12px 0; line-height: 2; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #08220f; border: 1px solid #1e5f3a; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #22c55e; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #86efac; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #8ac89a; margin-bottom: 0; }
+  .method-card .method-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 3px; margin-bottom: 8px; }
+  .badge-easy { background: #14532d; color: #4ade80; }
+  .badge-mid { background: #713f12; color: #fbbf24; }
+  .badge-pro { background: #0c4a28; color: #86efac; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #22c55e; color: #04120a; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #cbd5e1; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #122a1a; font-size: 14px; color: #cbd5e1; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #1e5f3a; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #08220f; padding: 16px 20px; font-weight: 700; color: #86efac; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #cbd5e1; background: #041208; }
+
+  .cta-box { background: linear-gradient(135deg, #0e4a28 0%, #0a3820 100%); border: 1px solid #22c55e; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f1f5f9; margin-bottom: 10px; }
+  .cta-box p { color: #8ac89a; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #16a34a; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #15803d; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #5ea876; }
+  .breadcrumb a { color: #5ea876; }
+  .breadcrumb a:hover { color: #86efac; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LEDテープ施工の材料拾い｜テープ長・電源台数・コネクタ・アルミフレーム本数の数え方と計算",
+  "description": "LEDテープ施工の材料拾い（数量の出し方）を品目別に解説。テープ長・電源台数・コネクタ・アルミフレーム本数の計算式と、12mのコーブ間接照明の拾い出し例で手順を施工業者向けに紹介。",
+  "image": "https://led-proshop.com/articles/images/led-tape-material-takeoff-guide-hero.webp",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "datePublished": "2026-07-01",
+  "dateModified": "2026-07-01",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-material-takeoff-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "LEDテープ施工の材料拾い", "item": "https://led-proshop.com/articles/led-tape-material-takeoff-guide" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "LEDテープの必要数量はどれくらい余裕を見て拾えばいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "施工実長に対して10%前後の余長を見込むのが基本です。LEDテープは決まったカットマーク（カットピッチ）でしか切れないため、実長ぴったりだと端数で足りなくなります。さらにコーナーでの折り返しロスや、施工中の切り損じ・予備を考えると、実長×1.1を最低ラインとし、複雑な割付や曲面が多い現場では15〜20%見込むと安全です。電源・コネクタはテープの分割数に応じて数えます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "電源（ドライバー）の台数はどう計算しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "まずテープ合計の消費電力（W/m×総m）を出し、電源は定格容量の80%以下で使う前提で台数を割り出します。例えば14.4W/mのテープを12m使うと合計約173Wです。100Wの電源なら使用上限80W、2台で160Wとなり不足するため3台、または150W電源なら上限120Wで2台必要です。1本のテープ最大接続長（12Vで約5m、24Vで約10m）も超えないよう、長尺は分割して各区間に電源を割り当てます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "アルミフレーム（アルミチャンネル）は何本必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "アルミフレームは1本2m（製品により1m・2.5m等）の定尺で、施工長をフレーム1本の長さで割って切り上げます。例えば施工長12mで2m定尺なら6本ですが、コーナーで切り分けると端材ロスが出るため、割付を考えて1〜2本の予備を加えます。エンドキャップ（左右）とマウントクリップ、ディフューザーカバーもフレーム本数・継ぎ目数に合わせて拾います。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">施工方法ガイド</div>
+    <h1>LEDテープ施工の材料拾い<br>テープ長・電源台数・コネクタ・フレーム本数の数え方</h1>
+    <p class="hero-sub">品目別の拾い出し計算式と、12mコーブ間接照明の実例で材料数量の出し方を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-07-01 | カテゴリ: 施工方法ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-material-takeoff-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープ施工の材料拾い
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="info-box">
+      <p><strong>この記事の目的</strong>：LEDテープ施工で「テープだけ手配して、コネクタ・電源・フレームが現場で足りない」を防ぐための材料拾い（数量の出し方）の手順です。テープ長・電源台数・コネクタ数・アルミフレーム本数を、計算式と12mのコーブ間接照明の実例で順に出していきます。</p>
+    </div>
+
+    <h2>材料拾いの全体手順</h2>
+
+    <ul class="step-list">
+      <li><span>図面・現場で<strong>施工実長（総m）</strong>を区間ごとに測る（直線・コーナー・段差を分けて拾う）。</span></li>
+      <li><span>テープの<strong>W/m・電圧（12V/24V）・カットピッチ</strong>を確定し、必要長＝実長×1.1（余長10%）を出す。</span></li>
+      <li><span>合計消費電力＝W/m×総mを計算し、<strong>電源台数</strong>を容量80%基準で割り出す。</span></li>
+      <li><span>テープの分割数（区間・コーナー）から<strong>コネクタ・延長配線</strong>を数える。</span></li>
+      <li><span>施工長を定尺で割って<strong>アルミフレーム本数</strong>とエンドキャップ・カバー・クリップを拾う。</span></li>
+      <li><span>予備（テープ・コネクタ・ヒューズ等）を加えて発注数を確定する。</span></li>
+    </ul>
+
+    <h2>品目別の拾い出し早見表</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>品目</th>
+          <th>数量の出し方</th>
+          <th>見込むロス・予備</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>LEDテープ</td>
+          <td>施工実長 × 1.1（カットピッチ単位に切り上げ）</td>
+          <td>余長10%＋切り損じ予備</td>
+        </tr>
+        <tr>
+          <td>電源（ドライバー）</td>
+          <td>合計W ÷（定格容量 × 0.8）を切り上げ</td>
+          <td>最大接続長の制約も併せて分割</td>
+        </tr>
+        <tr>
+          <td>コネクタ（中継・コーナー）</td>
+          <td>テープ分割数 ＋ コーナー数（はんだの場合は不要）</td>
+          <td>+2〜3個の予備</td>
+        </tr>
+        <tr>
+          <td>末端キャップ／防水キャップ</td>
+          <td>テープ片数 × 1（末端のみ）</td>
+          <td>+少数予備</td>
+        </tr>
+        <tr>
+          <td>延長配線（給電線）</td>
+          <td>電源〜テープ始点の距離 × 給電点数</td>
+          <td>+1〜2m予備・適正太さで</td>
+        </tr>
+        <tr>
+          <td>アルミフレーム</td>
+          <td>施工長 ÷ 定尺長（2m等）を切り上げ</td>
+          <td>コーナー端材で+1〜2本</td>
+        </tr>
+        <tr>
+          <td>エンドキャップ</td>
+          <td>フレーム分割数 × 2（左右）</td>
+          <td>+予備</td>
+        </tr>
+        <tr>
+          <td>ディフューザーカバー</td>
+          <td>フレーム本数と同数（同定尺）</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>マウントクリップ／ビス</td>
+          <td>フレーム1本あたり2〜3個 × 本数</td>
+          <td>+予備</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>テープ必要長と電源台数の計算式</h2>
+
+    <div class="calc-box">
+      <h3>必要数量の計算（基本式）</h3>
+      <div class="calc-formula">
+テープ必要長（m）＝ 施工実長 × 1.1（カットピッチ単位に切り上げ）
+
+合計消費電力（W）＝ テープ W/m × 総m
+
+電源台数 ＝ 合計W ÷（電源定格容量 × 0.8）→ 切り上げ
+
+接続区間数 ＝ 総m ÷ 最大接続長（12V≒5m / 24V≒10m）→ 切り上げ
+      </div>
+      <p style="color:#86efac; font-size:13px; margin-top:12px; margin-bottom:0">
+        ※ 電源台数は「容量」と「最大接続長」の両方で必要数が決まり、多い方を採用します。<br>
+        ※ カットピッチ（例：24Vで10cm単位）でしか切れないため、端数は必ず切り上げます。
+      </p>
+    </div>
+
+    <h2>実例：12mのコーブ間接照明（24V・14.4W/m）</h2>
+
+    <p>折り上げ天井のコーブに、24V・14.4W/mのCOBテープを直線主体で12m施工するケースで拾ってみます（コーナー4箇所・電源は天井裏の1箇所から給電と仮定）。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>品目</th>
+          <th>計算</th>
+          <th>拾い数量</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>LEDテープ</td>
+          <td>12m × 1.1 ＝ 13.2m → カット単位で14m</td>
+          <td class="tag-ok">14m</td>
+        </tr>
+        <tr>
+          <td>合計消費電力</td>
+          <td>14.4W/m × 12m ＝ 172.8W</td>
+          <td>約173W</td>
+        </tr>
+        <tr>
+          <td>電源（150W品）</td>
+          <td>173W ÷（150W×0.8＝120W）＝1.4 → 2台</td>
+          <td class="tag-warn">2台</td>
+        </tr>
+        <tr>
+          <td>接続区間（24V最大10m）</td>
+          <td>12m ÷ 10m ＝1.2 → 2区間</td>
+          <td>2区間に分割</td>
+        </tr>
+        <tr>
+          <td>コーナーコネクタ</td>
+          <td>コーナー4箇所（はんだなら0）</td>
+          <td>4個＋予備2</td>
+        </tr>
+        <tr>
+          <td>中継コネクタ</td>
+          <td>区間分割1箇所</td>
+          <td>1個＋予備1</td>
+        </tr>
+        <tr>
+          <td>アルミフレーム（2m定尺）</td>
+          <td>12m ÷ 2m ＝6本＋端材予備</td>
+          <td class="tag-ok">7本</td>
+        </tr>
+        <tr>
+          <td>エンドキャップ</td>
+          <td>フレーム継ぎ目・端末分</td>
+          <td>14個（7本×2）</td>
+        </tr>
+        <tr>
+          <td>給電線</td>
+          <td>電源〜テープ始点 × 2区間</td>
+          <td>必要長＋予備2m</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <p><strong>ポイント</strong>：このケースは「容量では2台、接続長でも2区間」と一致したため電源2台で確定しました。容量と最大接続長で必要数が食い違う場合は、必ず<strong>多い方</strong>を採用します。長尺で容量は足りても接続長を超える場合は、区間を分けて各区間に給電（または両端給電・電圧降下対策）が必要です。</p>
+    </div>
+
+    <h2>拾い漏れしやすい3つの付帯材料</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-badge badge-easy">保護</div>
+        <div class="method-num">①</div>
+        <h4>ヒューズ・回路保護</h4>
+        <p>電源1次側・2次側の保護や分岐ヒューズを拾い忘れがち。電源台数・分岐数に応じて数える。屋外・湿気場所はサージ保護も検討。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-mid">固定</div>
+        <div class="method-num">②</div>
+        <h4>下地・固定金具</h4>
+        <p>アルミフレームのクリップ・ビス・アンカーは下地（石膏ボード／木／金属）で種類が変わる。下地別に拾い、ボードならアンカーも忘れずに。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-pro">制御</div>
+        <div class="method-num">③</div>
+        <h4>調光器・コントローラ・延長</h4>
+        <p>調光・RGB・調色なら調光器／コントローラと信号線、リモコン受信機を拾う。給電点が複数なら延長配線・端子台（WAGO等）も区間ごとに数える。</p>
+      </div>
+    </div>
+
+    <h2>材料拾いチェックリスト</h2>
+
+    <ul class="checklist">
+      <li>施工実長を区間・コーナー・段差ごとに分けて測り、合計した</li>
+      <li>テープ必要長＝実長×1.1をカットピッチ単位に切り上げた</li>
+      <li>合計消費電力（W/m×総m）を計算した</li>
+      <li>電源台数を「容量80%基準」と「最大接続長」の両方で出し、多い方を採用した</li>
+      <li>コネクタ（中継・コーナー）と末端キャップをテープ分割数から数えた</li>
+      <li>アルミフレームを定尺で割って切り上げ、コーナー端材の予備を加えた</li>
+      <li>エンドキャップ・カバー・固定クリップをフレーム本数に合わせて拾った</li>
+      <li>ヒューズ・調光器・延長配線・端子台などの付帯材料を拾い漏れていないか確認した</li>
+      <li>テープ・コネクタは予備を加えて発注数を確定した</li>
+    </ul>
+
+    <div class="alert-box">
+      <div class="alert-title">余長ゼロ・予備ゼロで発注しない</div>
+      <p>テープは決まったカットマークでしか切れず、実長ぴったりだと端数で1区間足りなくなることがあります。コーナーの折り返しや切り損じも発生するため、余長10%＋予備を必ず見込んでください。後から同一ロットを追加手配すると色味差（ビニング差）が出るリスクもあり、最初にまとめて拾うのが安全です。</p>
+    </div>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. LEDテープの必要数量はどれくらい余裕を見て拾えばいいですか？</div>
+        <div class="faq-a">施工実長に対して10%前後の余長を見込むのが基本です。LEDテープは決まったカットマーク（カットピッチ）でしか切れないため、実長ぴったりだと端数で足りなくなります。さらにコーナーでの折り返しロスや、施工中の切り損じ・予備を考えると、実長×1.1を最低ラインとし、複雑な割付や曲面が多い現場では15〜20%見込むと安全です。電源・コネクタはテープの分割数に応じて数えます。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 電源（ドライバー）の台数はどう計算しますか？</div>
+        <div class="faq-a">まずテープ合計の消費電力（W/m×総m）を出し、電源は定格容量の80%以下で使う前提で台数を割り出します。例えば14.4W/mのテープを12m使うと合計約173Wです。100Wの電源なら使用上限80W、2台で160Wとなり不足するため3台、または150W電源なら上限120Wで2台必要です。1本のテープ最大接続長（12Vで約5m、24Vで約10m）も超えないよう、長尺は分割して各区間に電源を割り当てます。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. アルミフレーム（アルミチャンネル）は何本必要ですか？</div>
+        <div class="faq-a">アルミフレームは1本2m（製品により1m・2.5m等）の定尺で、施工長をフレーム1本の長さで割って切り上げます。例えば施工長12mで2m定尺なら6本ですが、コーナーで切り分けると端材ロスが出るため、割付を考えて1〜2本の予備を加えます。エンドキャップ（左右）とマウントクリップ、ディフューザーカバーもフレーム本数・継ぎ目数に合わせて拾います。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>テープ・電源・アルミフレームをまとめて探す</h3>
+      <p>LEDテープ・対応電源・コネクタ・アルミフレーム・エンドキャップを取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

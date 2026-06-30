@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ディム・トゥ・ウォーム対応LEDテープの選び方｜調光で電球色に下がる仕組みと演出・施工業者向け判断基準 | LED PRO SHOP</title>
+<meta name="description" content="ディム・トゥ・ウォーム（Dim to Warm）対応LEDテープは、明るさを絞ると色温度が2700Kから1800K前後まで下がり白熱電球の減光を再現します。2chの調色（Tunable White）との違い、色温度カーブ・調光方式・専用ドライバー方式と2色LED方式の見分け方を、飲食・ホテル・バー施工向けに解説。">
+<meta property="og:title" content="ディム・トゥ・ウォーム対応LEDテープの選び方｜調光で電球色に下がる仕組みと演出 | LED PRO SHOP">
+<meta property="og:description" content="調光で色温度が2700K→1800Kに下がるDim to Warm対応LEDテープの仕組み・2ch調色との違い・専用ドライバー方式と2色LED方式の選び方を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-dim-to-warm-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-dim-to-warm-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ディム・トゥ・ウォーム対応LEDテープの選び方｜調光で電球色に下がる仕組みと演出 | LED PRO SHOP">
+<meta name="twitter:description" content="調光で色温度が2700K→1800Kに下がるDim to Warm対応LEDテープの仕組み・2ch調色との違い・方式別の選び方を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-dim-to-warm-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-dim-to-warm-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #0a0f1e; color: #e2e8f0; line-height: 1.7; font-size: 15px; }
+  a { color: #fbbf24; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #2e1a0a 0%, #44280f 50%, #3a200a 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #5f4a1e; }
+  .hero-badge { display: inline-block; background: #d97706; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f1f5f9; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #d6b78a; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #a98b5e; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f1f5f9; border-left: 4px solid #f59e0b; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #fcd34d; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #cbd5e1; }
+
+  .alert-box { background: #1c1010; border: 1px solid #7f1d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #1f1608; border: 1px solid #5f4a1e; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #fde68a; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #1a1408; border-radius: 10px; overflow: hidden; }
+  thead th { background: #4a3410; color: #fcd34d; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #2a2212; color: #cbd5e1; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #1e1810; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #1a1408; border: 1px solid #b45309; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #fbbf24; margin-top: 0; }
+  .calc-formula { background: #120c04; border: 1px solid #78350f; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #fcd34d; margin: 12px 0; line-height: 2; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #1a1408; border: 1px solid #5f4a1e; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #f59e0b; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #fcd34d; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #b6a98a; margin-bottom: 0; }
+  .method-card .method-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 3px; margin-bottom: 8px; }
+  .badge-easy { background: #14532d; color: #4ade80; }
+  .badge-mid { background: #713f12; color: #fbbf24; }
+  .badge-pro { background: #422006; color: #fcd34d; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #f59e0b; color: #1a1408; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #cbd5e1; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #2a2212; font-size: 14px; color: #cbd5e1; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #5f4a1e; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #1a1408; padding: 16px 20px; font-weight: 700; color: #fcd34d; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #cbd5e1; background: #120c04; }
+
+  .cta-box { background: linear-gradient(135deg, #5f4a1e 0%, #402a0c 100%); border: 1px solid #f59e0b; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f1f5f9; margin-bottom: 10px; }
+  .cta-box p { color: #d6b78a; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #d97706; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #b45309; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #a98b5e; }
+  .breadcrumb a { color: #a98b5e; }
+  .breadcrumb a:hover { color: #fcd34d; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ディム・トゥ・ウォーム対応LEDテープの選び方｜調光で電球色に下がる仕組みと演出・施工業者向け判断基準",
+  "description": "調光で色温度が2700Kから1800K前後まで下がるDim to Warm対応LEDテープの仕組み、2ch調色（Tunable White）との違い、専用ドライバー方式と2色LED方式の選び方を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-dim-to-warm-guide-hero.webp",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "datePublished": "2026-07-01",
+  "dateModified": "2026-07-01",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-dim-to-warm-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "ディム・トゥ・ウォーム対応LEDテープの選び方", "item": "https://led-proshop.com/articles/led-tape-dim-to-warm-guide" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ディム・トゥ・ウォームと調色（Tunable White）のテープはどう違いますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ディム・トゥ・ウォームは調光器1つで明るさを絞ると色温度が自動で下がる方式で、配線も調光信号も1系統で済みます。明るさと色温度が連動するため独立では変えられません。調色（Tunable White）は電球色チャンネルと白色チャンネルの2回路を別々に制御し、明るさと色温度を独立して調整できますが、専用コントローラと多芯配線が必要です。白熱電球らしい『絞ると赤くなる』演出だけが目的なら、配線が単純なディム・トゥ・ウォームが適します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ディム・トゥ・ウォームは普通の調光器でそのまま使えますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "方式によります。専用ドライバー方式は壁の汎用調光器（位相調光）やDC側のPWM/0-10V調光に対応する製品が多く、既設の調光回路をそのまま使えるものがあります。一方、2色LED方式は専用コントローラが前提で汎用調光器では色温度が下がりません。施工前にテープと電源・調光器の対応方式（位相/PWM/0-10V/DALI）を必ずデータシートで突き合わせてください。対応外の組み合わせはちらつきや色温度が下がらない不具合の原因になります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ディム・トゥ・ウォームの色温度はどこまで下がりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "製品によって異なりますが、全光時2700K〜3000K、最小調光時1800K〜2200K前後が一般的です。白熱電球により近い演出を狙うなら最小1800K付近まで下がる製品を選びます。バーやラウンジなど深い減光で雰囲気を出す現場では、最小色温度と最小調光率（1%まで下がるか）の両方をスペックで確認することが選定のポイントです。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">仕様選定ガイド</div>
+    <h1>ディム・トゥ・ウォーム対応LEDテープの選び方<br>調光で電球色に下がる仕組みと演出</h1>
+    <p class="hero-sub">調色（Tunable White）との違い・色温度カーブ・専用ドライバー方式と2色LED方式の見分け方を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-07-01 | カテゴリ: 仕様選定ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-dim-to-warm-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; ディム・トゥ・ウォーム対応LEDテープの選び方
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="info-box">
+      <p><strong>この記事の結論</strong>：飲食・ホテル・バーで「明るさを絞ると電球のように赤く温かくなる」演出を再現したいなら、<strong>ディム・トゥ・ウォーム（Dim to Warm）</strong>対応テープを選びます。明るさと色温度を別々に変えたい場合は調色（Tunable White）です。両者は配線も調光器も別物なので、発注前に方式を取り違えないことが最重要です。</p>
+    </div>
+
+    <h2>ディム・トゥ・ウォームとは</h2>
+
+    <p>ディム・トゥ・ウォーム（Dim to Warm／調光連動色温度）とは、調光器で明るさを絞っていくと<strong>色温度が自動的に下がって電球色に近づく</strong>LEDテープの方式です。白熱電球は減光すると赤みが増す（フィラメント温度が下がる）特性がありますが、通常のLEDは絞っても色温度が一定のままです。この「絞ると赤くなる」白熱電球の質感を再現したのがディム・トゥ・ウォームです。</p>
+
+    <p>典型的な動作は、全光（100%）で2700K〜3000K、最小調光（1〜5%）で1800K〜2200K前後まで色温度が滑らかに下がるというものです。明るさと色温度が<strong>1本の調光操作で連動</strong>するため、操作する人は「明るさだけ」を意識すればよく、店舗オペレーションが単純になります。</p>
+
+    <h2>調光に対する色温度カーブの例</h2>
+
+    <p>下表は一般的なディム・トゥ・ウォームテープの調光率と色温度の対応例です。製品によってカーブの開始点・到達点が異なるため、現場の狙いに合うカーブの製品を選びます。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>調光率</th>
+          <th>色温度（目安）</th>
+          <th>見え方・用途</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>100%</td>
+          <td>2700〜3000K</td>
+          <td>通常営業・準備時間帯の明るさ</td>
+        </tr>
+        <tr>
+          <td>60%</td>
+          <td>2400〜2600K</td>
+          <td>食事時間帯の落ち着いたトーン</td>
+        </tr>
+        <tr>
+          <td>30%</td>
+          <td>2100〜2300K</td>
+          <td>ディナー後半・バータイム</td>
+        </tr>
+        <tr>
+          <td>10%</td>
+          <td>1900〜2000K</td>
+          <td>ろうそくに近い深い演出</td>
+        </tr>
+        <tr>
+          <td>1%</td>
+          <td>1800K前後</td>
+          <td>最小・雰囲気重視（要：最小調光対応）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <p><strong>選定のポイント</strong>：カタログの色温度表記が「2700K」だけの場合、それは全光時の値です。最小側が何Kまで下がるか（例：1800K）と、何%まで安定して絞れるか（最小調光率）の2つを必ず確認してください。深い減光で使うバーでは、1%調光・1800K到達の製品が望ましいです。</p>
+    </div>
+
+    <h2>ディム・トゥ・ウォーム vs 調色 vs 単色固定</h2>
+
+    <p>「絞ると赤くなる」演出はディム・トゥ・ウォームと調色（Tunable White）の両方で実現できますが、配線・操作・コストが大きく異なります。混同して発注すると現場で要望を満たせません。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>ディム・トゥ・ウォーム</th>
+          <th>調色（Tunable White）</th>
+          <th>単色固定（通常テープ）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>明るさと色温度</td>
+          <td>連動（絞ると暖色）</td>
+          <td>独立して制御可能</td>
+          <td>色温度は一定</td>
+        </tr>
+        <tr>
+          <td>調光操作</td>
+          <td class="tag-ok">調光1系統のみ</td>
+          <td>明るさ＋色温度の2系統</td>
+          <td>調光1系統</td>
+        </tr>
+        <tr>
+          <td>配線</td>
+          <td>2線（単色と同等の製品が多い）</td>
+          <td>3線以上（電球色／白色＋共通）</td>
+          <td>2線</td>
+        </tr>
+        <tr>
+          <td>制御機器</td>
+          <td>汎用調光器対応品あり</td>
+          <td class="tag-warn">専用コントローラ必須</td>
+          <td>汎用調光器</td>
+        </tr>
+        <tr>
+          <td>向く用途</td>
+          <td>飲食・ホテル・バーの雰囲気演出</td>
+          <td>オフィス・住宅・昼夜で色を変える空間</td>
+          <td>看板・什器・常時同一トーン</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>2つの方式（専用ドライバー方式 / 2色LED方式）</h2>
+
+    <p>ディム・トゥ・ウォームには内部の作り方が異なる2方式があります。<strong>テープと電源・調光器の対応を取り違えると動かない</strong>ため、発注時に方式を確認します。</p>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-badge badge-easy">配線が単純</div>
+        <div class="method-num">①</div>
+        <h4>専用ドライバー方式</h4>
+        <p>電球色チップと暖白色チップの配分をドライバー（電源・コントローラ）側で電流制御し、調光に応じて色温度を下げる。テープ自体は2線で、単色テープに近い感覚で施工できる。位相調光・PWM・0-10Vなど対応調光方式が製品ごとに決まっている。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-mid">色味が安定</div>
+        <div class="method-num">②</div>
+        <h4>2色LED方式（電球色＋暖白色）</h4>
+        <p>1枚のテープに色温度の異なる2種のLEDを並べ、専用コントローラが両者の比率を変えて色温度を下げる。色のばらつきを抑えやすいが、専用コントローラと多芯配線が前提で、汎用調光器ではそのまま使えない。</p>
+      </div>
+    </div>
+
+    <h2>方式・スペックの確認チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>全光時の色温度（例：2700K）と最小調光時の色温度（例：1800K）の両方を確認した</li>
+      <li>最小調光率（1%まで安定して絞れるか）を確認した</li>
+      <li>テープの対応調光方式（位相／PWM／0-10V／DALI）と、用意する調光器・電源の方式が一致している</li>
+      <li>専用ドライバー方式か2色LED方式かを把握し、必要な配線本数（2線／多芯）を図面に反映した</li>
+      <li>演出重視の現場でも演色性（Ra）を確認した（飲食はRa90以上が望ましい）</li>
+      <li>同一フロアで複数本を使う場合、ロット間の色味差が出ないよう同一品番・同一ロットで手配した</li>
+      <li>電源容量はテープ合計消費電力の80%以下に収め、調光時のちらつきを避けた</li>
+    </ul>
+
+    <h2>業種別の使いどころ</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>現場</th>
+          <th>狙い</th>
+          <th>推奨カーブ・仕様</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>レストラン・ダイニング</td>
+          <td>時間帯で雰囲気を変える</td>
+          <td>2700K→2000K・Ra90以上・コーブ間接照明</td>
+        </tr>
+        <tr>
+          <td>バー・ラウンジ</td>
+          <td>深い減光で落ち着いた空間</td>
+          <td>最小1800K・1%調光対応・カウンター下</td>
+        </tr>
+        <tr>
+          <td>ホテル客室・廊下</td>
+          <td>就寝前に向け暖色化</td>
+          <td>2700K→2200K・低グレア・ベッドヘッド間接</td>
+        </tr>
+        <tr>
+          <td>料亭・和食</td>
+          <td>行灯・障子のような温かみ</td>
+          <td>2700K→1900K・乳白カバーで粒感を消す</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert-box">
+      <div class="alert-title">施工後によくある「色温度が下がらない」トラブル</div>
+      <p>調光器を絞っても色温度が変わらない場合、①2色LED方式に汎用調光器を使っている②テープと電源の対応調光方式が不一致③調光器の最小値がテープの色温度シフト開始点に届いていない、のいずれかが大半です。まずテープ・電源・調光器の3点の対応方式をデータシートで突き合わせて確認してください。</p>
+    </div>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. ディム・トゥ・ウォームと調色（Tunable White）のテープはどう違いますか？</div>
+        <div class="faq-a">ディム・トゥ・ウォームは調光器1つで明るさを絞ると色温度が自動で下がる方式で、配線も調光信号も1系統で済みます。明るさと色温度が連動するため独立では変えられません。調色（Tunable White）は電球色チャンネルと白色チャンネルの2回路を別々に制御し、明るさと色温度を独立して調整できますが、専用コントローラと多芯配線が必要です。白熱電球らしい「絞ると赤くなる」演出だけが目的なら、配線が単純なディム・トゥ・ウォームが適します。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. ディム・トゥ・ウォームは普通の調光器でそのまま使えますか？</div>
+        <div class="faq-a">方式によります。専用ドライバー方式は壁の汎用調光器（位相調光）やDC側のPWM/0-10V調光に対応する製品が多く、既設の調光回路をそのまま使えるものがあります。一方、2色LED方式は専用コントローラが前提で汎用調光器では色温度が下がりません。施工前にテープと電源・調光器の対応方式（位相/PWM/0-10V/DALI）を必ずデータシートで突き合わせてください。対応外の組み合わせはちらつきや色温度が下がらない不具合の原因になります。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. ディム・トゥ・ウォームの色温度はどこまで下がりますか？</div>
+        <div class="faq-a">製品によって異なりますが、全光時2700K〜3000K、最小調光時1800K〜2200K前後が一般的です。白熱電球により近い演出を狙うなら最小1800K付近まで下がる製品を選びます。バーやラウンジなど深い減光で雰囲気を出す現場では、最小色温度と最小調光率（1%まで下がるか）の両方をスペックで確認することが選定のポイントです。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>演出向けLEDテープ・調光対応電源を探す</h3>
+      <p>ディム・トゥ・ウォーム／調色（Tunable White）対応テープ・調光電源・アルミフレームを取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
