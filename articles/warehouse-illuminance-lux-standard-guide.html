@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>倉庫・物流センターの照度基準は何ルクス？JIS区域別ルクス早見表と省エネLED照明設計ガイド | LED PRO SHOP</title>
+  <meta name="description" content="倉庫の照明更新で「ピッキング棚前は何ルクス必要か」「高天井で照度が足りない」と迷う施工業者向け。JIS Z 9110と労働安全衛生規則をふまえた倉庫・物流センターの区域別ルクス早見表、高天井のルクス計算式、人感センサーで電気代を抑える省エネ設計の判断基準を解説します。">
+  <meta name="keywords" content="倉庫 照度基準,倉庫 ルクス,物流センター 照度,ピッキング 照度,荷捌き 照度,倉庫 LED 照明,高天井 照明 設計,労働安全衛生規則 照度">
+  <link rel="canonical" href="https://led-proshop.com/articles/warehouse-illuminance-lux-standard-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/warehouse-illuminance-lux-standard-guide">
+  <meta property="og:title" content="倉庫・物流センターの照度基準は何ルクス？JIS区域別ルクス早見表と省エネLED照明設計ガイド | LED PRO SHOP">
+  <meta property="og:description" content="倉庫・物流センターの区域別照度基準（ルクス）をJIS Z 9110・労働安全衛生規則で整理。ピッキング・検品・荷捌き・保管・通路の必要照度、高天井のルクス計算式、人感センサーで電気代を抑える省エネ設計を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/warehouse-illuminance-lux-standard-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="倉庫・物流センターの照度基準は何ルクス？JIS区域別ルクス早見表と省エネLED照明設計ガイド | LED PRO SHOP">
+  <meta name="twitter:description" content="倉庫の区域別照度基準（ルクス）をJIS・労安則で整理。ピッキング・検品・荷捌き・保管・通路の必要照度、高天井のルクス計算式、人感センサーで電気代を抑える省エネ設計を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/warehouse-illuminance-lux-standard-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "倉庫・物流センターの照度基準は何ルクス？JIS区域別ルクス早見表と省エネLED照明設計ガイド",
+    "description": "倉庫・物流センターの照度基準（必要ルクス）をJIS Z 9110・労働安全衛生規則をふまえ区域別に整理。ピッキング・検品・荷捌き・保管・通路の必要照度、高天井のルクス計算式、人感センサーによる省エネ設計の判断基準を施工業者向けに解説します。",
+    "image": "https://led-proshop.com/articles/images/warehouse-illuminance-lux-standard-guide-hero.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP 編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://led-proshop.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-07-01",
+    "dateModified": "2026-07-01",
+    "mainEntityOfPage": "https://led-proshop.com/articles/warehouse-illuminance-lux-standard-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "LED PRO SHOP",
+        "item": "https://led-proshop.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "コラム",
+        "item": "https://led-proshop.com/articles/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "倉庫・物流センターの照度基準は何ルクス？JIS区域別ルクス早見表と省エネLED照明設計ガイド",
+        "item": "https://led-proshop.com/articles/warehouse-illuminance-lux-standard-guide"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "倉庫のピッキング・棚前の照度は何ルクス必要ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "JIS Z 9110をふまえると、ピッキング作業を行う棚前・通路は200〜300lxが目安です。バーコードや品番ラベル、伝票を読み取る作業が多いほど300lx寄りで設計します。注意点は床面ではなく「棚の中段〜下段の品物が見える垂直面照度」を確保することで、ラックが高い倉庫では床照度が足りていても棚の奥や下段が暗くなりがちです。通路天井灯だけでなく、ラック間に配光の広い器具やテープ照明を追加すると見落としが減ります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "天井が高い倉庫（8〜10m）で照度が足りません。設計でどう補正しますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "高天井では光が床に届くまでに拡散して減衰するため、照明率Uを0.4〜0.6と低めに見込んでルクス計算を行います。同じ目標照度でも天井が高いほど必要な総光束（lm）は増えるため、狭角配光（30〜60度）の高天井用器具で光を作業面に集めるのが基本です。広角器具をそのまま高所に付けると光が壁や通路に逃げて作業面照度が出ません。保守率0.7前後も併せて掛け、数年後の照度低下まで見込んで器具数を決めてください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "人がいない時間が長い倉庫で電気代を抑える照明設計は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "保管主体で人の出入りが少ない区画は、人感センサー（マイクロ波／PIR）とゾーン分けで「人がいる通路だけ点ける」制御が有効です。LEDは即時全光点灯で立ち上がり待ちがなく、頻繁なON/OFFでも寿命への影響が小さいためセンサー制御と相性が良いのが利点です。常時全点灯から人感＋ゾーン制御に変えると、保管区画の点灯時間を大幅に削減できます。安全のため通路には最低限の保安照度（常夜灯レベル）を残し、検品・出荷など常時作業するエリアは定常点灯と分けて回路を分割するのが設計のコツです。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#1f5fa6;--blue-pale:#e7f0f9;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #174a82}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#123a66 0%,#1f5fa6 50%,#16487f 100%);padding:40px 16px 32px;border-bottom:3px solid #174a82}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--blue);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--blue);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--blue);padding:6px 10px;background:var(--blue-pale);border-left:3px solid var(--blue);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--blue);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--blue);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--blue-pale)}
+    .article-callout{border-left:4px solid var(--blue);background:var(--blue-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--blue)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .article-faq{margin-top:32px}
+    .article-faq h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--blue);padding-bottom:8px;margin:36px 0 16px}
+    .faq-item{border:1px solid var(--border);border-radius:4px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:12px 16px;font-size:13px;font-weight:700;color:var(--text)}
+    .faq-q::before{content:"Q. ";color:var(--blue);font-weight:900}
+    .faq-a{padding:12px 16px;font-size:13px;color:var(--text-sub);line-height:1.8}
+    .faq-a::before{content:"A. ";color:var(--blue);font-weight:900}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--blue)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--blue)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--blue);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--blue);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--blue);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#e7f0f9}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--blue)}
+    .sidebar-cta{background:var(--blue);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--blue);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#e7f0f9}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>倉庫・物流センターの照度基準は何ルクス？</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">照明設計ガイド</div>
+    <h1>倉庫・物流センターの照度基準は何ルクス？<br>JIS区域別の必要照度・高天井のルクス計算・省エネ設計の判断基準</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-07-01</span>
+      <span>更新日: 2026-07-01</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/blue_desk.png"
+      alt="倉庫・物流センターの高天井で区域別の照度基準を満たすLED照明設計のイメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>「倉庫の蛍光灯を水銀灯ごとLEDに更新したいが、ピッキング棚前は何ルクスにすればいいのか」「天井が高くて床まで光が届かず、棚の下段が暗い」——倉庫・物流センターの照明設計では、<strong>区域ごとに必要な照度（ルクス）が大きく異なり、高天井での減衰まで見込んで器具数を決める</strong>ことが施工業者に求められます。照度不足は誤出荷・ピッキングミス・労働災害に直結し、逆に全エリアを過剰に明るくすれば広大な床面積ぶん電気代が膨らみます。本記事では、JIS Z 9110と労働安全衛生規則をふまえた倉庫の区域別照度基準・高天井のルクス計算式・人感センサーによる省エネ設計の判断基準を現場目線で整理します。</p>
+
+      <div class="article-callout">
+        <p><strong>この記事でわかること:</strong> ①倉庫・物流センターの区域別ルクス早見表 ②高天井で照度を逆算するルクス計算式 ③高天井に適した配光・器具の選び方 ④人感センサーで電気代を抑える省エネ設計の判断基準</p>
+      </div>
+
+      <h2 id="sec-why">なぜ倉庫で「照度基準」が問題になるのか</h2>
+      <p>倉庫の照度は作業効率だけでなく<strong>誤出荷の防止・労働安全・電気代</strong>の3つに直結します。倉庫特有の難しさは次の点にあります。</p>
+      <ul>
+        <li><strong>誤出荷・ピッキングミス:</strong> 棚前が暗いと品番・ロット・バーコードの読み違いが増え、出荷品質が落ちる</li>
+        <li><strong>高天井による減衰:</strong> 天井8〜12mの倉庫では光が拡散して床に届きにくく、床照度は出ても棚の下段・奥が暗くなる</li>
+        <li><strong>労働安全:</strong> フォークリフトと作業者が交差する通路は、暗所での接触・転倒リスクが高い</li>
+        <li><strong>広大な面積＝電気代:</strong> 常時全点灯のままでは、人がいない保管区画まで照らし続けて無駄が大きい</li>
+      </ul>
+      <p>労働安全衛生規則 第604条では作業区分に応じた最低照度の確保が事業者に義務づけられており、JIS Z 9110（照明基準総則）が設計目標となる推奨照度を示しています。施工業者としては「区域ごとに、なぜこの照度にしたか」を根拠を持って説明できる設計が信頼につながります。最終的な値は顧客の作業内容・所轄の指導に合わせて調整してください。</p>
+
+      <h2 id="sec-table">倉庫・物流センター 区域別 照度基準（ルクス）早見表</h2>
+      <p>以下はJIS Z 9110の作業区分と倉庫の実務をふまえた区域別の推奨照度です。倉庫は「保管中心の区画」と「検品・出荷など常時作業する区画」で必要照度が大きく変わります。</p>
+      <table>
+        <thead>
+          <tr>
+            <th>区域・作業</th>
+            <th>推奨照度（作業面）</th>
+            <th>備考・判断基準</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>検品・ラベル/伝票確認・品質チェック</td><td><strong>300〜500 lx</strong></td><td>品番・ロット・印字の誤読防止。Ra80以上を併用</td></tr>
+          <tr><td>ピッキング（棚前・作業通路）</td><td><strong>200〜300 lx</strong></td><td>棚の垂直面照度を重視。ラック間に補助照明</td></tr>
+          <tr><td>荷捌き・仕分け・梱包エリア</td><td>200〜300 lx</td><td>送り状・サイズ確認は300lx寄り</td></tr>
+          <tr><td>入出庫バース・トラックヤード（屋内）</td><td>150〜200 lx</td><td>フォークリフト動線。均斉度を確保</td></tr>
+          <tr><td>保管（ラック間通路・人の往来少）</td><td>100〜150 lx</td><td>人感センサー＋ゾーン制御の主対象</td></tr>
+          <tr><td>一般通路・連絡通路</td><td>75〜100 lx</td><td>安全確保が目的。常夜・保安照度を残す</td></tr>
+          <tr><td>事務・出荷管理デスク（倉庫内）</td><td>500 lx</td><td>労働安全衛生規則の事務作業区分に準拠</td></tr>
+          <tr><td>冷蔵・冷凍庫内</td><td>100〜150 lx</td><td>低温で即時全光点灯するLED。蛍光灯は不向き</td></tr>
+          <tr><td>自動倉庫（無人区画）</td><td>必要時のみ点灯</td><td>保守・点検時の保安照度＋作業灯で対応</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout warn">
+        <p><strong>注意:</strong> 上表は作業面・棚面での照度です。倉庫で最も見落とされやすいのが<strong>ラックの垂直面照度</strong>で、床照度が200lx出ていても通路天井灯だけでは棚の下段・奥がその半分以下になることがあります。ピッキング動線は「床」ではなく「品物が置かれている棚面」で必要ルクスを満たす設計にしてください。</p>
+      </div>
+
+      <h2 id="sec-calc">高天井で必要な明るさ（lm）を逆算するルクス計算式</h2>
+      <p>区域の目標照度が決まったら、必要な総光束（lm）を逆算します。基本式は次のとおりで、<strong>倉庫では天井が高いほど照明率Uを低く見込む</strong>のがポイントです。</p>
+      <div class="article-callout tip">
+        <p><strong>照度計算式:</strong><br>
+        平均照度 E（lx） ＝ 総光束 F（lm） × 照明率 U × 保守率 M ÷ 面積 A（㎡）<br><br>
+        必要総光束 F（lm） ＝ E × A ÷（U × M）</p>
+      </div>
+      <p>各係数の倉庫での目安は次のとおりです。</p>
+      <table>
+        <thead>
+          <tr><th>係数</th><th>倉庫での目安値</th><th>説明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>照明率 U</td><td>0.4〜0.6</td><td>天井高・配光・壁/床反射率で変動。高天井＋狭角配光ほど作業面に届きやすい</td></tr>
+          <tr><td>保守率 M</td><td>0.7〜0.8</td><td>粉塵の多い倉庫・清掃頻度が低い高所器具は低めに見込む</td></tr>
+        </tbody>
+      </table>
+      <h4>計算例：天井9mの保管区画 500㎡を150lxにする</h4>
+      <p>E＝150lx、A＝500㎡、U＝0.5（高天井＋狭角配光）、M＝0.75 とすると、<br>
+      必要総光束 ＝ 150 × 500 ÷（0.5 × 0.75）＝ <strong>200,000 lm</strong>。<br>
+      1器具20,000lmの高天井LED（約150W級）なら 200,000 ÷ 20,000 ＝ <strong>10器具</strong>が目安です（配置の均斉度・通路位置は別途確認）。</p>
+      <div class="article-callout warn">
+        <p><strong>広角配光を高所に付けない:</strong> 同じ20,000lmでも、広角の器具を9m天井に付けると光が壁や隣の通路に逃げ、作業面照度は計算値を下回ります。高天井では<strong>30〜60度の狭角配光</strong>で光を真下の作業面に集めるのが原則です。逆に天井が低い倉庫（4〜5m）は広角で均斉度を稼ぎます。</p>
+      </div>
+
+      <h2 id="sec-spec">倉庫のLED照明 選定4つの判断基準</h2>
+
+      <h3 id="sec-optics">① 配光・器具タイプ — 天井高で狭角／広角を使い分ける</h3>
+      <p>倉庫照明で結果が最も変わるのが配光です。<strong>天井8m以上は狭角（高天井用HID代替の集光タイプ）、天井5m前後は広角</strong>を基本に、ラック間の通路はライン状に照らせる器具やLEDテープ＋アルミフレームで棚面の縦方向を補うと、下段の暗さを解消できます。水銀灯・メタルハライドからの更新では、同じ位置に付け替えるだけでは配光が合わず暗くなることがあるため、必ず配光込みで器具を選定します。</p>
+
+      <h3 id="sec-uniformity">② 均斉度 — フォークリフト動線は「暗いムラ」を作らない</h3>
+      <p>平均照度を満たしても、器具直下だけ明るく通路の中間が暗い「ムラ」があると、フォークリフトと作業者が交差する地点で視認性が落ちます。<strong>均斉度（最小照度÷平均照度）0.5以上</strong>を目安に器具間隔を詰め、動線・交差点は照度が落ちない配置にします。明暗差が激しいと目の順応が追いつかず、暗い側の人や荷が見えにくくなります。</p>
+
+      <h3 id="sec-flicker">③ フリッカー・即時点灯・低温対応</h3>
+      <p>コンベア・自動搬送機・回転体のある区画では、フリッカー（ちらつき）がストロボ効果を起こし回転体が止まって見える危険があります。<strong>フリッカーフリー電源</strong>を選び、冷凍・冷蔵庫内は低温でも即時全光点灯するLEDを使用します（蛍光灯・水銀灯は低温や始動で立ち上がりが遅く、頻繁なON/OFFに弱い）。</p>
+
+      <h3 id="sec-control">④ 制御・センサー — 省エネは「点けっぱなしを減らす」</h3>
+      <p>倉庫は床面積が広く点灯時間も長いため、消費電力の削減効果が大きい現場です。LEDへの更新に加え、<strong>人感センサー（マイクロ波／PIR）＋ゾーン制御</strong>で「人がいる通路だけ点ける」設計が有効です。LEDは即時点灯で立ち上がり待ちがなく、頻繁なON/OFFでも寿命影響が小さいためセンサー制御と好相性です。常時作業エリア（検品・出荷）は定常点灯、保管区画はセンサー制御と、回路・系統を分けて設計します。</p>
+
+      <h2 id="sec-energy">省エネ設計：倉庫で電気代を抑える3つの打ち手</h2>
+      <p>倉庫照明の省エネは「①光源効率を上げる ②点灯時間を減らす ③過剰照度をやめる」の掛け算で考えます。</p>
+      <ul>
+        <li><strong>光源効率（lm/W）の高いLEDへ更新:</strong> 水銀灯・蛍光灯比で消費電力を大きく下げられる。高天井用は効率と配光の両立で器具数も減らせる</li>
+        <li><strong>人感センサー＋ゾーン分け:</strong> 保管区画は人がいる時だけ点灯。点灯時間そのものを削る</li>
+        <li><strong>区域別の適正照度:</strong> 全エリアを検品レベルに明るくしない。保管100〜150lx／検品300〜500lxとメリハリをつける</li>
+      </ul>
+      <div class="article-callout tip">
+        <p><strong>補助金の確認:</strong> 倉庫の照明LED化は省エネ設備更新の補助対象になる場合があります。器具・制御を含めた更新は、補助金の公募要件・申請時期を事前に確認すると初期費用を抑えられます。</p>
+      </div>
+
+      <h2 id="sec-checklist">照明設計チェックリスト（倉庫・物流センター）</h2>
+      <ul>
+        <li>□ 区域ごとに目標照度（lx）を設定し、根拠（JIS区分・労安則・顧客作業内容）を記録したか</li>
+        <li>□ 床面ではなく<strong>ピッキング棚の垂直面</strong>で必要照度を満たす設計か</li>
+        <li>□ 天井高に合わせて配光（狭角／広角）と照明率Uを設定したか</li>
+        <li>□ フォークリフト動線・交差点の<strong>均斉度0.5以上</strong>を確保したか</li>
+        <li>□ 保守率（0.7前後）を掛けて経年の照度低下まで見込んだか</li>
+        <li>□ 保管区画は人感センサー＋ゾーン制御、常時作業は定常点灯と回路を分けたか</li>
+        <li>□ 冷凍・冷蔵区画は低温即時点灯のLEDか、コンベア区画はフリッカーフリーか</li>
+      </ul>
+
+      <h2 id="sec-summary">まとめ</h2>
+      <table>
+        <thead>
+          <tr><th>ポイント</th><th>判断基準</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>保管区画</td><td>100〜150lx・人感センサー＋ゾーン制御</td></tr>
+          <tr><td>ピッキング・荷捌き</td><td>200〜300lx・棚の垂直面照度を確保</td></tr>
+          <tr><td>検品・伝票確認</td><td>300〜500lx・Ra80以上</td></tr>
+          <tr><td>高天井（8m以上）</td><td>狭角配光＋照明率U=0.4〜0.6で逆算</td></tr>
+          <tr><td>フォークリフト動線</td><td>均斉度0.5以上でムラを作らない</td></tr>
+        </tbody>
+      </table>
+      <p>倉庫の照度設計は「区域ごとに根拠を持って数値を決め、高天井の減衰と省エネ制御まで含めて器具を選ぶ」ことが品質・安全・コストの三方を満たす鍵です。LED PRO SHOP では、高効率COBテープ・防塵対応アルミフレーム・フリッカーフリー電源など、倉庫の区域別要件に対応した資材を取り扱っています。</p>
+
+      <p>
+        <a href="/category/cob-tape/">COBテープカテゴリ（高効率・棚面照明向け）を見る</a>&emsp;
+        <a href="/category/psu/">フリッカーフリー電源装置を見る</a>
+      </p>
+
+      <!-- FAQ -->
+      <div class="article-faq">
+        <h2>よくある質問（FAQ）</h2>
+        <div class="faq-item">
+          <div class="faq-q">倉庫のピッキング・棚前の照度は何ルクス必要ですか？</div>
+          <div class="faq-a">JIS Z 9110をふまえると、ピッキング作業を行う棚前・通路は200〜300lxが目安です。バーコードや品番ラベル、伝票を読み取る作業が多いほど300lx寄りで設計します。注意点は床面ではなく「棚の中段〜下段の品物が見える垂直面照度」を確保することで、ラックが高い倉庫では床照度が足りていても棚の奥や下段が暗くなりがちです。通路天井灯だけでなく、ラック間に配光の広い器具やテープ照明を追加すると見落としが減ります。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">天井が高い倉庫（8〜10m）で照度が足りません。設計でどう補正しますか？</div>
+          <div class="faq-a">高天井では光が床に届くまでに拡散して減衰するため、照明率Uを0.4〜0.6と低めに見込んでルクス計算を行います。同じ目標照度でも天井が高いほど必要な総光束（lm）は増えるため、狭角配光（30〜60度）の高天井用器具で光を作業面に集めるのが基本です。広角器具をそのまま高所に付けると光が壁や通路に逃げて作業面照度が出ません。保守率0.7前後も併せて掛け、数年後の照度低下まで見込んで器具数を決めてください。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">人がいない時間が長い倉庫で電気代を抑える照明設計は？</div>
+          <div class="faq-a">保管主体で人の出入りが少ない区画は、人感センサー（マイクロ波／PIR）とゾーン分けで「人がいる通路だけ点ける」制御が有効です。LEDは即時全光点灯で立ち上がり待ちがなく、頻繁なON/OFFでも寿命への影響が小さいためセンサー制御と相性が良いのが利点です。常時全点灯から人感＋ゾーン制御に変えると、保管区画の点灯時間を大幅に削減できます。安全のため通路には最低限の保安照度を残し、検品・出荷など常時作業するエリアは定常点灯と分けて回路を分割するのが設計のコツです。</div>
+        </div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-lighting-lux-calculation-guide">
+              <img src="/images/hero-scenes/blue_desk.png" alt="LED照明の照度（ルクス）計算ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">照明設計ガイド</span>
+                <div class="rac-title">LED照明の照度（ルクス）計算ガイド｜必要な明るさの逆算方法</div>
+                <span class="rac-date">2026-06-03</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-motion-sensor-lighting-guide">
+              <img src="/images/hero-scenes/blue_desk.png" alt="LED人感センサー照明の選び方・配線ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工方法ガイド</span>
+                <div class="rac-title">LED人感センサー照明の選び方と配線｜検知方式と点灯保持の設計</div>
+                <span class="rac-date">2026-05-20</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/food-factory-illuminance-standard-guide">
+              <img src="/images/hero-scenes/gold_shop.png" alt="食品工場の照度基準は何ルクス？" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">照明設計ガイド</span>
+                <div class="rac-title">食品工場の照度基準は何ルクス？JIS・HACCP区域別ルクス早見表</div>
+                <span class="rac-date">2026-06-03</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>倉庫・物流センター向けLED資材の選定サポート</h2>
+        <p>区域別の照度設計・高天井の配光・人感センサー制御・冷凍庫対応まで、用途に合わせた選定をサポートします。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">商品を見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-07-01</span>
+        <span>更新日: 2026-07-01</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源装置の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-lighting-lux-calculation-guide">LED照明の照度（ルクス）計算ガイド</a></li>
+        <li><a href="/articles/food-factory-illuminance-standard-guide">食品工場の照度基準は何ルクス？</a></li>
+        <li><a href="/articles/led-motion-sensor-lighting-guide">LED人感センサー照明の選び方と配線</a></li>
+        <li><a href="/articles/led-flickerfree-guide">フリッカーフリーLEDの選び方</a></li>
+        <li><a href="/articles/led-electricity-savings-guide">LED照明の電気代削減ガイド</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/alumi-frame/">防塵対応アルミフレーム</a></li>
+        <li><a href="/category/psu/">フリッカーフリー定電圧PSU</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>
