@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープの受入検査・搬入時チェックの手順｜施工前に不良を見つける通電・色味・寸法の確認方法 | LED PRO SHOP</title>
+<meta name="description" content="LEDテープの受入検査（搬入時チェック）の手順を施工業者向けに解説。施工前に仮通電で全点灯・欠け・チラつきを確認し、ロット間の色味差・数量・電源容量・付属品を照合する具体的なチェック項目と、不良を見つけたときの対応を一覧表とチェックリストで整理します。">
+<meta property="og:title" content="LEDテープの受入検査・搬入時チェックの手順｜施工前に不良を見つける通電・色味・寸法の確認方法 | LED PRO SHOP">
+<meta property="og:description" content="施工前の仮通電で全点灯・チラつき・色味差・数量を照合する受入検査の手順を施工業者向けに解説。貼ってから直す手戻りを防ぐ。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-incoming-inspection-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-incoming-inspection-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープの受入検査・搬入時チェックの手順｜施工前に不良を見つける確認方法 | LED PRO SHOP">
+<meta name="twitter:description" content="施工前の仮通電で全点灯・チラつき・色味差・数量を照合する受入検査の手順を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-incoming-inspection-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-incoming-inspection-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #0a0f1e; color: #e2e8f0; line-height: 1.7; font-size: 15px; }
+  a { color: #4ade80; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #0a2e1a 0%, #0f4428 50%, #0a3a20 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #1e5f3a; }
+  .hero-badge { display: inline-block; background: #16a34a; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f1f5f9; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #8ac89a; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #5ea876; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f1f5f9; border-left: 4px solid #22c55e; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #86efac; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #cbd5e1; }
+
+  .alert-box { background: #1c1010; border: 1px solid #7f1d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #08220f; border: 1px solid #1e5f3a; border-left: 4px solid #22c55e; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #bbf7d0; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #08220f; border-radius: 10px; overflow: hidden; }
+  thead th { background: #0e4a28; color: #86efac; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #122a1a; color: #cbd5e1; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #0a2412; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #08220f; border: 1px solid #15803d; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #4ade80; margin-top: 0; }
+  .calc-formula { background: #041208; border: 1px solid #166534; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #86efac; margin: 12px 0; line-height: 2; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #08220f; border: 1px solid #1e5f3a; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #22c55e; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #86efac; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #8ac89a; margin-bottom: 0; }
+  .method-card .method-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 3px; margin-bottom: 8px; }
+  .badge-easy { background: #14532d; color: #4ade80; }
+  .badge-mid { background: #713f12; color: #fbbf24; }
+  .badge-pro { background: #0c4a28; color: #86efac; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #22c55e; color: #04120a; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #cbd5e1; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #122a1a; font-size: 14px; color: #cbd5e1; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #1e5f3a; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #08220f; padding: 16px 20px; font-weight: 700; color: #86efac; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #cbd5e1; background: #041208; }
+
+  .cta-box { background: linear-gradient(135deg, #0e4a28 0%, #0a3820 100%); border: 1px solid #22c55e; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f1f5f9; margin-bottom: 10px; }
+  .cta-box p { color: #8ac89a; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #16a34a; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #15803d; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #5ea876; }
+  .breadcrumb a { color: #5ea876; }
+  .breadcrumb a:hover { color: #86efac; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LEDテープの受入検査・搬入時チェックの手順｜施工前に不良を見つける通電・色味・寸法の確認方法",
+  "description": "LEDテープの受入検査（搬入時チェック）の手順を施工業者向けに解説。仮通電で全点灯・チラつきを確認し、ロット間の色味差・数量・電源容量・付属品を照合する項目とチェックリストを紹介。",
+  "image": "https://led-proshop.com/articles/images/led-tape-incoming-inspection-guide-hero.webp",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "datePublished": "2026-07-02",
+  "dateModified": "2026-07-02",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-incoming-inspection-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "LEDテープの受入検査・搬入時チェックの手順", "item": "https://led-proshop.com/articles/led-tape-incoming-inspection-guide" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "LEDテープは貼る前に必ず仮通電したほうがいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、施工前の仮通電（リールを巻いたままの点灯確認）を強く推奨します。LEDテープを貼り付けてから不点灯・チラつき・色ムラが見つかると、剥がし直し・再手配で工程が大きく戻ります。仮通電では、実際に使う電源につないで全長を点灯させ、部分的な消灯・欠け（1粒抜け）・明滅・色味の違いがないかを目視します。リールは巻いたまま通電すると発熱で傷めるため、床に軽く広げるか短時間で確認し、防水品は端末の防水処理前でも配線極性に注意して通電します。搬入時に不良を見つければ、施工前に交換・返品の交渉ができます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ロット間の色味差（ビニング差）はどう確認しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "同じ品番・同じ色温度でも、製造ロット（ビニング）が違うと白色の色味が微妙にずれることがあります。1つの空間に複数リールを連続で使う現場では、搬入時にリールの端を少しずつ引き出し、同じ電源・同じ調光レベルで隣り合わせに点灯して見比べます。青みが強い／黄みが強いといった差が肉眼で分かる場合は、色差が目立たない配置（別の壁・別区画に割り振る）に変えるか、同一ロットでの再手配を検討します。連続する一直線の間接照明では特に差が目立つため、発注時に「同一ロット希望」と伝え、搬入時に照合するのが確実です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "受入検査で不良を見つけたら施工業者はどう対応すべきですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "まず不良の状態を写真・動画で記録し、リールや箱のロット番号・数量・品番を控えます。次に、貼り付け前・加工前であることを確認したうえで、供給元へ連絡し交換・返品の可否を相談します。ポイントは『切る・貼る・はんだ付けする前に検査する』ことです。加工後だと初期不良として扱われないケースがあり、施工業者側の負担で対応することになりがちです。数量不足や付属品（電源・コネクタ・エンドキャップ）の欠品も搬入時に照合しておけば、施工当日に部材が足りず中断する事態を防げます。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">施工方法ガイド</div>
+    <h1>LEDテープの受入検査・搬入時チェックの手順<br>施工前に不良を見つける通電・色味・寸法の確認</h1>
+    <p class="hero-sub">「貼ってから不点灯・色ムラ発覚」で工程を戻さないための搬入時チェック項目を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-07-02 | カテゴリ: 施工方法ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-incoming-inspection-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープの受入検査・搬入時チェックの手順
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="info-box">
+      <p><strong>この記事の目的</strong>：LEDテープは<strong>貼り付け・切断・はんだ付けをしてしまうと交換・返品が難しく</strong>なります。施工当日に「点かない」「色が違う」「数が足りない」で工程を戻さないために、搬入時・施工前にやる受入検査の手順を、通電・色味・数量・寸法の順に整理します。</p>
+    </div>
+
+    <h2>受入検査でやることは大きく4つ</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-badge badge-easy">通電</div>
+        <div class="method-num">①</div>
+        <h4>仮通電で全点灯を確認</h4>
+        <p>実際に使う電源で全長を点灯。部分消灯・1粒欠け・チラつき・明滅がないかを目視する。加工前に必ず。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-easy">色味</div>
+        <div class="method-num">②</div>
+        <h4>ロット間の色味差を照合</h4>
+        <p>複数リールを同じ調光レベルで隣り合わせに点灯し、白色の青み・黄みのズレを見比べる。一直線の間接照明は特に注意。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-easy">数量</div>
+        <div class="method-num">③</div>
+        <h4>数量・付属品を照合</h4>
+        <p>テープ長・電源台数・コネクタ・エンドキャップ・カバーを発注書と照合。欠品は施工当日の中断につながる。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-easy">仕様</div>
+        <div class="method-num">④</div>
+        <h4>仕様・寸法の一致を確認</h4>
+        <p>電圧（12/24V）・W/m・色温度・幅・IP等級・カバー適合が図面と一致するか。電源の定格・出力電圧も確認。</p>
+      </div>
+    </div>
+
+    <h2>受入検査の手順</h2>
+
+    <ul class="step-list">
+      <li><span>納品書・発注書と照合し、<strong>品番・電圧・W/m・色温度・幅・IP等級・数量</strong>が一致するか確認する。</span></li>
+      <li><span>リール／箱の<strong>ロット番号を控え</strong>、複数リールが同一ロットか確認する（色味差の判断材料）。</span></li>
+      <li><span>実際に使う電源につなぎ、<strong>仮通電で全長を点灯</strong>。部分消灯・欠け・チラつき・明滅を目視する。</span></li>
+      <li><span>複数リールを<strong>同じ調光レベルで隣り合わせに点灯</strong>し、白色の色味差（青み・黄み）を見比べる。</span></li>
+      <li><span>電源・コネクタ・エンドキャップ・カバー・クリップなど<strong>付属品と数量</strong>を照合する。</span></li>
+      <li><span>外観（シリコンの傷・剥がれ、基板の変形、粘着面の状態）を確認する。</span></li>
+      <li><span>不良・欠品があれば<strong>写真・動画で記録</strong>し、加工前に供給元へ交換・返品を相談する。</span></li>
+    </ul>
+
+    <h2>検査項目と判定・不良時の対応一覧</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>検査項目</th>
+          <th>確認方法</th>
+          <th>NGの例</th>
+          <th>不良時の対応</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>全点灯</td>
+          <td>実電源で全長を仮通電</td>
+          <td class="tag-ng">部分消灯・1粒欠け</td>
+          <td>加工前に交換依頼</td>
+        </tr>
+        <tr>
+          <td>チラつき</td>
+          <td>点灯を数十秒観察・スマホ動画で確認</td>
+          <td class="tag-ng">明滅・ちらつき</td>
+          <td>電源含め切り分け・交換</td>
+        </tr>
+        <tr>
+          <td>色味差</td>
+          <td>複数リールを同調光で並べて比較</td>
+          <td class="tag-warn">青み・黄みのズレ</td>
+          <td>配置変更 or 同一ロット再手配</td>
+        </tr>
+        <tr>
+          <td>仕様一致</td>
+          <td>品番・電圧・W/m・色温度・幅を図面照合</td>
+          <td class="tag-ng">電圧・色温度違い</td>
+          <td>施工中止・正しい品を手配</td>
+        </tr>
+        <tr>
+          <td>IP等級</td>
+          <td>設置環境（屋外・水回り）と照合</td>
+          <td class="tag-warn">屋内品が屋外納入</td>
+          <td>環境に合う等級へ変更</td>
+        </tr>
+        <tr>
+          <td>数量・付属品</td>
+          <td>発注書と実数を照合</td>
+          <td class="tag-warn">数量不足・欠品</td>
+          <td>不足分を即手配</td>
+        </tr>
+        <tr>
+          <td>電源</td>
+          <td>定格容量・出力電圧・台数を確認</td>
+          <td class="tag-ng">出力電圧違い</td>
+          <td>テープ電圧に合う電源へ</td>
+        </tr>
+        <tr>
+          <td>外観</td>
+          <td>シリコン・基板・粘着面を目視</td>
+          <td class="tag-warn">傷・剥がれ・変形</td>
+          <td>該当リールを交換</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <p><strong>ポイント</strong>：チラつきは電源とテープのどちらが原因かで対応が変わります。別の正常な電源につないでも明滅するならテープ側、電源を替えると直るなら電源側（調光器との相性含む）です。搬入時に切り分けておくと、施工後の原因追及の手間が減ります。</p>
+    </div>
+
+    <h2>仮通電のやり方と注意</h2>
+
+    <div class="calc-box">
+      <h3>安全に仮通電する手順</h3>
+      <div class="calc-formula">
+1. テープの電圧（12V/24V等）と電源の出力電圧が一致するか確認
+
+2. 極性（＋／−）を合わせて仮結線（逆接続は点灯しない）
+
+3. リールは巻いたまま長時間通電しない（発熱で傷む）
+
+4. 床に軽く広げるか、短時間で全長の点灯を確認
+
+5. 防水品は端末防水処理前でも配線部の絶縁に注意
+      </div>
+      <p style="color:#86efac; font-size:13px; margin-top:12px; margin-bottom:0">
+        ※ 巻いたままのフル通電は熱がこもります。確認は短時間で、必要なら少し広げて行います。<br>
+        ※ AC100V直結タイプ・高電圧品は活線作業となるため、有資格者が安全を確保して行います。
+      </p>
+    </div>
+
+    <h2>見落としやすい3つのチェック</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-badge badge-mid">ロット</div>
+        <div class="method-num">①</div>
+        <h4>連続施工のロット統一</h4>
+        <p>一直線に長く流す間接照明は色味差が目立つ。搬入時にロット番号を照合し、差が出そうなら区画を分けて割り振る。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-mid">電源</div>
+        <div class="method-num">②</div>
+        <h4>電源の出力電圧と容量</h4>
+        <p>24Vテープに12V電源だと暗く、逆だと過電圧で故障。定格容量が合計Wの余裕を持つかも搬入時に確認する。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-mid">加工前</div>
+        <div class="method-num">③</div>
+        <h4>切る・貼る前に検査</h4>
+        <p>加工後は初期不良扱いにならないことが多い。カット・貼付・はんだ付けの前に検査を終わらせるのが鉄則。</p>
+      </div>
+    </div>
+
+    <h2>受入検査チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>納品書・発注書と品番・電圧・W/m・色温度・幅・IP等級・数量を照合した</li>
+      <li>リール／箱のロット番号を控え、複数リールの同一ロットを確認した</li>
+      <li>実際に使う電源で全長を仮通電し、部分消灯・欠け・チラつきがないか確認した</li>
+      <li>複数リールを同じ調光レベルで並べ、色味差（青み・黄み）を見比べた</li>
+      <li>電源の出力電圧・定格容量・台数がテープ仕様に合うか確認した</li>
+      <li>コネクタ・エンドキャップ・カバー・クリップなど付属品を照合した</li>
+      <li>シリコン・基板・粘着面の傷や剥がれを外観確認した</li>
+      <li>不良・欠品は加工前に写真記録し、供給元へ交換・返品を相談した</li>
+    </ul>
+
+    <div class="alert-box">
+      <div class="alert-title">「現場で開けて即施工」は手戻りの元</div>
+      <p>搬入したその場で開梱して貼り始めると、不点灯や色味差に気づいたときには加工済みで交換できない、という手戻りが起きます。切る・貼る・はんだ付けの前に、必ず仮通電と数量照合を済ませてください。特に一直線に長く流す間接照明はロット間の色味差が目立ちやすく、後から一部だけ交換すると差がかえって強調されます。最初にまとめて検査し、疑わしいリールは施工に使わないのが安全です。</p>
+    </div>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. LEDテープは貼る前に必ず仮通電したほうがいいですか？</div>
+        <div class="faq-a">はい、施工前の仮通電（リールを巻いたままの点灯確認）を強く推奨します。LEDテープを貼り付けてから不点灯・チラつき・色ムラが見つかると、剥がし直し・再手配で工程が大きく戻ります。仮通電では、実際に使う電源につないで全長を点灯させ、部分的な消灯・欠け（1粒抜け）・明滅・色味の違いがないかを目視します。リールは巻いたまま通電すると発熱で傷めるため、床に軽く広げるか短時間で確認し、防水品は端末の防水処理前でも配線極性に注意して通電します。搬入時に不良を見つければ、施工前に交換・返品の交渉ができます。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. ロット間の色味差（ビニング差）はどう確認しますか？</div>
+        <div class="faq-a">同じ品番・同じ色温度でも、製造ロット（ビニング）が違うと白色の色味が微妙にずれることがあります。1つの空間に複数リールを連続で使う現場では、搬入時にリールの端を少しずつ引き出し、同じ電源・同じ調光レベルで隣り合わせに点灯して見比べます。青みが強い／黄みが強いといった差が肉眼で分かる場合は、色差が目立たない配置（別の壁・別区画に割り振る）に変えるか、同一ロットでの再手配を検討します。連続する一直線の間接照明では特に差が目立つため、発注時に「同一ロット希望」と伝え、搬入時に照合するのが確実です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 受入検査で不良を見つけたら施工業者はどう対応すべきですか？</div>
+        <div class="faq-a">まず不良の状態を写真・動画で記録し、リールや箱のロット番号・数量・品番を控えます。次に、貼り付け前・加工前であることを確認したうえで、供給元へ連絡し交換・返品の可否を相談します。ポイントは『切る・貼る・はんだ付けする前に検査する』ことです。加工後だと初期不良として扱われないケースがあり、施工業者側の負担で対応することになりがちです。数量不足や付属品（電源・コネクタ・エンドキャップ）の欠品も搬入時に照合しておけば、施工当日に部材が足りず中断する事態を防げます。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>検査しやすいLEDテープ・電源・付属品</h3>
+      <p>仕様表記が明確なLEDテープ・対応電源・コネクタ・アルミフレームを取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
