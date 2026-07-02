@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>内照式看板のLEDモジュール割付｜ピッチ・必要数の計算と光ムラ（ホットスポット）対策 | LED PRO SHOP</title>
+  <meta name="description" content="電飾看板（内照式サイン）をLEDモジュールで組んだら明暗ムラが出た・端が暗いという看板屋向け。モジュールの割付ピッチ・面板までの奥行き・必要個数の計算式・ホットスポットを消す配置のコツを施工目線で解説します。">
+  <meta name="keywords" content="内照式看板 LED 配置,電飾看板 LED モジュール,看板 LED ピッチ,看板 LED 何個,ライトボックス LED 割付,看板 LED ムラ,内照式 サイン LED 奥行き,面板 LED ホットスポット">
+  <link rel="canonical" href="https://led-proshop.com/articles/illuminated-signbox-led-module-layout-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/illuminated-signbox-led-module-layout-guide">
+  <meta property="og:title" content="内照式看板のLEDモジュール割付｜ピッチ・必要数の計算と光ムラ（ホットスポット）対策 | LED PRO SHOP">
+  <meta property="og:description" content="モジュールの割付ピッチ・面板までの奥行き・必要個数の計算式・ホットスポットを消す配置のコツを看板屋向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/illuminated-signbox-led-module-layout-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="内照式看板のLEDモジュール割付｜ピッチ・必要数の計算と光ムラ対策 | LED PRO SHOP">
+  <meta name="twitter:description" content="割付ピッチ・面板までの奥行き・必要個数の計算・ホットスポットを消す配置のコツを看板屋向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/illuminated-signbox-led-module-layout-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "内照式看板のLEDモジュール割付｜ピッチ・必要数の計算と光ムラ（ホットスポット）対策",
+    "description": "電飾看板（内照式サイン）のLEDモジュール割付ピッチ・面板までの奥行き・必要個数の計算式・ホットスポットを消す配置のコツを施工業者向けに解説。",
+    "image": "https://led-proshop.com/articles/images/illuminated-signbox-led-module-layout-guide-hero.webp",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP 編集部"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
+    },
+    "datePublished": "2026-07-03",
+    "dateModified": "2026-07-03",
+    "mainEntityOfPage": "https://led-proshop.com/articles/illuminated-signbox-led-module-layout-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "内照式看板のLEDモジュール割付・光ムラ対策ガイド", "item": "https://led-proshop.com/articles/illuminated-signbox-led-module-layout-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "内照式看板のLEDモジュールはどのくらいのピッチで並べればよいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "面板（乳半アクリル等）までの奥行きが基準になります。目安として、モジュール列の間隔（縦ピッチ）は面板までの奥行きと同程度から1.5倍以内、モジュール同士の横ピッチも奥行きと同程度に収めるとムラが出にくくなります。例えば奥行き80mmの箱なら縦横とも80〜120mm前後が基準です。奥行きが浅い薄型サインほどピッチを詰め、面板に拡散シートを追加するとホットスポットを抑えられます。最終的には点灯試験で実測して微調整してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "看板に必要なLEDモジュールの個数はどう計算しますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "まず割付ピッチから縦横の列数を出します。横の個数＝有効幅÷横ピッチ＋1、列数＝有効高さ÷縦ピッチ＋1で、総数＝横の個数×列数が概算です。次に総数×1個あたりの消費電力で総W数を求め、電源はその1.2〜1.3倍の容量を選びます。端部は暗くなりやすいので、四辺は縁から横ピッチの半分（ピッチ50mmなら25mm）内側に最初の列を置くと均一になります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "文字や面板に明るいスポット（ホットスポット）が出るのを消すには？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ホットスポットは面板までの奥行きが足りない、ピッチが広すぎる、拡散が弱いのが主因です。対処は、奥行きを確保する（浅い箱では拡散シートやレンズ付きモジュールを使う）、ピッチを詰める、面板を乳半・拡散タイプに変える、モジュールの照射角の広いものを選ぶ、の順で効果的です。深型サインで文字面が離れている場合は逆にピッチを広げて個数を減らせます。必ず本組み前に点灯して面板越しの見え方を確認してください。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/articles/articles.css">
+
+  <!-- 記事個別：スペックグリッド／チェックリスト（ダークテーマ） -->
+  <style>
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:20px 0}
+    .spec-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:14px 16px}
+    .spec-label{font-size:11px;color:#9aa4b2;font-weight:600;margin-bottom:4px;letter-spacing:.06em}
+    .spec-val{font-size:17px;font-weight:900;color:#38bdf8}
+    .spec-note{font-size:11px;color:#9aa4b2;margin-top:4px}
+    .checklist{list-style:none;padding:0;margin:16px 0 28px}
+    .checklist li{padding:10px 0 10px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.10);font-size:.92rem}
+    .checklist li:last-child{border-bottom:none}
+    .checklist li::before{content:'\2713';position:absolute;left:0;color:#38bdf8;font-weight:700}
+      .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">LED PRO SHOP</a>
+    <nav class="global-nav">
+      <a href="/articles/">記事一覧</a>
+      <a href="/">商品一覧</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-main">
+<article>
+
+<div class="article-hero">
+  <img src="/articles/images/illuminated-signbox-led-module-layout-guide-hero.webp"
+       alt="内照式看板のLEDモジュール割付・ピッチ・光ムラ対策の施工ガイド"
+       width="1200" height="630" loading="eager">
+</div>
+
+<div class="article-container">
+
+<h1>内照式看板のLEDモジュール割付｜ピッチ・必要数の計算と光ムラ（ホットスポット）対策</h1>
+
+<p class="article-meta">
+  <span>2026-07-03</span>
+  <span class="article-cat">施工方法ガイド</span>
+</p>
+
+<div class="article-lead">
+  <p>電飾看板（内照式サイン・ライトボックス）をLEDモジュールで組み替えたら、<strong>面板に明るい斑点（ホットスポット）が浮いた</strong>・<strong>四隅や端だけ暗い</strong>・<strong>文字ごとに明るさが違う</strong>——看板屋の現場でよくあるトラブルです。原因のほとんどは<strong>割付ピッチと面板までの奥行きのバランス</strong>にあります。本記事では、内照式看板のモジュール割付ピッチの決め方、必要個数と電源容量の計算、端部の暗がりとホットスポットを消す配置のコツを施工目線で整理しました。</p>
+</div>
+
+<nav class="toc">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#basis">明るさの均一さは「ピッチ÷奥行き」で決まる</a></li>
+    <li><a href="#pitch">割付ピッチの目安（奥行き別）</a></li>
+    <li><a href="#count">必要個数と電源容量の計算</a></li>
+    <li><a href="#edge">端部の暗がりを消す割付</a></li>
+    <li><a href="#hotspot">ホットスポット対策</a></li>
+    <li><a href="#checklist">施工チェックリスト</a></li>
+    <li><a href="#faq">よくある質問</a></li>
+  </ol>
+</nav>
+
+<section id="basis">
+  <h2>明るさの均一さは「ピッチ÷奥行き」で決まる</h2>
+
+  <p>内照式看板の面板がムラなく光るかは、<strong>モジュールを並べる間隔（ピッチ）</strong>と<strong>モジュールから面板までの奥行き（深さ）</strong>の比率でほぼ決まります。奥行きに対してピッチが広すぎると、モジュールの真上だけ明るく、間が暗くなる「粒々ムラ」やホットスポットが出ます。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ピッチと奥行きの関係</th>
+        <th>面板の見え方</th>
+        <th>判定</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ピッチ ＜ 奥行き</td>
+        <td>光が十分に重なり均一に光る</td>
+        <td>◯ 理想。深型サイン向き</td>
+      </tr>
+      <tr>
+        <td>ピッチ ≒ 奥行き</td>
+        <td>拡散シートを足せば均一になる</td>
+        <td>△ 標準。拡散で調整</td>
+      </tr>
+      <tr>
+        <td>ピッチ ＞ 奥行き（1.5倍超）</td>
+        <td>真上が明るく間が暗いムラ</td>
+        <td>✕ ピッチを詰めるか奥行きを取る</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note"><strong>原則</strong>：薄型サイン（奥行きが浅い）ほどピッチを詰め、深型サインほどピッチを広げて個数を減らせます。まず「面板までの奥行き」を基準にピッチを決めるのが失敗しないコツです。</p>
+</section>
+
+<section id="pitch">
+  <h2>割付ピッチの目安（奥行き別）</h2>
+
+  <p>下表は照射角の広い一般的なレンズ付きサインモジュールを乳半アクリル面板で使う場合の<strong>目安ピッチ</strong>です（製品の推奨値・照射角を優先してください）。</p>
+
+  <div class="spec-grid">
+    <div class="spec-card">
+      <div class="spec-label">薄型（奥行き30〜50mm）</div>
+      <div class="spec-val">縦横 50〜80mm</div>
+      <div class="spec-note">拡散シート併用を推奨</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">標準（奥行き60〜100mm）</div>
+      <div class="spec-val">縦横 80〜120mm</div>
+      <div class="spec-note">最も一般的な内照式サイン</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">深型（奥行き100mm超）</div>
+      <div class="spec-val">縦横 120〜180mm</div>
+      <div class="spec-note">個数を減らせる</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">四辺の縁からの離し</div>
+      <div class="spec-val">横ピッチの1/2</div>
+      <div class="spec-note">端の暗がり防止</div>
+    </div>
+  </div>
+
+  <p class="note">レンズ無し（広角でない）モジュールや狭照射角タイプは、上表より1〜2割ピッチを詰めてください。逆に高出力・超広角レンズ品は広げられます。</p>
+</section>
+
+<section id="count">
+  <h2>必要個数と電源容量の計算</h2>
+
+  <p>割付ピッチが決まれば、必要なモジュール数と電源容量は計算で出せます。有効面（枠の内寸から額縁分を引いた光らせたい範囲）を基準にします。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>計算式</th>
+        <th>例（有効900×600mm・ピッチ100mm）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>横の個数</td>
+        <td>有効幅 ÷ 横ピッチ ＋ 1</td>
+        <td>900 ÷ 100 ＋ 1 ＝ 10個</td>
+      </tr>
+      <tr>
+        <td>列数</td>
+        <td>有効高さ ÷ 縦ピッチ ＋ 1</td>
+        <td>600 ÷ 100 ＋ 1 ＝ 7列</td>
+      </tr>
+      <tr>
+        <td>総数</td>
+        <td>横の個数 × 列数</td>
+        <td>10 × 7 ＝ 70個</td>
+      </tr>
+      <tr>
+        <td>総消費電力</td>
+        <td>総数 × 1個あたりW</td>
+        <td>70 × 0.72W ＝ 約50.4W</td>
+      </tr>
+      <tr>
+        <td>電源容量</td>
+        <td>総W × 1.2〜1.3（余裕率）</td>
+        <td>50.4 × 1.25 ＝ 約63W → 定格75W以上</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note"><strong>注意</strong>：モジュールは1連（1ストリング）の最大接続数と最大長が決まっています。長辺方向に長い看板は、送り配線を複数系統に分け、各系統が最大接続数を超えないようにします。超えると末端が暗くなる・電圧降下で色が変わる原因になります。</p>
+</section>
+
+<section id="edge">
+  <h2>端部の暗がりを消す割付</h2>
+
+  <p>看板で最も暗くなりやすいのは四辺の縁と四隅です。中央だけを基準に等ピッチで割り付けると、端は光が片側からしか届かず暗く見えます。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>症状</th>
+        <th>原因</th>
+        <th>対処</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>四辺が暗い・額縁沿いが影</td>
+        <td>最初の列が縁に寄りすぎ／離れすぎ</td>
+        <td>縁から横ピッチの1/2内側に最初の列を置く</td>
+      </tr>
+      <tr>
+        <td>四隅だけ暗い</td>
+        <td>隅は片側からしか光が回らない</td>
+        <td>隅に1個増し／L字に列を回す</td>
+      </tr>
+      <tr>
+        <td>細長い看板の端が暗い</td>
+        <td>系統の末端で電圧降下</td>
+        <td>両端給電または系統分割</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note">縁から「横ピッチの半分」離して最初の列を置くのが基本ルールです。これだけで端部の暗がりの大半は解消します。</p>
+</section>
+
+<section id="hotspot">
+  <h2>ホットスポット対策</h2>
+
+  <p>面板越しにモジュールの粒が点々と見える・特定の箇所だけ明るいのがホットスポットです。奥行きが足りない薄型サインで起きやすく、次の順で対策します。</p>
+
+  <ul class="checklist">
+    <li>面板までの奥行きを確保する（可能なら箱を深く／モジュール取付面を下げる）</li>
+    <li>ピッチを詰めて光を重ねる（薄型ほど詰める）</li>
+    <li>拡散シート・乳半（マット）面板に変えて拡散を強める</li>
+    <li>照射角の広いレンズ付きモジュールを選ぶ</li>
+    <li>本組み前に点灯し、面板越しの見え方を実測して微調整する</li>
+  </ul>
+
+  <p class="note">奥行きを増やせない薄型看板では、拡散シート＋広角レンズモジュール＋ピッチ詰めの合わせ技が最も効きます。逆に深型で文字面が離れている場合はピッチを広げ、個数と発熱を減らせます。</p>
+</section>
+
+<section id="checklist">
+  <h2>施工チェックリスト</h2>
+  <ul class="checklist">
+    <li>面板までの奥行きを実測し、それを基準にピッチを決めた</li>
+    <li>ピッチが奥行きの1.5倍を超えていない（超える場合は詰める／拡散追加）</li>
+    <li>有効面（額縁を除いた範囲）で個数・列数を計算した</li>
+    <li>縁から横ピッチの1/2内側に最初の列を配置した</li>
+    <li>四隅の暗がり対策（隅増し・L字回し）を織り込んだ</li>
+    <li>総W数×1.2〜1.3で電源容量を選定した</li>
+    <li>1系統の最大接続数・最大長を超えないよう系統を分けた</li>
+    <li>本組み前に点灯試験を行い、面板越しの均一性を確認した</li>
+  </ul>
+</section>
+
+<section id="faq">
+  <h2>よくある質問</h2>
+
+  <div class="faq-item">
+    <h3>Q. 内照式看板のLEDモジュールはどのくらいのピッチで並べればよいですか？</h3>
+    <p>A. 面板までの奥行きが基準です。目安として、列の間隔（縦ピッチ）は奥行きと同程度〜1.5倍以内、横ピッチも奥行きと同程度に収めるとムラが出にくくなります。奥行き80mmの箱なら縦横とも80〜120mm前後が基準です。奥行きが浅い薄型ほどピッチを詰め、拡散シートを追加するとホットスポットを抑えられます。最終的には点灯試験で実測して微調整してください。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. 看板に必要なLEDモジュールの個数はどう計算しますか？</h3>
+    <p>A. 割付ピッチから縦横の列数を出します。横の個数＝有効幅÷横ピッチ＋1、列数＝有効高さ÷縦ピッチ＋1で、総数＝横の個数×列数が概算です。次に総数×1個あたりの消費電力で総W数を求め、電源はその1.2〜1.3倍の容量を選びます。端部は暗くなりやすいので、四辺は縁から横ピッチの半分内側に最初の列を置くと均一になります。</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Q. 文字や面板に明るいスポット（ホットスポット）が出るのを消すには？</h3>
+    <p>A. ホットスポットは面板までの奥行き不足・ピッチ過大・拡散不足が主因です。対処は、奥行きを確保する（浅い箱では拡散シートやレンズ付きモジュールを使う）、ピッチを詰める、面板を乳半・拡散タイプに変える、照射角の広いモジュールを選ぶ、の順で効果的です。深型で文字面が離れている場合は逆にピッチを広げて個数を減らせます。必ず本組み前に点灯し、面板越しの見え方を確認してください。</p>
+  </div>
+</section>
+
+<div class="article-cta">
+  <p>内照式看板向けのサインモジュール・広角レンズタイプ、系統分割用のコネクタ・送り配線部材、余裕を見た定格の電源まで、看板施工に必要な部材をLED PRO SHOPで取り揃えています。</p>
+  <a href="/" class="cta-btn">LED PRO SHOP 商品一覧を見る</a>
+</div>
+
+</div><!-- /article-container -->
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-logo">LED PRO SHOP</p>
+    <nav class="footer-nav">
+      <a href="/">商品一覧</a>
+      <a href="/articles/">コラム</a>
+      <a href="/tokushoho.html">特定商取引法</a>
+    </nav>
+    <p class="footer-copy">&copy; 2025 LED PRO SHOP</p>
+  </div>
+</footer>
+
+</body>
+</html>
