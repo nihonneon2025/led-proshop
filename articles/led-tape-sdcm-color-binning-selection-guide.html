@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープの色ばらつき等級（SDCM／マクベス楕円）の選び方｜1SDCM〜7SDCMの違いと業種別の基準 | LED PRO SHOP</title>
+<meta name="description" content="LEDテープの色ばらつき等級SDCM（マクベス楕円）を施工業者向けに解説。1SDCM〜7SDCMで白色の揃い具合がどう変わるか、連続する間接照明・什器・医療美容などの業種別に必要な等級、リール間のロット差との関係、発注時の指定方法を表とチェックリストで整理します。">
+<meta property="og:title" content="LEDテープの色ばらつき等級（SDCM／マクベス楕円）の選び方｜1SDCM〜7SDCMの違いと業種別の基準 | LED PRO SHOP">
+<meta property="og:description" content="1SDCM〜7SDCMで白色の揃い具合がどう変わるか、連続する間接照明・什器・医療美容など業種別に必要な色ばらつき等級を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-sdcm-color-binning-selection-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-sdcm-color-binning-selection-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープの色ばらつき等級（SDCM／マクベス楕円）の選び方 | LED PRO SHOP">
+<meta name="twitter:description" content="1SDCM〜7SDCMで白色の揃い具合がどう変わるか、業種別に必要な色ばらつき等級を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-sdcm-color-binning-selection-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-sdcm-color-binning-selection-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #0a0f1e; color: #e2e8f0; line-height: 1.7; font-size: 15px; }
+  a { color: #60a5fa; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #0a1e3a 0%, #0f2f55 50%, #0a2a48 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #1e4a7f; }
+  .hero-badge { display: inline-block; background: #2563eb; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f1f5f9; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #8ab4d8; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #5e86a8; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f1f5f9; border-left: 4px solid #3b82f6; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #93c5fd; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #cbd5e1; }
+
+  .alert-box { background: #1c1010; border: 1px solid #7f1d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #08182e; border: 1px solid #1e4a7f; border-left: 4px solid #3b82f6; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #bfdbfe; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #08182e; border-radius: 10px; overflow: hidden; }
+  thead th { background: #0e3560; color: #93c5fd; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #12233a; color: #cbd5e1; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #0a1c34; }
+  .tag-ok { color: #60a5fa; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #08182e; border: 1px solid #1d4ed8; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #60a5fa; margin-top: 0; }
+  .calc-formula { background: #040c18; border: 1px solid #1e40af; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #93c5fd; margin: 12px 0; line-height: 2; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #08182e; border: 1px solid #1e4a7f; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #3b82f6; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #93c5fd; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #8ab4d8; margin-bottom: 0; }
+  .method-card .method-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 3px; margin-bottom: 8px; }
+  .badge-easy { background: #14315d; color: #60a5fa; }
+  .badge-mid { background: #713f12; color: #fbbf24; }
+  .badge-pro { background: #0c3a5a; color: #93c5fd; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #3b82f6; color: #04101f; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #cbd5e1; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #12233a; font-size: 14px; color: #cbd5e1; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #60a5fa; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #1e4a7f; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #08182e; padding: 16px 20px; font-weight: 700; color: #93c5fd; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #cbd5e1; background: #040c18; }
+
+  .cta-box { background: linear-gradient(135deg, #0e3560 0%, #0a2848 100%); border: 1px solid #3b82f6; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f1f5f9; margin-bottom: 10px; }
+  .cta-box p { color: #8ab4d8; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #2563eb; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #1d4ed8; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #5e86a8; }
+  .breadcrumb a { color: #5e86a8; }
+  .breadcrumb a:hover { color: #93c5fd; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LEDテープの色ばらつき等級（SDCM／マクベス楕円）の選び方｜1SDCM〜7SDCMの違いと業種別の基準",
+  "description": "LEDテープの色ばらつき等級SDCM（マクベス楕円）を施工業者向けに解説。1SDCM〜7SDCMで白色の揃い具合がどう変わるか、業種別に必要な等級、リール間のロット差との関係、発注時の指定方法を整理。",
+  "image": "https://led-proshop.com/articles/images/led-tape-sdcm-color-binning-selection-guide-hero.webp",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "datePublished": "2026-07-03",
+  "dateModified": "2026-07-03",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-sdcm-color-binning-selection-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "LEDテープの色ばらつき等級（SDCM）の選び方", "item": "https://led-proshop.com/articles/led-tape-sdcm-color-binning-selection-guide" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "SDCMとは何ですか？数字が小さいほうが良いのですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SDCM（Standard Deviation of Color Matching）は、白色LEDの色ばらつきの大きさを表す単位で、マクベス楕円（MacAdam楕円）のステップ数とも呼ばれます。基準となる目標色からのズレを楕円の段階で表し、1SDCMなら人がほとんど色差を感じない範囲、3SDCMで訓練された人が並べてやっと分かる程度、5SDCM以上になると一般の人でも「白の色味が違う」と気づきやすくなります。つまり数字が小さいほど色が揃っており、間接照明のように白色の面を連続して見せる用途では小さいSDCMが有利です。ただし等級が細かいほどコストは上がるため、用途に見合った等級を選ぶのが実務的です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "連続する間接照明では何SDCMを選べばよいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "一直線に長く流す間接照明・コーブ照明・什器のライン照明のように、白色の光を面で連続して見せる用途では3SDCM以下を目安に選ぶと、隣り合う区間の色味差が目立ちにくくなります。特に壁面を一様に照らす納まりや、複数リールを直線状につなぐ長尺の現場では、たとえ1リールずつは規格内でも境目で色差が見えやすいため、SDCM等級とあわせて『同一ロット指定』を発注時に伝えるのが確実です。逆に、点在するダウンライトの補助や、什器の奥に隠れて直接光源が見えない用途であれば5SDCM程度でも実用上問題にならないことが多く、コストを抑えられます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "SDCM等級が良くてもロットが違うと色が変わりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、SDCM等級は『そのビン（選別区分）内でのばらつきの大きさ』を示すもので、製造ロットが違えば同じ等級でも目標色の中心が微妙にずれることがあります。たとえば3SDCM品でも、Aロットは楕円の中心がやや黄より、Bロットはやや青よりに寄っていると、それぞれは規格内でも並べると差が見えることがあります。連続施工では、SDCM等級を指定するだけでなく、発注時に同一ロットでまとめて手配し、搬入時に複数リールを同じ調光レベルで隣り合わせに点灯して照合するのが安全です。差が出そうなら区画を分けて割り振ると、境目の色差を目立たなくできます。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">仕様選定ガイド</div>
+    <h1>LEDテープの色ばらつき等級（SDCM／マクベス楕円）の選び方<br>1SDCM〜7SDCMの違いと業種別の基準</h1>
+    <p class="hero-sub">「1本ずつは規格内なのに、並べると白の色味が違う」を防ぐための色ばらつき等級を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-07-03 | カテゴリ: 仕様選定ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-sdcm-color-binning-selection-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープの色ばらつき等級（SDCM）の選び方
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="info-box">
+      <p><strong>この記事の目的</strong>：同じ品番・同じ色温度のLEDテープでも、白色の色味が微妙に揃わないことがあります。その揃い具合を表すのが<strong>SDCM（色ばらつき等級／マクベス楕円）</strong>です。連続する間接照明で「境目だけ色が違う」と言われないために、SDCMの意味・等級ごとの見え方・業種別の目安・発注時の指定方法を整理します。</p>
+    </div>
+
+    <h2>SDCM（色ばらつき等級）とは</h2>
+
+    <p>SDCMは <strong>Standard Deviation of Color Matching</strong> の略で、白色LEDが目標とする色から「どれだけばらついているか」を表す単位です。色を平面（色度図）上の座標で考えたとき、目標色を中心にした楕円（マクベス楕円＝MacAdam楕円）の何段階ぶんに収まっているかで表現し、<strong>1SDCM＝1ステップ</strong>と数えます。</p>
+
+    <p>ポイントは、<strong>数字が小さいほど色が揃っている</strong>ということです。1SDCMなら人はほとんど色差を感じません。段階が上がるほど色のブレ幅が広くなり、白色を面で見せる現場では境目の違いが見えやすくなります。</p>
+
+    <div class="calc-box">
+      <h3>SDCMの考え方（イメージ）</h3>
+      <div class="calc-formula">
+目標の白（色度座標）を中心に置く
+
+ ↓ その周りに「ズレ許容の楕円」を描く
+
+1SDCM = ズレが楕円1段ぶん以内 → ほぼ気づかない
+
+3SDCM = ズレが楕円3段ぶん以内 → 並べてやっと分かる
+
+5SDCM = ズレが楕円5段ぶん以内 → 一般人でも気づきやすい
+      </div>
+      <p style="color:#93c5fd; font-size:13px; margin-top:12px; margin-bottom:0">
+        ※ SDCMは「そのビン（選別区分）内のばらつき幅」を示す指標です。ロットが違えば楕円の中心位置がずれることがあり、等級だけでは色の一致を保証しません（後述）。
+      </p>
+    </div>
+
+    <h2>等級ごとの見え方と用途の目安</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>SDCM等級</th>
+          <th>色差の見え方</th>
+          <th>向く用途</th>
+          <th>コスト感</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tag-ok">1〜2SDCM</td>
+          <td>ほぼ色差を感じない</td>
+          <td>美容・医療・物撮り・宝飾など色の正確さが要る場</td>
+          <td>高い</td>
+        </tr>
+        <tr>
+          <td class="tag-ok">3SDCM</td>
+          <td>並べて訓練者がやっと判別</td>
+          <td>連続する間接照明・什器ライン・店舗の基準照明</td>
+          <td>中〜やや高</td>
+        </tr>
+        <tr>
+          <td class="tag-warn">4〜5SDCM</td>
+          <td>一般人でも並べると気づきやすい</td>
+          <td>点在配置・補助照明・光源が直接見えない用途</td>
+          <td>標準</td>
+        </tr>
+        <tr>
+          <td class="tag-ng">6〜7SDCM</td>
+          <td>単体でも色味の個体差が分かる</td>
+          <td>色の揃いを問わない下地照明・作業灯的な用途</td>
+          <td>安い</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <p><strong>実務の目安</strong>：白色の面を「連続して見せる」なら3SDCM以下、「点在・間接的に使う」なら5SDCM程度、で切り分けると失敗しにくいです。等級を1段良くするごとにコストが上がるため、全数を最高等級にするのではなく、色差が見える箇所だけ等級を上げる考え方が現実的です。</p>
+    </div>
+
+    <h2>業種・用途別の推奨等級</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-badge badge-easy">1〜3SDCM</div>
+        <div class="method-num">①</div>
+        <h4>美容・医療・宝飾・物撮り</h4>
+        <p>肌色や商品色の見え方が仕上がりを左右する。色の正確さと揃いの両方が要るため低SDCM＋高演色（高Ra）で選ぶ。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-easy">3SDCM</div>
+        <div class="method-num">②</div>
+        <h4>連続する間接照明・什器ライン</h4>
+        <p>壁面コーブ・棚のライン照明など白を面で見せる用途。境目の色差が命取り。3SDCM＋同一ロットで手配。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-mid">4〜5SDCM</div>
+        <div class="method-num">③</div>
+        <h4>店舗の一般照明・補助照明</h4>
+        <p>直接光源が連続して見えない配置なら5SDCMでも実用的。コストと見え方のバランスを取る。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-pro">6〜7SDCM</div>
+        <div class="method-num">④</div>
+        <h4>下地照明・作業灯的用途</h4>
+        <p>色の揃いを問わない場所。倉庫・機械裏・仮設など。SDCMよりコストと明るさ優先で選定する。</p>
+      </div>
+    </div>
+
+    <h2>SDCMと関連するほかの色の指標</h2>
+
+    <p>色に関わる仕様は複数あり、SDCMだけでは決まりません。混同しやすい指標を整理します。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>指標</th>
+          <th>表すもの</th>
+          <th>SDCMとの違い</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SDCM（マクベス楕円）</td>
+          <td>白色の<strong>ばらつきの大きさ</strong></td>
+          <td>個体差・揃い具合を見る指標</td>
+        </tr>
+        <tr>
+          <td>色温度（K）</td>
+          <td>白の<strong>暖かさ・寒さ</strong>（2700K〜6500K）</td>
+          <td>目標とする白の種類。揃いとは別</td>
+        </tr>
+        <tr>
+          <td>Ra（CRI）</td>
+          <td>色の<strong>見え方の正確さ</strong></td>
+          <td>ものの色を正しく見せる度合い。揃いとは別</td>
+        </tr>
+        <tr>
+          <td>ロット／ビニング</td>
+          <td>製造区分の<strong>中心色の位置</strong></td>
+          <td>等級内でもロット違いで中心がずれる</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert-box">
+      <div class="alert-title">SDCM等級が良くてもロット違いで色差が出る</div>
+      <p>SDCMは「そのビン内でのばらつき幅」を示すだけで、ロットが違えば同じ等級でも目標色の中心がずれることがあります。3SDCM品でも、Aロットはやや黄より、Bロットはやや青より、という中心のズレがあると、それぞれは規格内でも並べると差が見えます。連続施工では、SDCM指定に加えて「同一ロット希望」を発注時に伝え、搬入時に複数リールを同じ調光レベルで隣り合わせに点灯して照合してください。</p>
+    </div>
+
+    <h2>発注・施工での判断手順</h2>
+
+    <ul class="step-list">
+      <li><span>用途を「白を<strong>連続して面で見せる</strong>か」「点在・間接か」で分類する。連続なら等級を上げる。</span></li>
+      <li><span>色温度（K）とRa（CRI）を先に決め、そのうえで<strong>SDCM等級</strong>を用途に合わせて選ぶ。</span></li>
+      <li><span>連続する長尺・複数リールの現場は<strong>同一ロット指定</strong>を発注時に伝える。</span></li>
+      <li><span>搬入時に複数リールを<strong>同じ電源・同じ調光レベル</strong>で隣り合わせに点灯し、色味差を目視照合する。</span></li>
+      <li><span>差が見えるリールは、色差が目立たない別区画に割り振るか、同一ロットで再手配する。</span></li>
+      <li><span>コストを抑えたい場合は、<strong>色差が見える箇所だけ</strong>低SDCM品にし、下地照明は標準等級にする。</span></li>
+    </ul>
+
+    <h2>選定チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>白色を「連続して面で見せる」用途かどうかを分類した</li>
+      <li>色温度（K）とRa（CRI）を先に確定した</li>
+      <li>連続照明は3SDCM以下、点在・間接は5SDCM程度、と用途で切り分けた</li>
+      <li>連続する長尺・複数リールは同一ロット指定を発注時に伝えた</li>
+      <li>搬入時に複数リールを同調光レベルで並べ色味差を照合する段取りをした</li>
+      <li>色差が見えるリールを別区画へ割り振る／再手配する運用を決めた</li>
+      <li>コスト最適化のため、等級を上げるのは色差が見える箇所に絞った</li>
+      <li>美容・医療・宝飾など色精度が要る現場は低SDCM＋高Raで選んだ</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. SDCMとは何ですか？数字が小さいほうが良いのですか？</div>
+        <div class="faq-a">SDCM（Standard Deviation of Color Matching）は、白色LEDの色ばらつきの大きさを表す単位で、マクベス楕円（MacAdam楕円）のステップ数とも呼ばれます。基準となる目標色からのズレを楕円の段階で表し、1SDCMなら人がほとんど色差を感じない範囲、3SDCMで訓練された人が並べてやっと分かる程度、5SDCM以上になると一般の人でも「白の色味が違う」と気づきやすくなります。つまり数字が小さいほど色が揃っており、間接照明のように白色の面を連続して見せる用途では小さいSDCMが有利です。ただし等級が細かいほどコストは上がるため、用途に見合った等級を選ぶのが実務的です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 連続する間接照明では何SDCMを選べばよいですか？</div>
+        <div class="faq-a">一直線に長く流す間接照明・コーブ照明・什器のライン照明のように、白色の光を面で連続して見せる用途では3SDCM以下を目安に選ぶと、隣り合う区間の色味差が目立ちにくくなります。特に壁面を一様に照らす納まりや、複数リールを直線状につなぐ長尺の現場では、たとえ1リールずつは規格内でも境目で色差が見えやすいため、SDCM等級とあわせて『同一ロット指定』を発注時に伝えるのが確実です。逆に、点在するダウンライトの補助や、什器の奥に隠れて直接光源が見えない用途であれば5SDCM程度でも実用上問題にならないことが多く、コストを抑えられます。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. SDCM等級が良くてもロットが違うと色が変わりますか？</div>
+        <div class="faq-a">はい、SDCM等級は『そのビン（選別区分）内でのばらつきの大きさ』を示すもので、製造ロットが違えば同じ等級でも目標色の中心が微妙にずれることがあります。たとえば3SDCM品でも、Aロットは楕円の中心がやや黄より、Bロットはやや青よりに寄っていると、それぞれは規格内でも並べると差が見えることがあります。連続施工では、SDCM等級を指定するだけでなく、発注時に同一ロットでまとめて手配し、搬入時に複数リールを同じ調光レベルで隣り合わせに点灯して照合するのが安全です。差が出そうなら区画を分けて割り振ると、境目の色差を目立たなくできます。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>色ばらつき等級・色温度・演色性が明確なLEDテープ</h3>
+      <p>SDCM・色温度・Raの仕様表記が確認できるLEDテープと対応部材を取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープの明るさが系統ごとに揃わない原因と対処法｜複数リール・複数電源で1本だけ暗いを診断 | LED PRO SHOP</title>
+<meta name="description" content="複数系統のLEDテープで明るさがバラつく・1本だけ暗い原因を施工業者向けに診断。電源電圧の個体差、配線長による電圧降下、W/m違い、ロット差、接触不良の切り分け手順と対策を表とチェックリストで整理。均一に光らせる直し方を解説します。">
+<meta property="og:title" content="LEDテープの明るさが系統ごとに揃わない原因と対処法｜複数リール・複数電源で1本だけ暗いを診断 | LED PRO SHOP">
+<meta property="og:description" content="複数系統で明るさがバラつく・1本だけ暗い原因を、電源電圧・配線長・W/m違い・ロット差・接触不良の順に切り分ける手順を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-brightness-mismatch-multiple-runs-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-brightness-mismatch-multiple-runs-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープの明るさが系統ごとに揃わない原因と対処法 | LED PRO SHOP">
+<meta name="twitter:description" content="複数系統で1本だけ暗い原因を、電源電圧・配線長・W/m違い・ロット差・接触不良の順に切り分ける手順を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-brightness-mismatch-multiple-runs-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-brightness-mismatch-multiple-runs-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #0a0f1e; color: #e2e8f0; line-height: 1.7; font-size: 15px; }
+  a { color: #fb923c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #2e1a0a 0%, #46280f 50%, #3a220a 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #7f4a1e; }
+  .hero-badge { display: inline-block; background: #ea580c; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f1f5f9; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #d8a88a; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #a8785e; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f1f5f9; border-left: 4px solid #f97316; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #fdba74; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #cbd5e1; }
+
+  .alert-box { background: #1c1010; border: 1px solid #7f1d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #2a1608; border: 1px solid #7f4a1e; border-left: 4px solid #f97316; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #fed7aa; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #2a1608; border-radius: 10px; overflow: hidden; }
+  thead th { background: #5a3010; color: #fdba74; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #3a2312; color: #cbd5e1; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #241305; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #2a1608; border: 1px solid #c2410c; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #fb923c; margin-top: 0; }
+  .calc-formula { background: #180c04; border: 1px solid #9a3412; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #fdba74; margin: 12px 0; line-height: 2; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #2a1608; border: 1px solid #7f4a1e; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #f97316; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #fdba74; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #d8a88a; margin-bottom: 0; }
+  .method-card .method-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 3px; margin-bottom: 8px; }
+  .badge-easy { background: #5a3010; color: #fb923c; }
+  .badge-mid { background: #713f12; color: #fbbf24; }
+  .badge-pro { background: #5a2a0c; color: #fdba74; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #f97316; color: #180c04; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #cbd5e1; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #3a2312; font-size: 14px; color: #cbd5e1; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #fb923c; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #7f4a1e; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #2a1608; padding: 16px 20px; font-weight: 700; color: #fdba74; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #cbd5e1; background: #180c04; }
+
+  .cta-box { background: linear-gradient(135deg, #5a3010 0%, #46280f 100%); border: 1px solid #f97316; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f1f5f9; margin-bottom: 10px; }
+  .cta-box p { color: #d8a88a; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #ea580c; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #c2410c; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #a8785e; }
+  .breadcrumb a { color: #a8785e; }
+  .breadcrumb a:hover { color: #fdba74; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LEDテープの明るさが系統ごとに揃わない原因と対処法｜複数リール・複数電源で1本だけ暗いを診断",
+  "description": "複数系統のLEDテープで明るさがバラつく・1本だけ暗い原因を、電源電圧の個体差・配線長による電圧降下・W/m違い・ロット差・接触不良の順に切り分ける手順と対策を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-brightness-mismatch-multiple-runs-guide-hero.webp",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "datePublished": "2026-07-03",
+  "dateModified": "2026-07-03",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-brightness-mismatch-multiple-runs-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "LEDテープの明るさが系統ごとに揃わない原因と対処法", "item": "https://led-proshop.com/articles/led-tape-brightness-mismatch-multiple-runs-guide" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "複数系統のLEDテープで1本だけ暗いのはなぜですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1系統だけ暗い場合、まず「その系統の入口の電圧」を測って原因を切り分けます。テープ入口の電圧が他系統より明らかに低ければ、配線長が長い・電線が細い・接続点が多いことによる電圧降下、または接触不良やコネクタの緩みが疑われます。入口の電圧が正常なのに暗いなら、W/m（ワット密度）や品番が違うテープを混在させている、テープの許容長を超えて片側給電で末端まで電圧が届いていない、あるいはテープ自体の劣化・不良が考えられます。電源が系統ごとに別なら、電源の出力電圧の個体差や、その電源だけ容量に対して負荷が過大で電圧が垂れている可能性もあります。テープ入口の電圧・W/m・配線長・接続点の順に確認すると原因を特定しやすいです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "電源を分けたら系統ごとに明るさが違うのはどうすればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "複数の電源を使うと、同じ定格でも出力電圧に個体差があり、系統ごとにわずかな明るさ差が出ることがあります。まず各テープ入口の電圧を測り、電源間で差があるか確認します。電圧調整（ボリューム）付きの電源なら、出力を揃えることで明るさを近づけられます。差が大きい場合は、片方の電源が容量に対して負荷が過大で電圧が垂れていないか、負荷配分を見直します。また、電源が違っても調光を別々の調光器やコントローラーで行っていると、同じ設定値でも明るさがずれることがあるため、系統をまたいで見せる部分は制御をそろえるか、1台の電源・1系統の制御にまとめる設計が確実です。並べて見せる箇所ほど、電源と制御を分けない方が明るさは揃います。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "同じ品番のLEDテープなのに明るさがばらつくことはありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "あります。原因は主に3つで、1つ目は配線長・電線太さ・接続点の数の違いによる電圧降下で、入口までに電圧を失った系統は暗くなります。2つ目は片側給電でテープの許容長を超えている場合で、給電点から遠い末端ほど暗く、色もわずかに変わります。3つ目は製造ロット差で、同じ品番でもロットが違うと明るさや色味が微妙に異なることがあります。切り分けは、各テープ入口の電圧を測って電圧降下を確認し、末端の明るさ低下があれば両端給電や中間給電（パワーインジェクション）で改善し、電圧も末端も正常なのに差が残るならロット差を疑ってリールの割り振りを見直します。連続して見せる箇所は同一ロットでそろえるのが安全です。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">トラブル対処ガイド</div>
+    <h1>LEDテープの明るさが系統ごとに揃わない原因と対処法<br>複数リール・複数電源で「1本だけ暗い」を診断</h1>
+    <p class="hero-sub">「同じ品番で組んだのに、並べると明るさがバラつく」を電圧・配線・W/m・ロットの順に切り分ける手順を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-07-03 | カテゴリ: トラブル対処ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-brightness-mismatch-multiple-runs-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープの明るさが系統ごとに揃わない原因と対処法
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="info-box">
+      <p><strong>この記事の目的</strong>：複数のLEDテープを並べて使ったとき、「1本だけ暗い」「系統ごとに明るさが違う」と言われることがあります。原因は<strong>電圧降下・W/m違い・電源の個体差・許容長超過・ロット差・接触不良</strong>のどれかです。測って切り分ける順番と、均一に光らせる直し方を整理します。</p>
+    </div>
+
+    <h2>まず「入口の電圧」を測って切り分ける</h2>
+
+    <p>明るさが揃わないとき、最初にやるのは<strong>各テープ入口（給電点）の電圧を測る</strong>ことです。ここで大きく2つに分かれます。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>入口の電圧</th>
+          <th>疑う原因</th>
+          <th>主な対処</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tag-ng">他系統より低い</td>
+          <td>配線長・細い電線・接続点での電圧降下／接触不良／電源の垂れ</td>
+          <td>電線を太く・短く／接続点点検／電源電圧調整・容量見直し</td>
+        </tr>
+        <tr>
+          <td class="tag-ok">正常なのに暗い</td>
+          <td>W/m・品番違いの混在／許容長超過／ロット差／テープ劣化</td>
+          <td>仕様統一／両端・中間給電／同一ロット割り振り／該当テープ交換</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <p><strong>ポイント</strong>：明るさの差は「電気が届いていない（電圧の問題）」か「テープそのものが違う（仕様・ロットの問題）」のどちらかに必ず分かれます。入口電圧を測るだけで、追う方向が半分に絞れます。</p>
+    </div>
+
+    <h2>系統ごとに明るさがバラつく5つの原因</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-badge badge-easy">電圧降下</div>
+        <div class="method-num">①</div>
+        <h4>配線が長い・細い・接続が多い</h4>
+        <p>給電までの電線が長い・細い、接続点が多い系統は入口電圧が下がり暗くなる。電線を太く短く、接続を減らす。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-easy">許容長超過</div>
+        <div class="method-num">②</div>
+        <h4>片側給電で末端が暗い</h4>
+        <p>テープの許容長を超えて片側だけから給電すると末端が暗く色も変わる。両端給電・中間給電で改善。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-mid">仕様違い</div>
+        <div class="method-num">③</div>
+        <h4>W/m・品番の混在</h4>
+        <p>W/mや品番が違うテープを並べると明るさが揃わない。並べて見せる箇所は仕様を統一する。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-mid">電源差</div>
+        <div class="method-num">④</div>
+        <h4>電源の出力電圧の個体差</h4>
+        <p>系統ごとに別電源だと出力電圧に差が出る。電圧調整で揃える、負荷過大で垂れていないか確認。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-badge badge-pro">ロット差</div>
+        <div class="method-num">⑤</div>
+        <h4>同じ品番でもロットで差</h4>
+        <p>電圧も末端も正常なのに差が残るならロット差。連続して見せる箇所は同一ロットで割り振る。</p>
+      </div>
+    </div>
+
+    <h2>診断手順（測って絞り込む）</h2>
+
+    <ul class="step-list">
+      <li><span>暗い系統と正常な系統の<strong>テープ入口の電圧</strong>をそれぞれ測り、差があるか確認する。</span></li>
+      <li><span>入口電圧が低ければ、<strong>電線の長さ・太さ・接続点</strong>を確認し、接触不良・緩みも点検する。</span></li>
+      <li><span>入口電圧が正常なら、<strong>W/m・品番</strong>が同じか、テープの<strong>許容長</strong>を超えていないか確認する。</span></li>
+      <li><span>末端が特に暗く色も変わっていれば<strong>電圧降下・許容長超過</strong>。両端給電・中間給電を検討する。</span></li>
+      <li><span>電源が系統別なら、各<strong>電源の出力電圧</strong>を測り、負荷過大で垂れていないか・調整で揃うか見る。</span></li>
+      <li><span>電圧も末端も正常で仕様も同じなら<strong>ロット差</strong>を疑い、リールの割り振りを見直す。</span></li>
+    </ul>
+
+    <div class="calc-box">
+      <h3>電圧降下による明るさ差の考え方</h3>
+      <div class="calc-formula">
+テープ入口電圧 = 電源出力電圧 − 配線での電圧降下
+
+電圧降下 ≒ 電流(A) × 電線抵抗(往復)
+
+ ↓
+
+・配線が長い／細い → 抵抗大 → 降下大 → 入口電圧が低い → 暗い
+
+・接続点が多い・緩い → 接触抵抗 → その分さらに降下
+
+対策：電線を太く・短く／接続を減らす・確実に締める／
+　　　末端が暗いなら両端給電・中間給電（パワーインジェクション）
+      </div>
+      <p style="color:#fdba74; font-size:13px; margin-top:12px; margin-bottom:0">
+        ※ 明るさは電圧に敏感です。わずかな入口電圧差でも並べると見た目の差になります。<br>
+        ※ 具体的な電圧降下の計算・許容長・給電方法は、電圧降下／最大接続長／パワーインジェクションの各ガイドも参照してください。
+      </p>
+    </div>
+
+    <h2>原因別の対処一覧</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>症状</th>
+          <th>切り分けの確認</th>
+          <th>対処</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1系統だけ全体が暗い</td>
+          <td>入口電圧が低い</td>
+          <td>電線を太く短く・接続点点検・電源電圧調整</td>
+        </tr>
+        <tr>
+          <td>給電側は明るく末端が暗い</td>
+          <td>許容長超過・片側給電</td>
+          <td>両端給電・中間給電で末端まで電圧を届ける</td>
+        </tr>
+        <tr>
+          <td>並べた系統で明るさが段違い</td>
+          <td>W/m・品番が違う</td>
+          <td>並べる箇所は仕様を統一する</td>
+        </tr>
+        <tr>
+          <td>電源を分けた系統でだけ差</td>
+          <td>電源出力電圧の個体差・容量不足</td>
+          <td>電圧調整で揃える・負荷配分見直し</td>
+        </tr>
+        <tr>
+          <td>電圧も仕様も同じで微差が残る</td>
+          <td>製造ロット差</td>
+          <td>同一ロットで割り振る・区画を分ける</td>
+        </tr>
+        <tr>
+          <td>時々ちらつきながら暗い</td>
+          <td>接触不良・コネクタ緩み</td>
+          <td>接続をやり直す・確実に締結する</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert-box">
+      <div class="alert-title">「明るさが違う＝不良品」と決めつけない</div>
+      <p>系統ごとの明るさ差は、テープの不良より<strong>配線・給電・電源の設計</strong>で起きることが多いです。入口電圧を測らずに「片方が不良」と判断して交換しても、配線長や給電方法が原因なら新品でも同じ差が出ます。まず入口電圧を測り、電気が届いているかを確認してから、仕様・許容長・ロットへと切り分けてください。並べて見せる箇所は、最初から電源と制御をまとめ、同一ロット・同一W/mでそろえる設計にすると差が出にくくなります。</p>
+    </div>
+
+    <h2>診断チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>暗い系統と正常な系統のテープ入口電圧を測って比べた</li>
+      <li>入口電圧が低い系統は電線の長さ・太さ・接続点を確認した</li>
+      <li>接触不良・コネクタの緩みを点検した</li>
+      <li>並べる系統でW/m・品番が同じか確認した</li>
+      <li>テープの許容長を超えて片側給電になっていないか確認した</li>
+      <li>末端が暗く色も変わる場合は両端・中間給電を検討した</li>
+      <li>電源が系統別なら各電源の出力電圧・負荷配分を確認した</li>
+      <li>電圧も仕様も同じで差が残る場合はロット差を疑い割り振りを見直した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 複数系統のLEDテープで1本だけ暗いのはなぜですか？</div>
+        <div class="faq-a">1系統だけ暗い場合、まず「その系統の入口の電圧」を測って原因を切り分けます。テープ入口の電圧が他系統より明らかに低ければ、配線長が長い・電線が細い・接続点が多いことによる電圧降下、または接触不良やコネクタの緩みが疑われます。入口の電圧が正常なのに暗いなら、W/m（ワット密度）や品番が違うテープを混在させている、テープの許容長を超えて片側給電で末端まで電圧が届いていない、あるいはテープ自体の劣化・不良が考えられます。電源が系統ごとに別なら、電源の出力電圧の個体差や、その電源だけ容量に対して負荷が過大で電圧が垂れている可能性もあります。テープ入口の電圧・W/m・配線長・接続点の順に確認すると原因を特定しやすいです。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 電源を分けたら系統ごとに明るさが違うのはどうすればいいですか？</div>
+        <div class="faq-a">複数の電源を使うと、同じ定格でも出力電圧に個体差があり、系統ごとにわずかな明るさ差が出ることがあります。まず各テープ入口の電圧を測り、電源間で差があるか確認します。電圧調整（ボリューム）付きの電源なら、出力を揃えることで明るさを近づけられます。差が大きい場合は、片方の電源が容量に対して負荷が過大で電圧が垂れていないか、負荷配分を見直します。また、電源が違っても調光を別々の調光器やコントローラーで行っていると、同じ設定値でも明るさがずれることがあるため、系統をまたいで見せる部分は制御をそろえるか、1台の電源・1系統の制御にまとめる設計が確実です。並べて見せる箇所ほど、電源と制御を分けない方が明るさは揃います。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 同じ品番のLEDテープなのに明るさがばらつくことはありますか？</div>
+        <div class="faq-a">あります。原因は主に3つで、1つ目は配線長・電線太さ・接続点の数の違いによる電圧降下で、入口までに電圧を失った系統は暗くなります。2つ目は片側給電でテープの許容長を超えている場合で、給電点から遠い末端ほど暗く、色もわずかに変わります。3つ目は製造ロット差で、同じ品番でもロットが違うと明るさや色味が微妙に異なることがあります。切り分けは、各テープ入口の電圧を測って電圧降下を確認し、末端の明るさ低下があれば両端給電や中間給電（パワーインジェクション）で改善し、電圧も末端も正常なのに差が残るならロット差を疑ってリールの割り振りを見直します。連続して見せる箇所は同一ロットでそろえるのが安全です。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>明るさ・W/m・電源仕様が明確なLEDテープ</h3>
+      <p>W/m・電圧・許容長の表記が確認できるLEDテープと対応電源・配線部材を取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
