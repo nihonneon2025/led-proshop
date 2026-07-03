@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LED電源を複数台使う配線｜並列運転・負荷分担・幹線設計の手順【施工業者向け】 | LED PRO SHOP</title>
+  <meta name="description" content="長尺・大面積のLEDテープで電源を複数台に分けたい施工業者向け。1系統に電源を分散する「負荷分担」の設計手順、電源出力を並列につないでよいか、系統分割と電圧降下の関係、100V幹線（一次側）の分岐とブレーカー・電線サイズの考え方を計算例つきで解説します。">
+  <meta name="keywords" content="LED電源 複数台 配線,LED電源 並列 負荷分担,LEDテープ 電源 分散,電源 系統分割 設計,LED 幹線 分岐 ブレーカー,電源 出力 並列 つなぐ,LEDテープ 大面積 電源,電源容量 分割">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-parallel-power-supply-load-sharing-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-parallel-power-supply-load-sharing-guide">
+  <meta property="og:title" content="LED電源を複数台使う配線｜並列運転・負荷分担・幹線設計の手順【施工業者向け】 | LED PRO SHOP">
+  <meta property="og:description" content="LEDテープの電源を複数台に分ける負荷分担の設計手順、出力の並列可否、系統分割と電圧降下、100V幹線の分岐・ブレーカー・電線サイズの考え方を計算例つきで施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-parallel-power-supply-load-sharing-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LED電源を複数台使う配線｜並列運転・負荷分担・幹線設計の手順 | LED PRO SHOP">
+  <meta name="twitter:description" content="LED電源を複数台に分ける負荷分担の設計手順、出力の並列可否、系統分割と電圧降下、100V幹線の分岐・ブレーカー・電線サイズを計算例つきで施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-parallel-power-supply-load-sharing-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LED電源を複数台使う配線｜並列運転・負荷分担・幹線設計の手順",
+    "description": "長尺・大面積のLEDテープで電源（PSU）を複数台に分けるときの負荷分担の設計手順、二次側出力を並列につないでよいか、系統分割と電圧降下の関係、100V幹線（一次側）の分岐・ブレーカー・電線サイズの考え方を計算例つきで施工業者向けに整理します。",
+    "image": "https://led-proshop.com/articles/images/led-tape-parallel-power-supply-load-sharing-guide-hero.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP 編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://led-proshop.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-07-04",
+    "dateModified": "2026-07-04",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-parallel-power-supply-load-sharing-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LED電源を複数台使う配線｜並列運転・負荷分担・幹線設計の手順", "item": "https://led-proshop.com/articles/led-tape-parallel-power-supply-load-sharing-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "LED電源（定電圧電源）の出力（二次側）を並列につないで容量を増やしてもよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "原則としてやめてください。並列運転（電流分担・冗長化）に対応すると明記された電源以外は、二次側（12V/24V出力）の＋同士・−同士を単純に並列接続してはいけません。各電源の出力電圧はわずかにばらつくため、電圧が高い1台に電流が偏り、その電源が過負荷・過熱・保護停止し、玉突きで残りも落ちる（片寄り・ホットスワップ失敗）ことがあります。容量を増やしたいときは、テープを区間で分けて『1区間＝1電源』とする負荷分担が基本です。どうしても1つの負荷を大容量で駆動したい場合のみ、並列運転（カレントシェアリング）対応の電源を使い、メーカー指定の均等化配線・ダイオードORなどの方法に従います。" }
+      },
+      {
+        "@type": "Question",
+        "name": "電源を複数台に分けるとき、どこで区間を切ればよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "1台あたりの負荷（W）と、テープの最大接続長・電圧降下の両方で決めます。まず各電源の定格の70〜80%を上限に、そこに収まるテープのm数を割り当てます（例：200W電源×0.8＝160Wまで、14.4W/mのテープなら約11mまで）。次に、その区間長がテープの許容電圧降下（末端で定格電圧の一定割合以内）を超えないかを確認し、超えるなら電源をテープ中央に置いて左右に給電する『中央給電』や、区間をさらに分けます。結果として『負荷で切る長さ』と『電圧降下で切る長さ』の短いほうが、その電源の担当区間になります。分けた区間は二次側を互いに接続せず独立させ、点灯タイミングのズレが気になる場合は一次側スイッチを共通化します。" }
+      },
+      {
+        "@type": "Question",
+        "name": "100V側（一次側）は電源1台ごとにブレーカーが要りますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "台数と合計電流しだいです。複数の電源を1つの分岐回路（例：20Aブレーカー）にまとめてよいかは、各電源の一次側電流の合計と突入電流で判断します。定常電流は『合計W ÷ 力率 ÷ 100V』で概算し、分岐回路の連続使用は定格の80%以内（20Aなら16A程度）に収めます。加えてLED電源は電源投入時の突入電流が定格の数倍〜数十倍と大きく、同時投入台数が多いとブレーカーが瞬時にトリップすることがあるため、突入電流対策（時限式ブレーカーの選定、投入タイミングの分散、突入電流抑制ユニット）を検討します。大規模で台数が多い現場は、系統ごとに分岐回路とブレーカーを分け、電線サイズも合計電流に合わせて選定します。一次側配線は電気工事士による施工が必要です。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#0f3b5c;--blue-pale:#e8f1f8;--bg:#fff;--bg-gray:#fbf6ef;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#ddd3c4;--red:#c0392b;--accent:#c47a0e;--accent-pale:#fdf1dd;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #0a2a42}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px;text-decoration:none}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--accent);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#5c3a0a 0%,#c47a0e 55%,#7a4d0a 100%);padding:40px 16px 32px;border-bottom:3px solid #7a4d0a}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:4px;padding:14px}
+    .spec-card .spec-label{font-size:10px;font-weight:700;color:var(--text-muted);letter-spacing:1px;display:block;margin-bottom:5px}
+    .spec-card .spec-value{font-size:17px;font-weight:900;color:var(--accent);line-height:1.25}
+    .spec-card .spec-note{font-size:11px;color:var(--text-sub);margin-top:6px;line-height:1.5}
+    .checklist{list-style:none!important;padding:0!important;margin:16px 0}
+    .checklist li{position:relative;padding:9px 8px 9px 32px;border-bottom:1px solid var(--border);font-size:13px;line-height:1.6}
+    .checklist li::before{content:"✓";position:absolute;left:8px;top:9px;color:var(--accent);font-weight:900}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:var(--accent-pale)}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:var(--accent-pale)}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>LED電源を複数台使う配線｜並列運転・負荷分担・幹線設計の手順</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">施工方法ガイド</div>
+    <h1>LED電源を複数台使う配線｜並列運転・負荷分担・幹線設計の手順<br>長尺・大面積で電源を分けるときの区間の切り方【施工業者向け】</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-07-04</span>
+      <span>更新日: 2026-07-04</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/blue_desk.webp"
+      alt="複数台のLED電源を負荷分担で配線する幹線設計のイメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>間接照明が長く回る店舗、大面積の光天井、複数フロアにまたがるサインなど、1台の電源では容量が足りない現場では<strong>電源（PSU）を複数台に分けて使う</strong>ことになります。ここで「出力を並列につないで容量を増やせばいい」と考えると、電流の片寄りや保護停止の玉突きで事故につながります。正しいのは、テープを区間で分けて<strong>1区間＝1電源の「負荷分担」</strong>で設計することです。本記事では、複数台の電源をどこで切り、二次側（12V/24V）と一次側（100V幹線）をどう配線するかを、計算例つきで施工業者向けに整理します。</p>
+
+      <div class="article-callout warn">
+        <p><strong>先に結論:</strong> 複数電源の基本は<strong>「二次側出力は並列にせず、テープを区間ごとに独立させて1区間＝1電源」</strong>。外せないのは、<strong>(1)各電源は定格の70〜80%を上限に負荷を割り当てる</strong>、<strong>(2)区間長は電圧降下でも切る（負荷と電圧降下の短いほうが担当区間）</strong>、<strong>(3)一次側は合計電流と突入電流で分岐回路・ブレーカー・電線を選ぶ</strong>の3点。出力の並列は「並列運転対応」電源に限ります。</p>
+      </div>
+
+      <h2 id="sec-why">なぜ電源を分けるのか — 容量・電圧降下・冗長性</h2>
+      <p>電源を複数台に分ける理由は主に3つです。</p>
+      <ul>
+        <li><strong>容量（W）が足りない:</strong> テープの合計消費電力が1台の定格を超える。これが最も多い理由です。</li>
+        <li><strong>電圧降下を抑えたい:</strong> 長尺を1台の端から給電すると末端が暗くなる。電源を分散配置すれば給電点が増え、末端までの距離が短くなります（<a href="/articles/led-tape-voltage-drop-guide">電圧降下ガイド</a>参照）。</li>
+        <li><strong>系統を分けたい:</strong> フロア・シーンごとに独立させたい、1台故障時に全消灯を避けたい。</li>
+      </ul>
+      <p>いずれの理由でも、設計の出発点は「合計負荷を出して、1台あたりの担当を決める」ことです。電源1台の容量選定そのものは<a href="/articles/led-tape-psu-capacity-guide">電源容量の選び方ガイド</a>を先に押さえてください。</p>
+
+      <h2 id="sec-parallel">出力（二次側）の並列はNG — 負荷分担が基本</h2>
+      <p>「12V/24Vの出力を＋同士・−同士でつなげば容量2倍」——これは<strong>並列運転対応と明記された電源以外ではやってはいけません</strong>。理由は電圧の個体差です。</p>
+      <table>
+        <thead>
+          <tr><th>やり方</th><th>挙動</th><th>可否</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>非対応電源の出力を単純並列</td><td>電圧が高い1台に電流が集中→過負荷・過熱・保護停止→玉突きで全体ダウン</td><td><strong>NG</strong></td></tr>
+          <tr><td>負荷分担（1区間＝1電源で独立）</td><td>各電源が自分の区間だけ給電。片寄りなし・故障が局所で済む</td><td><strong>推奨</strong></td></tr>
+          <tr><td>並列運転対応電源＋均等化配線</td><td>カレントシェアリングで電流を均等分担。冗長化も可</td><td>可（メーカー指定に従う）</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout warn">
+        <p><strong>要注意:</strong> 負荷分担で分けた区間は、<strong>二次側を互いに接続しない</strong>（＋も−も渡さない）のが原則です。特に<strong>−（GND）を区間間で共通にすると、電源間で電位差により回り込み電流が流れ</strong>、片方の保護が働く・発熱するといった不具合になります。RGBやアドレサブルで信号のGND基準を揃える必要がある場合のみ、メーカー指定に従って信号GNDを慎重に扱います。</p>
+      </div>
+
+      <h2 id="sec-cut">区間の切り方 — 負荷と電圧降下の短いほうで切る</h2>
+      <p>1台が担当できる長さは、<strong>「負荷（W）で決まる長さ」と「電圧降下で決まる長さ」の短いほう</strong>です。両方を計算して、短いほうをその電源の区間にします。</p>
+      <h3 id="sec-calc-load">① 負荷（W）で決まる長さ</h3>
+      <p>電源は定格の70〜80%を上限に使います（連続使用・発熱・寿命の余裕）。</p>
+      <ul>
+        <li>使える出力 ＝ 電源定格 × 0.8</li>
+        <li>担当できるm数 ＝ 使える出力 ÷ テープのW/m</li>
+      </ul>
+      <p><strong>例:</strong> 200W電源、14.4W/mのテープ → 200 × 0.8 ＝ 160W → 160 ÷ 14.4 ≒ <strong>約11m</strong>。</p>
+      <h3 id="sec-calc-vd">② 電圧降下で決まる長さ</h3>
+      <p>テープは末端まで電流が流れるほど電圧が下がり、末端が暗くなります。片端給電での許容長を超えるなら、電源を区間の中央に置いて左右に給電する<strong>「中央給電」</strong>にすると、実効的な給電距離が半分になり倍の長さを扱えます。</p>
+      <table>
+        <thead>
+          <tr><th>給電方法</th><th>実効給電距離</th><th>効果</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>片端給電</td><td>区間長そのまま</td><td>基本。末端が最も暗い</td></tr>
+          <tr><td>中央給電（左右へ分岐）</td><td>区間長の1/2</td><td>同じ電圧降下で約2倍の長さを扱える</td></tr>
+          <tr><td>両端給電（両端から給電）</td><td>区間長の1/2</td><td>末端の暗さを緩和。24V化・太線化と併用</td></tr>
+        </tbody>
+      </table>
+      <p>電圧降下の許容値やケーブル太さの計算は<a href="/articles/led-tape-voltage-drop-guide">電圧降下ガイド</a>・<a href="/articles/led-tape-cable-gauge-guide">電線太さ（sq）選定ガイド</a>で確認してください。24Vテープは同じ長さでも電圧降下の影響が小さく、長尺で有利です（<a href="/articles/led-tape-12v-vs-24v-guide">12V/24V比較</a>）。</p>
+
+      <div class="spec-grid">
+        <div class="spec-card">
+          <span class="spec-label">電源の負荷率上限</span>
+          <span class="spec-value">70–80%</span>
+          <span class="spec-note">連続使用・発熱・寿命の余裕。定格いっぱいで使わない。</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">二次側出力</span>
+          <span class="spec-value">並列NG</span>
+          <span class="spec-note">並列運転対応品以外は区間ごと独立。GNDも渡さない。</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">区間長の決定</span>
+          <span class="spec-value">短い方</span>
+          <span class="spec-note">負荷で切る長さと電圧降下で切る長さの短いほう。</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">中央給電</span>
+          <span class="spec-value">距離1/2</span>
+          <span class="spec-note">電源を区間中央に置き左右へ。長尺で有効。</span>
+        </div>
+      </div>
+
+      <h2 id="sec-primary">一次側（100V幹線）の設計 — 分岐・ブレーカー・電線</h2>
+      <p>電源が複数になると、100V側の幹線・分岐・ブレーカー容量も設計対象になります。ここは電気工事士の領域です。</p>
+      <h3 id="sec-primary-current">一次側電流の概算</h3>
+      <p>各電源の一次側電流を出し、合計が分岐回路の許容内かを見ます。</p>
+      <ul>
+        <li>一次側電流（A）≒ 電源の入力W ÷ 100V（力率が明記されていればさらに ÷ 力率）</li>
+        <li>入力W ≒ 出力W ÷ 効率（効率88%なら出力160W → 入力約182W → 約1.8A/台）</li>
+        <li>分岐回路の連続負荷は定格の80%以内（20Aなら16Aまで）</li>
+      </ul>
+      <p><strong>例:</strong> 1.8A/台の電源を20A分岐回路にまとめる場合、16A ÷ 1.8A ≒ <strong>約8台まで</strong>（突入電流の余裕を別途見る）。</p>
+      <table>
+        <thead>
+          <tr><th>項目</th><th>考え方・目安</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>定常電流の合計</td><td>各電源の一次側電流の合計。分岐回路定格の80%以内に。</td></tr>
+          <tr><td>突入電流（インラッシュ）</td><td>投入時に定格の数倍〜数十倍。同時投入台数が多いとトリップ（<a href="/articles/led-power-inrush-current-breaker-trip-guide">突入電流ガイド</a>）。</td></tr>
+          <tr><td>ブレーカー</td><td>同時投入が多い系統は時限特性（遅延）タイプや突入抑制ユニットを検討。</td></tr>
+          <tr><td>電線サイズ</td><td>幹線・分岐とも合計電流に対して許容電流・電圧降下で選定（<a href="/articles/led-tape-cable-gauge-guide">sq選定</a>）。</td></tr>
+          <tr><td>系統分割</td><td>大規模は系統ごとに分岐回路・ブレーカーを分け、同時投入を分散。</td></tr>
+        </tbody>
+      </table>
+      <p class="article-callout tip" style="font-size:13px"><strong>ワンポイント:</strong> 同時に多数の電源へ通電すると突入電流が重なり、定常電流には余裕があってもブレーカーが瞬時にトリップします。台数が多い現場は<strong>系統をずらして投入する（タイマー分散）</strong>か、<strong>突入電流抑制ユニット</strong>を入れると再現性のあるトラブルを防げます。</p>
+
+      <h2 id="sec-onoff">点灯タイミングと一括ON/OFF</h2>
+      <p>区間を独立させると、電源ごとに点灯・消灯のタイミングが微妙にずれることがあります。見た目を揃えたい・一括で操作したい場合は次のようにします。</p>
+      <ul>
+        <li><strong>一次側スイッチを共通化:</strong> 複数電源の100V側を1つのスイッチ／リレー／電磁接触器でまとめてON/OFF（大電流はマグネットコンタクタ、詳細は<a href="/articles/led-tape-magnetic-contactor-bulk-switching-guide">一括開閉ガイド</a>）。</li>
+        <li><strong>調光も一次側または信号で共通化:</strong> 位相調光なら一次側、0-10V/DALIなら信号線を各電源へ渡して一斉制御。</li>
+        <li><strong>起動遅延の揃え:</strong> 電源に起動遅延（ソフトスタート）があると点灯タイミングがずれることがある。気になる場合は同一機種で揃える（<a href="/articles/led-tape-startup-delay-guide">起動遅延ガイド</a>）。</li>
+      </ul>
+
+      <h2 id="sec-checklist">複数台電源の設計チェックリスト</h2>
+      <ul class="checklist">
+        <li>合計消費電力を算出し、各電源は定格の70〜80%以内で割り当てた</li>
+        <li>二次側出力は区間ごとに独立させ、並列（＋・−とも）にしていない</li>
+        <li>区間長は「負荷で切る長さ」と「電圧降下で切る長さ」の短いほうにした</li>
+        <li>長尺は中央給電・両端給電・24V化で電圧降下を抑えた</li>
+        <li>一次側の合計電流が分岐回路定格の80%以内に収まっている</li>
+        <li>同時投入の突入電流対策（系統分散・時限ブレーカー・抑制ユニット）を検討した</li>
+        <li>一括ON/OFF・調光の共通化と点灯タイミングを確認した</li>
+        <li>一次側配線は電気工事士が施工する前提で計画した</li>
+      </ul>
+
+      <h2 id="sec-faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">LED電源（定電圧電源）の出力（二次側）を並列につないで容量を増やしてもよいですか？</div>
+        <div class="faq-a">原則としてやめてください。並列運転（電流分担・冗長化）に対応すると明記された電源以外は、二次側（12V/24V出力）の＋同士・−同士を単純に並列接続してはいけません。各電源の出力電圧はわずかにばらつくため、電圧が高い1台に電流が偏り、その電源が過負荷・過熱・保護停止し、玉突きで残りも落ちる（片寄り・ホットスワップ失敗）ことがあります。容量を増やしたいときは、テープを区間で分けて「1区間＝1電源」とする負荷分担が基本です。どうしても1つの負荷を大容量で駆動したい場合のみ、並列運転（カレントシェアリング）対応の電源を使い、メーカー指定の均等化配線・ダイオードORなどの方法に従います。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">電源を複数台に分けるとき、どこで区間を切ればよいですか？</div>
+        <div class="faq-a">1台あたりの負荷（W）と、テープの最大接続長・電圧降下の両方で決めます。まず各電源の定格の70〜80%を上限に、そこに収まるテープのm数を割り当てます（例：200W電源×0.8＝160Wまで、14.4W/mのテープなら約11mまで）。次に、その区間長がテープの許容電圧降下（末端で定格電圧の一定割合以内）を超えないかを確認し、超えるなら電源をテープ中央に置いて左右に給電する「中央給電」や、区間をさらに分けます。結果として「負荷で切る長さ」と「電圧降下で切る長さ」の短いほうが、その電源の担当区間になります。分けた区間は二次側を互いに接続せず独立させ、点灯タイミングのズレが気になる場合は一次側スイッチを共通化します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">100V側（一次側）は電源1台ごとにブレーカーが要りますか？</div>
+        <div class="faq-a">台数と合計電流しだいです。複数の電源を1つの分岐回路（例：20Aブレーカー）にまとめてよいかは、各電源の一次側電流の合計と突入電流で判断します。定常電流は「合計W ÷ 力率 ÷ 100V」で概算し、分岐回路の連続使用は定格の80%以内（20Aなら16A程度）に収めます。加えてLED電源は電源投入時の突入電流が定格の数倍〜数十倍と大きく、同時投入台数が多いとブレーカーが瞬時にトリップすることがあるため、突入電流対策（時限式ブレーカーの選定、投入タイミングの分散、突入電流抑制ユニット）を検討します。大規模で台数が多い現場は、系統ごとに分岐回路とブレーカーを分け、電線サイズも合計電流に合わせて選定します。一次側配線は電気工事士による施工が必要です。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-tape-psu-capacity-guide">
+              <img src="/images/hero-scenes/lightblue_desk.webp" alt="LED電源の容量選定ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">仕様選定ガイド</span>
+                <div class="rac-title">LEDテープの電源容量（W）の選び方と余裕率</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-voltage-drop-guide">
+              <img src="/images/hero-scenes/blue_desk.webp" alt="LEDテープの電圧降下ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <div class="rac-title">LEDテープの電圧降下｜末端が暗い原因と計算・対策</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-centralized-vs-distributed-power-guide">
+              <img src="/images/hero-scenes/purple_desk.webp" alt="集中電源と分散電源の比較" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工方法ガイド</span>
+                <div class="rac-title">LEDテープの集中電源と分散電源｜配置の選び方</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-power-inrush-current-breaker-trip-guide">
+              <img src="/images/hero-scenes/bar_lounge.webp" alt="突入電流とブレーカートリップ対策" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <div class="rac-title">LED電源の突入電流でブレーカーが落ちる原因と対策</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>大面積・長尺に対応する業務用LED電源をプロ価格で</h2>
+        <p>各種容量の定電圧電源（12V/24V）、並列運転対応モデル、一括開閉用の制御機器を取り揃えています。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">商品ラインナップを見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-07-04</span>
+        <span>更新日: 2026-07-04</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源装置の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-tape-psu-capacity-guide">電源容量（W）の選び方</a></li>
+        <li><a href="/articles/led-tape-voltage-drop-guide">電圧降下と末端の暗さ対策</a></li>
+        <li><a href="/articles/led-tape-centralized-vs-distributed-power-guide">集中電源と分散電源の配置</a></li>
+        <li><a href="/articles/led-tape-cable-gauge-guide">電線太さ（sq）の選定</a></li>
+        <li><a href="/articles/led-power-inrush-current-breaker-trip-guide">突入電流とブレーカートリップ</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/psu/">業務用PSU（12V/24V 各容量）</a></li>
+        <li><a href="/category/controller/">一括開閉・制御機器</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム各種</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>

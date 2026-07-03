@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープのトライアック調光（前方位相・後方位相）の違いと対応電源の選び方 | LED PRO SHOP</title>
+  <meta name="description" content="既設の壁埋込調光器（100V位相調光）でLEDテープを調光したい施工業者向け。前方位相（リーディングエッジ）と後方位相（トレイリングエッジ）の違い、白熱灯用調光器を流用したときのちらつき・うなり・立ち消えの原因、対応電源（トライアック調光ドライバー）の選び方と最小負荷・接続台数の考え方を現場目線で解説します。">
+  <meta name="keywords" content="LEDテープ トライアック調光,前方位相 後方位相 違い,位相調光 LED ちらつき,白熱灯 調光器 LED 流用,リーディングエッジ トレイリングエッジ,位相調光 対応電源,LED 調光 うなり,最小負荷 位相調光">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-triac-leading-trailing-edge-dimming-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-triac-leading-trailing-edge-dimming-guide">
+  <meta property="og:title" content="LEDテープのトライアック調光（前方位相・後方位相）の違いと対応電源の選び方 | LED PRO SHOP">
+  <meta property="og:description" content="前方位相と後方位相の違い、白熱灯用調光器を流用したときのちらつき・うなり・立ち消えの原因、位相調光対応ドライバーの選び方と最小負荷・接続台数を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-triac-leading-trailing-edge-dimming-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープのトライアック調光（前方位相・後方位相）の違いと対応電源の選び方 | LED PRO SHOP">
+  <meta name="twitter:description" content="前方位相／後方位相の違い、白熱灯用調光器を流用した時のちらつき・うなり・立ち消えの原因、位相調光対応ドライバーの選び方・最小負荷・接続台数を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-triac-leading-trailing-edge-dimming-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープのトライアック調光（前方位相・後方位相）の違いと対応電源の選び方",
+    "description": "既設の100V位相調光器でLEDテープを調光する際の、前方位相（リーディングエッジ）と後方位相（トレイリングエッジ）の違い、白熱灯用調光器を流用した時のちらつき・うなり・立ち消えの原因、位相調光対応ドライバー（トライアック調光電源）の選び方、最小負荷・接続台数・調光下限の考え方を施工業者向けに整理します。",
+    "image": "https://led-proshop.com/articles/images/led-tape-triac-leading-trailing-edge-dimming-guide-hero.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP 編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://led-proshop.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-07-04",
+    "dateModified": "2026-07-04",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-triac-leading-trailing-edge-dimming-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープのトライアック調光（前方位相・後方位相）の違いと対応電源の選び方", "item": "https://led-proshop.com/articles/led-tape-triac-leading-trailing-edge-dimming-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "既設の白熱灯用調光器をそのまま使ってLEDテープを調光できますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "そのままでは正常に調光できないことが多く、原則は「位相調光対応のLED電源（トライアック調光ドライバー）」に交換前提で考えます。既設の壁埋込調光器の多くは白熱灯用の前方位相（リーディングエッジ／トライアック式）で、これはLED負荷では最小負荷不足やインダクタ・コンデンサとの相性でちらつき・うなり・立ち消え・調光下限で消えるといった不具合が出やすいです。どうしても既設調光器を活かす場合は、その調光器が前方位相か後方位相かを確認し、同じ方式で調光できると明記された位相調光対応ドライバーを選び、最小負荷（例：15W以上など）を満たす台数・W数で構成します。調光器そのものをLED対応（前後方位相切替式など）に更新できるなら、そのほうが安定します。" }
+      },
+      {
+        "@type": "Question",
+        "name": "前方位相（リーディングエッジ）と後方位相（トレイリングエッジ）はどう使い分けますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "電源の入力回路の種類で選びます。前方位相は交流波形の頭を切る方式でトライアック式に多く、白熱灯・一部のLED電源に対応します。後方位相は波形の後ろを切る方式でMOSFET式に多く、電子トランスやコンデンサ入力のLED電源と相性が良く、うなり音が小さく調光がなめらかな傾向があります。原則は『使うLED電源（ドライバー）のデータシートが指定する方式』に合わせることです。ドライバーが後方位相専用なら後方位相の調光器を、前方位相専用なら前方位相の調光器を使います。方式が不明・混在する現場では、前後方位相を切り替えられるユニバーサル調光器を使うと外しにくくなります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "位相調光でちらつく・うなる・調光下限で消えるのはなぜですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "多くは『調光器とLED電源の相性』か『最小負荷不足』が原因です。位相調光器はもともと白熱灯のような抵抗負荷を想定しており、LED電源（スイッチング電源）は入力電流の波形が異なるため、トライアックの保持電流を満たせず点滅（ちらつき）したり、コイル鳴き（うなり）を起こしたりします。対処は、(1)調光器の方式（前方／後方位相）をドライバー指定に合わせる、(2)接続W数が調光器の最小負荷を下回らないよう台数・W数を確保する、(3)最小負荷が足りないときは負荷補償ユニット（ダミーロード）を追加する、(4)調光下限で消えるなら調光下限（最小調光率）を調整できるドライバーや、位相調光より安定する0-10V／PWM／DALIへ方式変更を検討する、の順で切り分けます。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#0f3b5c;--blue-pale:#e8f1f8;--bg:#fff;--bg-gray:#f5f3fb;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d5d0dd;--red:#c0392b;--accent:#7a4fa8;--accent-pale:#f1ecf9;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #0a2a42}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px;text-decoration:none}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--accent);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#3a2456 0%,#7a4fa8 55%,#4d2f73 100%);padding:40px 16px 32px;border-bottom:3px solid #4d2f73}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:4px;padding:14px}
+    .spec-card .spec-label{font-size:10px;font-weight:700;color:var(--text-muted);letter-spacing:1px;display:block;margin-bottom:5px}
+    .spec-card .spec-value{font-size:17px;font-weight:900;color:var(--accent);line-height:1.25}
+    .spec-card .spec-note{font-size:11px;color:var(--text-sub);margin-top:6px;line-height:1.5}
+    .checklist{list-style:none!important;padding:0!important;margin:16px 0}
+    .checklist li{position:relative;padding:9px 8px 9px 32px;border-bottom:1px solid var(--border);font-size:13px;line-height:1.6}
+    .checklist li::before{content:"✓";position:absolute;left:8px;top:9px;color:var(--accent);font-weight:900}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:var(--accent-pale)}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:var(--accent-pale)}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>LEDテープのトライアック調光（前方位相・後方位相）の違いと対応電源の選び方</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">仕様選定ガイド</div>
+    <h1>LEDテープのトライアック調光（前方位相・後方位相）の違いと対応電源の選び方<br>白熱灯用調光器を流用したときのちらつき・うなり対策【施工業者向け】</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-07-04</span>
+      <span>更新日: 2026-07-04</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/purple_desk.webp"
+      alt="壁埋込の位相調光器でLEDテープを調光する配線のイメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>店舗改装やホテル改修の現場で多いのが、「壁に付いている既設のつまみ式（スライド式）調光器で、新設したLEDテープも明るさ調整したい」という要望です。この100V側で明るさを絞る方式が<strong>位相調光（トライアック調光）</strong>です。ところが、白熱灯やハロゲン用に付いていた調光器のままLED電源をつなぐと、<strong>ちらつく・うなり音がする・下限で消える・そもそも調光しない</strong>といった不具合が高い確率で出ます。原因の多くは「前方位相／後方位相の方式の食い違い」と「最小負荷不足」です。本記事では、施工業者が位相調光でLEDテープを安定して動かすために、方式の違いと対応電源（トライアック調光ドライバー）の選び方を整理します。</p>
+
+      <div class="article-callout warn">
+        <p><strong>先に結論:</strong> 位相調光でLEDテープを動かすときは、<strong>「位相調光対応と明記されたLED電源（トライアック調光ドライバー）」を使い、その電源が指定する方式（前方位相／後方位相）に調光器を合わせる</strong>のが大原則です。外せないのは、<strong>(1)前方位相か後方位相かをドライバー指定に合わせる</strong>、<strong>(2)接続W数を調光器の最小負荷以上に保つ</strong>、<strong>(3)調光下限で消えないか通電確認する</strong>の3点。既設の白熱灯用調光器の流用は不具合の温床で、原則は調光器も対応品へ更新します。</p>
+      </div>
+
+      <h2 id="sec-basic">位相調光（トライアック調光）とは — 100V側で波形を切る方式</h2>
+      <p><strong>位相調光</strong>は、交流100Vの波形の一部を切り取って、負荷に届く電力（実効値）を減らし、明るさを絞る方式です。壁埋込のロータリー式・スライド式調光器がこれにあたり、白熱灯時代から普及しているため<strong>既設利用のニーズが非常に多い</strong>のが特徴です。</p>
+      <p>ここで重要なのは、LEDテープ本体は12V/24Vの定電圧（CV）で動くため、<strong>位相調光は「テープ」ではなく「電源（ドライバー）」に対して行う</strong>という点です。位相調光対応のLED電源が、絞られた100V入力を受けて、テープへの直流出力を内部で調整します。位相調光に非対応の一般電源につないでも、正常な調光にはなりません。調光方式全体の位置づけは<a href="/articles/led-tape-dimming-methods-guide">LEDテープの調光方式（PWM・CCR・位相・DALI）ガイド</a>も参考にしてください。</p>
+
+      <h2 id="sec-diff">前方位相（リーディングエッジ）と後方位相（トレイリングエッジ）の違い</h2>
+      <p>位相調光には、波形の「頭」を切るか「後ろ」を切るかで2つの方式があります。<strong>方式が食い違うと調光しない・ちらつく</strong>ため、まずここを確認します。</p>
+      <table>
+        <thead>
+          <tr><th>区分</th><th>前方位相（リーディングエッジ）</th><th>後方位相（トレイリングエッジ）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>切る場所</td><td>交流波形の立ち上がり（頭）を遅らせて切る</td><td>交流波形の後ろ側を切る</td></tr>
+          <tr><td>主なスイッチ素子</td><td>トライアック式が多い</td><td>MOSFET式（電子式）が多い</td></tr>
+          <tr><td>相性の良い負荷</td><td>白熱灯・一部のLED電源（誘導性負荷にも可）</td><td>電子トランス・コンデンサ入力のLED電源</td></tr>
+          <tr><td>調光の質・音</td><td>安価で普及。うなり音が出やすい場合あり</td><td>なめらかで静音の傾向。LEDとの相性が良いことが多い</td></tr>
+          <tr><td>最小負荷</td><td>比較的大きいことが多い（例：数十W）</td><td>小さめのこともあるが機種次第</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout">
+        <p><strong>選び方の原則:</strong> 前方／後方位相は「使うLED電源のデータシートが指定する方式」に合わせます。ドライバーが<strong>後方位相専用</strong>なら後方位相の調光器を、<strong>前方位相専用</strong>なら前方位相の調光器を使います。両方式に対応するユニバーサル調光器（前後切替式）なら、方式が読み切れない改修現場で外しにくくなります。</p>
+      </div>
+
+      <h2 id="sec-legacy">既設の白熱灯用調光器を流用してよいか</h2>
+      <p>「壁の調光器はそのまま、電球だけLEDに替えたい」——現場で最も多い要望ですが、<strong>白熱灯用調光器のLED流用は不具合の温床</strong>です。理由は次の通りです。</p>
+      <ul>
+        <li><strong>最小負荷不足:</strong> 白熱灯用調光器は「○○W以上」という最小負荷を前提にしています。LEDは消費電力が小さいため、テープ数本ではこの最小負荷を下回り、点滅・立ち消えを起こします。</li>
+        <li><strong>方式の食い違い:</strong> 既設が前方位相（トライアック）でも、つなぐLED電源が後方位相専用だと正常に調光できません。</li>
+        <li><strong>保持電流の不足:</strong> トライアックは一定以上の電流が流れ続けないと導通を保てず、LEDの少ない電流ではちらつきの原因になります。</li>
+      </ul>
+      <p>どうしても既設調光器を活かす場合は、その調光器の方式（前方／後方位相）と最小負荷を確認し、<strong>同方式で調光できると明記されたドライバー</strong>を選び、最小負荷を満たすW数・台数で構成します。ただし安定を優先するなら、<strong>調光器もLED対応品（前後切替式や後方位相式）へ更新</strong>するのが確実です。</p>
+
+      <h2 id="sec-load">最小負荷と接続台数の考え方（計算の目安）</h2>
+      <p>位相調光で「絞ると消える」「暗い側でちらつく」を防ぐ鍵が<strong>最小負荷</strong>です。調光器のカタログに記載された最小負荷（例：15W）を、接続するLED電源の合計W数が上回るように構成します。</p>
+      <table>
+        <thead>
+          <tr><th>項目</th><th>考え方・目安</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>調光器の最小負荷</td><td>例：15W（カタログ記載値）。合計W数がこれを下回ると立ち消え・ちらつき。</td></tr>
+          <tr><td>調光器の最大負荷</td><td>例：白熱灯換算○○W。LED負荷では換算率を下げて余裕を取る（例：定格の1/2以内で見る）。</td></tr>
+          <tr><td>接続W数の見積り</td><td>テープW/m × 総m数 ＋ 電源のロス（効率85〜90%なら約1.1〜1.2倍）。</td></tr>
+          <tr><td>最小負荷を満たせない時</td><td>負荷補償ユニット（ダミーロード）を追加、または位相調光をやめて0-10V/PWM/DALIへ方式変更。</td></tr>
+          <tr><td>台数（並列）</td><td>複数ドライバーを1台の調光器に並列接続する場合、合計W数を最大負荷の余裕内に収める。</td></tr>
+        </tbody>
+      </table>
+      <p class="article-callout tip" style="font-size:13px"><strong>ワンポイント:</strong> LED負荷は突入電流（インラッシュ）が大きく、白熱灯換算の最大負荷いっぱいまで台数をぶら下げると、<strong>調光器の破損やブレーカートリップ</strong>につながります。最大負荷は白熱灯換算値の半分程度を上限に見積もると安全です。突入電流の詳細は<a href="/articles/led-power-inrush-current-breaker-trip-guide">突入電流とブレーカートリップ対策ガイド</a>を参照してください。</p>
+
+      <div class="spec-grid">
+        <div class="spec-card">
+          <span class="spec-label">調光の対象</span>
+          <span class="spec-value">電源側</span>
+          <span class="spec-note">テープではなく位相調光対応ドライバーに100Vを入れる。</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">方式</span>
+          <span class="spec-value">前方 / 後方</span>
+          <span class="spec-note">ドライバー指定に調光器を合わせる。不明なら切替式。</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">最小負荷</span>
+          <span class="spec-value">要確保</span>
+          <span class="spec-note">合計W数が調光器の最小負荷を下回ると立ち消え。</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">最大負荷の見方</span>
+          <span class="spec-value">余裕1/2</span>
+          <span class="spec-note">LED負荷では白熱灯換算値をそのまま使わず余裕を取る。</span>
+        </div>
+      </div>
+
+      <h2 id="sec-alt">位相調光か、0-10V/PWM/DALIか — 方式選定の判断</h2>
+      <p>「既設の壁調光器を残したい」なら位相調光ですが、新設で自由に選べるなら他方式のほうが安定・拡張しやすい場合があります。現場条件で選びます。</p>
+      <table>
+        <thead>
+          <tr><th>項目</th><th>位相調光（トライアック）</th><th>0-10V/1-10V</th><th>PWM（直接）</th><th>DALI</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>既設壁調光器の流用</td><td>可（方式・最小負荷が合えば）</td><td>不可（信号線が別途必要）</td><td>不可</td><td>不可</td></tr>
+          <tr><td>安定性</td><td>相性・最小負荷に左右される</td><td>安定</td><td>テープ近接なら安定</td><td>非常に安定</td></tr>
+          <tr><td>下限（深絞り）</td><td>下限で消えやすい</td><td>約1〜10%</td><td>0%まで可</td><td>0%まで可</td></tr>
+          <tr><td>配線</td><td>100V線のみ（信号線不要）</td><td>2線・極性あり</td><td>電源出力をPWM</td><td>2線・極性レス</td></tr>
+          <tr><td>向く現場</td><td>改修で壁調光器を残す小〜中規模</td><td>店舗・施設の一斉調光</td><td>テープと電源が近い小規模</td><td>多シーン・多回路</td></tr>
+        </tbody>
+      </table>
+      <p>信号線を引ける新設なら<a href="/articles/led-tape-0-10v-analog-dimming-wiring-guide">0-10V/1-10V調光</a>、多回路・多シーンなら<a href="/articles/led-dali-dimming-wiring-guide">DALI調光</a>が安定します。壁調光器を残す改修に限って位相調光が有利、と整理すると迷いません。</p>
+
+      <h2 id="sec-trouble">よくあるトラブルと対処</h2>
+      <table>
+        <thead>
+          <tr><th>症状</th><th>主な原因</th><th>対処</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>調光すると細かくちらつく</td><td>方式の食い違い・トライアック保持電流不足</td><td>ドライバー指定の方式（前方/後方）に調光器を合わせる、負荷補償ユニット追加</td></tr>
+          <tr><td>「ジー」といううなり音</td><td>前方位相とコンデンサ入力電源の相性</td><td>後方位相の調光器・後方位相対応ドライバーに変更</td></tr>
+          <tr><td>絞りきる前に消える（立ち消え）</td><td>合計W数が調光器の最小負荷を下回る</td><td>W数・台数を増やす、負荷補償ユニット追加、調光下限を上げる</td></tr>
+          <tr><td>まったく調光しない・全光のまま</td><td>位相調光非対応の電源を使用</td><td>「位相調光対応」と明記されたドライバーに交換</td></tr>
+          <tr><td>調光器やブレーカーが落ちる</td><td>台数過多・突入電流過大</td><td>最大負荷を白熱灯換算の半分以内に、系統を分割（<a href="/articles/led-power-inrush-current-breaker-trip-guide">突入電流ガイド</a>）</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="sec-checklist">位相調光でLEDテープを選ぶチェックリスト</h2>
+      <ul class="checklist">
+        <li>使うLED電源が「位相調光（トライアック調光）対応」と明記されている</li>
+        <li>電源が指定する方式（前方位相／後方位相）に調光器を合わせた</li>
+        <li>既設調光器を流用するなら、方式と最小負荷を確認した</li>
+        <li>接続するLED電源の合計W数が調光器の最小負荷を上回っている</li>
+        <li>最大負荷はLED負荷向けに余裕（白熱灯換算の半分程度）を取った</li>
+        <li>最小負荷を満たせないときの負荷補償ユニットの要否を検討した</li>
+        <li>全閉〜全開で下限まで消えずに滑らかに変化するか通電確認した</li>
+      </ul>
+
+      <h2 id="sec-faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">既設の白熱灯用調光器をそのまま使ってLEDテープを調光できますか？</div>
+        <div class="faq-a">そのままでは正常に調光できないことが多く、原則は「位相調光対応のLED電源（トライアック調光ドライバー）」に交換前提で考えます。既設の壁埋込調光器の多くは白熱灯用の前方位相（リーディングエッジ／トライアック式）で、これはLED負荷では最小負荷不足やインダクタ・コンデンサとの相性でちらつき・うなり・立ち消え・調光下限で消えるといった不具合が出やすいです。どうしても既設調光器を活かす場合は、その調光器が前方位相か後方位相かを確認し、同じ方式で調光できると明記された位相調光対応ドライバーを選び、最小負荷（例：15W以上など）を満たす台数・W数で構成します。調光器そのものをLED対応（前後方位相切替式など）に更新できるなら、そのほうが安定します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">前方位相（リーディングエッジ）と後方位相（トレイリングエッジ）はどう使い分けますか？</div>
+        <div class="faq-a">電源の入力回路の種類で選びます。前方位相は交流波形の頭を切る方式でトライアック式に多く、白熱灯・一部のLED電源に対応します。後方位相は波形の後ろを切る方式でMOSFET式に多く、電子トランスやコンデンサ入力のLED電源と相性が良く、うなり音が小さく調光がなめらかな傾向があります。原則は「使うLED電源（ドライバー）のデータシートが指定する方式」に合わせることです。ドライバーが後方位相専用なら後方位相の調光器を、前方位相専用なら前方位相の調光器を使います。方式が不明・混在する現場では、前後方位相を切り替えられるユニバーサル調光器を使うと外しにくくなります。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">位相調光でちらつく・うなる・調光下限で消えるのはなぜですか？</div>
+        <div class="faq-a">多くは「調光器とLED電源の相性」か「最小負荷不足」が原因です。位相調光器はもともと白熱灯のような抵抗負荷を想定しており、LED電源（スイッチング電源）は入力電流の波形が異なるため、トライアックの保持電流を満たせず点滅（ちらつき）したり、コイル鳴き（うなり）を起こしたりします。対処は、(1)調光器の方式（前方／後方位相）をドライバー指定に合わせる、(2)接続W数が調光器の最小負荷を下回らないよう台数・W数を確保する、(3)最小負荷が足りないときは負荷補償ユニット（ダミーロード）を追加する、(4)調光下限で消えるなら調光下限（最小調光率）を調整できるドライバーや、位相調光より安定する0-10V／PWM／DALIへ方式変更を検討する、の順で切り分けます。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-tape-dimming-methods-guide">
+              <img src="/images/hero-scenes/lightblue_desk.webp" alt="LEDテープの調光方式ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">製品活用ガイド</span>
+                <div class="rac-title">LEDテープの調光方式（PWM・CCR・位相・DALI）の違いと選び方</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-0-10v-analog-dimming-wiring-guide">
+              <img src="/images/hero-scenes/blue_desk.webp" alt="0-10V/1-10V調光の配線ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">配線・電気工事ガイド</span>
+                <div class="rac-title">LEDテープの0-10V/1-10V調光 配線方法｜信号線の極性・接続台数</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-dimmable-non-dimmable-psu-guide">
+              <img src="/images/hero-scenes/purple_desk.webp" alt="調光対応電源と非調光電源の違い" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">仕様選定ガイド</span>
+                <div class="rac-title">LEDテープの調光対応電源・非調光電源の違いと選び方</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-power-inrush-current-breaker-trip-guide">
+              <img src="/images/hero-scenes/bar_lounge.webp" alt="突入電流とブレーカートリップ対策" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">トラブル対処ガイド</span>
+                <div class="rac-title">LED電源の突入電流でブレーカーが落ちる原因と対策</div>
+                <span class="rac-date">2026-06-23</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>位相調光対応のLED電源・調光対応COBテープをプロ価格で</h2>
+        <p>前方位相／後方位相に対応するトライアック調光ドライバー、位相調光対応の業務用COBテープを取り揃えています。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">商品ラインナップを見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-07-04</span>
+        <span>更新日: 2026-07-04</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源装置の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-tape-dimming-methods-guide">調光方式（PWM・CCR・DALI）の違い</a></li>
+        <li><a href="/articles/led-tape-0-10v-analog-dimming-wiring-guide">0-10V/1-10V調光の配線</a></li>
+        <li><a href="/articles/led-tape-dimmable-non-dimmable-psu-guide">調光対応電源・非調光電源の違い</a></li>
+        <li><a href="/articles/led-tape-deep-dimming-curve-guide">深調光（1%調光）と調光カーブ</a></li>
+        <li><a href="/articles/led-power-inrush-current-breaker-trip-guide">突入電流とブレーカートリップ</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/psu/">位相調光対応 業務用ドライバー</a></li>
+        <li><a href="/category/controller/">調光器・コントローラー</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム各種</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>
