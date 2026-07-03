@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>工場・作業場の照度基準は何ルクス？JIS Z9110＆安衛則 作業区分別ルクス早見表と照明設計ガイド | LED PRO SHOP</title>
+  <meta name="description" content="工場をLED化するとき「機械加工や検査は何ルクス必要か」根拠を示せず困る施工業者向け。労働安全衛生規則とJIS Z9110の作業区分別ルクス早見表、照度均斉度・保守率・UGR（グレア）・ルクス計算式・高天井向けLEDの選定基準を現場目線で解説します。">
+  <meta name="keywords" content="工場 照度基準,工場 照度 JIS,工場 ルクス 基準,作業場 照度,機械加工 照度,精密検査 照度,JIS Z9110 工場,照度均斉度,保守率,労働安全衛生規則 照度">
+  <link rel="canonical" href="https://led-proshop.com/articles/factory-workshop-illuminance-standard-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/factory-workshop-illuminance-standard-guide">
+  <meta property="og:title" content="工場・作業場の照度基準は何ルクス？JIS Z9110＆安衛則 作業区分別ルクス早見表と照明設計ガイド | LED PRO SHOP">
+  <meta property="og:description" content="工場のLED化で照度の根拠を示せず困る施工業者向け。労働安全衛生規則とJIS Z9110の作業区分別ルクス早見表、照度均斉度・保守率・UGR・ルクス計算式・高天井向けLED選定基準を現場目線で解説。">
+  <meta property="og:image" content="https://led-proshop.com/images/hero-scenes/gold_shop.png">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="工場・作業場の照度基準は何ルクス？JIS Z9110＆安衛則 作業区分別ルクス早見表 | LED PRO SHOP">
+  <meta name="twitter:description" content="工場をLED化するときの照度設計。労働安全衛生規則とJIS Z9110の作業区分別ルクス早見表、均斉度・保守率・UGR・計算式・高天井LEDの選定基準を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/images/hero-scenes/gold_shop.png">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "工場・作業場の照度基準は何ルクス？JIS Z9110＆安衛則 作業区分別ルクス早見表と照明設計ガイド",
+    "description": "工場・作業場の照度基準（必要ルクス）を労働安全衛生規則とJIS Z9110の作業区分別に整理。機械加工・組立・検査・塗装・溶接・倉庫の必要照度、照度均斉度・保守率・UGR・ルクス計算式・高天井向けLED選定基準を施工業者向けに解説します。",
+    "image": "https://led-proshop.com/images/hero-scenes/gold_shop.png",
+    "author": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP 編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://led-proshop.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-07-04",
+    "dateModified": "2026-07-04",
+    "mainEntityOfPage": "https://led-proshop.com/articles/factory-workshop-illuminance-standard-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "LED PRO SHOP",
+        "item": "https://led-proshop.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "コラム",
+        "item": "https://led-proshop.com/articles/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "工場・作業場の照度基準は何ルクス？JIS Z9110＆安衛則 作業区分別ルクス早見表と照明設計ガイド",
+        "item": "https://led-proshop.com/articles/factory-workshop-illuminance-standard-guide"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "工場の照明は法律で何ルクス以上と決まっていますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "労働安全衛生規則 第604条では、作業の区分に応じた最低照度が定められており、一般に精密な作業は300lx以上、普通の作業は150lx以上、粗な作業は70lx以上が基準として扱われます。これはあくまで「下限」で、目視検査や精密組立の作業性を確保するには不十分なため、実務ではJIS Z 9110の推奨照度（例：一般製造300〜500lx、精密検査750〜1500lx）で設計します。法定の下限とJISの推奨は別物として、両方を満たす値で設計するのが安全です。最新の区分・数値は所轄の労働基準監督署でも確認してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "工場の照度は床面と作業面のどちらで満たせばよいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "照度基準は原則として作業面（一般に床から約0.8m、機械の操作面や検査台は台面）で満たします。天井の高い工場で床面照度だけを目安にすると、作業面や検査台が必要ルクスに届かないことがあります。特に高天井（8m超）では器具の配光と取付高さで作業面照度が大きく変わるため、床面ではなく実際の作業高さで照度計算・実測を行うのが確実です。細かい検査工程には手元のタスク照明を追加します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "照度均斉度（きんせいど）はどのくらい必要ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "作業領域では均斉度U0（最小照度÷平均照度）が0.7以上、その周辺で0.5以上が目安です。均斉度が低いと明暗のムラで目が疲れ、影で作業対象が見えにくくなります。高天井で器具を間引くと直下は明るく器具間が暗くなり均斉度が崩れやすいので、器具の間隔は取付高さに対して広げすぎないこと、配光（狭角・広角）を天井高に合わせて選ぶことが重要です。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#2b5aa0;--blue-pale:#eaf1fa;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #1f4a86}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#152f57 0%,#2b5aa0 50%,#1c3f77 100%);padding:40px 16px 32px;border-bottom:3px solid #1f4a86}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--blue);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--blue);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--blue);padding:6px 10px;background:var(--blue-pale);border-left:3px solid var(--blue);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--blue);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--blue);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--blue-pale)}
+    .article-callout{border-left:4px solid var(--blue);background:var(--blue-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--blue)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .article-faq{margin-top:32px}
+    .article-faq h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--blue);padding-bottom:8px;margin:36px 0 16px}
+    .faq-item{border:1px solid var(--border);border-radius:4px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:12px 16px;font-size:13px;font-weight:700;color:var(--text)}
+    .faq-q::before{content:"Q. ";color:var(--blue);font-weight:900}
+    .faq-a{padding:12px 16px;font-size:13px;color:var(--text-sub);line-height:1.8}
+    .faq-a::before{content:"A. ";color:var(--blue);font-weight:900}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--blue)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--blue)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--blue);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--blue);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--blue);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:#eaf1fa}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--blue)}
+    .sidebar-cta{background:var(--blue);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--blue);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:#eaf1fa}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>工場・作業場の照度基準は何ルクス？</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">照明設計ガイド</div>
+    <h1>工場・作業場の照度基準は何ルクス？<br>JIS Z9110＆安衛則の作業区分別ルクス早見表と照明設計の判断基準</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-07-04</span>
+      <span>更新日: 2026-07-04</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/gold_shop.png"
+      alt="工場・作業場で作業区分別の照度基準を満たす高天井LED照明の設計イメージ"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>「工場の水銀灯・蛍光灯をLEDに更新したいが、機械加工エリアや検査室は何ルクスにすればいいのか」「発注元から照度の根拠を聞かれたが、法律とJISのどちらで答えればいいのかわからない」——工場・作業場の照明設計では、<strong>作業の内容ごとに必要な照度（ルクス）が異なり、法定の下限とJISの推奨の両方を押さえて設計できること</strong>が施工業者に求められます。本記事では、労働安全衛生規則とJIS Z 9110をもとに、工場の作業区分別ルクス早見表・照度均斉度・保守率・UGR（グレア）・ルクス計算式・高天井向けLEDの選定基準を、現場目線で整理します。</p>
+
+      <div class="article-callout">
+        <p><strong>この記事でわかること:</strong> ①工場の作業区分別ルクス早見表（機械加工・組立・検査・塗装・溶接ほか） ②法定照度（安衛則）とJIS推奨の違い ③照度均斉度・保守率・UGRの目安 ④必要な明るさ（lm）と器具数を逆算する計算式 ⑤高天井工場向けLEDの選定基準</p>
+      </div>
+
+      <h2 id="sec-law">法定照度（安衛則）とJIS推奨は「別物」— まず違いを押さえる</h2>
+      <p>工場の照度には、守るべき<strong>法律の下限</strong>と、快適・安全に作業するための<strong>設計上の推奨値</strong>の2種類があります。この2つを混同すると「法律は満たしているのに現場が暗い」という設計になりがちです。</p>
+
+      <h3 id="sec-law-604">労働安全衛生規則 第604条（法定の最低照度）</h3>
+      <p>安衛則第604条では、作業の区分に応じた最低照度が定められています。一般に次の3区分で扱われます。</p>
+      <table>
+        <thead>
+          <tr><th>作業の区分</th><th>最低照度（法定）</th><th>該当する作業の例</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>精密な作業</td><td><strong>300 lx 以上</strong></td><td>精密機械の組立・検査、細かい目視作業</td></tr>
+          <tr><td>普通の作業</td><td><strong>150 lx 以上</strong></td><td>一般的な機械加工・組立作業</td></tr>
+          <tr><td>粗な作業</td><td><strong>70 lx 以上</strong></td><td>荷役・運搬、大物の粗加工</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout warn">
+        <p><strong>注意:</strong> これは「最低限これを下回ってはいけない」という<strong>下限値</strong>です。この値ちょうどでは目視検査や精密組立の作業性は確保できません。法令の区分・数値は改正されることがあるため、最新の内容は所轄の労働基準監督署でも確認してください。実設計では下限＋余裕を見た値、すなわち次のJIS推奨で決めます。</p>
+      </div>
+
+      <h3 id="sec-law-jis">JIS Z 9110（設計上の推奨照度）</h3>
+      <p>JIS Z 9110（照明基準総則）は、作業内容ごとに「これくらいが適切」という推奨照度（維持照度）を示す設計標準です。実務では、<strong>安衛則の下限を必ず満たしたうえで、JIS推奨を目標値として器具数・配置を決める</strong>のが基本の流れです。次章の早見表はこのJIS推奨をベースにしています。</p>
+
+      <h2 id="sec-table">工場・作業場 作業区分別 照度基準（ルクス）早見表</h2>
+      <p>以下はJIS Z 9110の作業区分と工場の実務をふまえた、区域・工程別の推奨照度（作業面）です。最終値は顧客の作業内容・発注元の社内基準に合わせて調整してください。</p>
+      <table>
+        <thead>
+          <tr>
+            <th>区域・工程</th>
+            <th>推奨照度（作業面）</th>
+            <th>備考・判断基準</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>精密機械・電子部品の組立/検査</td><td><strong>750〜1500 lx</strong></td><td>微小部品の目視。手元タスク照明を併用</td></tr>
+          <tr><td>精密塗装・色合わせ・外観検査</td><td><strong>750〜1000 lx</strong></td><td>Ra90以上の高演色を併用</td></tr>
+          <tr><td>制御室・計器盤・監視室</td><td>500 lx</td><td>VDT作業併用ならグレア対策必須</td></tr>
+          <tr><td>一般の機械加工・組立作業</td><td>300〜500 lx</td><td>汎用機・ライン作業の標準</td></tr>
+          <tr><td>塗装（普通）・溶接作業</td><td>300 lx</td><td>溶接は局部照明を追加</td></tr>
+          <tr><td>粗な組立・限定的作業</td><td>150〜200 lx</td><td>大物の粗加工・仕分け</td></tr>
+          <tr><td>荷造り・出荷・常時作業のある倉庫</td><td>200 lx</td><td>ピッキング棚前は200lx寄り</td></tr>
+          <tr><td>保管のみの倉庫・材料置場</td><td>100 lx</td><td>—</td></tr>
+          <tr><td>通路・廊下</td><td>50〜100 lx</td><td>フォークリフト動線は100lx寄り</td></tr>
+          <tr><td>屋内非常階段</td><td>50 lx</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout warn">
+        <p><strong>作業面で満たすこと:</strong> 上表は「作業面（一般に床から約0.8m、機械の操作面・検査台は台面）」での照度です。天井の高い工場で<strong>床面照度だけ</strong>で器具数を決めると、検査台や機械の手元が必要ルクスに届きません。高天井では実際の作業高さで計算・実測し、細かい工程には手元のタスク照明（ライン照明）を追加します。</p>
+      </div>
+
+      <h2 id="sec-uniformity">見落としがちな「照度均斉度」— 数値だけ足りても暗く感じる</h2>
+      <p>平均照度が基準を満たしていても、明暗のムラが大きいと目が疲れ、影で作業対象が見えにくくなります。この均一さの指標が<strong>照度均斉度 U0（最小照度 ÷ 平均照度）</strong>です。</p>
+      <table>
+        <thead>
+          <tr><th>領域</th><th>均斉度 U0 の目安</th><th>ポイント</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>作業領域（タスク）</td><td><strong>0.7 以上</strong></td><td>検査・精密作業は特に重視</td></tr>
+          <tr><td>作業領域の周辺</td><td>0.5 以上</td><td>作業面と周囲の照度比は概ね3:1以内</td></tr>
+          <tr><td>通路・その他</td><td>0.4 前後</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <div class="article-callout">
+        <p><strong>均斉度が崩れる典型:</strong> 高天井で器具を間引きすぎると、器具の直下は明るく器具間が暗くなります。取付高さに対して器具間隔を広げすぎないこと、天井高に合った配光（高天井は狭角・低天井は広角）を選ぶことで均斉度を確保できます。器具間隔は「取付高さ×1.0〜1.5倍」を一つの目安にすると崩れにくくなります。</p>
+      </div>
+
+      <h2 id="sec-calc">必要な明るさ（lm）と器具数を逆算するルクス計算式</h2>
+      <p>目標照度が決まったら、必要な総光束（lm）と器具数を逆算します。基本式は次のとおりです。</p>
+      <div class="article-callout tip">
+        <p><strong>照度計算式（光束法）:</strong><br>
+        平均照度 E（lx） ＝ 総光束 F（lm） × 照明率 U × 保守率 M ÷ 面積 A（㎡）<br><br>
+        必要総光束 F（lm） ＝ E × A ÷（U × M）<br>
+        必要器具数 ＝ F ÷ 1器具あたりの光束</p>
+      </div>
+      <p>各係数の目安は次のとおりです。工場は環境で保守率が大きく変わる点に注意します。</p>
+      <table>
+        <thead>
+          <tr><th>係数</th><th>目安値</th><th>説明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>照明率 U</td><td>0.4〜0.8</td><td>天井高・壁天井の反射率・器具配光で変動。高天井ほど低い</td></tr>
+          <tr><td>保守率 M（清浄）</td><td>0.8</td><td>クリーンな組立・電子工場</td></tr>
+          <tr><td>保守率 M（一般工場）</td><td>0.7</td><td>標準的な機械工場</td></tr>
+          <tr><td>保守率 M（粉塵・油煙多）</td><td>0.6</td><td>鋳造・研磨・切削油の多い工場</td></tr>
+        </tbody>
+      </table>
+      <h4>計算例：200㎡の機械加工エリアを500lxにする（天井高7m）</h4>
+      <p>E＝500lx、A＝200㎡、U＝0.6、M＝0.7（一般工場）とすると、<br>
+      必要総光束 ＝ 500 × 200 ÷（0.6 × 0.7）＝ <strong>約238,000 lm</strong>。<br>
+      1台20,000lmの高天井LED（150W級）なら 238,000 ÷ 20,000 ＝ <strong>約12台</strong>が目安です（配置の均斉度は別途確認）。</p>
+      <div class="article-callout warn">
+        <p><strong>保守率の見落としに注意:</strong> 工場は粉塵・油煙で器具が汚れ、清掃頻度が低いと実照度が初期の6〜7割まで落ちます。新品時のlmだけで器具数を決めると数年で照度不足になるため、必ず保守率を掛けて余裕を持たせ、清掃・交換のしやすい取付方法にしておきます。</p>
+      </div>
+
+      <h2 id="sec-select">高天井・作業場向け LED選定 5つの判断基準</h2>
+
+      <h3 id="sec-glare">① グレア（UGR）— 検査・VDTは UGR19 以下</h3>
+      <p>まぶしさの指標がUGR（統一グレア評価値）です。<strong>一般製造はUGR22以下、精密検査や制御室のVDT作業はUGR19以下</strong>を目安にします。高天井灯は光源が高輝度なため、ルーバー・拡散カバー付きや配光を絞った器具でグレアを抑えます。溶接・研磨など反射の強い工程は光源が直接目に入らない配置にします。</p>
+
+      <h3 id="sec-flicker">② フリッカー（ちらつき）— 回転機械はストロボ効果に注意</h3>
+      <p>旋盤・フライス・プレス・コンベアなど<strong>回転・往復する機械のある工程では、フリッカーがストロボ効果を起こし、回転体が止まって見える・逆回転して見える危険</strong>があります。フリッカーフリー電源のLEDを選び、カメラ検査ラインでも画面のちらつきが出ないようにします。</p>
+
+      <h3 id="sec-ip">③ 防塵・防水（IP等級）— 環境に合わせる</h3>
+      <p>粉塵の多い工程は防塵性（IP5X以上）、切削油ミスト・水洗いのある区域はIP65以上を選定します。屋外近接・洗い場は結露対策として密閉構造を選び、内部結露で早期故障しないようにします。</p>
+
+      <h3 id="sec-color">④ 色温度・演色性（Ra）— 作業内容で選ぶ</h3>
+      <p>一般の製造・機械加工は<strong>5000K前後（昼白色）でRa80</strong>が標準です。色合わせ・外観検査・塗装検査など<strong>色を見る工程はRa90以上</strong>を選ぶと、変色や欠陥の判別精度が上がります。長時間の集中作業は6500K（昼光色）が覚醒的すぎる場合があり、5000K前後が扱いやすい傾向です。</p>
+
+      <h3 id="sec-highbay">⑤ 高天井は「配光」で選ぶ — テープ照明の使いどころ</h3>
+      <p>天井高8m超では広角配光だと作業面で照度が伸びず、狭角（重点配光）で作業面に光を集めます。一方、<strong>検査台・作業台・製造ラインの手元は、高天井灯だけでは影ができやすい</strong>ため、アルミフレームに納めたLEDテープでライン状のタスク照明を追加すると、影が消えて手元の均斉度が安定します。全体照明（高天井灯）＋局部照明（LEDテープ）の二段構えが、工場の照度設計では有効です。</p>
+
+      <h2 id="sec-checklist">照明設計チェックリスト（工場・作業場）</h2>
+      <ul>
+        <li>□ 安衛則の下限（精密300／普通150／粗70 lx）を全区域で満たしているか</li>
+        <li>□ 区域ごとにJIS推奨照度を目標に設定し、根拠を記録したか</li>
+        <li>□ 床面ではなく<strong>作業面・検査台面</strong>で照度を満たす設計か</li>
+        <li>□ 作業領域の均斉度 U0 ≧ 0.7 を確保したか（器具間隔・配光の確認）</li>
+        <li>□ 保守率（一般0.7・粉塵多0.6）を掛けて器具数に余裕を持たせたか</li>
+        <li>□ 検査・VDTエリアは UGR19 以下でグレアを抑えたか</li>
+        <li>□ 回転機械のある工程はフリッカーフリーか</li>
+        <li>□ 環境に合ったIP等級（粉塵IP5X／油・水IP65以上）か</li>
+        <li>□ 色を見る工程はRa90以上か／手元にタスク照明を追加したか</li>
+      </ul>
+
+      <h2 id="sec-summary">まとめ</h2>
+      <table>
+        <thead>
+          <tr><th>ポイント</th><th>判断基準</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>法定下限（安衛則604条）</td><td>精密300／普通150／粗70 lx 以上</td></tr>
+          <tr><td>一般の機械加工・組立</td><td>300〜500 lx・Ra80・5000K</td></tr>
+          <tr><td>精密組立・検査・色合わせ</td><td>750〜1500 lx・Ra90以上</td></tr>
+          <tr><td>均斉度</td><td>作業領域 U0 ≧ 0.7</td></tr>
+          <tr><td>器具数</td><td>ルクス計算式＋保守率（0.6〜0.8）で逆算</td></tr>
+          <tr><td>まぶしさ</td><td>一般UGR22以下・検査/VDT UGR19以下</td></tr>
+        </tbody>
+      </table>
+      <p>工場の照度設計は「法定の下限を満たしたうえで、JIS推奨を目標に区域ごとの根拠を持って数値を決める」ことが安全と品質の両面で重要です。LED PRO SHOP では、高天井の局部照明に使える高演色（Ra&gt;90）COBテープ・放熱アルミフレーム・フリッカーフリー電源など、工場の作業区分別要件に対応した資材を取り扱っています。</p>
+
+      <p>
+        <a href="/category/cob-tape/">COBテープカテゴリ（全品 Ra&gt;90 標準）を見る</a>&emsp;
+        <a href="/category/alumi-frame/">アルミフレーム（放熱・タスク照明向け）を見る</a>
+      </p>
+
+      <!-- FAQ -->
+      <div class="article-faq">
+        <h2>よくある質問（FAQ）</h2>
+        <div class="faq-item">
+          <div class="faq-q">工場の照明は法律で何ルクス以上と決まっていますか？</div>
+          <div class="faq-a">労働安全衛生規則 第604条で作業区分に応じた最低照度が定められており、一般に精密な作業は300lx以上、普通の作業は150lx以上、粗な作業は70lx以上が基準として扱われます。これは「下限」で、目視検査や精密組立の作業性を確保するには不十分なため、実務ではJIS Z 9110の推奨照度（例：一般製造300〜500lx、精密検査750〜1500lx）で設計します。法定の下限とJIS推奨の両方を満たす値で設計するのが安全です。最新の区分・数値は所轄の労働基準監督署でも確認してください。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">工場の照度は床面と作業面のどちらで満たせばよいですか？</div>
+          <div class="faq-a">原則として作業面（一般に床から約0.8m、機械の操作面や検査台は台面）で満たします。天井の高い工場で床面照度だけを目安にすると、作業面や検査台が必要ルクスに届かないことがあります。特に高天井（8m超）では器具の配光と取付高さで作業面照度が大きく変わるため、実際の作業高さで計算・実測を行い、細かい検査工程には手元のタスク照明を追加します。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">照度均斉度（きんせいど）はどのくらい必要ですか？</div>
+          <div class="faq-a">作業領域では均斉度U0（最小照度÷平均照度）が0.7以上、その周辺で0.5以上が目安です。均斉度が低いと明暗のムラで目が疲れ、影で作業対象が見えにくくなります。高天井で器具を間引くと直下は明るく器具間が暗くなり均斉度が崩れやすいので、器具間隔を取付高さに対して広げすぎないこと、天井高に合った配光を選ぶことが重要です。</div>
+        </div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-lighting-lux-calculation-guide">
+              <img src="/images/hero-scenes/gold_shop.png" alt="LED照明の照度（ルクス）計算ガイド" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">照明設計ガイド</span>
+                <div class="rac-title">LED照明の照度（ルクス）計算ガイド｜必要な明るさの逆算方法</div>
+                <span class="rac-date">2026-06-03</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/office-lighting-jis-guide">
+              <img src="/images/hero-scenes/gold_shop.png" alt="オフィスの照度基準 JIS Z9110" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">照明設計ガイド</span>
+                <div class="rac-title">オフィスの照度基準は何ルクス？JIS Z9110の推奨照度と照明設計ガイド</div>
+                <span class="rac-date">2026-06-03</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-flickerfree-guide">
+              <img src="/images/hero-scenes/gold_shop.png" alt="フリッカーフリーLEDの選び方" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">LED選び方ガイド</span>
+                <div class="rac-title">フリッカーフリーLEDの選び方｜ストロボ効果とちらつきの対策</div>
+                <span class="rac-date">2026-04-30</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>工場向けLED資材の選定サポート</h2>
+        <p>作業区分別の照度設計・高演色・防塵防水・フリッカーフリー・手元タスク照明まで、用途に合わせた選定をサポートします。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">商品を見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-07-04</span>
+        <span>更新日: 2026-07-04</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>業務用LEDテープ・電源装置の選定・見積りはお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-lighting-lux-calculation-guide">LED照明の照度（ルクス）計算ガイド</a></li>
+        <li><a href="/articles/office-lighting-jis-guide">オフィスの照度基準 JIS Z9110</a></li>
+        <li><a href="/articles/food-factory-illuminance-standard-guide">食品工場の照度基準は何ルクス？</a></li>
+        <li><a href="/articles/led-flickerfree-guide">フリッカーフリーLEDの選び方</a></li>
+        <li><a href="/articles/led-tape-glare-control-guide">LEDテープのグレア（まぶしさ）対策</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/cob-tape/">COB16シリーズ（スリムCOBテープ）</a></li>
+        <li><a href="/category/alumi-frame/">放熱アルミフレーム</a></li>
+        <li><a href="/category/psu/">フリッカーフリー定電圧PSU</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>
