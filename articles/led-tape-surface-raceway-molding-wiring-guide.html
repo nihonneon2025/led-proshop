@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープの配線を配線モール（ワイヤーモール）で隠す露出配線の施工方法｜壁を開けずに納める実務ガイド | LED PRO SHOP</title>
+<meta name="description" content="壁や天井を開けられない現場でLEDテープの配線を隠す時は、配線モール（ワイヤーモール）で露出配線を納めます。モールサイズの決め方・貼る前の下地処理・角(出隅/入隅)の曲げ方・電源やコネクタの逃がし方・剥がれ防止まで、施工業者が後施工で失敗しない手順を判断基準付きで解説します。">
+<meta property="og:title" content="LEDテープの配線を配線モール（ワイヤーモール）で隠す露出配線の施工方法｜壁を開けずに納める実務ガイド | LED PRO SHOP">
+<meta property="og:description" content="壁を開けられない後施工で配線を隠す配線モールの使い方。サイズ選定・下地処理・角の曲げ方・電源やコネクタの逃がし方・剥がれ防止を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-surface-raceway-molding-wiring-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-surface-raceway-molding-wiring-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープの配線を配線モールで隠す露出配線の施工方法｜壁を開けずに納める | LED PRO SHOP">
+<meta name="twitter:description" content="後施工で配線を隠す配線モールのサイズ選定・下地処理・角の曲げ方・電源の逃がし方・剥がれ防止を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-surface-raceway-molding-wiring-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-surface-raceway-molding-wiring-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #0c1616; color: #e3f2f0; line-height: 1.7; font-size: 15px; }
+  a { color: #2dd4bf; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #0d2422 0%, #103633 50%, #0b1f1e 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #14615a; }
+  .hero-badge { display: inline-block; background: #0d9488; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f0fdfa; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #99d5cd; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #5f9c93; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f0fdfa; border-left: 4px solid #2dd4bf; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #5eead4; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #cfeae6; }
+
+  .alert-box { background: #2a0f0f; border: 1px solid #7f3d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #0f2a27; border: 1px solid #14615a; border-left: 4px solid #2dd4bf; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #d3ede9; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #0f2a27; border-radius: 10px; overflow: hidden; }
+  thead th { background: #14615a; color: #a7f3e6; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #163d38; color: #cfeae6; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #11302c; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #0f2a27; border: 1px solid #0d9488; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #5eead4; margin-top: 0; }
+  .calc-formula { background: #06110f; border: 1px solid #14615a; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #a7f3e6; margin: 12px 0; line-height: 2; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .spec-card { background: #0f2a27; border: 1px solid #14615a; border-radius: 10px; padding: 20px; }
+  .spec-card h4 { font-size: 15px; font-weight: 700; color: #5eead4; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #163d38; }
+  .spec-card .spec-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding: 5px 0; }
+  .spec-card .spec-row span:first-child { color: #99d5cd; }
+  .spec-card .spec-row span:last-child { color: #e3f2f0; font-weight: 600; text-align: right; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #0f2a27; border: 1px solid #14615a; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #2dd4bf; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #5eead4; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #99d5cd; margin-bottom: 0; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #2dd4bf; color: #0c1616; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #cfeae6; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #163d38; font-size: 14px; color: #cfeae6; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #14615a; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #0f2a27; padding: 16px 20px; font-weight: 700; color: #5eead4; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #cfeae6; background: #0a1c1a80; }
+
+  .cta-box { background: linear-gradient(135deg, #14615a 0%, #0d2422 100%); border: 1px solid #2dd4bf; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f0fdfa; margin-bottom: 10px; }
+  .cta-box p { color: #99d5cd; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #0d9488; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #0f766e; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #5f9c93; }
+  .breadcrumb a { color: #5f9c93; }
+  .breadcrumb a:hover { color: #5eead4; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid, .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LEDテープの配線を配線モール（ワイヤーモール）で隠す露出配線の施工方法｜壁を開けずに納める実務ガイド",
+  "description": "壁や天井を開けられない後施工でLEDテープの配線を隠す配線モールの使い方。サイズ選定・下地処理・角の曲げ方・電源やコネクタの逃がし方・剥がれ防止を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-surface-raceway-molding-wiring-guide-hero.webp",
+  "datePublished": "2026-07-05",
+  "dateModified": "2026-07-05",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-surface-raceway-molding-wiring-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "LEDテープの配線を配線モールで隠す施工方法" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "壁を開けられない現場でLEDテープの配線を隠すにはどうすればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "壁や天井の裏に配線を通す隠蔽配線ができない後施工の現場では、配線モール（ワイヤーモール）で露出配線を納めるのが定番の方法です。配線モールは断面がコの字型のカバーで、ベース（土台）を壁面に両面テープやビスで固定し、その中にケーブルを収めてカバーをはめ込みます。壁紙に近い白やアイボリー、木目調のモールを選べば目立ちにくく、直線・角・分岐に対応した部材（出隅・入隅・T字・エンド）を組み合わせて壁面に沿ってきれいに配線を隠せます。LEDテープ本体はアルミフレームやカバーで見せ、電源からテープまでの引き回しケーブルだけをモールで隠す構成が現実的です。賃貸や既存内装で壁を傷つけたくない場合は、ビスを使わず強力両面テープで施工します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "配線モールのサイズはどう選べばいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "通すケーブルの本数と太さの合計に対して、断面に7割程度で収まる内寸のモールを選びます。ケーブルをぎゅうぎゅうに詰めるとカバーが浮いたり閉まらなくなるため、余裕を見て一回り大きい号数を選ぶのが安全です。LEDテープの引き回しに使う2芯や4芯の低電圧ケーブルは細いので、細身のモール（0号〜1号相当）でも足りることが多いですが、将来の増設や複数系統をまとめる場合は幅の広いモールにしておくと後が楽です。太さの目安として、モールの内寸断面積がケーブル断面積の合計の1.4倍以上あると無理なく収まります。角や分岐が多い現場では、対応する出隅・入隅・T字部材が揃っているシリーズを選ぶと納まりがきれいになります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "配線モールが後で剥がれてこないようにするコツは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "剥がれの原因はほぼ下地処理不足なので、貼る前に接着面の油分・埃・結露をしっかり除去することが最重要です。壁面をアルコールや中性洗剤で拭き、完全に乾かしてから貼ります。砂壁・繊維壁・凹凸のあるクロスなど両面テープが効きにくい下地では、ビス固定を併用するか、ベースをビスで留めてからカバーをはめます。長い直線区間は中間を数十センチおきにビスや両面テープで押さえ、端部（エンド）は最も剥がれやすいので確実に固定します。温度変化で粘着が弱る場所（直射日光の当たる窓際・暖房近く）は耐熱・強粘着タイプを選びます。曲げた角の部分は反発で浮きやすいので、専用の出隅・入隅部材を使い、無理に一本もので曲げないことがきれいに保つコツです。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">施工方法ガイド</div>
+    <h1>LEDテープの配線を配線モール（ワイヤーモール）で隠す露出配線の施工方法</h1>
+    <p class="hero-sub">壁や天井を開けられない後施工で配線を隠す——モールサイズの決め方・下地処理・角の曲げ方・電源やコネクタの逃がし方・剥がれ防止まで、施工業者が失敗しない実務を解説</p>
+    <p class="hero-meta">公開: 2026-07-05 | カテゴリ: LEDテープ施工方法ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-surface-raceway-molding-wiring-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープの配線を配線モールで隠す施工方法
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="info-box">
+      <p><strong>この記事の結論</strong>：壁裏に通す隠蔽配線ができない現場では、<strong>配線モール（ワイヤーモール）で露出配線を隠す</strong>のが定番です。モールは<strong>ケーブル断面の7割で収まる号数</strong>を選び、<strong>下地の油分・埃を除去</strong>してから貼るのが剥がれ防止の要。角は無理に一本で曲げず<strong>出隅・入隅部材</strong>を使い、電源・コネクタはモール端で逃がして<strong>放熱と点検性</strong>を確保します。</p>
+    </div>
+
+    <h2>配線モールを使うのはどんな現場か</h2>
+
+    <p>LEDテープの引き回しケーブルは、本来は壁裏・天井裏に通す<a href="/articles/led-tape-concealed-wiring-guide">隠蔽配線</a>が最もきれいです。しかし改装や賃貸、コンクリート躯体、既存内装をそのまま使う現場では、壁を開けられず配線が露出してしまいます。そこで使うのが<strong>配線モール（ワイヤーモール／プラモール）</strong>です。断面がコの字型のカバーで、壁面に沿ってケーブルを隠しながら這わせられます。LEDテープ本体はアルミフレームで見せ、電源からテープまでの<strong>ケーブルだけをモールで隠す</strong>のが現実的な構成です。</p>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">①</div>
+        <h4>壁を開けない</h4>
+        <p>後施工・賃貸・躯体現場で壁を壊さず配線を隠せる。原状回復が必要な物件にも向く。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">②</div>
+        <h4>意匠を整える</h4>
+        <p>白・アイボリー・木目調を壁色に合わせ、露出ケーブルの雑然さを消す。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">③</div>
+        <h4>保護する</h4>
+        <p>ケーブルを踏み・引っ掛け・擦れから守る。什器裏や人の動線でも安全。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">④</div>
+        <h4>増設に対応</h4>
+        <p>カバーを外せば後から系統追加・交換が容易。点検性を確保できる。</p>
+      </div>
+    </div>
+
+    <h2>モールの種類とLEDテープ配線での選び方</h2>
+
+    <p>配線モールは幅・高さ（号数）と、直線を繋ぐ役物（出隅・入隅・T字・エンド）で構成されます。LEDテープの低電圧ケーブルは細いので細身でも足りますが、将来の増設を見込むなら余裕をもたせます。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>号数の目安</th>
+          <th>内寸（幅×高さ）の目安</th>
+          <th>収まるケーブル</th>
+          <th>用途</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0号（細身）</td>
+          <td>約10×8mm前後</td>
+          <td>2芯・細径1〜2本</td>
+          <td>短い引き回し・什器裏</td>
+        </tr>
+        <tr>
+          <td>1号</td>
+          <td>約15×10mm前後</td>
+          <td>2〜4芯を数本</td>
+          <td>一般的な間接照明の給電</td>
+        </tr>
+        <tr>
+          <td>2号</td>
+          <td>約17×12mm前後</td>
+          <td>複数系統をまとめる</td>
+          <td>調光線・複数テープの集約</td>
+        </tr>
+        <tr>
+          <td>3号以上</td>
+          <td>約20×15mm以上</td>
+          <td>電源2次側を束ねる</td>
+          <td>増設余地・幹線的な引き回し</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert-box">
+      <div class="alert-title">よくある失敗：「ケーブルを詰め込みすぎてカバーが閉まらない・浮く」</div>
+      <p>モール断面いっぱいにケーブルを入れると、<strong>カバーが浮いて剥がれ・見た目の悪化</strong>を招きます。ケーブルは<strong>断面の7割まで</strong>を目安にし、迷ったら一回り大きい号数を選びます。調光線や増設分を見込むなら特に余裕を持たせてください。</p>
+    </div>
+
+    <h2>モールサイズの決め方</h2>
+
+    <div class="calc-box">
+      <h3>必要なモール内寸の考え方</h3>
+      <div class="calc-formula">
+モール内寸断面積 ≧ ケーブル断面積の合計 × 1.4
+
+例）2芯ケーブル（外径 約4mm）を2本
+　断面積 ≒ (π×2²)×2 ≒ 25mm²
+　必要内寸 ≒ 25 × 1.4 ≒ 35mm² 以上
+　→ 1号モール（内寸 約15×10）で余裕
+
+迷ったら「一回り大きい号数」を選ぶ
+　→ 増設・交換・納まりに効く
+      </div>
+      <p style="color:#a7f3e6; font-size:13px; margin-top:12px; margin-bottom:0">
+        本数と外径から必要断面積を出し、7割で収まる号数を選びます。電源の位置と引き回し長は <a href="/articles/led-tape-power-supply-layout-guide">電源レイアウトガイド</a>、延長は <a href="/articles/led-tape-extension-cable-guide">延長ケーブルガイド</a> を参照してください。
+      </p>
+    </div>
+
+    <h2>施工手順（露出配線をモールで隠す流れ）</h2>
+
+    <ul class="step-list">
+      <li><span>電源位置からLEDテープまでの<strong>配線ルート</strong>を決め、直線・角・分岐を洗い出してモールと役物（出隅・入隅・エンド）を拾う。</span></li>
+      <li><span>貼る面の<strong>油分・埃・結露を除去</strong>する。アルコールや中性洗剤で拭き、完全に乾かす（剥がれ防止の最重要工程）。</span></li>
+      <li><span>モールのベース（土台）を<strong>両面テープまたはビス</strong>で固定する。長い直線は数十センチおきに押さえる。</span></li>
+      <li><span>ケーブルをベースに収め、<strong>断面の7割まで</strong>にとどめる。角は無理に一本で曲げず出隅・入隅部材を使う。</span></li>
+      <li><span>電源・コネクタは<strong>モール端で逃がし</strong>、発熱部を密閉しない。点検が必要な接続は取り出せる位置に置く。</span></li>
+      <li><span>カバーをはめ、<strong>通電試験</strong>で点灯・極性・発熱を確認。端部（エンド）が浮いていないか最終チェックする。</span></li>
+    </ul>
+
+    <div class="info-box">
+      <p><strong>電源・コネクタはモールに閉じ込めない</strong>：発熱する電源やスイッチング機器をモール内に密閉すると熱がこもります。<a href="/articles/led-tape-junction-box-pull-box-guide">中継ボックス</a>や露出しない什器内に逃がし、モールは<strong>細いケーブルの通り道</strong>に徹するのが安全です。接続は<a href="/articles/led-tape-terminal-block-wago-guide">端子台・WAGO</a>で戻せる形にしておくと保守が楽になります。</p>
+    </div>
+
+    <h2>下地別の固定方法と剥がれ対策</h2>
+
+    <p>モール施工のトラブルは<strong>ほぼ剥がれ</strong>で、原因の大半は下地処理不足です。下地の性質に合わせて固定方法を変えます。テープ本体の粘着トラブルは <a href="/articles/led-tape-adhesion-failure-guide">粘着剥がれの原因と対策</a> も参考になります。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>下地</th>
+          <th>推奨固定</th>
+          <th>注意点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>平滑なビニルクロス</td>
+          <td>強力両面テープ</td>
+          <td>脱脂・乾燥を徹底。<span class="tag-ok">相性良</span></td>
+        </tr>
+        <tr>
+          <td>塗装・化粧板</td>
+          <td>両面テープ</td>
+          <td>塗膜が弱いと塗装ごと剥離に注意</td>
+        </tr>
+        <tr>
+          <td>砂壁・繊維壁</td>
+          <td>ビス固定</td>
+          <td>両面テープは効きにくい。<span class="tag-warn">要ビス</span></td>
+        </tr>
+        <tr>
+          <td>コンクリート・タイル</td>
+          <td>ビス（アンカー）</td>
+          <td>下穴＋アンカー。両面併用も可</td>
+        </tr>
+        <tr>
+          <td>直射日光・暖房近く</td>
+          <td>耐熱強粘着／ビス</td>
+          <td>温度で粘着が弱る。<span class="tag-ng">通常粘着NG</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>角・分岐をきれいに納めるコツ</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h4>出隅（凸角）</h4>
+        <div class="spec-row"><span>部材</span><span>出隅役物を使用</span></div>
+        <div class="spec-row"><span>NG</span><span>一本もので曲げ</span></div>
+        <div class="spec-row"><span>理由</span><span>反発で浮く</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>入隅（凹角）</h4>
+        <div class="spec-row"><span>部材</span><span>入隅役物を使用</span></div>
+        <div class="spec-row"><span>納まり</span><span>突き付けを揃える</span></div>
+        <div class="spec-row"><span>端部</span><span>隙間を作らない</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>分岐・終端</h4>
+        <div class="spec-row"><span>分岐</span><span>T字部材</span></div>
+        <div class="spec-row"><span>終端</span><span>エンドキャップ</span></div>
+        <div class="spec-row"><span>固定</span><span>端は確実に押さえる</span></div>
+      </div>
+    </div>
+
+    <h2>施工チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>配線ルートの直線・角・分岐を拾い、モールと役物を過不足なく用意した</li>
+      <li>貼る面の油分・埃・結露を除去し、完全に乾かした</li>
+      <li>ケーブルは断面の7割までにとどめ、カバーが浮かないサイズを選んだ</li>
+      <li>下地に合わせて両面テープ／ビスを使い分けた</li>
+      <li>長い直線は中間を押さえ、端部（エンド）を確実に固定した</li>
+      <li>角は出隅・入隅部材を使い、一本もので無理に曲げていない</li>
+      <li>電源・コネクタはモール内に密閉せず、放熱・点検できる位置に逃がした</li>
+      <li>通電試験で点灯・極性・発熱を確認し、カバーの浮きがないか最終確認した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 壁を開けられない現場でLEDテープの配線を隠すにはどうすればいいですか？</div>
+        <div class="faq-a">壁や天井の裏に配線を通す隠蔽配線ができない後施工の現場では、配線モール（ワイヤーモール）で露出配線を納めるのが定番の方法です。配線モールは断面がコの字型のカバーで、ベース（土台）を壁面に両面テープやビスで固定し、その中にケーブルを収めてカバーをはめ込みます。壁紙に近い白やアイボリー、木目調のモールを選べば目立ちにくく、直線・角・分岐に対応した部材（出隅・入隅・T字・エンド）を組み合わせて壁面に沿ってきれいに配線を隠せます。LEDテープ本体はアルミフレームやカバーで見せ、電源からテープまでの引き回しケーブルだけをモールで隠す構成が現実的です。賃貸や既存内装で壁を傷つけたくない場合は、ビスを使わず強力両面テープで施工します。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 配線モールのサイズはどう選べばいいですか？</div>
+        <div class="faq-a">通すケーブルの本数と太さの合計に対して、断面に7割程度で収まる内寸のモールを選びます。ケーブルをぎゅうぎゅうに詰めるとカバーが浮いたり閉まらなくなるため、余裕を見て一回り大きい号数を選ぶのが安全です。LEDテープの引き回しに使う2芯や4芯の低電圧ケーブルは細いので、細身のモール（0号〜1号相当）でも足りることが多いですが、将来の増設や複数系統をまとめる場合は幅の広いモールにしておくと後が楽です。太さの目安として、モールの内寸断面積がケーブル断面積の合計の1.4倍以上あると無理なく収まります。角や分岐が多い現場では、対応する出隅・入隅・T字部材が揃っているシリーズを選ぶと納まりがきれいになります。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 配線モールが後で剥がれてこないようにするコツは？</div>
+        <div class="faq-a">剥がれの原因はほぼ下地処理不足なので、貼る前に接着面の油分・埃・結露をしっかり除去することが最重要です。壁面をアルコールや中性洗剤で拭き、完全に乾かしてから貼ります。砂壁・繊維壁・凹凸のあるクロスなど両面テープが効きにくい下地では、ビス固定を併用するか、ベースをビスで留めてからカバーをはめます。長い直線区間は中間を数十センチおきにビスや両面テープで押さえ、端部（エンド）は最も剥がれやすいので確実に固定します。温度変化で粘着が弱る場所（直射日光の当たる窓際・暖房近く）は耐熱・強粘着タイプを選びます。曲げた角の部分は反発で浮きやすいので、専用の出隅・入隅部材を使い、無理に一本もので曲げないことがきれいに保つコツです。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>LEDテープ・アルミフレーム・延長ケーブル・接続部材を探す</h3>
+      <p>間接照明の露出配線をきれいに納めるアルミフレーム・カバー・延長ケーブル・端子台・防水コネクタを取り扱っています。後施工でも意匠と点検性を両立する部材が選べます。</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
