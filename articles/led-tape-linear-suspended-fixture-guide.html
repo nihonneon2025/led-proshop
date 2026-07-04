@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープで吊り下げライン照明を作る｜アルミフレーム・拡散カバー・電源の選定と施工ポイント | LED PRO SHOP</title>
+<meta name="description" content="LEDテープと吊り下げ用アルミフレームでライン照明（ペンダント型・連結ライン）を自作する選定・施工ガイド。粒感を消す拡散カバーの選び方、上下配光の使い分け、ワイヤー吊りと給電の逃がし、連結時の色ムラ・電圧降下対策まで、オフィス・店舗の間接照明を作る施工業者向けに実務を解説します。">
+<meta property="og:title" content="LEDテープで吊り下げライン照明を作る｜アルミフレーム・拡散カバー・電源の選定と施工ポイント | LED PRO SHOP">
+<meta property="og:description" content="吊り下げ用アルミフレームでライン照明を自作する選定・施工ガイド。粒感を消す拡散カバー、上下配光、ワイヤー吊りと給電、連結時の色ムラ・電圧降下対策を解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-linear-suspended-fixture-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-linear-suspended-fixture-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープで吊り下げライン照明を作る｜フレーム・拡散カバー・電源の選定 | LED PRO SHOP">
+<meta name="twitter:description" content="吊り下げ用アルミフレームでライン照明を自作する選定・施工ガイド。粒感を消す拡散カバー、上下配光、給電、連結時の色ムラ・電圧降下対策を解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-linear-suspended-fixture-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-linear-suspended-fixture-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #120a1e; color: #e7ddf5; line-height: 1.7; font-size: 15px; }
+  a { color: #a78bfa; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #241338 0%, #311a4d 50%, #1c0f2e 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #5b3a8f; }
+  .hero-badge { display: inline-block; background: #7c3aed; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f6f0ff; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #bda4e0; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #8b6cb0; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f6f0ff; border-left: 4px solid #8b5cf6; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #c4b5fd; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #d8cbee; }
+
+  .alert-box { background: #2a0f0f; border: 1px solid #7f3d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #22143a; border: 1px solid #5b3a8f; border-left: 4px solid #8b5cf6; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #d5c6ef; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #22143a; border-radius: 10px; overflow: hidden; }
+  thead th { background: #5b3a8f; color: #ddd0f7; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #331d52; color: #d8cbee; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #26173f; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #22143a; border: 1px solid #7c3aed; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #c4b5fd; margin-top: 0; }
+  .calc-formula { background: #0e0718; border: 1px solid #5b3a8f; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #ddd0f7; margin: 12px 0; line-height: 2; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .spec-card { background: #22143a; border: 1px solid #5b3a8f; border-radius: 10px; padding: 20px; }
+  .spec-card h4 { font-size: 15px; font-weight: 700; color: #c4b5fd; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #331d52; }
+  .spec-card .spec-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding: 5px 0; }
+  .spec-card .spec-row span:first-child { color: #bda4e0; }
+  .spec-card .spec-row span:last-child { color: #e7ddf5; font-weight: 600; text-align: right; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #22143a; border: 1px solid #5b3a8f; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #8b5cf6; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #c4b5fd; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #bda4e0; margin-bottom: 0; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #8b5cf6; color: #120a1e; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #d8cbee; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #331d52; font-size: 14px; color: #d8cbee; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #5b3a8f; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #22143a; padding: 16px 20px; font-weight: 700; color: #c4b5fd; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #d8cbee; background: #0f0819; }
+
+  .cta-box { background: linear-gradient(135deg, #5b3a8f 0%, #241338 100%); border: 1px solid #8b5cf6; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f6f0ff; margin-bottom: 10px; }
+  .cta-box p { color: #bda4e0; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #7c3aed; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #6d28d9; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #8b6cb0; }
+  .breadcrumb a { color: #8b6cb0; }
+  .breadcrumb a:hover { color: #c4b5fd; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid, .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LEDテープで吊り下げライン照明を作る｜アルミフレーム・拡散カバー・電源の選定と施工ポイント",
+  "description": "吊り下げ用アルミフレームでライン照明を自作する選定・施工ガイド。粒感を消す拡散カバー、上下配光、ワイヤー吊りと給電、連結時の色ムラ・電圧降下対策を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-linear-suspended-fixture-guide-hero.webp",
+  "datePublished": "2026-07-05",
+  "dateModified": "2026-07-05",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-linear-suspended-fixture-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "LEDテープで吊り下げライン照明を作る" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "吊り下げライン照明の粒感（LEDのつぶつぶ）を消すにはどうすればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "粒感を消す鍵は、拡散カバーの種類・テープとカバーの距離（発光面までの奥行き）・LED密度の3点です。まずカバーは透明ではなく乳白（フロスト）タイプを選びます。次にアルミフレームの深さでテープとカバー面の距離を確保すると、光が広がってから面に届くため粒が溶けます。浅いフレームで至近距離だと乳白でも粒が残りやすいので、粒感を特に嫌う場所は深めのフレームか、LEDが連続して見えるCOBタイプのテープを選ぶと均一な線光源になります。さらにLED密度の高い（1mあたりのチップ数が多い）テープほど粒が目立ちにくくなります。吊り下げは目線から近く粒が見えやすいので、乳白カバー＋十分な奥行き＋高密度またはCOB、の組み合わせが基本です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "上下両方向に光らせる（アップ・ダウンライト）ことはできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "できます。吊り下げライン照明では、下面を作業面照明（ダウン）、上面を天井へ向けた間接光（アップ）として使い分けるのが一般的です。実現方法は2つあり、1つは上下に発光面を持つ両面発光タイプのフレームを使う方法、もう1つは下向きフレームと上向きフレームを背中合わせに組む方法です。オフィスのデスク上なら下面はグレアを抑えた乳白カバーで手元を照らし、上面は天井を明るくして空間全体の陰影をやわらげます。上下で明るさや色を変えたい場合は、上面と下面を別系統の電源・調光にすると独立してコントロールできます。配光を分けるとデスクの照度を確保しつつ天井の暗さも解消できるため、オフィスや店舗のライン照明で好まれる構成です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "長いライン照明を連結すると端が暗くなったり色がずれたりしませんか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "長く連結すると、末端の電圧降下による暗化と、リール（ロット）違いによる色ムラの2つが起きやすくなります。電圧降下は、1本の許容接続長を超えて直列につなぐと末端ほど電圧が下がり暗くなる現象で、対策は両端給電・中間給電・電源分散です。24Vは12Vより接続長を伸ばせるので、長いラインは24V以上を選ぶのも有効です。色ムラは、異なるリールやロットのテープを1つのラインに混ぜると発生しやすいため、同一ラインは同じロットのテープでそろえ、可能なら色の許容差（SDCM）の小さいテープを選びます。連結部のコネクタは接触不良の起点にもなるので、長尺は直はんだや点検できる中継ボックスで確実に接続してください。設計段階で給電位置とロットをそろえておけば、施工後の暗化・色ムラのクレームを防げます。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">製品活用ガイド</div>
+    <h1>LEDテープで吊り下げライン照明を作る<br>フレーム・拡散カバー・電源の選定</h1>
+    <p class="hero-sub">粒感を消す拡散カバー、上下配光の使い分け、ワイヤー吊りと給電の逃がし、連結時の色ムラ・電圧降下対策——オフィス・店舗の間接照明を作る施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-07-05 | カテゴリ: LEDテープ製品活用ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-linear-suspended-fixture-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープで吊り下げライン照明を作る
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="info-box">
+      <p><strong>この記事の結論</strong>：LEDテープと吊り下げ用アルミフレームで、既製のライン照明に近い<strong>ペンダント型・連結ライン</strong>を作れます。品質を左右するのは<strong>拡散カバー（乳白）・発光面までの奥行き・LED密度</strong>の粒感対策、<strong>上下配光</strong>の使い分け、そして長尺での<strong>電圧降下と色ムラ</strong>対策です。目線に近い吊り下げは粒が見えやすいので、乳白カバー＋十分な奥行き＋高密度またはCOBが基本です。</p>
+    </div>
+
+    <h2>吊り下げライン照明を「作る」構成部材</h2>
+
+    <p>吊り下げライン照明は、既製の器具を買わなくても<strong>LEDテープ＋吊り下げ用アルミフレーム＋拡散カバー＋電源＋吊りワイヤー</strong>で構成できます。フレームがテープの放熱と拡散カバーの受けを兼ね、ワイヤーで天井から吊ることで、オフィスのデスク上や店舗のカウンター上に連続した線の光を作れます。まず部材の役割を整理します。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>部材</th>
+          <th>役割</th>
+          <th>選定のポイント</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>LEDテープ</td>
+          <td>光源</td>
+          <td>高密度／COB・色温度・W/m</td>
+        </tr>
+        <tr>
+          <td>吊り下げ用アルミフレーム</td>
+          <td>放熱・拡散カバー受け・剛性</td>
+          <td>深さ（奥行き）・上下配光・長さ</td>
+        </tr>
+        <tr>
+          <td>拡散カバー</td>
+          <td>粒感を消す・グレア低減</td>
+          <td>乳白（フロスト）／透明</td>
+        </tr>
+        <tr>
+          <td>電源（PSU）</td>
+          <td>低電圧供給</td>
+          <td>容量余裕・調光対応・設置場所</td>
+        </tr>
+        <tr>
+          <td>吊りワイヤー・給電</td>
+          <td>固定・電源引き回し</td>
+          <td>ワイヤー吊り・給電線の逃がし</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>粒感を消す3つの要素</h2>
+
+    <p>吊り下げは<strong>目線から近く粒（つぶつぶ）が見えやすい</strong>ため、間接照明以上に均一さが問われます。粒感を消す鍵は次の3点です。ドット感対策の詳細は <a href="/articles/led-tape-dot-spotting-elimination-guide">ドット感を消すガイド</a> も参照してください。</p>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">①</div>
+        <h4>乳白カバー</h4>
+        <p>透明ではなく乳白（フロスト）を選ぶ。光を拡散させて粒を溶かす。カバーの選び方は用途で分ける。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">②</div>
+        <h4>発光面までの奥行き</h4>
+        <p>深めのフレームでテープとカバー面の距離を確保。光が広がってから面に届き粒が均一化する。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">③</div>
+        <h4>高密度／COB</h4>
+        <p>LED密度の高いテープやCOBタイプは、素子が連続して見え線光源になり粒が目立たない。</p>
+      </div>
+    </div>
+
+    <div class="alert-box">
+      <div class="alert-title">よくある失敗：「浅いフレームに透明カバーでつぶつぶが丸見えになった」</div>
+      <p>浅いフレーム＋透明カバー＋低密度テープの組み合わせは、至近距離でLEDの粒がそのまま見えます。吊り下げは<strong>乳白カバー＋十分な奥行き＋高密度またはCOB</strong>を基本にし、特に粒感を嫌う場所はCOBテープで連続した線にします。COBとSMDの違いは <a href="/articles/cob-vs-smd-led-tape-guide">COB vs SMDガイド</a> を参照してください。</p>
+    </div>
+
+    <h2>上下配光の使い分け（アップ・ダウン）</h2>
+
+    <p>吊り下げの利点は、<strong>下面（作業面照明）と上面（天井への間接光）を同時に作れる</strong>ことです。下面はデスクや商品を照らし、上面は天井を明るくして空間の陰影をやわらげます。両面発光フレーム、または下向き・上向きフレームの背中合わせで実現します。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>配光</th>
+          <th>向き</th>
+          <th>狙い</th>
+          <th>おすすめカバー</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ダウン（下面）</td>
+          <td>作業面・商品へ</td>
+          <td>手元の照度確保</td>
+          <td>乳白（グレア抑制）</td>
+        </tr>
+        <tr>
+          <td>アップ（上面）</td>
+          <td>天井へ</td>
+          <td>間接光で陰影緩和</td>
+          <td>透明／乳白</td>
+        </tr>
+        <tr>
+          <td>上下両方</td>
+          <td>両面発光</td>
+          <td>照度＋空間の明るさ</td>
+          <td>下=乳白／上=任意</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <p><strong>上下で別系統にすると独立制御できる</strong>：上面と下面を別電源・別調光にすると、手元は明るく・天井はやわらかく、と独立してコントロールできます。デスク照度と天井の暗さを両立させたいオフィスに向く構成です。調光方式の選び方は <a href="/articles/led-tape-dimming-methods-guide">調光方式ガイド</a>、間接照明全体の設計は <a href="/articles/led-indirect-lighting-design-guide">間接照明設計ガイド</a> を参照してください。</p>
+    </div>
+
+    <h2>長尺・連結時の電圧降下と色ムラ対策</h2>
+
+    <div class="calc-box">
+      <h3>連結ライン照明で暗化・色ムラを防ぐ</h3>
+      <div class="calc-formula">
+電圧降下：1本の許容接続長を超えて直列 → 末端が暗い
+　対策 → 両端給電／中間給電／電源分散
+　　　　 長尺は12Vより24V以上を選ぶ（接続長を伸ばせる）
+
+色ムラ：異なるリール・ロットを混ぜると色がずれる
+　対策 → 同一ラインは同ロットでそろえる
+　　　　 色の許容差（SDCM）の小さいテープを選ぶ
+      </div>
+      <p style="color:#ddd0f7; font-size:13px; margin-top:12px; margin-bottom:0">
+        長く連結するほど末端の電圧降下と、ロット違いの色ムラが出やすくなります。電圧降下は <a href="/articles/led-tape-voltage-drop-guide">電圧降下ガイド</a>、電圧の選び方は <a href="/articles/led-tape-12v-vs-24v-guide">12V/24Vガイド</a>、色の均一性は <a href="/articles/led-tape-color-consistency-guide">色ムラガイド</a> を参照してください。給電位置とロットを設計段階でそろえるのが最大の予防策です。
+      </p>
+    </div>
+
+    <h2>施工手順（吊り下げの流れ）</h2>
+
+    <ul class="step-list">
+      <li><span>ライン長・配光（下面／上下）・色温度・明るさ（W/m）を決め、粒感対策として<strong>乳白カバー＋深めフレーム＋高密度/COB</strong>を選ぶ。</span></li>
+      <li><span>フレームにテープを貼る前に<strong>下地を脱脂</strong>し、密着と放熱を確保する（<a href="/articles/led-tape-aluminum-frame-installation-guide">アルミフレーム取付</a>参照）。</span></li>
+      <li><span>吊り位置に合わせて<strong>ワイヤー吊り金具</strong>を天井へ固定し、フレームを水平に吊る。</span></li>
+      <li><span>給電線をワイヤーや天井裏に沿わせて逃がし、<strong>電源は天井裏や点検口近く</strong>に納める。</span></li>
+      <li><span>長尺は<strong>両端給電・電源分散</strong>で電圧降下を抑え、連結は同ロットでそろえる。</span></li>
+      <li><span>通電し、<strong>粒感・色ムラ・末端の暗化・水平</strong>を目視で確認し、調光を最終調整する。</span></li>
+    </ul>
+
+    <h2>選定の目安スペック</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h4>テープ</h4>
+        <div class="spec-row"><span>粒感対策</span><span>高密度／COB</span></div>
+        <div class="spec-row"><span>色ムラ</span><span>同ロット・SDCM小</span></div>
+        <div class="spec-row"><span>電圧</span><span>長尺は24V以上</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>フレーム・カバー</h4>
+        <div class="spec-row"><span>カバー</span><span>乳白（フロスト）</span></div>
+        <div class="spec-row"><span>奥行き</span><span>深め（粒を溶かす）</span></div>
+        <div class="spec-row"><span>配光</span><span>下面／上下</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>電源・吊り</h4>
+        <div class="spec-row"><span>容量</span><span>定格の70〜80%</span></div>
+        <div class="spec-row"><span>給電</span><span>両端／分散</span></div>
+        <div class="spec-row"><span>吊り</span><span>ワイヤー水平固定</span></div>
+      </div>
+    </div>
+
+    <h2>施工チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>目線に近い吊り下げは乳白カバー＋深めフレーム＋高密度/COBにした</li>
+      <li>下面（作業面）／上下配光を用途に合わせて決めた</li>
+      <li>上下で明るさ・色を変える場合は別系統・別調光にした</li>
+      <li>フレームは下地を脱脂して密着・放熱を確保した</li>
+      <li>ワイヤーで水平に吊り、給電線を天井裏へ逃がした</li>
+      <li>長尺は両端給電・電源分散で電圧降下を抑えた</li>
+      <li>連結は同ロットでそろえ、通電で粒感・色ムラ・暗化を確認した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 吊り下げライン照明の粒感（LEDのつぶつぶ）を消すにはどうすればいいですか？</div>
+        <div class="faq-a">粒感を消す鍵は、拡散カバーの種類・テープとカバーの距離（発光面までの奥行き）・LED密度の3点です。まずカバーは透明ではなく乳白（フロスト）タイプを選びます。次にアルミフレームの深さでテープとカバー面の距離を確保すると、光が広がってから面に届くため粒が溶けます。浅いフレームで至近距離だと乳白でも粒が残りやすいので、粒感を特に嫌う場所は深めのフレームか、LEDが連続して見えるCOBタイプのテープを選ぶと均一な線光源になります。さらにLED密度の高い（1mあたりのチップ数が多い）テープほど粒が目立ちにくくなります。吊り下げは目線から近く粒が見えやすいので、乳白カバー＋十分な奥行き＋高密度またはCOB、の組み合わせが基本です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 上下両方向に光らせる（アップ・ダウンライト）ことはできますか？</div>
+        <div class="faq-a">できます。吊り下げライン照明では、下面を作業面照明（ダウン）、上面を天井へ向けた間接光（アップ）として使い分けるのが一般的です。実現方法は2つあり、1つは上下に発光面を持つ両面発光タイプのフレームを使う方法、もう1つは下向きフレームと上向きフレームを背中合わせに組む方法です。オフィスのデスク上なら下面はグレアを抑えた乳白カバーで手元を照らし、上面は天井を明るくして空間全体の陰影をやわらげます。上下で明るさや色を変えたい場合は、上面と下面を別系統の電源・調光にすると独立してコントロールできます。配光を分けるとデスクの照度を確保しつつ天井の暗さも解消できるため、オフィスや店舗のライン照明で好まれる構成です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 長いライン照明を連結すると端が暗くなったり色がずれたりしませんか？</div>
+        <div class="faq-a">長く連結すると、末端の電圧降下による暗化と、リール（ロット）違いによる色ムラの2つが起きやすくなります。電圧降下は、1本の許容接続長を超えて直列につなぐと末端ほど電圧が下がり暗くなる現象で、対策は両端給電・中間給電・電源分散です。24Vは12Vより接続長を伸ばせるので、長いラインは24V以上を選ぶのも有効です。色ムラは、異なるリールやロットのテープを1つのラインに混ぜると発生しやすいため、同一ラインは同じロットのテープでそろえ、可能なら色の許容差（SDCM）の小さいテープを選びます。連結部のコネクタは接触不良の起点にもなるので、長尺は直はんだや点検できる中継ボックスで確実に接続してください。設計段階で給電位置とロットをそろえておけば、施工後の暗化・色ムラのクレームを防げます。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>吊り下げ用フレーム・乳白カバー・COB/高密度テープを探す</h3>
+      <p>吊り下げ用アルミフレーム・乳白拡散カバー・COB／高密度LEDテープ・容量に余裕のある電源を取り扱っています。粒感の少ないライン照明を作れます。</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

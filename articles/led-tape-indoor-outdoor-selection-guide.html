@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>屋内用と屋外用LEDテープの違いと選び方｜防水・耐候・電源で判断する施工業者向けガイド | LED PRO SHOP</title>
+<meta name="description" content="LEDテープの屋内用と屋外用は防水等級・被覆材質・電源設置・耐候性が違います。IP20で足りる場所とIP65/67が必須の場所の境界、屋外で追加すべき紫外線・結露・塩害対策、電源を屋内に逃がす配線の考え方を、現場で迷わない判断基準表とともに施工業者向けに解説します。">
+<meta property="og:title" content="屋内用と屋外用LEDテープの違いと選び方｜防水・耐候・電源で判断する施工業者向けガイド | LED PRO SHOP">
+<meta property="og:description" content="IP20で足りる場所とIP65/67が必須の場所の境界、屋外で追加すべき紫外線・結露・塩害対策、電源を屋内に逃がす配線——屋内用/屋外用LEDテープの選び分けを判断基準表とともに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-indoor-outdoor-selection-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-indoor-outdoor-selection-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="屋内用と屋外用LEDテープの違いと選び方｜防水・耐候・電源ガイド | LED PRO SHOP">
+<meta name="twitter:description" content="IP20で足りる場所とIP65/67が必須の場所の境界、屋外で追加すべき紫外線・結露・塩害対策——屋内用/屋外用LEDテープの選び分けを判断基準表とともに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-indoor-outdoor-selection-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-indoor-outdoor-selection-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #0a1020; color: #dce6f5; line-height: 1.7; font-size: 15px; }
+  a { color: #60a5fa; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #0f1e3d 0%, #13294f 50%, #0c182f 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #1e3a5f; }
+  .hero-badge { display: inline-block; background: #2563eb; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #eef4ff; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #93b4d8; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #5c7ba3; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #eef4ff; border-left: 4px solid #3b82f6; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #93c5fd; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #cbd9ec; }
+
+  .alert-box { background: #1c1006; border: 1px solid #7f3d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #10203c; border: 1px solid #1e3a5f; border-left: 4px solid #3b82f6; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #c3d6ee; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #10203c; border-radius: 10px; overflow: hidden; }
+  thead th { background: #1e3a5f; color: #bfdbfe; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #16294a; color: #cbd9ec; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #12233f; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #10203c; border: 1px solid #2563eb; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #93c5fd; margin-top: 0; }
+  .calc-formula { background: #060d1c; border: 1px solid #1e3a5f; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #bfdbfe; margin: 12px 0; line-height: 2; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .spec-card { background: #10203c; border: 1px solid #1e3a5f; border-radius: 10px; padding: 20px; }
+  .spec-card h4 { font-size: 15px; font-weight: 700; color: #93c5fd; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #16294a; }
+  .spec-card .spec-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding: 5px 0; }
+  .spec-card .spec-row span:first-child { color: #93b4d8; }
+  .spec-card .spec-row span:last-child { color: #dce6f5; font-weight: 600; text-align: right; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #10203c; border: 1px solid #1e3a5f; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #3b82f6; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #93c5fd; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #93b4d8; margin-bottom: 0; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #3b82f6; color: #0a1020; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #cbd9ec; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #16294a; font-size: 14px; color: #cbd9ec; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #1e3a5f; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #10203c; padding: 16px 20px; font-weight: 700; color: #93c5fd; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #cbd9ec; background: #0a1526; }
+
+  .cta-box { background: linear-gradient(135deg, #1e3a5f 0%, #0f1e3d 100%); border: 1px solid #3b82f6; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #eef4ff; margin-bottom: 10px; }
+  .cta-box p { color: #93b4d8; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #2563eb; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #1d4ed8; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #5c7ba3; }
+  .breadcrumb a { color: #5c7ba3; }
+  .breadcrumb a:hover { color: #93c5fd; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid, .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "屋内用と屋外用LEDテープの違いと選び方｜防水・耐候・電源で判断する施工業者向けガイド",
+  "description": "IP20で足りる場所とIP65/67が必須の場所の境界、屋外で追加すべき紫外線・結露・塩害対策、電源を屋内に逃がす配線——屋内用/屋外用LEDテープの選び分けを判断基準表とともに施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-indoor-outdoor-selection-guide-hero.webp",
+  "datePublished": "2026-07-05",
+  "dateModified": "2026-07-05",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-indoor-outdoor-selection-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "屋内用と屋外用LEDテープの違いと選び方" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "軒下や庇の下（雨がかりしない半屋外）は屋内用LEDテープで大丈夫ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "雨が直接かからない軒下・庇の下でも、屋内用（IP20など非防水）はおすすめしません。半屋外は昼夜の温度差で結露が発生し、朝露・吹き込みの雨・洗浄時の水はねが基板に触れる可能性があるためです。最低でもIP65相当の防湿・防滴タイプを選び、コネクタ部と切断端面はチューブやシリコンで確実に止水します。判断に迷ったら『外気に触れる場所は屋外用』を基本ルールにするのが安全です。屋内用が明確に使えるのは、空調が効いた室内で水・結露・粉塵のリスクがない場所に限られます。半屋外はIP65以上・完全屋外（雨ざらし・地面近く）はIP67以上を目安にしてください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "屋外用LEDテープは防水等級（IP）さえ合っていれば長持ちしますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IP等級は水と粉塵の侵入に対する保護レベルであり、屋外の耐久性はそれだけでは決まりません。屋外では紫外線による被覆（シリコン・樹脂）の黄変・硬化・ひび割れ、寒暖差による結露、海沿いの塩害、夏場の高温による寿命低下も同時に効いてきます。長持ちさせるには、耐候性のある被覆材のテープを選び、直射日光が当たる面はカバーやアルミフレームで保護し、コネクタ・電源は屋外対応の防水ボックスに納めます。IP等級は入口の条件で、そこに紫外線・温度・塩害の対策を足して初めて屋外で長く使えます。特にコネクタと切断端は最も水が入りやすい弱点なので、止水処理を丁寧に行ってください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "屋外設置でも電源（PSU）は屋外に置いてよいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "電源はできるだけ屋内や防水ボックス内に納めるのが基本です。LEDテープ本体が防水でも、電源は熱を持つため密閉すると寿命が縮み、防水と放熱が両立しにくい部材です。可能なら電源は屋内・軒内・点検できる防雨ボックス内に設置し、そこから防水ケーブルで屋外のテープへ2次側（低電圧側）を引き回します。電源を屋外の防水ボックスに入れる場合は、IP等級の高い屋外電源を選び、直射日光を避け、ボックス内の温度上昇を考えて容量に余裕（定格の70〜80%運用）をもたせます。電源を屋外に長い距離で置くと2次側の電圧降下も大きくなるため、電線を太くするか給電位置を工夫してください。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">仕様選定ガイド</div>
+    <h1>屋内用と屋外用LEDテープの違いと選び方<br>防水・耐候・電源で判断する</h1>
+    <p class="hero-sub">IP20で足りる場所とIP65/67が必須の場所の境界、屋外で追加すべき紫外線・結露・塩害対策、電源を屋内に逃がす配線——現場で迷わない判断基準を施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-07-05 | カテゴリ: LEDテープ仕様選定ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-indoor-outdoor-selection-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; 屋内用と屋外用LEDテープの違いと選び方
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="info-box">
+      <p><strong>この記事の結論</strong>：屋内用（IP20・非防水）と屋外用（IP65〜67・防水）の差は防水等級だけではありません。屋外では<strong>紫外線・結露・塩害・高温</strong>が同時に効くため、<strong>被覆材質・カバー保護・電源の逃がし・コネクタ止水</strong>まで含めて選ぶ必要があります。迷ったら「<strong>外気に触れる場所は屋外用</strong>」を基本ルールにしてください。</p>
+    </div>
+
+    <h2>屋内用と屋外用の違いを一枚で整理</h2>
+
+    <p>LEDテープの「屋内用／屋外用」は、主に<strong>防水等級（IP）</strong>・<strong>被覆（コーティング）材質</strong>・<strong>電源とコネクタの防水性</strong>・<strong>耐候性</strong>の4点で分かれます。屋内用は基板がむき出し（またはIP20程度）で放熱・コスト・施工性に優れ、屋外用はシリコンチューブや樹脂充填で水・粉塵の侵入を防ぎます。まず全体像を表で押さえます。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>比較項目</th>
+          <th>屋内用（IP20〜44）</th>
+          <th>屋外用（IP65〜68）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>防水・防塵</td>
+          <td>非防水・防滴程度</td>
+          <td>防噴流〜水没まで対応</td>
+        </tr>
+        <tr>
+          <td>被覆・構造</td>
+          <td>基板むき出し／薄コート</td>
+          <td>シリコンチューブ・樹脂充填</td>
+        </tr>
+        <tr>
+          <td>紫外線・耐候</td>
+          <td>考慮なし（黄変しやすい）</td>
+          <td>耐候タイプを選べば長持ち</td>
+        </tr>
+        <tr>
+          <td>放熱性</td>
+          <td>良い（フレーム併用で最適）</td>
+          <td>被覆で熱がこもりやすい</td>
+        </tr>
+        <tr>
+          <td>コネクタ・電源</td>
+          <td>屋内用・非防水</td>
+          <td>防水コネクタ＋防水ボックス</td>
+        </tr>
+        <tr>
+          <td>コスト・施工性</td>
+          <td>安い・切断/接続が容易</td>
+          <td>高い・止水処理の手間あり</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>IP等級で決める設置場所の境界</h2>
+
+    <p>迷いがちな「どこまでが屋内でどこからが屋外か」を、水がかりのリスクで整理します。<strong>結露・水はね・雨がかり</strong>のどれに当たるかで必要なIP等級が変わります。防水等級の詳しい違いは <a href="/articles/led-tape-ip-waterproof-guide">IP防水等級ガイド</a> も参照してください。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>設置場所</th>
+          <th>水・湿気のリスク</th>
+          <th>推奨IP等級</th>
+          <th>判定</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>空調室内・什器内（乾燥）</td>
+          <td>ほぼなし</td>
+          <td>IP20（非防水）</td>
+          <td class="tag-ok">屋内用OK</td>
+        </tr>
+        <tr>
+          <td>厨房・洗面・浴室まわり</td>
+          <td>水はね・蒸気・結露</td>
+          <td>IP65以上</td>
+          <td class="tag-warn">防水必須</td>
+        </tr>
+        <tr>
+          <td>軒下・庇下（半屋外）</td>
+          <td>結露・吹き込み・朝露</td>
+          <td>IP65以上</td>
+          <td class="tag-warn">屋外用推奨</td>
+        </tr>
+        <tr>
+          <td>外壁・看板（雨ざらし）</td>
+          <td>直接雨・紫外線</td>
+          <td>IP67以上＋耐候</td>
+          <td class="tag-ng">屋外用必須</td>
+        </tr>
+        <tr>
+          <td>地面近く・水没の恐れ</td>
+          <td>冠水・水たまり</td>
+          <td>IP68</td>
+          <td class="tag-ng">屋外用必須</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert-box">
+      <div class="alert-title">よくある失敗：「軒下だから屋内用でいいと思ったら数ヶ月で基板が腐食した」</div>
+      <p>雨がかりしない半屋外でも、<strong>昼夜の温度差で結露</strong>が発生し、朝露や吹き込みの雨が基板に触れます。屋内用（非防水）は水分で銅箔が腐食して部分不点灯・変色を起こします。<strong>外気に触れる場所はIP65以上の屋外用</strong>を基本にしてください。</p>
+    </div>
+
+    <h2>屋外で「IP等級以外」に必要な4つの対策</h2>
+
+    <p>屋外用テープを選んでも、IP等級だけでは長持ちしません。屋外は水以外の劣化要因が同時に効くため、次の4点を追加で押さえます。</p>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">①</div>
+        <h4>紫外線（UV）対策</h4>
+        <p>直射日光は被覆の黄変・硬化・ひび割れを進める。耐候タイプの被覆を選び、日射面はカバーやアルミフレームで保護する。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">②</div>
+        <h4>結露対策</h4>
+        <p>密閉部は昼夜の温度差で内部結露する。水抜き穴・呼吸孔のある防水ボックスを使い、端面の止水を確実にする。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">③</div>
+        <h4>塩害対策（海沿い）</h4>
+        <p>塩分は端子・はんだ・コネクタを腐食させる。海沿いはコネクタを避け直はんだ＋防水処理、金属部は耐食材を選ぶ。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">④</div>
+        <h4>高温・放熱対策</h4>
+        <p>夏場の直射で被覆内部が高温になり寿命が縮む。W/mを抑え、電源は容量に余裕をもたせ、放熱面を確保する。</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <p><strong>弱点はいつもコネクタと切断端</strong>：屋外で最初に水が入るのは<strong>コネクタ接続部と切断した端面</strong>です。防水チューブのエンドキャップ＋シリコン充填で確実に止水し、可能なら海沿い・雨ざらしはコネクタを使わず<a href="/articles/led-tape-soldering-guide">直はんだ＋熱収縮チューブ</a>で処理します。塩害地域の選定は <a href="/articles/led-tape-coastal-salt-damage-guide">塩害対策ガイド</a> も併読してください。</p>
+    </div>
+
+    <h2>電源（PSU）とコネクタは屋内へ逃がす</h2>
+
+    <div class="calc-box">
+      <h3>電源の設置と2次側配線の考え方</h3>
+      <div class="calc-formula">
+基本：電源は屋内 or 軒内 or 防雨ボックスへ
+　　　（テープが防水でも電源は熱を持つ＝密閉に弱い）
+
+屋外へは「2次側（低電圧DC）」を防水ケーブルで引き回す
+
+例）24V電源を屋内、テープまで屋外10m
+　→ 2次側の電圧降下を計算し電線を太くする
+　　（長距離は給電位置を分ける／両端給電も検討）
+      </div>
+      <p style="color:#bfdbfe; font-size:13px; margin-top:12px; margin-bottom:0">
+        電源を屋外に置くと防水と放熱が両立しにくく、2次側の距離も伸びます。電源を屋外ボックスに入れる場合は屋外対応品を選び、直射日光を避け、容量に余裕（定格の70〜80%運用）をもたせます。屋外電源の収納は <a href="/articles/led-outdoor-power-supply-enclosure-guide">屋外電源ボックスガイド</a>、電圧降下は <a href="/articles/led-tape-voltage-drop-guide">電圧降下ガイド</a> を参照してください。
+      </p>
+    </div>
+
+    <h2>選定の進め方（手順）</h2>
+
+    <ul class="step-list">
+      <li><span>設置場所が<strong>外気に触れるか</strong>を最初に判定する（触れるなら屋外用が基本）。</span></li>
+      <li><span>水・湿気のリスク（結露／水はね／雨ざらし／水没）から<strong>必要IP等級</strong>を決める。</span></li>
+      <li><span>屋外なら<strong>紫外線・結露・塩害・高温</strong>の追加対策（耐候被覆・カバー・止水）を盛り込む。</span></li>
+      <li><span><strong>電源は屋内／防雨ボックス</strong>に納め、屋外へは2次側を防水ケーブルで引き回す。</span></li>
+      <li><span>コネクタ・切断端の<strong>止水処理</strong>を計画し、海沿い・雨ざらしは直はんだを検討する。</span></li>
+      <li><span>2次側の<strong>電圧降下</strong>を計算し、長距離は電線を太くするか給電を分ける。</span></li>
+    </ul>
+
+    <h2>屋内用・屋外用の目安スペック</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h4>屋内用の目安</h4>
+        <div class="spec-row"><span>IP等級</span><span>IP20〜44</span></div>
+        <div class="spec-row"><span>放熱</span><span>アルミフレーム推奨</span></div>
+        <div class="spec-row"><span>電源</span><span>屋内・非防水</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>半屋外の目安</h4>
+        <div class="spec-row"><span>IP等級</span><span>IP65以上</span></div>
+        <div class="spec-row"><span>端面</span><span>止水必須</span></div>
+        <div class="spec-row"><span>電源</span><span>屋内へ逃がす</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>完全屋外の目安</h4>
+        <div class="spec-row"><span>IP等級</span><span>IP67〜68</span></div>
+        <div class="spec-row"><span>被覆</span><span>耐候タイプ</span></div>
+        <div class="spec-row"><span>コネクタ</span><span>防水／直はんだ</span></div>
+      </div>
+    </div>
+
+    <h2>選定チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>設置場所が外気に触れるか（触れるなら屋外用）を最初に判定した</li>
+      <li>結露・水はね・雨ざらし・水没のどれに当たるかでIP等級を決めた</li>
+      <li>屋外は紫外線・結露・塩害・高温の追加対策を盛り込んだ</li>
+      <li>日射面はカバー／アルミフレームで保護する計画にした</li>
+      <li>電源は屋内・軒内・防雨ボックスに納める配置にした</li>
+      <li>コネクタ・切断端の止水処理を計画した（海沿いは直はんだ検討）</li>
+      <li>2次側の電圧降下を計算し電線太さ・給電位置を決めた</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 軒下や庇の下（雨がかりしない半屋外）は屋内用LEDテープで大丈夫ですか？</div>
+        <div class="faq-a">雨が直接かからない軒下・庇の下でも、屋内用（IP20など非防水）はおすすめしません。半屋外は昼夜の温度差で結露が発生し、朝露・吹き込みの雨・洗浄時の水はねが基板に触れる可能性があるためです。最低でもIP65相当の防湿・防滴タイプを選び、コネクタ部と切断端面はチューブやシリコンで確実に止水します。判断に迷ったら『外気に触れる場所は屋外用』を基本ルールにするのが安全です。屋内用が明確に使えるのは、空調が効いた室内で水・結露・粉塵のリスクがない場所に限られます。半屋外はIP65以上・完全屋外（雨ざらし・地面近く）はIP67以上を目安にしてください。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 屋外用LEDテープは防水等級（IP）さえ合っていれば長持ちしますか？</div>
+        <div class="faq-a">IP等級は水と粉塵の侵入に対する保護レベルであり、屋外の耐久性はそれだけでは決まりません。屋外では紫外線による被覆（シリコン・樹脂）の黄変・硬化・ひび割れ、寒暖差による結露、海沿いの塩害、夏場の高温による寿命低下も同時に効いてきます。長持ちさせるには、耐候性のある被覆材のテープを選び、直射日光が当たる面はカバーやアルミフレームで保護し、コネクタ・電源は屋外対応の防水ボックスに納めます。IP等級は入口の条件で、そこに紫外線・温度・塩害の対策を足して初めて屋外で長く使えます。特にコネクタと切断端は最も水が入りやすい弱点なので、止水処理を丁寧に行ってください。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 屋外設置でも電源（PSU）は屋外に置いてよいですか？</div>
+        <div class="faq-a">電源はできるだけ屋内や防水ボックス内に納めるのが基本です。LEDテープ本体が防水でも、電源は熱を持つため密閉すると寿命が縮み、防水と放熱が両立しにくい部材です。可能なら電源は屋内・軒内・点検できる防雨ボックス内に設置し、そこから防水ケーブルで屋外のテープへ2次側（低電圧側）を引き回します。電源を屋外の防水ボックスに入れる場合は、IP等級の高い屋外電源を選び、直射日光を避け、ボックス内の温度上昇を考えて容量に余裕（定格の70〜80%運用）をもたせます。電源を屋外に長い距離で置くと2次側の電圧降下も大きくなるため、電線を太くするか給電位置を工夫してください。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>屋内用・屋外用のLEDテープと防水部材を探す</h3>
+      <p>IP20の屋内用から IP65/67/68 の屋外用、防水コネクタ・屋外電源ボックス・アルミフレームまで取り扱っています。設置場所に合った防水・耐候仕様が選べます。</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

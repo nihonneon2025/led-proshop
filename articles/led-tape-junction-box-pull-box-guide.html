@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープの接続をプルボックス（中継ボックス）で納める施工手順｜隠蔽配線・点検性・防水の実務ガイド | LED PRO SHOP</title>
+<meta name="description" content="LEDテープの電源・分岐・コネクタをプルボックス（中継ボックス）にまとめる施工手順を解説。露出させない隠蔽配線、後から交換できる点検性、屋外の防水処理、ボックスサイズの決め方、熱がこもらない電源の逃がし方まで、施工業者が現場で失敗しない実務を判断基準とチェックリストで示します。">
+<meta property="og:title" content="LEDテープの接続をプルボックス（中継ボックス）で納める施工手順｜隠蔽配線・点検性・防水の実務ガイド | LED PRO SHOP">
+<meta property="og:description" content="電源・分岐・コネクタを中継ボックスにまとめる隠蔽配線・点検性・防水処理・ボックスサイズの決め方を、施工業者が現場で失敗しない実務として解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-junction-box-pull-box-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-junction-box-pull-box-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープの接続をプルボックスで納める施工手順｜隠蔽配線・点検性・防水 | LED PRO SHOP">
+<meta name="twitter:description" content="電源・分岐・コネクタを中継ボックスにまとめる隠蔽配線・点検性・防水処理・サイズの決め方を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-junction-box-pull-box-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-junction-box-pull-box-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #1a1206; color: #f3e8d5; line-height: 1.7; font-size: 15px; }
+  a { color: #f59e0b; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #2c1c06 0%, #3d2708 50%, #241706 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #78500f; }
+  .hero-badge { display: inline-block; background: #d97706; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #fffaf0; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #d8b483; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #a3814e; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #fffaf0; border-left: 4px solid #f59e0b; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #fcd34d; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #e6d6bd; }
+
+  .alert-box { background: #2a0f0f; border: 1px solid #7f3d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #2c1e08; border: 1px solid #78500f; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #ecd9b8; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #2c1e08; border-radius: 10px; overflow: hidden; }
+  thead th { background: #78500f; color: #fde68a; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #3d2b0f; color: #e6d6bd; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #2f210a; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #2c1e08; border: 1px solid #b45309; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #fcd34d; margin-top: 0; }
+  .calc-formula { background: #140d03; border: 1px solid #78500f; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #fde68a; margin: 12px 0; line-height: 2; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .spec-card { background: #2c1e08; border: 1px solid #78500f; border-radius: 10px; padding: 20px; }
+  .spec-card h4 { font-size: 15px; font-weight: 700; color: #fcd34d; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #3d2b0f; }
+  .spec-card .spec-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding: 5px 0; }
+  .spec-card .spec-row span:first-child { color: #d8b483; }
+  .spec-card .spec-row span:last-child { color: #f3e8d5; font-weight: 600; text-align: right; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #2c1e08; border: 1px solid #78500f; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #f59e0b; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #fcd34d; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #d8b483; margin-bottom: 0; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #f59e0b; color: #1a1206; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #e6d6bd; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #3d2b0f; font-size: 14px; color: #e6d6bd; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #78500f; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #2c1e08; padding: 16px 20px; font-weight: 700; color: #fcd34d; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #e6d6bd; background: #17100480; }
+
+  .cta-box { background: linear-gradient(135deg, #78500f 0%, #2c1c06 100%); border: 1px solid #f59e0b; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #fffaf0; margin-bottom: 10px; }
+  .cta-box p { color: #d8b483; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #d97706; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #b45309; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #a3814e; }
+  .breadcrumb a { color: #a3814e; }
+  .breadcrumb a:hover { color: #fcd34d; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid, .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LEDテープの接続をプルボックス（中継ボックス）で納める施工手順｜隠蔽配線・点検性・防水の実務ガイド",
+  "description": "電源・分岐・コネクタを中継ボックスにまとめる隠蔽配線・点検性・防水処理・ボックスサイズの決め方を、施工業者が現場で失敗しない実務として解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-junction-box-pull-box-guide-hero.webp",
+  "datePublished": "2026-07-05",
+  "dateModified": "2026-07-05",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-junction-box-pull-box-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "LEDテープをプルボックスで納める施工手順" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "LEDテープの電源やコネクタは必ずプルボックスに入れる必要がありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "法令で常に義務付けられているわけではありませんが、電源・コネクタ・分岐をプルボックス（中継ボックス）にまとめると、見た目・安全性・保守性が大きく向上するため実務では推奨されます。理由は3つあります。第一に、接続部を露出させないことで意匠を損なわず、埃や物理的接触からも守れます。第二に、コネクタやはんだ接続は最も故障しやすい箇所なので、点検口付きのボックスに集約しておけば交換・修理が容易です。第三に、屋外や湿気の多い場所では防水ボックスに納めることで水の侵入を防げます。逆に、什器内の短いテープなど点検の必要が薄い場所では、コネクタを直接隠すだけで十分なこともあります。設置環境と保守の必要性で判断してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "プルボックスのサイズはどう決めればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "収める部材の大きさ＋配線の曲げ半径＋余長＋放熱の余裕、の合計で決めます。電源を入れる場合は電源本体が最も大きい部材になるので、まず電源寸法に対して四方に指1〜2本分の隙間を確保できるサイズを基準にします。次にケーブルを無理なく曲げて引き込めるスペース、端子台やコネクタの並べ幅、点検時に手が入る余裕を足します。電源やコネクタは発熱するため、ぎゅうぎゅうに詰めると内部温度が上がって寿命が縮みます。放熱を考えると、電源はボックスの容積に対して余裕をもって収め、密閉タイプなら特に大きめを選ぶのが安全です。迷ったら一回り大きいボックスを選ぶ方が、後の増設・交換もしやすくなります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "屋外でプルボックスを使うときの防水のポイントは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "屋外は防水（IP)対応のボックスを使い、ケーブル引き込み口と結露の2点を重点的に処理します。まずボックス自体を屋外用（防雨・防噴流以上）にし、ケーブルの引き込みには防水グランド（ケーブルグランド）を使って隙間から水が入らないようにします。ボックスは水が溜まらないよう引き込み口を下向き、または横向きに配置し、必要なら底に水抜き穴を設けます。屋外の密閉ボックスは昼夜の温度差で内部結露するため、呼吸孔付きのボックスを選ぶか、乾燥剤・水抜きで対策します。電源を屋外ボックスに入れる場合は放熱と防水が両立しにくいので、可能なら電源は屋内に逃がし、屋外ボックスには防水コネクタや端子台だけを納める構成が安全です。ボックスのフタのパッキンは劣化するので、定期点検で状態を確認してください。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">施工方法ガイド</div>
+    <h1>LEDテープの接続をプルボックス（中継ボックス）で納める施工手順</h1>
+    <p class="hero-sub">電源・分岐・コネクタを露出させない隠蔽配線、後から交換できる点検性、屋外の防水処理、ボックスサイズの決め方——施工業者が現場で失敗しない実務を解説</p>
+    <p class="hero-meta">公開: 2026-07-05 | カテゴリ: LEDテープ施工方法ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-junction-box-pull-box-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープをプルボックスで納める施工手順
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="info-box">
+      <p><strong>この記事の結論</strong>：LEDテープの電源・コネクタ・分岐は<strong>プルボックス（中継ボックス）に集約</strong>すると、意匠を損なわず（隠蔽）・後から交換でき（点検性）・水から守れます（防水）。ボックスは<strong>部材＋配線曲げ＋余長＋放熱の余裕</strong>でサイズを決め、屋外は<strong>防水グランドと結露対策</strong>を必ず入れます。故障しやすいコネクタを一箇所にまとめるのが最大の狙いです。</p>
+    </div>
+
+    <h2>なぜプルボックスにまとめるのか</h2>
+
+    <p>プルボックス（中継ボックス）は、電源・コネクタ・分岐といった<strong>配線が集まる・切り替わる箇所</strong>を1つの箱に収める部材です。LEDテープ施工でこれを使う狙いは、露出配線を隠して意匠を整え、故障しやすい接続部を交換できる形で守ることにあります。特にコネクタ接続やはんだ接続は経年で最も不具合が出やすい箇所なので、点検口のあるボックスに集約しておくと、後の修理・交換が現場で数分で終わります。</p>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">①</div>
+        <h4>隠蔽（意匠）</h4>
+        <p>電源・コネクタ・余長を箱内に隠し、露出配線をなくす。間接照明の見付けをきれいに保てる。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">②</div>
+        <h4>点検性（保守）</h4>
+        <p>故障しやすい接続部を一箇所に集約。フタを開ければ交換・増設が容易で再訪コストが下がる。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">③</div>
+        <h4>防水・防塵</h4>
+        <p>屋外・厨房・湿気の多い場所は防水ボックスで水の侵入を防ぐ。埃や物理接触からも保護。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">④</div>
+        <h4>放熱の管理</h4>
+        <p>発熱する電源をまとめる場合は容積に余裕をもたせ、内部温度の上昇を抑えて寿命を守る。</p>
+      </div>
+    </div>
+
+    <h2>ボックスに何を入れるか（構成パターン）</h2>
+
+    <p>プルボックスに何を納めるかは、電源の設置場所と点検の必要性で変わります。代表的な3パターンを整理します。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>構成パターン</th>
+          <th>ボックスに入れるもの</th>
+          <th>向いている場所</th>
+          <th>放熱</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>電源同梱型</td>
+          <td>電源＋端子台＋コネクタ</td>
+          <td>電源を隠したい屋内・天井裏</td>
+          <td class="tag-warn">余裕必須</td>
+        </tr>
+        <tr>
+          <td>中継のみ型</td>
+          <td>端子台／防水コネクタのみ</td>
+          <td>電源は別置き・屋外の中継点</td>
+          <td class="tag-ok">熱少</td>
+        </tr>
+        <tr>
+          <td>分岐型</td>
+          <td>1入力→複数出力の分配端子</td>
+          <td>複数系統に分けて給電</td>
+          <td class="tag-ok">熱少</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert-box">
+      <div class="alert-title">よくある失敗：「小さいボックスに電源を詰め込んだら夏に保護が働いて消えた」</div>
+      <p>発熱する電源をぴったりサイズのボックスに密閉すると、<strong>内部温度が上がって保護動作・早期故障</strong>を招きます。電源を入れるボックスは<strong>容積に余裕</strong>をもたせ、密閉型なら特に大きめを選びます。電源の容量自体も定格の70〜80%で運用する<a href="/articles/led-tape-derating-guide">余裕設計</a>が有効です。</p>
+    </div>
+
+    <h2>ボックスサイズの決め方</h2>
+
+    <div class="calc-box">
+      <h3>必要なボックス内寸の考え方</h3>
+      <div class="calc-formula">
+ボックス内寸 ≧ 最大部材（通常は電源）の寸法
+　　　　　　　＋ 四方の隙間（指1〜2本分）
+　　　　　　　＋ ケーブルの曲げ半径・余長
+　　　　　　　＋ 放熱の余裕（密閉型は大きめ）
+
+迷ったら「一回り大きい」を選ぶ
+　→ 後の増設・交換・放熱に効く
+      </div>
+      <p style="color:#fde68a; font-size:13px; margin-top:12px; margin-bottom:0">
+        まず電源が最も大きい部材になるので電源寸法を基準にし、そこにケーブルを無理なく曲げて引き込める空間、端子台・コネクタの並べ幅、点検時に手が入る余裕を足します。電源容量の考え方は <a href="/articles/led-psu-capacity-guide">電源容量ガイド</a>、電源の配置は <a href="/articles/led-tape-power-supply-layout-guide">電源レイアウトガイド</a> を参照してください。
+      </p>
+    </div>
+
+    <h2>施工手順（隠蔽配線の流れ）</h2>
+
+    <ul class="step-list">
+      <li><span>電源・コネクタ・分岐の<strong>集約位置</strong>を決め、点検できる場所（点検口・什器内・天井裏の開口近く）にボックスを配置する。</span></li>
+      <li><span>収める部材の寸法から<strong>ボックスサイズ</strong>を決める（電源寸法＋隙間＋曲げ＋放熱の余裕）。</span></li>
+      <li><span>1次側（AC）と2次側（低電圧DC）の<strong>引き込み口を分け</strong>、屋外は防水グランドで引き込む。</span></li>
+      <li><span>ボックス内で<strong>端子台またはコネクタ</strong>に結線し、極性（＋−）と系統を明示する。</span></li>
+      <li><span>ケーブルに<strong>余長</strong>を持たせてボックス内でまとめ、テープ側は必要に応じて<a href="/articles/led-tape-extension-cable-guide">延長ケーブル</a>で引き回す。</span></li>
+      <li><span>通電試験で全系統の点灯・極性・発熱を確認し、<strong>フタを閉じて</strong>点検性を確保する。</span></li>
+    </ul>
+
+    <div class="info-box">
+      <p><strong>結線は端子台かコネクタで「戻せる」形に</strong>：ボックス内の結線を直はんだで固めてしまうと交換時にやり直しになります。<a href="/articles/led-tape-terminal-block-wago-guide">端子台・WAGO</a>やコネクタで<strong>差し替えできる形</strong>にしておくと保守が楽です。長距離給電では2次側の<a href="/articles/led-tape-voltage-drop-guide">電圧降下</a>を計算し、ボックスの位置（給電点）を調整します。</p>
+    </div>
+
+    <h2>屋外・湿気の多い場所の防水処理</h2>
+
+    <p>屋外や厨房・洗面まわりでは、ボックス自体を防水（IP）対応にし、<strong>引き込み口と結露</strong>を重点的に処理します。防水等級の考え方は <a href="/articles/led-tape-waterproof-ip-guide">防水IPガイド</a> も参照してください。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>チェック項目</th>
+          <th>処理内容</th>
+          <th>狙い</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ボックス選定</td>
+          <td>屋外用（防雨・防噴流以上）</td>
+          <td>雨・水はねの侵入防止</td>
+        </tr>
+        <tr>
+          <td>引き込み口</td>
+          <td>防水グランドで密閉</td>
+          <td>ケーブル隙間からの浸水防止</td>
+        </tr>
+        <tr>
+          <td>引き込み向き</td>
+          <td>下向き／横向き＋水抜き</td>
+          <td>ボックス内に水を溜めない</td>
+        </tr>
+        <tr>
+          <td>結露</td>
+          <td>呼吸孔付き／乾燥剤</td>
+          <td>温度差による内部結露対策</td>
+        </tr>
+        <tr>
+          <td>電源</td>
+          <td>可能なら屋内へ逃がす</td>
+          <td>放熱と防水の両立</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>ボックス選定の目安スペック</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h4>屋内・電源同梱</h4>
+        <div class="spec-row"><span>容積</span><span>電源＋放熱余裕</span></div>
+        <div class="spec-row"><span>結線</span><span>端子台／コネクタ</span></div>
+        <div class="spec-row"><span>点検</span><span>フタ開閉容易</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>屋外・中継</h4>
+        <div class="spec-row"><span>等級</span><span>防雨IP以上</span></div>
+        <div class="spec-row"><span>引込</span><span>防水グランド</span></div>
+        <div class="spec-row"><span>結露</span><span>呼吸孔／水抜き</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>分岐給電</h4>
+        <div class="spec-row"><span>端子</span><span>1入力→複数出力</span></div>
+        <div class="spec-row"><span>極性</span><span>系統ごと明示</span></div>
+        <div class="spec-row"><span>給電点</span><span>電圧降下で調整</span></div>
+      </div>
+    </div>
+
+    <h2>施工チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>電源・コネクタ・分岐を点検できる場所のボックスに集約した</li>
+      <li>電源寸法＋隙間＋曲げ＋放熱の余裕でサイズを決めた（迷ったら大きめ）</li>
+      <li>1次側と2次側の引き込み口を分けた</li>
+      <li>結線は端子台／コネクタで差し替えできる形にした</li>
+      <li>ケーブルに余長を持たせボックス内でまとめた</li>
+      <li>屋外は防水ボックス＋防水グランド＋結露対策を入れた</li>
+      <li>通電試験で全系統の点灯・極性・発熱を確認しフタを閉じた</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. LEDテープの電源やコネクタは必ずプルボックスに入れる必要がありますか？</div>
+        <div class="faq-a">法令で常に義務付けられているわけではありませんが、電源・コネクタ・分岐をプルボックス（中継ボックス）にまとめると、見た目・安全性・保守性が大きく向上するため実務では推奨されます。理由は3つあります。第一に、接続部を露出させないことで意匠を損なわず、埃や物理的接触からも守れます。第二に、コネクタやはんだ接続は最も故障しやすい箇所なので、点検口付きのボックスに集約しておけば交換・修理が容易です。第三に、屋外や湿気の多い場所では防水ボックスに納めることで水の侵入を防げます。逆に、什器内の短いテープなど点検の必要が薄い場所では、コネクタを直接隠すだけで十分なこともあります。設置環境と保守の必要性で判断してください。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. プルボックスのサイズはどう決めればいいですか？</div>
+        <div class="faq-a">収める部材の大きさ＋配線の曲げ半径＋余長＋放熱の余裕、の合計で決めます。電源を入れる場合は電源本体が最も大きい部材になるので、まず電源寸法に対して四方に指1〜2本分の隙間を確保できるサイズを基準にします。次にケーブルを無理なく曲げて引き込めるスペース、端子台やコネクタの並べ幅、点検時に手が入る余裕を足します。電源やコネクタは発熱するため、ぎゅうぎゅうに詰めると内部温度が上がって寿命が縮みます。放熱を考えると、電源はボックスの容積に対して余裕をもって収め、密閉タイプなら特に大きめを選ぶのが安全です。迷ったら一回り大きいボックスを選ぶ方が、後の増設・交換もしやすくなります。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 屋外でプルボックスを使うときの防水のポイントは？</div>
+        <div class="faq-a">屋外は防水（IP)対応のボックスを使い、ケーブル引き込み口と結露の2点を重点的に処理します。まずボックス自体を屋外用（防雨・防噴流以上）にし、ケーブルの引き込みには防水グランド（ケーブルグランド）を使って隙間から水が入らないようにします。ボックスは水が溜まらないよう引き込み口を下向き、または横向きに配置し、必要なら底に水抜き穴を設けます。屋外の密閉ボックスは昼夜の温度差で内部結露するため、呼吸孔付きのボックスを選ぶか、乾燥剤・水抜きで対策します。電源を屋外ボックスに入れる場合は放熱と防水が両立しにくいので、可能なら電源は屋内に逃がし、屋外ボックスには防水コネクタや端子台だけを納める構成が安全です。ボックスのフタのパッキンは劣化するので、定期点検で状態を確認してください。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>中継ボックス・端子台・防水コネクタ・電源を探す</h3>
+      <p>屋内・屋外の中継に使える端子台・防水コネクタ・ケーブルグランド・余裕のある電源を取り扱っています。隠蔽配線と点検性を両立する部材が選べます。</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
