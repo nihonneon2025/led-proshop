@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープを石膏ボード天井・壁に固定する施工方法｜下地探し・ボードアンカー・剥がれ防止の実務ガイド | LED PRO SHOP</title>
+<meta name="description" content="石膏ボード（プラスターボード）の天井・壁にLEDテープやアルミフレームを固定するとき、両面テープだけでは自重や熱で落ちてくることがあります。下地（間柱・野縁）の探し方、ボードアンカーの種類と使い分け、ビスの下穴、剥がれ・脱落を防ぐ手順を施工業者向けに数値と表で解説します。">
+<meta property="og:title" content="LEDテープを石膏ボード天井・壁に固定する施工方法｜下地探し・ボードアンカー・剥がれ防止の実務ガイド | LED PRO SHOP">
+<meta property="og:description" content="石膏ボードへのLEDテープ・アルミフレーム固定。下地の探し方、ボードアンカーの使い分け、下穴、剥がれ・脱落防止の手順を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-plasterboard-anchor-mounting-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-plasterboard-anchor-mounting-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープを石膏ボードに固定する施工方法｜下地探し・ボードアンカー・剥がれ防止 | LED PRO SHOP">
+<meta name="twitter:description" content="石膏ボードへのLEDテープ・アルミフレーム固定。下地の探し方・アンカー使い分け・剥がれ防止を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-plasterboard-anchor-mounting-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-plasterboard-anchor-mounting-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #0b1220; color: #e3ecf8; line-height: 1.7; font-size: 15px; }
+  a { color: #60a5fa; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #0d1a2e 0%, #12294a 50%, #0b1526 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #1e4a7a; }
+  .hero-badge { display: inline-block; background: #2563eb; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f0f6fd; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #9dbde5; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #5f7ba0; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f0f6fd; border-left: 4px solid #60a5fa; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #93c5fd; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #cfdcee; }
+
+  .alert-box { background: #2a0f0f; border: 1px solid #7f3d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #0f2137; border: 1px solid #1e4a7a; border-left: 4px solid #60a5fa; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #d3e0f0; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #0f2137; border-radius: 10px; overflow: hidden; }
+  thead th { background: #1e4a7a; color: #a7c8f3; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #16304d; color: #cfdcee; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #112a44; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #0f2137; border: 1px solid #2563eb; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #93c5fd; margin-top: 0; }
+  .calc-formula { background: #060d17; border: 1px solid #1e4a7a; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #a7c8f3; margin: 12px 0; line-height: 2; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .spec-card { background: #0f2137; border: 1px solid #1e4a7a; border-radius: 10px; padding: 20px; }
+  .spec-card h4 { font-size: 15px; font-weight: 700; color: #93c5fd; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #16304d; }
+  .spec-card .spec-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding: 5px 0; }
+  .spec-card .spec-row span:first-child { color: #9dbde5; }
+  .spec-card .spec-row span:last-child { color: #e3ecf8; font-weight: 600; text-align: right; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #0f2137; border: 1px solid #1e4a7a; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #60a5fa; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #93c5fd; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #9dbde5; margin-bottom: 0; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #60a5fa; color: #0b1220; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #cfdcee; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #16304d; font-size: 14px; color: #cfdcee; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #1e4a7a; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #0f2137; padding: 16px 20px; font-weight: 700; color: #93c5fd; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #cfdcee; background: #0a162880; }
+
+  .cta-box { background: linear-gradient(135deg, #1e4a7a 0%, #0d1a2e 100%); border: 1px solid #60a5fa; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f0f6fd; margin-bottom: 10px; }
+  .cta-box p { color: #9dbde5; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #2563eb; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #1d4ed8; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #5f7ba0; }
+  .breadcrumb a { color: #5f7ba0; }
+  .breadcrumb a:hover { color: #93c5fd; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid, .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LEDテープを石膏ボード天井・壁に固定する施工方法｜下地探し・ボードアンカー・剥がれ防止の実務ガイド",
+  "description": "石膏ボードの天井・壁にLEDテープやアルミフレームを固定する方法。下地の探し方、ボードアンカーの使い分け、下穴、剥がれ・脱落防止の手順を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-plasterboard-anchor-mounting-guide-hero.webp",
+  "datePublished": "2026-07-06",
+  "dateModified": "2026-07-06",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-plasterboard-anchor-mounting-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "石膏ボードへのLEDテープ固定" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "石膏ボードにLEDテープを両面テープだけで貼っても大丈夫ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LEDテープ単体（数十グラム/m程度）を平滑なボード面に短区間貼るだけなら、下地を脱脂して強粘着の両面テープで貼れば持つことが多いです。ただし天井など逆さ向きの面、アルミフレームやカバーを付けて重くなる場合、テープが発熱して粘着が弱る場合は、両面テープだけだと自重と熱で徐々に浮き、最終的に脱落する恐れがあります。石膏ボードの表面は紙とわずかな石膏なので、粘着が効いても紙ごと剥がれることもあります。重量が乗る・天井・長期の信頼性が要る現場では、下地（間柱や野縁）を探してビス留めするか、下地が無い位置ではボードアンカーを併用するのが安全です。まず下地を探し、無ければアンカー、という順で検討してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "石膏ボードの裏の下地（間柱・野縁）はどう探せばいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "下地探しには針式の下地探し（細い針をボードに刺して、下地に当たる手応えと針の刺さり量で判断する道具）と、センサー式の下地探知機（壁裏の密度差を検知して間柱位置を表示する電子式）があり、両方を併用すると精度が上がります。壁の間柱は一般に約303mmまたは455mmピッチ、天井の野縁も同程度のピッチで入っていることが多いので、一箇所見つけたらそのピッチで隣を探すと効率的です。コンセントやスイッチのボックスの脇には下地が入っていることが多く、手がかりになります。金属下地（軽量鉄骨・LGS）の現場ではセンサー式や磁石でビスの位置を拾う方法が有効です。下地に留められれば最も確実なので、まず下地位置を確定してから固定計画を立てるのが基本です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "下地が無い位置に固定したいときはどのアンカーを使えばいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LEDテープ・アルミフレーム程度の軽い荷重なら、ねじ込み式のボードアンカー（樹脂製・またはドライバーでねじ込む金属製）で十分なことが多く、下穴が小さく施工も早いので第一候補になります。もう少し確実に効かせたい・繰り返しビスを付け外しする箇所では、トグル式（ボード裏で羽根や金具が開いて面で保持するタイプ）が保持力が高く安心です。いずれもパッケージに記載された許容荷重（せん断・引き抜き）を確認し、実際に掛かる荷重に対して余裕を見て選びます。ボード厚（一般的に9.5mmまたは12.5mm）に対応したアンカー長を選ぶこと、下穴径を守ること、ねじ込み過ぎて空回りさせないことが失敗しないコツです。重い器具や複数本を集約する幹線的な固定では、必ず下地に留めるかトグル式を使ってください。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">施工方法ガイド</div>
+    <h1>LEDテープを石膏ボード天井・壁に固定する施工方法｜下地探し・ボードアンカー・剥がれ防止</h1>
+    <p class="hero-sub">両面テープだけでは自重と熱で落ちてくる——下地（間柱・野縁）の探し方、ボードアンカーの種類と使い分け、下穴、脱落を防ぐ手順を施工業者向けに数値と表で解説</p>
+    <p class="hero-meta">公開: 2026-07-06 | カテゴリ: LEDテープ施工方法ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-plasterboard-anchor-mounting-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; 石膏ボードへのLEDテープ固定
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="info-box">
+      <p><strong>この記事の結論</strong>：石膏ボードは表面が紙＋石膏で<strong>粘着もビスも効きにくい</strong>下地です。基本の順序は<strong>①まず下地（間柱・野縁）を探してビス留め</strong>→<strong>②下地が無ければボードアンカー</strong>→<strong>③軽い短区間のみ両面テープ</strong>。天井・重量物・長期信頼性が要る場所は<strong>両面テープ単独に頼らない</strong>のが鉄則です。</p>
+    </div>
+
+    <h2>なぜ石膏ボードは「落ちてくる」のか</h2>
+
+    <p>LEDテープの間接照明でよくあるトラブルが、<strong>施工後しばらくして天井や壁からテープ・アルミフレームが垂れてくる／落ちる</strong>現象です。原因の多くは下地の性質にあります。石膏ボード（プラスターボード）は表面が薄い紙と石膏で、<a href="/articles/led-tape-mounting-adhesive-guide">両面テープ</a>の粘着が効いても<strong>紙ごと剥がれる</strong>ことがあり、ビスも石膏だけでは保持力が出ません。さらにLEDテープは通電で発熱し、<a href="/articles/led-tape-adhesion-failure-guide">温度で粘着が弱る</a>ため、時間とともに浮いていきます。</p>
+
+    <p>つまり「貼れた」ように見えても、<strong>自重＋熱＋逆さ向き（天井）</strong>の条件が重なると徐々に脱落します。落下は器具破損だけでなく<strong>安全上の事故</strong>にもつながるため、下地の見極めと固定方法の選定が施工品質を左右します。</p>
+
+    <h2>固定方法は3段階で考える</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">①</div>
+        <h4>下地にビス留め（最優先）</h4>
+        <p>間柱・野縁・軽量鉄骨に直接ビス。最も確実で天井にも使える。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">②</div>
+        <h4>ボードアンカー</h4>
+        <p>下地が無い位置に。軽荷重はねじ込み式、確実に効かせるならトグル式。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">③</div>
+        <h4>強力両面テープ</h4>
+        <p>軽い短区間・仮固定に。単独で天井・重量物には使わない。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">＋</div>
+        <h4>併用が基本</h4>
+        <p>アルミフレームはビス（下地orアンカー）＋テープ補助が理想。点で保持し面で押さえる。</p>
+      </div>
+    </div>
+
+    <h2>下地の探し方と一般的なピッチ</h2>
+
+    <p>最初にやるべきは<strong>下地探し</strong>です。針式（細い針を刺して手応えで判断）とセンサー式（壁裏の密度差を検知）を併用すると精度が上がります。一箇所見つけたら、下地は一定ピッチで入っているので隣を探しやすくなります。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>部位</th>
+          <th>下地の種類</th>
+          <th>一般的なピッチ</th>
+          <th>探し方の手がかり</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>壁</td>
+          <td>間柱（木/軽量鉄骨）</td>
+          <td>約303mm／455mm</td>
+          <td>コンセント・スイッチ脇に下地あり</td>
+        </tr>
+        <tr>
+          <td>天井</td>
+          <td>野縁（木/軽量鉄骨）</td>
+          <td>約303mm／455mm</td>
+          <td>照明・点検口周りを起点に</td>
+        </tr>
+        <tr>
+          <td>金属下地（LGS）</td>
+          <td>軽量鉄骨</td>
+          <td>約303mm／455mm</td>
+          <td>センサー式・磁石でビス拾い</td>
+        </tr>
+        <tr>
+          <td>ボード厚</td>
+          <td>石膏ボード</td>
+          <td>9.5mm／12.5mmが主</td>
+          <td>アンカー長・ビス長の選定に必須</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <p><strong>下地に留められれば9割解決</strong>：まず下地位置を確定し、テープ・フレームの通り芯に対して下地がどこに来るかを把握します。下地に沿ってビスを打てば脱落リスクはほぼ消えます。下地が通り芯から外れる区間だけ、次のボードアンカーで補います。</p>
+    </div>
+
+    <h2>ボードアンカーの種類と使い分け</h2>
+
+    <p>下地が無い位置に固定するときはボードアンカーを使います。荷重と付け外し頻度で選び分けます。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>種類</th>
+          <th>保持力の目安</th>
+          <th>下穴・施工性</th>
+          <th>向く用途</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ねじ込み式（樹脂/金属）</td>
+          <td>軽荷重向き</td>
+          <td>下穴小・ドライバーで速い</td>
+          <td>LEDテープ・軽いフレーム<span class="tag-ok"> 第一候補</span></td>
+        </tr>
+        <tr>
+          <td>プラグ式（樹脂プラグ＋ビス）</td>
+          <td>軽〜中荷重</td>
+          <td>下穴要・安価</td>
+          <td>点数の多い直線固定</td>
+        </tr>
+        <tr>
+          <td>トグル式（羽根/金具が開く）</td>
+          <td>中荷重で確実</td>
+          <td>下穴やや大・裏スペース要</td>
+          <td>重い器具・幹線的な集約<span class="tag-ok"> 確実</span></td>
+        </tr>
+        <tr>
+          <td>両面テープ単独</td>
+          <td>ごく軽荷重のみ</td>
+          <td>穴不要</td>
+          <td>天井・重量物は<span class="tag-ng">不可</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert-box">
+      <div class="alert-title">よくある失敗：「アンカーをねじ込み過ぎて空回り・効かない」</div>
+      <p>ボードアンカーは<strong>下穴径とねじ込み量</strong>がシビアです。下穴が大きすぎる・ねじ込み過ぎると石膏が崩れて<strong>空回りし保持力ゼロ</strong>になります。パッケージ指定の下穴径を守り、対応ボード厚（9.5／12.5mm）とアンカー長を合わせ、掛かる荷重に対して<strong>許容荷重に余裕</strong>を見て選んでください。</p>
+    </div>
+
+    <h2>固定点の間隔（ピッチ）の考え方</h2>
+
+    <div class="calc-box">
+      <h3>アルミフレームの固定ピッチ目安</h3>
+      <div class="calc-formula">
+基本ピッチ：300〜500mm ごとに1点
+
+条件で詰める：
+　・天井（逆さ向き）      → ピッチを詰める（〜300mm）
+　・重いカバー付きフレーム → ピッチを詰める
+　・端部（フレーム両端）   → 必ず固定（最も垂れやすい）
+　・継ぎ目・コーナー       → 前後を確実に固定
+
+計算例）長さ2mのフレームを天井に
+　300mmピッチ → 2000 ÷ 300 ≒ 7点
+　→ 端2点＋中間5点で計7点固定
+      </div>
+      <p style="color:#a7c8f3; font-size:13px; margin-top:12px; margin-bottom:0">
+        フレーム自体の取付やクリップは <a href="/articles/led-tape-aluminum-frame-installation-guide">アルミフレーム取付ガイド</a>、金具・クリップの選定は <a href="/articles/led-tape-mounting-clips-brackets-guide">取付金具・クリップガイド</a> を参照。放熱の観点は <a href="/articles/led-tape-heat-management-guide">放熱管理ガイド</a> も確認してください。
+      </p>
+    </div>
+
+    <h2>施工手順（石膏ボードへの固定の流れ）</h2>
+
+    <ul class="step-list">
+      <li><span>テープ・フレームの<strong>通り芯を墨出し</strong>し、固定点の位置を決める。</span></li>
+      <li><span>針式＋センサー式で<strong>下地（間柱・野縁）を探し</strong>、下地が来る固定点をマークする。</span></li>
+      <li><span>下地がある点は<strong>下地までビス留め</strong>（木下地は下穴、金属下地は適合ビス）。</span></li>
+      <li><span>下地が無い点は<strong>ボードアンカー</strong>を選び、指定の下穴径で穴を開けてアンカーをセットする。</span></li>
+      <li><span>アルミフレーム／取付金具を固定し、<strong>端部と継ぎ目を確実に</strong>押さえる。必要なら両面テープを補助に使う。</span></li>
+      <li><span>LEDテープを貼る面は<strong>脱脂・乾燥</strong>してから貼付。通電試験で点灯・発熱を確認し、<strong>垂れ・浮き</strong>がないか最終チェックする。</span></li>
+    </ul>
+
+    <h2>下地・荷重別の固定早見</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h4>下地あり</h4>
+        <div class="spec-row"><span>方法</span><span>直接ビス留め</span></div>
+        <div class="spec-row"><span>信頼性</span><span>最も高い</span></div>
+        <div class="spec-row"><span>天井</span><span>可</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>下地なし・軽荷重</h4>
+        <div class="spec-row"><span>方法</span><span>ねじ込みアンカー</span></div>
+        <div class="spec-row"><span>下穴</span><span>小・速い</span></div>
+        <div class="spec-row"><span>用途</span><span>テープ・軽フレーム</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>下地なし・確実に</h4>
+        <div class="spec-row"><span>方法</span><span>トグル式アンカー</span></div>
+        <div class="spec-row"><span>保持</span><span>面で保持・強い</span></div>
+        <div class="spec-row"><span>用途</span><span>重い器具・集約</span></div>
+      </div>
+    </div>
+
+    <h2>施工チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>通り芯を墨出しし、固定点の位置を決めた</li>
+      <li>針式＋センサー式で下地（間柱・野縁）を探し、下地が来る点をマークした</li>
+      <li>下地がある点は下地までビス留めした（天井は特に確実に）</li>
+      <li>下地が無い点は荷重に合ったボードアンカーを選び、指定下穴径を守った</li>
+      <li>ボード厚（9.5／12.5mm）にアンカー長・ビス長を合わせた</li>
+      <li>固定ピッチは300〜500mm、天井・重量物は詰めた</li>
+      <li>フレームの端部・継ぎ目・コーナーを確実に固定した</li>
+      <li>貼付面を脱脂・乾燥し、通電後に垂れ・浮きがないか最終確認した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 石膏ボードにLEDテープを両面テープだけで貼っても大丈夫ですか？</div>
+        <div class="faq-a">LEDテープ単体（数十グラム/m程度）を平滑なボード面に短区間貼るだけなら、下地を脱脂して強粘着の両面テープで貼れば持つことが多いです。ただし天井など逆さ向きの面、アルミフレームやカバーを付けて重くなる場合、テープが発熱して粘着が弱る場合は、両面テープだけだと自重と熱で徐々に浮き、最終的に脱落する恐れがあります。石膏ボードの表面は紙とわずかな石膏なので、粘着が効いても紙ごと剥がれることもあります。重量が乗る・天井・長期の信頼性が要る現場では、下地（間柱や野縁）を探してビス留めするか、下地が無い位置ではボードアンカーを併用するのが安全です。まず下地を探し、無ければアンカー、という順で検討してください。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 石膏ボードの裏の下地（間柱・野縁）はどう探せばいいですか？</div>
+        <div class="faq-a">下地探しには針式の下地探し（細い針をボードに刺して、下地に当たる手応えと針の刺さり量で判断する道具）と、センサー式の下地探知機（壁裏の密度差を検知して間柱位置を表示する電子式）があり、両方を併用すると精度が上がります。壁の間柱は一般に約303mmまたは455mmピッチ、天井の野縁も同程度のピッチで入っていることが多いので、一箇所見つけたらそのピッチで隣を探すと効率的です。コンセントやスイッチのボックスの脇には下地が入っていることが多く、手がかりになります。金属下地（軽量鉄骨・LGS）の現場ではセンサー式や磁石でビスの位置を拾う方法が有効です。下地に留められれば最も確実なので、まず下地位置を確定してから固定計画を立てるのが基本です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 下地が無い位置に固定したいときはどのアンカーを使えばいいですか？</div>
+        <div class="faq-a">LEDテープ・アルミフレーム程度の軽い荷重なら、ねじ込み式のボードアンカー（樹脂製・またはドライバーでねじ込む金属製）で十分なことが多く、下穴が小さく施工も早いので第一候補になります。もう少し確実に効かせたい・繰り返しビスを付け外しする箇所では、トグル式（ボード裏で羽根や金具が開いて面で保持するタイプ）が保持力が高く安心です。いずれもパッケージに記載された許容荷重（せん断・引き抜き）を確認し、実際に掛かる荷重に対して余裕を見て選びます。ボード厚（一般的に9.5mmまたは12.5mm）に対応したアンカー長を選ぶこと、下穴径を守ること、ねじ込み過ぎて空回りさせないことが失敗しないコツです。重い器具や複数本を集約する幹線的な固定では、必ず下地に留めるかトグル式を使ってください。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>LEDテープ・アルミフレーム・取付金具・カバーを探す</h3>
+      <p>石膏ボードにきれいに納めるアルミフレーム・取付クリップ・エンドキャップ・拡散カバーを取り扱っています。下地・アンカーと組み合わせて、天井でも垂れない間接照明を施工できます。</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

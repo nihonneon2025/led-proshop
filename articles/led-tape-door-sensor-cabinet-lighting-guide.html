@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ドア開閉連動でLEDテープを自動点灯させる製品活用ガイド｜什器・収納・クローゼットの扉スイッチ配線 | LED PRO SHOP</title>
+<meta name="description" content="クローゼット・食器棚・什器・下駄箱などの扉を開けたときだけLEDテープを自動点灯させる「ドア開閉連動」の作り方を施工業者向けに解説。マグネットドアスイッチとプッシュスイッチの違い、押し（ノーマルクローズ）と引き（ノーマルオープン）の選び方、DC12V/24Vでの配線、消し忘れ防止・省エネの活用ポイントまで数値と表で判断できます。">
+<meta property="og:title" content="ドア開閉連動でLEDテープを自動点灯させる製品活用ガイド｜什器・収納・クローゼットの扉スイッチ配線 | LED PRO SHOP">
+<meta property="og:description" content="扉を開けたときだけLEDテープを点灯させるドア開閉連動の作り方。マグネットスイッチとプッシュスイッチの違い・接点の選び方・DC配線・省エネ活用を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-door-sensor-cabinet-lighting-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-door-sensor-cabinet-lighting-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ドア開閉連動でLEDテープを自動点灯させる製品活用ガイド｜扉スイッチ配線 | LED PRO SHOP">
+<meta name="twitter:description" content="扉を開けたときだけLEDテープを点灯。マグネット/プッシュスイッチの違い・接点選び・DC配線・省エネ活用を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-door-sensor-cabinet-lighting-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-door-sensor-cabinet-lighting-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #140f1a; color: #ece3f5; line-height: 1.7; font-size: 15px; }
+  a { color: #c084fc; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #1e1229 0%, #2e1b45 50%, #180f22 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #55308a; }
+  .hero-badge { display: inline-block; background: #7c3aed; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f8f0fd; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #c4a4e5; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #8a5f9c; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f8f0fd; border-left: 4px solid #c084fc; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #d8b4fe; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #ddcfee; }
+
+  .alert-box { background: #2a0f0f; border: 1px solid #7f3d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #221533; border: 1px solid #55308a; border-left: 4px solid #c084fc; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #e0d3f0; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #221533; border-radius: 10px; overflow: hidden; }
+  thead th { background: #55308a; color: #d3a7f3; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #301645; color: #ddcfee; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #2a1a3d; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #221533; border: 1px solid #7c3aed; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #d8b4fe; margin-top: 0; }
+  .calc-formula { background: #0f0817; border: 1px solid #55308a; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #d3a7f3; margin: 12px 0; line-height: 2; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .spec-card { background: #221533; border: 1px solid #55308a; border-radius: 10px; padding: 20px; }
+  .spec-card h4 { font-size: 15px; font-weight: 700; color: #d8b4fe; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #301645; }
+  .spec-card .spec-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding: 5px 0; }
+  .spec-card .spec-row span:first-child { color: #c4a4e5; }
+  .spec-card .spec-row span:last-child { color: #ece3f5; font-weight: 600; text-align: right; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #221533; border: 1px solid #55308a; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #c084fc; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #d8b4fe; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #c4a4e5; margin-bottom: 0; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #c084fc; color: #140f1a; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #ddcfee; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #301645; font-size: 14px; color: #ddcfee; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #55308a; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #221533; padding: 16px 20px; font-weight: 700; color: #d8b4fe; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #ddcfee; background: #180e2680; }
+
+  .cta-box { background: linear-gradient(135deg, #55308a 0%, #1e1229 100%); border: 1px solid #c084fc; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f8f0fd; margin-bottom: 10px; }
+  .cta-box p { color: #c4a4e5; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #7c3aed; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #6d28d9; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #8a5f9c; }
+  .breadcrumb a { color: #8a5f9c; }
+  .breadcrumb a:hover { color: #d8b4fe; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid, .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ドア開閉連動でLEDテープを自動点灯させる製品活用ガイド｜什器・収納・クローゼットの扉スイッチ配線",
+  "description": "扉を開けたときだけLEDテープを自動点灯させるドア開閉連動の作り方。マグネットスイッチとプッシュスイッチの違い、接点（NO/NC）の選び方、DC12V/24V配線、省エネ活用を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-door-sensor-cabinet-lighting-guide-hero.webp",
+  "datePublished": "2026-07-06",
+  "dateModified": "2026-07-06",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-door-sensor-cabinet-lighting-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "ドア開閉連動でLEDテープを自動点灯" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "扉を開けたときだけLEDテープを点灯させるにはどんな部材が必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "必要なのは、DC12VまたはDC24Vの電源（LEDテープに合わせたもの）、LEDテープ本体、そして扉の開閉を検知するスイッチの3点です。扉スイッチには主に2種類あり、ひとつはマグネット（磁石）式のドアスイッチで、扉側に磁石、枠側にリードスイッチを付け、扉が閉まって磁石が近づくと接点が切り替わる方式です。もうひとつはプッシュ式（押しボタン式）で、扉が閉まるとボタンが押し込まれる位置に取り付けます。冷蔵庫の庫内灯と同じ仕組みで、扉が開くと点き、閉まると消えます。配線は、電源のプラス側（またはマイナス側）にスイッチを直列に挟むだけのシンプルな構成で、扉の開閉に合わせてLEDテープへの通電がオンオフされます。什器・食器棚・クローゼット・下駄箱・引き出しなど、扉や引き出しのある収納全般に応用できます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "マグネット式とプッシュ式のドアスイッチはどう使い分けますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "マグネット式は、扉と枠の隙間に磁石とスイッチを埋め込む・貼り付ける方式で、可動部が擦れないため耐久性が高く、見た目もほぼ隠せるのが利点です。扉の建て付けが多少ずれても磁石の検知範囲内なら動作するので、開き扉・引き戸・引き出しなど幅広く使えます。プッシュ式は物理的にボタンを押し込む方式で、確実にオンオフしますが、扉が当たる位置に正確に取り付ける必要があり、可動部があるぶん埃や摩耗の影響を受けます。狭い枠内やスライド扉、見せたくない箇所ではマグネット式、既製什器で押し込む位置を確保しやすい箇所ではプッシュ式、と切り分けると失敗しにくいです。どちらも接点の向き（扉が開いたときに通電するか）を確認して選ぶことが重要です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "扉を開けたときに点灯するには接点はどちらを選べばいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "扉を開けたとき（＝スイッチが押されていない・磁石が離れた状態）に通電したいので、原理としてはノーマルクローズ（NC＝ボタンが押されていない状態で閉じている接点）を使います。冷蔵庫の庫内灯と同じで、扉が閉まってボタンが押されると接点が開いて消灯し、扉が開くと接点が閉じて点灯します。マグネット式の場合は、磁石が近づいたとき（扉が閉まったとき）に開くタイプを選べば、扉を開けると点灯します。製品によってノーマルオープン／ノーマルクローズや、磁石が近づくと開く／閉じるの仕様が異なるため、購入前にデータシートで「扉が開いたときに点灯する動作になるか」を必ず確認してください。仕様が逆だと扉を閉めたときに点灯してしまいます。動作が不安なときは、配線前に電源とテープをつないでスイッチを手で操作し、点灯方向を確かめてから本設置すると確実です。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">製品活用ガイド</div>
+    <h1>ドア開閉連動でLEDテープを自動点灯させる製品活用ガイド｜什器・収納・クローゼットの扉スイッチ配線</h1>
+    <p class="hero-sub">扉を開けたときだけ点いて、閉めれば消える——マグネット式とプッシュ式の違い、接点（NO/NC）の選び方、DC12V/24V配線、消し忘れ防止・省エネ活用まで施工業者向けに解説</p>
+    <p class="hero-meta">公開: 2026-07-06 | カテゴリ: LEDテープ製品活用ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-door-sensor-cabinet-lighting-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; ドア開閉連動でLEDテープを自動点灯
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="info-box">
+      <p><strong>この記事の結論</strong>：扉を開けたときだけ点灯させるには、<strong>DC電源のプラス（またはマイナス）側にドアスイッチを直列に挟む</strong>だけです。仕組みは冷蔵庫の庫内灯と同じ。狭い枠・見せたくない箇所は<strong>マグネット式</strong>、押し込む位置を確保できる箇所は<strong>プッシュ式</strong>。接点は<strong>扉が開いたときに通電する向き（NC相当）</strong>を選び、本設置前に点灯方向を実機で確認します。</p>
+    </div>
+
+    <h2>どんな現場で使う活用法か</h2>
+
+    <p>クローゼット・食器棚・下駄箱・什器・引き出しなど、<strong>扉を開けたときだけ中を照らしたい</strong>収納は多くあります。常時点灯だと消し忘れ・電気の無駄・熱がこもるといった問題が出ますが、<strong>ドア開閉連動</strong>にすれば扉を開けた瞬間だけ点き、閉めれば自動で消えます。人が触るスイッチが不要なので<a href="/articles/led-tape-motion-sensor-lighting-guide">人感センサー</a>や<a href="/articles/led-tape-timer-auto-on-off-guide">タイマー</a>と並ぶ「自動化」の定番手法です。</p>
+
+    <p>仕組み自体は非常にシンプルで、<strong>電源とLEDテープの間にスイッチを1個直列で入れるだけ</strong>。追加のコントローラや複雑な制御は要りません。低電圧のDC回路なので扱いやすく、什器の造作や後付けにも向きます。</p>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">①</div>
+        <h4>収納・什器</h4>
+        <p>食器棚・クローゼット・ショーケース・引き出しを開けた時だけ照らす。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">②</div>
+        <h4>消し忘れゼロ</h4>
+        <p>閉めれば必ず消えるので、常時点灯のムダ・熱こもりを解消。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">③</div>
+        <h4>スイッチ不要</h4>
+        <p>壁スイッチを設けずに済み、配線も什器内で完結できる。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">④</div>
+        <h4>後付けしやすい</h4>
+        <p>低電圧DC・部材が少なく、既製什器への追加施工も容易。</p>
+      </div>
+    </div>
+
+    <h2>基本の回路：スイッチを直列に挟むだけ</h2>
+
+    <div class="calc-box">
+      <h3>ドア開閉連動のシンプルな配線</h3>
+      <div class="calc-formula">
+[AC100V] → [DC電源(12/24V)] →＋─[ドアスイッチ]─→ [LEDテープ ＋]
+                              －──────────────→ [LEDテープ －]
+
+・スイッチは＋側 or －側どちらか一方に直列
+・扉が開く → 接点が閉じる → 通電 → 点灯
+・扉が閉まる → 接点が開く → 消灯
+
+複数扉を別々に光らせたい場合
+　→ 扉ごとにスイッチを付け、各回路を分岐
+      </div>
+      <p style="color:#d3a7f3; font-size:13px; margin-top:12px; margin-bottom:0">
+        DC側の分岐や配線の基本は <a href="/articles/led-tape-wiring-basics">配線の基礎</a>、複数系統に分けるときは <a href="/articles/led-tape-branch-wiring-guide">分岐配線ガイド</a>、電源容量の決め方は <a href="/articles/led-tape-psu-capacity-guide">電源容量ガイド</a> を参照してください。
+      </p>
+    </div>
+
+    <div class="alert-box">
+      <div class="alert-title">よくある失敗：「扉を閉めたときに点いてしまう（動作が逆）」</div>
+      <p>スイッチの接点仕様が逆だと、扉を<strong>閉めたときに点灯</strong>してしまいます。扉が開いたときに点けたいので、原理は<strong>ノーマルクローズ（NC）相当</strong>（＝押されていない／磁石が離れた状態で通電）。マグネット式は「磁石が近づくと開く」タイプを選びます。仕様は製品で異なるので、<strong>本設置前に電源とテープをつないでスイッチを手で操作</strong>し、点灯方向を確かめてください。</p>
+    </div>
+
+    <h2>ドアスイッチ2種の比較</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>比較項目</th>
+          <th>マグネット式（磁気）</th>
+          <th>プッシュ式（押しボタン）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>検知方式</td>
+          <td>磁石の接近をリードスイッチが検知</td>
+          <td>扉がボタンを物理的に押し込む</td>
+        </tr>
+        <tr>
+          <td>可動部・摩耗</td>
+          <td>非接触で摩耗しにくい<span class="tag-ok"> 耐久◎</span></td>
+          <td>可動部あり・埃/摩耗の影響</td>
+        </tr>
+        <tr>
+          <td>取付精度</td>
+          <td>検知範囲内ならラフでも可</td>
+          <td>押し込む位置を正確に</td>
+        </tr>
+        <tr>
+          <td>見た目</td>
+          <td>ほぼ隠せる</td>
+          <td>ボタンが見えやすい</td>
+        </tr>
+        <tr>
+          <td>向く扉</td>
+          <td>開き扉・引き戸・引き出し・広く対応</td>
+          <td>押し込み位置を取れる開き扉</td>
+        </tr>
+        <tr>
+          <td>建て付けのズレ</td>
+          <td>強い（磁力の範囲で吸収）</td>
+          <td>弱い（位置がずれると効かない）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>選定・接点の考え方（早見）</h2>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h4>電源・テープ</h4>
+        <div class="spec-row"><span>電圧</span><span>DC12V/24V</span></div>
+        <div class="spec-row"><span>容量</span><span>W/m×長さ＋2割</span></div>
+        <div class="spec-row"><span>設置</span><span>什器内・放熱確保</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>スイッチの接点</h4>
+        <div class="spec-row"><span>動作</span><span>開扉で通電</span></div>
+        <div class="spec-row"><span>接点</span><span>NC相当</span></div>
+        <div class="spec-row"><span>定格</span><span>DC電流に余裕</span></div>
+      </div>
+      <div class="spec-card">
+        <h4>配線・確認</h4>
+        <div class="spec-row"><span>挟む位置</span><span>＋or－側 直列</span></div>
+        <div class="spec-row"><span>接続</span><span>戻せる端子で</span></div>
+        <div class="spec-row"><span>試験</span><span>本設置前に方向確認</span></div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <p><strong>スイッチの電流定格に注意</strong>：ドアスイッチはLEDテープの<strong>負荷電流が流れる接点</strong>です。テープの消費電力（W）÷電圧（V）で電流を出し、スイッチの定格に余裕を持たせて選びます。長尺で電流が大きい場合はスイッチで直接切らず、<a href="/articles/led-tape-magnetic-contactor-bulk-switching-guide">リレー・接触器</a>を介してドアスイッチは制御信号だけに使う構成が安全です。接続は<a href="/articles/led-tape-terminal-block-wago-guide">端子台・WAGO</a>で戻せる形にしておくと保守が楽です。</p>
+    </div>
+
+    <h2>施工手順（後付けの流れ）</h2>
+
+    <ul class="step-list">
+      <li><span>照らしたい扉・収納と、LEDテープを仕込む位置（<a href="/articles/led-tape-under-shelf-guide">棚下</a>・側板など）を決める。</span></li>
+      <li><span>テープの消費電力から<strong>電源容量とスイッチ電流定格</strong>を計算し、部材を選ぶ。</span></li>
+      <li><span>マグネット式／プッシュ式を選び、<strong>扉が開いたときに通電する接点</strong>の製品を用意する。</span></li>
+      <li><span>電源の＋（または－）側に<strong>スイッチを直列</strong>に配線する。接続は戻せる端子で。</span></li>
+      <li><span>スイッチを扉の開閉に合わせた位置に取り付ける（磁石は枠と扉に対で、プッシュは押し込む位置に）。</span></li>
+      <li><span><strong>本設置前に通電試験</strong>で、扉を開けて点灯・閉めて消灯するか、発熱・チラつきがないかを確認する。</span></li>
+    </ul>
+
+    <h2>活用チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>照らす扉・収納とテープの仕込み位置を決めた</li>
+      <li>テープの消費電力から電源容量とスイッチ電流定格を算出した</li>
+      <li>設置環境に合わせマグネット式／プッシュ式を選んだ</li>
+      <li>「扉が開いたときに通電する」接点（NC相当）の製品を選んだ</li>
+      <li>電源の＋または－側にスイッチを直列で配線した</li>
+      <li>電流が大きい場合はリレー・接触器を介する構成にした</li>
+      <li>接続は戻せる端子（端子台・WAGO）で行った</li>
+      <li>本設置前に通電試験で点灯方向・発熱・チラつきを確認した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 扉を開けたときだけLEDテープを点灯させるにはどんな部材が必要ですか？</div>
+        <div class="faq-a">必要なのは、DC12VまたはDC24Vの電源（LEDテープに合わせたもの）、LEDテープ本体、そして扉の開閉を検知するスイッチの3点です。扉スイッチには主に2種類あり、ひとつはマグネット（磁石）式のドアスイッチで、扉側に磁石、枠側にリードスイッチを付け、扉が閉まって磁石が近づくと接点が切り替わる方式です。もうひとつはプッシュ式（押しボタン式）で、扉が閉まるとボタンが押し込まれる位置に取り付けます。冷蔵庫の庫内灯と同じ仕組みで、扉が開くと点き、閉まると消えます。配線は、電源のプラス側（またはマイナス側）にスイッチを直列に挟むだけのシンプルな構成で、扉の開閉に合わせてLEDテープへの通電がオンオフされます。什器・食器棚・クローゼット・下駄箱・引き出しなど、扉や引き出しのある収納全般に応用できます。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. マグネット式とプッシュ式のドアスイッチはどう使い分けますか？</div>
+        <div class="faq-a">マグネット式は、扉と枠の隙間に磁石とスイッチを埋め込む・貼り付ける方式で、可動部が擦れないため耐久性が高く、見た目もほぼ隠せるのが利点です。扉の建て付けが多少ずれても磁石の検知範囲内なら動作するので、開き扉・引き戸・引き出しなど幅広く使えます。プッシュ式は物理的にボタンを押し込む方式で、確実にオンオフしますが、扉が当たる位置に正確に取り付ける必要があり、可動部があるぶん埃や摩耗の影響を受けます。狭い枠内やスライド扉、見せたくない箇所ではマグネット式、既製什器で押し込む位置を確保しやすい箇所ではプッシュ式、と切り分けると失敗しにくいです。どちらも接点の向き（扉が開いたときに通電するか）を確認して選ぶことが重要です。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 扉を開けたときに点灯するには接点はどちらを選べばいいですか？</div>
+        <div class="faq-a">扉を開けたとき（＝スイッチが押されていない・磁石が離れた状態）に通電したいので、原理としてはノーマルクローズ（NC＝ボタンが押されていない状態で閉じている接点）を使います。冷蔵庫の庫内灯と同じで、扉が閉まってボタンが押されると接点が開いて消灯し、扉が開くと接点が閉じて点灯します。マグネット式の場合は、磁石が近づいたとき（扉が閉まったとき）に開くタイプを選べば、扉を開けると点灯します。製品によってノーマルオープン／ノーマルクローズや、磁石が近づくと開く／閉じるの仕様が異なるため、購入前にデータシートで「扉が開いたときに点灯する動作になるか」を必ず確認してください。仕様が逆だと扉を閉めたときに点灯してしまいます。動作が不安なときは、配線前に電源とテープをつないでスイッチを手で操作し、点灯方向を確かめてから本設置すると確実です。</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>LEDテープ・DC電源・スイッチ・接続部材を探す</h3>
+      <p>什器・収納の間接照明に使えるDC12V/24V対応のLEDテープ、電源、端子台・コネクタなどの接続部材を取り扱っています。ドア開閉連動で消し忘れなく、必要な時だけ照らす什器照明が施工できます。</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
