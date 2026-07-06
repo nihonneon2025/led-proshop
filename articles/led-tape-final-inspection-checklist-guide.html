@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープ施工後の点灯確認・完成検査チェックリスト｜引き渡し前に測る項目と合格基準【施工業者向け】 | LED PRO SHOP</title>
+  <meta name="description" content="施工直後は点いたのに数日後に「暗い・チラつく」と連絡が来る——引き渡し前の完成検査で末端電圧・絶縁抵抗・電源温度・連続点灯を確認しておけば大半は防げます。LEDテープ工事の検査項目・測定方法・合格基準の目安・引き渡し書類を施工業者向けにまとめました。">
+  <meta name="keywords" content="LEDテープ 施工後 点灯確認,LEDテープ 完成検査,LED 引き渡し前 チェックリスト,LEDテープ 検査項目,LEDテープ 末端電圧 測定,LED工事 竣工検査,LEDテープ 試験 合格基準">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-final-inspection-checklist-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-final-inspection-checklist-guide">
+  <meta property="og:title" content="LEDテープ施工後の点灯確認・完成検査チェックリスト｜引き渡し前に測る項目と合格基準【施工業者向け】 | LED PRO SHOP">
+  <meta property="og:description" content="引き渡し前の完成検査で末端電圧・絶縁抵抗・電源温度・連続点灯を確認すれば施工後クレームの大半は防げます。LEDテープ工事の検査項目・測定方法・合格基準の目安を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-final-inspection-checklist-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープ施工後の点灯確認・完成検査チェックリスト【施工業者向け】 | LED PRO SHOP">
+  <meta name="twitter:description" content="末端電圧・絶縁抵抗・電源温度・連続点灯——引き渡し前に測っておくべき検査項目と合格基準の目安を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-final-inspection-checklist-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LEDテープ施工後の点灯確認・完成検査チェックリスト｜引き渡し前に測る項目と合格基準",
+    "description": "LEDテープ工事の引き渡し前に行う完成検査の手順を施工業者向けに解説。外観検査・末端電圧測定・絶縁抵抗測定・連続点灯試験・調光動作確認の各項目と合格基準の目安、引き渡し時に残す記録類までを網羅。",
+    "image": "https://led-proshop.com/articles/images/led-tape-final-inspection-checklist-guide-hero.webp",
+    "author": {"@type": "Organization", "name": "LED PRO SHOP"},
+    "publisher": {"@type": "Organization", "name": "LED PRO SHOP", "url": "https://led-proshop.com"},
+    "datePublished": "2026-07-07",
+    "dateModified": "2026-07-07",
+    "url": "https://led-proshop.com/articles/led-tape-final-inspection-checklist-guide",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-final-inspection-checklist-guide"}
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://led-proshop.com/"},
+      {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/"},
+      {"@type": "ListItem", "position": 3, "name": "LEDテープ施工後の点灯確認・完成検査チェックリスト", "item": "https://led-proshop.com/articles/led-tape-final-inspection-checklist-guide"}
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "DC24VのLEDテープ回路でも絶縁抵抗測定（メガー）は必要ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "測定対象はAC100V/200Vの一次側回路です。電源装置より一次側（分電盤〜電源入力まで）は通常の低圧屋内配線として絶縁抵抗を測定し、対地電圧150V以下の回路で0.1MΩ以上を確認します。一方、電源二次側のDC24V回路にメガー（DC250V/500V印加）をかけるとLEDチップやコントローラを破損させます。必ず電源装置・調光器・テープを切り離した状態で一次側配線のみを測定し、二次側はテスターでの電圧・導通確認にとどめてください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "点灯試験はどのくらいの時間行えばよいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "最低30分、可能なら1時間の連続全点灯を推奨します。LEDテープと電源の温度は点灯後20〜40分でほぼ安定するため、30分未満では熱による不具合（温度上昇によるチラつき・電源の保護動作・明るさ低下）を検出できません。連続点灯後にテープ表面温度とアルミフレーム温度、電源ケース温度を放射温度計で測定し、テープ表面50℃前後まで・電源ケースはメーカー規定（多くは周囲温度＋30〜40℃以内）を目安に確認します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "末端電圧はどこで、どうやって測定しますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "テープの給電点から一番遠い末端のカットライン（銅箔パッド）にテスターのDCレンジを当てて、全点灯（白なら最大光量）状態で測定します。合格基準の目安は定格電圧の5%以内の降下、つまりDC24Vなら22.8V以上、DC12Vなら11.4V以上です。5%を超えて降下している場合は末端の明るさ低下や色ずれ（特にRGB）が視認されるレベルになるため、給電ケーブルの太線化・両端給電・電源の増設で是正してから引き渡します。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0f2a1e;
+      --navy-mid: #1b4432;
+      --blue-accent: #2563a8;
+      --blue-light: #1677ff;
+      --accent: #0e9f6e;
+      --accent-dark: #0a7350;
+      --text: #1a1a1a;
+      --text-muted: #555;
+      --bg: #f4f7f5;
+      --card-bg: #fff;
+      --border: #ccd8d1;
+      --surface: #ffffff;
+      --accent2: #0e9f6e;
+      --max-w: 860px;
+    }
+    body { font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; font-size: 16px; }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 55%, var(--accent-dark) 130%);
+      color: #fff;
+      padding: 64px 24px 48px;
+      text-align: center;
+    }
+    .hero-label { display: inline-block; background: var(--accent); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .08em; padding: 4px 12px; border-radius: 3px; margin-bottom: 16px; }
+    .hero h1 { font-size: clamp(1.3rem, 3.8vw, 1.95rem); font-weight: 800; line-height: 1.4; max-width: 730px; margin: 0 auto 20px; }
+    .hero-sub { font-size: 1rem; opacity: .85; max-width: 620px; margin: 0 auto 28px; }
+    .hero-img { width: 100%; max-width: 720px; height: 200px; border-radius: 10px; overflow: hidden; margin: 0 auto; background: linear-gradient(135deg, #0f2a1e 0%, #1b4432 100%); display: flex; align-items: center; justify-content: center; }
+    .hero-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+
+    /* ===== BREADCRUMB ===== */
+    .breadcrumb { background: var(--navy); padding: 12px 20px; font-size: .82rem; }
+    .breadcrumb a { color: #9adfc0; text-decoration: none; }
+    .breadcrumb span { color: #888; margin: 0 6px; }
+    .breadcrumb .current { color: #ddd; }
+
+    /* ===== LAYOUT ===== */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 20px; }
+    .content { padding: 48px 0 80px; }
+
+    /* ===== ALERT ===== */
+    .alert-box { background: #e8f8f0; border-left: 5px solid var(--accent); border-radius: 6px; padding: 20px 24px; margin: 32px 0; }
+    .alert-box .alert-title { font-weight: 700; color: #065f46; margin-bottom: 8px; }
+    .alert-box p { font-size: .95rem; color: #064e3b; margin: 0; }
+
+    .info-box { background: #e6f4ff; border-left: 5px solid var(--blue-light); border-radius: 6px; padding: 18px 22px; margin: 24px 0; }
+    .info-box p { font-size: .93rem; color: #003a8c; margin: 0; }
+
+    .warn-box { background: #fff8e1; border-left: 5px solid #e8850c; border-radius: 6px; padding: 18px 22px; margin: 24px 0; }
+    .warn-box p { font-size: .93rem; color: #5a3000; margin: 0; }
+
+    /* ===== SECTION ===== */
+    .section { margin: 48px 0; }
+    .section-title { font-size: 1.35rem; font-weight: 800; color: var(--navy); border-left: 5px solid var(--accent); padding-left: 14px; margin-bottom: 20px; line-height: 1.35; }
+    .section-body { font-size: .97rem; color: var(--text-muted); }
+    .section-body p { margin-bottom: 12px; }
+    .section-body strong { color: var(--text); }
+
+    /* ===== SPEC TABLE ===== */
+    .spec-table { width: 100%; border-collapse: collapse; font-size: .87rem; margin: 20px 0; }
+    .spec-table th { background: var(--navy); color: #fff; padding: 10px 12px; text-align: left; font-size: .82rem; }
+    .spec-table td { border: 1px solid var(--border); padding: 10px 12px; vertical-align: top; }
+    .spec-table tr:nth-child(even) td { background: #eef5f1; }
+
+    .badge { display: inline-block; font-size: .75rem; font-weight: 700; padding: 2px 8px; border-radius: 3px; white-space: nowrap; }
+    .badge-ok { background: #d1fae5; color: #065f46; }
+    .badge-best { background: #dcfce7; color: #14532d; }
+    .badge-caution { background: #fef3c7; color: #92400e; }
+    .badge-ng { background: #fee2e2; color: #b91c1c; }
+
+    /* ===== SPEC CARD GRID ===== */
+    .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0; }
+    .method-card { background: var(--card-bg); border: 1.5px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+    .method-card .m-tag { display: inline-block; background: var(--accent); color: #fff; font-size: .74rem; font-weight: 700; padding: 2px 9px; border-radius: 3px; margin-bottom: 8px; }
+    .method-card .m-name { font-weight: 700; color: var(--navy); margin-bottom: 6px; font-size: .97rem; }
+    .method-card .m-body { font-size: .84rem; color: var(--text-muted); }
+    .method-card .m-spec { margin-top: 10px; font-size: .81rem; background: #e2f5ec; padding: 6px 10px; border-radius: 5px; color: #065f46; font-weight: 600; }
+
+    /* ===== STEPS ===== */
+    .steps { list-style: none; counter-reset: step; margin: 16px 0; }
+    .steps li { position: relative; padding: 12px 0 12px 44px; border-bottom: 1px solid var(--border); font-size: .92rem; color: var(--text-muted); }
+    .steps li:last-child { border-bottom: none; }
+    .steps li::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 12px; width: 28px; height: 28px; background: var(--accent); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .85rem; }
+    .steps li strong { color: var(--text); }
+
+    /* ===== CHECKLIST ===== */
+    .checklist { list-style: none; margin: 16px 0; }
+    .checklist li { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: .92rem; }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before { content: '☐'; font-size: 1.1rem; color: var(--accent); flex-shrink: 0; margin-top: 1px; }
+
+    /* ===== FAQ ===== */
+    .faq-item { background: var(--card-bg); border: 1.5px solid var(--border); border-radius: 10px; padding: 20px 22px; margin-bottom: 14px; }
+    .faq-item .faq-q { font-weight: 700; color: var(--navy); margin-bottom: 8px; display: flex; gap: 10px; }
+    .faq-item .faq-q::before { content: 'Q'; background: var(--accent); color: #fff; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .8rem; flex-shrink: 0; }
+    .faq-item .faq-a { font-size: .9rem; color: var(--text-muted); display: flex; gap: 10px; }
+    .faq-item .faq-a::before { content: 'A'; background: var(--navy); color: #fff; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .8rem; flex-shrink: 0; }
+
+    /* ===== CTA ===== */
+    .cta-block { background: linear-gradient(135deg, var(--navy) 0%, var(--accent-dark) 130%); color: #fff; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+    .cta-block h2 { font-size: 1.3rem; margin-bottom: 12px; }
+    .cta-block p { font-size: .93rem; opacity: .88; margin-bottom: 24px; }
+    .cta-btn { display: inline-block; background: var(--accent); color: #fff; font-weight: 700; font-size: 1rem; padding: 14px 36px; border-radius: 8px; text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 40px 16px 32px; }
+      .spec-table { font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb">
+  <div class="container">
+    <a href="/">ホーム</a><span>›</span><a href="/articles/">コラム</a><span>›</span><span class="current">LEDテープ施工後の点灯確認・完成検査チェックリスト</span>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-label">施工方法ガイド｜完成検査</div>
+  <h1>LEDテープ施工後の点灯確認・完成検査チェックリスト<br>引き渡し前に測る項目と合格基準</h1>
+  <p class="hero-sub">「施工直後は点いた」で終わらせない — 末端電圧・絶縁・温度・連続点灯まで測って引き渡す手順</p>
+  <div class="hero-img">
+    <img src="/articles/images/led-tape-final-inspection-checklist-guide-hero.webp" alt="LEDテープ施工後の点灯確認・完成検査チェックリスト" loading="eager" width="720" height="200">
+  </div>
+</header>
+
+<main class="container content">
+
+  <!-- Lead alert -->
+  <div class="alert-box">
+    <div class="alert-title">施工後クレームの大半は「引き渡し前の30分」で防げる</div>
+    <p>LEDテープ工事のクレームで多いのは「数日後に一部だけ暗くなった」「夜になるとチラつく」「電源のあたりが熱い」といった、<strong>施工直後の瞬間点灯だけでは見つからない不具合</strong>です。原因の多くは電圧降下・接続部の接触不良・電源容量の余裕不足・放熱不足で、いずれも引き渡し前に<strong>測定と連続点灯試験</strong>をしていれば検出できます。本記事は、LEDテープ工事の完成検査を「外観 → 測定 → 点灯 → 記録」の順に、項目・測り方・合格基準の目安まで施工業者向けに整理します。</p>
+  </div>
+
+  <!-- Section 1 -->
+  <section class="section">
+    <h2 class="section-title">1. 完成検査の全体フロー</h2>
+    <div class="section-body">
+      <p>検査は必ず<strong>無通電の状態から順に</strong>進めます。いきなり通電すると、結線ミス（逆極性・短絡）があった場合にテープや電源を壊してから気づくことになります。</p>
+    </div>
+    <ul class="steps">
+      <li><strong>外観検査（無通電）</strong>：テープの浮き・剥がれ、カットラインの位置、コネクタの差し込み深さ、はんだ部の状態、配線の固定を目視確認する。</li>
+      <li><strong>結線確認（無通電）</strong>：テスターの導通レンジで＋／−の取り違え・短絡がないかを電源接続前に確認する。</li>
+      <li><strong>絶縁抵抗測定（無通電・機器切り離し）</strong>：AC一次側配線のみを対象に測定する。電源装置・調光器は必ず切り離す。</li>
+      <li><strong>初回通電・全点灯確認</strong>：全回路を点灯し、不点灯区間・色ムラ・逆接がないかを確認する。</li>
+      <li><strong>測定検査（通電）</strong>：末端電圧・電源出力電圧・負荷電流を測定し、設計値と照合する。</li>
+      <li><strong>連続点灯試験（30分〜1時間）</strong>：全点灯のまま放置し、温度の安定・チラつき・保護動作の有無を確認する。</li>
+      <li><strong>操作系の動作確認</strong>：調光・調色・シーン切替・センサー連動・タイマーを実際の使用手順どおりに操作する。</li>
+      <li><strong>記録・引き渡し書類の作成</strong>：測定値・設定値・回路図・カット位置を記録して施主控えを残す。</li>
+    </ul>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="section">
+    <h2 class="section-title">2. 測定項目と合格基準の目安</h2>
+    <div class="section-body">
+      <p>数値で残す項目は次の5つです。基準値はあくまで実務上の目安であり、製品仕様書に規定がある場合はそちらを優先します。</p>
+    </div>
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>測定項目</th>
+          <th>測定位置・条件</th>
+          <th>合格基準の目安</th>
+          <th>不合格時の主な是正</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>電源出力電圧</strong></td>
+          <td>電源装置の出力端子（全点灯時）</td>
+          <td>DC24V：23.5〜24.5V<br>DC12V：11.8〜12.2V程度</td>
+          <td>電圧調整トリマの再調整、電源交換</td>
+        </tr>
+        <tr>
+          <td><strong>末端電圧（電圧降下）</strong></td>
+          <td>給電点から最遠のカットライン（全点灯時）</td>
+          <td>定格の<strong>−5%以内</strong><br>24V系：22.8V以上<br>12V系：11.4V以上</td>
+          <td>給電線の太線化・両端給電・電源分散</td>
+        </tr>
+        <tr>
+          <td><strong>負荷電流</strong></td>
+          <td>電源二次側の＋線をクランプ（全点灯時）</td>
+          <td>電源定格の<strong>80%以下</strong><br>（例：150W/24V電源なら5.0A以下）</td>
+          <td>回路分割・電源容量アップ</td>
+        </tr>
+        <tr>
+          <td><strong>絶縁抵抗（AC一次側）</strong></td>
+          <td>分電盤〜電源入力の配線（機器切り離し・DC250V印加）</td>
+          <td>対地電圧150V以下の回路：<strong>0.1MΩ以上</strong></td>
+          <td>被覆損傷・結線部の点検、ケーブル交換</td>
+        </tr>
+        <tr>
+          <td><strong>連続点灯後の温度</strong></td>
+          <td>点灯30分後のテープ表面・電源ケース（放射温度計）</td>
+          <td>テープ表面：<strong>50℃前後まで</strong><br>電源ケース：メーカー規定内（目安 周囲温度＋30〜40℃）</td>
+          <td>アルミフレーム追加・電源の設置場所変更・換気確保</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="warn-box">
+      <p><strong>メガーをDC二次側にかけない</strong>：絶縁抵抗計はDC250V/500Vを印加します。電源装置・調光器・LEDテープを接続したまま測定すると半導体を破損します。必ず一次側配線のみを対象にし、機器は端子から切り離してから測定してください。</p>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section class="section">
+    <h2 class="section-title">3. 点灯検査で見るポイント（目視項目）</h2>
+    <div class="section-body">
+      <p>測定と並行して、点灯状態を<strong>施主が実際に見る位置・時間帯</strong>で確認します。昼の明るい時間に見て問題なくても、夜に間接照明として見るとムラやドットが目立つことがあります。</p>
+    </div>
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>確認項目</th>
+          <th>見方</th>
+          <th>NGサインの例</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>全点灯・不点灯区間</strong></td>
+          <td>全回路を最大光量で点灯し端から端まで歩いて確認</td>
+          <td>1区間（カット単位）だけ消えている＝接続部の接触不良</td>
+        </tr>
+        <tr>
+          <td><strong>明るさの均一性</strong></td>
+          <td>テープ全長を正面と斜めから見る</td>
+          <td>末端に向かって暗くなる＝電圧降下、ロット違い混在＝色温度差</td>
+        </tr>
+        <tr>
+          <td><strong>色ムラ・色ずれ</strong></td>
+          <td>白系は壁面反射で、RGBは単色（R/G/B個別）で確認</td>
+          <td>RGBの末端で色が変わる＝電圧降下、白の黄ばみ＝ロット差</td>
+        </tr>
+        <tr>
+          <td><strong>ドット感・映り込み</strong></td>
+          <td>仕上げ材（カウンター天板・鏡・ガラス）への映り込みを施主目線の高さで確認</td>
+          <td>粒々の映り込み＝カバー・拡散材や離隔距離の再検討</td>
+        </tr>
+        <tr>
+          <td><strong>チラつき</strong></td>
+          <td>調光を10%・50%・100%で保持し目視＋スマホカメラ越しに確認</td>
+          <td>カメラに縞が出る・低調光でチラつく＝調光器と電源の相性</td>
+        </tr>
+        <tr>
+          <td><strong>接続部の発熱</strong></td>
+          <td>連続点灯後にコネクタ・はんだ部を放射温度計で確認</td>
+          <td>周囲より明らかに高温の点がある＝接触抵抗大、要再結線</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="info-box">
+      <p><strong>スマホカメラはフリッカーの簡易チェッカーになる</strong>：肉眼で見えない高速のチラつきも、スマホカメラのプレビューに横縞として現れることがあります。厳密な測定ではありませんが、引き渡し前の簡易確認としては有効です。調光相性の詳細は<a href="/articles/led-tape-camera-flicker-pwm-frequency-guide">カメラ映り込みとPWM周波数のガイド</a>を参照してください。</p>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section class="section">
+    <h2 class="section-title">4. 検査に使う測定器</h2>
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="m-tag">必須</div>
+        <div class="m-name">デジタルテスター</div>
+        <div class="m-body">DC電圧（末端電圧・出力電圧）と導通確認に使用。分解能0.01Vあれば電圧降下の判定に十分。</div>
+        <div class="m-spec">用途：末端電圧測定・逆極性/短絡チェック</div>
+      </div>
+      <div class="method-card">
+        <div class="m-tag">必須</div>
+        <div class="m-name">クランプメーター（DC対応）</div>
+        <div class="m-body">電源二次側の負荷電流を非接触で測定。DC電流対応品を選ぶ（AC専用クランプではDCは測れない）。</div>
+        <div class="m-spec">用途：負荷電流と電源容量余裕の確認</div>
+      </div>
+      <div class="method-card">
+        <div class="m-tag">必須</div>
+        <div class="m-name">絶縁抵抗計（メガー）</div>
+        <div class="m-body">AC一次側配線の絶縁確認に使用。125V/250Vレンジを使い、機器は必ず切り離す。</div>
+        <div class="m-spec">用途：一次側 0.1MΩ以上の確認</div>
+      </div>
+      <div class="method-card">
+        <div class="m-tag">推奨</div>
+        <div class="m-name">放射温度計</div>
+        <div class="m-body">連続点灯後のテープ表面・電源ケース・接続部の温度を非接触で確認。ホットスポットの発見に有効。</div>
+        <div class="m-spec">用途：温度検査・接触不良の早期発見</div>
+      </div>
+      <div class="method-card">
+        <div class="m-tag">推奨</div>
+        <div class="m-name">照度計</div>
+        <div class="m-body">机上面・通路など施主の要求照度がある案件で竣工値を記録。将来の光束低下比較の基準値にもなる。</div>
+        <div class="m-spec">用途：要求照度の証明・竣工記録</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5 -->
+  <section class="section">
+    <h2 class="section-title">5. 引き渡し時に残す記録・書類</h2>
+    <div class="section-body">
+      <p>LEDテープは施工後に隠蔽される部分（電源・接続部・配線経路）が多く、<strong>記録がないと将来のメンテナンスで壁や天井を余計に開けることになります</strong>。次の項目を施主控えとして残しておくと、増設・修理の対応が格段に早くなります。</p>
+    </div>
+    <ul class="checklist">
+      <li>回路系統図（電源の位置・容量・回路分けがわかる簡易図で可）</li>
+      <li>電源装置の設置場所と点検口の位置（写真添付が望ましい）</li>
+      <li>使用製品の型番・電圧・W/m・色温度・購入時期（補修部材の手配用）</li>
+      <li>テープのカット位置・接続方法（コネクタ／はんだ）の記録</li>
+      <li>完成検査の測定値（末端電圧・負荷電流・絶縁抵抗・温度）</li>
+      <li>調光器・コントローラの設定値（シーン・タイマー・調光下限）</li>
+      <li>操作説明を実施した日付と説明内容（調光操作・電源の切り方）</li>
+      <li>保証条件とメンテナンス時の注意（清掃方法・触ってよい箇所）</li>
+    </ul>
+    <div class="info-box">
+      <p><strong>測定値は「次回との比較」に効く</strong>：竣工時の末端電圧と照度を記録しておけば、数年後に「暗くなった」と連絡が来たときに、光束低下（経年）なのか電源劣化・接続部劣化（故障）なのかを数値で切り分けられます。</p>
+    </div>
+  </section>
+
+  <!-- Section 6 -->
+  <section class="section">
+    <h2 class="section-title">6. 引き渡し前 最終チェックリスト</h2>
+    <ul class="checklist">
+      <li>無通電で外観・結線（極性・短絡）を確認した</li>
+      <li>機器を切り離してAC一次側の絶縁抵抗0.1MΩ以上を確認した</li>
+      <li>全点灯で不点灯区間・色ムラ・末端の明るさ低下がないことを確認した</li>
+      <li>末端電圧が定格−5%以内（24V系で22.8V以上）であることを測定した</li>
+      <li>負荷電流が電源定格の80%以下であることを測定した</li>
+      <li>30分以上の連続点灯でチラつき・保護動作・異常発熱がないことを確認した</li>
+      <li>調光10%・50%・100%とシーン・タイマー動作を実操作で確認した</li>
+      <li>仕上げ材への映り込み・ドット感を施主目線で確認した</li>
+      <li>測定値・設定値・回路図・カット位置を記録し施主控えを作成した</li>
+      <li>操作説明を実施し、触ってはいけない箇所（電源・結線部）を伝えた</li>
+    </ul>
+  </section>
+
+  <!-- Section 7: FAQ -->
+  <section class="section">
+    <h2 class="section-title">7. よくある質問（FAQ）</h2>
+    <div class="faq-item">
+      <div class="faq-q">DC24VのLEDテープ回路でも絶縁抵抗測定（メガー）は必要ですか？</div>
+      <div class="faq-a">測定対象はAC100V/200Vの一次側回路です。電源装置より一次側（分電盤〜電源入力まで）は通常の低圧屋内配線として絶縁抵抗を測定し、対地電圧150V以下の回路で0.1MΩ以上を確認します。一方、電源二次側のDC24V回路にメガー（DC250V/500V印加）をかけるとLEDチップやコントローラを破損させます。必ず電源装置・調光器・テープを切り離した状態で一次側配線のみを測定し、二次側はテスターでの電圧・導通確認にとどめてください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">点灯試験はどのくらいの時間行えばよいですか？</div>
+      <div class="faq-a">最低30分、可能なら1時間の連続全点灯を推奨します。LEDテープと電源の温度は点灯後20〜40分でほぼ安定するため、30分未満では熱による不具合（温度上昇によるチラつき・電源の保護動作・明るさ低下）を検出できません。連続点灯後にテープ表面温度とアルミフレーム温度、電源ケース温度を放射温度計で測定し、テープ表面50℃前後まで・電源ケースはメーカー規定（多くは周囲温度＋30〜40℃以内）を目安に確認します。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">末端電圧はどこで、どうやって測定しますか？</div>
+      <div class="faq-a">テープの給電点から一番遠い末端のカットライン（銅箔パッド）にテスターのDCレンジを当てて、全点灯（白なら最大光量）状態で測定します。合格基準の目安は定格電圧の5%以内の降下、つまりDC24Vなら22.8V以上、DC12Vなら11.4V以上です。5%を超えて降下している場合は末端の明るさ低下や色ずれ（特にRGB）が視認されるレベルになるため、給電ケーブルの太線化・両端給電・電源の増設で是正してから引き渡します。</div>
+    </div>
+  </section>
+
+  <!-- related-articles -->
+  <div style="max-width:900px;margin:40px auto;padding:0 20px">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px">
+      <h3 style="font-size:1rem;font-weight:700;color:var(--text-muted);margin-bottom:16px">関連する施工・選び方ガイド</h3>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+        <li><a href="/articles/led-tape-voltage-drop-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(14,159,110,.25);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープの電圧降下 計算と対策ガイド｜末端が暗くなる原因</a></li>
+        <li><a href="/articles/led-tape-multimeter-testing-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(14,159,110,.25);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>テスターを使ったLEDテープの測定・故障診断の基本</a></li>
+        <li><a href="/articles/led-insulation-resistance-megger-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(14,159,110,.25);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LED回路の絶縁抵抗測定（メガー）の注意点｜機器を壊さない測り方</a></li>
+        <li><a href="/articles/led-tape-incoming-inspection-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(14,159,110,.25);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープの受入検査ガイド｜施工前に確認すべき項目</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h2>検査基準を満たしやすい高品質LEDテープ・電源を選ぶ</h2>
+    <p>電圧降下に強い定電圧24V品・容量に余裕を持たせやすい電源ラインナップ・演色性データの明確な製品を取り揃えています。</p>
+    <a href="/" class="cta-btn">商品ラインナップを見る</a>
+  </div>
+
+</main>
+</body>
+</html>
