@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープが調光器でちらつく・暗くならない原因と対策｜相性問題の見極め方【施工業者向け】 | LED PRO SHOP</title>
+<meta name="description" content="LEDテープを調光器に接続してもちらつく・思ったほど暗くならない・最小照度で消えてしまう場合、原因の多くは調光器とLED電源(PSU)の調光方式の不一致、または調光器の最小負荷不足です。トライアック/PWM/0-10V/DALIの方式別相性、最小負荷の計算方法、症状別の切り分け手順を施工業者向けに解説。">
+<meta property="og:title" content="LEDテープが調光器でちらつく・暗くならない原因と対策｜相性問題の見極め方【施工業者向け】 | LED PRO SHOP">
+<meta property="og:description" content="LEDテープが調光器でちらつく・暗くならない原因の多くは調光方式の不一致か最小負荷不足です。トライアック/PWM/0-10V/DALIの相性早見表と症状別の切り分け手順を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-dimmer-compatibility-troubleshooting-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-dimmer-compatibility-troubleshooting-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープが調光器でちらつく・暗くならない原因と対策 | LED PRO SHOP">
+<meta name="twitter:description" content="調光方式の不一致・最小負荷不足によるちらつき・非調光トラブルの見極め方と対策を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-dimmer-compatibility-troubleshooting-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-dimmer-compatibility-troubleshooting-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #170f0a; color: #f0ded1; line-height: 1.7; font-size: 15px; }
+  a { color: #fb923c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #2c1305 0%, #431407 50%, #1a0a05 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #7c3a12; }
+  .hero-badge { display: inline-block; background: #c2410c; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #fef3ec; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #d9b79c; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #a9836a; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #fef3ec; border-left: 4px solid #f97316; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #fdba74; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #e7d2c2; }
+
+  .alert-box { background: #250c0c; border: 1px solid #7f1d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #241207; border: 1px solid #7c3a12; border-left: 4px solid #f97316; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #fed7aa; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #241207; border-radius: 10px; overflow: hidden; }
+  thead th { background: #7c3a12; color: #fdba74; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #3a2412; color: #e7d2c2; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #2c1608; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #0d1f0d; border: 1px solid #166534; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #4ade80; margin-top: 0; }
+  .calc-formula { background: #061006; border: 1px solid #14532d; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #86efac; margin: 12px 0; line-height: 2; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #241207; border: 1px solid #7c3a12; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #f97316; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #fdba74; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #d9b79c; margin-bottom: 0; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #f97316; color: #1a0a05; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #e7d2c2; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #3a2412; font-size: 14px; color: #e7d2c2; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #7c3a12; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #241207; padding: 16px 20px; font-weight: 700; color: #fdba74; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #e7d2c2; background: #170c05; }
+
+  .related-box { background: #241207; border: 1px solid #7c3a12; border-radius: 10px; padding: 24px 28px; margin: 40px 0; }
+  .related-box h3 { font-size: 16px; font-weight: 700; color: #fdba74; margin-bottom: 16px; }
+  .related-box ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .related-box li a { display: flex; gap: 10px; align-items: flex-start; padding: 10px 14px; border: 1px solid #7c3a12; border-radius: 6px; color: #e7d2c2; text-decoration: none; font-size: 13px; }
+  .related-box li a:hover { border-color: #f97316; background: #2c1608; }
+  .related-box li a span { color: #fb923c; flex-shrink: 0; }
+
+  .cta-box { background: linear-gradient(135deg, #7c3a12 0%, #241207 100%); border: 1px solid #f97316; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #fef3ec; margin-bottom: 10px; }
+  .cta-box p { color: #d9b79c; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #ea580c; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #c2410c; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #a9836a; }
+  .breadcrumb a { color: #a9836a; }
+  .breadcrumb a:hover { color: #fdba74; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LEDテープが調光器でちらつく・暗くならない原因と対策｜相性問題の見極め方",
+  "description": "LEDテープを調光器に接続してもちらつく・思ったほど暗くならない・最小照度で消えてしまう場合、原因の多くは調光器とLED電源(PSU)の調光方式の不一致、または調光器の最小負荷不足です。方式別の相性早見表と症状別の切り分け手順を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-dimmer-compatibility-troubleshooting-guide-hero.webp",
+  "datePublished": "2026-07-08",
+  "dateModified": "2026-07-08",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-dimmer-compatibility-troubleshooting-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "LEDテープが調光器でちらつく・暗くならない原因と対策", "item": "https://led-proshop.com/articles/led-tape-dimmer-compatibility-troubleshooting-guide" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "LEDテープを調光器に繋いだらちらつきます。まず何を確認すればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "最初に確認すべきは、使用しているLED電源（PSU）が「調光対応」と明記されているかどうかです。非調光対応のPSUに調光器を繋ぐと、明るさが変わる前提で作られていない回路が不安定な電圧変動を受け、ちらつきが発生します。次に、そのPSUが対応する調光方式（トライアック・PWM・0-10V・DALIなど）と、実際に使っている調光器の方式が一致しているかを確認してください。方式が一致していても、テープの消費電力が調光器の最小負荷を下回っているとちらつきが出ることがあります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "調光器の最小負荷とは何ですか？どう計算しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "最小負荷とは、その調光器が安定して動作するために必要な最低限の消費電力（W）のことです。一般的な家庭用トライアック調光器の最小負荷は20〜40W程度に設定されていることが多く、LEDテープは1mあたり5〜15W程度のため、2〜3m以下の短尺配線では最小負荷を下回りやすく、ちらつきや消灯の原因になります。対策は、調光器の対応W数下限と接続したテープの消費電力合計を比較し、不足する場合はダミー抵抗（ブリーダー抵抗）を並列に追加するか、壁面調光器ではなくLEDテープ専用のPWM調光コントローラに切り替えることです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "調光しても消えきらず薄く光ったままです。故障でしょうか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "故障とは限りません。トレーリングエッジ方式のPSUにリーディングエッジ方式の調光器を組み合わせている、または調光器の待機リーク電流がPSU側の待機回路を微弱に動作させているケースが多く見られます。この現象は残光（ゴースト・グロー）と呼ばれ、調光器とPSUの方式不一致が主因です。調光器を切ってもテープ全体がうっすら光る場合は方式を揃えた組み合わせに交換し、一部の区間だけ薄く光る場合は配線・分岐部の絶縁不良を確認してください。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">トラブル対処ガイド</div>
+    <h1>LEDテープが調光器でちらつく・暗くならない原因と対策<br>相性問題の見極め方</h1>
+    <p class="hero-sub">トライアック/PWM/0-10V/DALI方式の不一致・最小負荷不足を切り分け、症状別に原因を特定する診断手順</p>
+    <p class="hero-meta">公開: 2026-07-08 | カテゴリ: LEDテープトラブル対処ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-dimmer-compatibility-troubleshooting-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープが調光器でちらつく・暗くならない原因と対策
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="alert-box">
+      <div class="alert-title">よくある施工トラブル：「調光器を付けたらちらつく・思ったほど暗くならない」</div>
+      <p>LEDテープと調光器を組み合わせた施工で多いのが、ちらつき・最小照度に届く前の消灯・調光範囲が狭い・切っても薄く光ったままになるといった症状です。これらの多くは製品不良ではなく、<strong>調光器とLED電源（PSU）の調光方式が合っていない「相性問題」</strong>、または<strong>調光器の最小負荷不足</strong>が原因です。電源やテープを交換する前に、まず原因を切り分けてください。</p>
+    </div>
+
+    <h2>調光の相性問題が起きる3つの原因</h2>
+
+    <p>LEDテープの調光トラブルは、原因を大きく3つに分けて考えると切り分けやすくなります。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>原因</th>
+          <th>内容</th>
+          <th>起きやすい症状</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>① 調光方式の不一致</td>
+          <td>PSUが対応していない調光方式（トライアック・PWM・0-10V・DALI等）で操作している</td>
+          <td>ちらつき、ブザー音、消えきらない残光</td>
+        </tr>
+        <tr>
+          <td>② 最小負荷不足</td>
+          <td>接続したテープの消費電力が調光器の対応下限を下回っている</td>
+          <td>絞ると消える、細かくちらつく</td>
+        </tr>
+        <tr>
+          <td>③ 配線・設置の問題</td>
+          <td>分岐後の一部だけ調光が効かない、絶縁不良、接触不良</td>
+          <td>特定の区間だけ挙動が違う</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>症状別の原因診断表</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>症状</th>
+          <th>疑われる原因</th>
+          <th>確認方法</th>
+          <th>対策</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>調光すると細かくちらつく</td>
+          <td>PSU非対応 または 最小負荷不足</td>
+          <td>PSU仕様書に「調光対応」表記があるか確認</td>
+          <td>調光対応PSU＋相性確認済み調光器へ交換</td>
+        </tr>
+        <tr>
+          <td>明るさを絞ると最小照度前に消える</td>
+          <td>最小負荷不足</td>
+          <td>調光器の対応W数下限とテープ消費電力を比較</td>
+          <td>ダミー抵抗負荷を追加、またはPWM専用コントローラへ変更</td>
+        </tr>
+        <tr>
+          <td>完全に切っても薄く光る（消えきらない）</td>
+          <td>調光方式の不一致・リーク電流</td>
+          <td>調光器とPSUの対応方式（リーディング/トレーリング）を確認</td>
+          <td>方式を揃えた組み合わせに交換</td>
+        </tr>
+        <tr>
+          <td>調光範囲が狭い（すぐ最大になる）</td>
+          <td>調光カーブの不一致</td>
+          <td>PSUの調光カーブ仕様（リニア/対数）を確認</td>
+          <td>調光カーブ設定可能なコントローラへ変更</td>
+        </tr>
+        <tr>
+          <td>ブザー音・唸り音がする</td>
+          <td>トライアック非対応PSU</td>
+          <td>PSU仕様の対応調光方式欄を確認</td>
+          <td>トライアック対応の電子式PSUへ交換</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>調光方式×電源方式の相性早見表</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>電源（PSU）の種類</th>
+          <th>対応する調光器</th>
+          <th>相性</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>非調光対応の定電圧電源</td>
+          <td>いずれの調光器も不可</td>
+          <td class="tag-ng">✗ 非対応</td>
+        </tr>
+        <tr>
+          <td>調光対応・トライアック方式PSU</td>
+          <td>壁面設置のトライアック調光器（リーディング/トレーリング）</td>
+          <td class="tag-ok">◯ 方式を揃えれば良好</td>
+        </tr>
+        <tr>
+          <td>PWM調光コントローラ＋一般PSU</td>
+          <td>専用リモコン・タッチパネル型コントローラ</td>
+          <td class="tag-ok">◯ 最小負荷の制約が少なく安定</td>
+        </tr>
+        <tr>
+          <td>0-10V対応電源</td>
+          <td>0-10V対応の調光器・制御盤</td>
+          <td class="tag-ok">◯ 業務用途で安定（配線本数増）</td>
+        </tr>
+        <tr>
+          <td>DALI対応電源</td>
+          <td>DALI対応の集中制御システム</td>
+          <td class="tag-ok">◯ 大規模施設向け・個別アドレス制御可</td>
+        </tr>
+        <tr>
+          <td>調光対応・トライアック方式PSU</td>
+          <td>0-10V／DALI用の調光器</td>
+          <td class="tag-ng">✗ 方式不一致・動作不可</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>最小負荷不足の計算と対策</h2>
+
+    <div class="calc-box">
+      <h3>最小負荷を満たしているかの確認式</h3>
+      <div class="calc-formula">
+接続したLEDテープの合計消費電力（W） ≧ 調光器の最小負荷（W）
+
+例：調光器の最小負荷 30W／LEDテープ 10W/m × 2m = 20W
+→ 20W ＜ 30W（不足）→ ちらつき・消灯が発生しやすい
+
+対策：ダミー抵抗（ブリーダー抵抗）で10W以上を追加負荷、
+または壁面調光器をやめてテープ専用PWMコントローラへ変更
+      </div>
+    </div>
+
+    <p>一般的な家庭用トライアック調光器の最小負荷は20〜40W程度に設定されています。白熱電球（60W以上）を前提に設計されているためで、消費電力の小さいLEDテープの短尺配線（2〜3m以下）ではこの下限を下回りやすく、ちらつき・不安定な消灯の直接原因になります。</p>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">①</div>
+        <h4>ダミー抵抗（ブリーダー抵抗）を追加</h4>
+        <p>電源の出力に抵抗負荷を並列で追加し、見かけ上の消費電力を増やして最小負荷を満たす方法。既存の壁面調光器をそのまま活かせる。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">②</div>
+        <h4>テープ専用のPWM調光コントローラへ変更</h4>
+        <p>LED負荷を前提に設計された専用コントローラは最小負荷の制約が緩く、短尺配線でも安定して調光できる。リモコン操作が基本になる。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">③</div>
+        <h4>調光対応PSUと調光器の方式を揃える</h4>
+        <p>PSUの仕様書に記載された対応調光方式（トライアック/PWM/0-10V/DALI）と、現場の調光器の方式を一致させて組み合わせ直す。</p>
+      </div>
+    </div>
+
+    <h2>診断の手順（テスターを使った切り分け）</h2>
+
+    <ul class="step-list">
+      <li><span>PSUの仕様シールまたは取扱説明書で「調光対応」の記載と対応方式（トライアック/PWM/0-10V/DALI）を確認する。</span></li>
+      <li><span>接続しているテープの総消費電力（W/m×長さ）を計算し、調光器の最小負荷仕様と比較する。</span></li>
+      <li><span>調光器を最大出力にした状態でテスターにより出力電圧が定格通りか確認する。</span></li>
+      <li><span>調光を絞りながらちらつき・消灯・残光が出るポイントを記録し、上記の症状別診断表と照合する。</span></li>
+      <li><span>原因が特定できたら、方式を揃えた組み合わせへの交換またはダミー抵抗の追加で対応する。</span></li>
+    </ul>
+
+    <h2>交換前チェックリスト</h2>
+
+    <ul class="checklist">
+      <li>PSUの仕様書で対応調光方式（トライアック/PWM/0-10V/DALI）を確認した</li>
+      <li>接続テープの合計消費電力と調光器の最小負荷を比較した</li>
+      <li>調光器とPSUの方式（リーディング/トレーリングエッジ等）が一致している</li>
+      <li>短尺配線（2〜3m以下）の場合、最小負荷不足の可能性を検討した</li>
+      <li>分岐部・接続部に接触不良や絶縁不良がないかテスターで確認した</li>
+      <li>交換後、最大〜最小まで調光してちらつき・残光がないことを確認した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. LEDテープを調光器に繋いだらちらつきます。まず何を確認すればいいですか？</div>
+        <div class="faq-a">最初に確認すべきは、使用しているLED電源（PSU）が「調光対応」と明記されているかどうかです。非調光対応のPSUに調光器を繋ぐと、明るさが変わる前提で作られていない回路が不安定な電圧変動を受け、ちらつきが発生します。次に、そのPSUが対応する調光方式（トライアック・PWM・0-10V・DALIなど）と、実際に使っている調光器の方式が一致しているかを確認してください。方式が一致していても、テープの消費電力が調光器の最小負荷を下回っているとちらつきが出ることがあります。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 調光器の最小負荷とは何ですか？どう計算しますか？</div>
+        <div class="faq-a">最小負荷とは、その調光器が安定して動作するために必要な最低限の消費電力（W）のことです。一般的な家庭用トライアック調光器の最小負荷は20〜40W程度に設定されていることが多く、LEDテープは1mあたり5〜15W程度のため、2〜3m以下の短尺配線では最小負荷を下回りやすく、ちらつきや消灯の原因になります。対策は、調光器の対応W数下限と接続したテープの消費電力合計を比較し、不足する場合はダミー抵抗（ブリーダー抵抗）を並列に追加するか、壁面調光器ではなくLEDテープ専用のPWM調光コントローラに切り替えることです。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 調光しても消えきらず薄く光ったままです。故障でしょうか？</div>
+        <div class="faq-a">故障とは限りません。トレーリングエッジ方式のPSUにリーディングエッジ方式の調光器を組み合わせている、または調光器の待機リーク電流がPSU側の待機回路を微弱に動作させているケースが多く見られます。この現象は残光（ゴースト・グロー）と呼ばれ、調光器とPSUの方式不一致が主因です。調光器を切ってもテープ全体がうっすら光る場合は方式を揃えた組み合わせに交換し、一部の区間だけ薄く光る場合は配線・分岐部の絶縁不良を確認してください。</div>
+      </div>
+    </div>
+
+    <div class="related-box">
+      <h3>関連するLED施工ガイド</h3>
+      <ul>
+        <li><a href="/articles/led-tape-dimmer-guide"><span>→</span>LEDテープ 調光器の選び方ガイド｜方式別の特徴と製品選定基準</a></li>
+        <li><a href="/articles/led-tape-dimmer-buzzing-noise-guide"><span>→</span>LEDテープ 調光器のブザー音・唸り音の原因と対策</a></li>
+        <li><a href="/articles/led-tape-triac-leading-trailing-edge-dimming-guide"><span>→</span>LEDテープ トライアック調光｜リーディング・トレーリングエッジの違いと選び方</a></li>
+      </ul>
+    </div>
+
+    
+<!-- related-articles -->
+<div style="max-width:900px;margin:0 auto 40px;padding:0 20px">
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px">
+    <h3 style="font-size:1rem;font-weight:700;color:var(--text-muted);margin-bottom:16px">関連する電源・コントローラー解説</h3>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+      <li><a href="/articles/led-tape-dimmer-residual-glow-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープが調光しても消えない・微点灯する原因と対処法｜残光・最小負荷・漏れ電流を診断</a></li>
+      <li><a href="/articles/led-psu-capacity-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープ DC24V/12V 電源（PSU）容量計算 早見表｜ワット数・配線長から即計算</a></li>
+      <li><a href="/articles/capsule-hotel-led-case" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>カプセルホテル LED照明施工事例｜睡眠環境2700K調光・IP65浴室・44%省エネ・年間18万円削減</a></li>
+    </ul>
+  </div>
+</div>
+<div class="cta-box">
+      <h3>調光対応PSU・相性確認済みコントローラを探す</h3>
+      <p>トライアック/PWM/0-10V/DALI対応の電源、テープ専用調光コントローラを取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

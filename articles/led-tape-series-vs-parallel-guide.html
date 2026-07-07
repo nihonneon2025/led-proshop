@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEDテープは直列接続NG？並列配線との違いと正しい施工方法｜電圧分割で点灯不良になる仕組みを解説 | LED PRO SHOP</title>
+<meta name="description" content="LEDテープを複数本つなぐ際、電源の+−を数珠つなぎに直列接続すると各テープにかかる電圧が分割され、暗い・点灯しないトラブルの原因になります。LEDテープは定電圧・並列給電が前提の製品で、直列接続は誤配線です。直列と並列の違い、電圧分割の仕組み、正しい分岐配線の3つの方法と施工手順を施工業者向けに解説。">
+<meta property="og:title" content="LEDテープは直列接続NG？並列配線との違いと正しい施工方法｜電圧分割で点灯不良になる仕組みを解説 | LED PRO SHOP">
+<meta property="og:description" content="LEDテープを直列(数珠つなぎ)で接続すると各テープの電圧が分割され暗い・点灯しないトラブルの原因になります。定電圧・並列給電が正しい配線方式で、その理由と正しい分岐配線の手順を施工業者向けに解説。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/led-tape-series-vs-parallel-guide">
+<meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-series-vs-parallel-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LEDテープは直列接続NG？並列配線との違いと正しい施工方法 | LED PRO SHOP">
+<meta name="twitter:description" content="LEDテープを直列接続すると電圧が分割され点灯不良になります。定電圧・並列給電が正しい配線方式で、電圧分割の仕組みと正しい分岐配線の手順を施工業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-series-vs-parallel-guide-hero.webp">
+<link rel="canonical" href="https://led-proshop.com/articles/led-tape-series-vs-parallel-guide">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; background: #0a0f1e; color: #dbe4f3; line-height: 1.7; font-size: 15px; }
+  a { color: #60a5fa; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .hero { background: linear-gradient(135deg, #0f1633 0%, #12275c 50%, #0a1a3a 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 1px solid #1e3a5f; }
+  .hero-badge { display: inline-block; background: #2563eb; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: #f1f5f9; line-height: 1.35; max-width: 800px; margin: 0 auto 16px; }
+  .hero-sub { font-size: 14px; color: #94a3b8; max-width: 680px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 12px; color: #64748b; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .content-wrap { padding: 48px 0 80px; }
+
+  h2 { font-size: 22px; font-weight: 800; color: #f1f5f9; border-left: 4px solid #3b82f6; padding-left: 14px; margin: 48px 0 20px; }
+  h3 { font-size: 17px; font-weight: 700; color: #93c5fd; margin: 32px 0 12px; }
+  p { margin-bottom: 16px; color: #cbd5e1; }
+
+  .alert-box { background: #1c1010; border: 1px solid #7f1d1d; border-left: 4px solid #dc2626; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .alert-box .alert-title { font-weight: 700; color: #fca5a5; font-size: 15px; margin-bottom: 8px; }
+  .alert-box p { color: #fecaca; margin-bottom: 0; font-size: 14px; }
+
+  .info-box { background: #0c1a2e; border: 1px solid #1e3a5f; border-left: 4px solid #3b82f6; border-radius: 8px; padding: 18px 20px; margin: 24px 0; }
+  .info-box p { color: #bfdbfe; margin-bottom: 0; font-size: 14px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0 32px; font-size: 13px; background: #0c1a2e; border-radius: 10px; overflow: hidden; }
+  thead th { background: #1e3a5f; color: #93c5fd; padding: 11px 12px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #1e2a3a; color: #cbd5e1; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #0e1e30; }
+  .tag-ok { color: #4ade80; font-weight: 700; }
+  .tag-warn { color: #fbbf24; font-weight: 700; }
+  .tag-ng { color: #f87171; font-weight: 700; }
+
+  .calc-box { background: #0d1f0d; border: 1px solid #166534; border-radius: 10px; padding: 24px; margin: 24px 0; }
+  .calc-box h3 { color: #4ade80; margin-top: 0; }
+  .calc-formula { background: #061006; border: 1px solid #14532d; border-radius: 6px; padding: 16px; font-family: monospace; font-size: 14px; color: #86efac; margin: 12px 0; line-height: 2; }
+
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .spec-card { background: #0c1a2e; border: 1px solid #1e3a5f; border-radius: 10px; padding: 20px; }
+  .spec-card h4 { font-size: 15px; font-weight: 700; color: #93c5fd; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #1e2a3a; }
+  .spec-card .spec-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding: 5px 0; }
+  .spec-card .spec-row span:first-child { color: #94a3b8; }
+  .spec-card .spec-row span:last-child { color: #e2e8f0; font-weight: 600; text-align: right; }
+
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 32px; }
+  .method-card { background: #0c1a2e; border: 1px solid #1e3a5f; border-radius: 10px; padding: 20px; }
+  .method-card .method-num { font-size: 28px; font-weight: 900; color: #3b82f6; line-height: 1; margin-bottom: 8px; }
+  .method-card h4 { font-size: 14px; font-weight: 700; color: #93c5fd; margin-bottom: 10px; }
+  .method-card p { font-size: 13px; color: #94a3b8; margin-bottom: 0; }
+
+  .step-list { counter-reset: step; list-style: none; margin: 16px 0 28px; }
+  .step-list li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 16px; }
+  .step-list li::before { content: counter(step); min-width: 28px; height: 28px; background: #3b82f6; color: #fff; font-size: 13px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-list li span { color: #cbd5e1; font-size: 14px; }
+
+  .checklist { list-style: none; margin: 16px 0 28px; }
+  .checklist li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid #1e2a3a; font-size: 14px; color: #cbd5e1; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 900; }
+
+  .faq-section { margin-top: 48px; }
+  .faq-item { border: 1px solid #1e3a5f; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .faq-q { background: #0c1a2e; padding: 16px 20px; font-weight: 700; color: #93c5fd; font-size: 15px; }
+  .faq-a { padding: 16px 20px; font-size: 14px; color: #cbd5e1; background: #070e1c; }
+
+  .related-box { background: #0c1a2e; border: 1px solid #1e3a5f; border-radius: 10px; padding: 24px 28px; margin: 40px 0; }
+  .related-box h3 { font-size: 16px; font-weight: 700; color: #93c5fd; margin-bottom: 16px; }
+  .related-box ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .related-box li a { display: flex; gap: 10px; align-items: flex-start; padding: 10px 14px; border: 1px solid #1e3a5f; border-radius: 6px; color: #cbd5e1; text-decoration: none; font-size: 13px; }
+  .related-box li a:hover { border-color: #3b82f6; background: #0e1e30; }
+  .related-box li a span { color: #60a5fa; flex-shrink: 0; }
+
+  .cta-box { background: linear-gradient(135deg, #1e3a5f 0%, #0c2340 100%); border: 1px solid #3b82f6; border-radius: 12px; padding: 36px 28px; text-align: center; margin: 48px 0; }
+  .cta-box h3 { font-size: 20px; color: #f1f5f9; margin-bottom: 10px; }
+  .cta-box p { color: #94a3b8; font-size: 14px; margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: #2563eb; color: #fff; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 8px; transition: background 0.2s; }
+  .cta-btn:hover { background: #1d4ed8; text-decoration: none; }
+
+  .breadcrumb { padding: 14px 0 0; font-size: 12px; color: #64748b; }
+  .breadcrumb a { color: #64748b; }
+  .breadcrumb a:hover { color: #93c5fd; }
+
+  @media (max-width: 600px) { .hero { padding: 40px 16px 36px; } h2 { font-size: 19px; } .method-grid, .spec-grid { grid-template-columns: 1fr; } }
+  .article-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;margin-bottom:24px;}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LEDテープは直列接続NG？並列配線との違いと正しい施工方法",
+  "description": "LEDテープを複数本つなぐ際、電源の+−を数珠つなぎに直列接続すると各テープにかかる電圧が分割され、暗い・点灯しないトラブルの原因になります。定電圧・並列給電が正しい配線方式で、電圧分割の仕組みと正しい分岐配線の手順を施工業者向けに解説。",
+  "image": "https://led-proshop.com/articles/images/led-tape-series-vs-parallel-guide-hero.webp",
+  "datePublished": "2026-07-08",
+  "dateModified": "2026-07-08",
+  "author": { "@type": "Organization", "name": "LED PRO SHOP" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://led-proshop.com/articles/led-tape-series-vs-parallel-guide" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "LEDテープは直列接続NG？並列配線との違いと正しい施工方法", "item": "https://led-proshop.com/articles/led-tape-series-vs-parallel-guide" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "LEDテープを複数本つなぐとき、直列と並列はどちらが正しいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "並列が正しい配線方式です。LEDテープは12V・24Vなどの定電圧を各テープに直接かけて点灯させる「定電圧・並列給電」の製品で、電源からの+線と−線を各テープの+・−にそれぞれ分岐接続します。電源の出力を1本のテープの出力から次のテープの入力へ数珠つなぎにする直列接続は誤配線で、各テープにかかる電圧が分割されて不足し、暗い・点灯しないトラブルの直接原因になります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "直列に接続すると具体的に何が起きますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "電源電圧が接続した本数に応じて分割され、各テープにかかる電圧が定格を大きく下回ります。例えば24V電源に3本を直列で繋ぐと単純計算で1本あたり約8Vしか届かず、24V品が正常点灯に必要とする電圧（一般に定格の90%程度以上）に届かないため、暗く点灯するか、そもそも内部のLED・抵抗回路が動作せず全く点灯しません。テープごとの電流特性のばらつきにより、どのテープも安定しないという不規則な症状が出ることもあります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "分岐して並列配線する場合、どんな部材・手順が必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "分岐ジャンクションボックスまたは圧着分岐コネクタ（Y字・T字分岐）を使い、電源からの+線を各テープの+へ、−線を各テープの−へそれぞれ配線します。極性を統一したうえで、全テープの消費電力の合計に対して電源（PSU）容量が余裕を持っているか確認し、分岐部の配線の太さも合計電流に見合ったものを選びます。施工後は各テープの入力端でテスターを使い定格電圧が出ているかを実測して、直列になっていないかを電圧値で確認してください。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">施工方法ガイド</div>
+    <h1>LEDテープは直列接続NG<br>並列配線との違いと正しい施工方法</h1>
+    <p class="hero-sub">電源の+−を数珠つなぎにすると電圧が分割されて点灯不良に。正しい並列（分岐）配線の手順と電圧分割の仕組みを解説</p>
+    <p class="hero-meta">公開: 2026-07-08 | カテゴリ: LEDテープ施工方法ガイド</p>
+  </div>
+</div>
+<img src="/articles/images/led-tape-series-vs-parallel-guide-hero.webp" alt="" class="article-hero-img" loading="lazy" decoding="async">
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">LED PRO SHOP</a> &rsaquo; <a href="/articles/">記事一覧</a> &rsaquo; LEDテープは直列接続NG？並列配線との違いと正しい施工方法
+  </nav>
+
+  <div class="content-wrap">
+
+    <div class="info-box">
+      <p><strong>この記事の結論</strong>：LEDテープは「定電圧・並列給電」が前提の製品です。電源からの+−を1本のテープの出力から次のテープの入力へ数珠つなぎにする直列接続は誤配線で、各テープにかかる電圧が分割されて不足し、暗い・点灯しない原因になります。複数本を使う場合は、ジャンクションボックスや圧着分岐コネクタで電源から各テープへ<strong>並列</strong>に配線してください。</p>
+    </div>
+
+    <h2>LEDテープは「定電圧・並列給電」が前提の製品</h2>
+
+    <p>LEDテープ（12V・24Vの一般的なDC駆動タイプ）は、カットマークごとに区切られた1単位の中にLEDと電流制限抵抗（または定電流回路）が組まれており、その単位に<strong>電源の定格電圧をそのままかける</strong>ことで点灯する構造です。テープを複数本使う場合、各テープは電源から見て並列（それぞれが独立して電源電圧を受け取る回路）に接続するのが正しい配線方式です。</p>
+
+    <p>この点は、看板の箱文字などで使われる定電流（CC）LEDモジュールや、一部の旧式イルミネーション用品が直列（数珠つなぎ）配線を前提とする製品であることと混同しやすいポイントです。定電流ドライバーで駆動するモジュール系照明は複数個を直列に繋いで使う設計のものがありますが、<strong>定電圧のLEDテープは原則としてこの配線方式を適用できません。</strong></p>
+
+    <div class="alert-box">
+      <div class="alert-title">なぜ勘違いが起きるか</div>
+      <p>看板用の定電流モジュールや旧式の低圧イルミネーションを扱ってきた施工業者が、その感覚のままLEDテープ（定電圧品）を直列に繋いでしまうケースがあります。テープの表面だけを見ると「+」「−」の出力パッドが次のテープの入力パッドにそのまま繋がるように見えるため、正しい並列配線（分岐給電）だと勘違いしたまま数珠つなぎにしてしまうことが原因です。</p>
+    </div>
+
+    <h2>直列に接続すると何が起きるか（電圧分割の仕組み）</h2>
+
+    <p>電源の出力を1本のテープの出力側から次のテープの入力側へ繋いでいくと、電気的には電源電圧が接続した本数で分割される回路になります。LEDテープはLEDという非線形素子を含むため厳密な等分割にはなりませんが、実用上は各テープにかかる電圧が定格を大きく下回り、点灯できないか極端に暗くなります。</p>
+
+    <div class="calc-box">
+      <h3>直列接続時の電圧不足の目安計算</h3>
+      <div class="calc-formula">
+1本あたりの概算電圧 = 電源電圧 ÷ 直列に接続した本数
+
+例：24V電源 ÷ 3本（直列・誤配線）= 約8V／本
+
+24V品LEDテープの点灯に必要な最低電圧の目安 ≒ 定格の90%（約21.6V）
+→ 8Vでは大幅に不足し、いずれのテープも正常点灯しない
+      </div>
+      <p style="color:#86efac; font-size:13px; margin-top:12px; margin-bottom:0">
+        実際にはテープごとの電流特性のばらつきで電圧配分は均等になりません。1本だけがわずかに点灯し残りが消灯する、全て点かない、通電の度に点灯するテープが変わる、といった不規則な症状として現れることもあります。
+      </p>
+    </div>
+
+    <h2>直列と並列、どちらが正しいかの比較表</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>直列接続（誤配線）</th>
+          <th>並列接続（正しい配線）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>各テープにかかる電圧</td>
+          <td class="tag-ng">電源電圧÷本数（不足） ✗</td>
+          <td class="tag-ok">電源電圧そのまま（定格） ✓</td>
+        </tr>
+        <tr>
+          <td>点灯結果</td>
+          <td class="tag-ng">暗い・点灯しない・不規則</td>
+          <td class="tag-ok">全テープが均一に正常点灯</td>
+        </tr>
+        <tr>
+          <td>電源（PSU）容量の考え方</td>
+          <td>誤解しやすい（直列なら容量が小さくて済むと誤認）</td>
+          <td>全テープの消費電力合計に対し容量を選定</td>
+        </tr>
+        <tr>
+          <td>必要な部材・施工</td>
+          <td>特別な分岐部材は不要（だが誤配線）</td>
+          <td>分岐ジャンクションボックスまたは圧着分岐コネクタ</td>
+        </tr>
+        <tr>
+          <td>この配線が前提の製品</td>
+          <td>看板用の定電流（CC）モジュール等、一部の専用品のみ</td>
+          <td>定電圧（CV）LEDテープ全般（12V・24V問わず）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>正しい並列配線の3つの方法</h2>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">①</div>
+        <h4>分岐ジャンクションボックスで並列化</h4>
+        <p>電源からの+−線をジャンクションボックス内で複数の出力に分岐し、各テープへ個別に配線する方法。分岐数が多い・配線をまとめて隠したい現場に向く。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">②</div>
+        <h4>圧着分岐コネクタ（Y字・T字）で並列化</h4>
+        <p>ケーブル途中にY字・T字型の圧着分岐コネクタを挿入し、そこから別のテープへ配線を伸ばす方法。分岐点が少ない・簡易的な施工に向く。</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">③</div>
+        <h4>電源のマルチ出力端子を使う</h4>
+        <p>1台の電源に複数の出力端子（+−のペア）が備わっているタイプを使い、各出力から1本ずつテープへ直接配線する方法。分岐部材を減らせるが電源選定時の確認が必要。</p>
+      </div>
+    </div>
+
+    <h2>施工手順（分岐ジャンクションボックスの場合）</h2>
+
+    <ul class="step-list">
+      <li><span>接続する全テープの消費電力を合計し、電源（PSU）の出力容量が合計消費電力の80%以下（20%程度の余裕）に収まるか確認する。</span></li>
+      <li><span>ジャンクションボックス内で、電源からの+線を各テープの+入力へ、−線を各テープの−入力へそれぞれ分岐接続する。</span></li>
+      <li><span>全ての分岐で極性（+/−）が統一されているかを配線色・端子表示で確認する。</span></li>
+      <li><span>通電し、各テープの入力端の電圧をテスターで実測する。定格の90%以上（24V品なら約21.6V以上）が出ていれば正常。</span></li>
+      <li><span>全テープの明るさを目視で比較し、均一に点灯していることを確認する。1本だけ暗い場合は、その分岐の接続不良または誤って直列区間ができていないかを再確認する。</span></li>
+    </ul>
+
+    <h2>配線後のチェックリスト</h2>
+
+    <ul class="checklist">
+      <li>各テープの入力端でテスターを使い定格電圧を実測した（直列になっていないかを電圧値で判断できる）</li>
+      <li>電源（PSU）容量が全テープの消費電力合計に対して20%程度の余裕を持っている</li>
+      <li>全ての分岐で極性（+/−）を統一している</li>
+      <li>分岐部の配線の太さが合計電流に対して適切である</li>
+      <li>長尺のテープを使う区間では電圧降下も別途確認済みである</li>
+      <li>通電後、全テープの明るさが均一で1本だけ暗い・点かない箇所がないことを目視確認した</li>
+    </ul>
+
+    <div class="faq-section">
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. LEDテープを複数本つなぐとき、直列と並列はどちらが正しいですか？</div>
+        <div class="faq-a">並列が正しい配線方式です。LEDテープは12V・24Vなどの定電圧を各テープに直接かけて点灯させる「定電圧・並列給電」の製品で、電源からの+線と−線を各テープの+・−にそれぞれ分岐接続します。電源の出力を1本のテープの出力から次のテープの入力へ数珠つなぎにする直列接続は誤配線で、各テープにかかる電圧が分割されて不足し、暗い・点灯しないトラブルの直接原因になります。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 直列に接続すると具体的に何が起きますか？</div>
+        <div class="faq-a">電源電圧が接続した本数に応じて分割され、各テープにかかる電圧が定格を大きく下回ります。例えば24V電源に3本を直列で繋ぐと単純計算で1本あたり約8Vしか届かず、24V品が正常点灯に必要とする電圧（一般に定格の90%程度以上）に届かないため、暗く点灯するか、そもそも内部のLED・抵抗回路が動作せず全く点灯しません。テープごとの電流特性のばらつきにより、どのテープも安定しないという不規則な症状が出ることもあります。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 分岐して並列配線する場合、どんな部材・手順が必要ですか？</div>
+        <div class="faq-a">分岐ジャンクションボックスまたは圧着分岐コネクタ（Y字・T字分岐）を使い、電源からの+線を各テープの+へ、−線を各テープの−へそれぞれ配線します。極性を統一したうえで、全テープの消費電力の合計に対して電源（PSU）容量が余裕を持っているか確認し、分岐部の配線の太さも合計電流に見合ったものを選びます。施工後は各テープの入力端でテスターを使い定格電圧が出ているかを実測して、直列になっていないかを電圧値で確認してください。</div>
+      </div>
+    </div>
+
+    <div class="related-box">
+      <h3>関連するLED施工ガイド</h3>
+      <ul>
+        <li><a href="/articles/led-tape-parallel-wiring-guide"><span>→</span>LEDテープ 並列配線ガイド｜複数本を分岐して同時給電する正しい方法</a></li>
+        <li><a href="/articles/led-tape-voltage-drop-guide"><span>→</span>LEDテープ電圧降下ガイド｜5m超えで暗くなる原因・12V/24V対策・両端給電・ブースター選定</a></li>
+        <li><a href="/articles/led-tape-constant-voltage-vs-constant-current-guide"><span>→</span>LEDテープ 定電圧(CV)と定電流(CC)の違い｜配線方式・電源選定・混在禁止の理由</a></li>
+      </ul>
+    </div>
+
+    
+<!-- related-articles -->
+<div style="max-width:900px;margin:0 auto 40px;padding:0 20px">
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px 28px">
+    <h3 style="font-size:1rem;font-weight:700;color:var(--text-muted);margin-bottom:16px">関連するLED選び方ガイド</h3>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+      <li><a href="/articles/led-tape-polarity-reverse-connection-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープが逆接続で点かない原因と対処法｜極性（+/−）の見分け方と逆挿し診断</a></li>
+      <li><a href="/articles/led-tape-skirting-baseboard-lighting-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>巾木・足元の間接照明LEDテープ施工ガイド｜納まり・離隔・配線・段差処理を施工業者向けに解説</a></li>
+      <li><a href="/articles/led-tape-vs-neon-flex-selection-guide" style="display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:1px solid rgba(59,130,246,.2);border-radius:6px;color:var(--text);text-decoration:none"><span style="color:var(--accent2);flex-shrink:0">→</span>LEDテープとLEDネオンフレックスどっちを選ぶ？看板・間接照明での使い分けと選定基準｜施工業者向け比較ガイド</a></li>
+    </ul>
+  </div>
+</div>
+<div class="cta-box">
+      <h3>並列配線に対応した電源・分岐部材を探す</h3>
+      <p>複数出力対応の定電圧電源、分岐ジャンクションボックス、圧着分岐コネクタを取り扱っています</p>
+      <a href="/" class="cta-btn">商品ラインナップを見る</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
