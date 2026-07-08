@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>12V LEDテープの選び方と施工の注意点｜使いどころ・最大5mの限界・電圧降下対策【業者向け】 | LED PRO SHOP</title>
+  <meta name="description" content="12V LEDテープで5mを超える施工をすると末端が暗くなり手直しになります。12Vが本当に向く現場（車両・什器・バッテリー駆動）と24Vに切り替えるべき現場の判断基準、電圧降下の計算式、電源・ケーブル選定を施工業者向けに解説。">
+  <meta name="keywords" content="12V LEDテープ,12V LEDテープ 選び方,LEDテープ 12V 最大長,12V テープライト 施工,LEDテープ 12V 電源,12V 電圧降下,車両 LEDテープ,什器 LEDテープ">
+  <link rel="canonical" href="https://led-proshop.com/articles/12v-led-tape-selection-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/12v-led-tape-selection-guide">
+  <meta property="og:title" content="12V LEDテープの選び方と施工の注意点｜使いどころ・最大5mの限界・電圧降下対策【業者向け】 | LED PRO SHOP">
+  <meta property="og:description" content="12V LEDテープで5mを超える施工をすると末端が暗くなり手直しになります。12Vが本当に向く現場と24Vに切り替えるべき現場の判断基準、電圧降下の計算式、電源・ケーブル選定を施工業者向けに解説。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/12v-led-tape-selection-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="12V LEDテープの選び方と施工の注意点｜使いどころ・最大5mの限界・電圧降下対策 | LED PRO SHOP">
+  <meta name="twitter:description" content="12Vが本当に向く現場（車両・什器・バッテリー駆動）と24Vに切り替えるべき現場の判断基準、電圧降下の計算式、電源・ケーブル選定を施工業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/12v-led-tape-selection-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "12V LEDテープの選び方と施工の注意点｜使いどころ・最大5mの限界・電圧降下対策",
+    "description": "12V LEDテープが本当に向く現場（車両・什器・バッテリー駆動）と24Vに切り替えるべき現場の判断基準、電圧降下の計算式、電源・ケーブル選定を施工業者向けに解説。",
+    "image": "https://led-proshop.com/articles/images/12v-led-tape-selection-guide-hero.webp",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP 編集部" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "datePublished": "2026-07-09",
+    "dateModified": "2026-07-09",
+    "mainEntityOfPage": "https://led-proshop.com/articles/12v-led-tape-selection-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "12V LEDテープの選び方と施工の注意点", "item": "https://led-proshop.com/articles/12v-led-tape-selection-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "12V用のLEDテープを24V電源につないでしまったらどうなりますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "定格の2倍の電圧が掛かるため、通電した瞬間に過電流でLEDチップと電流制限抵抗が焼損します。数秒で全体が異常発熱し、FPC（基板）の焦げ・発煙に至ることもあり、テープは修理不能で全交換になります。12Vと24Vの電源・テープが同一現場に混在する場合は、コネクタや配線に「12V」「24V」の表示を入れて系統を物理的に分ける、電源のDC出力側コネクタ形状を系統ごとに変える、通電前にテスターで電源出力電圧を実測する、の3点で誤接続を防いでください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "キッチンカーや車両で12V LEDテープを車のバッテリーに直結してもよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "直結は推奨しません。「12Vバッテリー」の実電圧は、エンジン停止時で約12.5〜12.8V、走行中（オルタネーター充電中）は13.8〜14.4Vまで上がり、定格12.0Vのテープには常時15〜20%の過電圧が掛かります。過電圧は明るさ増ではなく発熱増・寿命短縮・チップ焼損として現れます。車両で使う場合はDC-DCコンバーター（12V→12V安定化、または12V→24V昇圧）を挟んで定電圧化し、ヒューズをバッテリー直近に入れてください。アイドリングストップ車・急速充電制御車は電圧変動がさらに大きいため必須です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "12V LEDテープで5m以上の長さが必要な場合はどうすればよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "テープ同士を直列で継ぎ足すのではなく、5m以内ごとに区切って電源から並列に給電します（並列給電・電源分散）。両端給電にすれば1系統あたり実質8m程度まで明るさムラを抑えられます。ただし新規物件で合計10mを超えることが最初から分かっているなら、電流が半分で済み最大接続長も約2倍の24V品で設計し直すほうが、給電点数・ケーブル太さ・電源台数のすべてで有利です。12Vを選び直せない改修案件のみ並列給電で対応するのが実務的な判断です。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#003C82;--blue-pale:#e8f0fe;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;--accent:#b45309;--accent-pale:#fdf3e7;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px;text-decoration:none}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#40260a 0%,#b45309 55%,#4d2e08 100%);padding:40px 16px 32px;border-bottom:3px solid #4d2e08}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:4px;padding:14px}
+    .spec-card .spec-label{font-size:10px;font-weight:700;color:var(--text-muted);letter-spacing:1px;display:block;margin-bottom:5px}
+    .spec-card .spec-value{font-size:17px;font-weight:900;color:var(--accent);line-height:1.25}
+    .spec-card .spec-note{font-size:11px;color:var(--text-sub);margin-top:6px;line-height:1.5}
+    .checklist{list-style:none!important;padding:0!important;margin:16px 0}
+    .checklist li{position:relative;padding:9px 8px 9px 32px;border-bottom:1px solid var(--border);font-size:13px;line-height:1.6}
+    .checklist li::before{content:"✓";position:absolute;left:8px;top:9px;color:var(--accent);font-weight:900}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:var(--accent-pale)}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:var(--accent-pale)}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>12V LEDテープの選び方と施工の注意点</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">仕様選定ガイド</div>
+    <h1>12V LEDテープの選び方と施工の注意点<br>使いどころ・最大5mの限界・電圧降下対策</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-07-09</span>
+      <span>更新日: 2026-07-09</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/blue_desk.webp"
+      alt="12V LEDテープの配線施工と電源選定"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>DC12VのLEDテープは、車両・キッチンカー・移動販売・小型什器・バッテリー駆動のディスプレイなど<strong>「12V電源が現場に最初からある」用途では今も第一選択</strong>です。一方で、店舗・住宅の造作照明にそのまま12Vを選ぶと、5mを超えた瞬間に末端が暗くなる・電源まわりの配線が太く煩雑になるといった12V特有の制約に正面からぶつかります。本記事では、12V LEDテープが<strong>本当に向いている現場の見極め</strong>、物理的な限界（最大接続長・電圧降下）の数字、電源とケーブルの選定基準を施工業者向けに整理します。</p>
+
+      <h2 id="sec-usecase">12V LEDテープが向く現場・向かない現場</h2>
+      <p>12Vを選ぶ理由は「電圧が低くて安全」ではなく、<strong>現場側の電源事情</strong>で決めるのが実務の判断です。12Vも24Vも感電リスクはほぼ同等（どちらも特別低電圧）で、安全性では差がつきません。</p>
+
+      <table>
+        <thead>
+          <tr><th>現場・用途</th><th>推奨電圧</th><th>理由</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>車両・キッチンカー・キャンピングカー</td><td><strong>12V</strong>（DC-DC安定化推奨）</td><td>車両電装が12V系。ただし実電圧13.8〜14.4Vのため安定化が必要（後述）</td></tr>
+          <tr><td>船舶・トレーラー・屋外イベントのバッテリー駆動</td><td><strong>12V</strong></td><td>12Vバッテリー・ポータブル電源のDC出力をそのまま使える</td></tr>
+          <tr><td>小型什器・ショーケース・カウンター1台（〜3m）</td><td><strong>12V or 24V</strong></td><td>短距離なら電圧降下の差が出ない。既存在庫・調光器との整合で選定</td></tr>
+          <tr><td>店舗の間接照明（コーブ・コーニス・棚多段）</td><td><strong>24V</strong></td><td>合計長が伸びる現場は電流半減・最大長2倍の24Vが給電設計で圧倒的に有利</td></tr>
+          <tr><td>ファサード・看板・外構など長尺（10m〜）</td><td><strong>24V</strong>（48Vも選択肢）</td><td>12Vでは給電点が増えすぎて配線コスト・故障点が増える</td></tr>
+        </tbody>
+      </table>
+
+      <div class="article-callout">
+        <p><strong>判断の目安：</strong>「現場に12V電源が既にある → 12V」「AC100/200Vから電源装置を新設する → 24V」。新設物件でわざわざ12Vを選ぶ積極的な理由は、既存の12V調光システム・在庫部材との統一以外にはほとんどありません。詳しい比較は<a href="/articles/led-tape-12v-vs-24v-guide">12V/24Vの選び方ガイド</a>を参照してください。</p>
+      </div>
+
+      <h2 id="sec-limit">12Vの物理限界：最大接続長5mと電圧降下</h2>
+      <p>12V LEDテープの最重要制約が<strong>連続接続の限界＝約5m</strong>です。テープの銅箔（FPC）自体が抵抗を持つため、給電点から遠ざかるほど電圧が下がり、末端のLEDが暗く・白色品では黄ばんで見えます。同じW/mなら12Vは24Vの2倍の電流が流れるため、電圧降下（V=IR）も2倍、しかも許容できる降下幅（定格の5%）は半分の0.6Vしかありません。</p>
+
+      <h3>電圧降下の簡易計算式</h3>
+      <p><strong>電圧降下[V] ≒ テープ電流[A] × テープ往復抵抗[Ω/m] × 長さ[m] ÷ 2</strong>（電流がテープ上で徐々に減るため実効値は約1/2）。現場では次の早見表で判断すれば十分です。</p>
+
+      <table>
+        <thead>
+          <tr><th>テープ出力</th><th>12V品の実用限界</th><th>24V品の実用限界</th><th>備考</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>4.8W/m（低出力）</td><td>約5m</td><td>約10m</td><td>棚下・足元灯など補助照明向け</td></tr>
+          <tr><td>9.6W/m（中出力）</td><td>約4m</td><td>約8m</td><td>間接照明の主力クラス</td></tr>
+          <tr><td>14.4W/m（高出力）</td><td>約3m</td><td>約6m</td><td>メイン照明・看板用途。12Vでは実質使いにくい</td></tr>
+          <tr><td>COB 10W/m級</td><td>約3.5m</td><td>約7m</td><td>COBは銅箔が細い製品があり要データシート確認</td></tr>
+        </tbody>
+      </table>
+
+      <div class="spec-grid">
+        <div class="spec-card">
+          <span class="spec-label">許容電圧降下</span>
+          <span class="spec-value">0.6V（5%）</span>
+          <span class="spec-note">12.0Vの5%。これを超えると末端の暗さ・色ズレが目視で分かる</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">連続接続の目安</span>
+          <span class="spec-value">最大5m</span>
+          <span class="spec-note">4.8W/m品の場合。高出力品は3m前後まで縮む</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">電流（24V比）</span>
+          <span class="spec-value">2倍</span>
+          <span class="spec-note">同W/mで比較。ケーブル・コネクタの発熱も2倍側で効く</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">両端給電時</span>
+          <span class="spec-value">〜8m</span>
+          <span class="spec-note">テープ両端から同一電源で給電した場合の実用値</span>
+        </div>
+      </div>
+
+      <div class="article-callout warn">
+        <p><strong>よくある手直し事例：</strong>「12Vテープを7m直列に継ぎ足した → 竣工検査で末端の色味の違いを指摘され、天井を再開口して中間給電を追加」。5mリール2本を単純に直結してはいけません。継ぎ足しで延ばす前に<a href="/articles/led-tape-max-length-guide">最大接続長ガイド</a>と<a href="/articles/led-tape-voltage-drop-guide">電圧降下対策</a>を確認してください。</p>
+      </div>
+
+      <h3>5mを超える場合の正しい配線</h3>
+      <ol>
+        <li><strong>並列給電（推奨）：</strong>5m以内ごとに区切り、電源から各区間へ個別にVVFやKIVで送り配線。テープ同士は直結しない</li>
+        <li><strong>両端給電：</strong>1本のテープの両端に同一電源から給電。実用限界が約1.6倍に伸びる</li>
+        <li><strong>電源分散：</strong>区間ごとに小容量電源を近接配置し、AC100V側を渡す（DC側を長く引かない）</li>
+      </ol>
+
+      <h2 id="sec-power">電源・ケーブル選定：12Vは「電流」で決まる</h2>
+      <p>12V系の設計は電流計算が全てです。<strong>テープ電流[A] = 合計W ÷ 12V</strong>で、同じ明るさなら24V系の2倍の電流が流れます。</p>
+
+      <h3>電源容量の計算</h3>
+      <p><strong>必要容量[W] = テープ合計W × 1.3（余裕率30%）</strong>。例：9.6W/m × 4m = 38.4W → 38.4 × 1.3 = 49.9W → <strong>60W級電源を選定</strong>。容量ぴったりの電源は発熱で寿命が縮み、突入電流でも不利です。電源の選び方の詳細は<a href="/articles/led-psu-capacity-guide">電源容量計算ガイド</a>を参照してください。</p>
+
+      <h3>DC側ケーブルの太さ（12V・許容降下0.3V時の目安）</h3>
+      <table>
+        <thead>
+          <tr><th>負荷電流</th><th>片道2m</th><th>片道5m</th><th>片道10m</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2A（約24W）</td><td>0.75sq</td><td>1.25sq</td><td>2.0sq</td></tr>
+          <tr><td>4A（約48W）</td><td>1.25sq</td><td>2.0sq</td><td>3.5sq</td></tr>
+          <tr><td>8A（約96W）</td><td>2.0sq</td><td>3.5sq</td><td>5.5sq</td></tr>
+        </tbody>
+      </table>
+      <p>DC12Vの送り配線は「思っているより2ランク太い」が実感値です。DC側を10m引くくらいなら、電源を負荷の近くへ移してAC側を延ばすほうが確実です。ケーブル選定の考え方は<a href="/articles/led-tape-cable-gauge-guide">ケーブル太さ選定ガイド</a>にまとめています。</p>
+
+      <h3>車両・バッテリー電源での注意（12V最頻出トラブル）</h3>
+      <ul>
+        <li><strong>車両の「12V」は実際には13.8〜14.4V：</strong>走行中はオルタネーターの充電電圧が掛かる。定格12.0Vテープには常時過電圧となり、発熱・短寿命・チップ焼損の原因</li>
+        <li><strong>対策はDC-DCコンバーターでの安定化：</strong>12V→12V安定化型を挟む。バッテリー直近にヒューズ（テープ電流の1.5〜2倍定格）を必ず入れる</li>
+        <li><strong>アイドリングストップ車・充電制御車は変動幅がさらに大きい：</strong>再始動時の電圧ディップでちらつきも出るため安定化は必須</li>
+      </ul>
+
+      <h2 id="sec-checklist">12V施工前チェックリスト</h2>
+      <ul class="checklist">
+        <li>連続接続長は5m以内か（高出力品は3m以内）。超える区間は並列給電に分割したか</li>
+        <li>電源容量はテープ合計Wの1.3倍以上を確保したか</li>
+        <li>DC側送り配線の太さを電流×距離で選定したか（12Vは24Vの2倍の電流）</li>
+        <li>12V/24Vの部材が現場に混在していないか。混在する場合は系統表示・コネクタ形状で物理的に分けたか</li>
+        <li>車両・バッテリー電源はDC-DCで安定化し、ヒューズを電源直近に入れたか</li>
+        <li>通電前にテスターで電源出力電圧を実測したか（12.0V ± 0.5V以内）</li>
+      </ul>
+
+      <div class="article-callout tip">
+        <p><strong>設計のショートカット：</strong>「合計10m以上・AC電源を新設・調光は電源側で行う」の3条件が揃うなら、最初から24V系で設計するのが給電点数・ケーブル・電源台数すべてで最短です。12Vは「現場に12Vがある」ときの最適解、と覚えておくと選定に迷いません。</p>
+      </div>
+
+      <!-- FAQ -->
+      <h2 id="faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">12V用のLEDテープを24V電源につないでしまったらどうなりますか？</div>
+        <div class="faq-a">定格の2倍の電圧が掛かるため、通電した瞬間に過電流でLEDチップと電流制限抵抗が焼損します。数秒で全体が異常発熱し、FPC（基板）の焦げ・発煙に至ることもあり、テープは修理不能で全交換になります。12Vと24Vの電源・テープが同一現場に混在する場合は、コネクタや配線に「12V」「24V」の表示を入れて系統を物理的に分ける、電源のDC出力側コネクタ形状を系統ごとに変える、通電前にテスターで電源出力電圧を実測する、の3点で誤接続を防いでください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">キッチンカーや車両で12V LEDテープを車のバッテリーに直結してもよいですか？</div>
+        <div class="faq-a">直結は推奨しません。「12Vバッテリー」の実電圧は、エンジン停止時で約12.5〜12.8V、走行中（オルタネーター充電中）は13.8〜14.4Vまで上がり、定格12.0Vのテープには常時15〜20%の過電圧が掛かります。過電圧は明るさ増ではなく発熱増・寿命短縮・チップ焼損として現れます。車両で使う場合はDC-DCコンバーター（12V→12V安定化、または12V→24V昇圧）を挟んで定電圧化し、ヒューズをバッテリー直近に入れてください。アイドリングストップ車・急速充電制御車は電圧変動がさらに大きいため必須です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">12V LEDテープで5m以上の長さが必要な場合はどうすればよいですか？</div>
+        <div class="faq-a">テープ同士を直列で継ぎ足すのではなく、5m以内ごとに区切って電源から並列に給電します（並列給電・電源分散）。両端給電にすれば1系統あたり実質8m程度まで明るさムラを抑えられます。ただし新規物件で合計10mを超えることが最初から分かっているなら、電流が半分で済み最大接続長も約2倍の24V品で設計し直すほうが、給電点数・ケーブル太さ・電源台数のすべてで有利です。12Vを選び直せない改修案件のみ並列給電で対応するのが実務的な判断です。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-tape-12v-vs-24v-guide">
+              <img src="/images/hero-scenes/blue_desk.webp" alt="12Vと24Vの比較" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">仕様選定ガイド</span>
+                <div class="rac-title">LEDテープ 12Vと24Vの違いと選び方</div>
+                <span class="rac-date">2026-05-19</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-voltage-drop-guide">
+              <img src="/images/hero-scenes/blue_desk.webp" alt="電圧降下対策" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工ガイド</span>
+                <div class="rac-title">LEDテープの電圧降下対策｜末端が暗くなる原因と給電方法</div>
+                <span class="rac-date">2026-05-19</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-max-length-guide">
+              <img src="/images/hero-scenes/blue_desk.webp" alt="LEDテープの最大長" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工ガイド</span>
+                <div class="rac-title">LEDテープは何mまで繋げられる？最大長さ・配線距離の限界</div>
+                <span class="rac-date">2026-05-19</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>12V/24V LEDテープ・電源装置を業務用に取り揃えています</h2>
+        <p>COBテープ・高密度SMDテープ・定電圧電源・調光器まで施工現場向けに一括調達。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">商品ラインナップを見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-07-09</span>
+        <span>更新日: 2026-07-09</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>LEDテープ・電源の選定はお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-tape-acrylic-edge-lit-sign-guide">アクリル導光板エッジライト看板の作り方</a></li>
+        <li><a href="/articles/led-tape-furniture-fixture-embedding-guide">家具・什器へのLEDテープ埋め込み施工</a></li>
+        <li><a href="/articles/led-tape-water-ingress-repair-guide">LEDテープの浸水・水入り対処</a></li>
+        <li><a href="/articles/led-tape-crimp-terminal-guide">LEDテープの圧着端子ガイド</a></li>
+        <li><a href="/articles/led-tape-max-length-guide">LEDテープは何mまで繋げられる？</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/alumi-frame/">拡散カバー付きアルミフレーム</a></li>
+        <li><a href="/category/psu/">業務用定電圧PSU（24V）</a></li>
+        <li><a href="/category/controller/">調光器・コントローラー</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>
