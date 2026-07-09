@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== SEO BASIC ===== -->
+<title>ネオン管サインのLED化改修ガイド｜LEDネオンフレックスへの交換手順と高圧トランス撤去 | LED PRO SHOP</title>
+<meta name="description" content="ネオン管が割れた・職人が捕まらない・トランスが唸る——既設ネオンサインの修理依頼はLED化改修が現実解です。高圧トランス撤去の資格要件、LEDネオンフレックスへの交換手順、電源容量計算を看板・電気工事業者向けに解説。">
+<meta name="keywords" content="ネオン管 LED化,ネオンサイン LED 交換,ネオン管 修理,LEDネオンフレックス 交換,ネオントランス 撤去,ネオン看板 改修,ネオン工事資格,看板 LED改修">
+<link rel="canonical" href="https://led-proshop.com/articles/neon-sign-led-retrofit-guide">
+
+<!-- ===== OGP ===== -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://led-proshop.com/articles/neon-sign-led-retrofit-guide">
+<meta property="og:title" content="ネオン管サインのLED化改修ガイド｜LEDネオンフレックスへの交換手順と高圧トランス撤去 | LED PRO SHOP">
+<meta property="og:description" content="既設ネオンサインの修理依頼はLED化改修が現実解。高圧トランス撤去の資格要件、LEDネオンフレックスへの交換手順、電源容量計算を看板・電気工事業者向けに解説。">
+<meta property="og:image" content="https://led-proshop.com/articles/images/neon-sign-led-retrofit-guide-hero.webp">
+<meta property="og:site_name" content="LED PRO SHOP">
+<meta property="og:locale" content="ja_JP">
+
+<!-- ===== Twitter Card ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ネオン管サインのLED化改修ガイド｜LEDネオンフレックスへの交換手順と高圧トランス撤去 | LED PRO SHOP">
+<meta name="twitter:description" content="既設ネオンサインの修理依頼はLED化改修が現実解。高圧トランス撤去の資格要件、LEDネオンフレックスへの交換手順、電源容量計算を看板・電気工事業者向けに解説。">
+<meta name="twitter:image" content="https://led-proshop.com/articles/images/neon-sign-led-retrofit-guide-hero.webp">
+
+<!-- ===== JSON-LD: Article ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Article",
+  "headline": "ネオン管サインのLED化改修ガイド｜LEDネオンフレックスへの交換手順と高圧トランス撤去",
+  "description": "既設ネオン管サインをLEDネオンフレックスへ改修する手順を看板・電気工事業者向けに解説。修理継続かLED化かの判断基準、高圧トランス撤去の資格要件、寸法再現・曲げ半径・電源容量計算まで。",
+  "image": "https://led-proshop.com/articles/images/neon-sign-led-retrofit-guide-hero.webp",
+  "author": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP 編集部"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LED PRO SHOP",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://led-proshop.com/images/logo.png"
+    }
+  },
+  "datePublished": "2026-07-10",
+  "dateModified": "2026-07-10",
+  "mainEntityOfPage": "https://led-proshop.com/articles/neon-sign-led-retrofit-guide"
+}
+</script>
+
+<!-- ===== JSON-LD: BreadcrumbList ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+    { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+    { "@type": "ListItem", "position": 3, "name": "ネオン管サインのLED化改修ガイド", "item": "https://led-proshop.com/articles/neon-sign-led-retrofit-guide" }
+  ]
+}
+</script>
+
+<!-- ===== JSON-LD: FAQPage ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ネオン管を残してトランスだけ交換して修理を続けられますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "技術的には可能ですが、ネオン変圧器（二次側9,000〜15,000V）の交換と高圧配線の再施工にはネオン工事に係る特種電気工事資格者が必要で、対応できる業者・職人が年々減っています。管が1本でも割れていれば管の再制作費も加わるため、破損箇所が複数ある・トランスも寿命という案件は、DC24V系のLEDネオンフレックスへ改修したほうがトータルコストも再修理リスクも抑えられるケースが大半です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ネオン管特有の細かい文字の曲げはLEDで再現できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LEDネオンフレックスの最小曲げ半径は側面発光タイプでおおむね30〜60mm（製品・サイズによる）で、ガラス管職人が作る半径10mm台の極小Rはそのままでは再現できません。小さい文字は①一回り大きい寸法で再制作する②Rがきつい箇所をカット＆ジャンパー配線で分割する③ミニサイズ（6mm幅級）のフレックスを使う、のいずれかで対応します。見積前に原寸トレースを取り、最小Rが仕様内に収まるか必ず確認してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "屋外のネオンサインをLED化する場合、防水はどう処理しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "本体はIP65以上のLEDネオンフレックスを選定し、弱点になるカット端末はエンドキャップ＋シリコンシーラントで封止します。DC電源は防水型（IP67）を使うか、非防水電源を筐体内・プルボックス内に収めて雨線内に配置します。ネオン時代の碍子・高圧引込穴は雨水侵入経路になるため、撤去後に必ずコーキングで塞いでください。"
+      }
+    }
+  ]
+}
+</script>
+
+<!-- ===== Google Fonts ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #12101a;
+    --surface: #1c1927;
+    --surface2: #262238;
+    --border: #3a3355;
+    --accent: #f472b6;
+    --accent2: #a855f7;
+    --text: #f0edf8;
+    --muted: #a8a0c4;
+    --gold: #f59e0b;
+    --green: #10b981;
+    --red: #ef4444;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 15px; }
+
+  /* HEADER */
+  .site-header { background: #0d0b14; border-bottom: 1px solid var(--border); padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .logo { font-size: 18px; font-weight: 700; color: var(--accent); text-decoration: none; letter-spacing: 0.05em; }
+  .logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 20px; list-style: none; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+
+  /* BREADCRUMB */
+  .breadcrumb { background: var(--surface); padding: 10px 20px; font-size: 12px; color: var(--muted); }
+  .breadcrumb a { color: var(--muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .breadcrumb span { margin: 0 6px; }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, #2a0d33 0%, #1a1040 55%, #150a28 100%); padding: 50px 20px 40px; text-align: center; border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: var(--accent2); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; letter-spacing: 0.08em; }
+  .hero h1 { font-size: clamp(20px, 4vw, 32px); font-weight: 800; line-height: 1.4; margin-bottom: 16px; }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero-sub { font-size: 14px; color: var(--muted); max-width: 640px; margin: 0 auto 24px; }
+  .hero-meta { font-size: 11px; color: var(--muted); }
+
+  /* LAYOUT */
+  .container { max-width: 1060px; margin: 0 auto; padding: 0 16px; }
+  .layout { display: grid; grid-template-columns: 1fr 300px; gap: 32px; padding: 32px 0 60px; align-items: start; }
+  @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } .sidebar { order: 2; } }
+
+  /* MAIN */
+  .main-content section { margin-bottom: 40px; }
+  h2.sec-title { font-size: 20px; font-weight: 700; color: var(--text); border-left: 4px solid var(--accent); padding-left: 14px; margin-bottom: 18px; }
+  h3.sub-title { font-size: 16px; font-weight: 700; color: var(--accent); margin: 24px 0 10px; }
+  p { margin-bottom: 12px; color: var(--text); }
+
+  /* TOC */
+  .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin-bottom: 32px; }
+  .toc h2 { font-size: 14px; font-weight: 700; color: var(--muted); margin-bottom: 12px; letter-spacing: 0.08em; }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin: 6px 0; }
+  .toc a { color: var(--accent); text-decoration: none; font-size: 13px; }
+  .toc a:hover { text-decoration: underline; }
+
+  /* TABLE */
+  .table-wrap { overflow-x: auto; margin: 16px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { background: var(--surface2); color: var(--muted); padding: 10px 12px; text-align: left; font-weight: 600; border-bottom: 2px solid var(--border); white-space: nowrap; }
+  td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(244,114,182,0.05); }
+  .check { color: var(--green); font-weight: 700; }
+  .cross { color: var(--red); }
+
+  /* STEPS */
+  .steps { list-style: none; margin: 16px 0; }
+  .steps li { display: flex; gap: 14px; margin-bottom: 16px; align-items: flex-start; }
+  .step-num { flex-shrink: 0; width: 28px; height: 28px; background: var(--accent); color: #14101c; font-size: 13px; font-weight: 700; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .step-body { flex: 1; }
+  .step-body strong { display: block; font-size: 14px; color: var(--text); margin-bottom: 4px; }
+  .step-body p { font-size: 13px; color: var(--muted); margin: 0; }
+
+  /* BOXES */
+  .caution { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.3); border-radius: 8px; padding: 14px 16px; margin: 16px 0; font-size: 13px; color: #fca5a5; }
+  .caution strong { color: var(--red); }
+  .tip { background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.3); border-radius: 8px; padding: 14px 16px; margin: 16px 0; font-size: 13px; color: #6ee7b7; }
+  .tip strong { color: var(--green); }
+  .formula { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 14px; color: var(--text); font-weight: 600; }
+  .formula small { display: block; font-weight: 400; color: var(--muted); margin-top: 6px; font-size: 12px; }
+
+  /* FAQ */
+  .faq-list { list-style: none; }
+  .faq-list li { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 12px; overflow: hidden; }
+  .faq-q { padding: 14px 16px; font-weight: 700; font-size: 14px; display: flex; gap: 10px; }
+  .faq-q::before { content: "Q"; color: var(--accent); font-size: 15px; flex-shrink: 0; }
+  .faq-a { padding: 0 16px 14px 42px; font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+  /* CTA */
+  .cta-box { background: linear-gradient(135deg, #4a1042 0%, #2d1b69 100%); border: 1px solid rgba(244,114,182,0.4); border-radius: 12px; padding: 28px 24px; text-align: center; margin: 32px 0; }
+  .cta-box h3 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+  .cta-box p { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 18px; }
+  .btn-cta { display: inline-block; background: var(--gold); color: #14101c; font-size: 15px; font-weight: 800; padding: 13px 32px; border-radius: 8px; text-decoration: none; transition: opacity 0.2s; }
+  .btn-cta:hover { opacity: 0.9; }
+
+  /* SIDEBAR */
+  .sidebar { position: sticky; top: 68px; }
+  .sidebar-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px; margin-bottom: 16px; }
+  .sidebar-card h3 { font-size: 13px; font-weight: 700; color: var(--muted); margin-bottom: 12px; letter-spacing: 0.07em; }
+  .sidebar-card ul { list-style: none; }
+  .sidebar-card li { border-bottom: 1px solid var(--border); padding: 8px 0; font-size: 12px; }
+  .sidebar-card li:last-child { border-bottom: none; }
+  .sidebar-card a { color: var(--text); text-decoration: none; line-height: 1.5; }
+  .sidebar-card a:hover { color: var(--accent); }
+
+  /* FOOTER */
+  footer { background: #0b0913; border-top: 1px solid var(--border); padding: 28px 20px; text-align: center; color: var(--muted); font-size: 12px; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">LED PRO <span>SHOP</span></a>
+  <ul class="nav-links">
+    <li><a href="/">商品一覧</a></li>
+    <li><a href="/articles/">コラム</a></li>
+  </ul>
+</header>
+
+<nav class="breadcrumb">
+  <a href="/">TOP</a><span>›</span><a href="/articles/">コラム</a><span>›</span>ネオン管サインのLED化改修ガイド
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">改修・施工ガイド</div>
+  <h1>ネオン管サインの<em>LED化改修</em>ガイド<br>LEDネオンフレックスへの交換手順と高圧トランス撤去</h1>
+  <p class="hero-sub">「ネオンの修理を頼まれたが職人が捕まらない」——既設ネオンサインの改修判断・資格要件・施工手順を看板業者・電気工事業者向けにまとめました。</p>
+  <p class="hero-meta">公開日: 2026-07-10 / LED PRO SHOP 編集部</p>
+</div>
+
+<div class="container">
+<div class="layout">
+
+<main class="main-content">
+
+  <nav class="toc" aria-label="目次">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#judge">修理継続かLED化かの判断基準</a></li>
+      <li><a href="#compare">ネオン管とLEDネオンフレックスの比較</a></li>
+      <li><a href="#license">高圧トランス撤去と資格要件</a></li>
+      <li><a href="#procedure">LED化改修の施工手順（6ステップ）</a></li>
+      <li><a href="#psu">電源容量の計算方法</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ol>
+  </nav>
+
+  <section id="judge">
+    <h2 class="sec-title">修理継続かLED化かの判断基準</h2>
+    <p>ガラス管ネオンの修理は、管の再制作ができる職人とネオン工事の有資格者の両方が必要で、対応できる体制が全国的に縮小しています。「管が1本割れただけ」の案件でも、現場調査の結果<strong>トランスの寿命・碍子の劣化・高圧配線の被覆硬化</strong>が同時に見つかることが多く、部分修理を繰り返すより一度でLED化したほうが安く済むケースが目立ちます。以下の基準で切り分けてください。</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>現場の状態</th><th>推奨対応</th><th>理由</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>管の破損1本のみ・トランス正常・設置10年未満</td><td>修理継続も可</td><td>管1本の再制作で復旧できる。ただし職人の手配期間は要確認</td></tr>
+          <tr><td>管の破損が複数・点滅や部分不点灯がある</td><td class="check">LED化推奨</td><td>複数本の再制作費と再修理リスクがLED化費用を上回りやすい</td></tr>
+          <tr><td>トランスが唸る・絶縁劣化の兆候（オゾン臭・リーク音）</td><td class="check">LED化推奨</td><td>ネオン変圧器の交換自体に特種電気工事資格者が必要で手配困難</td></tr>
+          <tr><td>設置15年以上・碍子や高圧配線の劣化が広範囲</td><td class="check">LED化推奨</td><td>高圧系統の全面更新になり、修理費が新設に近づく</td></tr>
+          <tr><td>歴史的価値のあるサインで「ガラス管の質感」が要件</td><td>修理継続</td><td>LEDフレックスの面発光とガラス管の輝きは質感が異なる。要施主合意</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip"><strong>見積のコツ:</strong> LED化見積には「高圧設備の撤去処分費」を必ず1式で計上してください。トランス・碍子・高圧線の撤去と開口部の防水処理は、フレックス材料費と同じくらい工数を食う項目です。</div>
+  </section>
+
+  <section id="compare">
+    <h2 class="sec-title">ネオン管とLEDネオンフレックスの比較</h2>
+    <p>改修提案時に施主へ提示できる比較表です。数値は一般的な屋外看板クラス（発光長10m）の目安です。</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>項目</th><th>ガラス管ネオン</th><th>LEDネオンフレックス</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>使用電圧</td><td class="cross">二次側 9,000〜15,000V（高圧）</td><td class="check">DC12V / DC24V（低圧）</td></tr>
+          <tr><td>消費電力（発光長10m目安）</td><td>約300〜500W（トランス損失込み）</td><td class="check">約80〜150W（8〜15W/m）</td></tr>
+          <tr><td>設計寿命の目安</td><td>管は長寿命だがトランス・電極が先に劣化</td><td>L70で30,000〜50,000時間</td></tr>
+          <tr><td>破損リスク</td><td class="cross">ガラス管＝飛来物・振動で割れる</td><td class="check">樹脂押出成形＝割れない</td></tr>
+          <tr><td>工事資格</td><td class="cross">特種電気工事資格者（ネオン工事）</td><td>電気工事士（AC100/200V側のみ）</td></tr>
+          <tr><td>修理体制</td><td class="cross">管職人＋有資格者の手配が年々困難</td><td class="check">部材交換で対応可能</td></tr>
+          <tr><td>調光・点滅制御</td><td>点滅器（フラッシャー）で単純点滅のみ</td><td class="check">PWM調光・チェイス・DMX制御まで可</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="license">
+    <h2 class="sec-title">高圧トランス撤去と資格要件</h2>
+    <p>LED化改修で最初に行うのが既設高圧設備の撤去です。ここは資格と手順を誤ると重大事故につながる工程なので、受注前に体制を確認してください。</p>
+    <ul style="padding-left:20px; margin-bottom:12px;">
+      <li style="margin-bottom:6px;"><strong>ネオン設備（トランス・高圧配線・管）の撤去・接続替え</strong>：ネオン工事に係る<strong>特種電気工事資格者</strong>の業務範囲です。自社に有資格者がいない場合は撤去のみ外注し、以降のDC低圧工事を自社施工する分担が現実的です。</li>
+      <li style="margin-bottom:6px;"><strong>撤去後のAC100V/200V側の配線替え・電源接続</strong>：<strong>電気工事士</strong>（第二種以上）の範囲です。</li>
+      <li><strong>LEDフレックスの貼り込み・DC側配線</strong>：DC24V側は低圧のため資格対象外ですが、屋外防水・支持固定は看板の落下責任に直結します。</li>
+    </ul>
+    <div class="caution"><strong>感電注意:</strong> ネオントランスの二次側は無負荷で15,000Vに達します。撤去前に一次側ブレーカーを開放し、検電・放電を確認してから作業してください。「消灯しているから安全」ではありません。電極キャップ内の残留電荷にも注意が必要です。</div>
+  </section>
+
+  <section id="procedure">
+    <h2 class="sec-title">LED化改修の施工手順（6ステップ）</h2>
+    <ol class="steps">
+      <li>
+        <span class="step-num">1</span>
+        <div class="step-body">
+          <strong>現状調査・原寸トレース</strong>
+          <p>文字・図形の原寸を透明フィルムか写真測量でトレースし、総発光長（m）と最小曲げ半径（R）を拾います。トランス容量表示・設置年・腐食状態も記録します。</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">2</span>
+        <div class="step-body">
+          <strong>フレックス選定と曲げ検証</strong>
+          <p>トレースから最小Rを確認し、仕様内に収まるサイズを選定します。側面発光タイプの最小曲げ半径はおおむね30〜60mm。収まらない箇所はカット＆ジャンパー配線で分割する設計にします。</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">3</span>
+        <div class="step-body">
+          <strong>高圧設備の撤去（有資格者）</strong>
+          <p>一次側開放・検電後、トランス・高圧線・碍子・電極を撤去します。壁面の高圧引込穴・碍子跡は雨水侵入経路になるためコーキングで確実に塞ぎます。</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">4</span>
+        <div class="step-body">
+          <strong>ベース加工・フレックス固定</strong>
+          <p>既存の文字ベース（鉄板・アクリル）にアルミチャンネルまたは専用マウントクリップを固定し、フレックスをはめ込みます。屋外は両面テープのみの固定は不可、150〜300mmピッチで機械固定します。</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">5</span>
+        <div class="step-body">
+          <strong>DC電源設置・配線</strong>
+          <p>防水電源（IP67）か筐体内設置の非防水電源を選び、電圧降下を考慮して長尺は両端給電にします。カット端末はエンドキャップ＋シーラントで封止します。</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">6</span>
+        <div class="step-body">
+          <strong>点灯確認・絶縁測定・引き渡し</strong>
+          <p>全点灯で色ムラ・暗部を確認し、AC側の絶縁抵抗測定を実施。調光器・タイマーの設定値を施主に引き継いで完了です。</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="psu">
+    <h2 class="sec-title">電源容量の計算方法</h2>
+    <p>LEDネオンフレックスの消費電力はW/m表記です。電源は定格の80%以下で使うのが鉄則です。</p>
+    <div class="formula">
+      必要電源容量 [W] ＝ 消費電力 [W/m] × 総発光長 [m] × 1.25
+      <small>例）10W/mのフレックスを合計12m使用 → 10 × 12 × 1.25 = 150W → 150W級のDC24V電源を選定（分割給電なら75W×2台でも可）</small>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>総発光長（10W/mの場合）</th><th>負荷合計</th><th>推奨電源容量</th><th>給電方式の目安</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>〜5m</td><td>50W</td><td>60〜75W</td><td>片端給電で可</td></tr>
+          <tr><td>5〜10m</td><td>50〜100W</td><td>100〜150W</td><td>1本あたり5m超は両端給電</td></tr>
+          <tr><td>10〜20m</td><td>100〜200W</td><td>150W×2台 など分割</td><td>回路分割＋電源分散</td></tr>
+          <tr><td>20m以上</td><td>200W〜</td><td>系統ごとに電源を分ける</td><td>文字ブロック単位で回路設計</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip"><strong>実務メモ:</strong> ネオン時代の点滅演出を再現する場合は、フラッシャーの代わりにPWMコントローラを使います。リレー式で高速に入切するとLED電源の突入電流で寿命を縮めるため、調光信号側で制御してください。</div>
+  </section>
+
+  <section id="faq">
+    <h2 class="sec-title">よくある質問</h2>
+    <ul class="faq-list">
+      <li>
+        <div class="faq-q">ネオン管を残してトランスだけ交換して修理を続けられますか？</div>
+        <div class="faq-a">技術的には可能ですが、ネオン変圧器（二次側9,000〜15,000V）の交換と高圧配線の再施工には特種電気工事資格者が必要で、対応できる業者が年々減っています。管が1本でも割れていれば管の再制作費も加わるため、破損箇所が複数ある・トランスも寿命という案件は、DC24V系のLEDネオンフレックスへ改修したほうがトータルコストも再修理リスクも抑えられるケースが大半です。</div>
+      </li>
+      <li>
+        <div class="faq-q">ネオン管特有の細かい文字の曲げはLEDで再現できますか？</div>
+        <div class="faq-a">LEDネオンフレックスの最小曲げ半径は側面発光タイプでおおむね30〜60mmで、半径10mm台の極小Rはそのままでは再現できません。①一回り大きい寸法で再制作する、②Rがきつい箇所をカット＆ジャンパー配線で分割する、③ミニサイズ（6mm幅級）のフレックスを使う、のいずれかで対応します。見積前に原寸トレースで最小Rを必ず確認してください。</div>
+      </li>
+      <li>
+        <div class="faq-q">屋外のネオンサインをLED化する場合、防水はどう処理しますか？</div>
+        <div class="faq-a">本体はIP65以上を選定し、カット端末はエンドキャップ＋シリコンシーラントで封止します。DC電源は防水型（IP67）を使うか、筐体内・プルボックス内の雨線内に設置します。ネオン時代の碍子・高圧引込穴は雨水侵入経路になるため、撤去後に必ずコーキングで塞いでください。</div>
+      </li>
+    </ul>
+  </section>
+
+  <div class="cta-box">
+    <h3>LEDネオンフレックス・DC電源・取付部材をプロ価格で</h3>
+    <p>LED PRO SHOPは施工業者様向けの直販サイトです。改修案件の数量拾い出しのご相談も承ります。</p>
+    <a href="/" class="btn-cta">商品一覧を見る</a>
+  </div>
+
+</main>
+
+<aside class="sidebar">
+  <div class="sidebar-card">
+    <h3>関連記事</h3>
+    <ul>
+      <li><a href="/articles/led-neon-flex-guide">LEDネオンフレックスの選び方ガイド</a></li>
+      <li><a href="/articles/led-neon-flex-size-bending-guide">LEDネオンフレックスのサイズ・曲げ加工ガイド</a></li>
+      <li><a href="/articles/led-tape-vs-neon-flex-selection-guide">LEDテープとネオンフレックスの使い分け</a></li>
+      <li><a href="/articles/channel-letter-backlit-sign-led">チャンネル文字・バックライトサインのLED選定</a></li>
+      <li><a href="/articles/led-tape-outdoor-sign-guide">屋外看板のLEDテープ施工ガイド</a></li>
+      <li><a href="/articles/led-psu-capacity-guide">LED電源の容量計算ガイド</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-card">
+    <h3>この記事のポイント</h3>
+    <ul>
+      <li>破損複数・トランス劣化ならLED化が現実解</li>
+      <li>高圧撤去は特種電気工事資格者の範囲</li>
+      <li>最小曲げ半径30〜60mmを原寸トレースで確認</li>
+      <li>電源は負荷合計×1.25で選定・5m超は両端給電</li>
+    </ul>
+  </div>
+</aside>
+
+</div>
+</div>
+
+<footer>
+  <p>© 2026 LED PRO SHOP（日本ネオン株式会社）｜施工業者向けLED部材直販</p>
+  <p><a href="/">TOP</a> ｜ <a href="/articles/">コラム一覧</a></p>
+</footer>
+
+</body>
+</html>
