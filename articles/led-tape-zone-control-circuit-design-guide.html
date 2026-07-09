@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO BASIC ===== -->
+  <title>LEDテープのゾーン分け・回路分割の設計方法｜店舗照明を系統ごとに点灯・調光する【業者向け】 | LED PRO SHOP</title>
+  <meta name="description" content="店舗・施設のLEDテープを売場・カウンター・ファサードなどエリアごとに個別点灯・個別調光するための回路分割設計を施工業者向けに解説。1台の電源から分岐する方式と系統別電源方式の比較、ゾーンごとの電流計算とヒューズ、多チャンネル調光器の選び方、後から系統を増やせる設計まで。">
+  <meta name="keywords" content="LEDテープ ゾーン分け,LEDテープ 回路分け 設計,LEDテープ 系統分け,店舗照明 系統別 点灯,LEDテープ 複数回路 調光,LEDテープ 分岐 ヒューズ,間接照明 回路設計,LEDテープ 系統 増設">
+  <link rel="canonical" href="https://led-proshop.com/articles/led-tape-zone-control-circuit-design-guide">
+
+  <!-- ===== OGP ===== -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://led-proshop.com/articles/led-tape-zone-control-circuit-design-guide">
+  <meta property="og:title" content="LEDテープのゾーン分け・回路分割の設計方法｜店舗照明を系統ごとに点灯・調光する【業者向け】 | LED PRO SHOP">
+  <meta property="og:description" content="エリアごとに個別点灯・個別調光するための回路分割設計を施工業者向けに解説。1台の電源から分岐する方式と系統別電源方式の比較、ゾーンごとの電流計算とヒューズ、多チャンネル調光器の選び方まで。">
+  <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-zone-control-circuit-design-guide-hero.webp">
+  <meta property="og:site_name" content="LED PRO SHOP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEDテープのゾーン分け・回路分割の設計方法｜店舗照明を系統ごとに点灯・調光する | LED PRO SHOP">
+  <meta name="twitter:description" content="1台の電源から分岐する方式と系統別電源方式の比較、ゾーンごとの電流計算とヒューズ、多チャンネル調光器の選び方、後から系統を増やせる設計を業者向けに解説。">
+  <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-zone-control-circuit-design-guide-hero.webp">
+
+  <!-- ===== JSON-LD: Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "headline": "LEDテープのゾーン分け・回路分割の設計方法｜店舗照明を系統ごとに点灯・調光する",
+    "description": "店舗・施設のLEDテープをエリアごとに個別点灯・個別調光するための回路分割設計を施工業者向けに解説。電源分割と分岐方式の比較、ゾーンごとの電流計算とヒューズ、多チャンネル調光器の選び方、増設に強い設計まで。",
+    "image": "https://led-proshop.com/articles/images/led-tape-zone-control-circuit-design-guide-hero.webp",
+    "author": { "@type": "Organization", "name": "LED PRO SHOP 編集部" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LED PRO SHOP",
+      "logo": { "@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png" }
+    },
+    "datePublished": "2026-07-10",
+    "dateModified": "2026-07-10",
+    "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-zone-control-circuit-design-guide"
+  }
+  </script>
+
+  <!-- ===== JSON-LD: BreadcrumbList ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/" },
+      { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/" },
+      { "@type": "ListItem", "position": 3, "name": "LEDテープのゾーン分け・回路分割の設計方法", "item": "https://led-proshop.com/articles/led-tape-zone-control-circuit-design-guide" }
+    ]
+  }
+  </script>
+
+  <!-- ===== JSON-LD: FAQPage ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "1台の大容量電源から複数ゾーンへ分岐する設計にしてもよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "小規模（合計150W以下・2〜3ゾーン・同一室内）なら実用的ですが、条件が2つあります。①分岐ごとに必ずヒューズを入れること。大容量電源は短絡時に数十Aを流し続ける能力があるため、無ヒューズの分岐1本の短絡でテープの焼損・発煙に至ります。分岐ヒューズは各ゾーン定格電流の1.5〜2倍を目安に選定します。②電源故障時に全ゾーンが同時消灯するリスクを許容できるか確認すること。営業に直結するファサード看板と店内演出照明を同じ電源にぶら下げると、電源1台の故障で両方消えます。中規模以上・エリアが離れている・重要度が異なる場合は、ゾーンごとに電源を分ける系統別電源方式が原則です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "ゾーンごとに明るさを変えたい場合、調光器は何チャンネル必要ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "「独立して明るさを変えたいグループの数＝必要チャンネル数」です。単色テープならゾーン1つにつき1ch、調色（CCT・電球色〜昼白色）テープは1ゾーンで2ch、RGBは3ch、RGBWは4chを消費します。例えば「売場コーブ（調色）＋カウンター（単色）＋ファサード（単色）」なら2+1+1=4chです。将来の区画変更に備えて1〜2ch余らせた機種を選ぶのが実務的です。なお同じ調光値でも複数メーカーの調光器が混在すると調光カーブの違いで明るさが揃わないため、全ゾーンを同一シリーズの多チャンネル機でまとめるか、DALI/DMXなど共通プロトコルで統一してください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "開店後にゾーンを増やせるようにしておくには、何を仕込んでおけばよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "後から一番困るのは配線経路と電源容量です。①電源・調光器を集約する制御ボックス（ウォールボックス・点検口内スペース）に予備スペースを確保し、ブランクの端子台を1〜2回路分設けておく。②幹線となるAC100V・DC24Vの送り配線に予備の空き容量（電源容量の30%以上）を残す設計にする。③各ゾーンへの配線に系統札（回路番号ラベル）を付け、竣工時に系統図を1枚残す。④調光器はチャンネルに空きがある機種を選ぶ。この4点を仕込んでおくと、増設時は「テープを貼って空き端子に接続するだけ」で済みます。系統図がないと、増設のたびに全回路の追跡調査から始まり半日仕事になります。" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Google Fonts ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#003C82;--blue-pale:#e8f0fe;--bg:#fff;--bg-gray:#f5f6f8;--text:#1a1a1a;--text-sub:#555;--text-muted:#888;--border:#d0d5dd;--red:#c0392b;--accent:#0e7490;--accent-pale:#ecfeff;}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:13px}
+    .navbar{position:sticky;top:0;z-index:100;background:var(--blue);border-bottom:3px solid #002a5c}
+    .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;justify-content:space-between;align-items:center;height:52px}
+    .navbar .logo{color:#fff;display:flex;flex-direction:column;gap:2px;text-decoration:none}
+    .navbar .logo-main{font-size:16px;font-weight:700;letter-spacing:1px;line-height:1.2}
+    .navbar .logo-main small{font-size:10px;font-weight:500;opacity:.7;margin-left:6px;letter-spacing:0}
+    .navbar .logo-tag{display:flex;align-items:center;gap:8px;margin-top:1px}
+    .navbar .logo-badge{font-size:8px;font-weight:700;letter-spacing:2px;padding:1px 6px;border:1px solid rgba(255,255,255,.35);border-radius:1px;color:rgba(255,255,255,.9)}
+    .navbar .logo-catch{font-size:10px;color:rgba(255,255,255,.75);font-weight:400;letter-spacing:.3px}
+    .navbar .nav-links{display:flex;gap:16px;list-style:none}
+    .navbar .nav-link{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;font-weight:500;padding:4px 8px;border-radius:3px;transition:background .2s}
+    .navbar .nav-link:hover,.navbar .nav-link.active{color:#fff;background:rgba(255,255,255,.15)}
+    .footer{background:#1a1a1a;color:#aaa;padding:24px 16px;text-align:center;font-size:10px}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .article-breadcrumb{background:var(--bg-gray);border-bottom:1px solid var(--border);padding:8px 0;font-size:11px;color:var(--text-muted)}
+    .article-breadcrumb .container{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .article-breadcrumb a{color:var(--blue);text-decoration:none}
+    .article-breadcrumb a:hover{text-decoration:underline}
+    .article-breadcrumb .sep{color:var(--border)}
+    .article-hero{background:linear-gradient(135deg,#082f3a 0%,#0e7490 55%,#0a3644 100%);padding:40px 16px 32px;border-bottom:3px solid #0a3644}
+    .article-hero .container{max-width:840px}
+    .article-category-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:2px;letter-spacing:2px;border:1px solid rgba(255,255,255,.25);margin-bottom:14px}
+    .article-hero h1{font-size:22px;font-weight:900;line-height:1.5;color:#fff;margin-bottom:12px}
+    .article-meta{font-size:11px;color:rgba(255,255,255,.7);line-height:1.8}
+    .article-meta span{margin-right:12px}
+    .article-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;max-width:1200px;margin:0 auto;padding:32px 16px 48px;align-items:start}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;padding:24px 16px 40px}.article-sidebar{order:2}}
+    .article-hero-img{width:100%;max-height:400px;object-fit:cover;border-radius:4px;margin-bottom:24px;display:block}
+    .article-toc{background:var(--bg-gray);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:4px;padding:18px 20px;margin-bottom:28px}
+    .article-toc h2{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:10px}
+    .article-toc ol{padding-left:18px}
+    .article-toc li{font-size:12px;line-height:1.8;color:var(--text-sub)}
+    .article-toc li a{color:var(--accent);text-decoration:none}
+    .article-toc li a:hover{text-decoration:underline}
+    .article-body{line-height:1.85;font-size:14px}
+    .article-body h2{font-size:18px;font-weight:700;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:8px;margin:36px 0 16px}
+    .article-body h3{font-size:15px;font-weight:700;color:var(--accent);padding:6px 10px;background:var(--accent-pale);border-left:3px solid var(--accent);margin:28px 0 12px}
+    .article-body h4{font-size:13px;font-weight:700;color:var(--text);margin:20px 0 8px}
+    .article-body p{margin-bottom:1em;color:var(--text)}
+    .article-body ul,.article-body ol{padding-left:20px;margin-bottom:1em}
+    .article-body li{margin-bottom:4px;color:var(--text);line-height:1.75}
+    .article-body strong{font-weight:700;color:var(--text)}
+    .article-body a{color:var(--accent);text-decoration:underline}
+    .article-body a:hover{text-decoration:none}
+    .article-body table{width:100%;border-collapse:collapse;font-size:12px;margin:16px 0 24px;background:#fff;overflow:auto;display:block}
+    .article-body thead th{background:var(--accent);color:#fff;padding:8px 10px;font-weight:600;text-align:left;white-space:nowrap}
+    .article-body td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+    .article-body tr:nth-child(even) td{background:#fafbfc}
+    .article-body tr:hover td{background:var(--accent-pale)}
+    .article-callout{border-left:4px solid var(--accent);background:var(--accent-pale);padding:14px 16px;margin:20px 0;border-radius:0 4px 4px 0;font-size:13px}
+    .article-callout.warn{border-color:#e67e22;background:#fff8f0}
+    .article-callout.tip{border-color:#27ae60;background:#f0fff4}
+    .article-callout p{margin:0;color:var(--text)}
+    .article-callout strong{color:var(--accent)}
+    .article-callout.warn strong{color:#e67e22}
+    .article-callout.tip strong{color:#27ae60}
+    .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+    .spec-card{background:var(--bg-gray);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:4px;padding:14px}
+    .spec-card .spec-label{font-size:10px;font-weight:700;color:var(--text-muted);letter-spacing:1px;display:block;margin-bottom:5px}
+    .spec-card .spec-value{font-size:17px;font-weight:900;color:var(--accent);line-height:1.25}
+    .spec-card .spec-note{font-size:11px;color:var(--text-sub);margin-top:6px;line-height:1.5}
+    .checklist{list-style:none!important;padding:0!important;margin:16px 0}
+    .checklist li{position:relative;padding:9px 8px 9px 32px;border-bottom:1px solid var(--border);font-size:13px;line-height:1.6}
+    .checklist li::before{content:"✓";position:absolute;left:8px;top:9px;color:var(--accent);font-weight:900}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .faq-q{background:var(--bg-gray);padding:14px 16px;font-weight:700;font-size:14px;color:var(--accent)}
+    .faq-q::before{content:"Q. ";font-weight:900}
+    .faq-a{padding:14px 16px;font-size:14px;line-height:1.7}
+    .faq-a::before{content:"A. ";font-weight:700;color:#1a7a3c}
+    .article-footer-meta{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:11px;color:var(--text-muted);line-height:1.9}
+    .article-footer-meta span{margin-right:12px}
+    .related-articles{margin-top:32px}
+    .related-articles h2{font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .related-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .related-article-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:box-shadow .15s,transform .15s}
+    .related-article-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px);border-color:var(--accent)}
+    .related-article-card a{display:flex;flex-direction:column;text-decoration:none;height:100%}
+    .related-article-card .rac-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fafbfc;display:block}
+    .related-article-card .rac-body{padding:10px 12px 14px;flex:1}
+    .related-article-card .rac-tag{font-size:9px;font-weight:700;color:var(--accent);letter-spacing:1px;display:block;margin-bottom:4px}
+    .related-article-card .rac-title{font-size:12px;font-weight:600;color:var(--text);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .related-article-card .rac-date{font-size:10px;color:var(--text-muted);margin-top:6px;display:block}
+    .article-cta{background:var(--accent);color:#fff;padding:28px 24px;border-radius:4px;margin-top:32px;text-align:center}
+    .article-cta h2{font-size:16px;font-weight:700;margin-bottom:6px;color:#fff;border:none}
+    .article-cta p{font-size:11px;opacity:.85;margin-bottom:16px}
+    .article-cta-btn{display:inline-block;background:#fff;color:var(--accent);padding:9px 32px;font-size:12px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:1px}
+    .article-cta-btn:hover{background:var(--accent-pale)}
+    .sidebar-widget{background:var(--bg-gray);border:1px solid var(--border);border-radius:4px;padding:18px;margin-bottom:20px}
+    .sidebar-widget h3{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+    .sidebar-widget ul{list-style:none}
+    .sidebar-widget li{border-bottom:1px solid var(--border);padding:8px 0;font-size:11px}
+    .sidebar-widget li:last-child{border-bottom:none}
+    .sidebar-widget a{color:var(--text);text-decoration:none;line-height:1.45}
+    .sidebar-widget a:hover{color:var(--accent)}
+    .sidebar-cta{background:var(--accent);color:#fff;padding:18px;border-radius:4px;margin-bottom:20px;text-align:center}
+    .sidebar-cta p{font-size:11px;opacity:.85;margin-bottom:12px;line-height:1.7}
+    .sidebar-cta a{display:inline-block;background:#fff;color:var(--accent);padding:7px 20px;font-size:11px;font-weight:700;border-radius:3px;text-decoration:none;letter-spacing:.5px}
+    .sidebar-cta a:hover{background:var(--accent-pale)}
+    @media(max-width:768px){.navbar .nav-links{display:none}.article-hero h1{font-size:18px}.article-body{font-size:13px}.article-body h2{font-size:16px}.article-body h3{font-size:13px}.related-articles-list{grid-template-columns:1fr}}
+    @media(max-width:480px){.article-hero{padding:28px 16px 24px}.article-hero h1{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){.related-article-card{transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="メインナビゲーション">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="LED PRO SHOP トップへ">
+      <div class="logo-main">LED PRO SHOP <small>by 日本ネオン株式会社</small></div>
+      <div class="logo-tag">
+        <span class="logo-badge">PROFESSIONAL</span>
+        <span class="logo-catch">業務用LEDテープ・照明資材の専門商社</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/category/cob-tape/" class="nav-link">LEDテープ</a></li>
+      <li><a href="/category/alumi-frame/" class="nav-link">アルミフレーム</a></li>
+      <li><a href="/category/psu/" class="nav-link">電源装置</a></li>
+      <li><a href="/articles/" class="nav-link active">コラム</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="article-breadcrumb" aria-label="パンくずリスト">
+  <div class="container">
+    <a href="/">LED PRO SHOP</a>
+    <span class="sep">›</span>
+    <a href="/articles/">コラム</a>
+    <span class="sep">›</span>
+    <span>LEDテープのゾーン分け・回路分割の設計方法</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="article-hero">
+  <div class="container">
+    <div class="article-category-badge">施工方法ガイド</div>
+    <h1>LEDテープのゾーン分け・回路分割の設計方法<br>店舗照明を系統ごとに点灯・調光する</h1>
+    <div class="article-meta">
+      <span>公開日: 2026-07-10</span>
+      <span>更新日: 2026-07-10</span>
+      <span>執筆: LED PRO SHOP 編集部</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<div class="article-layout">
+
+  <!-- ===== MAIN COLUMN ===== -->
+  <main>
+    <img
+      src="/images/hero-scenes/blue_desk.webp"
+      alt="LEDテープのゾーン分け回路設計"
+      class="article-hero-img"
+      width="800" height="400"
+      loading="eager"
+    >
+
+    <!-- TOC -->
+    <nav class="article-toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol id="toc-list"></ol>
+    </nav>
+
+    <!-- BODY -->
+    <article class="article-body" id="article-body">
+
+      <p>店舗・施設のLEDテープ照明は、全灯一括のON/OFFで納めてしまうと<strong>「営業中はカウンターだけ暗くしたい」「閉店後はファサードだけ残したい」という要望に応えられず、開店後の手直し（＝再開口・再配線）</strong>になります。あとから系統を分けるのは新設の3倍手間が掛かるため、ゾーン分けは配線前の設計段階で決めるのが鉄則です。本記事では、<strong>ゾーンの切り方、電源を分けるか分岐するかの判断、ゾーンごとの電流計算と保護、多チャンネル調光器の選定、増設に強い仕込み</strong>を施工業者向けに整理します。</p>
+
+      <h2 id="sec-zoning">ゾーンの切り方：用途×時間帯×色温度で分ける</h2>
+      <p>ゾーン分けは「部屋割り」ではなく<strong>「点け方・消し方が違うグループ」</strong>で切ります。判断軸は3つです。</p>
+      <ul>
+        <li><strong>時間帯：</strong>営業中だけ点ける／閉店後も点ける（ファサード・防犯）／アイドルタイムに落とす</li>
+        <li><strong>用途：</strong>売場のベース演出／商品にフォーカスする棚・ショーケース／サイン・ロゴ</li>
+        <li><strong>色温度・調光：</strong>調光したいエリアと全点灯のままでよいエリア、調色（電球色⇔昼白色）を使うエリア</li>
+      </ul>
+
+      <h3>ゾーン分割の設計例（小型物販店・LEDテープ合計30m）</h3>
+      <table>
+        <thead>
+          <tr><th>ゾーン</th><th>内容</th><th>テープ</th><th>負荷計算（24V）</th><th>制御</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Z1 売場コーブ</td><td>天井間接照明 18m</td><td>9.6W/m 調色</td><td>172.8W ÷ 24V = 7.2A</td><td>調光2ch（CCT）・営業中のみ</td></tr>
+          <tr><td>Z2 カウンター・棚下</td><td>レジ裏＋陳列棚 6m</td><td>9.6W/m 単色</td><td>57.6W ÷ 24V = 2.4A</td><td>調光1ch・アイドルタイム減光</td></tr>
+          <tr><td>Z3 ファサード</td><td>庇下サイン 6m</td><td>14.4W/m 単色</td><td>86.4W ÷ 24V = 3.6A</td><td>ON/OFFのみ・照度センサー＋タイマーで深夜まで</td></tr>
+        </tbody>
+      </table>
+      <p>このように<strong>ゾーンごとに「W合計 → 電流」を出しておく</strong>と、後述の電源容量・ヒューズ・ケーブル選定がすべてこの表から決まります。電流 = 合計W ÷ 電圧（24V系なら24）です。</p>
+
+      <div class="article-callout">
+        <p><strong>ゾーン数の目安：</strong>小型店舗で3系統（売場／什器・カウンター／ファサード）、飲食店で4系統（客席／テーブル・カウンター／厨房・バックヤード／外装）が実務の標準形です。迷ったら「閉店後に残すもの」と「調光するもの」を独立させれば大きな失敗はありません。</p>
+      </div>
+
+      <h2 id="sec-power">電源を分けるか、1台から分岐するか</h2>
+      <p>回路分割の最初の分かれ道です。判断基準を比較表にまとめます。</p>
+
+      <table>
+        <thead>
+          <tr><th>方式</th><th>構成</th><th>長所</th><th>短所・条件</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>A. 系統別電源（原則）</strong></td><td>ゾーンごとに専用電源を近接配置し、AC側で入切</td><td>1台故障しても他ゾーンは生きる／DC配線が短く電圧降下に強い／ゾーンごとに入切方式を変えやすい</td><td>電源台数が増える。AC側の渡り配線が必要（電気工事士施工）</td></tr>
+          <tr><td><strong>B. 大容量1台から分岐</strong></td><td>電源1台 → 分岐端子台 → 各ゾーンへDC送り</td><td>電源が1台で済む／制御ボックスに集約でき保守が楽</td><td>電源故障で全滅／<strong>分岐ごとのヒューズ必須</strong>／DC送りが長いと電圧降下。合計150W以下・同一室内が目安</td></tr>
+          <tr><td><strong>C. 折衷（グループ別電源）</strong></td><td>近接ゾーンをまとめて中容量電源、離れたゾーンは別電源</td><td>台数と信頼性のバランスが良い。中規模店舗の標準解</td><td>グループ内はB方式の注意点がそのまま適用される</td></tr>
+        </tbody>
+      </table>
+
+      <div class="article-callout warn">
+        <p><strong>B方式の絶対条件＝分岐ヒューズ：</strong>大容量電源は短絡時に定格いっぱいの電流（350W級なら約15A）を流し続ける能力があります。無ヒューズ分岐の1本が短絡すると、細いテープと配線がヒーターになり焼損・発煙に至ります。分岐ごとに<strong>ゾーン定格電流の1.5〜2倍のヒューズ</strong>（Z2なら2.4A×1.5≒4A程度）を必ず入れてください。詳細は<a href="/articles/led-tape-fuse-circuit-protection-guide">ヒューズ・回路保護ガイド</a>を参照。</p>
+      </div>
+
+      <h3>電源容量の決め方（ゾーン単位）</h3>
+      <p><strong>電源容量 ≧ ゾーン合計W × 1.3（余裕率30%）</strong>。上の設計例ならZ1は172.8W×1.3≒225W → 240W級、Z2は57.6W×1.3≒75W → 100W級、Z3は86.4W×1.3≒112W → 120W級を選定します。電源の配置は「テープの近くに置いてAC側を延ばす」が原則です（<a href="/articles/led-tape-power-supply-layout-guide">電源配置ガイド</a>・<a href="/articles/led-psu-capacity-guide">容量計算ガイド</a>参照）。</p>
+
+      <h2 id="sec-control">制御方式：ON/OFF系統と調光系統を分けて考える</h2>
+
+      <h3>ON/OFFだけのゾーン</h3>
+      <ul>
+        <li><strong>壁スイッチでAC一次側入切：</strong>最も単純で故障が少ない。系統ごとに片切スイッチ（<a href="/articles/led-tape-single-pole-wall-switch-wiring-guide">片切配線ガイド</a>参照）</li>
+        <li><strong>センサー・タイマー：</strong>ファサードは照度センサー＋タイマーの自動運転が定番</li>
+        <li><strong>多数台の一括入切：</strong>電源4台以上をまとめて切るならマグネットスイッチ（電磁接触器）経由（<a href="/articles/led-tape-magnetic-contactor-bulk-switching-guide">一括入切ガイド</a>参照）</li>
+      </ul>
+
+      <h3>調光するゾーン</h3>
+      <p>必要チャンネル数は「独立調光したいグループ数×テープ種別の消費ch」で数えます。</p>
+
+      <div class="spec-grid">
+        <div class="spec-card">
+          <span class="spec-label">単色テープ</span>
+          <span class="spec-value">1ch/ゾーン</span>
+          <span class="spec-note">白1色・カラー1色。PWM調光器の1出力を使用</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">調色（CCT）テープ</span>
+          <span class="spec-value">2ch/ゾーン</span>
+          <span class="spec-note">電球色＋昼白色の2回路。詳細は調色配線ガイド参照</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">RGB / RGBW</span>
+          <span class="spec-value">3〜4ch/ゾーン</span>
+          <span class="spec-note">演出ゾーンのみに限定するとch数と配線量を抑えられる</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">予備ch</span>
+          <span class="spec-value">＋1〜2ch</span>
+          <span class="spec-note">将来の区画変更・増設用。ch満杯の機種選定は避ける</span>
+        </div>
+      </div>
+
+      <p>調光ゾーンが3系統を超える・他照明（ダウンライト等）と一括シーン制御したい場合は、単体調光器の寄せ集めではなくDALI・DMXなどの制御プロトコルでの統一を検討します（<a href="/articles/led-tape-dimming-methods-guide">調光方式の比較</a>・<a href="/articles/led-dali-dimming-wiring-guide">DALI配線ガイド</a>・<a href="/articles/led-tape-dmx512-vs-spi-control-guide">DMX/SPI比較</a>参照）。</p>
+
+      <div class="article-callout warn">
+        <p><strong>明るさが揃わない罠：</strong>同じテープでもゾーンごとに違うメーカーの調光器を使うと、調光カーブの違いで「同じ50%設定なのに隣のゾーンより明るい」が起きます。調光ゾーンは同一シリーズの多チャンネル機でまとめるのが原則です。複数系統の明るさ差の診断は<a href="/articles/led-tape-brightness-mismatch-multiple-runs-guide">明るさ不一致ガイド</a>を参照してください。</p>
+      </div>
+
+      <h2 id="sec-future">増設に強い仕込みと竣工時の残しもの</h2>
+      <p>ゾーン設計の価値は開店後に出ます。増設・区画変更を「空き端子に繋ぐだけ」にする仕込みは次の4点です。</p>
+      <ul class="checklist">
+        <li>制御ボックス（電源・調光器・端子台の集約場所）に1〜2回路分のブランク端子台と物理スペースを残す</li>
+        <li>電源容量・調光器chに30%以上の空きを持たせる（満杯設計にしない）</li>
+        <li>全DC配線の両端に系統札（Z1・Z2…の回路番号ラベル）を付ける</li>
+        <li>竣工時に1枚もの系統図（ゾーン・電源・調光ch・ヒューズ値・ケーブルサイズ）を残す</li>
+      </ul>
+      <p>端子台まわりはネジ式よりWAGO等のレバー式が増設時の作業性で有利です（<a href="/articles/led-tape-terminal-block-wago-guide">端子台ガイド</a>参照）。配線の色分け・極性管理は<a href="/articles/led-tape-wiring-diagram-guide">配線図ガイド</a>にまとめています。</p>
+
+      <div class="article-callout tip">
+        <p><strong>竣工検査でのアピール：</strong>系統図＋回路番号ラベルが揃っている現場は、施主・元請けからの信頼が段違いです。「どのブレーカーでどのゾーンが落ちるか」を検査立ち会いでその場で示せると、追加工事の指名にも繋がります。</p>
+      </div>
+
+      <!-- FAQ -->
+      <h2 id="faq">よくある質問</h2>
+      <div class="faq-item">
+        <div class="faq-q">1台の大容量電源から複数ゾーンへ分岐する設計にしてもよいですか？</div>
+        <div class="faq-a">小規模（合計150W以下・2〜3ゾーン・同一室内）なら実用的ですが、条件が2つあります。①分岐ごとに必ずヒューズを入れること。大容量電源は短絡時に数十Aを流し続ける能力があるため、無ヒューズの分岐1本の短絡でテープの焼損・発煙に至ります。分岐ヒューズは各ゾーン定格電流の1.5〜2倍を目安に選定します。②電源故障時に全ゾーンが同時消灯するリスクを許容できるか確認すること。営業に直結するファサード看板と店内演出照明を同じ電源にぶら下げると、電源1台の故障で両方消えます。中規模以上・エリアが離れている・重要度が異なる場合は、ゾーンごとに電源を分ける系統別電源方式が原則です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">ゾーンごとに明るさを変えたい場合、調光器は何チャンネル必要ですか？</div>
+        <div class="faq-a">「独立して明るさを変えたいグループの数＝必要チャンネル数」です。単色テープならゾーン1つにつき1ch、調色（CCT・電球色〜昼白色）テープは1ゾーンで2ch、RGBは3ch、RGBWは4chを消費します。例えば「売場コーブ（調色）＋カウンター（単色）＋ファサード（単色）」なら2+1+1=4chです。将来の区画変更に備えて1〜2ch余らせた機種を選ぶのが実務的です。なお同じ調光値でも複数メーカーの調光器が混在すると調光カーブの違いで明るさが揃わないため、全ゾーンを同一シリーズの多チャンネル機でまとめるか、DALI/DMXなど共通プロトコルで統一してください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">開店後にゾーンを増やせるようにしておくには、何を仕込んでおけばよいですか？</div>
+        <div class="faq-a">後から一番困るのは配線経路と電源容量です。①電源・調光器を集約する制御ボックス（ウォールボックス・点検口内スペース）に予備スペースを確保し、ブランクの端子台を1〜2回路分設けておく。②幹線となるAC100V・DC24Vの送り配線に予備の空き容量（電源容量の30%以上）を残す設計にする。③各ゾーンへの配線に系統札（回路番号ラベル）を付け、竣工時に系統図を1枚残す。④調光器はチャンネルに空きがある機種を選ぶ。この4点を仕込んでおくと、増設時は「テープを貼って空き端子に接続するだけ」で済みます。系統図がないと、増設のたびに全回路の追跡調査から始まり半日仕事になります。</div>
+      </div>
+
+      <!-- 関連記事 -->
+      <div class="related-articles">
+        <h2>関連記事</h2>
+        <div class="related-articles-list">
+          <div class="related-article-card">
+            <a href="/articles/led-tape-power-supply-layout-guide">
+              <img src="/images/hero-scenes/blue_desk.webp" alt="電源配置設計" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工方法ガイド</span>
+                <div class="rac-title">LEDテープの電源配置設計｜どこに何台置くか</div>
+                <span class="rac-date">2026-06-12</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-dimming-methods-guide">
+              <img src="/images/hero-scenes/blue_desk.webp" alt="調光方式の比較" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">製品活用ガイド</span>
+                <div class="rac-title">LEDテープの調光方式の違いと選び方</div>
+                <span class="rac-date">2026-06-08</span>
+              </div>
+            </a>
+          </div>
+          <div class="related-article-card">
+            <a href="/articles/led-tape-fuse-circuit-protection-guide">
+              <img src="/images/hero-scenes/blue_desk.webp" alt="ヒューズと回路保護" class="rac-img" loading="lazy" width="400" height="225">
+              <div class="rac-body">
+                <span class="rac-tag">施工方法ガイド</span>
+                <div class="rac-title">LEDテープのヒューズ・回路保護の入れ方</div>
+                <span class="rac-date">2026-06-22</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h2>LEDテープ・電源装置・多chコントローラーを業務用に取り揃えています</h2>
+        <p>COBテープ・高密度SMDテープ・定電圧電源・調光器まで施工現場向けに一括調達。<br>法人・個人事業主のお客様のご注文を承っています。</p>
+        <a href="/" class="article-cta-btn">商品ラインナップを見る</a>
+      </div>
+
+      <!-- 記事フッタ -->
+      <div class="article-footer-meta">
+        <span>執筆: LED PRO SHOP 編集部</span>
+        <span>公開日: 2026-07-10</span>
+        <span>更新日: 2026-07-10</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="article-sidebar">
+
+    <!-- サイドバーCTA -->
+    <div class="sidebar-cta">
+      <p>LEDテープ・電源の選定はお気軽にどうぞ</p>
+      <a href="/">商品カタログを見る</a>
+    </div>
+
+    <!-- カテゴリ -->
+    <div class="sidebar-widget">
+      <h3>商品カテゴリ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">LEDテープライト</a></li>
+        <li><a href="/category/alumi-frame/">アルミフレーム</a></li>
+        <li><a href="/category/psu/">電源装置（PSU）</a></li>
+        <li><a href="/category/controller/">制御機器・調光器</a></li>
+      </ul>
+    </div>
+
+    <!-- 新着記事 -->
+    <div class="sidebar-widget">
+      <h3>新着コラム</h3>
+      <ul>
+        <li><a href="/articles/led-tape-photocell-auto-lighting-guide">LEDテープを暗くなったら自動点灯させる方法</a></li>
+        <li><a href="/articles/led-tape-column-curved-surface-installation-guide">LEDテープを円柱・曲面に貼る施工方法</a></li>
+        <li><a href="/articles/12v-led-tape-selection-guide">12V LEDテープの選び方と施工の注意点</a></li>
+        <li><a href="/articles/led-tape-acrylic-edge-lit-sign-guide">アクリル導光板エッジライト看板の作り方</a></li>
+        <li><a href="/articles/led-tape-max-length-guide">LEDテープは何mまで繋げられる？</a></li>
+      </ul>
+    </div>
+
+    <!-- 商品カタログ -->
+    <div class="sidebar-widget">
+      <h3>商品カタログ</h3>
+      <ul>
+        <li><a href="/category/cob-tape/">COB24シリーズ（高密度COBテープ）</a></li>
+        <li><a href="/category/alumi-frame/">拡散カバー付きアルミフレーム</a></li>
+        <li><a href="/category/psu/">業務用定電圧PSU（24V）</a></li>
+        <li><a href="/category/controller/">調光器・コントローラー</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /.article-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>&copy; 2026 日本ネオン株式会社 / LED PRO SHOP. All rights reserved.</p>
+</footer>
+
+<!-- ===== TOC SCRIPT ===== -->
+<script>
+(function(){
+  var body = document.getElementById('article-body');
+  var list = document.getElementById('toc-list');
+  if(!body || !list) return;
+  var headings = body.querySelectorAll('h2, h3');
+  var items = [];
+  headings.forEach(function(h){
+    if(!h.id) return;
+    var li = document.createElement('li');
+    if(h.tagName === 'H3') li.style.paddingLeft = '12px';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    items.push(li);
+  });
+  items.forEach(function(li){ list.appendChild(li); });
+})();
+</script>
+
+</body>
+</html>
