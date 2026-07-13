@@ -50,14 +50,14 @@
 
   <!-- 法定ページ（特商法・プライバシーポリシー）-->
   <url>
-    <loc>https://led-proshop.com/tokushoho.html</loc>
+    <loc>https://led-proshop.com/tokushoho</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://led-proshop.com/privacy-policy.html</loc>
+    <loc>https://led-proshop.com/privacy-policy</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -65,7 +65,7 @@
 
   <!-- 大口・法人対応ページ -->
   <url>
-    <loc>https://led-proshop.com/bulk-order.html</loc>
+    <loc>https://led-proshop.com/bulk-order</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
