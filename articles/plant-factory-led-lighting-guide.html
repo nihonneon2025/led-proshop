@@ -34,7 +34,7 @@
     "description": "植物工場・垂直農場のLED照明導入で電気代を最大60%削減した経済性データを公開。蛍光灯・HPS比較・PPFD照度基準・IP44防湿設計・100㎡農場の電力コスト削減シミュレーション。",
     "image": "https://led-proshop.com/articles/images/plant-factory-led-lighting-guide-hero.webp",
     "datePublished": "2026-05-18",
-    "dateModified": "2026-05-18",
+    "dateModified": "2026-07-15",
     "author": { "@type": "Organization", "name": "LED PRO SHOP" },
     "publisher": {
       "@type": "Organization",
@@ -88,6 +88,21 @@
         "@type": "Question",
         "name": "植物工場用LEDは赤・青の専用品が必要ですか？",
         "acceptedAnswer": { "@type": "Answer", "text": "赤+青の農業用LEDは光合成効率が高い一方、作業環境が紫色になり目が疲れやすい欠点があります。フルスペクトル白色LEDはRa90以上の高演色品を選べば光合成にも対応でき、作業環境も改善されます。近年は白色LEDを選ぶ植物工場が増えています。" }
+      },
+      {
+        "@type": "Question",
+        "name": "既存の蛍光灯器具はそのままLEDテープに使えますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "安定器付きの蛍光灯器具はそのままでは使えません。植物工場向けのLEDテープは24V直流電源が必要で、既存の安定器・ソケットは流用せず、棚下にアルミフレームで新設するのが一般的です。安定器をバイパスして流用する直管LEDとは施工方法が異なります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "点灯時間（日長）はどう決めればよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "作物の目標DLI（日積算光量）から逆算します。DLI＝PPFD×点灯時間×3,600÷1,000,000 で計算し、葉菜類なら10〜16 mol/m²/d に収まる時間を設定します。過度な連続点灯は作物によっては生育障害を招くため、作物ごとの適正日長を確認してください。" }
+      },
+      {
+        "@type": "Question",
+        "name": "多段棚で棚ごとの明るさをそろえるには？",
+        "acceptedAnswer": { "@type": "Answer", "text": "棚面までの照射距離が段ごとに一定になるよう設置高さを統一し、PPFDを棚面で実測して均一性を確認します。端部の光量落ちは列を延長するか端部にもう1列追加して補正します。COBテープは配光が均一で粒々感が出にくく、近距離の棚下照明に向いています。" }
       }
     ]
   }
@@ -328,6 +343,25 @@
 
     <p>白色LEDは赤・青の農業専用品と比べて作業環境が改善（紫色環境の疲目が解消）されるため、近年の植物工場では高演色白色LEDの採用が増えています。</p>
 
+    <h3>DLI（1日の積算光量）の計算式</h3>
+    <p>PPFDが瞬間の光量であるのに対し、<strong>DLI（Daily Light Integral／日積算光量）</strong>は1日に作物が受ける光の総量を示します。点灯時間（日長）を決める際の判断基準になり、単位は mol/m²/d です。</p>
+    <div class="box-blue">
+      <p><strong>計算式:</strong> DLI（mol/m²/d）＝ PPFD（μmol/m²/s）× 点灯時間（h）× 3,600 ÷ 1,000,000</p>
+    </div>
+    <p>例：PPFD 200 μmol/m²/s で16時間点灯 → 200 × 16 × 3,600 ÷ 1,000,000 ＝ <strong>約11.5 mol/m²/d</strong>（葉菜類の目安10〜16 mol/m²/d に収まる）。目標DLIから逆算して点灯時間・PPFDを設計します。</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>PPFD（μmol/m²/s）</th><th>点灯14時間</th><th>点灯16時間</th><th>点灯18時間</th></tr></thead>
+        <tbody>
+          <tr><td>150</td><td>7.6</td><td>8.6</td><td>9.7</td></tr>
+          <tr><td>200</td><td>10.1</td><td>11.5</td><td>13.0</td></tr>
+          <tr><td>250</td><td>12.6</td><td>14.4</td><td>16.2</td></tr>
+          <tr><td>300</td><td>15.1</td><td>17.3</td><td>19.4</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px;color:var(--text-muted)">※表内の数値は DLI（mol/m²/d）。過度な連続点灯は作物によって生育障害（チップバーン等）を招くため、作物ごとの適正日長も併せて確認してください。</p>
+
     <!-- ===== 4. IP ===== -->
     <h2 id="ip-rating">4. 高湿度環境のIPレーティング選定</h2>
 
@@ -498,6 +532,18 @@
     <div class="faq-item">
       <div class="faq-q">植物工場用LEDは赤・青の専用品が必要ですか？</div>
       <div class="faq-a">赤+青の農業用LEDは光合成効率が高い一方、作業環境が紫色になり目が疲れやすい欠点があります。フルスペクトル白色LEDはRa90以上の高演色品を選べば光合成にも対応でき、作業環境も改善されます。近年は白色LEDを選ぶ植物工場が増えています。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">既存の蛍光灯器具はそのままLEDテープに使えますか？</div>
+      <div class="faq-a">安定器付きの蛍光灯器具はそのままでは使えません。植物工場向けのLEDテープは24V直流電源が必要で、既存の安定器・ソケットは流用せず、棚下にアルミフレームで新設するのが一般的です。安定器をバイパスして流用する直管LED（G13口金）とは施工方法が異なる点に注意してください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">点灯時間（日長）はどう決めればよいですか？</div>
+      <div class="faq-a">作物の目標DLI（日積算光量）から逆算します。DLI＝PPFD×点灯時間×3,600÷1,000,000 で計算し、葉菜類なら10〜16 mol/m²/d に収まる時間を設定します。過度な連続点灯は作物によっては生育障害（チップバーン等）を招くため、作物ごとの適正日長を確認してから点灯スケジュールを組みます。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">多段棚で棚ごとの明るさをそろえるには？</div>
+      <div class="faq-a">棚面までの照射距離が段ごとに一定になるよう設置高さを統一し、PPFDを棚面で実測して均一性を確認します。端部の光量落ちは列を延長するか端部にもう1列追加して補正します。COBテープは配光が均一で粒々感（ドット）が出にくく、近距離の棚下照明に向いています。</div>
     </div>
 
   </div><!-- /article-body -->
