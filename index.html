@@ -483,6 +483,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
   ]
 }
 </script>
+  <script src="js/traffic-source.js"></script>
 </head>
 <body>
   <nav class="navbar">
@@ -2112,6 +2113,12 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
         <textarea name="notes" placeholder="数量変更・その他ご要望があればご記入ください"></textarea>
         <!-- 個人情報同意チェックボックス（個人情報保護法に基づく同意取得） -->
         <input type="hidden" name="consent-timestamp" id="consentTimestampField">
+        <input type="hidden" name="landing_referrer" id="landingReferrerField">
+        <input type="hidden" name="landing_page" id="landingPageField">
+        <input type="hidden" name="utm_source" id="utmSourceField">
+        <input type="hidden" name="utm_medium" id="utmMediumField">
+        <input type="hidden" name="utm_campaign" id="utmCampaignField">
+        <input type="hidden" name="landing_at" id="landingAtField">
         <div id="consentBlock" style="margin-top:18px;padding:14px 16px;background:#f5f6f8;border:1px solid #d0d5dd;border-radius:4px">
           <div style="display:flex;align-items:flex-start;gap:10px">
             <input
@@ -6424,6 +6431,18 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
           document.getElementById('orderIdField').value = orderId;
           document.getElementById('cartDetailField').value = cartDetail;
           document.getElementById('totalAmountField').value = totalAmount;
+
+          // 流入経路（初回接点）を隠しフィールドへ反映してから送信
+          try {
+            var ts = JSON.parse(sessionStorage.getItem('neon_traffic_source') || '{}');
+            var setTs = function(id, v) { var el = document.getElementById(id); if (el) el.value = v || ''; };
+            setTs('landingReferrerField', ts.landing_referrer);
+            setTs('landingPageField', ts.landing_page);
+            setTs('utmSourceField', ts.utm_source);
+            setTs('utmMediumField', ts.utm_medium);
+            setTs('utmCampaignField', ts.utm_campaign);
+            setTs('landingAtField', ts.landing_at);
+          } catch (e) {}
 
           var formData = new FormData(form);
           var buyerEmail = formData.get('email');
