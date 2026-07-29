@@ -4,30 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>LEDテープ 配線図・分岐方法ガイド｜並列・分岐コネクタ・はんだ付けの接続実例 | LED PRO SHOP</title>
-  <meta name="description" content="LEDテープを直列接続すると電圧が分割されて全テープが暗くなるか点灯せず、電源から複数系統に誤配線すると過電流でPSUが焼損します。並列接続が唯一の正解で、配線図・T字分岐・複数系統分岐設計・はんだ付けvsコネクターの使い分けを施工業者向けに図解で公開。">
-  <meta name="keywords" content="ledテープ 配線図,led配線方法,ledテープライト 分岐方法,led配線 繋ぎ方,ledテープ はんだ付け,分岐コネクタ,LEDテープ 接続">
+  <title>LEDテープの配線図4パターン｜電源1台・複数系統・分岐の結線を図で確認 | LED PRO SHOP</title>
+  <meta name="description" content="電源とLEDテープをどうつなぐか図で確認したいときに。基本4パターンの配線図で、並列が原則になる理由、電源1台と複数系統の結線の違い、はんだ付けとコネクターの使い分けを施工業者向けに図解しました。">
+  <meta name="keywords" content="ledテープ 配線図,led 結線図,led配線方法,led配線 繋ぎ方,ledテープ はんだ付け,LEDテープ 接続,ledテープ 電源 つなぎ方">
   <link rel="canonical" href="https://led-proshop.com/articles/led-tape-wiring-diagram-guide">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://led-proshop.com/articles/led-tape-wiring-diagram-guide">
-  <meta property="og:title" content="LEDテープ 配線図・分岐方法ガイド｜並列・分岐コネクタ・はんだ付けの接続実例 | LED PRO SHOP">
-  <meta property="og:description" content="LEDテープを直列接続すると電圧が分割されて全テープが暗くなるか点灯せず、電源から複数系統に誤配線すると過電流でPSUが焼損します。並列接続が唯一の正解で、配線図・T字分岐・複数系統分岐設計・はんだ付けvsコネクターの使い分けを施工業者向けに図解で公開。">
+  <meta property="og:title" content="LEDテープの配線図4パターン｜電源1台・複数系統・分岐の結線を図で確認 | LED PRO SHOP">
+  <meta property="og:description" content="電源とLEDテープをどうつなぐか図で確認したいときに。基本4パターンの配線図で、並列が原則になる理由、電源1台と複数系統の結線の違い、はんだ付けとコネクターの使い分けを施工業者向けに図解しました。">
   <meta property="og:image" content="https://led-proshop.com/articles/images/led-tape-wiring-diagram-guide-hero.webp">
   <meta property="og:site_name" content="LED PRO SHOP">
   <meta property="og:locale" content="ja_JP">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="LEDテープ 配線図・分岐方法ガイド｜並列・分岐コネクタ・はんだ付けの接続実例 | LED PRO SHOP">
-  <meta name="twitter:description" content="LEDテープを直列接続すると電圧が分割されて全テープが暗くなるか点灯せず、電源から複数系統に誤配線すると過電流でPSUが焼損します。並列接続が唯一の正解で、配線図・T字分岐・複数系統分岐設計・はんだ付けvsコネクターの使い分けを施工業者向けに図解で公開。">
+  <meta name="twitter:title" content="LEDテープの配線図4パターン｜電源1台・複数系統・分岐の結線を図で確認 | LED PRO SHOP">
+  <meta name="twitter:description" content="電源とLEDテープをどうつなぐか図で確認したいときに。基本4パターンの配線図で、並列が原則になる理由、電源1台と複数系統の結線の違い、はんだ付けとコネクターの使い分けを施工業者向けに図解しました。">
   <meta name="twitter:image" content="https://led-proshop.com/articles/images/led-tape-wiring-diagram-guide-hero.webp">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org/",
     "@type": "Article",
-    "headline": "LEDテープ 配線図・分岐方法ガイド｜並列・分岐コネクタ・はんだ付けの接続実例",
-    "description": "LEDテープの配線図・分岐方法を実例で徹底解説。並列・直列の回路図・T字分岐コネクタの選び方・はんだ付けの基本手順・電源から複数系統への分岐設計。",
+    "headline": "LEDテープの配線図4パターン｜電源1台・複数系統・分岐の結線を図で確認",
+    "description": "LEDテープの配線図を基本4パターンで図解。並列・直列の回路図の違い、電源1台と複数系統の結線、はんだ付けとコネクターの使い分け、電源容量の計算方法を施工業者向けに解説。",
     "image": "https://led-proshop.com/articles/images/led-tape-wiring-diagram-guide-hero.webp",
     "author": {"@type": "Organization", "name": "LED PRO SHOP 編集部"},
     "publisher": {
@@ -36,7 +36,7 @@
       "logo": {"@type": "ImageObject", "url": "https://led-proshop.com/images/logo.png"}
     },
     "datePublished": "2026-05-17",
-    "dateModified": "2026-05-17",
+    "dateModified": "2026-07-29",
     "mainEntityOfPage": "https://led-proshop.com/articles/led-tape-wiring-diagram-guide"
   }
   </script>
@@ -48,7 +48,7 @@
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "LED PRO SHOP", "item": "https://led-proshop.com/"},
       {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://led-proshop.com/articles/"},
-      {"@type": "ListItem", "position": 3, "name": "LEDテープ 配線図・分岐方法ガイド", "item": "https://led-proshop.com/articles/led-tape-wiring-diagram-guide"}
+      {"@type": "ListItem", "position": 3, "name": "LEDテープの配線図4パターン", "item": "https://led-proshop.com/articles/led-tape-wiring-diagram-guide"}
     ]
   }
   </script>
@@ -168,7 +168,7 @@
   <!-- hero -->
   <div class="hero">
     <span class="hero-tag">配線・接続 実務ガイド</span>
-    <h1>LEDテープ 配線図・分岐方法ガイド<br>並列・分岐コネクタ・はんだ付けの接続実例</h1>
+    <h1>LEDテープの配線図4パターン<br>電源1台・複数系統・分岐の結線を図で確認</h1>
     <p class="hero-meta">更新日: 2026年5月17日｜LED PRO SHOP 編集部</p>
     <div class="hero-summary">
       <p>LEDテープの配線図・分岐方法・はんだ付け手順を実例形式で解説します。「電源1台から複数系統に分岐したい」「T字配線の正しいつなぎ方がわからない」「分岐したら暗くなった」——こうした現場の疑問を配線図と具体的な手順で解決します。</p>
