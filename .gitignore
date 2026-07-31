@@ -3,3 +3,6 @@ products_bak_*/
 
 # 開発用テンプレート（プレースホルダー残存）
 articles/_template.html
+
+# Netlify CLIローカル状態（本番配信と無関係・untrack済み 2026-07-31）
+.netlify/

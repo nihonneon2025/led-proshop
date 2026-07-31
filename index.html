@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <link rel="manifest" href="/manifest.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://led-proshop.com/" />
+  <link rel="canonical" href="https://www.led-proshop.com/" />
   <link rel="preload" as="image" href="images/hero-scenes/white3000k_livingroom.webp" type="image/webp" fetchpriority="high">
   <meta name="description" content="業務用LEDテープを10本〜数量割引・最短翌日出荷でプロ仕入れできます。Ra90高演色COBテープ・シリコンカバー・アルミフレームなど400点超を在庫直販。電気工事業者・店舗内装・看板施工業者の専門仕入れ通販。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,10 +13,10 @@
   <meta name="google-site-verification" content="6b_sd0eBVZgjus9y8CZ57o0a7pOW5tgt7rlBfk2xxBI" />
   <!-- OGP -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://led-proshop.com/" />
+  <meta property="og:url" content="https://www.led-proshop.com/" />
   <meta property="og:title" content="業務用LEDテープ・COBテープ専門通販｜Ra90高演色・400点超・即日出荷・プロ価格 | LED PRO SHOP" />
   <meta property="og:description" content="業務用LEDテープを10本〜数量割引・最短翌日出荷でプロ仕入れできます。Ra90高演色COBテープ・シリコンカバー・アルミフレームなど400点超を在庫直販。電気工事業者・店舗内装・看板施工業者の専門仕入れ通販。" />
-  <meta property="og:image" content="https://led-proshop.com/images/ogp_top.jpg" />
+  <meta property="og:image" content="https://www.led-proshop.com/images/ogp_top.jpg" />
   <meta property="og:image:width" content="1376" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="LED PRO SHOP" />
@@ -25,7 +25,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="業務用LEDテープ・COBテープ専門通販｜Ra90高演色・400点超・即日出荷・プロ価格 | LED PRO SHOP" />
   <meta name="twitter:description" content="業務用LEDテープを10本〜数量割引・最短翌日出荷でプロ仕入れできます。Ra90高演色COBテープ・シリコンカバー・アルミフレームなど400点超を在庫直販。電気工事業者・店舗内装・看板施工業者の専門仕入れ通販。" />
-  <meta name="twitter:image" content="https://led-proshop.com/images/ogp_top.jpg" />
+  <meta name="twitter:image" content="https://www.led-proshop.com/images/ogp_top.jpg" />
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -467,17 +467,17 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       "@type": "Organization",
       "name": "LED PRO SHOP",
       "alternateName": "日本ネオン株式会社",
-      "url": "https://led-proshop.com/",
+      "url": "https://www.led-proshop.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://led-proshop.com/images/logo.png"
+        "url": "https://www.led-proshop.com/images/logo.png"
       },
       "description": "業務用LEDテープライト・アルミフレーム・電源装置・シリコンカバーを172型番以上取り揃えたB2B専門カタログサイト。看板業者・電気工事業者・内装施工会社のプロ向けに即納対応。"
     },
     {
       "@type": "WebSite",
       "name": "LED PRO SHOP",
-      "url": "https://led-proshop.com/",
+      "url": "https://www.led-proshop.com/",
       "description": "業務用LED照明部材 B2B専門カタログ。172型番以上。即納対応。"
     }
   ]
@@ -6299,49 +6299,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       return lines.join('\n');
     }
 
-    // Send notification email to admin via mailto fallback + Netlify
     function sendAdminNotification(orderId, summary) {
-      // Netlify Forms handles the primary notification to ADMIN_EMAIL
-      // (Set notification email in Netlify dashboard: Site > Forms > Notifications)
-      // This is a backup: also open a hidden mailto link
-      // No-op here; Netlify dashboard handles it
-    }
-
-    // Send confirmation email to buyer
-    function sendBuyerConfirmation(buyerEmail, buyerName, orderId, summary) {
-      var subject = '【' + SHOP_NAME + '】ご注文確認 ' + orderId;
-      var body = buyerName + ' 様\n\n'
-        + 'この度はご注文いただきありがとうございます。\n'
-        + '以下の内容でご注文を承りました。\n\n'
-        + '━━━━━━━━━━━━━━━━━━━━\n'
-        + summary + '\n'
-        + '━━━━━━━━━━━━━━━━━━━━\n\n'
-        + '※ 担当者より1営業日以内にご連絡いたします。\n'
-        + '※ クレジットカードをご選択の場合、送料確定後にクレジット決済リンクをメールでお送りします。\n'
-        + '※ 銀行振込の場合、振込先情報をメールでお知らせします。\n\n'
-        + '---\n'
-        + SHOP_NAME + '（日本ネオン株式会社）\n'
-        + 'Email: ' + ADMIN_EMAIL + '\n';
-
-      // Use Netlify Function for server-side email (see netlify/functions/send-confirmation.js)
-      // Fallback: open mailto link for admin to manually forward
-      fetch('/.netlify/functions/send-confirmation', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-          to: buyerEmail,
-          name: buyerName,
-          subject: subject,
-          body: body,
-          orderId: orderId,
-          orderData: cart,
-          total: getCartTotal()
-        })
-      }).catch(function() {
-        // Netlify Function not deployed yet - silent fail
-        // Admin will manually send confirmation from Netlify Forms notification
-        console.log('Confirmation email function not available - admin will follow up manually');
-      });
     }
 
     // Handle form submission
