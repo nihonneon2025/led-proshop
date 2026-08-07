@@ -320,6 +320,7 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 .carousel-track{display:flex;transition:transform .3s ease;will-change:transform}
 .carousel-slide{min-width:100%;height:280px;display:flex;align-items:center;justify-content:center;background:var(--bg-gray);position:relative}
 .carousel-slide img{max-width:100%;max-height:100%;object-fit:contain;padding:12px}
+.carousel-slide video{width:100%;height:100%;object-fit:cover;display:block;background:#000}
 .carousel-slide .placeholder-img{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text-muted);font-size:11px}
 .carousel-slide .placeholder-img svg{width:60px;height:60px;opacity:.3}
 .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.5);color:#fff;border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;z-index:2;transition:background .2s}
@@ -5421,57 +5422,72 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       'pink': {
         pattern: /^COB\d+-PK/,
         images: [
+          'images/テープライト/ピンク/scene.jpg',
           'images/テープライト/ピンク/main.png',
           'images/テープライト/ピンク/lit1.png',
-          'images/テープライト/ピンク/lit2.png'
+          'images/テープライト/ピンク/lit2.png',
+          'images/テープライト/frame-fit.jpg'
         ]
       },
       'lightblue': {
         pattern: /^COB\d+-SB/,
         images: [
+          'images/テープライト/ライトブルー/scene.jpg',
           'images/テープライト/ライトブルー/main.png',
           'images/テープライト/ライトブルー/lit1.png',
-          'images/テープライト/ライトブルー/lit2.png'
+          'images/テープライト/ライトブルー/lit2.png',
+          'images/テープライト/frame-fit.jpg'
         ]
       },
       'red': {
         pattern: /^COB\d+-RD/,
         images: [
+          'images/テープライト/レッド/scene.jpg',
           'images/テープライト/レッド/main.png',
           'images/テープライト/レッド/lit1.png',
-          'images/テープライト/レッド/lit2.png'
+          'images/テープライト/レッド/lit2.png',
+          'images/テープライト/frame-fit.jpg'
         ]
       },
       'green': {
         pattern: /^COB\d+-GR/,
         images: [
+          'images/テープライト/グリーン/scene.jpg',
           'images/テープライト/グリーン/main.png',
           'images/テープライト/グリーン/lit1.png',
-          'images/テープライト/グリーン/lit2.png'
+          'images/テープライト/グリーン/lit2.png',
+          'images/テープライト/frame-fit.jpg'
         ]
       },
       'purple': {
         pattern: /^COB\d+-PP/,
         images: [
+          'images/テープライト/パープル/scene.jpg',
           'images/テープライト/パープル/main.png',
           'images/テープライト/パープル/lit1.png',
-          'images/テープライト/パープル/lit2.png'
+          'images/テープライト/パープル/lit2.png',
+          'images/テープライト/frame-fit.jpg'
         ]
       },
       'orange': {
         pattern: /^COB\d+-OR/,
         images: [
+          'images/テープライト/オレンジ/scene.jpg',
           'images/テープライト/オレンジ/main.png',
           'images/テープライト/オレンジ/lit1.png',
-          'images/テープライト/オレンジ/lit2.png'
+          'images/テープライト/オレンジ/lit2.png',
+          'images/テープライト/frame-fit.jpg'
         ]
       },
       'gold': {
         pattern: /^COB\d+-GD/,
         images: [
+          'https://cdn.jsdelivr.net/gh/nihonneon2025/led-proshop-images@main/video/promo-gold.mp4',
+          'images/テープライト/ゴールド/scene.jpg',
           'images/テープライト/ゴールド/main.png',
           'images/テープライト/ゴールド/lit1.png',
-          'images/テープライト/ゴールド/lit2.png'
+          'images/テープライト/ゴールド/lit2.png',
+          'images/テープライト/frame-fit.jpg'
         ]
       },
       'blue': {
@@ -5485,23 +5501,27 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       'lemonyellow': {
         pattern: /^COB\d+-YL/,
         images: [
+          'images/テープライト/レモンイエロー/scene.jpg',
           'images/テープライト/レモンイエロー/main.png',
           'images/テープライト/レモンイエロー/lit1.png',
-          'images/テープライト/レモンイエロー/lit2.png'
+          'images/テープライト/レモンイエロー/lit2.png',
+          'images/テープライト/frame-fit.jpg'
         ]
       },
       'white3000k': {
         pattern: /^COB\d+-W3K/,
         images: [
+          'images/テープライト/ホワイト3000K/scene.jpg',
           'images/テープライト/ホワイト3000K/main.png',
           'images/テープライト/ホワイト3000K/lit1.png',
-          'images/テープライト/ホワイト3000K/lit2.png'
+          'images/テープライト/ホワイト3000K/lit2.png',
+          'images/テープライト/frame-fit.jpg'
         ]
       },
       'white6000k': {
         pattern: /^COB\d+-W6K/,
         images: [
-          'images/テープライト/ライトブルー/main.png',
+          'images/テープライト/ホワイト6000K/scene.jpg',
           'images/テープライト/ホワイト6000K/lit1.png',
           'images/テープライト/ホワイト6000K/lit2.png'
         ]
@@ -5509,9 +5529,11 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
       'rgb': {
         pattern: /^RGB/,
         images: [
+          'images/テープライト/RGB/scene.jpg',
           'images/テープライト/RGB/main.png',
           'images/テープライト/RGB/lit1.png',
-          'images/テープライト/RGB/lit2.png'
+          'images/テープライト/RGB/lit2.png',
+          'images/テープライト/frame-fit.jpg'
         ]
       },
       // シリコンカバー（タイプ別画像）
@@ -5937,6 +5959,9 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 
       track.innerHTML = images.map(function(img, idx) {
         var altText = buildAltText(product, idx);
+        if (/\.mp4$/i.test(img)) {
+          return '<div class="carousel-slide"><video src="' + img + '" muted loop playsinline autoplay preload="metadata" aria-label="' + altText + '"></video></div>';
+        }
         return '<div class="carousel-slide"><img src="' + img + '" alt="' + altText + '" /></div>';
       }).join('');
 
@@ -6663,7 +6688,9 @@ body{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
 
       function createCard(product, groupKey) {
         const PLACEHOLDER = 'images/placeholder.svg';
-        const images = (typeof getProductImages === 'function') ? getProductImages(product.code) : null;
+        const images0 = (typeof getProductImages === 'function') ? getProductImages(product.code) : null;
+        // カードは静止画だけを使う（動画はモーダルのカルーセルでのみ再生する）
+        const images = images0 ? images0.filter(function(s) { return !/\.mp4$/i.test(s); }) : null;
         const mainImg = (images && images[0]) || PLACEHOLDER;
         const altImg = (images && images[1]) || mainImg;
         const marketLower = parseMarketLower(product.marketPrice);
