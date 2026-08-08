@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ===== SEO BASIC ===== -->
-  <title>コーニス照明の納まり寸法ガイド｜見切り・立上り高さ・コーブ照明との違いと選定基準【施工業者向け】 | LED PRO SHOP</title>
-  <meta name="description" content="コーニス照明の納まりで迷ったら——見切りの折り返し寸法・LEDテープを隠す立上り高さ・映り込みやドット感を消す離隔距離の目安を数値で解説。コーブ・バランス照明との使い分けも一覧表で確認できます。">
+  <title>コーニス照明の納まり寸法｜断面図つき・立上りと離隔・コーブ照明との違い【施工業者向け】 | LED PRO SHOP</title>
+  <meta name="description" content="コーニス照明とコーブ照明の納まりを断面図で解説。LEDテープを目線から隠す立上り寸法（60〜100mm）、照らす面との離隔（100〜150mm以上）、器具が収まる溝幅（40〜60mm）を図に落として示します。ドット感を消すテープ選定、長尺ラインの給電計画、設計・施工チェックリストまで施工業者向けにまとめました。">
   <meta name="keywords" content="建築化照明 LED,コーブ照明 LEDテープ,コーニス照明,バランス照明,間接照明 納まり,コーブ照明 寸法,LEDテープ 立上り,間接照明 ドット感,コーニス照明 LED 設計">
   <link rel="canonical" href="https://www.led-proshop.com/articles/led-tape-cove-cornice-lighting-guide">
 
@@ -46,7 +46,7 @@
       }
     },
     "datePublished": "2026-06-06",
-    "dateModified": "2026-06-06",
+    "dateModified": "2026-08-08",
     "mainEntityOfPage": "https://www.led-proshop.com/articles/led-tape-cove-cornice-lighting-guide"
   }
   </script>
@@ -318,6 +318,104 @@
           <span class="spec-value">手が入る逃げ</span>
           <p class="spec-note">将来のテープ交換を見越した作業スペース</p>
         </div>
+      </div>
+
+      <h3 id="sec-drawing">断面図で見る納まり（コーニス／コーブ）</h3>
+      <p>寸法だけでは伝わりにくいので、断面で示します。いずれも「見切り板で光源を隠し、照らす面との距離を取る」という考え方は共通です。</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin:18px 0">
+
+        <figure style="margin:0;border:1px solid var(--border);border-radius:6px;padding:12px;background:var(--bg-gray)">
+          <svg viewBox="0 0 400 270" style="width:100%;height:auto;display:block" role="img" aria-label="コーニス照明の断面図。天井際の見切り板の内側に下向きにLEDテープを納め、壁を上から下へ照らす納まり。">
+            <defs>
+              <marker id="ar1" markerWidth="7" markerHeight="7" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5 z" fill="#003C82"/></marker>
+              <marker id="ar2" markerWidth="7" markerHeight="7" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5 z" fill="#a6791b"/></marker>
+              <pattern id="hatch1" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="0" y2="6" stroke="#b8bec9" stroke-width="1.6"/></pattern>
+            </defs>
+            <!-- 天井 -->
+            <rect x="40" y="26" width="330" height="18" fill="url(#hatch1)" stroke="#5a6270"/>
+            <text x="44" y="20" font-size="11" fill="#555">天井</text>
+            <!-- 壁 -->
+            <rect x="352" y="44" width="18" height="200" fill="url(#hatch1)" stroke="#5a6270"/>
+            <text x="330" y="258" font-size="11" fill="#555">壁</text>
+            <!-- 見切り板 -->
+            <rect x="262" y="44" width="11" height="74" fill="#e2e5ea" stroke="#5a6270"/>
+            <text x="176" y="136" font-size="11" fill="#1a1a1a">見切り板</text>
+            <line x1="230" y1="132" x2="262" y2="112" stroke="#5a6270" stroke-width=".8"/>
+            <!-- LEDテープ（下向き） -->
+            <rect x="286" y="50" width="38" height="9" fill="#a6791b" stroke="#7a5a12"/>
+            <text x="196" y="36" font-size="11" fill="#a6791b" font-weight="700">LEDテープ（下向き）</text>
+            <line x1="290" y1="40" x2="300" y2="49" stroke="#a6791b" stroke-width=".8"/>
+            <!-- 光（壁を舐めて下へ） -->
+            <path d="M305,61 L352,104" stroke="#f0c419" stroke-width="1.6"/>
+            <path d="M305,61 L351,160" stroke="#f0c419" stroke-width="1.6"/>
+            <path d="M305,61 L345,214" stroke="#f0c419" stroke-width="1.6"/>
+            <path d="M305,61 L334,250" stroke="#f0c419" stroke-width="1.6"/>
+            <path d="M305,61 L274,116" stroke="#f0c419" stroke-width="1.2" stroke-dasharray="3 3" opacity=".55"/>
+            <text x="196" y="248" font-size="11" fill="#8a6d12">壁を上から下へ流す</text>
+            <!-- 立上り寸法 -->
+            <line x1="242" y1="44" x2="242" y2="118" stroke="#003C82" stroke-width="1.2" marker-start="url(#ar1)" marker-end="url(#ar1)"/>
+            <text x="122" y="84" font-size="11" fill="#003C82" font-weight="700">立上り 60〜100mm</text>
+            <!-- 離隔寸法（テープ〜壁） -->
+            <line x1="324" y1="86" x2="352" y2="86" stroke="#003C82" stroke-width="1.2" marker-start="url(#ar1)" marker-end="url(#ar1)"/>
+            <text x="150" y="180" font-size="11" fill="#003C82" font-weight="700">壁との離隔 100〜150mm以上</text>
+            <line x1="300" y1="176" x2="336" y2="92" stroke="#003C82" stroke-width=".8" stroke-dasharray="3 2"/>
+            <!-- 視線 -->
+            <line x1="60" y1="200" x2="260" y2="124" stroke="#c0392b" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#ar2)"/>
+            <circle cx="56" cy="202" r="4" fill="#c0392b"/>
+            <text x="42" y="218" font-size="10" fill="#c0392b">目線</text>
+          </svg>
+          <figcaption style="font-size:11px;color:var(--text-muted);margin-top:8px;line-height:1.6">
+            <strong style="color:var(--text)">コーニス照明</strong>：天井際の見切り板の内側に<strong style="color:var(--text)">下向き</strong>に納め、壁を上から下へ流す。見切り板が目線からテープを隠す。
+          </figcaption>
+        </figure>
+
+        <figure style="margin:0;border:1px solid var(--border);border-radius:6px;padding:12px;background:var(--bg-gray)">
+          <svg viewBox="0 0 400 270" style="width:100%;height:auto;display:block" role="img" aria-label="コーブ照明の断面図。壁に取り付けた棚の上に上向きにLEDテープを納め、天井を照らして反射光で室内を明るくする納まり。">
+            <defs>
+              <pattern id="hatch2" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="0" y2="6" stroke="#b8bec9" stroke-width="1.6"/></pattern>
+            </defs>
+            <!-- 天井 -->
+            <rect x="40" y="26" width="330" height="18" fill="url(#hatch2)" stroke="#5a6270"/>
+            <text x="44" y="20" font-size="11" fill="#555">天井</text>
+            <!-- 壁 -->
+            <rect x="352" y="44" width="18" height="200" fill="url(#hatch2)" stroke="#5a6270"/>
+            <text x="330" y="258" font-size="11" fill="#555">壁</text>
+            <!-- 棚（見切り） -->
+            <rect x="268" y="150" width="84" height="10" fill="#e2e5ea" stroke="#5a6270"/>
+            <rect x="268" y="112" width="10" height="48" fill="#e2e5ea" stroke="#5a6270"/>
+            <text x="188" y="180" font-size="11" fill="#1a1a1a">見切り板（折り返し）</text>
+            <!-- LEDテープ（上向き） -->
+            <rect x="296" y="141" width="46" height="9" fill="#a6791b" stroke="#7a5a12"/>
+            <text x="238" y="134" font-size="11" fill="#a6791b" font-weight="700">LEDテープ（上向き）</text>
+            <!-- 光 -->
+            <path d="M319,139 L300,48" stroke="#f0c419" stroke-width="1.6" opacity=".95"/>
+            <path d="M319,139 L232,48" stroke="#f0c419" stroke-width="1.6" opacity=".95"/>
+            <path d="M319,139 L336,48" stroke="#f0c419" stroke-width="1.6" opacity=".95"/>
+            <path d="M319,139 L160,48" stroke="#f0c419" stroke-width="1.6" opacity=".95"/>
+            <text x="126" y="40" font-size="11" fill="#8a6d12">天井で反射して回り込む</text>
+            <!-- 立上り寸法 -->
+            <line x1="252" y1="112" x2="252" y2="150" stroke="#003C82" stroke-width="1.2" marker-start="url(#ar1)" marker-end="url(#ar1)"/>
+            <text x="126" y="200" font-size="11" fill="#003C82" font-weight="700">立上り 60〜100mm</text>
+            <line x1="238" y1="194" x2="250" y2="136" stroke="#003C82" stroke-width=".8" stroke-dasharray="3 2"/>
+            <!-- 天井までの離隔 -->
+            <line x1="346" y1="141" x2="346" y2="44" stroke="#003C82" stroke-width="1.2" marker-start="url(#ar1)" marker-end="url(#ar1)"/>
+            <text x="126" y="240" font-size="11" fill="#003C82" font-weight="700">天井との離隔 100〜150mm以上</text>
+            <line x1="268" y1="234" x2="344" y2="112" stroke="#003C82" stroke-width=".8" stroke-dasharray="3 2"/>
+            <!-- 視線 -->
+            <line x1="60" y1="206" x2="264" y2="164" stroke="#c0392b" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#ar2)"/>
+            <circle cx="56" cy="208" r="4" fill="#c0392b"/>
+            <text x="42" y="224" font-size="10" fill="#c0392b">目線</text>
+          </svg>
+          <figcaption style="font-size:11px;color:var(--text-muted);margin-top:8px;line-height:1.6">
+            <strong style="color:var(--text)">コーブ照明</strong>：見切り板の折り返しの内側に<strong style="color:var(--text)">上向き</strong>に納め、天井へ当てた反射光で空間を明るくする。
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <div class="article-callout tip">
+        <p><strong>図面に落とすときの順番:</strong> ①方式（照らす向き）を決める → ②立上りを決めて光源を隠す → ③照らす面との離隔を取る → ④アルミフレームと配線が収まる溝幅を確保する → ⑤将来テープを貼り替えるための手の逃げを残す。この順で決めると、後戻りがほとんど出ません。<strong>寸法は現場の見え方が最終判断です。</strong>いちばん光源が見えやすいのは「壁（またはコーブ）にいちばん近い立ち位置から見上げたとき」なので、そこで仮点灯して確認してください。</p>
       </div>
 
       <p>離隔が近すぎると、照らす面に光のラインがくっきり出て<strong>「光のムラ・帯」</strong>が目立ちます。逆に十分な離隔を取るほど光が伸びてグラデーションが滑らかになります。立上りと離隔は、想定する視線高さで現場仮点灯し、テープが見えない・帯が出ないことを確認して詰めるのが確実です。</p>
