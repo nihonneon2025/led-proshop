@@ -298,3 +298,37 @@
 /articles/zoo-animal-park-led-case.html                /gone.html  404!
 
 https://led-proshop.com/*  https://www.led-proshop.com/:splat  301!
+
+# アルミフレームの商品ページ（本番のどこからも辿れず価格も旧表記）→ カテゴリへ集約 2026-08-08
+/products/ALM-NORMAL-BK                              https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-NORMAL-BK.html                         https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-NORMAL-BK-12MM                         https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-NORMAL-BK-12MM.html                    https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-NORMAL-BK-20MM                         https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-NORMAL-BK-20MM.html                    https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-NORMAL-BK-25MM                         https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-NORMAL-BK-25MM.html                    https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-NORMAL-SV                              https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-NORMAL-SV.html                         https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-NORMAL-SV-12MM                         https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-NORMAL-SV-12MM.html                    https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-NORMAL-SV-20MM                         https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-NORMAL-SV-20MM.html                    https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-NORMAL-SV-25MM                         https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-NORMAL-SV-25MM.html                    https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-RECESSED-BK                            https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-RECESSED-BK.html                       https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-RECESSED-BK-17MM                       https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-RECESSED-BK-17MM.html                  https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-RECESSED-BK-20MM                       https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-RECESSED-BK-20MM.html                  https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-RECESSED-BK-30MM                       https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-RECESSED-BK-30MM.html                  https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-RECESSED-SV                            https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-RECESSED-SV.html                       https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-RECESSED-SV-17MM                       https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-RECESSED-SV-17MM.html                  https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-RECESSED-SV-20MM                       https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-RECESSED-SV-20MM.html                  https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-RECESSED-SV-30MM                       https://www.led-proshop.com/category/alumi-frame/  301!
+/products/ALM-RECESSED-SV-30MM.html                  https://www.led-proshop.com/category/alumi-frame/  301!
